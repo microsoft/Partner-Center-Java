@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------
+// <copyright file="ICustomerUser.java" company="Microsoft">
+//      Copyright (c) Microsoft Corporation.  All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
+package com.microsoft.store.partnercenter.customerusers;
+
+import com.microsoft.store.partnercenter.IPartnerComponent;
+import com.microsoft.store.partnercenter.genericoperations.IEntityDeleteOperations;
+import com.microsoft.store.partnercenter.genericoperations.IEntityGetOperations;
+import com.microsoft.store.partnercenter.genericoperations.IEntityPatchOperations;
+import com.microsoft.store.partnercenter.models.users.CustomerUser;
+import com.microsoft.store.partnercenter.models.utils.Tuple;
+
+/***
+ * Encapsulates a customer user behavior.
+ */
+public interface ICustomerUser
+	extends IPartnerComponent<Tuple<String, String>>, IEntityGetOperations<CustomerUser>, 
+	IEntityDeleteOperations<CustomerUser>, IEntityPatchOperations<CustomerUser>
+{
+    /***
+     * Gets the current user's directory role collection operations.
+     */
+	ICustomerUserRoleCollection getDirectoryRoles();
+
+    /***
+     * Gets the current user's licenses collection operations.
+     */
+    ICustomerUserLicenseCollection getLicenses();
+
+    /***
+     * Gets the current user's license updates operations.
+     */
+    ICustomerUserLicenseUpdates getLicenseUpdates();
+
+    /***
+     * Retrieves the customer user.
+     * <returns>The customer user.</returns>
+     */    
+    CustomerUser get();
+
+    /***
+     * Deletes a user.
+     */
+    void delete();
+
+    /***
+     * Updates the customer user.
+     * <param name="entity">Customer user entity.</param>
+     * <returns>The updated user.</returns>
+     */
+    CustomerUser patch( CustomerUser entity );
+
+}
