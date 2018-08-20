@@ -1,3 +1,8 @@
+<!--
+ Copyright (c) Microsoft Corporation. All rights reserved.
+ Licensed under the MIT License. See LICENSE in the project root for
+ license information.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -6,20 +11,33 @@
 	<version>1.8.0</version>
 	<packaging>jar</packaging>
 	<name>Partner Center Java SDK</name>
-	<description>
-		The Partner Center Java SDK, provides an SDK to interact with the Microsoft's Partner Center Service.
-		This enables the Partners to perform the Partner Center operations programmatically or through their own portals.
-		The Java SDK is the latest addition to existing portfolio of REST APIs and the C# SDK.
-		This is currently tested and supports Java versions of Java 7 and above.
-	</description>
+	<description>This package contains the Microsoft Partner Center SDK.</description>
 	<url>
-		https://github.com/PartnerCenterSamples/Partner-Center-Java-SDK
+		https://github.com/Microsoft/Partner-Center-Java
 	</url>
+	<licenses>
+		<license>
+			<name>The MIT License (MIT)</name>
+			<url>http://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>scm:git:https://github.com/Microsoft/Partner-Center-Java</url>
+		<connection>scm:git:git@github.com:Microsoft/Partner-Center-Java.git</connection>
+		<tag>HEAD</tag>
+	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipITests>true</skipITests>
 	</properties>
+	<developers>
+		<developer>
+			<id>microsoft</id>
+			<name>Microsoft</name>
+		</developer>
+	</developers>
 	<dependencies>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -60,7 +78,6 @@
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
-		<testSourceDirectory>test/main/java</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
