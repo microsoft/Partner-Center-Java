@@ -73,7 +73,7 @@ public class AuditRecordsCollection
             	new KeyValuePair<String, String>
             	(
             		PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get("Size"), 
-            		new Integer( query.getPageSize() ).toString() 
+            		Integer.valueOf( query.getPageSize() ).toString() 
             	)
             );
         }

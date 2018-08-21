@@ -77,11 +77,10 @@ public class CategoryOffersCollectionOperations
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
                 																		this.getContext().getItem2() ) );
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Offset" ),
-																						new Integer( offset ).toString() ) );
+																						Integer.valueOf( offset ).toString() ) );
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Size" ),
-        																				new Integer( size ).toString() ) );
+        																				Integer.valueOf( size ).toString() ) );
 
         return partnerServiceProxy.get();       
 	}
-
 }

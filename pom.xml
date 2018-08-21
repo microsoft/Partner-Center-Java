@@ -75,6 +75,12 @@
 			<version>1.6.1</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.2.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
@@ -83,6 +89,7 @@
 				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
+		<testSourceDirectory>test/main/java</testSourceDirectory>
 		<pluginManagement>
 			<plugins>
 				<plugin>
