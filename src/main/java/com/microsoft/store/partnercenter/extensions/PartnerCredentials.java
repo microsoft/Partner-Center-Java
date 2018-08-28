@@ -45,19 +45,15 @@ public class PartnerCredentials
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
-                                                                        String aadApplicationDomain )
+    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret, String aadApplicationDomain )
     {
-        return PartnerCredentials.getInstance().generateByApplicationCredentials( clientId, applicationSecret, aadApplicationDomain,
-                                                                    null );
+        return PartnerCredentials.getInstance().generateByApplicationCredentials( clientId, applicationSecret, aadApplicationDomain, null );
     }
 
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
-                                                                        String aadApplicationDomain,
-                                                                        IRequestContext requestContext )
+    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret, String aadApplicationDomain, IRequestContext requestContext )
     {
-        ApplicationPartnerCredentials partnerCredentials =
-            new ApplicationPartnerCredentials( clientId, applicationSecret, aadApplicationDomain );
+        ApplicationPartnerCredentials partnerCredentials = new ApplicationPartnerCredentials( clientId, applicationSecret, aadApplicationDomain );
+
         partnerCredentials.authenticate( requestContext );
 
         return partnerCredentials;
@@ -73,12 +69,9 @@ public class PartnerCredentials
      *            azure active directory token.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByUserCredentials( String clientId,
-                                                                 AuthenticationToken authenticationToken,
-                                                                 IAadLoginHandler loginHandler )
+    public IPartnerCredentials generateByUserCredentials( String clientId, AuthenticationToken authenticationToken, IAadLoginHandler loginHandler )
     {
-        final UserPartnerCredentials partnerCredentials =
-            new UserPartnerCredentials( clientId, authenticationToken, loginHandler );
+        final UserPartnerCredentials partnerCredentials = new UserPartnerCredentials( clientId, authenticationToken, loginHandler );
         return partnerCredentials;
     }
 
