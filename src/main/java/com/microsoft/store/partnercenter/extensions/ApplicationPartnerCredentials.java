@@ -58,8 +58,8 @@ public class ApplicationPartnerCredentials
      * @param aadApplicationId The application identifier in Azure Active Directory.
      * @param aadApplicationSecret The application secret in Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
-     * @param aadAuthorityEndpoint The Active Directory authority endpoint.
-     * @param graphApiEndpoint The AAD graph API endpoint.
+     * @param aadAuthorityEndpoint The Active Directory authority endpoint address.
+     * @param graphApiEndpoint The Azure Active Graph API endpoint address.
      */
     public ApplicationPartnerCredentials( String aadApplicationId, String aadApplicationSecret,
                                           String aadApplicationDomain, String aadAuthorityEndpoint,

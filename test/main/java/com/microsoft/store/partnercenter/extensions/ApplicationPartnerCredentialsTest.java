@@ -12,6 +12,7 @@ import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
 
 import com.microsoft.store.partnercenter.AuthenticationToken;
+import com.microsoft.store.partnercenter.TestConstants;
 
 /**
  * Unit tests for the {@link #ApplicationPartnerCredentials} class.
@@ -28,8 +29,8 @@ public class ApplicationPartnerCredentialsTest
 
         try
         {
-            credentials = new ApplicationPartnerCredentials("aadApplicationId", "aadApplicationSecret", "aadApplicationDomain");
-            assertEquals("aadApplicationId", credentials.getClientId(), "The value for the client identifier should be aadApplicationId");            
+            credentials = new ApplicationPartnerCredentials(TestConstants.TestAadApplicationId, TestConstants.TestAadApplicationSecret, TestConstants.TestAadApplicationDomain);
+            assertEquals(TestConstants.TestAadApplicationId, credentials.getClientId(), "The value for the client identifier should be aadApplicationId");            
         }
         finally
         {
@@ -47,8 +48,8 @@ public class ApplicationPartnerCredentialsTest
 
         try
         {
-            credentials = new ApplicationPartnerCredentials("aadApplicationId", "aadApplicationSecret", "aadApplicationDomain");
-            assertEquals("https://login.microsoftonline.com", credentials.getActiveDirectoryAuthority(), "The value for the Active Directory authority should be https://login.microsoftonline.com");            
+            credentials = new ApplicationPartnerCredentials(TestConstants.TestAadApplicationId, TestConstants.TestAadApplicationSecret, TestConstants.TestAadApplicationDomain);
+            assertEquals(TestConstants.AadAuthorityEndpoint, credentials.getActiveDirectoryAuthority(), "The value for the Active Directory authority should be https://login.microsoftonline.com");            
         }
         finally
         {
@@ -66,8 +67,8 @@ public class ApplicationPartnerCredentialsTest
 
         try
         {
-            credentials = new ApplicationPartnerCredentials("aadApplicationId", "aadApplicationSecret", "aadApplicationDomain");
-            assertEquals("https://graph.windows.net", credentials.getGraphApiEndpoint(), "The value for the Graph API endpoint should be https://graph.windows.net");            
+            credentials = new ApplicationPartnerCredentials(TestConstants.TestAadApplicationId, TestConstants.TestAadApplicationSecret, TestConstants.TestAadApplicationDomain);
+            assertEquals(TestConstants.GraphApiEndpoint, credentials.getGraphApiEndpoint(), "The value for the Graph API endpoint should be https://graph.windows.net");            
         }
         finally
         {
@@ -86,10 +87,10 @@ public class ApplicationPartnerCredentialsTest
 
         try
         {
-            credentials = new ApplicationPartnerCredentials("aadApplicationId", "aadApplicationSecret", "aadApplicationDomain");
+            credentials = new ApplicationPartnerCredentials(TestConstants.TestAadApplicationId, TestConstants.TestAadApplicationSecret, TestConstants.TestAadApplicationDomain);
             expiryTime = DateTime.now(); 
 
-            credentials.setAADToken(new AuthenticationToken("STUB_TOKEN", expiryTime));
+            credentials.setAADToken(new AuthenticationToken(TestConstants.TestAadTokenValue, expiryTime));
 
             assertEquals(expiryTime, credentials.getAADToken().getExpiryTime(), "The expiration time for the token is supposed to match.");
         }
