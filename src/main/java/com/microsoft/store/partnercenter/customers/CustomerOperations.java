@@ -13,6 +13,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
+import com.microsoft.store.partnercenter.agreements.AgreementCollectionOperations;
+import com.microsoft.store.partnercenter.agreements.IAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.CustomerAnalyticsCollectionOperations;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
 import com.microsoft.store.partnercenter.carts.CartCollectionOperations;
@@ -75,6 +77,11 @@ public class CustomerOperations
      * The customer subscriptions operations.
      */
     private ISubscriptionCollection subscriptions;
+
+    /**
+     * The customer agreements operations.
+     */
+    private IAgreementCollection agreements;
 
     /**
      * The customer orders operations.
@@ -202,6 +209,21 @@ public class CustomerOperations
             throw new IllegalArgumentException( "customerId must be set" );
         }
         this.customerId = customerId;
+    }
+
+    /**
+     * Obtains the accepted agreements for the customer.
+     *
+     * @return The customer accepted agreements.
+     */
+    @Override
+    public IAgreementCollection getAgreements()
+    {
+        if ( this.agreements == null )
+        {
+            this.agreements = new AgreementCollectionOperations( this.getPartner(), this.customerId );
+        }
+        return this.agreements;
     }
 
     /**

@@ -7,6 +7,7 @@
 package com.microsoft.store.partnercenter.customers;
 
 import com.microsoft.store.partnercenter.IPartnerComponentString;
+import com.microsoft.store.partnercenter.agreements.IAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
 import com.microsoft.store.partnercenter.carts.ICartCollection;
 import com.microsoft.store.partnercenter.customerdirectoryroles.IDirectoryRoleCollection;
@@ -40,6 +41,13 @@ import com.microsoft.store.partnercenter.usage.ICustomerUsageSummary;
 public interface ICustomer
     extends IPartnerComponentString, IEntityGetOperations<Customer>, IEntityDeleteOperations<Customer>
 {
+    /**
+     * Gets the agreements behavior for the customer.
+     *
+     * @return The customer agreements.
+     */
+    IAgreementCollection getAgreements();
+
     /**
      * Gets the orders behavior for the customer.
      *

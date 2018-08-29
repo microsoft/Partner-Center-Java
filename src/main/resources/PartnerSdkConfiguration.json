@@ -267,6 +267,14 @@
     },
     "GetSupportProfile": { "Path": "profiles/support" },
     "UpdateSupportProfile": { "Path": "profiles/support" },
+    "GetAgreements": {
+      "Path": "customers/{0}/agreements",
+      "Parameters": { "customerId": "customer_id" }
+    },
+    "CreateAgreement": {
+      "Path": "customers/{0}/agreements",
+      "Parameters": { "customerId": "customer_id" }
+    },
     "GetOrders": { "Path": "customers/{0}/orders" },
     "GetOrdersByBillingCyleType": {
       "Path": "customers/{0}/orders",
