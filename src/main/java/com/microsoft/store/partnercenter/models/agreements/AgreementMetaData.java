@@ -8,10 +8,14 @@ package com.microsoft.store.partnercenter.models.agreements;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The AgreementMetaData provides metadata about the agreement type
+ * that partner can provide confirmation of customer acceptance.
+ */
 public class AgreementMetaData
 {
     /**
-     * Gets or sets the agreement metadata identifier.
+     * Gets or sets the unique identifier of an agreement template.
      */
     @JsonProperty( "templateId" )
     private String __TemplateId;
@@ -26,6 +30,9 @@ public class AgreementMetaData
         __TemplateId = value;
     }
 
+    /**
+     * Gets or sets agreement type.
+     */
     @JsonProperty( "agreementType" )
     private AgreementType __AgreementType;
 
@@ -39,6 +46,9 @@ public class AgreementMetaData
         __AgreementType = value;
     }
 
+    /**
+     * Gets or sets URL to the agreement template.
+     */
     @JsonProperty( "agreementLink" )
     private String __AgreementLink;
 
@@ -52,6 +62,9 @@ public class AgreementMetaData
         __AgreementLink = value;
     }
 
+    /**
+     * Gets or sets the version rank of an agreement template.
+     */
     @JsonProperty( "versionRank" )
     private int __VersionRank;
 

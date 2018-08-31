@@ -11,11 +11,15 @@ import com.microsoft.store.partnercenter.models.Contact;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 import org.joda.time.DateTime;
 
+/**
+ * The Agreement resource. Represents the details of certification provided by the partner.
+ */
 public class Agreement
         extends ResourceBase
 {
     /**
-     * Gets or sets the agreement identifier.
+     * Gets or sets the Object identifier of the logged in user in the partner tenant
+     * who is providing confirmation on behalf of the partner organization.
      */
     @JsonProperty( "userId" )
     private String __UserId;
@@ -30,6 +34,10 @@ public class Agreement
         __UserId = value;
     }
 
+    /**
+     * Gets or sets the information about the user from the customer organization
+     * who accepted the Microsoft Cloud Agreement.
+     */
     @JsonProperty( "primaryContact" )
     private Contact __PrimaryContact;
 
@@ -43,6 +51,9 @@ public class Agreement
         __PrimaryContact = value;
     }
 
+    /**
+     * Gets or sets the unique identifier of the agreement that the customer accepted.
+     */
     @JsonProperty( "templateId" )
     private String __TemplateId;
 
@@ -56,6 +67,9 @@ public class Agreement
         __TemplateId = value;
     }
 
+    /**
+     * Gets or sets the date when the customer accepted the agreement.
+     */
     @JsonProperty( "dateAgreed" )
     private DateTime __DateAgreed;
 
@@ -69,6 +83,9 @@ public class Agreement
         __DateAgreed = value;
     }
 
+    /**
+     * Gets or sets agreement type.
+     */
     @JsonProperty( "type" )
     private AgreementType __Type;
 
@@ -82,6 +99,9 @@ public class Agreement
         __Type = value;
     }
 
+    /**
+     * Gets or sets URL to the agreement template.
+     */
     @JsonProperty( "agreementLink" )
     private String __AgreementLink;
 

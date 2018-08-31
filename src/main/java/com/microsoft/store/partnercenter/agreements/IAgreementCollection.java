@@ -11,6 +11,9 @@ import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollecti
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
 
+/**
+ * Encapsulates the operations on the Agreement collection.
+ */
 public interface IAgreementCollection
         extends IPartnerComponentString,
         IEntireEntityCollectionRetrievalOperations<Agreement, ResourceCollection<Agreement>>

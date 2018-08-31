@@ -17,6 +17,9 @@ import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import java.text.MessageFormat;
 import java.util.Locale;
 
+/**
+ * Implements the operations on an Agreement metadata collection.
+ */
 public class AgreementMetaDataCollectionOperations
         extends BasePartnerComponentString
         implements IAgreementMetaDataCollection

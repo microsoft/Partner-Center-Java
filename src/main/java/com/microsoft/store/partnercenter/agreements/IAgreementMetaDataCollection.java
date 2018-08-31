@@ -9,6 +9,9 @@ package com.microsoft.store.partnercenter.agreements;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
 
+/**
+ * Encapsulates the operations on the Agreement metadata collection.
+ */
 public interface IAgreementMetaDataCollection
 {
     /***

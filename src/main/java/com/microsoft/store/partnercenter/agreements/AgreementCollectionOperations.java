@@ -18,6 +18,9 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
 import java.text.MessageFormat;
 import java.util.Locale;
 
+/**
+ * Implements the operations on an Agreement collection.
+ */
 public class AgreementCollectionOperations
         extends BasePartnerComponentString
         implements IAgreementCollection
