@@ -7,7 +7,7 @@
 package com.microsoft.store.partnercenter.customers;
 
 import com.microsoft.store.partnercenter.IPartnerComponentString;
-import com.microsoft.store.partnercenter.agreements.IAgreementCollection;
+import com.microsoft.store.partnercenter.agreements.ICustomerAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
 import com.microsoft.store.partnercenter.carts.ICartCollection;
 import com.microsoft.store.partnercenter.customerdirectoryroles.IDirectoryRoleCollection;
@@ -46,7 +46,7 @@ public interface ICustomer
      *
      * @return The customer agreements.
      */
-    IAgreementCollection getAgreements();
+    ICustomerAgreementCollection getAgreements();
 
     /**
      * Gets the orders behavior for the customer.

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="AgreementMetaDataCollectionOperations.java" company="Microsoft">
+// <copyright file="AgreementDetailsCollectionOperations.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -14,38 +14,34 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 /**
- * Implements the operations on an Agreement metadata collection.
+ * Agreement details collection operations implementation class.
  */
-public class AgreementMetaDataCollectionOperations
+public class AgreementDetailsCollectionOperations
         extends BasePartnerComponentString
-        implements IAgreementMetaDataCollection
+        implements IAgreementDetailsCollection
 {
     /**
-     * Initializes a new instance of the {@link #AgreementMetaDataCollectionOperations} class.
+     * Initializes a new instance of the {@link #AgreementDetailsCollectionOperations} class.
      *
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public AgreementMetaDataCollectionOperations( IPartner rootPartnerOperations )
+    public AgreementDetailsCollectionOperations( IPartner rootPartnerOperations )
     {
         super( rootPartnerOperations );
     }
 
     /**
-     * Retrieves all current agreement metadata.
+     * Retrieves the agreement details.
      *
-     * @return The current agreement metadata.
+     * @return A list of agreement details.
      */
     @Override
     public ResourceCollection<AgreementMetaData> get()
     {
         return new PartnerServiceProxy<AgreementMetaData, ResourceCollection<AgreementMetaData>>(
                 new TypeReference<ResourceCollection<AgreementMetaData>>() {}, this.getPartner(),
-                MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
-                                .get( "GetAllAgreements" ).getPath(),
-                        this.getContext(), Locale.US ) ).get();
+                PartnerService.getInstance().getConfiguration().getApis()
+                                .get( "GetAgreementsDetails" ).getPath()).get();
     }
 }

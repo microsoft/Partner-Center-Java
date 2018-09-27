@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter;
 
-import com.microsoft.store.partnercenter.agreements.IAgreementMetaDataCollection;
+import com.microsoft.store.partnercenter.agreements.IAgreementDetailsCollection;
 import com.microsoft.store.partnercenter.analytics.IPartnerAnalyticsCollection;
 import com.microsoft.store.partnercenter.auditrecords.IAuditRecordsCollection;
 import com.microsoft.store.partnercenter.countryvalidationrules.ICountryValidationRulesCollection;
@@ -138,5 +138,5 @@ public interface IPartner
     /***
      * Gets the agreement metadata operations.
      */
-    IAgreementMetaDataCollection getAgreements();
+    IAgreementDetailsCollection getAgreements();
 }

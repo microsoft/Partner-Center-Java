@@ -6,10 +6,18 @@
   "DefaultLocale": "en-US",
   "PartnerCenterClient": "Partner Center Java SDK",
   "Apis": {
-    "PartnerLicensesDeploymentInsights": { "Path": "analytics/licenses/deployment" },
-    "PartnerLicensesUsageInsights": { "Path": "analytics/licenses/usage" },
-    "CustomerLicensesDeploymentInsights": { "Path": "customers/{0}/analytics/licenses/deployment" },
-    "CusotmerLicensesUsageInsights": { "Path": "customers/{0}/analytics/licenses/usage" },
+    "PartnerLicensesDeploymentInsights": {
+      "Path": "analytics/licenses/deployment"
+    },
+    "PartnerLicensesUsageInsights": {
+      "Path": "analytics/licenses/usage"
+    },
+    "CustomerLicensesDeploymentInsights": {
+      "Path": "customers/{0}/analytics/licenses/deployment"
+    },
+    "CusotmerLicensesUsageInsights": {
+      "Path": "customers/{0}/analytics/licenses/usage"
+    },
     "GetOffers": {
       "Path": "offers",
       "Parameters": {
@@ -19,9 +27,20 @@
         "Size": "size"
       }
     },
+    "CreateCustomerAgreement": {
+      "Path": "customers/{0}/agreements"
+    },
+    "GetAgreementsDetails": {
+      "Path": "agreements"
+    },
+    "GetCustomerAgreements": {
+      "Path": "customers/{0}/agreements"
+    },
     "GetOffer": {
       "Path": "offers/{0}",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetOfferAddons": {
       "Path": "offers/{0}/addons",
@@ -33,7 +52,9 @@
     },
     "GetOfferCategories": {
       "Path": "offercategories",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetProducts": {
       "Path": "products",
@@ -45,11 +66,15 @@
     },
     "GetProduct": {
       "Path": "products/{0}",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "CheckInventory": {
       "Path": "extensions/product/checkinventory",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetSkus": {
       "Path": "products/{0}/skus",
@@ -60,11 +85,15 @@
     },
     "GetSku": {
       "Path": "products/{0}/skus/{1}",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetSkuDownloadOptions": {
       "Path": "products/{0}/skus/{1}/downloadoptions",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetAvailabilities": {
       "Path": "products/{0}/skus/{1}/availabilities",
@@ -75,7 +104,9 @@
     },
     "GetAvailability": {
       "Path": "products/{0}/skus/{1}/availabilities/{2}",
-      "Parameters": { "Country": "country" }
+      "Parameters": {
+        "Country": "country"
+      }
     },
     "GetCustomerProducts": {
       "Path": "customers/{0}/products",
@@ -84,38 +115,78 @@
         "TargetSegment": "targetSegment"
       }
     },
-    "GetCustomerProduct": { "Path": "customers/{0}/products/{1}" },
+    "GetCustomerProduct": {
+      "Path": "customers/{0}/products/{1}"
+    },
     "GetCustomerSkus": {
       "Path": "customers/{0}/products/{1}/skus",
-      "Parameters": { "TargetSegment": "targetSegment" }
+      "Parameters": {
+        "TargetSegment": "targetSegment"
+      }
     },
-    "GetCustomerSku": { "Path": "customers/{0}/products/{1}/skus/{2}" },
-    "GetCustomerSkuDownloadOptions": { "Path": "customers/{0}/products/{1}/skus/{2}/downloadoptions" },
+    "GetCustomerSku": {
+      "Path": "customers/{0}/products/{1}/skus/{2}"
+    },
+    "GetCustomerSkuDownloadOptions": {
+      "Path": "customers/{0}/products/{1}/skus/{2}/downloadoptions"
+    },
     "GetCustomerAvailabilities": {
       "Path": "customers/{0}/products/{1}/skus/{2}/availabilities",
-      "Parameters": { "TargetSegment": "targetSegment" }
+      "Parameters": {
+        "TargetSegment": "targetSegment"
+      }
     },
-    "GetCustomerAvailability": { "Path": "customers/{0}/products/{1}/skus/{2}/availabilities/{3}" },
-    "GetCustomerSubscriptions": { "Path": "customers/{0}/subscriptions" },
+    "GetCustomerAvailability": {
+      "Path": "customers/{0}/products/{1}/skus/{2}/availabilities/{3}"
+    },
+    "GetCustomerSubscriptions": {
+      "Path": "customers/{0}/subscriptions"
+    },
     "GetCustomerSubscriptionsByOrder": {
       "Path": "customers/{0}/subscriptions",
-      "Parameters": { "OrderId": "order_id" }
+      "Parameters": {
+        "OrderId": "order_id"
+      }
     },
     "GetCustomerSubscriptionsByPartner": {
       "Path": "customers/{0}/subscriptions",
-      "Parameters": { "PartnerId": "mpn_id" }
+      "Parameters": {
+        "PartnerId": "mpn_id"
+      }
     },
-    "GetSubscription": { "Path": "customers/{0}/subscriptions/{1}" },
-    "GetAddOnSubscriptions": { "Path": "customers/{0}/subscriptions/{1}/addons" },
-    "GetSubscriptionUpgrades": { "Path": "customers/{0}/subscriptions/{1}/upgrades" },
-    "PostSubscriptionUpgrade": { "Path": "customers/{0}/subscriptions/{1}/upgrades" },
-    "GetSubscriptionConversions": { "Path": "customers/{0}/subscriptions/{1}/conversions" },
-    "PostSubscriptionConversion": { "Path": "customers/{0}/subscriptions/{1}/conversions" },
-    "GetSubscriptionUsageRecords": { "Path": "customers/{0}/subscriptions/usagerecords" },
-    "GetSubscriptionUsageSummary": { "Path": "customers/{0}/subscriptions/{1}/usagesummary" },
-    "GetSubscriptionDailyUsageRecords": { "Path": "customers/{0}/subscriptions/{1}/usagerecords/daily" },
-    "GetSubscriptionResourceUsageRecords": { "Path": "customers/{0}/subscriptions/{1}/usagerecords/resources" },
-    "GetSubscriptionSupportContact": { "Path": "customers/{0}/subscriptions/{1}/supportcontact" },
+    "GetSubscription": {
+      "Path": "customers/{0}/subscriptions/{1}"
+    },
+    "GetAddOnSubscriptions": {
+      "Path": "customers/{0}/subscriptions/{1}/addons"
+    },
+    "GetSubscriptionUpgrades": {
+      "Path": "customers/{0}/subscriptions/{1}/upgrades"
+    },
+    "PostSubscriptionUpgrade": {
+      "Path": "customers/{0}/subscriptions/{1}/upgrades"
+    },
+    "GetSubscriptionConversions": {
+      "Path": "customers/{0}/subscriptions/{1}/conversions"
+    },
+    "PostSubscriptionConversion": {
+      "Path": "customers/{0}/subscriptions/{1}/conversions"
+    },
+    "GetSubscriptionUsageRecords": {
+      "Path": "customers/{0}/subscriptions/usagerecords"
+    },
+    "GetSubscriptionUsageSummary": {
+      "Path": "customers/{0}/subscriptions/{1}/usagesummary"
+    },
+    "GetSubscriptionDailyUsageRecords": {
+      "Path": "customers/{0}/subscriptions/{1}/usagerecords/daily"
+    },
+    "GetSubscriptionResourceUsageRecords": {
+      "Path": "customers/{0}/subscriptions/{1}/usagerecords/resources"
+    },
+    "GetSubscriptionSupportContact": {
+      "Path": "customers/{0}/subscriptions/{1}/supportcontact"
+    },
     "GetSubscriptionProvisioningStatus": {
       "Path": "customers/{0}/subscriptions/{1}/provisioningstatus",
       "Parameters": {
@@ -123,10 +194,14 @@
         "subscriptionId": "subscriptionId"
       }
     },
-    "UpdateSubscriptionSupportContact": { "Path": "customers/{0}/subscriptions/{1}/supportcontact" },
+    "UpdateSubscriptionSupportContact": {
+      "Path": "customers/{0}/subscriptions/{1}/supportcontact"
+    },
     "UpdateSubscription": {
       "Path": "customers/{0}/subscriptions/{1}",
-      "Parameters": { "Subscription": "subscription" }
+      "Parameters": {
+        "Subscription": "subscription"
+      }
     },
     "GetSubscriptionRegistrationStatus": {
       "Path": "customers/{0}/subscriptions/{1}/registrationstatus",
@@ -142,7 +217,9 @@
         "subscriptionId": "subscriptionId"
       }
     },
-    "CreateCustomer": { "Path": "customers" },
+    "CreateCustomer": {
+      "Path": "customers"
+    },
     "GetCustomers": {
       "Path": "customers",
       "Parameters": {
@@ -151,11 +228,15 @@
         "SeekOperation": "seekOperation",
         "Filter": "filter"
       },
-      "AdditionalHeaders": { "ContinuationToken": "MS-ContinuationToken" }
+      "AdditionalHeaders": {
+        "ContinuationToken": "MS-ContinuationToken"
+      }
     },
     "CreateCustomerUser": {
       "Path": "customers/{0}/users/",
-      "Parameters": { "customerId": "customerId" }
+      "Parameters": {
+        "customerId": "customerId"
+      }
     },
     "DeleteCustomerUser": {
       "Path": "customers/{0}/users/{1}",
@@ -194,7 +275,8 @@
     },
     "GetCustomerDirectoryRoles": {
       "Path": "customers/{0}/directoryroles",
-      "Parameters": {}
+      "Parameters": {
+      }
     },
     "GetCustomerDirectoryRoleUserMembers": {
       "Path": "customers/{0}/directoryroles/{1}/usermembers",
@@ -235,9 +317,15 @@
         "userId": "user_id"
       }
     },
-    "GetCustomer": { "Path": "customers/{0}" },
-    "DeleteCustomer": { "Path": "customers/{0}" },
-    "RemoveCustomerRelationship": { "Path": "customers/{0}" },
+    "GetCustomer": {
+      "Path": "customers/{0}"
+    },
+    "DeleteCustomer": {
+      "Path": "customers/{0}"
+    },
+    "RemoveCustomerRelationship": {
+      "Path": "customers/{0}"
+    },
     "GetCustomerOffers": {
       "Path": "customers/{0}/offers",
       "Parameters": {
@@ -245,44 +333,78 @@
         "Size": "size"
       }
     },
-    "GetCustomerOfferCategories": { "Path": "customers/{0}/offercategories" },
-    "GetCustomerUsageRecords": { "Path": "customers/usagerecords" },
-    "GetCustomerUsageSummary": { "Path": "customers/{0}/usagesummary" },
-    "GetCustomerUsageSpendingBudget": { "Path": "customers/{0}/usagebudget" },
-    "PatchCustomerUsageSpendingBudget": { "Path": "customers/{0}/usagebudget" },
-    "GetCustomerServiceCostsSummary": { "Path": "customers/{0}/servicecosts/{1}" },
-    "GetCustomerServiceCostLineItems": { "Path": "customers/{0}/servicecosts/{1}/lineitems" },
-    "GetCustomerQualification": { "Path": "customers/{0}/qualification" },
-    "UpdateCustomerQualification": { "Path": "customers/{0}/qualification" },
-    "GetCustomerManagedServices": { "Path": "customers/{0}/managedservices" },
+    "GetCustomerOfferCategories": {
+      "Path": "customers/{0}/offercategories"
+    },
+    "GetCustomerUsageRecords": {
+      "Path": "customers/usagerecords"
+    },
+    "GetCustomerUsageSummary": {
+      "Path": "customers/{0}/usagesummary"
+    },
+    "GetCustomerUsageSpendingBudget": {
+      "Path": "customers/{0}/usagebudget"
+    },
+    "PatchCustomerUsageSpendingBudget": {
+      "Path": "customers/{0}/usagebudget"
+    },
+    "GetCustomerServiceCostsSummary": {
+      "Path": "customers/{0}/servicecosts/{1}"
+    },
+    "GetCustomerServiceCostLineItems": {
+      "Path": "customers/{0}/servicecosts/{1}/lineitems"
+    },
+    "GetCustomerQualification": {
+      "Path": "customers/{0}/qualification"
+    },
+    "UpdateCustomerQualification": {
+      "Path": "customers/{0}/qualification"
+    },
+    "GetCustomerManagedServices": {
+      "Path": "customers/{0}/managedservices"
+    },
     "GetLegalBusinessProfile": {
       "Path": "profiles/legalbusiness",
-      "Parameters": { "VettingVersion": "vettingVersion" }
+      "Parameters": {
+        "VettingVersion": "vettingVersion"
+      }
     },
-    "GetOrganizationProfile": { "Path": "profiles/organization" },
-    "GetPartnerBillingProfile": { "Path": "profiles/billing" },
+    "GetOrganizationProfile": {
+      "Path": "profiles/organization"
+    },
+    "GetPartnerBillingProfile": {
+      "Path": "profiles/billing"
+    },
     "GetMpnProfile": {
       "Path": "profiles/mpn",
-      "Parameters": { "MpnId": "mpnId" }
+      "Parameters": {
+        "MpnId": "mpnId"
+      }
     },
-    "GetSupportProfile": { "Path": "profiles/support" },
-    "UpdateSupportProfile": { "Path": "profiles/support" },
-    "GetAgreements": {
-      "Path": "customers/{0}/agreements",
-      "Parameters": { "customerId": "customer_id" }
+    "GetSupportProfile": {
+      "Path": "profiles/support"
     },
-    "CreateAgreement": {
-      "Path": "customers/{0}/agreements",
-      "Parameters": { "customerId": "customer_id" }
+    "UpdateSupportProfile": {
+      "Path": "profiles/support"
     },
-    "GetOrders": { "Path": "customers/{0}/orders" },
+    "GetOrders": {
+      "Path": "customers/{0}/orders"
+    },
     "GetOrdersByBillingCyleType": {
       "Path": "customers/{0}/orders",
-      "Parameters": { "BillingType": "billingType" }
+      "Parameters": {
+        "BillingType": "billingType"
+      }
     },
-    "GetOrder": { "Path": "customers/{0}/orders/{1}" },
-    "UpdateOrder": { "Path": "customers/{0}/orders/{1}" },
-    "CreateOrder": { "Path": "customers/{0}/orders" },
+    "GetOrder": {
+      "Path": "customers/{0}/orders/{1}"
+    },
+    "UpdateOrder": {
+      "Path": "customers/{0}/orders/{1}"
+    },
+    "CreateOrder": {
+      "Path": "customers/{0}/orders"
+    },
     "GetOrderProvisioningStatus": {
       "Path": "customers/{0}/orders/{1}/provisioningstatus",
       "Parameters": {
@@ -290,23 +412,45 @@
         "orderId": "orderId"
       }
     },
-    "CreateServiceRequest": { "Path": "servicerequests/{0}" },
+    "CreateServiceRequest": {
+      "Path": "servicerequests/{0}"
+    },
     "SearchServiceRequestPartner": {
       "Path": "servicerequests",
-      "Parameters": { "Status": "status" }
+      "Parameters": {
+        "Status": "status"
+      }
     },
     "SearchServiceRequestCustomer": {
       "Path": "customers/{0}/servicerequests",
-      "Parameters": { "Status": "status" }
+      "Parameters": {
+        "Status": "status"
+      }
     },
-    "GetServiceRequestPartner": { "Path": "servicerequests/{0}" },
-    "GetAllServiceRequestsPartner": { "Path": "servicerequests" },
-    "UpdateServiceRequestPartner": { "Path": "servicerequests/{0}" },
-    "GetServiceRequestCustomer": { "Path": "customers/{0}/servicerequests/{1}" },
-    "GetAllServiceRequestsCustomer": { "Path": "customers/{0}/servicerequests" },
-    "UpdateServiceRequestCustomer": { "Path": "customers/{0}/servicerequests/{1}" },
-    "GetServiceRequestSupportTopics": { "Path": "servicerequests/supporttopics" },
-    "GetEnrolledProgramByType": { "Path": "enrolledprograms/{0}" },
+    "GetServiceRequestPartner": {
+      "Path": "servicerequests/{0}"
+    },
+    "GetAllServiceRequestsPartner": {
+      "Path": "servicerequests"
+    },
+    "UpdateServiceRequestPartner": {
+      "Path": "servicerequests/{0}"
+    },
+    "GetServiceRequestCustomer": {
+      "Path": "customers/{0}/servicerequests/{1}"
+    },
+    "GetAllServiceRequestsCustomer": {
+      "Path": "customers/{0}/servicerequests"
+    },
+    "UpdateServiceRequestCustomer": {
+      "Path": "customers/{0}/servicerequests/{1}"
+    },
+    "GetServiceRequestSupportTopics": {
+      "Path": "servicerequests/supporttopics"
+    },
+    "GetEnrolledProgramByType": {
+      "Path": "enrolledprograms/{0}"
+    },
     "SearchPartnerServiceRequests": {
       "Path": "servicerequests",
       "Parameters": {
@@ -323,7 +467,9 @@
         "Filter": "filter"
       }
     },
-    "UpdatePartnerBillingProfile": { "Path": "profiles/billing" },
+    "UpdatePartnerBillingProfile": {
+      "Path": "profiles/billing"
+    },
     "GetInvoices": {
       "Path": "invoices",
       "Parameters": {
@@ -332,7 +478,9 @@
         "Filter": "filter"
       }
     },
-    "GetInvoice": { "Path": "invoices/{0}" },
+    "GetInvoice": {
+      "Path": "invoices/{0}"
+    },
     "GetInvoiceLineItems": {
       "Path": "invoices/{0}/lineitems/{1}/{2}",
       "Parameters": {
@@ -340,22 +488,54 @@
         "Offset": "offset"
       }
     },
-    "GetInvoiceSummary": { "Path": "invoices/summary" },
-    "GetInvoiceStatement": { "Path": "invoices/{0}/documents/statement" },
-    "GetInvoiceSummaries": { "Path": "invoices/summaries" },
-    "GetCustomerBillingProfile": { "Path": "customers/{0}/profiles/billing" },
-    "UpdateCustomerBillingProfile": { "Path": "customers/{0}/profiles/billing" },
-    "GetCustomerCompanyProfile": { "Path": "customers/{0}/profiles/company" },
-    "GetAllAgreements": { "Path": "agreements" },
-    "GetAgreementsByType": { "Path": "agreements/{0}/" },
-    "GetAgreementSignatures": { "Path": "agreements/{0}/signatures" },
-    "GetAgreementSignaturesByVersion": { "Path": "agreements/{0}/signatures/{1}" },
-    "GetCountryValidationRulesByCountry": { "Path": "countryvalidationrules/{0}" },
-    "GetAccountSetting": { "Path": "accountsettings/{0}" },
-    "UpdateAccountSetting": { "Path": "accountsettings/{0}" },
-    "CheckDomainAvailability": { "Path": "domains/{0}" },
-    "GetPartnerUsageSummary": { "Path": "usagesummary" },
-    "GetServiceIncidents": { "Path": "serviceincidents/office" },
+    "GetInvoiceSummary": {
+      "Path": "invoices/summary"
+    },
+    "GetInvoiceStatement": {
+      "Path": "invoices/{0}/documents/statement"
+    },
+    "GetInvoiceSummaries": {
+      "Path": "invoices/summaries"
+    },
+    "GetCustomerBillingProfile": {
+      "Path": "customers/{0}/profiles/billing"
+    },
+    "UpdateCustomerBillingProfile": {
+      "Path": "customers/{0}/profiles/billing"
+    },
+    "GetCustomerCompanyProfile": {
+      "Path": "customers/{0}/profiles/company"
+    },
+    "GetAllAgreements": {
+      "Path": "agreements"
+    },
+    "GetAgreementsByType": {
+      "Path": "agreements/{0}/"
+    },
+    "GetAgreementSignatures": {
+      "Path": "agreements/{0}/signatures"
+    },
+    "GetAgreementSignaturesByVersion": {
+      "Path": "agreements/{0}/signatures/{1}"
+    },
+    "GetCountryValidationRulesByCountry": {
+      "Path": "countryvalidationrules/{0}"
+    },
+    "GetAccountSetting": {
+      "Path": "accountsettings/{0}"
+    },
+    "UpdateAccountSetting": {
+      "Path": "accountsettings/{0}"
+    },
+    "CheckDomainAvailability": {
+      "Path": "domains/{0}"
+    },
+    "GetPartnerUsageSummary": {
+      "Path": "usagesummary"
+    },
+    "GetServiceIncidents": {
+      "Path": "serviceincidents/office"
+    },
     "GetCustomerUsers": {
       "Path": "customers/{0}/users",
       "Parameters": {
@@ -367,9 +547,13 @@
         "SortField": "sortField",
         "SortDirection": "sortDirection"
       },
-      "AdditionalHeaders": { "ContinuationToken": "MS-ContinuationToken" }
+      "AdditionalHeaders": {
+        "ContinuationToken": "MS-ContinuationToken"
+      }
     },
-    "GetCustomerRelationshipRequest": { "Path": "customers/relationshiprequests" },
+    "GetCustomerRelationshipRequest": {
+      "Path": "customers/relationshiprequests"
+    },
     "GetAuditRecordsRequest": {
       "Path": "auditrecords",
       "Parameters": {
@@ -378,7 +562,9 @@
         "EndDate": "endDate",
         "Size": "size"
       },
-      "AdditionalHeaders": { "ContinuationToken": "MS-ContinuationToken" }
+      "AdditionalHeaders": {
+        "ContinuationToken": "MS-ContinuationToken"
+      }
     },
     "GetAzureRateCard": {
       "Path": "ratecards/azure",
@@ -394,19 +580,43 @@
         "Region": "region"
       }
     },
-    "GetConfigurationPolicies": { "Path": "customers/{0}/policies" },
-    "CreateConfigurationPolicy": { "Path": "customers/{0}/policies" },
-    "GetConfigurationPolicy": { "Path": "customers/{0}/policies/{1}" },
-    "DeleteConfigurationPolicy": { "Path": "customers/{0}/policies/{1}" },
-    "UpdateConfigurationPolicy": { "Path": "customers/{0}/policies/{1}" },
-    "GetDeviceBatches": { "Path": "customers/{0}/deviceBatches" },
-    "GetDevices": { "Path": "customers/{0}/deviceBatches/{1}/devices" },
-    "AddDevicestoDeviceBatch": { "Path": "customers/{0}/deviceBatches/{1}/devices" },
-    "CreateDeviceBatch": { "Path": "customers/{0}/deviceBatches" },
-    "UpdateDevicesWithPolicies": { "Path": "customers/{0}/DevicePolicyUpdates" },
-    "DeleteDevice": { "Path": "customers/{0}/deviceBatches/{1}/devices/{2}" },
-    "UpdateDevice": { "Path": "customers/{0}/deviceBatches/{1}/devices/{2}" },
-    "GetBatchUploadStatus": { "Path": "customers/{0}/batchJobStatus/{1}" },
+    "GetConfigurationPolicies": {
+      "Path": "customers/{0}/policies"
+    },
+    "CreateConfigurationPolicy": {
+      "Path": "customers/{0}/policies"
+    },
+
+    "GetConfigurationPolicy": {
+      "Path": "customers/{0}/policies/{1}"
+    },
+    "DeleteConfigurationPolicy": {
+      "Path": "customers/{0}/policies/{1}"
+    },
+    "UpdateConfigurationPolicy": {
+      "Path": "customers/{0}/policies/{1}"
+    },
+    "GetDeviceBatches": {
+      "Path": "customers/{0}/deviceBatches"
+    },
+    "GetDevices": {
+      "Path": "customers/{0}/deviceBatches/{1}/devices"
+    },
+    "AddDevicestoDeviceBatch": {
+      "Path": "customers/{0}/deviceBatches/{1}/devices"
+    },
+    "CreateDeviceBatch": {
+      "Path": "customers/{0}/deviceBatches"
+    },
+    "UpdateDevicesWithPolicies": {
+      "Path": "customers/{0}/DevicePolicyUpdates"
+    },
+    "DeleteDevice": {
+      "Path": "customers/{0}/deviceBatches/{1}/devices/{2}"
+    },
+    "GetBatchUploadStatus": {
+      "Path": "customers/{0}/batchJobStatus/{1}"
+    },
     "GetPartnerRelationships": {
       "Path": "relationships",
       "Parameters": {
@@ -414,7 +624,9 @@
         "Filter": "filter"
       }
     },
-    "GetPartnerRelationshipsForCustomer": { "Path": "customers/{0}/relationships" },
+    "GetPartnerRelationshipsForCustomer": {
+      "Path": "customers/{0}/relationships"
+    },
     "GetAzureUtilizationRecords": {
       "Path": "customers/{0}/subscriptions/{1}/utilizations/azure",
       "Parameters": {
@@ -427,17 +639,33 @@
     },
     "SeekAzureUtilizationRecords": {
       "Path": "customers/{0}/subscriptions/{1}/utilizations/azure",
-      "Parameters": { "SeekOperation": "seek_operation" },
-      "AdditionalHeaders": { "ContinuationToken": "MS-ContinuationToken" }
+      "Parameters": {
+        "SeekOperation": "seek_operation"
+      },
+      "AdditionalHeaders": {
+        "ContinuationToken": "MS-ContinuationToken"
+      }
     },
-    "AddressValidation": { "Path": "validations/address" },
-    "CreateCart": { "Path": "customers/{0}/carts" },
-    "UpdateCart": { "Path": "customers/{0}/carts/{1}" },
-    "PlaceOrder": { "Path": "customers/{0}/carts/{1}/checkout" },
-    "GetCart": { "Path": "customers/{0}/carts/{1}" },
+    "AddressValidation": {
+      "Path": "validations/address"
+    },
+    "CreateCart": {
+      "Path": "customers/{0}/carts"
+    },
+    "UpdateCart": {
+      "Path": "customers/{0}/carts/{1}"
+    },
+    "PlaceOrder": {
+      "Path": "customers/{0}/carts/{1}/checkout"
+    },
+    "GetCart": {
+      "Path": "customers/{0}/carts/{1}"
+    },
     "GetEntitlements": {
       "Path": "customers/{0}/entitlements",
-      "Parameters": { "EntitlementType": "entitlementType" }
+      "Parameters": {
+        "EntitlementType": "entitlementType"
+      }
     }
   }
 }

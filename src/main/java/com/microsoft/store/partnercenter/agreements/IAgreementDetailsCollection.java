@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="IAgreementMetaDataCollection.java" company="Microsoft">
+// <copyright file="IAgreementDetailsCollection.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -10,9 +10,9 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
 
 /**
- * Encapsulates the operations on the Agreement metadata collection.
+ * Encapsulates the operations on the agreement metadata collection.
  */
-public interface IAgreementMetaDataCollection
+public interface IAgreementDetailsCollection
 {
     /***
      * Retrieves all current agreement metadata.

@@ -6,8 +6,8 @@
 
 package com.microsoft.store.partnercenter;
 
-import com.microsoft.store.partnercenter.agreements.AgreementMetaDataCollectionOperations;
-import com.microsoft.store.partnercenter.agreements.IAgreementMetaDataCollection;
+import com.microsoft.store.partnercenter.agreements.AgreementDetailsCollectionOperations;
+import com.microsoft.store.partnercenter.agreements.IAgreementDetailsCollection;
 import com.microsoft.store.partnercenter.analytics.IPartnerAnalyticsCollection;
 import com.microsoft.store.partnercenter.analytics.PartnerAnalyticsCollectionOperations;
 import com.microsoft.store.partnercenter.auditrecords.AuditRecordsCollection;
@@ -146,7 +146,7 @@ public class PartnerOperations
 	/***
 	 * The agreement metadata collection operations.
 	 */
-	private IAgreementMetaDataCollection agreements;
+	private IAgreementDetailsCollection agreements;
 
 	/**
 	 * Initializes a new instance of the {@link #PartnerOperations} class.
@@ -420,11 +420,11 @@ public class PartnerOperations
 	 * Gets the agreement metadata operations.
 	 */
 	@Override
-	public IAgreementMetaDataCollection getAgreements()
+	public IAgreementDetailsCollection getAgreements()
 	{
 		if ( this.agreements == null )
 		{
-			this.agreements = new AgreementMetaDataCollectionOperations( this );
+			this.agreements = new AgreementDetailsCollectionOperations( this );
 		}
 
 		return this.agreements;

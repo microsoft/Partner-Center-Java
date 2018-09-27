@@ -13,8 +13,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
-import com.microsoft.store.partnercenter.agreements.AgreementCollectionOperations;
-import com.microsoft.store.partnercenter.agreements.IAgreementCollection;
+import com.microsoft.store.partnercenter.agreements.CustomerAgreementCollectionOperations;
+import com.microsoft.store.partnercenter.agreements.ICustomerAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.CustomerAnalyticsCollectionOperations;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
 import com.microsoft.store.partnercenter.carts.CartCollectionOperations;
@@ -81,7 +81,7 @@ public class CustomerOperations
     /**
      * The customer agreements operations.
      */
-    private IAgreementCollection agreements;
+    private ICustomerAgreementCollection agreements;
 
     /**
      * The customer orders operations.
@@ -217,11 +217,11 @@ public class CustomerOperations
      * @return The customer accepted agreements.
      */
     @Override
-    public IAgreementCollection getAgreements()
+    public ICustomerAgreementCollection getAgreements()
     {
         if ( this.agreements == null )
         {
-            this.agreements = new AgreementCollectionOperations( this.getPartner(), this.customerId );
+            this.agreements = new CustomerAgreementCollectionOperations( this.getPartner(), this.customerId );
         }
         return this.agreements;
     }

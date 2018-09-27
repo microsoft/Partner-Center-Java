@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="IAgreementCollection.java" company="Microsoft">
+// <copyright file="ICustomerAgreementCollection.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.models.agreements.Agreement;
 /**
  * Encapsulates the operations on the Agreement collection.
  */
-public interface IAgreementCollection
+public interface ICustomerAgreementCollection
         extends IPartnerComponentString,
         IEntireEntityCollectionRetrievalOperations<Agreement, ResourceCollection<Agreement>>
 {

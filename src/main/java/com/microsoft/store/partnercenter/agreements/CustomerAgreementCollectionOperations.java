@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="AgreementCollectionOperations.java" company="Microsoft">
+// <copyright file="CustomerAgreementCollectionOperations.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -21,16 +21,16 @@ import java.util.Locale;
 /**
  * Implements the operations on an Agreement collection.
  */
-public class AgreementCollectionOperations
+public class CustomerAgreementCollectionOperations
         extends BasePartnerComponentString
-        implements IAgreementCollection
+        implements ICustomerAgreementCollection
 {
     /**
-     * Initializes a new instance of the {@link #AgreementCollectionOperations} class.
+     * Initializes a new instance of the {@link #CustomerAgreementCollectionOperations} class.
      *
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public AgreementCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerAgreementCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {
         super( rootPartnerOperations, customerId );
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
@@ -56,7 +56,7 @@ public class AgreementCollectionOperations
 
         return new PartnerServiceProxy<Agreement, Agreement>( new TypeReference<Agreement>() {}, this.getPartner(),
                 MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
-                        .get( "CreateAgreement" ).getPath(), this.getContext(), Locale.US ) ).post( newAgreement );
+                        .get( "CreateCustomerAgreement" ).getPath(), this.getContext(), Locale.US ) ).post( newAgreement );
     }
 
     /***
@@ -70,7 +70,7 @@ public class AgreementCollectionOperations
         return new PartnerServiceProxy<Agreement, ResourceCollection<Agreement>>(
                 new TypeReference<ResourceCollection<Agreement>>() {}, this.getPartner(),
                 MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
-                                .get( "GetAgreements" ).getPath(),
+                                .get( "GetCustomerAgreements" ).getPath(),
                         this.getContext(), Locale.US ) ).get();
     }
 }
