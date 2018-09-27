@@ -6,7 +6,8 @@
 
 package com.microsoft.store.partnercenter.models.carts;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /***
  * Types of cart error code.
@@ -15,60 +16,72 @@ public enum CartErrorCode {
     /***
      * Default value
      */
-    @JsonProperty("unknown")
-    UNKNOWN,
+    UNKNOWN(0),
 
     /***
      * Currency is not supported for given market
      */
-    @JsonProperty("currency_is_not_supported")
-    CURRENCY_IS_NOT_SUPPORTED,
+    CURRENCY_IS_NOT_SUPPORTED(10000),
 
     /***
      * Catalog item id is not valid
      */
-    @JsonProperty("catalog_item_id_is_not_valid")
-    CATALOG_ITEM_ID_IS_NOT_VALID,
+    CATALOG_ITEM_ID_IS_NOT_VALID(10001),
 
     /***
      * Not enough quota available
      */
-    @JsonProperty("quota_not_available")
-    QUOTA_NOT_AVAILABLE,
+    QUOTA_NOT_AVAILABLE(10002),
 
     /***
      * Inventory is not available for selected offer
      */
-    @JsonProperty("inventory_not_available")
-    INVENTORY_NOT_AVAILABLE,
+    INVENTORY_NOT_AVAILABLE(10003),
 
     /***
      * Setting participants is not supported for Partner
      */
-    @JsonProperty("participants_is_not_supported_for_partner")
-    PARTICIPANTS_IS_NOT_SUPPORTED_FOR_PARTNER,
+    PARTICIPANTS_IS_NOT_SUPPORTED_FOR_PARTNER(10004),
 
     /***
      * Unable to process cart line item.
      */
-    @JsonProperty("unable_to_process_cart_line_item")
-    UNABLE_TO_PROCESS_CART_LINE_ITEM,
+    UNABLE_TO_PROCESS_CART_LINE_ITEM(10006),
 
     /***
      * Subscription is not valid.
      */
-    @JsonProperty("subscription_is_not_valid")
-    SUBSCRIPTION_IS_NOT_VALID,
+    SUBSCRIPTION_IS_NOT_VALID(10007),
 
     /***
      * Subscription is not enabled for RI purchase.
      */
-    @JsonProperty("subscription_is_not_enabled_for_ri")
-    SUBSCRIPTION_IS_NOT_ENABLED_FOR_RI,
+    SUBSCRIPTION_IS_NOT_ENABLED_FOR_RI(10008),
 
     /***
      * The sandbox limit has been exceeded.
      */
-    @JsonProperty("sandbox_limit_exceeded")
-    SANDBOX_LIMIT_EXCEEDED
+    SANDBOX_LIMIT_EXCEEDED(10009);
+
+    private final int value;
+
+    CartErrorCode(final int value) {
+        this.value = value;
+    }
+
+    @JsonCreator
+    public static CartErrorCode valueOf(final int i) {
+        for (final CartErrorCode item : CartErrorCode.values()) {
+            if (item.intValue() == i) {
+                return item;
+            }
+        }
+
+        return null;
+    }
+
+    @JsonValue
+    public int intValue() {
+        return value;
+    }
 }
