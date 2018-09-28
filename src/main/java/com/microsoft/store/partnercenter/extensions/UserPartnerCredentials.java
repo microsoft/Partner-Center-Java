@@ -16,24 +16,24 @@ import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
 /**
- * Partner service credentials based on azure active directory user credentials.
+ * Partner service credentials based on Azure Active Directory user credentials.
  */
 public class UserPartnerCredentials
     extends BasePartnerCredentials
 {
     /**
-     * The delegate used to refresh the azure active directory token.
+     * The delegate used to refresh the Azure Active Directory token.
      */
     private final IAadLoginHandler tokenRefresher;
 
     /**
      * Initializes a new instance of the {@link #UserPartnerCredentials} class.
      * 
-     * @param clientId The client id of the application in azure active directory.
-     * @param aadAuthenticationToken The azure active directory token.
-     * @param aadTokenRefresher An optional delegate which will be called when the azure active directory token expires
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param aadAuthenticationToken The Azure Active Directory token.
+     * @param aadTokenRefresher An optional delegate which will be called when the Azure Active Directory token expires
      *            and can no longer be used to generate the partner credentials. This delegate should return an up to
-     *            date azure active directory token.
+     *            date Azure Active Directory token.
      */
     public UserPartnerCredentials( String clientId, AuthenticationToken aadAuthenticationToken )
     {

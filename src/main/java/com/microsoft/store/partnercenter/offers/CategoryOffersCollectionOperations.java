@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.offers;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
@@ -43,45 +40,47 @@ public class CategoryOffersCollectionOperations
 	@Override
 	public ResourceCollection<Offer> get() 
 	{
-        IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
-                new PartnerServiceProxy<Offer, ResourceCollection<Offer>>( new TypeReference<ResourceCollection<Offer>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath(),
-                                                            Locale.US ) );
+		IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
+				new PartnerServiceProxy<Offer, ResourceCollection<Offer>>(
+					new TypeReference<ResourceCollection<Offer>>()
+					{
+					}, 
+				this.getPartner(),
+				PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath());
 
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "OfferCategoryId" ),
-                                                                                        this.getContext().getItem1() ) );
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
-                																		this.getContext().getItem2() ) );
-        return partnerServiceProxy.get();
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "OfferCategoryId" ),
+																						this.getContext().getItem1() ) );
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
+																						this.getContext().getItem2() ) );
+		return partnerServiceProxy.get();
 	}
 
 	/***
 	 * Retrieves a subset of offers in the given offer category.
 	 * 
-     * @param name="offset": The starting index.
-     * @param name="size": The maximum number of offers to return.
-     * @return: The requested segment of the offers in the given offer category.
+	 * @param name="offset": The starting index.
+	 * @param name="size": The maximum number of offers to return.
+	 * @return: The requested segment of the offers in the given offer category.
 	 */
 	@Override
 	public ResourceCollection<Offer> get(int offset, int size)
 	{
-        IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
-                new PartnerServiceProxy<Offer, ResourceCollection<Offer>>( new TypeReference<ResourceCollection<Offer>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath(),
-                                                            Locale.US ) );
+		IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
+				new PartnerServiceProxy<Offer, ResourceCollection<Offer>>(new TypeReference<ResourceCollection<Offer>>()
+				{
+				}, 
+				this.getPartner(), 
+				PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath());
 
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "OfferCategoryId" ),
-                                                                                        this.getContext().getItem1() ) );
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
-                																		this.getContext().getItem2() ) );
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Offset" ),
-																						new Integer( offset ).toString() ) );
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Size" ),
-        																				new Integer( size ).toString() ) );
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "OfferCategoryId" ),
+																						this.getContext().getItem1() ) );
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
+																						this.getContext().getItem2() ) );
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Offset" ),
+																						Integer.valueOf( offset ).toString() ) );
+		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Size" ),
+																						Integer.valueOf( size ).toString() ) );
 
-        return partnerServiceProxy.get();       
+		return partnerServiceProxy.get();       
 	}
-
 }

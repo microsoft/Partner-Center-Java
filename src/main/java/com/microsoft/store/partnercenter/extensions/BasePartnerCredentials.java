@@ -22,7 +22,7 @@ public abstract class BasePartnerCredentials
     /**
      * Initializes a new instance of the {@link #BasePartnerCredentials} class.
      * 
-     * @param clientId The azure active directory client Id.
+     * @param clientId The Azure Active Directory client Id.
      */
     public BasePartnerCredentials( String clientId )
     {
@@ -53,7 +53,7 @@ public abstract class BasePartnerCredentials
     }
 
     /**
-     * Gets or sets the azure active directory token.
+     * Gets or sets the Azure Active Directory token.
      */
     private AuthenticationToken __AADToken;
 

@@ -16,7 +16,7 @@ public class PartnerUsageSummary
     extends UsageSummaryBase
 {
     /**
-     * Gets or sets the azure active directory tenant Id of the partner this usage summary applies to.
+     * Gets or sets the Azure Active Directory tenant Id of the partner this usage summary applies to.
      */
     private String __ResourceId;
 

@@ -40,8 +40,8 @@ public class PartnerCredentials
     /**
      * Generates partner credentials for third party applications using application credentials.
      *
-     * @param clientId The client id of the application in azure active directory.
-     * @param applicationSecret The application secret with azure active directory.
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param applicationSecret The application secret with Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      * @return The partner service credentials.
      */
@@ -64,13 +64,13 @@ public class PartnerCredentials
     }
 
     /**
-     * Generates partner credentials for third party applications using a user azure active directory token.
+     * Generates partner credentials for third party applications using a user Azure Active Directory token.
      * 
-     * @param clientId The client id of the application in azure active directory.
-     * @param authenticationToken The azure active directory token.
-     * @param loginHandler An optional delegate which will be called when the azure active directory token expires and
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param authenticationToken The Azure Active Directory token.
+     * @param loginHandler An optional delegate which will be called when the Azure Active Directory token expires and
      *            can no longer be used to generate the partner credentials. This delegate should return an up to date
-     *            azure active directory token.
+     *            Azure Active Directory token.
      * @return The partner service credentials.
      */
     public IPartnerCredentials generateByUserCredentials( String clientId,
@@ -86,8 +86,8 @@ public class PartnerCredentials
      * Generates partner credentials for third party applications using application credentials with the provided AAD
      * overrides.
      *
-     * @param clientId The client id of the application in azure active directory.
-     * @param applicationSecret The application secret with azure active directory.
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param applicationSecret The application secret with Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      * @param aadAuthorityEndpoint The active directory authority endpoint.
      * @param graphEndpoint The AAD graph API endpoint.

@@ -10,81 +10,81 @@ import org.joda.time.DateTime;
 
 public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 {
-    /***
-     * Gets or sets the partner's azure active directory tenant Id.
-     */
+	/***
+	 * Gets or sets the partner's Azure Active Directory tenant Id.
+	 */
 	private String __PartnerId;
 
-    /***
-     * Gets or sets the partner name.
-     */
-    private String __PartnerName;
+	/***
+	 * Gets or sets the partner name.
+	 */
+	private String __PartnerName;
 
-    /***
-     * Gets or sets the customer company name.
-     */
-    private String __CustomerCompanyName;
+	/***
+	 * Gets or sets the customer company name.
+	 */
+	private String __CustomerCompanyName;
 
-    /***
-     * Gets or sets the partner's Id. For direct reseller, this is the partner's MPN Id.
-     * For indirect reseller, this is the VAR's MPN Id.
-     */
-    private int __PartnerMpnId;
+	/***
+	 * Gets or sets the partner's Id. For direct reseller, this is the partner's MPN Id.
+	 * For indirect reseller, this is the VAR's MPN Id.
+	 */
+	private int __PartnerMpnId;
 
-    /***
-     * Gets or sets the invoice number.
-     */
-    private String __InvoiceNumber;
+	/***
+	 * Gets or sets the invoice number.
+	 */
+	private String __InvoiceNumber;
 
-    /***
-     * Gets or sets the date charge begins.
-     */
-    private DateTime __ChargeStartDate;
+	/***
+	 * Gets or sets the date charge begins.
+	 */
+	private DateTime __ChargeStartDate;
 
-    /***
-     * Gets or sets the date charge ends.
-     */
-    private DateTime __ChargeEndDate;
+	/***
+	 * Gets or sets the date charge ends.
+	 */
+	private DateTime __ChargeEndDate;
 
-    /***
-     * Gets or sets the subscription Id.
-     */
-    private String __SubscriptionId;
+	/***
+	 * Gets or sets the subscription Id.
+	 */
+	private String __SubscriptionId;
 
-    /***
-     * Gets or sets the subscription name.
-     */
-    private String __SubscriptionName;
+	/***
+	 * Gets or sets the subscription name.
+	 */
+	private String __SubscriptionName;
 
-    /***
-     * Gets or sets the description of the subscription.
-     */
-    private String __SubscriptionDescription;
+	/***
+	 * Gets or sets the description of the subscription.
+	 */
+	private String __SubscriptionDescription;
 
-    /***
-     * Gets or sets the order Id.
-     */
-    private String __OrderId;
+	/***
+	 * Gets or sets the order Id.
+	 */
+	private String __OrderId;
 
-    /***
-     * Gets or sets the service name. Example: Azure Data Service.
-     */
-    private String __ServiceName;
+	/***
+	 * Gets or sets the service name. Example: Azure Data Service.
+	 */
+	private String __ServiceName;
 
-    /***
-     * Gets or sets the resource name. Example: Database (GB/month).
-     */
-    private String __ResourceName;
+	/***
+	 * Gets or sets the resource name. Example: Database (GB/month).
+	 */
+	private String __ResourceName;
 
-    /***
-     * Gets or sets the region associated with the resource instance.
-     */
-    private String __Region;
+	/***
+	 * Gets or sets the region associated with the resource instance.
+	 */
+	private String __Region;
 
-    /***
-     * Gets or sets the total units consumed.
-     */
-    private int __ConsumedQuantity;
+	/***
+	 * Gets or sets the total units consumed.
+	 */
+	private int __ConsumedQuantity;
 
 	/**
 	 * @return the __PartnerId
@@ -301,7 +301,7 @@ public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 	 * 
 	 *  @return: The billing provider.
 	 */
-    @Override
+	@Override
 	public BillingProvider getBillingProvider() {
 		return BillingProvider.AzureDataMarket;
 	}
