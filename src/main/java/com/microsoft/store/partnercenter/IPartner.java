@@ -138,5 +138,5 @@ public interface IPartner
     /***
      * Gets the agreement metadata operations.
      */
-    IAgreementDetailsCollection getAgreements();
+    IAgreementDetailsCollection getAgreementDetails();
 }

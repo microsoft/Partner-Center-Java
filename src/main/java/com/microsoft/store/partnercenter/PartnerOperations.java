@@ -420,7 +420,7 @@ public class PartnerOperations
 	 * Gets the agreement metadata operations.
 	 */
 	@Override
-	public IAgreementDetailsCollection getAgreements()
+	public IAgreementDetailsCollection getAgreementDetails()
 	{
 		if ( this.agreements == null )
 		{
