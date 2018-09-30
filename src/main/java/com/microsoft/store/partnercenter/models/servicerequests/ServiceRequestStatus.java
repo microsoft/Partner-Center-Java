@@ -13,14 +13,23 @@ public enum ServiceRequestStatus
     /**
      * Describes service request status Default Service Request Status
      */
-    @JsonProperty( "none" ) NONE, /**
-                                   * Service Request Status Open
-                                   */
-    @JsonProperty( "open" ) OPEN, /**
-                                   * Service Request Status Closed
-                                   */
-    @JsonProperty( "closed" ) CLOSED, /**
-                                       * Service Request Status Action Required
-                                       */
-    @JsonProperty( "attention_needed" ) ATTENTION_NEEDED
+    @JsonProperty( "none" ) 
+    NONE, 
+    
+    /**
+     * Service Request Status Open
+     */
+    @JsonProperty( "open" ) 
+    OPEN, 
+    
+    /**
+     * Service Request Status Closed
+     */
+    @JsonProperty( "closed" ) CLOSED, 
+    
+    /**
+     * Service Request Status Action Required
+     */
+    @JsonProperty( "attention_needed" ) 
+    ATTENTION_NEEDED
 }

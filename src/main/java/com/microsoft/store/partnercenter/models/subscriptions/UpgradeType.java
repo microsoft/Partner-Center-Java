@@ -13,11 +13,17 @@ public enum UpgradeType
     /**
      * Represents a form of upgrade for a subscription Default value
      */
-    @JsonProperty( "none" ) NONE, /**
-                                   * Only subscription upgrade
-                                   */
-    @JsonProperty( "upgrade_only" ) UPGRADE_ONLY, /**
-                                                   * Subscription upgrade and license transfer
-                                                   */
-    @JsonProperty( "upgrade_with_license_transfer" ) UPGRADE_WITH_LICENSE_TRANSFER
+    @JsonProperty( "none" ) 
+    NONE, 
+    
+    /**
+     * Only subscription upgrade
+     */
+    @JsonProperty( "upgrade_only" ) UPGRADE_ONLY, 
+    
+    /**
+     * Subscription upgrade and license transfer
+     */
+    @JsonProperty( "upgrade_with_license_transfer" ) 
+    UPGRADE_WITH_LICENSE_TRANSFER
 }

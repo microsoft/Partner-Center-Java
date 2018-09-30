@@ -100,7 +100,7 @@ class AgreementTest
     @Test
     void getType()
     {
-        AgreementType type = AgreementType.MicrosoftCloudAgreement;
+        AgreementType type = AgreementType.MICROSOFT_CLOUD_AGREEMENT;
 
         agreement.setType(type);
 

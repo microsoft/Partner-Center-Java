@@ -12,20 +12,24 @@ public enum VettingStatus {
     /***
      * None vetting status
      */
-	@JsonProperty( "none" ) NONE,
+    @JsonProperty( "none" ) 
+    NONE,
 
     /***
      * Pending vetting status
      */
-	@JsonProperty( "pending" ) PENDING,
+    @JsonProperty( "pending" ) 
+    PENDING,
 
     /***
      * Authorized vetting status
      */
-	@JsonProperty( "authorized" ) AUTHORIZED,
+    @JsonProperty( "authorized" ) 
+    AUTHORIZED,
 
     /***
      * Rejected vetting status
      */
-	@JsonProperty( "rejected" ) REJECTED
+    @JsonProperty( "rejected" ) 
+    REJECTED
 }

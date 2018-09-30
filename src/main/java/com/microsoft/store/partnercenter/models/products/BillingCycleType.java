@@ -16,29 +16,29 @@ public enum BillingCycleType {
      * Default value if not known
      */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Indicates that the partner will be charged monthly.
      */
     @JsonProperty("monthly")
-    Monthly,
+    MONTHLY,
 
     /***
      * Indicates that the partner will be charged annuallu.
      */
     @JsonProperty("annual")
-    Annual,
+    ANNUAL,
 
     /***
      * Indicates that the partner will not be charged. This value is used for trial offers.
      */
     @JsonProperty("none")
-    None,
+    NONE,
 
     /***
      * Indicates that the partner will be charged one time. This value is used for modern product SKUs.
      */
     @JsonProperty("one_time")
-    OneTime
+    ONE_TIME
 }

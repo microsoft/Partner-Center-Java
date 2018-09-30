@@ -13,14 +13,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum ConversionErrorCode {
     @JsonProperty("other")
-    Other,
+    OTHER,
 
     @JsonProperty("conversions_not_found")
-    ConversionsNotFound,
+    CONVERSIONS_NOT_FOUND,
 
     @JsonProperty("pending")
-    Pending,
+    PENDING,
 
     @JsonProperty("failed")
-    Failed
+    FAILED
 }

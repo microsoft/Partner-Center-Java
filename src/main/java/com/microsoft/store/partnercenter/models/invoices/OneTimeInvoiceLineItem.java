@@ -196,7 +196,7 @@ public class OneTimeInvoiceLineItem
      */
     public BillingProvider getBillingProvider()
     {
-        return BillingProvider.OneTime;
+        return BillingProvider.ONE_TIME;
     }
 
     /**

@@ -13,13 +13,18 @@ public enum ContractType
     /**
      * Describes the type of contract Refers to a contract which provides subscription for the order item placed
      */
-    @JsonProperty( "subscription" ) SUBSCRIPTION,
+    @JsonProperty( "subscription" ) 
+    SUBSCRIPTION,
+    
     /**
      * Refers to a contract which provides a product key result for the order item placed
      */
-    @JsonProperty( "productkey" ) PRODUCTKEY,
+    @JsonProperty( "productkey" ) 
+    PRODUCTKEY,
+    
     /**
      * Refers to a contract which provides Redemption code result for the order item placed.
      */
-    @JsonProperty( "redemptioncode" ) REDEMPTIONCODE
+    @JsonProperty( "redemptioncode" ) 
+    REDEMPTIONCODE
 }

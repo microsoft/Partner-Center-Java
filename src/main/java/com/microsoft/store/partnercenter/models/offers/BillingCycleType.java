@@ -16,30 +16,30 @@ public enum BillingCycleType {
 	 * Enum initializer
 	 */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Indicates that the partner will be charged monthly for the subscription
      */
     @JsonProperty("monthly")
-    Monthly,
+    MONTHLY,
 
     /***
      * Indicates that the partner will be charged annually for the subscription.
      */
     @JsonProperty("annual")
-    Annual,
+    ANNUAL,
 
     /***
      * Indicates that the partner will be charged annually for the subscription.
      */
     @JsonProperty("none")
-    none,
+    NONE,
 
     /***
      * Indicates that the partner will be charged one-time This value does not apply
      * to all products.
      */
     @JsonProperty("one_time")
-    OneTime
+    ONE_TIME
 }

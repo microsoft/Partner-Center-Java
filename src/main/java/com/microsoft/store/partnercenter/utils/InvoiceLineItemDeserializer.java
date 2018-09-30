@@ -49,24 +49,24 @@ public class InvoiceLineItemDeserializer
 
         if ( invoiceLineItemType.equals( "usage_line_items" ) )
         {
-            if ( billingProvider.equalsIgnoreCase( BillingProvider.Azure.toString() ) )
+            if ( billingProvider.equalsIgnoreCase( BillingProvider.AZURE.toString() ) )
             {
                 target = mapper.readValue( parser, DailyUsageLineItem.class );
             }
         }
         else if ( invoiceLineItemType.equals( "billing_line_items" ) )
         {
-            if ( billingProvider.equalsIgnoreCase( BillingProvider.Azure.toString()))
+            if ( billingProvider.equalsIgnoreCase( BillingProvider.AZURE.toString()))
             {
                 reader = mapper.readerFor(UsageBasedLineItem.class);
                 target = reader.readValue(jsonNode);
             }
-            else if ( billingProvider.equalsIgnoreCase(BillingProvider.Office.toString()))
+            else if ( billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
             {
                 reader = mapper.readerFor(LicenseBasedLineItem.class);
                 target = reader.readValue(jsonNode);
             }
-            else if ( billingProvider.equalsIgnoreCase(BillingProvider.OneTime.toString()))
+            else if ( billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.toString()))
             {
                 reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
                 target = reader.readValue(jsonNode);

@@ -16,11 +16,11 @@ public enum ParticipantType {
      * Default value if not known
      */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * An indirect reseller with a transaction role.
      */
     @JsonProperty("transaction_reseller")
-    TransactionReseller
+    TRANSACTION_RESELLER
 }

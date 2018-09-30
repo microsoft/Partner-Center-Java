@@ -14,5 +14,5 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public enum PartnerRelationshipSearchField 
 {
     @JsonProperty("name")
-    Name
+    NAME
 }

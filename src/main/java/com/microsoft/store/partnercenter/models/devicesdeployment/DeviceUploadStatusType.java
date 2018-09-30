@@ -16,29 +16,29 @@ public enum DeviceUploadStatusType {
 	 *  Should never happen.
 	 */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Batch is queued.
      */
     @JsonProperty("queued")
-    Queued,
+    QUEUED,
 
     /***
      * Batch is processing.
      */
     @JsonProperty("processing")
-    Processing,
+    PROCESSING,
 
     /***
      * Batch is complete.
      */
     @JsonProperty("finished")
-    Finished,
+    FINISHED,
 
     /***
      * Batch is complete with an error.
      */
     @JsonProperty("finished_with_errors")
-    FinishedWithErrors
+    FINISHED_WITH_ERRORS
 }

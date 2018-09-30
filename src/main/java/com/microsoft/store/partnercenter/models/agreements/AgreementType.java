@@ -6,13 +6,16 @@
 
 package com.microsoft.store.partnercenter.models.agreements;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Enumeration to represent type of Agreements
  */
 public enum AgreementType
 {
     /***
-     * Microsoft Cloud agreement
+     * Microsoft cloud agreement type.
      */
-    MicrosoftCloudAgreement
+    @JsonProperty("MicrosoftCloudAgreement")
+    MICROSOFT_CLOUD_AGREEMENT
 }

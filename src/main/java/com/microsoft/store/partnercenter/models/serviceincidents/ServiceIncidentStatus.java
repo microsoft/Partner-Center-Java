@@ -16,21 +16,24 @@ public enum ServiceIncidentStatus
     /***
      * Default status - normal.
      */
-	@JsonProperty( "normal" ) NORMAL,
+    @JsonProperty( "normal" ) 
+    NORMAL,
 
     /***
      * Informational status.
      */
-	@JsonProperty( "information" ) INFORMATION,
+    @JsonProperty( "information" ) 
+    INFORMATION,
 
     /***
      * Warning status.
      */
-	@JsonProperty( "warning" ) WARNING,
+    @JsonProperty( "warning" ) 
+    WARNING,
 
     /***
      * Critical status.
      */
-	@JsonProperty( "critical" ) CRITICAL
-
+    @JsonProperty( "critical" ) 
+    CRITICAL
 }

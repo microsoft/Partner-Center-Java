@@ -16,23 +16,23 @@ public enum OperationStatus {
      * Indicates success of the operation
      */
     @JsonProperty("succeeded")
-    Succeeded,
+    SUCCEEDED,
 
     /***
      * Indicates failure of the operation
      */
     @JsonProperty("failed")
-    Failed,
+    FAILED,
 
     /***
      * Indicates that the operation is still in progress
      */
     @JsonProperty("progress")
-    Progress,
+    PROGRESS,
 
     /***
      * Indicates that the operation is declined
      */
     @JsonProperty("decline")
-    Decline
+    DECLINE
 }

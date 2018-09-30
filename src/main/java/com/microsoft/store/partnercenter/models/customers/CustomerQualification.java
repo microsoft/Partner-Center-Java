@@ -18,15 +18,18 @@ public enum CustomerQualification
     /***
      * No Qualification
      */
-	@JsonProperty( "none" ) NONE,
+    @JsonProperty( "none" ) 
+    NONE,
 
     /***
      * Education Qualification
      */
-    @JsonProperty( "education" ) EDUCATION,
+    @JsonProperty( "education" ) 
+    EDUCATION,
     
     /***
      *  Non-Profit / Charity Qualification
      */
-    @JsonProperty( "nonprofit" ) NONPROFIT
+    @JsonProperty( "nonprofit" ) 
+    NONPROFIT
 }

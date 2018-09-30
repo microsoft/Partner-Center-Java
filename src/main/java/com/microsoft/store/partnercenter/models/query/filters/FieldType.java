@@ -13,14 +13,23 @@ public enum FieldType
     /**
      * Enumerates supported field types. String Type
      */
-    @JsonProperty( "String" ) STRING, /**
-             * Integer Type
-             */
-    @JsonProperty( "Integer" ) INTEGER, /**
-              * Enum Type
-              */
-    @JsonProperty( "Enum" ) ENUM, /**
-           * DateTimeOffset Type
-           */
+    @JsonProperty( "String" ) 
+    STRING, 
+    
+    /**
+     * Integer Type
+     */
+    @JsonProperty( "Integer" ) 
+    INTEGER, 
+    
+    /**
+     * Enum Type
+     */
+    @JsonProperty( "Enum" ) 
+    ENUM, 
+    
+    /**
+     * DateTimeOffset Type
+     */
     @JsonProperty( "DateTimeOffset" ) DATE_TIME_OFFSET
 }

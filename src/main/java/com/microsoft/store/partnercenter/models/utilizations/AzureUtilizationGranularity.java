@@ -17,11 +17,11 @@ public enum AzureUtilizationGranularity
 	 * Daily utilization.
 	 */
     @JsonProperty("daily")
-	Daily,
+	DAILY,
 	
 	/***
 	 * Hourly utilization.
 	 */
     @JsonProperty("hourly")
-	Hourly
+	HOURLY
 }

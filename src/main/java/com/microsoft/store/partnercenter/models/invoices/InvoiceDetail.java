@@ -34,7 +34,7 @@ public class InvoiceDetail
     /**
      * Gets or sets the billing provider
      */
-    private BillingProvider __BillingProvider = BillingProvider.None;
+    private BillingProvider __BillingProvider = BillingProvider.NONE;
 
     public BillingProvider getBillingProvider()
     {

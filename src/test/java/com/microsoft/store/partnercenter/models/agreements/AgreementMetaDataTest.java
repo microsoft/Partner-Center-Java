@@ -46,7 +46,7 @@ class AgreementMetaDataTest
     @Test
     void getAgreementType()
     {
-        AgreementType agreementType = AgreementType.MicrosoftCloudAgreement;
+        AgreementType agreementType = AgreementType.MICROSOFT_CLOUD_AGREEMENT;
 
         agreementMetaData.setAgreementType(agreementType);
 

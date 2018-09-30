@@ -11,17 +11,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /***
  * User state
  */
-public enum UserState {
+public enum UserState 
+{
 	 /***
 	  * Active user.
 	  */
 	 @JsonProperty("active")
-	 Active,
+	 ACTIVE,
 
 	 /***
 	  * Inactive user.
 	  */
 	 @JsonProperty("inactive")
-	 Inactive
-
+	 INACTIVE
 }

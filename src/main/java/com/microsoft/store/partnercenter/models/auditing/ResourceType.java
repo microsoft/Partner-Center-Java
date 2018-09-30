@@ -17,47 +17,47 @@ public enum ResourceType {
      * Customer Resource
      */
     @JsonProperty("customer")
-    Customer,
+    CUSTOMER,
 
     /***
      * Customer User
      */
     @JsonProperty("customer_user")
-    CustomerUser,
+    CUSTOMER_USER,
 
     /***
      * Order Resource
      */
     @JsonProperty("order")
-    Order,
+    ORDER,
 
     /***
      * Subscription Resource
      */
     @JsonProperty("subscription")
-    Subscription,
+    SUBSCRIPTION,
 
     /***
      * License Resource
      */
     @JsonProperty("license")
-    License,
+    LICENSE,
 
     /***
      * Third party add on Resource
      */
     @JsonProperty("third_party_add_on")
-    ThirdPartyAddOn,
+    THIRD_PARTY_ADD_ON,
 
     /***
      * MPN association Resource
      */
     @JsonProperty("mpn_association")
-    MpnAssociation,
+    MPN_ASSOCIATION,
 
     /***
      * Transfer Resource
      */
     @JsonProperty("transfer")
-    Transfer
+    TRANSFER
 }

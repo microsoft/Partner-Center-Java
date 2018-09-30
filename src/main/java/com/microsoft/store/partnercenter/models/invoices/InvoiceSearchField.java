@@ -16,5 +16,5 @@ public enum InvoiceSearchField {
      * The invoice date.
      */
     @JsonProperty("invoice_date")
-    InvoiceDate
+    INVOICE_DATE
 }

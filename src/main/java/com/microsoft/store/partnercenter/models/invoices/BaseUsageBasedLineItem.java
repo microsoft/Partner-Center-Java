@@ -370,6 +370,6 @@ public abstract class BaseUsageBasedLineItem
      */
     public BillingProvider getBillingProvider()
     {
-        return BillingProvider.Azure;
+        return BillingProvider.AZURE;
     }
 }

@@ -29,7 +29,7 @@ public enum MessageType
      * Message center message.
      */
     @JsonProperty( "message_center" ) 
-    MESSAGECENTER,
+    MESSAGE_CENTER,
 	
     /***
      * All types.

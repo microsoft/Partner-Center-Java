@@ -13,30 +13,36 @@ public enum CustomerPartnerRelationship
     /**
      *  Unknown. Used for initialization.
      */
-    @JsonProperty( "unknown" ) UNKNWON, 
+    @JsonProperty( "unknown" ) 
+    UNKNWON, 
     
     /**
      * None. Used to remove reseller relationship between the customer and partner.
      */
-    @JsonProperty( "none" ) NONE,
+    @JsonProperty( "none" ) 
+    NONE,
     
     /**
      * The reseller relationship
      */
-    @JsonProperty( "reseller" ) RESELLER,
+    @JsonProperty( "reseller" ) 
+    RESELLER,
     
     /**
      * The advisor relationship
      */
-    @JsonProperty( "advisor" ) ADVISOR,
+    @JsonProperty( "advisor" ) 
+    ADVISOR,
     
     /**
      * Indicates that the partner is a syndication partner of the customer.
      */
-    @JsonProperty( "syndication" ) SYNDICATION,
+    @JsonProperty( "syndication" ) 
+    SYNDICATION,
     
     /**
      * Indicates that the partner is a Microsoft Support agent for the customer.
      */
-    @JsonProperty( "microsoftSupport" ) MICROSOFTSUPPORT
+    @JsonProperty( "microsoftSupport" ) 
+    MICROSOFT_SUPPORT
 }

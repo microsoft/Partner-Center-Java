@@ -8,24 +8,25 @@ package com.microsoft.store.partnercenter.models.partners;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum VettingVersion {
+public enum VettingVersion 
+{
     /***
      *  None vetting version
      */
     @JsonProperty( "none" ) 
-    None,
+    NONE,
 
     /***
      * Latest vetting information: Will always get the latest vetting information no
      * matter if it is vetted or not
      */
     @JsonProperty( "current" ) 
-    Current,
+    CURRENT,
 
     /***
      * Latest finalized vetting information: Will return the latest vetting information
      * that is either (Authorized or Rejected)
      */
     @JsonProperty( "last_finalized" ) 
-    LastFinalized
+    LAST_FINALIZED
 }

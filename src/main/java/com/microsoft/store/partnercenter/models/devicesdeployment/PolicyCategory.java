@@ -16,7 +16,7 @@ public enum PolicyCategory {
      * Default settings for the policy.
      */
     @JsonProperty("none")
-    None,
+    NONE,
 
     /***
      * OOBE - Out of box experience policy setting.

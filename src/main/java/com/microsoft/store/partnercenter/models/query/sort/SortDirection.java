@@ -13,8 +13,11 @@ public enum SortDirection
     /**
      * Sort direction enumeration. Ascending sort.
      */
-    @JsonProperty( "ascending" ) ASCENDING, /**
-                                             * Descending sort.
-                                             */
+    @JsonProperty( "ascending" ) 
+    ASCENDING, 
+    
+    /**
+     * Descending sort.
+     */
     @JsonProperty( "descending" ) DESCENDING
 }

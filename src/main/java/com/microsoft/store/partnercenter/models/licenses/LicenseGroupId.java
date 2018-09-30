@@ -17,17 +17,17 @@ public enum LicenseGroupId {
      * passed, then it will be defaulted to this.
 	 */
     @JsonProperty("none")
-    None,
+    NONE,
 
     /***
      * Azure Active Directory This indicates that product SKU is managed by Azure AD.
      */
     @JsonProperty("group1")
-    Group1,
+    GROUP1,
 
     /***
      * Store for Business This indicates that product SKU is not managed by Azure AD.
      */
     @JsonProperty("group2")
-    Group2
+    GROUP2
 }

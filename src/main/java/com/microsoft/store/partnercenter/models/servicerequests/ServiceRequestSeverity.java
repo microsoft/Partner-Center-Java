@@ -13,14 +13,23 @@ public enum ServiceRequestSeverity
     /**
      * Describes service required status Severity Unknown
      */
-    @JsonProperty( "unknown" ) UNKNOWN, /**
-                                         * Service Request Impact Critical
-                                         */
-    @JsonProperty( "critical" ) CRITICAL, /**
-                                           * Service Request Impact Moderate
-                                           */
-    @JsonProperty( "moderate" ) MODERATE, /**
-                                           * Service Request Impact Minimal
-                                           */
+    @JsonProperty( "unknown" ) 
+    UNKNOWN, 
+    
+    /**
+     * Service Request Impact Critical
+     */
+    @JsonProperty( "critical" ) 
+    CRITICAL, 
+    
+    /**
+     * Service Request Impact Moderate
+     */
+    @JsonProperty( "moderate" ) 
+    MODERATE, 
+    
+    /**
+     * Service Request Impact Minimal
+     */
     @JsonProperty( "minimal" ) MINIMAL
 }

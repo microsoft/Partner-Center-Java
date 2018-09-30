@@ -16,17 +16,17 @@ public enum ArtifactType {
      * Enum initializer.
      */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Entitlement artifact for a virtual machine reserved instance.
      */
     @JsonProperty("virtual_machine_reserved_instance")
-    VirtualMachineReservedInstance,
+    VIRTUAL_MACHINE_RESERVED_INSTANCE,
 
     /***
      * Entitlement artifact for a product key.
      */
     @JsonProperty("product_key")
-    ProductKey
+    PRODUCT_KEY
 }

@@ -9,94 +9,92 @@ package com.microsoft.store.partnercenter.models.auditing;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /***
- * Enumeration to represent type of
- * Operation being performed
+ * Enumeration to represent type of operation being performed
  */
 public enum OperationType {
 	/***
 	 * Update Customer Qualification
 	 */
     @JsonProperty("update_customer_qualification")
-    UpdateCustomerQualification,
+    UPDATE_CUSTOMER_QUALIFICATION,
 
     /***
      * Updates an existing subscription.
      */
     @JsonProperty("update_subscription")
-    UpdateSubscription,
+    UPDATE_SUBSCRIPTION,
 
     /***
      * Transition a subscription.
      */
     @JsonProperty("upgrade_subscription")
-    UpgradeSubscription,
+    UPGRADE_SUBSCRIPTION,
 
     /***
      * Adding a Customer
      */
     @JsonProperty("add_customer")
-    AddCustomer,
+    ADD_CUSTOMER,
 
     /***
      * Update a Customer Billing Profile
      */
     @JsonProperty("update_customer_billing_profile")
-    UpdateCustomerBillingProfile,
+    UPDATE_CUSTOMER_BILLING_PROFILE,
 
     /***
      * Updates a customer spending budget.
      */
     @JsonProperty("update_customer_spending_budget")
-    UpdateCustomerSpendingBudget,
+    UPDATE_CUSTOMER_SPENDING_BUDGET,
 
     /***
-     *  Deleting a Customer.
-     *  Happens only in the sandbox integration accounts.
+     *  Deleting a Customer. Only happens in the sandbox integration accounts.
      */
     @JsonProperty("delete_customer")
-    DeleteCustomer,
+    DELETE_CUSTOMER,
 
     /***
      *  Create a new order.
      */
     @JsonProperty("create_order")
-    CreateOrder,
+    CREATE_ORDER,
 
     /***
      * Updates an existing order.
      */
     @JsonProperty("update_order")
-    UpdateOrder,
+    UPDATE_ORDER,
 
     /***
      * Creates a customer user.
      */
     @JsonProperty("create_customer_user")
-    CreateCustomerUser,
+    CREATE_CUSTOMER_USER,
 
     /***
      * Deletes a customer user.
      */
     @JsonProperty("delete_customer_user")
-    DeleteCustomerUser,
+    DELETE_CUSTOMER_USER,
 
     /***
      * Updates a customer user.
      */
     @JsonProperty("update_customer_user")
-    UpdateCustomerUser,
+    UPDATE_CUSTOMER_USER,
 
     /***
      * Updates a customer user licenses.
      */
     @JsonProperty("update_customer_user_licenses")
-    UpdateCustomerUserLicenses,
+    UPDATE_CUSTOMER_USER_LICENSES,
 
     /***
      * Reset customer user password.
      */
     @JsonProperty("reset_customer_user_password")
-    ResetCustomerUserPassword,
+    RESET_CUSTOMER_USER_PASSWORD,
 
     /***
      * Update customer user UPN.
@@ -108,17 +106,17 @@ public enum OperationType {
      * Restore customer user.
      */
     @JsonProperty("restore_customer_user")
-    RestoreCustomerUser,
+    RESTORE_CUSTOMER_USER,
 
     /***
      *  Create MPN association.
      */
     @JsonProperty("create_mpn_association")
-    CreateMpnAssociation,
+    CREATE_MPN_ASSOCIATION,
 
     /***
      *  Update MPN association.
      */
     @JsonProperty("update_mpn_association")
-    UpdateMpnAssociation
+    UPDATE_MPN_ASSOCIATION,
 }

@@ -16,59 +16,59 @@ public enum CartErrorCode {
      * Default value
      */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Currency is not supported for given market
      */
     @JsonProperty("currency_is_not_supported")
-    CurrencyIsNotSupported,
+    CURRENCY_IS_NOT_SUPPORTED,
 
     /***
      * Catalog item id is not valid
      */
     @JsonProperty("catalog_item_id_is_not_valid")
-    CatalogItemIdIsNotValid,
+    CATALOG_ITEM_ID_IS_NOT_VALID,
 
     /***
      * Not enough quota available
      */
     @JsonProperty("quota_not_available")
-    QuotaNotAvailable,
+    QUOTA_NOT_AVAILABLE,
 
     /***
      * Inventory is not available for selected offer
      */
     @JsonProperty("inventory_not_available")
-    InventoryNotAvailable,
+    INVENTORY_NOT_AVAILABLE,
 
     /***
      * Setting participants is not supported for Partner
      */
     @JsonProperty("participants_is_not_supported_for_partner")
-    ParticipantsIsNotSupportedForPartner,
+    PARTICIPANTS_IS_NOT_SUPPORTED_FOR_PARTNER,
 
     /***
      * Unable to process cart line item.
      */
     @JsonProperty("unable_to_process_cart_line_item")
-    UnableToProcessCartLineItem,
+    UNABLE_TO_PROCESS_CART_LINE_ITEM,
 
     /***
      * Subscription is not valid.
      */
     @JsonProperty("subscription_is_not_valid")
-    SubscriptionIsNotValid,
+    SUBSCRIPTION_IS_NOT_VALID,
 
     /***
      * Subscription is not enabled for RI purchase.
      */
     @JsonProperty("subscription_is_not_enabled_for_ri")
-    SubscriptionIsNotEnabledForRI,
+    SUBSCRIPTION_IS_NOT_ENABLED_FOR_RI,
 
     /***
      * The sandbox limit has been exceeded.
      */
     @JsonProperty("sandbox_limit_exceeded")
-    SandboxLimitExceeded
+    SANDBOX_LIMIT_EXCEEDED
 }

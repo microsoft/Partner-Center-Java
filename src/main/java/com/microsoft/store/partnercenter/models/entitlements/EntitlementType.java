@@ -16,17 +16,17 @@ public enum EntitlementType {
      * Enum initializer.
      */
     @JsonProperty("unknown")
-    Unknown,
+    UNKNOWN,
 
     /***
      * Virtual machine reserved instance entitlement.
      */
     @JsonProperty("virtual_machine_reserved_instance")
-    VirtualMachineReservedInstance,
+    VIRTUAL_MACHINE_RESERVED_INSTANCE,
 
     /***
      * Software entitlement.
      */
     @JsonProperty("software")
-    Software
+    SOFTWARE
 }

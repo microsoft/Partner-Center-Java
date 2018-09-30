@@ -11,16 +11,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /***
  * Lists the available status for a subscription provisioning status.
  */
-public enum ProvisioningStatus {
+public enum ProvisioningStatus 
+{
     @JsonProperty("none")
-    None,
+    NONE,
 
     @JsonProperty("success")
-    Success,
+    SUCCESS,
 
     @JsonProperty("pending")
-    Pending,
+    PENDING,
 
     @JsonProperty("failed")
-    Failed
+    FAILED
 }

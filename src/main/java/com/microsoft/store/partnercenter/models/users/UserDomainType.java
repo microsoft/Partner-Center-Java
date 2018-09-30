@@ -11,19 +11,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /***
  * Types of user domains supported.
  */
-public enum UserDomainType {
+public enum UserDomainType 
+{
 	/***
 	  * Default - None.
 	  */
 	 @JsonProperty("none")
-	 None,
+	 NONE,
 
 	 /***
 	  * Password sync directories support mixed mode 
 	  * i.e. users that are cloud only or directory synced from an on premises directory.
 	  */
 	 @JsonProperty("managed")
-	 Managed,
+	 MANAGED,
 
 	 /***
 	  * Federated domains don’t support mixed mode. 
@@ -31,6 +32,5 @@ public enum UserDomainType {
 	  * with their immutable ids.
 	  */
 	 @JsonProperty("federated")
-	 Federated
-
+	 FEDERATED
 }

@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum ServiceCostsBillingPeriod {
     @JsonProperty("none")
-    None,
+    NONE,
 
     @JsonProperty("most_recent")
-    MostRecent,
+    MOST_RECENT,
 
     @JsonProperty("current")
-    Current
+    CURRENT
 }

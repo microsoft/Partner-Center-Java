@@ -53,7 +53,7 @@ public class InvoiceLineItemCollectionOperations
         	throw new IllegalArgumentException( "invoiceId has to be set." );
         }
         
-        if ( billingProvider == BillingProvider.None )
+        if ( billingProvider == BillingProvider.NONE )
         {
             throw new IllegalArgumentException("The billing provider is not valid.");
         }

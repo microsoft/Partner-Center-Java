@@ -14,29 +14,29 @@ public enum BillingProvider
      * Different providers of billing information Enum initializer
      */
     @JsonProperty( "none" )
-    None, 
+    NONE, 
     
     /**
     * Bill is provided by Office. Example: O365, and In-tune.
     */
     @JsonProperty( "office" )
-    Office, 
+    OFFICE, 
     
     /**
     * Bill is provided by Azure. Example: Azure Services.
     */
     @JsonProperty( "azure" )
-    Azure,
+    AZURE,
     
     /**
     * Bill is provided by Azure Data Market.
     */
     @JsonProperty( "azureDataMarket" )
-    AzureDataMarket,
+    AZURE_DATA_MARKET,
 
     /**
     * Bill is provided for one time purchases.
     */
     @JsonProperty( "oneTime" ) 
-    OneTime
+    ONE_TIME
 }

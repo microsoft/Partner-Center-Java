@@ -22,29 +22,29 @@ public enum PolicySettingsType {
      * Remove OEM Pre-installs.
      */
     @JsonProperty("remove_oem_preinstalls")
-    RemoveOemPreinstalls,
+    REMOVE_OEM_PREINSTALLS,
     
     /***
      * OOBE(Out of box experience) user will not be a local admin on the configured device.
      */
     @JsonProperty("oobe_user_not_local_admin")
-    OobeUserNotLocalAdmin,
+    OOBE_USER_NOT_LOCAL_ADMIN,
 
     /***
      * Skip express settings.
      */
     @JsonProperty("skip_express_settings")
-    SkipExpressSettings,
+    SKIP_EXPRESS_SETTINGS,
 
     /***
      *  Skip OEM registration settings.
      */
     @JsonProperty("skip_oem_registration")
-    SkipOemRegistration,
+    SKIP_OEM_REGISTRATION,
 
     /***
      * Skip EULA settings.
      */
     @JsonProperty("skip_eula")
-    SkipEula
+    SKIP_EULA
 }

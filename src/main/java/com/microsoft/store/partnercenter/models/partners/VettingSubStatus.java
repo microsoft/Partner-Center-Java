@@ -13,47 +13,47 @@ public enum VettingSubStatus {
      * None vetting sub status
      */
     @JsonProperty( "none" )
-    None,
+    NONE,
 
     /***
      * The entry step
      */
     @JsonProperty( "entry" ) 
-    Entry,
+    ENTRY,
 
     /***
      * Email ownership check for business accounts
      */
     @JsonProperty( "email_ownership" ) 
-    EmailOwnership,
+    EMAIL_OWNERSHIP,
 
     /***
      * Email Domain for business accounts
      */
     @JsonProperty( "email_domain" ) 
-    EmailDomain,
+    EMAIL_DOMAIN,
 
     /***
      * Employment verification sub status
      */
     @JsonProperty( "employment_verification" ) 
-    EmploymentVerification,
+    EMPLOYMENT_VERIFICATION,
 
     /***
      * Decision making process
      */
     @JsonProperty( "decision" ) 
-    Decision,
+    DECISION,
 
     /***
      * Other vetting sub status
      */
     @JsonProperty( "other" ) 
-    Other,
+    OTHER,
 
     /***
      * Business verification sub status
      */
     @JsonProperty( "business_verification" ) 
-    BusinessVerification
+    BUSINESS_VERIFICATION
 }

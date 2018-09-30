@@ -391,7 +391,7 @@ public class LicenseBasedLineItem
      */
     public BillingProvider getBillingProvider()
     {
-        return BillingProvider.Office;
+        return BillingProvider.OFFICE;
     }
 
      /**

@@ -16,6 +16,6 @@ public enum ServiceIncidentSearchField
     /***
      * Search by service health incidents resolved status.
      */
-	@JsonProperty( "Resolved" ) RESOLVED
-
+    @JsonProperty( "Resolved" ) 
+    RESOLVED
 }

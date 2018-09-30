@@ -16,23 +16,23 @@ public enum DocumentType {
      * Value if not set.
      */
     @JsonProperty("none")
-    None,
+    NONE,
 
     /***
      * Indicates that document type is an invoice.
      */
     @JsonProperty("invoice")
-    Invoice,
+    INVOICE,
 
     /***
      * Indicates that document type is an void note.
      */
     @JsonProperty("void_note")
-    VoidNote,
+    VOID_NOTE,
 
     /***
      * Indicates that document type is an adjustment note.
      */
     @JsonProperty("adjustment_note")
-    AdjustmentNote
+    ADJUSTMENT_NOTE
 }
