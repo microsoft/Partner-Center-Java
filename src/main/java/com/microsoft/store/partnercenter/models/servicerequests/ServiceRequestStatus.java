@@ -25,7 +25,8 @@ public enum ServiceRequestStatus
     /**
      * Service Request Status Closed
      */
-    @JsonProperty( "closed" ) CLOSED, 
+    @JsonProperty( "closed" ) 
+    CLOSED, 
     
     /**
      * Service Request Status Action Required

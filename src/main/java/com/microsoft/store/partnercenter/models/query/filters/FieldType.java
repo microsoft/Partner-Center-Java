@@ -31,5 +31,6 @@ public enum FieldType
     /**
      * DateTimeOffset Type
      */
-    @JsonProperty( "DateTimeOffset" ) DATE_TIME_OFFSET
+    @JsonProperty( "DateTimeOffset" ) 
+    DATE_TIME_OFFSET
 }

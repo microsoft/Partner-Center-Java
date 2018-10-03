@@ -31,10 +31,12 @@ public enum SeekOperation
     /**
      * Gets the last set of results.
      */
-    @JsonProperty( "Last" ) LAST, 
+    @JsonProperty( "Last" ) 
+    LAST, 
     
     /**
      * Gets a set of results using a page index. E.g. Get the seventh set of results.
      */
-    @JsonProperty( "PageIndex" ) PAGE_INDEX
+    @JsonProperty( "PageIndex" ) 
+    PAGE_INDEX
 }

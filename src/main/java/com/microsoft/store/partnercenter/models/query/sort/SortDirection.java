@@ -19,5 +19,6 @@ public enum SortDirection
     /**
      * Descending sort.
      */
-    @JsonProperty( "descending" ) DESCENDING
+    @JsonProperty( "descending" ) 
+    DESCENDING
 }

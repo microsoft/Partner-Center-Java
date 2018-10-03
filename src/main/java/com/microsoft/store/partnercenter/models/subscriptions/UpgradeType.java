@@ -19,7 +19,8 @@ public enum UpgradeType
     /**
      * Only subscription upgrade
      */
-    @JsonProperty( "upgrade_only" ) UPGRADE_ONLY, 
+    @JsonProperty( "upgrade_only" ) 
+    UPGRADE_ONLY, 
     
     /**
      * Subscription upgrade and license transfer

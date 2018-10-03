@@ -49,7 +49,8 @@ public enum FieldFilterOperation
     /**
      * Substring filter.
      */
-    @JsonProperty( "Substring" ) SUBSTRING, 
+    @JsonProperty( "Substring" ) 
+    SUBSTRING, 
     
     /**
      * And filter.

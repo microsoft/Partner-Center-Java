@@ -31,5 +31,6 @@ public enum ServiceRequestSeverity
     /**
      * Service Request Impact Minimal
      */
-    @JsonProperty( "minimal" ) MINIMAL
+    @JsonProperty( "minimal" ) 
+    MINIMAL
 }
