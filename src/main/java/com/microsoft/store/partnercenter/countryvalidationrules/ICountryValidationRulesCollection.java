@@ -9,6 +9,10 @@ package com.microsoft.store.partnercenter.countryvalidationrules;
 import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.ICountrySelector;
 
+/**
+ * Interface and Template for Country-Specific Rules for Validation
+ *
+ */
 public interface ICountryValidationRulesCollection 
 	extends IPartnerComponentString, ICountrySelector<ICountryValidationRules>
 {

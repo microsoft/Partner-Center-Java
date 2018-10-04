@@ -27,6 +27,11 @@ import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
+/**
+ * An Implementation of {@code IAuditRecordsCollection} for handling common partner component properties and behavior.
+ *
+ * See parent class {@code BasePartnerComponentString} for additional details.
+ */
 public class AuditRecordsCollection 
 	extends BasePartnerComponentString
 	implements IAuditRecordsCollection {

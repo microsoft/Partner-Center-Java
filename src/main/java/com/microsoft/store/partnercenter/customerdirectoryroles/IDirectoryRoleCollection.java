@@ -12,6 +12,10 @@ import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.roles.DirectoryRole;
 
+/**
+ * Interface for Directory Roles Collection
+ *
+ */
 public interface IDirectoryRoleCollection 
 	extends IPartnerComponentString,
 	IEntireEntityCollectionRetrievalOperations<DirectoryRole, ResourceCollection<DirectoryRole>>, IEntitySelector<IDirectoryRole>

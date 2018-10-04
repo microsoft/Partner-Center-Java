@@ -19,6 +19,11 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
+/**
+ * Implementation of Member Operations
+ *
+ * Use for management of directory roles and memberships
+ */
 public class UserMemberOperations 
 	extends BasePartnerComponent<TripletTuple<String, String, String>>
 	implements IUserMember

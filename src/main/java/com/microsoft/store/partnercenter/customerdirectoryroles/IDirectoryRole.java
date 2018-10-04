@@ -9,6 +9,10 @@ package com.microsoft.store.partnercenter.customerdirectoryroles;
 import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
+/**
+ * Represents a Directory Role
+ *
+ */
 public interface IDirectoryRole extends IPartnerComponent<Tuple<String, String>>
 {
     /***

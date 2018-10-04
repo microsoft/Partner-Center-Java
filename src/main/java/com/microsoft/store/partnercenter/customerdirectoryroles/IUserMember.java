@@ -11,6 +11,10 @@ import com.microsoft.store.partnercenter.genericoperations.IEntityDeleteOperatio
 import com.microsoft.store.partnercenter.models.roles.UserMember;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 
+/**
+ * Represents a Directory User
+ *
+ */
 public interface IUserMember
 	extends IPartnerComponent<TripletTuple<String,String,String>>, IEntityDeleteOperations<UserMember>
 {

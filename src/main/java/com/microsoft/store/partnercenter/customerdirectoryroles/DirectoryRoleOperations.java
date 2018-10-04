@@ -11,6 +11,10 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
+/**
+ * DirectoryRoleOperations
+ *
+ */
 public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, String>> implements IDirectoryRole
 {
 	

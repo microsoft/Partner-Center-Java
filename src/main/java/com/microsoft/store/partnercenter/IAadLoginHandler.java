@@ -6,6 +6,10 @@
 
 package com.microsoft.store.partnercenter;
 
+/**
+ * Represents the interface for Azure Active Directory Hanlder
+ *
+ */
 public interface IAadLoginHandler
 {
     AuthenticationToken authenticate();

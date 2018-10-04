@@ -24,6 +24,11 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
+/**
+ * UserMemberCollectionOperations
+ *
+ * Used for managing membership and access to directory roles.
+ */
 public class UserMemberCollectionOperations 
 	extends BasePartnerComponent<Tuple<String, String>> 
 	implements IUserMemberCollection

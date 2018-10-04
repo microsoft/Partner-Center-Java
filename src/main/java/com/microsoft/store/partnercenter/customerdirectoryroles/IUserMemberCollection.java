@@ -15,6 +15,10 @@ import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.roles.UserMember;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
+/**
+ * Interface for Managing User Membership in Directory Roles
+ *
+ */
 public interface IUserMemberCollection
 	extends IPartnerComponent<Tuple<String, String>>, IEntityCreateOperations<UserMember, UserMember>,
 		IEntireEntityCollectionRetrievalOperations<UserMember, SeekBasedResourceCollection<UserMember>>, 

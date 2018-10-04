@@ -19,6 +19,10 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
+/**
+ * DirectoryRoleCollectionOperations
+ *
+ */
 public class DirectoryRoleCollectionOperations
 	extends BasePartnerComponentString
 	implements IDirectoryRoleCollection
