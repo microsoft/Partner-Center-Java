@@ -30,7 +30,7 @@ public class CustomerAvailabilityCollectionOperations
     implements IAvailabilityCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerAvailabilityCollectionOperations} class.
+     * Initializes a new instance of the CustomerAvailabilityCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -61,7 +61,7 @@ public class CustomerAvailabilityCollectionOperations
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
-     * @return: The availability operations.
+     * @return The availability operations.
      */    
     @Override
     public IAvailability byId( String availabilityId )
@@ -72,7 +72,7 @@ public class CustomerAvailabilityCollectionOperations
     /**
      * Retrieves all the availabilities for the provided SKU.
      * 
-     * @return: The availabilities for the provided SKU.
+     * @return The availabilities for the provided SKU.
      */
     @Override
     public ResourceCollection<Availability> get()
@@ -92,7 +92,7 @@ public class CustomerAvailabilityCollectionOperations
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.
-     * @return: The availability collection operations by target segment.
+     * @return The availability collection operations by target segment.
      */    
     @Override
     public IAvailabilityCollectionByTargetSegment byTargetSegment(String targetSegment)

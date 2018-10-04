@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="BasePartnerComponent{TContext}.java" company="Microsoft">
+// <copyright file="BasePartnerComponent.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -14,7 +14,7 @@ public abstract class BasePartnerComponent<TContext>
     implements IPartnerComponent<TContext>
 {
     /**
-     * Initializes a new instance of the {@link #BasePartnerComponent{TContext}} class.
+     * Initializes a new instance of the BasePartnerComponent class.
      * 
      * @param rootPartnerOperations The root partner operations that created this component.
      * @param componentContext A component context object to work with.

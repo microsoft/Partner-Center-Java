@@ -48,7 +48,7 @@ public class InvoiceCollection
     private static final int MinPageSize = 1;
 
     /**
-     * Initializes a new instance of the {@link #InvoiceCollection} class.
+     * Initializes a new instance of the InvoiceCollection class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -141,8 +141,8 @@ public class InvoiceCollection
     
     /***
      * Asynchronously retrieves all invoices associated to the partner.
-     * @param query: The query parameter
-     * @return: The subset of invoices.
+     * @param query The query parameter
+     * @return The subset of invoices.
      */
     public ResourceCollection<Invoice> query( IQuery query )
     {

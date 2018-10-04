@@ -28,7 +28,7 @@ public class OfferAddOnsOperations
     implements IOfferAddOns
 {
     /**
-     * Initializes a new instance of the {@link #OfferAddOnsOperations} class.
+     * Initializes a new instance of the OfferAddOnsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param offerId The offer Id to get its add on offers.

@@ -27,7 +27,7 @@ public interface IProduct
     /***
      * Retrieves the product information
      * 
-     * @return: The product information.
+     * @return The product information.
      */
     Product get();
 }

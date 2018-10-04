@@ -27,7 +27,7 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
     private List<TResource> items;
 
     /**
-     * Initializes a new instance of the {@link #ResourceCollection{T}} class.
+     * Initializes a new instance of the ResourceCollection class.
      * 
      * @param items The items.
      */
@@ -38,7 +38,7 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
     }
 
     /**
-     * Initializes a new instance of the {@link #ResourceCollection{T}} class.
+     * Initializes a new instance of the ResourceCollection class.
      * 
      * @param resourceCollection The resource collection.
      */
@@ -102,5 +102,4 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
 
         return collectionDescription.toString();
     }
-
 }

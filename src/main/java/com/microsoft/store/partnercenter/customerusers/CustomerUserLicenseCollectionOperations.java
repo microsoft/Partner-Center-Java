@@ -29,7 +29,7 @@ public class CustomerUserLicenseCollectionOperations
 {
 
     /**
-     * Initializes a new instance of the {@link #CustomerUserLicenseCollectionOperations} class.
+     * Initializes a new instance of the CustomerUserLicenseCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.
@@ -50,7 +50,7 @@ public class CustomerUserLicenseCollectionOperations
     /***
      * Retrieves the assigned licenses to a customer user.
      * 
-     * @return: The customer user's directory roles.
+     * @return The customer user's directory roles.
      */
     public ResourceCollection<License> get()
     {
@@ -67,7 +67,7 @@ public class CustomerUserLicenseCollectionOperations
      * Retrieves the assigned licenses to a customer user.
      * 
      * @param licneseGroupIds License group identifier
-     * @return: The customer user's directory roles.
+     * @return The customer user's directory roles.
      */
     public ResourceCollection<License> get(List<LicenseGroupId> licenseGroupIds)
     {

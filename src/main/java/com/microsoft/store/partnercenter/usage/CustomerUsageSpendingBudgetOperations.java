@@ -26,7 +26,7 @@ public class CustomerUsageSpendingBudgetOperations
     implements ICustomerUsageSpendingBudget
 {
     /**
-     * Initializes a new instance of the {@link #CustomerUsageSpendingBudgetOperations} class.
+     * Initializes a new instance of the CustomerUsageSpendingBudgetOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

@@ -38,12 +38,11 @@ public class SkuOperations
     private ISkuDownloadOptions downloadOptions; 
 
     /**
-     * Initializes a new instance of the {@link #SkuOperations} class.
+     * Initializes a new instance of the SkuOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier of the product. 
      * @param skuId                 Identifier of the SKU.
-     * @param availabilityId        Identifier of the availability.
      * @param country               The country on which to base the availability.
      */
     public SkuOperations(IPartner rootPartnerOperations, String productId, String skuId, String country)
@@ -64,7 +63,7 @@ public class SkuOperations
     /***
      * Retrieves the operations for the current SKU's availabilities.
      * 
-     * @return: The operations for the current SKU's availabilities.
+     * @return The operations for the current SKU's availabilities.
      */    
     public IAvailabilityCollection getAvailabilities()
     {
@@ -79,7 +78,7 @@ public class SkuOperations
     /***
      * Retrieves the operations for the current SKU's download options.
      * 
-     * @return: The operations for the current SKU's download options.
+     * @return The operations for the current SKU's download options.
      */    
     public ISkuDownloadOptions getDownloadOptions()
     {
@@ -94,7 +93,7 @@ public class SkuOperations
     /***
      * Retrieves the SKU information.
      * 
-     * @return: The SKUs information.
+     * @return The SKUs information.
      */
     public Sku get()
     {

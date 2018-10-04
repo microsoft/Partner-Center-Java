@@ -92,10 +92,10 @@ public class OfferCategory
     }
 
     /**
-     * Determines whether the specified {@link #System.Object} , is equal to this instance.
+     * Determines whether the specified object, is equal to this instance.
      * 
-     * @param obj The {@link #System.Object} to compare with this instance.
-     * @return {@code true} if the specified {@link #System.Object} is equal to this instance; otherwise, {@code false}
+     * @param obj The object to compare with this instance.
+     * @return true if the specified object is equal to this instance; otherwise, false.
      *         .
      */
     public boolean equals( OfferCategory obj )

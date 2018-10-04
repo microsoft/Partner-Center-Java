@@ -26,7 +26,7 @@ public class CartOperations
     extends BasePartnerComponent<Tuple<String, String>> implements ICart 
 {
     /**
-     * Initializes a new instance of the {@link #CartOperations} class.
+     * Initializes a new instance of the CartOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.

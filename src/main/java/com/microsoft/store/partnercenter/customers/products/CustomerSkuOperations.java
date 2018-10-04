@@ -33,7 +33,7 @@ public class CustomerSkuOperations
     private ISkuDownloadOptions downloadOptions;
 
     /**
-     * Initializes a new instance of the {@link #CustomerSkuOperations} class.
+     * Initializes a new instance of the CustomerSkuOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer id for which to retrieve the SKU.
@@ -63,7 +63,7 @@ public class CustomerSkuOperations
     /***
      * Retrieves the operations for the current SKU's availabilities.
      * 
-     * @return: The operations for the current SKU's availabilities.
+     * @return The operations for the current SKU's availabilities.
      */    
     @Override
     public IAvailabilityCollection getAvailabilities()
@@ -79,7 +79,7 @@ public class CustomerSkuOperations
     /***
      * Retrieves the operations for the current SKU's download options.
      * 
-     * @return: The operations for the current SKU's download options.
+     * @return The operations for the current SKU's download options.
      */    
     @Override
     public ISkuDownloadOptions getDownloadOptions()
@@ -95,7 +95,7 @@ public class CustomerSkuOperations
     /***
      * Retrieves the SKU information.
      * 
-     * @return: The SKUs information.
+     * @return The SKUs information.
      */
     @Override
     public Sku get()

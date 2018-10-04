@@ -29,7 +29,7 @@ public class CustomerSkuCollectionByTargetSegmentOperations
     implements ISkuCollectionByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #CustomerSkuCollectionByTargetSegmentOperations} class.
+     * Initializes a new instance of the CustomerSkuCollectionByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer id for which to retrieve the SKUs.

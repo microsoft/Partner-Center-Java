@@ -25,7 +25,7 @@ public class ConfigurationPolicyOperations
     extends BasePartnerComponent<Tuple<String, String>> implements IConfigurationPolicy 
 {
     /**
-     * Initializes a new instance of the {@link #ConfigurationPolicyOperations} class.
+     * Initializes a new instance of the ConfigurationPolicyOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -63,7 +63,7 @@ public class ConfigurationPolicyOperations
      *  Patches the configuration policy.
      * 
      * @param policy The policy to be updated.
-     * @return: The updated configuration policy.
+     * @return The updated configuration policy.
      */
     @Override
     public ConfigurationPolicy patch(ConfigurationPolicy policy)

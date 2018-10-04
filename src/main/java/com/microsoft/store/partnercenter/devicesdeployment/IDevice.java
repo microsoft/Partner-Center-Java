@@ -23,7 +23,7 @@ public interface IDevice
      *  Updates a device associated to the customer with a configuration policy.
      * 
      * @param updateDevice The device to be updated.
-     * @return: The device that was updated.
+     * @return The device that was updated.
      */
 	Device patch(Device updateDevice);
 

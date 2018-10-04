@@ -20,7 +20,7 @@ public interface ISubscriptionRegistrationStatus
     /**
      * Retrieves a subscription registration status.
      * 
-     * @return: The subscription registration status details.
+     * @return The subscription registration status details.
      */
     SubscriptionRegistrationStatus get();
 }

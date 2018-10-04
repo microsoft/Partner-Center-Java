@@ -23,8 +23,9 @@ public class InvoiceSummaryOperations
 {
 
 	/***
-	 * Initializes a new instance of the <see cref="InvoiceSummaryOperations"/> class.
-     * @param rootPartnerOperations: The root partner operations instance.
+	 * Initializes a new instance of the InvoiceSummaryOperations class.
+	 * 
+     * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public InvoiceSummaryOperations(IPartner rootPartnerOperations)
 	{

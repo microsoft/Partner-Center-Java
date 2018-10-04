@@ -18,7 +18,7 @@ public class BatchJobStatusCollectionOperations
     implements IBatchJobStatusCollection
 {
     /**
-     * Initializes a new instance of the {@link #BatchJobStatusCollectionOperations} class.
+     * Initializes a new instance of the BatchJobStatusCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.

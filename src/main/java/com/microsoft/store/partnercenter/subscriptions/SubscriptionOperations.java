@@ -87,7 +87,7 @@ public class SubscriptionOperations
     private ISubscriptionConversionCollection subscriptionConversionOperations; 
 
     /**
-     * Initializes a new instance of the {@link #SubscriptionOperations} class.
+     * Initializes a new instance of the SubscriptionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

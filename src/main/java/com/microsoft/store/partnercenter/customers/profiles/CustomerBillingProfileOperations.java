@@ -25,7 +25,7 @@ public class CustomerBillingProfileOperations
     implements ICustomerProfile<CustomerBillingProfile>
 {
     /**
-     * Initializes a new instance of the {@link #CustomerBillingProfileOperations} class.
+     * Initializes a new instance of the CustomerBillingProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.

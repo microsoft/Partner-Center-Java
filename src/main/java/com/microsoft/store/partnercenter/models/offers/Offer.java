@@ -19,7 +19,7 @@ public class Offer
     extends ResourceBase
 {
     /**
-     * Initializes a new instance of the {@link #Offer} class.
+     * Initializes a new instance of the Offer class.
      */
     public Offer()
     {

@@ -21,7 +21,7 @@ public interface IServiceCostLineItemsCollection
     /***
      * Retrieves a customer's service cost line items.
      * 
-     * @return: The service cost line items.
+     * @return The service cost line items.
      */
 	ResourceCollection<ServiceCostLineItem> get();
 }

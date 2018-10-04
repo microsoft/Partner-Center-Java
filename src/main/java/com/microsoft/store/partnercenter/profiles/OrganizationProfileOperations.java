@@ -25,7 +25,7 @@ public class OrganizationProfileOperations
     implements IOrganizationProfile
 {
     /**
-     * Initializes a new instance of the {@link #OrganizationProfileOperations} class.
+     * Initializes a new instance of the OrganizationProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

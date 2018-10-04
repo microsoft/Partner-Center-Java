@@ -173,7 +173,7 @@ public interface ICustomer
     /***
      * Retrieves the customer information.
      * 
-     * @return: The customer information.
+     * @return The customer information.
      */
     Customer get();
     

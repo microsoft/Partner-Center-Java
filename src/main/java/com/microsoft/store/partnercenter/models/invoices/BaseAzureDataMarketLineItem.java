@@ -299,7 +299,7 @@ public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 	/***
 	 * Returns the billing provider.
 	 * 
-	 *  @return: The billing provider.
+	 *  @return The billing provider.
 	 */
 	@Override
 	public BillingProvider getBillingProvider() {

@@ -20,7 +20,7 @@ public class DevicesBatchOperations
     private IDeviceCollection devices;
 
     /**
-     * Initializes a new instance of the {@link #DevicesBatchOperations} class.
+     * Initializes a new instance of the DevicesBatchOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param deviceBatchId         The device batch identifier.
@@ -41,7 +41,7 @@ public class DevicesBatchOperations
 	/***
 	 * Obtains the devices behavior of the devices batch.
 	 * 
-	 * @return: The devices behavior of the devices batch.
+	 * @return The devices behavior of the devices batch.
 	 */
     @Override
     public IDeviceCollection getDevices()

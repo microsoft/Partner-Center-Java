@@ -17,15 +17,15 @@ public interface ICategoryOffersCollection
 {
     /***
      * Retrieves all the offers in the given offer category.
-     * @return: The offers in the given offer category.
+     * @return The offers in the given offer category.
      */
     ResourceCollection<Offer> get();
 
     /***
      *  Retrieves a subset of offers in the given offer category.
-     * @param name="offset": The starting index.
-     * @param name="size": The maximum number of offers to return.
-     * @return: The requested segment of the offers in the given offer category.
+     * @param offset The starting index.
+     * @param size The maximum number of offers to return.
+     * @return The requested segment of the offers in the given offer category.
      */
     ResourceCollection<Offer> get( int offset, int size );
 

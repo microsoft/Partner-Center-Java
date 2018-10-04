@@ -29,7 +29,7 @@ public class AvailabilityCollectionByTargetSegmentOperations
     implements IAvailabilityCollectionByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #AvailabilityCollectionByTargetSegmentOperations} class.
+     * Initializes a new instance of the AvailabilityCollectionByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
@@ -62,7 +62,7 @@ public class AvailabilityCollectionByTargetSegmentOperations
     /***
      * Retrieves all the availabilities for the provided SKU on a specific target segment.
      * 
-     * @return: The availability for the provided SKU on a specific target segment.
+     * @return The availability for the provided SKU on a specific target segment.
      */
     public ResourceCollection<Availability> get()
     {

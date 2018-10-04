@@ -21,8 +21,8 @@ public interface IProductExtensionsByCountry
 	/***
 	 * Retrieves inventory validation results for the provided country.
 	 * 
-	 * @param checkRequest: The request for the inventory check.
-	 * @return: The inventory check results.
+	 * @param checkRequest The request for the inventory check.
+	 * @return The inventory check results.
 	 */
      List<InventoryItem> checkInventory(InventoryCheckRequest checkRequest);
 }

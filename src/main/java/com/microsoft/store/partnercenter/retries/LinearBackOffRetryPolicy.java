@@ -20,7 +20,7 @@ public class LinearBackOffRetryPolicy
     private int maxRetries;
 
     /**
-     * Initializes a new instance of the {@link #LinearBackOffRetryPolicy} class.
+     * Initializes a new instance of the LinearBackOffRetryPolicy class.
      * 
      * @param backOff The back off time between retries.
      * @param maxRetries The maximum number of retries.

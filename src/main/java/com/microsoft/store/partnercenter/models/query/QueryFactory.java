@@ -10,7 +10,7 @@ import com.microsoft.store.partnercenter.models.query.filters.FieldFilter;
 import com.microsoft.store.partnercenter.models.query.sort.Sort;
 
 /**
- * Creates new instances of {@link #IQuery} objects.
+ * Creates new instances of IQuery objects.
  */
 public class QueryFactory
 {

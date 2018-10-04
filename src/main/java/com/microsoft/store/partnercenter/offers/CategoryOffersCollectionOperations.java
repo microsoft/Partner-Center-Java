@@ -24,9 +24,9 @@ public class CategoryOffersCollectionOperations
 
 	/***
 	 * Initializes a new instance of the CategoryOffersCollectionOperations class.
-	 * @param rootPartnerOperations: The root partner operations instance.
-	 * @param categoryId: The category ID which contains the offers.
-	 * @param country: The country on which to base the offers.
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param categoryId The category identifier which contains the offers.
+	 * @param country The country on which to base the offers.
 	 */
 	public CategoryOffersCollectionOperations( IPartner rootPartnerOperations, String categoryId, String country) 
 	{
@@ -35,7 +35,7 @@ public class CategoryOffersCollectionOperations
 
 	/***
 	 * Retrieves all the offers in the given offer category.
-	 * @return: The offers in the given offer category.
+	 * @return The offers in the given offer category.
 	 */
 	@Override
 	public ResourceCollection<Offer> get() 
@@ -58,9 +58,9 @@ public class CategoryOffersCollectionOperations
 	/***
 	 * Retrieves a subset of offers in the given offer category.
 	 * 
-	 * @param name="offset": The starting index.
-	 * @param name="size": The maximum number of offers to return.
-	 * @return: The requested segment of the offers in the given offer category.
+	 * @param offset The starting index.
+	 * @param size The maximum number of offers to return.
+	 * @return The requested segment of the offers in the given offer category.
 	 */
 	@Override
 	public ResourceCollection<Offer> get(int offset, int size)

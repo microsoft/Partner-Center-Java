@@ -30,7 +30,7 @@ public class CustomerSkuCollectionOperations
     implements ISkuCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerSkuCollectionOperations} class.
+     * Initializes a new instance of the CustomerSkuCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -55,7 +55,7 @@ public class CustomerSkuCollectionOperations
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.
-     * @return: The available SKU operations.
+     * @return The available SKU operations.
      */
     @Override    
     public ISku byId(String skuId)

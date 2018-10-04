@@ -27,11 +27,11 @@ public class SubscriptionDailyUsageRecordCollectionOperations
     implements ISubscriptionDailyUsageRecordCollection
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionDailyUsageRecordCollectionOperations} class.
+     * Initializes a new instance of the SubscriptionDailyUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
-     * @param subscriptionId The subscription id.
+     * @param customerId The customer identifier.
+     * @param subscriptionId The subscription identifier.
      */
     public SubscriptionDailyUsageRecordCollectionOperations( IPartner rootPartnerOperations,
                                                              String customerId, String subscriptionId )

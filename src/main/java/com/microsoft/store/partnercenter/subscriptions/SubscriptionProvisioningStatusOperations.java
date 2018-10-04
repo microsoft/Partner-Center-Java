@@ -27,7 +27,7 @@ public class SubscriptionProvisioningStatusOperations
     implements ISubscriptionProvisioningStatus
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionProvisioningStatusOperations} class.
+     * Initializes a new instance of the SubscriptionProvisioningStatusOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            The customer Id.
@@ -51,7 +51,7 @@ public class SubscriptionProvisioningStatusOperations
     /**
      * Retrieves all subscription provisioning status details.
      * 
-     * @return: The subscription provisioning status details.
+     * @return The subscription provisioning status details.
      */
     public SubscriptionProvisioningStatus get()
     {

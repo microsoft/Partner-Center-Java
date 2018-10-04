@@ -17,9 +17,7 @@ public abstract class BaseQuery
     implements IQuery
 {
     /**
-     * Initializes a new instance of the {@link #BaseQuery} class.
-     * 
-     * @param token An optional query token.
+     * Initializes a new instance of the BaseQuery class.
      */
     protected BaseQuery()
 
@@ -28,9 +26,9 @@ public abstract class BaseQuery
     }
 
     /**
-     * Initializes a new instance of the {@link #BaseQuery} class.
+     * Initializes a new instance of the BaseQuery class.
      * 
-     * @param token An optional query token.
+     * @param token The query token.
      */
     protected BaseQuery( Object token )
 
@@ -42,9 +40,7 @@ public abstract class BaseQuery
      * Gets the query type.
      */
     public QueryType getType()
-
     {
-        // throw new NotImplementedException();
         throw new UnsupportedOperationException();
     }
 
@@ -52,13 +48,11 @@ public abstract class BaseQuery
      * Gets or sets the query filter.
      */
     public FieldFilter getFilter()
-
     {
         throw new UnsupportedOperationException( "Filter is not supported." );
     }
 
     public void setFilter( FieldFilter value )
-
     {
         throw new UnsupportedOperationException( "Filter is not supported." );
     }
@@ -67,13 +61,11 @@ public abstract class BaseQuery
      * Gets or sets the query sorting options.
      */
     public Sort getSort()
-
     {
         throw new UnsupportedOperationException( "Sort is not supported." );
     }
 
     public void setSort( Sort value )
-
     {
         throw new UnsupportedOperationException( "Sort is not supported." );
     }
@@ -82,13 +74,11 @@ public abstract class BaseQuery
      * Gets or sets the result starting index.
      */
     public int getIndex()
-
     {
         throw new UnsupportedOperationException( "Index is not supported." );
     }
 
     public void setIndex( int value )
-
     {
         throw new UnsupportedOperationException( "Index is not supported." );
     }
@@ -97,13 +87,11 @@ public abstract class BaseQuery
      * Gets or sets the results page size.
      */
     public int getPageSize()
-
     {
         throw new UnsupportedOperationException( "PageSize is not supported." );
     }
 
     public void setPageSize( int value )
-
     {
         throw new UnsupportedOperationException( "PageSize is not supported." );
     }
@@ -127,15 +115,12 @@ public abstract class BaseQuery
      * Gets or sets the seek operation that needs to be performed.
      */
     public SeekOperation getSeekOperation()
-
     {
         throw new UnsupportedOperationException( "SeekOperation is not supported." );
     }
 
     public void setSeekOperation( SeekOperation value )
-
     {
         throw new UnsupportedOperationException( "SeekOperation is not supported." );
     }
-
 }

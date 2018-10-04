@@ -19,7 +19,7 @@ public interface ICustomerServiceCostsCollection
      * Obtains the service cost operations by billing period.
      * 
      * @param billingPeriod The billing period.
-     * @return: The service cost operations.
+     * @return The service cost operations.
      */
     IServiceCostsCollection byBillingPeriod(ServiceCostsBillingPeriod billingPeriod);
 }

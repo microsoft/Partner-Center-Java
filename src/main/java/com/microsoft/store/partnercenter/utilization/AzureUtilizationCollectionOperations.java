@@ -31,10 +31,11 @@ public class AzureUtilizationCollectionOperations
 {
 
     /***
-     * Initializes a new instance of the <see cref="AzureUtilizationCollectionOperations"/> class.
-     * @param rootPartnerOperations: The root partner operations instance.
-     * @param customerId: The customer Id.
-     * @param subscriptionId: The subscription Id.
+     * Initializes a new instance of the AzureUtilizationCollectionOperations class.
+     * 
+     * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId The customer identifier.
+     * @param subscriptionId The subscription identifier.
      */
 	public AzureUtilizationCollectionOperations( IPartner rootPartnerOperations,
 			String customerId, String subscriptionId )
@@ -53,14 +54,14 @@ public class AzureUtilizationCollectionOperations
 
     /***
      * Retrieves utilization records for the Azure subscription.
-     * @param startTime: The starting time of when the utilization was metered in the billing system.
-     * @param endTime: The ending time of when the utilization was metered in the billing system.
-     * @param granularity: The resource usage time granularity. Can either be daily or hourly. Default is daily.
-     * @param showDetails: If set to true, the utilization records will be split by the resource instance levels. If set to false, the utilization records
+     * @param startTime The starting time of when the utilization was metered in the billing system.
+     * @param endTime The ending time of when the utilization was metered in the billing system.
+     * @param granularity The resource usage time granularity. Can either be daily or hourly. Default is daily.
+     * @param showDetails If set to true, the utilization records will be split by the resource instance levels. If set to false, the utilization records
     					   will be aggregated on the resource level. Default is true.
-     * @param size: An optional maximum number of records to return. The returned resource collection will specify a next link in case there
+     * @param size An optional maximum number of records to return. The returned resource collection will specify a next link in case there
     				were more utilization records available.
-     * @return: The Azure resource utilization for the subscription.
+     * @return The Azure resource utilization for the subscription.
      */
 	@Override
 	public ResourceCollection<AzureUtilizationRecord> query( DateTime startTime, DateTime endTime,
@@ -139,9 +140,9 @@ public class AzureUtilizationCollectionOperations
 
     /***
      * Seeks pages of utilization for resources that belong to an Azure subscription owned by a customer of the partner.
-     * @param continuationToken: The continuation token from the previous results.
-     * @param seekOperation: The seek operation to perform. Next is only supported.
-     * @return: The next page of utilization records.
+     * @param continuationToken The continuation token from the previous results.
+     * @param seekOperation The seek operation to perform. Next is only supported.
+     * @return The next page of utilization records.
      */
 	@Override
 	public ResourceCollection<AzureUtilizationRecord> seek( String continuationToken, SeekOperation seekOperation )

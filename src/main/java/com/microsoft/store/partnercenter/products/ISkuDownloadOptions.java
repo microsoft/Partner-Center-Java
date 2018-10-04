@@ -22,7 +22,7 @@ public interface ISkuDownloadOptions
     /***
      * Retrieves all download options for the provided SKU
      * 
-     * @return: The SKU download options
+     * @return The SKU download options
      */
     ResourceCollection<SkuDownloadOptions> get();
 }

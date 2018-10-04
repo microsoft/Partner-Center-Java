@@ -18,7 +18,7 @@ public interface ICountryValidationRules
 {
     /***
      * Retrieves the country validation rules.
-     * @return: The validation rules for the country.
+     * @return The validation rules for the country.
      */
     CountryValidationRules get();
 }

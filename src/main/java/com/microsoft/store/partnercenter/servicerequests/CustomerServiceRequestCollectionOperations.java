@@ -48,10 +48,10 @@ public class CustomerServiceRequestCollectionOperations
     private static final int MAX_PAGE_SIZE = 1000;
 
     /**
-     * Initializes a new instance of the {@link #CustomerServiceRequestCollectionOperations} class.
+     * Initializes a new instance of the CustomerServiceRequestCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
      */
     public CustomerServiceRequestCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {

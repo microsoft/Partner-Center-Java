@@ -26,7 +26,7 @@ public class CustomerUserRoleCollectionOperations
 {
 
     /**
-     * Initializes a new instance of the {@link #CustomerUserRoleCollectionOperations} class.
+     * Initializes a new instance of the CustomerUserRoleCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.

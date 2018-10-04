@@ -24,7 +24,7 @@ public class PartnerLicensesDeploymentInsightsCollectionOperations
     implements IPartnerLicensesDeploymentInsightsCollection
 {
     /**
-     * Initializes a new instance of the {@link #PartnerLicensesDeploymentInsightsCollectionOperations} class.
+     * Initializes a new instance of the PartnerLicensesDeploymentInsightsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

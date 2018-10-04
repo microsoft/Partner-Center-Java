@@ -17,7 +17,7 @@ public class OrderLineItem
     extends ResourceBaseWithLinks<OrderLineItemLinks>    
 {
     /**
-     * Initializes a new instance of the {@link #OrderLineItem} class.
+     * Initializes a new instance of the OrderLineItem class.
      */
     public OrderLineItem()
     {

@@ -12,7 +12,7 @@ package com.microsoft.store.partnercenter.models;
 public class ResourceAttributes
 {
     /**
-     * Initializes a new instance of the {@link #ResourceAttributes} class.
+     * Initializes a new instance of the ResourceAttributes class.
      * 
      * @param type The type.
      */
@@ -26,7 +26,7 @@ public class ResourceAttributes
     }
 
     /**
-     * Initializes a new instance of the {@link #ResourceAttributes} class without any values set.
+     * Initializes a new instance of the ResourceAttributes class without any values set.
      */
     public ResourceAttributes()
     {

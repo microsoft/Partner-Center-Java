@@ -20,7 +20,7 @@ public interface ISubscriptionMonthlyUsageRecordCollection
 {
     /***
      * Retrieves the customer's subscription usage records.
-     * @returns The customer's subscription usage records.
+     * @return The customer's subscription usage records.
      */
     ResourceCollection<SubscriptionMonthlyUsageRecord> get();
 }

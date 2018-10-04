@@ -20,7 +20,7 @@ public abstract class BasePartnerCredentials
     implements IPartnerCredentials
 {
     /**
-     * Initializes a new instance of the {@link #BasePartnerCredentials} class.
+     * Initializes a new instance of the BasePartnerCredentials class.
      * 
      * @param clientId The Azure Active Directory client Id.
      */

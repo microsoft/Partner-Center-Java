@@ -26,7 +26,7 @@ public class CustomerUsageRecordCollectionOperations
     implements ICustomerUsageRecordCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerUsageRecordCollectionOperations} class.
+     * Initializes a new instance of the CustomerUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

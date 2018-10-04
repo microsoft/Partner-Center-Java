@@ -27,7 +27,7 @@ public class AvailabilityOperations
     extends BasePartnerComponent<QuadrupleTuple<String, String, String, String>> implements IAvailability 
 {
     /**
-     * Initializes a new instance of the {@link #AvailabilityOperations} class.
+     * Initializes a new instance of the AvailabilityOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier of the product.. 
@@ -57,7 +57,7 @@ public class AvailabilityOperations
     /***
      * Retrieves the availability information.
      * 
-     * @return: The availability information.
+     * @return The availability information.
      */
     public Availability get()
     {

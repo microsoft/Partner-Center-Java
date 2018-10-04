@@ -17,15 +17,15 @@ public interface ICustomerQualification
 	/***
 	 * Retrieves the customer qualification.
 	 * 
-	 * @return: Customer Qualification.
+	 * @return Customer Qualification.
 	 */
     CustomerQualification get();
     
     /***
      * Updates the customer qualification.
      * 
-     * @param customerQualification: Customer Qualification.
-     * @return: The updated customer qualification.
+     * @param customerQualification Customer Qualification.
+     * @return The updated customer qualification.
      */
     CustomerQualification update( CustomerQualification customerQualification );
 

@@ -18,7 +18,7 @@ public class LegalBusinessProfile
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
-     * Initializes a new instance of the {@link #LegalBusinessProfile} class.
+     * Initializes a new instance of the LegalBusinessProfile class.
      */
     public LegalBusinessProfile()
     {

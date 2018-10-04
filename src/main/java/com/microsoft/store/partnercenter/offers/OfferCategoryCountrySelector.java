@@ -18,7 +18,8 @@ public class OfferCategoryCountrySelector
 
 	/***
 	 * Initializes a new instance of the OfferCountrySelector class.
-	 * @param rootPartnerOperations: The root partner operations instance.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public OfferCategoryCountrySelector( IPartner rootPartnerOperations ) 
 	{

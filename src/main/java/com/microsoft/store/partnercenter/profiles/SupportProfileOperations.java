@@ -25,7 +25,7 @@ public class SupportProfileOperations
     implements ISupportProfile
 {
     /**
-     * Initializes a new instance of the {@link #SupportProfileOperations} class.
+     * Initializes a new instance of the SupportProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

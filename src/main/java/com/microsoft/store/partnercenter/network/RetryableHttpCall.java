@@ -37,7 +37,7 @@ public class RetryableHttpCall
                        HttpStatusCode.NotFound, HttpStatusCode.Conflict, HttpStatusCode.ExpectationFailed );
 
     /**
-     * Initializes a new instance of the {@link #RetryableHttpCall} class.
+     * Initializes a new instance of the RetryableHttpCall class.
      * 
      * @param retryPolicy An optional retry policy. The default policy will be used if not provided.
      */
@@ -47,7 +47,7 @@ public class RetryableHttpCall
     }
 
     /**
-     * Initializes a new instance of the {@link #RetryableHttpCall} class.
+     * Initializes a new instance of the RetryableHttpCall class.
      * 
      * @param retryPolicy An optional retry policy. The default policy will be used if not provided.
      */

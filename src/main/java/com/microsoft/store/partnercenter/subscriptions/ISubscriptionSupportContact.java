@@ -21,7 +21,7 @@ public interface ISubscriptionSupportContact
     /**
      * Retrieves the support contact of the customer's subscription.
      * 
-     * @return: The subscription's support contact.
+     * @return The subscription's support contact.
      */
     SupportContact get();
 
@@ -29,7 +29,7 @@ public interface ISubscriptionSupportContact
      * Updates the support contact of the customer's subscription.
      * 
      * @param supportContact The support contact
-     * @return: The updated support contact.
+     * @return The updated support contact.
      */
     SupportContact update(SupportContact supportContact);
 }

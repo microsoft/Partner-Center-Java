@@ -25,7 +25,7 @@ public class CustomerRelationshipRequestOperations
     implements ICustomerRelationshipRequest
 {
     /**
-     * Initializes a new instance of the {@link #CustomerRelationshipRequestOperations} class.
+     * Initializes a new instance of the CustomerRelationshipRequestOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

@@ -19,7 +19,7 @@ public class CountryValidationRulesCollectionOperations
 {
 	/***
 	 * Initializes a new instance of the CountryValidationRulesCollectionOperations class.
-	 * @param rootPartnerOperations:  root partner operations instance.
+	 * @param rootPartnerOperations The root partner operation instance.
 	 */
 	public CountryValidationRulesCollectionOperations( IPartner rootPartnerOperations ) 
 	{
@@ -29,8 +29,8 @@ public class CountryValidationRulesCollectionOperations
 	/***
 	 * Obtains a specific behavior for country validation rules.
 	 * 
-	 * @param country: The country
-	 * @return: The country validation rules operations
+	 * @param country The country
+	 * @return The country validation rules operations
 	 */
 	@Override
 	public ICountryValidationRules byCountry( String country ) {

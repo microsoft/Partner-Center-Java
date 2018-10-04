@@ -24,7 +24,7 @@ public class AzureRateCardOperations
 {
 	/***
 	 * Initializes a new instance of the "AzureRateCardOperations" class.
-	 * @param rootPartnerOperations: The root partner operations instance.
+	 * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public AzureRateCardOperations(IPartner rootPartnerOperations)
 	{
@@ -33,11 +33,11 @@ public class AzureRateCardOperations
 
 	/***
 	 * Gets the Azure rate card which provides real-time prices for Azure offers.
-	 * @param currency: An optional three letter ISO code for the currency in which the resource rates will be provided.
+	 * @param currency An optional three letter ISO code for the currency in which the resource rates will be provided.
 	 * 				    The default is the currency associated with the market in the partner's profile.
-	 * @param region: An optional two-letter ISO country/region code that indicates the market where the offer is purchased.
+	 * @param region An optional two-letter ISO country/region code that indicates the market where the offer is purchased.
 	 * 				  The default is the country/region code set in the partner profile.
-	 * @return: The Azure rate card for the partner.
+	 * @return The Azure rate card for the partner.
 	 */
 	public AzureRateCard get(String currency, String region)
 	{
@@ -69,11 +69,11 @@ public class AzureRateCardOperations
 
 	/***
 	 * Gets the Azure CSL rate card which provides real-time prices for Azure offers.
-	 * @param currency: An optional three letter ISO code for the currency in which the resource rates will be provided.
+	 * @param currency An optional three letter ISO code for the currency in which the resource rates will be provided.
 	 * 				    The default is the currency associated with the market in the partner's profile.
-	 * @param region: An optional two-letter ISO country/region code that indicates the market where the offer is purchased.
+	 * @param region An optional two-letter ISO country/region code that indicates the market where the offer is purchased.
 	 * 				  The default is the country/region code set in the partner profile.
-	 * @return: The Azure rate card for the partner.
+	 * @return The Azure rate card for the partner.
 	 */
 	public AzureRateCard getShared(String currency, String region)
 	{

@@ -22,7 +22,7 @@ public class ValidationOperations
     implements IValidationOperations
 {
     /**
-     * Initializes a new instance of the {@link #ValidationOperations} class.
+     * Initializes a new instance of the ValidationOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

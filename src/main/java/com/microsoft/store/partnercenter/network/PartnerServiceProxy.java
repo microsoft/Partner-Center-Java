@@ -78,8 +78,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	private static CloseableHttpClient httpClient;
 
 	/**
-	 * Initializes a new instance of the {@link #PartnerServiceProxy{TRequest,
-	 * TResponse}} class.
+	 * Initializes a new instance of the PartnerServiceProxy class.
 	 * 
 	 * @param rootPartnerOperations
 	 *            The root partner operations instance.
@@ -100,8 +99,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	}
 
 	/**
-	 * Initializes a new instance of the {@link #PartnerServiceProxy{TRequest,
-	 * TResponse}} class.
+	 * Initializes a new instance of the PartnerServiceProxy class.
 	 * 
 	 * @param rootPartnerOperations
 	 *            The root partner operations instance.
@@ -369,7 +367,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/***
 	 * Executes a file content request against the partner service.
 	 * 
-	 * @return: The file content stream.
+	 * @return The file content stream.
 	 */
 	public InputStream getFileContent() 
 	{

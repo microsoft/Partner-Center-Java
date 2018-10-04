@@ -15,7 +15,7 @@ import java.util.Locale;
 public class Sort
 {
     /**
-     * Initializes a new instance of the {@link #Sort} class.
+     * Initializes a new instance of the Sort class.
      * 
      * @param sortField The sort field.
      * @param sortDirection The sort direction.

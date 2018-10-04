@@ -28,7 +28,7 @@ public class OfferCategoryCollectionOperations
     implements IOfferCategoryCollection
 {
     /**
-     * Initializes a new instance of the {@link #OfferCategoryCollectionOperations} class.
+     * Initializes a new instance of the OfferCategoryCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param country The country on which to base the offer categories

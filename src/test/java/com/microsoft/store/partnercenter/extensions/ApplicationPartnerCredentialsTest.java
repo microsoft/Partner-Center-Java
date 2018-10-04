@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.AuthenticationToken;
 import com.microsoft.store.partnercenter.TestConstants;
 
 /**
- * Unit tests for the {@link #ApplicationPartnerCredentials} class.
+ * Unit tests for the ApplicationPartnerCredentials class.
  */
 public class ApplicationPartnerCredentialsTest 
 {

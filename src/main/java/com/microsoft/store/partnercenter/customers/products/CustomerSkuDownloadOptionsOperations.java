@@ -28,7 +28,7 @@ public class CustomerSkuDownloadOptionsOperations
     implements ISkuDownloadOptions
 {
     /**
-     * Initializes a new instance of the {@link #CustomerSkuDownloadOptionsOperations} class.
+     * Initializes a new instance of the CustomerSkuDownloadOptionsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer id for which to retrieve the download options.
@@ -58,7 +58,7 @@ public class CustomerSkuDownloadOptionsOperations
     /***
      * Retrieves all download options for the provided SKU
      * 
-     * @return: The SKU download options
+     * @return The SKU download options
      */
     @Override
     public ResourceCollection<SkuDownloadOptions> get()

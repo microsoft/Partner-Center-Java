@@ -22,7 +22,7 @@ public interface IAvailabilityCollectionByTargetSegment
     /***
      * Retrieves all the availabilities for the provided SKU on a specific target segment.
      * 
-     * @return: The availability for the provided SKU on a specific target segment.
+     * @return The availability for the provided SKU on a specific target segment.
      */
     ResourceCollection<Availability> get();
 }

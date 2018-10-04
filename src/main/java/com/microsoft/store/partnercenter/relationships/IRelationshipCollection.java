@@ -22,7 +22,7 @@ public interface IRelationshipCollection
      * Retrieves all the partner relationships.
      * 
      * @param partnerRelationshipType The type of partner relationship.
-     * @return: The available partner relationships.
+     * @return The available partner relationships.
      */
     ResourceCollection<PartnerRelationship> get(PartnerRelationshipType partnerRelationshipType);
 
@@ -31,7 +31,7 @@ public interface IRelationshipCollection
      * 
      * @param partnerRelationshipType The type of partner relationship.
      * @param query A query to apply onto partner relationships. 
-     * @return: TThe partner relationships that match the given query.
+     * @return TThe partner relationships that match the given query.
      */
     ResourceCollection<PartnerRelationship> Query(PartnerRelationshipType partnerRelationshipType, IQuery query);
 }

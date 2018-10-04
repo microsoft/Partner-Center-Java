@@ -27,7 +27,7 @@ public class SubscriptionAddOnCollectionOperations
     implements ISubscriptionAddOnCollection
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionAddOnCollectionOperations} class.
+     * Initializes a new instance of the SubscriptionAddOnCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

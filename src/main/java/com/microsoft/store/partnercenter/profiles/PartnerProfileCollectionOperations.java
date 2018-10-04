@@ -42,7 +42,7 @@ public class PartnerProfileCollectionOperations
     private IBillingProfile partnerBillingProfile;
 
     /**
-     * Initializes a new instance of the {@link #PartnerProfileCollectionOperations} class.
+     * Initializes a new instance of the PartnerProfileCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

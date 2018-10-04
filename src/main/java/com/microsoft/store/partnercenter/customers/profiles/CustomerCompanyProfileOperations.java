@@ -25,10 +25,10 @@ public class CustomerCompanyProfileOperations
     implements ICustomerReadonlyProfile<CustomerCompanyProfile>
 {
     /**
-     * Initializes a new instance of the {@link #CustomerCompanyProfileOperations} class.
+     * Initializes a new instance of the CustomerCompanyProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer tenant identifer.
      */
     public CustomerCompanyProfileOperations( IPartner rootPartnerOperations, String customerId )
     {

@@ -27,7 +27,7 @@ public class UserPartnerCredentials
     private final IAadLoginHandler tokenRefresher;
 
     /**
-     * Initializes a new instance of the {@link #UserPartnerCredentials} class.
+     * Initializes a new instance of the UserPartnerCredentials class.
      * 
      * @param clientId The client id of the application in Azure Active Directory.
      * @param aadAuthenticationToken The Azure Active Directory token.

@@ -28,7 +28,7 @@ public class SubscriptionUpgradeCollectionOperations
     implements ISubscriptionUpgradeCollection
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionUpgradeCollectionOperations} class.
+     * Initializes a new instance of the SubscriptionUpgradeCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id to whom the subscriptions belong.

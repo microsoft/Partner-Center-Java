@@ -22,7 +22,7 @@ public interface IProductCollectionByCountryByTargetViewByTargetSegment
     /***
      * Retrieves all the products in the given country, catalog view and target segment.
      * 
-     * @return: The products in the given country, catalog view and target segment.
+     * @return The products in the given country, catalog view and target segment.
      */
     ResourceCollection<Product> get();
 }

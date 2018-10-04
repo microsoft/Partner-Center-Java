@@ -27,11 +27,11 @@ public class CustomerServiceRequestOperations
     implements IServiceRequest
 {
     /**
-     * Initializes a new instance of the {@link #CustomerServiceRequestOperations} class.
+     * Initializes a new instance of the CustomerServiceRequestOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
-     * @param serviceRequestId The service Request Id
+     * @param customerId The customer identifier.
+     * @param serviceRequestId The service request identifier.
      */
     public CustomerServiceRequestOperations( IPartner rootPartnerOperations, String customerId,
                                              String serviceRequestId )

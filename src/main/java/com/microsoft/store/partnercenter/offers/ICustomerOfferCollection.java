@@ -17,16 +17,16 @@ public interface ICustomerOfferCollection
     /***
      * Retrieves all the offers for the provided Customer.
      * 
-     * @return: The offers for the provided customer.
+     * @return The offers for the provided customer.
      */
     ResourceCollection<Offer> get();
     
     /***
      *  Retrieves a subset of offers for the provided customer.
      *  
-	 *  @param name="offset": The starting index.
-     *  @param name="size": The maximum number of offers to return.
-     *  @return: The requested segment of the offers for the provided customer.
+	 *  @param offset The starting index.
+     *  @param size The maximum number of offers to return.
+     *  @return The requested segment of the offers for the provided customer.
      */
     ResourceCollection<Offer> get( int offset, int size );
 }

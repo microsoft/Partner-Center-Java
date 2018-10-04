@@ -17,8 +17,9 @@ public class InvoiceDocumentsOperations
 	
 	/***
 	 * Initializes a new instance of the InvoiceDocumentsOperations class.
-	 * @param rootPartnerOperations: The root partner operations instance.
-     * @param  invoiceId: The invoice id.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+     * @param invoiceId The invoice identifier.
 	 */
 	public InvoiceDocumentsOperations( IPartner rootPartnerOperations, String invoiceId )
 	{

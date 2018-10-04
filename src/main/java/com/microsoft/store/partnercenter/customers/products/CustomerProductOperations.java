@@ -30,7 +30,7 @@ public class CustomerProductOperations
     private ISkuCollection skus;  
 
     /**
-     * Initializes a new instance of the {@link #CustomerProductOperations} class.
+     * Initializes a new instance of the CustomerProductOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer id for which to retrieve the product.
@@ -54,7 +54,7 @@ public class CustomerProductOperations
     /***
      * Retrieves the product information
      * 
-     * @return: The product information.
+     * @return The product information.
      */
     @Override
     public Product get()

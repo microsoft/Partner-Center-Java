@@ -25,7 +25,7 @@ public interface ICustomerUserLicenseCollection
     /***
      * Retrieves the assigned licenses to a customer user.
      * 
-     * @return: The customer user's directory roles.
+     * @return The customer user's directory roles.
      */
     ResourceCollection<License> get();
 
@@ -33,7 +33,7 @@ public interface ICustomerUserLicenseCollection
      * Retrieves the assigned licenses to a customer user.
      * 
      * @param licneseGroupIds License group identifier
-     * @return: The customer user's directory roles.
+     * @return The customer user's directory roles.
      */
     ResourceCollection<License> get(List<LicenseGroupId> licenseGroupIds);
 }

@@ -24,7 +24,7 @@ public interface IAvailabilityCollection
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
-     * @return: The availability operations.
+     * @return The availability operations.
      */    
     IAvailability byId( String availabilityId );
 
@@ -32,14 +32,14 @@ public interface IAvailabilityCollection
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.
-     * @return: The availability collection operations by target segment.
+     * @return The availability collection operations by target segment.
      */    
     IAvailabilityCollectionByTargetSegment byTargetSegment(String targetSegment);
 
     /***
      * Retrieves all the availabilities for the provided SKU.
      * 
-     * @return: The availabilities for the provided SKU.
+     * @return The availabilities for the provided SKU.
      */
     ResourceCollection<Availability> get();
 }

@@ -27,11 +27,11 @@ public class OrderOperations
     implements IOrder
 {
     /**
-     * Initializes a new instance of the {@link #OrderOperations} class.
+     * Initializes a new instance of the OrderOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id. ///
-     * @param orderId The order Id.
+     * @param customerId The customer identifier.
+     * @param orderId The order identifier.
      */
     public OrderOperations( IPartner rootPartnerOperations, String customerId, String orderId )
     {

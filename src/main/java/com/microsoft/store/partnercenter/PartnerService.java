@@ -175,9 +175,9 @@ public class PartnerService
     }
 
     /**
-     * Creates a {@link #IPartner} instance and configures it using the provided partner credentials.
+     * Creates a {@see #IPartner} instance and configures it using the provided partner credentials.
      * 
-     * @param credentials The partner credentials. Use the {@link #IPartnerCredentials} class to obtain these.
+     * @param credentials The partner credentials. Use the {@see #IPartnerCredentials} class to obtain these.
      * @return A configured partner operations object.
      */
     public IAggregatePartner createPartnerOperations( IPartnerCredentials credentials )

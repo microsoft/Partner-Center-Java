@@ -75,7 +75,7 @@ public class ResourceCollectionEnumeratorContainer
     private IndexBasedCollectionEnumeratorFactory<Product, ResourceCollection<Product>> productEnumeratorFactory;
 
     /**
-     * Initializes a new instance of the {@link #ResourceCollectionEnumeratorContainer} class.
+     * Initializes a new instance of the ResourceCollectionEnumeratorContainer class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

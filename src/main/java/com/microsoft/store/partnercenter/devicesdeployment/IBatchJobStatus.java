@@ -21,7 +21,7 @@ public interface IBatchJobStatus
     /***
      *  Retrieves a specific customer devices batch upload status details.
      * 
-     * @return: The devices batch upload status details.
+     * @return The devices batch upload status details.
      */
 	BatchUploadDetails get();
 }

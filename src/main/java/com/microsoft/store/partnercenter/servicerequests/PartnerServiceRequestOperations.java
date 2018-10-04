@@ -27,7 +27,7 @@ public class PartnerServiceRequestOperations
     implements IServiceRequest
 {
     /**
-     * Initializes a new instance of the {@link #PartnerServiceRequestOperations} class.
+     * Initializes a new instance of the PartnerServiceRequestOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param serviceRequestId The service request Id.

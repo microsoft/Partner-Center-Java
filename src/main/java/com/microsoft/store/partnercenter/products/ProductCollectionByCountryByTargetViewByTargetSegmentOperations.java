@@ -27,7 +27,7 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
     implements IProductCollectionByCountryByTargetViewByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #ProductCollectionByCountryByTargetViewByTargetSegmentOperations} class.
+     * Initializes a new instance of the ProductCollectionByCountryByTargetViewByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param targetView            The target view which contains the products.
@@ -54,7 +54,7 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
     /***
      * Retrieves all the products in the given country, catalog view and target segment.
      * 
-     * @return: The products in the given country, catalog view and target segment.
+     * @return The products in the given country, catalog view and target segment.
      */
     public ResourceCollection<Product> get()
     {

@@ -17,7 +17,7 @@ public class ProductCollectionOperations
     implements IProductCollection
 {
     /**
-     * Initializes a new instance of the {@link #ProductCollectionOperations} class.
+     * Initializes a new instance of the ProductCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -30,7 +30,7 @@ public class ProductCollectionOperations
      *  Retrieves the operations that can be applied on products from a given country.
      * 
      * @param country The country name.
-     * @return: The product collection operations by country.
+     * @return The product collection operations by country.
      */    
     public IProductCollectionByCountry byCountry(String country)
     {

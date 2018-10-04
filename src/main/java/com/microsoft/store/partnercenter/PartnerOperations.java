@@ -149,7 +149,7 @@ public class PartnerOperations
 	private IAgreementDetailsCollection agreements;
 
 	/**
-	 * Initializes a new instance of the {@link #PartnerOperations} class.
+	 * Initializes a new instance of the PartnerOperations class.
 	 * 
 	 * @param credentials The partner credentials.
 	 * @param context A partner context.

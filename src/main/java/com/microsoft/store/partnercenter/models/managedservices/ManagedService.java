@@ -15,7 +15,7 @@ public class ManagedService
     extends ResourceBaseWithLinks<ManagedServiceLinks>
 {
     /**
-     * Initializes a new instance of the {@link #ManagedService} class.
+     * Initializes a new instance of the ManagedService class.
      */
     public ManagedService()
     {

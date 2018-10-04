@@ -17,7 +17,7 @@ public abstract class ResourceBase
     private final ResourceAttributes attributes;
 
     /**
-     * Initializes a new instance of the {@link #ResourceBase} class.
+     * Initializes a new instance of the ResourceBase class.
      */
     protected ResourceBase()
     {
@@ -25,7 +25,7 @@ public abstract class ResourceBase
     }
 
     /**
-     * Initializes a new instance of the {@link #ResourceBase} class.
+     * Initializes a new instance of the ResourceBase class.
      * 
      * @param objectType Type of the object.
      */

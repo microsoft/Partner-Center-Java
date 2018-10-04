@@ -21,7 +21,7 @@ public class BillingProfile
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
-     * Initializes a new instance of the {@link #BillingProfile} class.
+     * Initializes a new instance of the BillingProfile class.
      */
     public BillingProfile()
     {

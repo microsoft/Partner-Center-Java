@@ -24,7 +24,7 @@ public interface ISkuCollection
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.
-     * @return: The available SKU operations.
+     * @return The available SKU operations.
      */
     ISku byId(String skuId);
     

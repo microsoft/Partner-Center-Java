@@ -27,7 +27,7 @@ public class CustomerAvailabilityOperations
     implements IAvailability
 {
     /**
-     * Initializes a new instance of the {@link #CustomerAvailabilityOperations} class.
+     * Initializes a new instance of the CustomerAvailabilityOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -63,7 +63,7 @@ public class CustomerAvailabilityOperations
     /***
      * Retrieves the availability information.
      * 
-     * @return: The availability information.
+     * @return The availability information.
      */
     @Override
     public Availability get()

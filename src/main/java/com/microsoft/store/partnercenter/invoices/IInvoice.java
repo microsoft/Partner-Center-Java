@@ -26,9 +26,9 @@ public interface IInvoice
     /***
      * Creates an invoice line item collection operations given a billing provider and invoice line item type.
      * 
-     * @param billingProvider: billingProvider">The billing provider.
-     * @param invoiceLineItemType: invoiceLineItemType">The invoice line item type.
-     * @return: The invoice line item collection operations.
+     * @param billingProvider The billing provider.
+     * @param invoiceLineItemType The invoice line item type.
+     * @return The invoice line item collection operations.
      */
     IInvoiceLineItemCollection by(BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType);
     

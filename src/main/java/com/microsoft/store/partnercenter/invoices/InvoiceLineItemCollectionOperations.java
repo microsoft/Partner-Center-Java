@@ -39,10 +39,10 @@ public class InvoiceLineItemCollectionOperations
 	/***
 	 * Initializes a new instance of the InvoiceLineItemCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations: The partner operations.
-	 * @param invoiceId: The invoice Id.
-	 * @param billingProvider: The provider of billing information.
-	 * @param invoiceLineItemType: The type of invoice line item.
+	 * @param rootPartnerOperations The partner operations.
+	 * @param invoiceId The invoice Id.
+	 * @param billingProvider The provider of billing information.
+	 * @param invoiceLineItemType The type of invoice line item.
 	 */
     public InvoiceLineItemCollectionOperations( IPartner rootPartnerOperations, String invoiceId, BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType )
 	{
@@ -70,7 +70,7 @@ public class InvoiceLineItemCollectionOperations
 	/***
 	 * Retrieves invoice line items for a specific billing provider and invoice line item type 
 	 * 
-	 * @return: The collection of invoice line items.
+	 * @return The collection of invoice line items.
 	 */
     @Override
 	public ResourceCollection<InvoiceLineItem> get()
@@ -94,7 +94,7 @@ public class InvoiceLineItemCollectionOperations
 	/***
 	 * Retrieves invoice line items for a specific billing provider and invoice line item type and allows paging
 	 * 
-	 * @return: The collection of invoice line items.
+	 * @return The collection of invoice line items.
 	 */
 	@Override
 	public ResourceCollection<InvoiceLineItem> get( int size, int offset )

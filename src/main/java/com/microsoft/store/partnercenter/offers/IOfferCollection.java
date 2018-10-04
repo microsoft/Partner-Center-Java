@@ -44,8 +44,9 @@ public interface IOfferCollection
     /***
      * Retrieves the operations that can be applied on offers that belong to an offer category.
      * 
-     * @param categoryId: The offer category Id.
-     * @return: The category offers operations.
+     * @param categoryId The offer category identifier.
+     * 
+     * @return The category offers operations.
      */
     ICategoryOffersCollection byCategory( String categoryId );
 }

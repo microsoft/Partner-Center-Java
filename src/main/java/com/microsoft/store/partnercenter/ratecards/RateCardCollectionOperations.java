@@ -15,7 +15,7 @@ public class RateCardCollectionOperations extends BasePartnerComponentString imp
 	
 	/***
 	 * Initializes a new instance of the RateCardCollectionOperationsclass.
-	 * @param rootPartnerOperations: The root partner operations instance.
+	 * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public RateCardCollectionOperations(IPartner rootPartnerOperations)
 	{

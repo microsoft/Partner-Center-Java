@@ -23,7 +23,7 @@ public class ExtensionsOperations
     private IProductExtensions products;
 
     /**
-     * Initializes a new instance of the {@link #ProductExtensionsOperations} class.
+     * Initializes a new instance of the ProductExtensionsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -34,7 +34,7 @@ public class ExtensionsOperations
 	/***
 	 * Retrieves the product extension operations.
 	 * 
-	 * @return: The product extensions operations.
+	 * @return The product extensions operations.
 	 */
     public IProductExtensions getProduct()
     {

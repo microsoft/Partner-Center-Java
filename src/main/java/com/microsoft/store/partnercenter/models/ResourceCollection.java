@@ -19,7 +19,7 @@ public class ResourceCollection<TResource>
 {
 
     /**
-     * Initializes a new instance of the {@link #ResourceCollection{T}} class.
+     * Initializes a new instance of the ResourceCollection class.
      * 
      * @param items The items.
      */
@@ -30,7 +30,7 @@ public class ResourceCollection<TResource>
     }
 
     /**
-     * Initializes a new instance of the {@link #ResourceCollection{T}} class.
+     * Initializes a new instance of the ResourceCollection class.
      * 
      * @param resourceCollection The resource collection.
      */

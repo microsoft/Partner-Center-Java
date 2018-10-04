@@ -26,7 +26,7 @@ public class ServiceCostLineItemsOperations
     implements IServiceCostLineItemsCollection
 {
     /**
-     * Initializes a new instance of the {@link #ServiceCostLineItemsOperations} class.
+     * Initializes a new instance of the ServiceCostLineItemsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param context The context, including customer id and billing period..
@@ -44,7 +44,7 @@ public class ServiceCostLineItemsOperations
     /***
      * Retrieves a customer's service cost line items.
      * 
-     * @return: The service cost line items.
+     * @return The service cost line items.
      */
     @Override
 	public ResourceCollection<ServiceCostLineItem> get()

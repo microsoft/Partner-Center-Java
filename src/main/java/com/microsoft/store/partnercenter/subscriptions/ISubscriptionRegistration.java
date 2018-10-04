@@ -18,7 +18,7 @@ public interface ISubscriptionRegistration
     /**
      * Register a subscription to enable Azure Reserved instance purchase.
      * 
-     * @return: The location which indicates the URL of the API to query for status.
+     * @return The location which indicates the URL of the API to query for status.
      */
     String register();
 }

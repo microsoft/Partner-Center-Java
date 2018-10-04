@@ -44,14 +44,14 @@ public interface IInvoiceCollection
     
     /***
      * Retrieves all the invoices.
-     * @return: The invoices.
+     * @return The invoices.
      */
     ResourceCollection<Invoice> get();
     
     /***
      * Queries invoices associated to the partner.
-     * @param query: The query.
-     * @return: The invoices.
+     * @param query The query.
+     * @return The invoices.
      */
     ResourceCollection<Invoice> query( IQuery query );
 }

@@ -18,7 +18,7 @@ public interface IPartnerUsageSummary
 {
 	/***
 	 * Retrieves the partner's usage summary.
-	 * @return: The partner's usage summary.
+	 * @return The partner's usage summary.
 	 */
     PartnerUsageSummary get();
 }

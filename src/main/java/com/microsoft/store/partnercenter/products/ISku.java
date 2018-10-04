@@ -21,21 +21,21 @@ public interface ISku
     /***
      * Retrieves the operations for the current SKU's availabilities.
      * 
-     * @return: The operations for the current SKU's availabilities.
+     * @return The operations for the current SKU's availabilities.
      */    
     IAvailabilityCollection getAvailabilities();
 
     /***
      * Retrieves the operations for the current SKU's download options.
      * 
-     * @return: The operations for the current SKU's download options.
+     * @return The operations for the current SKU's download options.
      */    
     ISkuDownloadOptions getDownloadOptions();
 
     /***
      * Retrieves the SKU information.
      * 
-     * @return: The SKUs information.
+     * @return The SKUs information.
      */
     Sku get();
 }

@@ -31,7 +31,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     private T resourceCollection = null;
 
     /**
-     * Initializes a new instance of the {@link #BaseResourceCollectionEnumerator{T}} class.
+     * Initializes a new instance of the BaseResourceCollectionEnumerator class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param resourceCollection The initial resource collection.

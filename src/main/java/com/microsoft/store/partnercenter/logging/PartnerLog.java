@@ -28,7 +28,7 @@ public class PartnerLog
     private final List<ILogger> registeredLoggers = new ArrayList<ILogger>();
 
     /**
-     * Prevents a default instance of the {@link #LogManager} class from being created.
+     * Prevents a default instance of the LogManager class from being created.
      */
     private PartnerLog()
     {

@@ -20,11 +20,11 @@ public class IndexBasedCollectionEnumerator<T extends ResourceBase, TResourceCol
     extends BaseResourceCollectionEnumerator<TResourceCollection>
 {
     /**
-     * Initializes a new instance of the {@link #IndexBasedCollectionEnumerator{T, TResourceCollection}} class.
+     * Initializes a new instance of the IndexBasedCollectionEnumerator class.
      * 
      * @param partnerOperations A partner operations instance.
      * @param pagedResourceCollection The paged resource collection to enumerate from.
-     * @param resourceCollectionConverter Optional: The resource collection converter.
+     * @param resourceCollectionConverter The resource collection converter.
      */
     public IndexBasedCollectionEnumerator( IPartner partnerOperations,
                                            TResourceCollection pagedResourceCollection,

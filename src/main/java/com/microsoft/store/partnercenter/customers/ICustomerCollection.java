@@ -43,7 +43,7 @@ public interface ICustomerCollection
     /***
      * Retrieves all the partner's customers.
      * 
-     * @return: The partner's customers.
+     * @return The partner's customers.
      */
     SeekBasedResourceCollection<Customer> get();
     
@@ -52,7 +52,7 @@ public interface ICustomerCollection
      * the page size or filter or do both at the same time. - Sort is not supported. - You can navigate to other pages
      * by specifying a seek query with the seek operation and the continuation token sent by the previous operation.
      * 
-     * @param customersQuery A query to apply onto customers. Check {@link #QueryFactory} to see how to build queries.
+     * @param customersQuery A query to apply onto customers. Check {@see #QueryFactory} to see how to build queries.
      * @return The requested customers.
      */
     SeekBasedResourceCollection<Customer> query( IQuery customersQuery );

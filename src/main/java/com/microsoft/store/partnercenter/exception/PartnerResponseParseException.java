@@ -12,7 +12,7 @@ import java.util.Locale;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
 /**
- * This exception is thrown by {@link #IPartnerServiceProxy{TRequest,TResponse}} objects when they fail to parse the
+ * This exception is thrown by {@see #IPartnerServiceProxy} objects when they fail to parse the
  * response according to the caller's expectations.
  */
 public class PartnerResponseParseException
@@ -21,7 +21,7 @@ public class PartnerResponseParseException
     private static final long serialVersionUID = 2L;
 
     /**
-     * Initializes a new instance of the {@link #PartnerResponseParseException} class.
+     * Initializes a new instance of the PartnerResponseParseException class.
      */
     public PartnerResponseParseException()
     {
@@ -29,7 +29,7 @@ public class PartnerResponseParseException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerResponseParseException} class.
+     * Initializes a new instance of the PartnerResponseParseException class.
      * 
      * @param message The exception message.
      */
@@ -39,7 +39,7 @@ public class PartnerResponseParseException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerResponseParseException} class.
+     * Initializes a new instance of the PartnerResponseParseException class.
      * 
      * @param message The exception message.
      * @param innerException The exception that is the cause of the current exception, or a null reference if no inner
@@ -52,7 +52,7 @@ public class PartnerResponseParseException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerResponseParseException} class.
+     * Initializes a new instance of the PartnerResponseParseException class.
      * 
      * @param response The HTTP response payload which could not be parsed.
      * @param context The partner context.

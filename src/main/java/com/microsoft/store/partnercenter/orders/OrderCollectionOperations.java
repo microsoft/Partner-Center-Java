@@ -27,10 +27,10 @@ public class OrderCollectionOperations
     implements IOrderCollection
 {
     /**
-     * Initializes a new instance of the {@link #OrderCollectionOperations} class.
+     * Initializes a new instance of the OrderCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer tenant identifier.
      */
     public OrderCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {

@@ -23,8 +23,8 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	/***
 	 * Initializes a new instance of the DomainOperations class.
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance
-	 * @param domain: The domain
+	 * @param rootPartnerOperations The root partner operations instance
+	 * @param domain The domain
 	 */
 	protected DomainOperations( IPartner rootPartnerOperations, String domain )
 	{

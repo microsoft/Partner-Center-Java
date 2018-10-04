@@ -15,9 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Configuration
 {
-    /**
-     * Initializes a new instance of the {@link #Api} class.
-     */
     public static class Api
     {
         /**

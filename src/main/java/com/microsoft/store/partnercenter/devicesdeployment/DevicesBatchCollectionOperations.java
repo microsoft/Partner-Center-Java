@@ -29,7 +29,7 @@ public class DevicesBatchCollectionOperations
     implements IDevicesBatchCollection
 {
     /**
-     * Initializes a new instance of the {@link #DevicesBatchOperations} class.
+     * Initializes a new instance of the DevicesBatchOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -45,8 +45,8 @@ public class DevicesBatchCollectionOperations
 	/***
 	 * Retrieves a specific customer devices batch behavior.
 	 * 
-	 * @param deviceBatchId: The devices batch id
-	 * @return: The devices batch behavior.
+	 * @param deviceBatchId The devices batch identifier.
+	 * @return The devices batch behavior.
 	 */
     public IDevicesBatch byId( String deviceBatchId )
     {
@@ -56,8 +56,8 @@ public class DevicesBatchCollectionOperations
     /***
 	 * Creates a new devices batch along with the devices.
 	 * 
-	 * @param newDevices: The new devices batch.
-	 * @return: The location which indicates the URL of the API to query for status of the create request.
+	 * @param newDevices The new devices batch.
+	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
     public String create( DeviceBatchCreationRequest newDeviceBatch )
     {
@@ -76,7 +76,7 @@ public class DevicesBatchCollectionOperations
     /***
      * Retrieves all devices batches.
      * 
-     * @return: All of the device batches.
+     * @return All of the device batches.
      */
     public ResourceCollection<DeviceBatch> get()
     {

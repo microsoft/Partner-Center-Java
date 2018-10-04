@@ -23,7 +23,7 @@ public class CustomerAnalyticsCollectionOperations
     private ICustomerLicensesAnalyticsCollection licenses;
 
     /**
-     * Initializes a new instance of the {@link #CustomerAnalyticsCollectionOperations} class.
+     * Initializes a new instance of the CustomerAnalyticsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier of the customer.

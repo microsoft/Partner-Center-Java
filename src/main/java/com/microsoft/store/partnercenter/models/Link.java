@@ -24,7 +24,7 @@ public class Link
     }
 
     /**
-     * Initializes a new instance of the {@link #Link} class.
+     * Initializes a new instance of the Link class.
      * 
      * @param uri The URI.
      */
@@ -35,7 +35,7 @@ public class Link
     }
 
     /**
-     * Initializes a new instance of the {@link #Link} class.
+     * Initializes a new instance of the Link class.
      * 
      * @param uri The URI.
      * @param method The HTTP method.

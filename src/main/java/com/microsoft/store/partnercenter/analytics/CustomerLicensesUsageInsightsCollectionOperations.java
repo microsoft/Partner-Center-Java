@@ -25,7 +25,7 @@ public class CustomerLicensesUsageInsightsCollectionOperations
     implements ICustomerLicensesUsageInsightsCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerLicensesUsageInsightsCollectionOperations} class.
+     * Initializes a new instance of the CustomerLicensesUsageInsightsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier for the customer.

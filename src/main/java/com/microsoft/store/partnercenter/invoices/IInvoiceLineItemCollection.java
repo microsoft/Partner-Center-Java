@@ -16,15 +16,15 @@ public interface IInvoiceLineItemCollection
 {
 	/***
 	 * Retrieves invoice line items for a specific billing provider and invoice line item type
-	 * @return: The collection of invoice line items. 
+	 * @return The collection of invoice line items. 
 	 */
    ResourceCollection<InvoiceLineItem> get();
    
    /***
     * Retrieves a subset of invoice line items for a specific billing provider and invoice line item type 
-    * @param size: The maximum number of invoice line items to return.
-    * @param offset: The page offset.
-    * @return: The subset of invoice line items.
+    * @param size The maximum number of invoice line items to return.
+    * @param offset The page offset.
+    * @return The subset of invoice line items.
     */
    ResourceCollection<InvoiceLineItem> get( int size, int offset );
 }

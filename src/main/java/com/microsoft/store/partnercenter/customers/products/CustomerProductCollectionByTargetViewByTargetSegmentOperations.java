@@ -28,7 +28,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
     implements ICustomerProductCollectionByTargetViewByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #CustomerProductCollectionByTargetViewByTargetSegmentOperations} class.
+     * Initializes a new instance of the CustomerProductCollectionByTargetViewByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -58,7 +58,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
     /***
      * Retrieves all the products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
-     * @return: The products in a given catalog view and that apply to a given customer, filtered by target segment.
+     * @return The products in a given catalog view and that apply to a given customer, filtered by target segment.
      */
     @Override
     public ResourceCollection<Product> get()

@@ -60,7 +60,7 @@ public class CustomerCollectionOperations
     private ICustomerRelationshipRequest relationshipRequest;
 
     /**
-     * Initializes a new instance of the {@link #CustomerCollectionOperations} class.
+     * Initializes a new instance of the CustomerCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -153,7 +153,7 @@ public class CustomerCollectionOperations
      * the page size or filter or do both at the same time. - Sort is not supported. - You can navigate to other pages
      * by specifying a seek query with the seek operation and the continuation token sent by the previous operation.
      *
-     * @param customersQuery A query to apply onto customers. Check {@link #QueryFactory} to see how to build queries.
+     * @param customersQuery A query to apply onto customers. Check {@see #QueryFactory} to see how to build queries.
      * @return The requested customers.
      */
     @Override

@@ -19,7 +19,7 @@ public class CustomerServiceCostsCollectionOperations
     implements ICustomerServiceCostsCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerServiceCostsCollectionOperations} class.
+     * Initializes a new instance of the CustomerServiceCostsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -38,7 +38,7 @@ public class CustomerServiceCostsCollectionOperations
      * Obtains the service cost operations by billing period.
      * 
      * @param billingPeriod The billing period.
-     * @return: The service cost operations.
+     * @return The service cost operations.
      */
     @Override
     public IServiceCostsCollection byBillingPeriod(ServiceCostsBillingPeriod billingPeriod)

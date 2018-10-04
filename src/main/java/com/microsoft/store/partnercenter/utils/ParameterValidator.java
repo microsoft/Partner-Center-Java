@@ -26,7 +26,7 @@ public class ParameterValidator
     
     /***
      * Ensures that a given country code is valid.
-     * @param countryCode: The country code to validate.
+     * @param countryCode The country code to validate.
      */
     public static void isValidCountryCode(String countryCode)
     {

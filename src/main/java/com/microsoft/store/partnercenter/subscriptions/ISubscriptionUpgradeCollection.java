@@ -24,7 +24,8 @@ public interface ISubscriptionUpgradeCollection
 {
 	/***
 	 * Submits a subscription upgrade.
-	 * @param upgrade: The new subscription upgrade information.
+     * 
+	 * @param upgrade The new subscription upgrade information.
 	 * @return The subscription upgrade results.
 	 */
     UpgradeResult create( Upgrade upgrade );

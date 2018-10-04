@@ -26,8 +26,8 @@ public interface IUserMemberCollection
 {
     /***
      * Gets a single user member behavior.
-     * @param userId: The user id.
-     * @return: The user member operations.
+     * @param userId The user identifier.
+     * @return The user member operations.
      */
     IUserMember byId( String userId );
 
@@ -47,7 +47,7 @@ public interface IUserMemberCollection
 
     /***
      * Gets all the user members of a customer directory role.
-     * @return: The directory role user memberships.
+     * @return The directory role user memberships.
      */
     SeekBasedResourceCollection<UserMember> get();
 

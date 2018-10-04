@@ -18,7 +18,7 @@ public interface IInvoiceStatement extends IPartnerComponentString
     /***
      * Retrieves the invoice statement. This operation is currently only supported for user based credentials.
      * 
-     * @return: The invoice statement.
+     * @return The invoice statement.
      */
     InputStream get();
 }

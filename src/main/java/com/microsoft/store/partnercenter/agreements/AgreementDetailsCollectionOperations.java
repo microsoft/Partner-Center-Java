@@ -22,7 +22,7 @@ public class AgreementDetailsCollectionOperations
         implements IAgreementDetailsCollection
 {
     /**
-     * Initializes a new instance of the {@link #AgreementDetailsCollectionOperations} class.
+     * Initializes a new instance of the AgreementDetailsCollectionOperations class.
      *
      * @param rootPartnerOperations The root partner operations instance.
      */

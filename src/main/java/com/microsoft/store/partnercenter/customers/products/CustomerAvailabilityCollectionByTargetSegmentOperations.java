@@ -29,7 +29,7 @@ public class CustomerAvailabilityCollectionByTargetSegmentOperations
     implements IAvailabilityCollectionByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #CustomerAvailabilityCollectionByTargetSegmentOperations} class.
+     * Initializes a new instance of the CustomerAvailabilityCollectionByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.

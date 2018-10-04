@@ -28,7 +28,7 @@ public class InvoiceOperations
     implements IInvoice
 {
     /**
-     * Initializes a new instance of the {@link #InvoiceOperations} class.
+     * Initializes a new instance of the InvoiceOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param invoiceId The invoice id.
@@ -54,9 +54,9 @@ public class InvoiceOperations
     /***
      * Creates an invoice line item collection operation given a billing provider and invoice line item type.
      * 
-     * @param billingProvider: The billing provider.
-     * @param invoiceLineItemType: The invoice line item type.
-     * @return: The invoice line item collection operations.
+     * @param billingProvider The billing provider.
+     * @param invoiceLineItemType The invoice line item type.
+     * @return The invoice line item collection operations.
      */
     public IInvoiceLineItemCollection by( BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType )
     {

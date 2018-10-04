@@ -28,7 +28,7 @@ public class UtilizationCollectionEnumeratorContainer
 
     /***
      * Initializes a new instance of the UtilizationCollectionEnumeratorContainer class.
-     * @param rootPartnerOperations: The root partner operations instance.
+     * @param rootPartnerOperations The root partner operations instance.
      */
     public UtilizationCollectionEnumeratorContainer(IPartner rootPartnerOperations)
     {

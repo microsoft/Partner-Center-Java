@@ -37,7 +37,7 @@ public class ServiceIncidentCollectionOperations
 	/***
 	 * Initializes a new instance of the ServiceIncidentCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance.
+	 * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public ServiceIncidentCollectionOperations(IPartner rootPartnerOperations)
 	{
@@ -60,9 +60,10 @@ public class ServiceIncidentCollectionOperations
 	}
 
 	/***
+	 * Gets a list of service incidents that match the query.
 	 * 
-	 * @param serviceIncidentsQuery: 
-	 * @return: 
+	 * @param serviceIncidentsQuery The query used to filter the response.
+	 * @return 
 	 */
 	@Override
 	public ResourceCollection<ServiceIncidents> get( IQuery serviceIncidentsQuery )

@@ -25,7 +25,7 @@ public class ServiceCostSummaryOperations
     implements IServiceCostSummary
 {
     /**
-     * Initializes a new instance of the {@link #ServiceCostSummaryOperations} class.
+     * Initializes a new instance of the ServiceCostSummaryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param context The context, including customer id and billing period..
@@ -43,7 +43,7 @@ public class ServiceCostSummaryOperations
     /***
      * Retrieves a customer's service cost line items.
      * 
-     * @return: The service cost line items.
+     * @return The service cost line items.
      */
     @Override
 	public ServiceCostsSummary get()

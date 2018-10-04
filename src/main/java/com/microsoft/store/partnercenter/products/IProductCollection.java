@@ -18,7 +18,7 @@ public interface IProductCollection
      *  Retrieves the operations that can be applied on products from a given country.
      * 
      * @param country The country name.
-     * @return: The product collection operations by country.
+     * @return The product collection operations by country.
      */    
     IProductCollectionByCountry byCountry(String country);
 }

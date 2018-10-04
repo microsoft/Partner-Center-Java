@@ -21,17 +21,17 @@ public class UtilizationCollectionOperations
      */
     private IAzureUtilizationCollection azureUtilizationOperations;
 
-
+	/***
+	 * Initializes a new instance of the UtilizationCollectionOperations class.
+	 * @param rootPartnerOperations The root partner operations.
+	 * @param customerId The customer identifier.
+	 * @param subscriptionId The subscription identifer.
+	 */
 	public UtilizationCollectionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId )
 	{
-		/***
-		 * Initializes a new instance of the UtilizationCollectionOperations class.
-         * @param rootPartnerOperations: The root partner operations.
-         * @param customerId: The customer ID.
-         * @param subscriptionId: The subscription ID.
-		 */
 		super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set" );
         }

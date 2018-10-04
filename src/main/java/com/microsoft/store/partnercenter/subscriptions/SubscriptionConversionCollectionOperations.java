@@ -28,7 +28,7 @@ public class SubscriptionConversionCollectionOperations
     implements ISubscriptionConversionCollection
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionConversionCollectionOperations} class.
+     * Initializes a new instance of the SubscriptionConversionCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id to whom the subscriptions belong.

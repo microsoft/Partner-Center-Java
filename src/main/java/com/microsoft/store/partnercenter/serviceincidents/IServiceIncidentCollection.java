@@ -18,8 +18,8 @@ public interface IServiceIncidentCollection
 	/***
 	 * Retrieves all service incidents.
 	 * 
-	 * @param serviceIncidentsQuery: A query to retrieve service incidents based on the active status.
-	 * @return: The list of service incidents.
+	 * @param serviceIncidentsQuery A query to retrieve service incidents based on the active status.
+	 * @return The list of service incidents.
 	 */
     ResourceCollection<ServiceIncidents> get( IQuery serviceIncidentsQuery );   
 }

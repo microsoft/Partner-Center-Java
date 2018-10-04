@@ -90,7 +90,7 @@ public class AzureDataMarketDailyUsageLineItem extends BaseAzureDataMarketLineIt
 	/***
 	 * Returns the type of invoice line item.
 	 * 
-	 * @return: The type of invoice line item.
+	 * @return The type of invoice line item.
 	 */
 	@Override
 	public InvoiceLineItemType getInvoiceLineItemType() {

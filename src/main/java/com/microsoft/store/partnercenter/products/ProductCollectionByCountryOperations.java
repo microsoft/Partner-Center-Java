@@ -18,7 +18,7 @@ public class ProductCollectionByCountryOperations
     implements IProductCollectionByCountry
 {
     /**
-     * Initializes a new instance of the {@link #ProductCollectionByCountryOperations} class.
+     * Initializes a new instance of the ProductCollectionByCountryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param country               The country on which to base the products.
@@ -34,7 +34,7 @@ public class ProductCollectionByCountryOperations
      * Retrieves the operations tied with a specific product.
      * 
      * @param productId The identifier for the product.
-     * @return: The available product operations.
+     * @return The available product operations.
      */
     public IProduct byId(String productId)
     {
@@ -45,7 +45,7 @@ public class ProductCollectionByCountryOperations
      * Retrieves the operations that can be applied on products that belong to a given country, catalog view and target segment.
      * 
      * @param targetView The product target view.
-     * @return: The product collection operations by country and by target view.
+     * @return The product collection operations by country and by target view.
      */
     public IProductCollectionByCountryByTargetView byTargetView(String targetView)
     {

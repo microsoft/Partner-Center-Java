@@ -24,8 +24,8 @@ public interface ICustomerUserLicenseUpdates
      * 2. Remove license from a customer user.
      * 3. Update existing license for a customer user.
      * 
-     * @param name="newLicenseUpdate": License update object.
-     * @returns: The customer user's directory roles.
+     * @param newLicenseUpdate License update object.
+     * @return The customer user's directory roles.
      */
 	LicenseUpdate create( LicenseUpdate newLicenseUpdate );
 

@@ -27,7 +27,7 @@ public class PartnerLicensesAnalyticsCollectionOperations
     private IPartnerLicensesUsageInsightsCollection usage;
 
     /**
-     * Initializes a new instance of the {@link #PartnerLicensesAnalyticsCollectionOperations} class.
+     * Initializes a new instance of the PartnerLicensesAnalyticsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier of the customer.

@@ -23,14 +23,14 @@ public interface IProductCollectionByCountryByTargetView
      * Retrieves the operations that can be applied on products that belong to a given country, catalog view and target segment.
      * 
      * @param targetSegment The target segment filter.
-     * @return: The product collection operations by country, by target view and by target segment.
+     * @return The product collection operations by country, by target view and by target segment.
      */
     IProductCollectionByCountryByTargetViewByTargetSegment byTargetSegment(String targetSegment);
 
     /***
      * Retrieves all the products in the given country and catalog view.
      * 
-     * @return: The products in the given country and catalog view.
+     * @return The products in the given country and catalog view.
      */
     ResourceCollection<Product> get();
 }

@@ -22,7 +22,7 @@ public interface ICustomerProductCollectionByTargetViewByTargetSegment
     /***
      * Retrieves all the products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
-     * @return: The products in a given catalog view and that apply to a given customer, filtered by target segment.
+     * @return The products in a given catalog view and that apply to a given customer, filtered by target segment.
      */
     ResourceCollection<Product> get();    
 }

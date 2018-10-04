@@ -32,10 +32,10 @@ public class UserMemberOperations
 	/***
 	 * Initializes a new instance of the UserMemberOperations class.
 	 * 
-	 * @param rootPartnerOperations: The partner operations instance.
-	 * @param customerId: Customer id.
-	 * @param roleId: The directory role id.
-	 * @param userId: The user id.
+	 * @param rootPartnerOperations The partner operations instance.
+	 * @param customerId The customer identifier.
+	 * @param roleId The directory role identifier.
+	 * @param userId The user identifier.
 	 */
 	public UserMemberOperations(IPartner rootPartnerOperations, String customerId, String roleId, String userId )
 	{

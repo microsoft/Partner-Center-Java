@@ -18,14 +18,14 @@ public interface IServiceCostsCollection
     /***
      * Gets the customer's service cost line items.
      * 
-     * @return: The customer's service cost line items.
+     * @return The customer's service cost line items.
      */
     IServiceCostLineItemsCollection getLineItems();
 
     /***
      * Gets the customer's service cost summary.
      * 
-     * @return: The customer's service cost summary.
+     * @return The customer's service cost summary.
      */
     IServiceCostSummary getSummary();
 }

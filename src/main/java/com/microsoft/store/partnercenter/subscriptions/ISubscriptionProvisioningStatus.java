@@ -20,7 +20,7 @@ public interface ISubscriptionProvisioningStatus
     /**
      * Retrieves all subscription provisioning status details.
      * 
-     * @return: The subscription provisioning status details.
+     * @return The subscription provisioning status details.
      */
     SubscriptionProvisioningStatus get();
 }

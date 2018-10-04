@@ -91,7 +91,7 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
 
     /***
      * Executes a file content request against the partner service.
-     * @return: The file content stream.
+     * @return The file content stream.
      */
     InputStream getFileContent();
 
@@ -121,13 +121,11 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
 
     /**
      * Executes a DELETE request against the partner service.
-     * @return: The DELETE response.
      */
     void delete();
 
     /***
      * Executes a HEAD request against the partner service.
-     * @return: The HEAD response.
      */
     void head();
 }

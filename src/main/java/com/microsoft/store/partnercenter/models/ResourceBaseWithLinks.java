@@ -13,7 +13,7 @@ public abstract class ResourceBaseWithLinks<TLinks>
     extends ResourceBase
 {
     /**
-     * Initializes a new instance of the {@link #ResourceBaseWithLinks} class.
+     * Initializes a new instance of the ResourceBaseWithLinks class.
      * 
      * @param objectType Type of the object.
      */
@@ -24,7 +24,7 @@ public abstract class ResourceBaseWithLinks<TLinks>
     }
 
     /**
-     * Initializes a new instance of the {@link #ResourceBaseWithLinks} class.
+     * Initializes a new instance of the ResourceBaseWithLinks class.
      */
     protected ResourceBaseWithLinks()
     {

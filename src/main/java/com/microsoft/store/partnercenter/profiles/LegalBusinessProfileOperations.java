@@ -25,7 +25,7 @@ public class LegalBusinessProfileOperations
     implements ILegalBusinessProfile
 {
     /**
-     * Initializes a new instance of the {@link #LegalBusinessProfileOperations} class.
+     * Initializes a new instance of the LegalBusinessProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

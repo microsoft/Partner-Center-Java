@@ -20,7 +20,7 @@ public class CustomerProductCollectionOperations
     implements ICustomerProductCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerProductCollectionOperations} class.
+     * Initializes a new instance of the CustomerProductCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -50,7 +50,7 @@ public class CustomerProductCollectionOperations
     /***
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer.
      * 
-     * @return: The catalog view operations by target view
+     * @return The catalog view operations by target view
      */
     @Override
     public ICustomerProductCollectionByTargetView byTargetView(String targetView)

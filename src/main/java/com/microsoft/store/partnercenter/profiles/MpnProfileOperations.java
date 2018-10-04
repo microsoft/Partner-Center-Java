@@ -26,7 +26,7 @@ public class MpnProfileOperations
     implements IMpnProfile
 {
     /**
-     * Initializes a new instance of the {@link #MpnProfileOperations} class.
+     * Initializes a new instance of the MpnProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

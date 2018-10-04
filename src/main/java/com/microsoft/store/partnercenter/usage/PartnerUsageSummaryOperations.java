@@ -25,7 +25,7 @@ public class PartnerUsageSummaryOperations
     implements IPartnerUsageSummary
 {
     /**
-     * Initializes a new instance of the {@link #PartnerUsageSummaryOperations} class.
+     * Initializes a new instance of the PartnerUsageSummaryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

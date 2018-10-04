@@ -37,9 +37,9 @@ public class UserMemberCollectionOperations
 	/***
 	 * Initializes a new instance of the UserMemberCollectionOperations class
 	 * 
-	 * @param rootPartnerOperations: The partner operations instance.
-	 * @param customerId: Customer Id.
-	 * @param roleId: The directory role Id.
+	 * @param rootPartnerOperations The partner operations instance.
+	 * @param customerId The customer identifier.
+	 * @param roleId The directory role identifier.
 	 */
 	public UserMemberCollectionOperations( IPartner rootPartnerOperations, String customerId, String roleId )
 	{
@@ -58,8 +58,8 @@ public class UserMemberCollectionOperations
 	/***
 	 * Get a single user member operations object.
 	 * 
-	 * @param userId: The user id.
-	 * @return: The user member operations instance.
+	 * @param userId The user identifier.
+	 * @return The user member operations instance.
 	 */
 	@Override
 	public IUserMember byId(String userId)
@@ -70,8 +70,8 @@ public class UserMemberCollectionOperations
 	/***
 	 * Adds customer user to a directory role.
 	 * 
-	 * @param newEntity: UserMember to add.
-	 * @return: The customer directory role user member.
+	 * @param newEntity The user to be added,
+	 * @return The customer directory role user member.
 	 */
 	@Override
 	public UserMember create( UserMember newEntity )
@@ -93,7 +93,7 @@ public class UserMemberCollectionOperations
 	/***
 	 * Gets all the user members of a customer directory role.
 	 * 
-	 * @return: The directory role user memberships.
+	 * @return The directory role user memberships.
 	 */
 	@Override
 	public SeekBasedResourceCollection<UserMember> get()
@@ -110,8 +110,8 @@ public class UserMemberCollectionOperations
 	/***
 	 * Retrieves the user members of a customer directory role.
 	 * 
-	 * @param query: A query to apply onto user member collection.
-	 * @return: The  directory role user memberships.
+	 * @param query A query to apply onto user member collection.
+	 * @return The  directory role user memberships.
 	 */
 	@Override
 	public SeekBasedResourceCollection<UserMember> query(IQuery query)

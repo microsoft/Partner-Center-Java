@@ -23,7 +23,7 @@ public interface IConfigurationPolicy
     /***
      *  Retrieves the configuration policy.
      * 
-     * @return: The configuration policy.
+     * @return The configuration policy.
      */
     ConfigurationPolicy get();
     
@@ -31,7 +31,7 @@ public interface IConfigurationPolicy
      *  Patches the configuration policy.
      * 
      * @param policy The policy to be updated.
-     * @return: The updated configuration policy.
+     * @return The updated configuration policy.
      */
     ConfigurationPolicy patch(ConfigurationPolicy policy);
 

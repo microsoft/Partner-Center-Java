@@ -21,7 +21,7 @@ public interface IAvailability
     /***
      * Retrieves the availability information.
      * 
-     * @return: The availability information.
+     * @return The availability information.
      */
     Availability get();
 }

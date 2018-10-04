@@ -22,7 +22,7 @@ public interface ICustomerProductCollectionByTargetView
     /***
      * Retrieves all the products in a given catalog view that apply to a given customer.
      * 
-     * @return: The products in a given catalog view that apply to a given customer.
+     * @return The products in a given catalog view that apply to a given customer.
      */
     ResourceCollection<Product> get();
     

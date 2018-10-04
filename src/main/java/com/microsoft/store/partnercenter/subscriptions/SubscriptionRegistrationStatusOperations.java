@@ -27,7 +27,7 @@ public class SubscriptionRegistrationStatusOperations
     implements ISubscriptionRegistrationStatus
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionRegistrationStatusOperations} class.
+     * Initializes a new instance of the SubscriptionRegistrationStatusOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            The customer Id.
@@ -51,7 +51,7 @@ public class SubscriptionRegistrationStatusOperations
     /**
      * Retrieves a subscription registration status.
      * 
-     * @return: The subscription registration status details.
+     * @return The subscription registration status details.
      */
     public SubscriptionRegistrationStatus get()
     {

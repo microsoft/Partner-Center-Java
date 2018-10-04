@@ -26,7 +26,7 @@ public class CustomerAgreementCollectionOperations
         implements ICustomerAgreementCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerAgreementCollectionOperations} class.
+     * Initializes a new instance of the CustomerAgreementCollectionOperations class.
      *
      * @param rootPartnerOperations The root partner operations instance.
      */

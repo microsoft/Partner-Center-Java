@@ -20,7 +20,7 @@ public interface IProductCollectionByCountry
      * Retrieves the operations tied with a specific product.
      * 
      * @param productId The identifier for the product.
-     * @return: The available product operations.
+     * @return The available product operations.
      */
     IProduct byId(String productId);
 
@@ -28,7 +28,7 @@ public interface IProductCollectionByCountry
      * Retrieves the operations that can be applied on products that belong to a given country, catalog view and target segment.
      * 
      * @param targetView The product target view.
-     * @return: The product collection operations by country and by target view.
+     * @return The product collection operations by country and by target view.
      */
     IProductCollectionByCountryByTargetView byTargetView(String targetView);
 }

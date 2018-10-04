@@ -28,7 +28,7 @@ public class ResourceUsageRecordCollectionOperations
     implements IResourceUsageRecordCollection
 {
     /**
-     * Initializes a new instance of the {@link #ResourceUsageRecordCollectionOperations} class.
+     * Initializes a new instance of the ResourceUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

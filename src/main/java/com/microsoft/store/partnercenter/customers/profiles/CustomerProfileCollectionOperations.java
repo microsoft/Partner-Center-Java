@@ -30,7 +30,7 @@ public class CustomerProfileCollectionOperations
     private ICustomerReadonlyProfile<CustomerCompanyProfile> companyProfileOperations;
 
     /**
-     * Initializes a new instance of the {@link #CustomerProfileCollectionOperations} class.
+     * Initializes a new instance of the CustomerProfileCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.

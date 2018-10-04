@@ -16,7 +16,7 @@ public interface IInvoiceSummary
     /***
      * Retrieves the invoice summary. This operation is currently only supported for user based credentials.
      * 
-     * @return: The invoice summary.
+     * @return The invoice summary.
      */
     InvoiceSummary get();
 }

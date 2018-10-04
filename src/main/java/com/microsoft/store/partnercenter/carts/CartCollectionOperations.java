@@ -25,7 +25,7 @@ public class CartCollectionOperations
     implements ICartCollection
 {
     /**
-     * Initializes a new instance of the {@link #CartCollectionOperations} class.
+     * Initializes a new instance of the CartCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.

@@ -26,10 +26,10 @@ public class CustomerUsageSummaryOperations
     implements ICustomerUsageSummary
 {
     /**
-     * Initializes a new instance of the {@link #CustomerUsageSummaryOperations} class.
+     * Initializes a new instance of the CustomerUsageSummaryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      */
     public CustomerUsageSummaryOperations( IPartner rootPartnerOperations, String customerId )
     {

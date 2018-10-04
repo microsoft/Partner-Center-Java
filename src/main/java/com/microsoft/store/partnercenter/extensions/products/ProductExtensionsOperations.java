@@ -16,7 +16,7 @@ public class ProductExtensionsOperations
     extends BasePartnerComponentString implements IProductExtensions 
 {
     /**
-     * Initializes a new instance of the {@link #ProductExtensionsOperations} class.
+     * Initializes a new instance of the ProductExtensionsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -27,8 +27,8 @@ public class ProductExtensionsOperations
 	/***
 	 * Retrieves the extension operations that can be applied on products from a given country.
 	 * 
-	 * @param country: The country name.
-	 * @return: The product extensions operations by country.
+	 * @param country The country name.
+	 * @return The product extensions operations by country.
 	 */
     public IProductExtensionsByCountry byCountry(String country)
     {

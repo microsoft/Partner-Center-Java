@@ -34,7 +34,7 @@ public class RelationshipCollectionOperations
     implements IRelationshipCollection
 {
     /**
-     * Initializes a new instance of the {@link #RelationshipCollectionOperations} class.
+     * Initializes a new instance of the RelationshipCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -47,7 +47,7 @@ public class RelationshipCollectionOperations
      * Retrieves all the partner relationships.
      * 
      * @param partnerRelationshipType The type of partner relationship.
-     * @return: The available partner relationships.
+     * @return The available partner relationships.
      */
     public ResourceCollection<PartnerRelationship> get(PartnerRelationshipType partnerRelationshipType)
     {
@@ -72,7 +72,7 @@ public class RelationshipCollectionOperations
      * 
      * @param partnerRelationshipType The type of partner relationship.
      * @param query A query to apply onto partner relationships. 
-     * @return: TThe partner relationships that match the given query.
+     * @return TThe partner relationships that match the given query.
      */
     public ResourceCollection<PartnerRelationship> Query(PartnerRelationshipType partnerRelationshipType, IQuery query)
     {

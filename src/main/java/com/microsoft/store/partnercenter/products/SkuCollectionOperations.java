@@ -29,7 +29,7 @@ public class SkuCollectionOperations
     implements ISkuCollection
 {
     /**
-     * Initializes a new instance of the {@link #SkuCollectionOperations} class.
+     * Initializes a new instance of the SkuCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
@@ -52,7 +52,7 @@ public class SkuCollectionOperations
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.
-     * @return: The available SKU operations.
+     * @return The available SKU operations.
      */
     public ISku byId(String skuId)
     {

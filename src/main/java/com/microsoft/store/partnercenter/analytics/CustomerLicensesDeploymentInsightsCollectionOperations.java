@@ -25,7 +25,7 @@ public class CustomerLicensesDeploymentInsightsCollectionOperations
     implements ICustomerLicensesDeploymentInsightsCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerLicensesDeploymentInsightsCollectionOperations} class.
+     * Initializes a new instance of the CustomerLicensesDeploymentInsightsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier for the customer.

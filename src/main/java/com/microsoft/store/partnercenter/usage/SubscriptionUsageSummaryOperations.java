@@ -26,7 +26,7 @@ public class SubscriptionUsageSummaryOperations
     implements ISubscriptionUsageSummary
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionUsageSummaryOperations} class.
+     * Initializes a new instance of the SubscriptionUsageSummaryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

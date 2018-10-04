@@ -20,7 +20,7 @@ public class RequestContext
     implements IRequestContext
 {
     /**
-     * Initializes a new instance of the {@link #RequestContext} class. Correlation Id will be generated. The request Id
+     * Initializes a new instance of the RequestContext class. Correlation Id will be generated. The request Id
      * will be automatically generated for each service API call.
      */
     public RequestContext()
@@ -29,7 +29,7 @@ public class RequestContext
     }
 
     /**
-     * Initializes a new instance of the {@link #RequestContext} class with provided locale. Correlation Id will be
+     * Initializes a new instance of the RequestContext class with provided locale. Correlation Id will be
      * generated. The request Id will be automatically generated for each service API call.
      * 
      * @param locale The locale.
@@ -40,7 +40,7 @@ public class RequestContext
     }
 
     /**
-     * Initializes a new instance of the {@link #RequestContext} class with a correlation Id. The request Id will be
+     * Initializes a new instance of the RequestContext class with a correlation Id. The request Id will be
      * automatically generated and a default Locale is set for each service API call.
      * 
      * @param correlationId The correlation Id. This Id is used to group logical operations together.
@@ -51,7 +51,7 @@ public class RequestContext
     }
 
     /**
-     * Initializes a new instance of the {@link #RequestContext} class with a correlation Id and the provided locale.
+     * Initializes a new instance of the RequestContext class with a correlation Id and the provided locale.
      * The request Id will be automatically generated for each service API call.
      * 
      * @param correlationId The correlation Id. This Id is used to group logical operations together.
@@ -63,7 +63,7 @@ public class RequestContext
     }
 
     /**
-     * Initializes a new instance of the {@link #RequestContext} class with the given correlation, request Ids and
+     * Initializes a new instance of the RequestContext class with the given correlation, request identifier and
      * locale.
      * 
      * @param correlationId The correlation Id. This Id is used to group logical operations together.

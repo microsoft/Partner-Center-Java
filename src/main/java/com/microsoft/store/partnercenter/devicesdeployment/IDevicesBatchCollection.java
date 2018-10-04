@@ -25,15 +25,15 @@ public interface IDevicesBatchCollection
 	/***
 	 * Retrieves a specific customer devices batch behavior.
 	 * 
-	 * @param deviceBatchId: The devices batch id
-	 * @return: The devices batch behavior.
+	 * @param deviceBatchId The devices batch id
+	 * @return The devices batch behavior.
 	 */
     IDevicesBatch byId( String deviceBatchId );
 
     /***
      * Retrieves all devices batches.
      * 
-     * @return: All of the device batches.
+     * @return All of the device batches.
      */
     ResourceCollection<DeviceBatch> get();
 }

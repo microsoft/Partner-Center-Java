@@ -25,7 +25,7 @@ public class BatchJobStatusOperations
     extends BasePartnerComponent<Tuple<String, String>> implements IBatchJobStatus 
 {
     /**
-     * Initializes a new instance of the {@link #BatchJobStatusOperations} class.
+     * Initializes a new instance of the BatchJobStatusOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.

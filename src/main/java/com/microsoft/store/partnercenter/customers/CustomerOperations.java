@@ -196,10 +196,10 @@ public class CustomerOperations
     private String customerId;
 
     /**
-     * Initializes a new instance of the {@link #CustomerOperations} class.
+     * Initializes a new instance of the CustomerOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      */
     public CustomerOperations( IPartner rootPartnerOperations, String customerId )
     {

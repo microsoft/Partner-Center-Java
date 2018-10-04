@@ -40,7 +40,7 @@ public interface IServiceRequestCollection
      * You can set the page size or filter or do both at the same time. - Sort is not supported. Default sorting is on
      * status field
      * 
-     * @param serviceRequestsQuery A query to apply onto service requests. Check {@link #QueryFactory} to see how to
+     * @param serviceRequestsQuery A query to apply onto service requests. Check {@see #QueryFactory} to see how to
      *            build queries.
      * @return The requested service requests.
      */

@@ -24,9 +24,9 @@ public interface IAuditRecordsCollection
      * The following queries are supported:
      * - Specify the number of audit record to return.
      * - Filter the result with a customer name.
-     * @param name="startDate": The start date of the audit record logs.
-     * @param name="endDate": The end date of the audit record logs.
-     * @param name="query": The query.
+     * @param startDate The start date of the audit record logs.
+     * @param endDate The end date of the audit record logs.
+     * @param query The query.
      * @return The audit records that match the given query.</returns>
      */
 	SeekBasedResourceCollection<AuditRecord> query( DateTime startDate, DateTime endDate, IQuery query );

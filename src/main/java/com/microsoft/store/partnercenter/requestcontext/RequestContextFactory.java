@@ -8,9 +8,6 @@ package com.microsoft.store.partnercenter.requestcontext;
 
 import java.util.UUID;
 
-/**
- * Creates instances of {@link #IRequestContext} .
- */
 public class RequestContextFactory
 {
     /***

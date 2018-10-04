@@ -28,7 +28,7 @@ public class OfferCollectionOperations
     implements IOfferCollection
 {
     /**
-     * Initializes a new instance of the {@link #OfferCollectionOperations} class.
+     * Initializes a new instance of the OfferCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param country The country on which to base the offers

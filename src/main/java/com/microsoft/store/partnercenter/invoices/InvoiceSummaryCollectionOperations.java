@@ -25,7 +25,7 @@ public class InvoiceSummaryCollectionOperations
 	/***
 	 * Initializes a new instance of the InvoiceSummaryCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations: The partner operations.
+	 * @param rootPartnerOperations The partner operations.
 	 */
     public InvoiceSummaryCollectionOperations( IPartner rootPartnerOperations )
 	{

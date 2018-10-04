@@ -23,7 +23,7 @@ public class CustomerUserLicenseUpdateOperations
 	extends BasePartnerComponent<Tuple<String, String>> 
 	implements ICustomerUserLicenseUpdates {
     /**
-     * Initializes a new instance of the {@link #CustomerUserLicenseUpdateOperations} class.
+     * Initializes a new instance of the CustomerUserLicenseUpdateOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.

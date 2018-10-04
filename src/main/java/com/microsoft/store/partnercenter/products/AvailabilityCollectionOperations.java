@@ -29,7 +29,7 @@ public class AvailabilityCollectionOperations
     implements IAvailabilityCollection
 {
     /**
-     * Initializes a new instance of the {@link #AvailabilityCollectionOperations} class.
+     * Initializes a new instance of the AvailabilityCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
@@ -57,7 +57,7 @@ public class AvailabilityCollectionOperations
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
-     * @return: The availability operations.
+     * @return The availability operations.
      */    
     public IAvailability byId( String availabilityId )
     {
@@ -68,7 +68,7 @@ public class AvailabilityCollectionOperations
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.
-     * @return: The availability collection operations by target segment.
+     * @return The availability collection operations by target segment.
      */    
     public IAvailabilityCollectionByTargetSegment byTargetSegment(String targetSegment)
     {
@@ -78,7 +78,7 @@ public class AvailabilityCollectionOperations
     /***
      * Retrieves all the availabilities for the provided SKU.
      * 
-     * @return: The availabilities for the provided SKU.
+     * @return The availabilities for the provided SKU.
      */
     public ResourceCollection<Availability> get()
     {

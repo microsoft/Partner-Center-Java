@@ -39,7 +39,7 @@ public class CustomerUserOperations
     private ICustomerUserLicenseUpdates customerUserLicenseUpdateOperations;
 
     /**
-     * Initializes a new instance of the {@link #CustomerUserOperations} class.
+     * Initializes a new instance of the CustomerUserOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

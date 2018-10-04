@@ -18,8 +18,8 @@ public interface ICustomerDeviceCollection
 	/***
 	 * Updates the devices with configuration policies.
 	 * 
-	 * @param devicePolicyUpdateRequest: The device policy update request with devices to be updated.
-	 * @return: The location of the status to track the update.
+	 * @param devicePolicyUpdateRequest The device policy update request with devices to be updated.
+	 * @return The location of the status to track the update.
 	 */
 	String update(DevicePolicyUpdateRequest devicePolicyUpdateRequest);
 }

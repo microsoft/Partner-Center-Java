@@ -25,8 +25,8 @@ public class InvoiceStatementOperations
 
     /***
      * Initializes a new instance of the <see cref="InvoiceStatementOperations"/> class.
-     * @param rootPartnerOperations: The root partner operations instance.
-     * @param invoiceId: The invoice id.
+     * @param rootPartnerOperations The root partner operations instance.
+     * @param invoiceId The invoice identifier.
      */
 	public InvoiceStatementOperations( IPartner rootPartnerOperations, String invoiceId )
 	{
@@ -41,7 +41,7 @@ public class InvoiceStatementOperations
 	/***
 	 * Retrieves the invoice statement. This operation is currently only supported for user based credentials.
 	 * 
-	 * @return: The invoice statement.
+	 * @return The invoice statement.
 	 */
 	@Override
 	public InputStream get()

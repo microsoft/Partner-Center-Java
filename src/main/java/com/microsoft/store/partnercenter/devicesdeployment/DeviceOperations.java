@@ -26,7 +26,7 @@ public class DeviceOperations
     extends BasePartnerComponent<TripletTuple<String, String, String>> implements IDevice 
 {
     /**
-     * Initializes a new instance of the {@link #DeviceOperations} class.
+     * Initializes a new instance of the DeviceOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param deviceBatchId         The device batch identifier.
@@ -52,7 +52,7 @@ public class DeviceOperations
      * Updates a device associated to the customer with a configuration policy.
      * 
      * @param updateDevice Payload of the update request.
-     * @return: The updated device.
+     * @return The updated device.
      */
     @Override
     public Device patch(Device updateDevice)

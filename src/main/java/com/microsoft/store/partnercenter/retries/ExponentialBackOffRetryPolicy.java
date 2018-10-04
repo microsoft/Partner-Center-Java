@@ -21,7 +21,7 @@ public class ExponentialBackOffRetryPolicy
     private int maxRetries;
 
     /**
-     * Initializes a new instance of the {@link #ExponentialBackOffRetryPolicy} class.
+     * Initializes a new instance of the ExponentialBackOffRetryPolicy class.
      * 
      * @param maxRetries The maximum number of retries.
      */

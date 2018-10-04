@@ -17,7 +17,7 @@ public interface ICustomerOfferCategoryCollection
     /***
      * Retrieves all the offer categories for the provided Customer.
      * 
-     * @return: The offers for the provided customer.
+     * @return The offers for the provided customer.
      */
     ResourceCollection<OfferCategory> get();
 }

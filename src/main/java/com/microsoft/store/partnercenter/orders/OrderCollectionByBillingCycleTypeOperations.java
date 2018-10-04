@@ -29,7 +29,7 @@ public class OrderCollectionByBillingCycleTypeOperations
     implements IOrderCollectionByBillingCycleType
 {
     /**
-     * Initializes a new instance of the {@link #OrderCollectionByBillingCycleTypeOperations} class.
+     * Initializes a new instance of the OrderCollectionByBillingCycleTypeOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer tenant Id.

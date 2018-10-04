@@ -29,7 +29,7 @@ public class PartnerSubscriptionCollectionOperations
     implements IEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>>
 {
     /**
-     * Initializes a new instance of the {@link #PartnerSubscriptionCollectionOperations} class.
+     * Initializes a new instance of the PartnerSubscriptionCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

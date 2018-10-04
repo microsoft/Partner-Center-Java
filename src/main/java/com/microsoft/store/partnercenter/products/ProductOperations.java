@@ -33,7 +33,7 @@ public class ProductOperations
     private ISkuCollection skus;
    
     /**
-     * Initializes a new instance of the {@link #ProductOperations} class.
+     * Initializes a new instance of the ProductOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier of the product. 
@@ -68,7 +68,7 @@ public class ProductOperations
     /***
      * Retrieves the product information
      * 
-     * @return: The product information.
+     * @return The product information.
      */
     public Product get()
     {

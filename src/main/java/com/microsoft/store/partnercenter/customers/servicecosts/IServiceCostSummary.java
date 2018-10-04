@@ -20,7 +20,7 @@ public interface IServiceCostSummary
     /***
      * Retrieves the customer's service cost summary.
      * 
-     * @return: The customer's service cost summary.
+     * @return The customer's service cost summary.
      */
     ServiceCostsSummary get();
 }

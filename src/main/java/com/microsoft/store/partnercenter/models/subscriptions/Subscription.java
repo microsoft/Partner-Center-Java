@@ -24,7 +24,7 @@ public class Subscription
     extends Contract
 {
     /**
-     * Initializes a new instance of the {@link #SUBSCRIPTION} class.
+     * Initializes a new instance of the subscription class.
      */
     public Subscription()
 

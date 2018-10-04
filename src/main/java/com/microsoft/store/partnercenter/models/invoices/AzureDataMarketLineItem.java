@@ -241,7 +241,7 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
 	/***
      * Returns the type of invoice line item
      * 
-     * @return: The type of invoice line item.
+     * @return The type of invoice line item.
      */
 	@Override
 	public InvoiceLineItemType getInvoiceLineItemType() {

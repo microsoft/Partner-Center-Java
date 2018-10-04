@@ -25,12 +25,11 @@ public class CustomerQualificationOperations
 	extends BasePartnerComponentString
 	implements ICustomerQualification
 {
-
 	/***
 	 * Initializes a new instance of the CustomerQualificationOperationsclass.
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance.
-	 * @param componentContext: The customer id.
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param componentContext The customer identifier.
 	 */
 	public CustomerQualificationOperations( IPartner rootPartnerOperations, String customerId )
 	{
@@ -45,7 +44,7 @@ public class CustomerQualificationOperations
 	/***
 	 * Gets the customer qualification.
 	 * 
-	 * @return: The customer qualification.
+	 * @return The customer qualification.
 	 */
 	@Override
 	public CustomerQualification get()
@@ -62,8 +61,8 @@ public class CustomerQualificationOperations
 	/***
 	 * Updates the customer qualification.
 	 * 
-	 * @param customerQualification: Customer qualification to be updated.
-	 * @return: The updated customer qualification.
+	 * @param customerQualification Customer qualification to be updated.
+	 * @return The updated customer qualification.
 	 */
 	@Override
 	public CustomerQualification update( CustomerQualification customerQualification )
@@ -79,5 +78,4 @@ public class CustomerQualificationOperations
             												this.getContext(), Locale.US ) );
         return partnerServiceProxy.put( customerQualification );
 	}
-
 }

@@ -22,7 +22,7 @@ public interface ISkuCollectionByTargetSegment
     /***
      * Retrieves all the skus for the provided product and target segment.
      * 
-     * @return: The SKUs for the provided product and target segment.
+     * @return The SKUs for the provided product and target segment.
      */
     ResourceCollection<Sku> get();
 }

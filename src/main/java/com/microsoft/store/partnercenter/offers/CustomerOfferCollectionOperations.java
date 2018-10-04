@@ -29,8 +29,8 @@ public class CustomerOfferCollectionOperations
 	/***
 	 * Initializes a new instance of the CustomerOfferCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance.
-	 * @param customerId: The customer Id.
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifer.
 	 */
 	public CustomerOfferCollectionOperations(IPartner rootPartnerOperations, String customerId )
 	{
@@ -62,9 +62,9 @@ public class CustomerOfferCollectionOperations
     /***
      *  Gets a segment of the offers available to customer from partner..
      *  
-	 *  @param name="offset": The starting index.
-     *  @param name="size": The desired segment size.
-     *  @return: The required offers segment.
+	 *  @param offset The starting index.
+     *  @param size The desired segment size.
+     *  @return The required offers segment.
      */
 	public ResourceCollection<Offer> get(int offset, int size)
 	{

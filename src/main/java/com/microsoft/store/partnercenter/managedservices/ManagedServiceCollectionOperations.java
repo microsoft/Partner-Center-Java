@@ -27,7 +27,7 @@ public class ManagedServiceCollectionOperations
     implements IManagedServiceCollection
 {
     /**
-     * Initializes a new instance of the {@link #ManagedServiceCollectionOperations} class.
+     * Initializes a new instance of the ManagedServiceCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

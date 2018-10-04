@@ -27,7 +27,7 @@ public class CustomerRelationshipCollectionOperations
     implements ICustomerRelationshipCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerRelationshipCollectionOperations} class.
+     * Initializes a new instance of the CustomerRelationshipCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -44,7 +44,7 @@ public class CustomerRelationshipCollectionOperations
     /***
      * Retrieves all the partner relationships associated to the customer based on the logged in partner.
      * 
-     * @return: The partner relationships.
+     * @return The partner relationships.
      */
     public ResourceCollection<PartnerRelationship> get()
     {

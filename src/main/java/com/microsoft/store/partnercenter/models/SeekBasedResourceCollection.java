@@ -18,7 +18,7 @@ public class SeekBasedResourceCollection<T>
     extends ResourceCollection<T>
 {
     /**
-     * Initializes a new instance of the {@link #SeekBasedResourceCollection{T}} class.
+     * Initializes a new instance of the SeekBasedResourceCollection class.
      * 
      * @param items The items collection.
      */
@@ -30,7 +30,7 @@ public class SeekBasedResourceCollection<T>
     }
 
     /**
-     * Initializes a new instance of the {@link #SeekBasedResourceCollection{T}} class.
+     * Initializes a new instance of the SeekBasedResourceCollection class.
      * 
      * @param resourceCollection The resource collection.
      */
@@ -41,7 +41,7 @@ public class SeekBasedResourceCollection<T>
     }
 
     /**
-     * Initializes a new instance of the {@link #SeekBasedResourceCollection{T}} class.
+     * Initializes a new instance of the SeekBasedResourceCollection class.
      * 
      * @param items The items.
      * @param continuationToken The continuation token.

@@ -22,7 +22,7 @@ public class PartnerAnalyticsCollectionOperations
     private IPartnerLicensesAnalyticsCollection licenses;
 
     /**
-     * Initializes a new instance of the {@link #PartnerAnalyticsCollectionOperations} class.
+     * Initializes a new instance of the PartnerAnalyticsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

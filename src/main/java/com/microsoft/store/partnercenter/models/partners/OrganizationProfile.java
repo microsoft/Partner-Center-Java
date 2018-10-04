@@ -17,7 +17,7 @@ public class OrganizationProfile
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
-     * Initializes a new instance of the {@link #OrganizationProfile} class.
+     * Initializes a new instance of the OrganizationProfile class.
      */
     public OrganizationProfile()
     {

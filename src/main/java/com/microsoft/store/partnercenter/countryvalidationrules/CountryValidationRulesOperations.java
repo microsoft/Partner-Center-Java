@@ -28,8 +28,8 @@ public class CountryValidationRulesOperations
 
 	/***
 	 * Initializes a new instance of the CountryValidationRulesOperations class.
-	 * @param rootPartnerOperations: The root partner operations instance
-	 * @param country: The country
+	 * @param rootPartnerOperations The root partner operations instance
+	 * @param country The country
 	 */
 	protected CountryValidationRulesOperations( IPartner rootPartnerOperations, String country )
 	{

@@ -33,7 +33,7 @@ public class OfferOperations
     private IOfferAddOns addOns;
 
     /**
-     * Initializes a new instance of the {@link #OfferOperations} class.
+     * Initializes a new instance of the OfferOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param offerId The offer Id.

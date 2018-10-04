@@ -22,15 +22,15 @@ public interface IServiceRequest
 	/***
 	 * Retrieves the service request.
 	 * 
-	 * @return: The service request information.
+	 * @return The service request information.
 	 */
     ServiceRequest get();
     
     /***
      * Patches a service request.
      * 
-     * @param serviceRequest: The service request that has the properties to be patched set.
-     * @return: The updated service request.
+     * @param serviceRequest The service request that has the properties to be patched set.
+     * @return The updated service request.
      */
     ServiceRequest patch( ServiceRequest serviceRequest );
 

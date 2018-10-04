@@ -24,7 +24,7 @@ public class ServiceCostsCollectionOperations
     private IServiceCostSummary serviceCostSummary; 
 
     /**
-     * Initializes a new instance of the {@link #ServiceCostsCollectionOperations} class.
+     * Initializes a new instance of the ServiceCostsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -43,7 +43,7 @@ public class ServiceCostsCollectionOperations
     /***
      * Gets the customer's service cost line items.
      * 
-     * @return: The customer's service cost line items.
+     * @return The customer's service cost line items.
      */
     public IServiceCostLineItemsCollection getLineItems()
     {
@@ -58,7 +58,7 @@ public class ServiceCostsCollectionOperations
     /***
      * Gets the customer's service cost summary.
      * 
-     * @return: The customer's service cost summary.
+     * @return The customer's service cost summary.
      */
     public IServiceCostSummary getSummary()
     {

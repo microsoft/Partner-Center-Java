@@ -20,8 +20,8 @@ public interface IEntitlementCollection
 	/***
 	 * Retrieves the operations that can be applied on entitlements with a given entitlement type.
 	 * 
-	 * @param entitlementType: The type of entiltment.
-	 * @return: The entitlement collection operations by entitlement type.
+	 * @param entitlementType The type of entiltment.
+	 * @return The entitlement collection operations by entitlement type.
 	 */
      IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>> byEntitlementType(String entitlementType);
 }

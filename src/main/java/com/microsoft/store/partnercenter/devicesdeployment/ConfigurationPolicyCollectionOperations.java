@@ -26,7 +26,7 @@ public class ConfigurationPolicyCollectionOperations
     implements IConfigurationPolicyCollection
 {
     /**
-     * Initializes a new instance of the {@link #ConfigurationPolicyCollectionOperations} class.
+     * Initializes a new instance of the ConfigurationPolicyCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
@@ -44,8 +44,8 @@ public class ConfigurationPolicyCollectionOperations
 	/***
 	 * Retrieves a specific customer's devices batch upload status behavior.
 	 * 
-	 * @param trackingId: The tracking identifier.
-	 * @return: The customer's devices batch upload status operations.
+	 * @param trackingId The tracking identifier.
+	 * @return The customer's devices batch upload status operations.
 	 */
     @Override 
     public IConfigurationPolicy byId( String policyId )
@@ -57,7 +57,7 @@ public class ConfigurationPolicyCollectionOperations
 	 * Creates a new configuration policy.
 	 * 
      * @param newPolicy The new configuration policy information.
-	 * @return: The policy information that was just created.
+	 * @return The policy information that was just created.
 	 */
     @Override
     public ConfigurationPolicy create(ConfigurationPolicy newPolicy)
@@ -74,7 +74,7 @@ public class ConfigurationPolicyCollectionOperations
     /***
 	 * Retrieves all configuration policies.
 	 * 
-	 * @return: The collection of configuration policies.
+	 * @return The collection of configuration policies.
 	 */
     @Override
     public ResourceCollection<ConfigurationPolicy> get()

@@ -18,7 +18,7 @@ public interface IExtensions
 	/***
 	 * Retrieves the product extension operations.
 	 * 
-	 * @return: The product extensions operations.
+	 * @return The product extensions operations.
 	 */
     IProductExtensions getProduct();
 }

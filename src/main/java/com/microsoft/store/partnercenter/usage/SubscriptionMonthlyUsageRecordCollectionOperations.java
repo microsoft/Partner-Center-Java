@@ -26,7 +26,7 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
     implements ISubscriptionMonthlyUsageRecordCollection
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionMonthlyUsageRecordCollectionOperations} class.
+     * Initializes a new instance of the SubscriptionMonthlyUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer Id.

@@ -25,7 +25,7 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
     private TypeReference<TResourceCollection> responseType;
 
     /**
-     * Initializes a new instance of the {@link #IndexBasedCollectionEnumeratorFactory{T, TResourceCollection}} class.
+     * Initializes a new instance of the IndexBasedCollectionEnumeratorFactory class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

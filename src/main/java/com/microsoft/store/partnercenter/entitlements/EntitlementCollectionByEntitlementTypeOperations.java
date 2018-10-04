@@ -29,7 +29,7 @@ public class EntitlementCollectionByEntitlementTypeOperations
     implements IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>>
 {
     /**
-     * Initializes a new instance of the {@link #EntitlementCollectionByEntitlementTypeOperations} class.
+     * Initializes a new instance of the EntitlementCollectionByEntitlementTypeOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -53,7 +53,7 @@ public class EntitlementCollectionByEntitlementTypeOperations
     /***
      * Retrieves entitlement collection with the given entitlement type.
      * 
-     * @return: The entitlement collection with the given entitlement type.
+     * @return The entitlement collection with the given entitlement type.
      */
     @Override
     public ResourceCollection<Entitlement> get()

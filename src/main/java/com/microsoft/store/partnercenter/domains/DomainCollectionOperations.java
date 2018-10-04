@@ -17,7 +17,7 @@ public class DomainCollectionOperations
 	/***
 	 * Initializes a new instance of the DomainCollectionOperations class
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance.
+	 * @param rootPartnerOperations The root partner operations instance.
 	 */
 	public DomainCollectionOperations(IPartner rootPartnerOperations)
 	{
@@ -27,8 +27,8 @@ public class DomainCollectionOperations
 	/***
 	 * Obtains a specific domain behavior.
 	 * 
-	 * @param domain: The domain.
-     * @return: The domain operations.
+	 * @param domain The domain.
+     * @return The domain operations.
 	 */
 	@Override
 	public IDomain byDomain(String domain)

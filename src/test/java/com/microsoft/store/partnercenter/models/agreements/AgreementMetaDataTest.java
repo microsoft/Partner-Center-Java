@@ -14,7 +14,7 @@ import static com.microsoft.store.partnercenter.TestConstants.AGREEMENT_TEMPLATE
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Unit tests for the {@link #AgreementMetaData} class.
+ * Unit tests for the AgreementMetaData class.
  */
 class AgreementMetaDataTest
 {

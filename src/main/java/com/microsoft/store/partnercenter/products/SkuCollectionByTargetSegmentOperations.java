@@ -29,7 +29,7 @@ public class SkuCollectionByTargetSegmentOperations
     implements ISkuCollectionByTargetSegment
 {
     /**
-     * Initializes a new instance of the {@link #SkuCollectionByTargetSegmentOperations} class.
+     * Initializes a new instance of the SkuCollectionByTargetSegmentOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
@@ -57,7 +57,7 @@ public class SkuCollectionByTargetSegmentOperations
     /***
      * Retrieves all the skus for the provided product and target segment.
      * 
-     * @return: The SKUs for the provided product and target segment.
+     * @return The SKUs for the provided product and target segment.
      */
     public ResourceCollection<Sku> get()
     {

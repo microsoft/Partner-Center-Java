@@ -31,7 +31,7 @@ public interface ICustomerUserCollection
      * - You can set page size, filter and sort option.
      * - You can navigate to other pages by specifying a seek query with the seek operation and the continuation
      * 	 token sent by the previous operation.
-     * @param customerUsersQuery: A query to apply onto customer users. Check <see cref="QueryFactory"/> to see how to build queries.
+     * @param customerUsersQuery A query to apply onto customer users. Check <see cref="QueryFactory"/> to see how to build queries.
      * @return The requested customer users.
      */
     SeekBasedResourceCollection<CustomerUser> query( IQuery customerUsersQuery );
@@ -39,15 +39,15 @@ public interface ICustomerUserCollection
     /***
      * Create a new user for the customer.
      * 
-     * @param newEntity: The user object containing details for the new user to be created.
-     * @return: User entity
+     * @param newEntity The user object containing details for the new user to be created.
+     * @return User entity
      */
     CustomerUser create( CustomerUser newEntity );
     
     /***
      * Retrieves all the customer users.
      * 
-     * @return: All the customer orders.
+     * @return All the customer orders.
      */
     SeekBasedResourceCollection<CustomerUser> get();
 

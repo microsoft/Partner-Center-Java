@@ -29,12 +29,11 @@ public class SkuDownloadOptionsOperations
     implements ISkuDownloadOptions 
 {
     /**
-     * Initializes a new instance of the {@link #SkuDownloadOptionsOperations} class.
+     * Initializes a new instance of the SkuDownloadOptionsOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier of the customer. 
      * @param skuId                 Identifier of the SKU.
-     * @param availabilityId        Identifier of the availability.
      * @param country               The country on which to base the availability.
      */
     public SkuDownloadOptionsOperations(IPartner rootPartnerOperations, String productId, String skuId, String country)
@@ -55,7 +54,7 @@ public class SkuDownloadOptionsOperations
     /***
      * Retrieves all download options for the provided SKU
      * 
-     * @return: The SKU download options
+     * @return The SKU download options
      */
     public ResourceCollection<SkuDownloadOptions> get()
     {

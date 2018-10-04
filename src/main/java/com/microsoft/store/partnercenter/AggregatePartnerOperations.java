@@ -17,7 +17,7 @@ public class AggregatePartnerOperations
     implements IAggregatePartner
 {
     /**
-     * Initializes a new instance of the {@link #AggregatePartnerOperations} class.
+     * Initializes a new instance of the AggregatePartnerOperations class.
      * 
      * @param credentials The partner credentials.
      */

@@ -26,7 +26,7 @@ public class SupportTopicsCollectionOperations
     implements ISupportTopicsCollection
 {
     /**
-     * Initializes a new instance of the {@link #SupportTopicsCollectionOperations} class with default locale.
+     * Initializes a new instance of the SupportTopicsCollectionOperations class with default locale.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

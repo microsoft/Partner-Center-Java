@@ -16,7 +16,7 @@ public class SimpleFieldFilter
     extends FieldFilter
 {
     /**
-     * Initializes a new instance of the {@link #SimpleFieldFilter} class.
+     * Initializes a new instance of the SimpleFieldFilter class.
      */
     public SimpleFieldFilter()
     {
@@ -24,7 +24,7 @@ public class SimpleFieldFilter
     }
 
     /**
-     * Initializes a new instance of the {@link #SimpleFieldFilter} class.
+     * Initializes a new instance of the SimpleFieldFilter class.
      * 
      * @param field The filter field name
      * @param value The value to execute the operator on.
@@ -36,7 +36,7 @@ public class SimpleFieldFilter
     }
 
     /**
-     * Initializes a new instance of the {@link #SimpleFieldFilter} class.
+     * Initializes a new instance of the SimpleFieldFilter class.
      * 
      * @param field The filter field name
      * @param value The value to execute the operator on.
@@ -48,7 +48,7 @@ public class SimpleFieldFilter
     }
 
     /**
-     * Initializes a new instance of the {@link #SimpleFieldFilter} class.
+     * Initializes a new instance of the SimpleFieldFilter class.
      * 
      * @param field The filter field name
      * @param value The value to execute the operator on.

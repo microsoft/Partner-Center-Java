@@ -17,8 +17,8 @@ public interface IProductExtensions
 	/***
 	 * Retrieves the extension operations that can be applied on products from a given country.
 	 * 
-	 * @param country: The country name.
-	 * @return: The product extensions operations by country.
+	 * @param country The country name.
+	 * @return The product extensions operations by country.
 	 */
     IProductExtensionsByCountry byCountry(String country);
 }

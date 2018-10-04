@@ -22,7 +22,7 @@ public class PartnerException
     private static final long serialVersionUID = 1L;
 
     /**
-     * Initializes a new instance of the {@link #PartnerException} class.
+     * Initializes a new instance of the PartnerException} class.
      */
     public PartnerException()
     {
@@ -31,7 +31,7 @@ public class PartnerException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerException} class.
+     * Initializes a new instance of the PartnerException class.
      * 
      * @param message The exception message.
      */
@@ -41,7 +41,7 @@ public class PartnerException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerException} class.
+     * Initializes a new instance of the PartnerException class.
      * 
      * @param message The exception message.
      * @param innerException The exception that is the cause of the current exception, or a null reference if no inner
@@ -54,24 +54,25 @@ public class PartnerException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerException} class.
+     * Initializes a new instance of the PartnerException class.
      * 
      * @param message The exception message.
      * @param context The partner context.
-     * @param errorCategory An optional error category.
-     * @param innerException An optional inner exception.
+     * @param errorCategory The error category.
      */
-    // public PartnerException( String message, IRequestContext context )
-    //
-    // {
-    // this( message, context, PartnerErrorCategory.NotSpecified, null );
-    // }
-
     public PartnerException( String message, IRequestContext context, PartnerErrorCategory errorCategory )
     {
         this( message, context, errorCategory, null );
     }
 
+    /**
+     * Initializes a new instance of the PartnerException class.
+     * 
+     * @param message The exception message.
+     * @param context The partner context.
+     * @param errorCategory The error category.
+     * @param innerException The inner exception.
+     */
     public PartnerException( String message, IRequestContext context, PartnerErrorCategory errorCategory,
                              Exception innerException )
     {
@@ -81,12 +82,10 @@ public class PartnerException
     }
 
     /**
-     * Initializes a new instance of the {@link #PartnerException} class.
+     * Initializes a new instance of the PartnerException class.
      * 
      * @param apiFault The API fault object returned by the partner service.
      * @param context The partner context.
-     * @param errorCategory An optional error category.
-     * @param innerException An optional inner exception.
      */
     public PartnerException( ApiFault apiFault, IRequestContext context )
     {

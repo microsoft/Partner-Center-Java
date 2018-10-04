@@ -17,7 +17,7 @@ public class StandardPartnerFactory
     implements IPartnerFactory
 {
     /**
-     * Builds a {@link #IAggregatePartner} instance and configures it using the provided partner credentials.
+     * Builds an IAggregatePartner instance and configures it using the provided partner credentials.
      * 
      * @param credentials The partner credentials. Use the extensions to obtain these.
      * @return A configured partner object.

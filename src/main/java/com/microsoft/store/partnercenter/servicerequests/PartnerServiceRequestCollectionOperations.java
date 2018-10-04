@@ -46,7 +46,7 @@ public class PartnerServiceRequestCollectionOperations
     private static final int MAX_PAGE_SIZE = 1000;
 
     /**
-     * Initializes a new instance of the {@link #PartnerServiceRequestCollectionOperations} class.
+     * Initializes a new instance of the PartnerServiceRequestCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

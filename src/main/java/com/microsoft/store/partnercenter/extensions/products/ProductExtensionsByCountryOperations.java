@@ -26,11 +26,10 @@ public class ProductExtensionsByCountryOperations
     extends BasePartnerComponentString implements IProductExtensionsByCountry 
 {
     /**
-     * Initializes a new instance of the {@link #ProductExtensionsByCountryOperations} class.
+     * Initializes a new instance of the ProductExtensionsByCountryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param country               The country on which to base the corresponding products.
-     * @param cartId                Identifier for the cart.
      */
     public ProductExtensionsByCountryOperations(IPartner rootPartnerOperations, String country) {
         super(rootPartnerOperations, country);
@@ -43,8 +42,8 @@ public class ProductExtensionsByCountryOperations
 	/***
 	 * Retrieves inventory validation results for the provided country.
 	 * 
-	 * @param checkRequest: The request for the inventory check.
-	 * @return: The inventory check results.
+	 * @param checkRequest The request for the inventory check.
+	 * @return The inventory check results.
 	 */
     public List<InventoryItem> checkInventory(InventoryCheckRequest checkRequest)
     {

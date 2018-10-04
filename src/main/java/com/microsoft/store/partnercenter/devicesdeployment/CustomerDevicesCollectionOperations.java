@@ -27,7 +27,7 @@ public class CustomerDevicesCollectionOperations
     implements ICustomerDeviceCollection
 {
     /**
-     * Initializes a new instance of the {@link #CustomerDevicesCollectionOperations} class.
+     * Initializes a new instance of the CustomerDevicesCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -45,8 +45,8 @@ public class CustomerDevicesCollectionOperations
     /***
 	 * Updates the devices with configuration policies.
 	 * 
-	 * @param devicePolicyUpdateRequest: The device policy update request with devices to be updated..
-	 * @return: The location of the status to track the update.
+	 * @param devicePolicyUpdateRequest The device policy update request with devices to be updated..
+	 * @return The location of the status to track the update.
 	 */
     @Override
     public String update(DevicePolicyUpdateRequest devicePolicyUpdateRequest)

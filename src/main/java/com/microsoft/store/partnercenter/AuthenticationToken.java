@@ -18,7 +18,7 @@ import org.joda.time.DateTime;
 public final class AuthenticationToken
 {
     /**
-     * Initializes a new instance of the {@link #AuthenticationToken} class.
+     * Initializes a new instance of the AuthenticationToken class.
      * 
      * @param token The authentication token.
      * @param expiryTime The token expiry time.

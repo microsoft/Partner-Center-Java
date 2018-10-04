@@ -27,7 +27,7 @@ public class SubscriptionSupportContactOperations
     implements ISubscriptionSupportContact
 {
     /**
-     * Initializes a new instance of the {@link #SubscriptionSupportContactOperations} class.
+     * Initializes a new instance of the SubscriptionSupportContactOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            The customer Id.
@@ -51,7 +51,7 @@ public class SubscriptionSupportContactOperations
     /**
      * Retrieves the support contact of the customer's subscription.
      * 
-     * @return: The subscription's support contact.
+     * @return The subscription's support contact.
      */
     public SupportContact get()
     {
@@ -73,7 +73,7 @@ public class SubscriptionSupportContactOperations
      * Updates the support contact of the customer's subscription.
      * 
      * @param supportContact The support contact
-     * @return: The updated support contact.
+     * @return The updated support contact.
      */
     public SupportContact update(SupportContact supportContact)
     {

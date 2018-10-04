@@ -18,7 +18,7 @@ public interface IDevicesBatch
 	/***
 	 * Obtains the devices behavior of the devices batch.
 	 * 
-	 * @return: The devices behavior of the devices batch.
+	 * @return The devices behavior of the devices batch.
 	 */
     IDeviceCollection getDevices();
 }

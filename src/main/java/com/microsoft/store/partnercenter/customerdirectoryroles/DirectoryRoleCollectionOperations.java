@@ -31,8 +31,8 @@ public class DirectoryRoleCollectionOperations
 	/***
 	 * Initializes a new instance of the DirectoryRoleCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations: The root partner operations instance.
-	 * @param customerId: The customer id.
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
 	 */
 	public DirectoryRoleCollectionOperations( IPartner rootPartnerOperations, String customerId )
 	{
@@ -46,8 +46,8 @@ public class DirectoryRoleCollectionOperations
 	/***
 	 * Gets a directory role operations object.
 	 * 
-	 * @param roleId: The directory role id.
-	 * @return: The directory role operations object.
+	 * @param roleId The directory role id.
+	 * @return The directory role operations object.
 	 */
 	@Override
 	public IDirectoryRole byId(String roleId)
@@ -58,7 +58,7 @@ public class DirectoryRoleCollectionOperations
 	/***
 	 * Retrieves all customer directory roles.
 	 * 
-	 * @return: All the customer directory roles.
+	 * @return All the customer directory roles.
 	 */
 	@Override
 	public ResourceCollection<DirectoryRole> get()

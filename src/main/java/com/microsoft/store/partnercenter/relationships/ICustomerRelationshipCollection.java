@@ -21,7 +21,7 @@ public interface ICustomerRelationshipCollection
     /***
      * Retrieves all the partner relationships associated to the customer based on the logged in partner.
      * 
-     * @return: The partner relationships.
+     * @return The partner relationships.
      */
     ResourceCollection<PartnerRelationship> get();
 }

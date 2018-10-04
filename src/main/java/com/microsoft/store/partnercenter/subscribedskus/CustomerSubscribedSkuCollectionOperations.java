@@ -27,7 +27,7 @@ public class CustomerSubscribedSkuCollectionOperations
 		implements ICustomerSubscribedSkuCollection {
 
     /**
-     * Initializes a new instance of the {@link #CustomerSubscribedSkuCollectionOperations} class.
+     * Initializes a new instance of the CustomerSubscribedSkuCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

@@ -27,7 +27,7 @@ public class EntitlementCollectionOperations
     implements IEntitlementCollection
 {
     /**
-     * Initializes a new instance of the {@link #EntitlementCollectionOperations} class.
+     * Initializes a new instance of the EntitlementCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -45,8 +45,8 @@ public class EntitlementCollectionOperations
 	/***
 	 * Retrieves the operations that can be applied on entitlements with a given entitlement type.
 	 * 
-	 * @param entitlementType: The type of entiltment.
-	 * @return: The entitlement collection operations by entitlement type.
+	 * @param entitlementType The type of entiltment.
+	 * @return The entitlement collection operations by entitlement type.
 	 */
     @Override
      public IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>> byEntitlementType(String entitlementType)
@@ -57,7 +57,7 @@ public class EntitlementCollectionOperations
     /***
      * Retrieves the entitlement collection.
      * 
-     * @return: The entitlement collection.
+     * @return The entitlement collection.
      */
     @Override
     public ResourceCollection<Entitlement> get()

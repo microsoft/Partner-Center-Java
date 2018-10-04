@@ -31,7 +31,7 @@ public class DeviceCollectionOperations
     implements IDeviceCollection
 {
     /**
-     * Initializes a new instance of the {@link #DeviceCollectionOperations} class.
+     * Initializes a new instance of the DeviceCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId            Identifier for the customer.
@@ -55,8 +55,8 @@ public class DeviceCollectionOperations
 	/***
 	 * Retrieves a specific customer's device behavior.
 	 * 
-	 * @param deviceId: The device identifier.
-	 * @return: The customer device behavior.
+	 * @param deviceId The device identifier.
+	 * @return The customer device behavior.
 	 */
     @Override
     public IDevice byId( String deviceId )
@@ -67,8 +67,8 @@ public class DeviceCollectionOperations
     /***
 	 * Adds devices to existing devices batch.
 	 * 
-	 * @param newDevices: The new devices to be created.
-	 * @return: The location which indicates the URL of the API to query for status of the create request.
+	 * @param newDevices The new devices to be created.
+	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
     @Override
     public String create( List<Device> newDevices )
@@ -90,7 +90,7 @@ public class DeviceCollectionOperations
     /***
      * Retrieves all devices.
      * 
-     * @return: All of the devices.
+     * @return All of the devices.
      */
     @Override
     public ResourceCollection<Device> get()

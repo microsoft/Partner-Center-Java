@@ -25,7 +25,7 @@ public class BillingProfileOperations
     implements IBillingProfile
 {
     /**
-     * Initializes a new instance of the {@link #BillingProfileOperations} class.
+     * Initializes a new instance of the BillingProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */

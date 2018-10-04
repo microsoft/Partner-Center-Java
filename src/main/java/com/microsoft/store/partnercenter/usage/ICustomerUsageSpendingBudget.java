@@ -20,13 +20,15 @@ public interface ICustomerUsageSpendingBudget
 {
     /***
      * Retrieves the customer's usage spending budget.
-     * @return: The customer's usage spending budget.
+     * @return The customer's usage spending budget.
      */
     SpendingBudget get();
 
     /***
      * Patches the customer's usage spending budget.
-     * @param spendingBudget: The new customer's usage spending budget.
+     * 
+     * @param spendingBudget The new customer's usage spending budget.
+     * 
      * @return The updated customer's usage spending budget. 
      */
     SpendingBudget patch( SpendingBudget spendingBudget );

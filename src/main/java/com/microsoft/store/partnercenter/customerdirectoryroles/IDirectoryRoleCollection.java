@@ -23,14 +23,14 @@ public interface IDirectoryRoleCollection
 	/***
 	 * Gets a directory role behavior.
 	 * 
-	 * @param roleId: The directory role id.
-	 * @return: The directory role operations.
+	 * @param roleId The directory role identifier.
+	 * @return The directory role operations.
 	 */
     IDirectoryRole byId( String roleId );
 
     /***
      * Retrieves all customer directory roles.
-     * @return: All the customer directory roles.
+     * @return All the customer directory roles.
      */
     ResourceCollection<DirectoryRole> get();
 }

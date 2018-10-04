@@ -41,9 +41,9 @@ public class ApplicationPartnerCredentials
     private final String aadApplicationDomain;
 
     /**
-     * Initializes a new instance of the {@link #ApplicationPartnerCredentials} class.
+     * Initializes a new instance of the ApplicationPartnerCredentials class.
      * 
-     * @param aadApplicationId The application Id in Azure Active Directory.
+     * @param aadApplicationId The application identifier in Azure Active Directory.
      * @param aadApplicationSecret The application secret in Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      */
@@ -53,7 +53,7 @@ public class ApplicationPartnerCredentials
     }
 
     /**
-     * Initializes a new instance of the {@link #ApplicationPartnerCredentials} class.
+     * Initializes a new instance of the ApplicationPartnerCredentials class.
      * 
      * @param aadApplicationId The application identifier in Azure Active Directory.
      * @param aadApplicationSecret The application secret in Azure Active Directory.
