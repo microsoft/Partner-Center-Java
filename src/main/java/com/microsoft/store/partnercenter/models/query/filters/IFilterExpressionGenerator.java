@@ -12,7 +12,7 @@ package com.microsoft.store.partnercenter.models.query.filters;
 public interface IFilterExpressionGenerator
 {
     /**
-     * Generates a simple filter expression ( A > 5 ).
+     * Generates a simple filter expression.
      * 
      * @param field The filter field.
      * @param operation The filter operation.
@@ -30,7 +30,5 @@ public interface IFilterExpressionGenerator
      * @param rightSideExpression The right side expression.
      * @return The filter expression.
      */
-    String generateCompoundExpression( String leftSideExpression, FieldFilterOperation operation,
-                                       String rightSideExpression );
-
+    String generateCompoundExpression( String leftSideExpression, FieldFilterOperation operation, String rightSideExpression );
 }

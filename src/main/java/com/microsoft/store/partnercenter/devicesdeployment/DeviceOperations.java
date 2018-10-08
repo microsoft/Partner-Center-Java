@@ -14,10 +14,10 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
 import com.microsoft.store.partnercenter.models.devicesdeployment.Device;
+import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
-import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 
 /**
  * Implements operations that apply to a device.
@@ -29,6 +29,7 @@ public class DeviceOperations
      * Initializes a new instance of the DeviceOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId            The customer identifier.          
      * @param deviceBatchId         The device batch identifier.
      * @param deviceId              The device identifier.
      */

@@ -17,7 +17,8 @@ public interface IDirectoryRole extends IPartnerComponent<Tuple<String, String>>
 {
     /***
      * Gets the current directory role's user member collection operations.
-     * @return
+     * 
+     * @return The current directory role's user member collection operations
      */
     IUserMemberCollection getUserMembers();
 }

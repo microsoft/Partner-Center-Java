@@ -19,8 +19,11 @@ public interface IRetryableOperation<T>
     /**
      * Executes the operation with retries.
      * 
-     * @param attempt The operation to execute.
-     * @return The operation's result.
+     * @param httpClient The client used to perform the HTTP operation.
+     * @param request The request to be performed.
+     * 
+     * @return The response from the HTTP operation.
+     * @throws IOException If network operation fails.
      */
     T execute(CloseableHttpClient httpClient, HttpUriRequest request) throws IOException;
 }

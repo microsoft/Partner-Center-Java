@@ -14,10 +14,10 @@ import com.microsoft.store.partnercenter.models.offers.OfferCategory;
 public interface ICustomerOfferCategoryCollection
 	extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<OfferCategory, ResourceCollection<OfferCategory>>
 {
-    /***
-     * Retrieves all the offer categories for the provided Customer.
+    /**
+     * Retrieves all the offer categories for the provided customer.
      * 
-     * @return The offers for the provided customer.
+     * @return The offer categories for the provided customer.
      */
     ResourceCollection<OfferCategory> get();
 }

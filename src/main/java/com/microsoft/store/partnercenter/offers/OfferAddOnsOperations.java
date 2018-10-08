@@ -32,6 +32,7 @@ public class OfferAddOnsOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param offerId The offer Id to get its add on offers.
+     * @param country The country on which to base the offer add-ons.
      */
     public OfferAddOnsOperations( IPartner rootPartnerOperations, String offerId, String country )
     {
@@ -43,7 +44,6 @@ public class OfferAddOnsOperations
     /**
      * Retrieves the add-ons for the given offer.
      * 
-     * @param country The country.
      * @return The offer add-ons.
      */
     public ResourceCollection<Offer> get()
@@ -66,9 +66,8 @@ public class OfferAddOnsOperations
     }
 
     /**
-     * Asynchronously retrieves a subset of offers for the provided country.
+     * Retrieves a subset of offers for the provided country.
      * 
-     * @param country The country.
      * @param offset The starting index.
      * @param size The maximum number of offers to return.
      * @return The requested segment of the offers for the provided country.

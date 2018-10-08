@@ -12,7 +12,7 @@ import java.util.Locale;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
 /**
- * This exception is thrown by {@see #IPartnerServiceProxy} objects when they fail to parse the
+ * This exception is thrown by {@link com.microsoft.store.partnercenter.network.IPartnerServiceProxy} objects when they fail to parse the
  * response according to the caller's expectations.
  */
 public class PartnerResponseParseException

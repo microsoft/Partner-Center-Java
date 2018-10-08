@@ -31,29 +31,43 @@ public class LinearBackOffRetryPolicy
         this.setMaxRetries( maxRetries );
     }
 
-    /**
-     * Gets or sets the back off time between retries.
-     */
     private Duration __BackOff;
-
+   
+    /**
+     * Gets the back off time between retries.
+     * 
+     * @return The back off time between retries.
+     */
     public Duration getBackOff()
     {
         return __BackOff;
     }
 
+    /**
+     * Sets the back off time between retries.
+     * 
+     * @param value The back off time between retries.
+     */
     public void setBackOff( Duration value )
     {
         __BackOff = value;
     }
 
     /**
-     * Gets or sets the maximum number of retries to perform.
+     * Gets the maximum number of retries to perform.
+     * 
+     * @return The maximum number of retries to perform.
      */
     public int getMaxRetries()
     {
         return this.maxRetries;
     }
 
+    /**
+     * Sets the maximum number of retries to perform.
+     *
+     * @param value The maximum number of retires to perform.
+     */
     public void setMaxRetries( int value )
     {
         if ( value <= 0 )

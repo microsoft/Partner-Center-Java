@@ -22,7 +22,8 @@ public class SubscriptionUsageRecordCollectionOperations
      * Initializes a new instance of the SubscriptionUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
+     * @param subscriptionId The subscription identifier.
      */
     public SubscriptionUsageRecordCollectionOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
     {
@@ -35,11 +36,12 @@ public class SubscriptionUsageRecordCollectionOperations
         {
             throw new IllegalArgumentException( "subscriptionId should be set." );
         }
-
     }
 
-    /***
+    /**
      * Gets the subscription usage records grouped by resources.
+     * 
+     * @return The subscription usage records grouped by resources.
      */
     public IResourceUsageRecordCollection getResources()
     {
@@ -47,13 +49,14 @@ public class SubscriptionUsageRecordCollectionOperations
     			this.getContext().getItem1(), this.getContext().getItem2() );
     }
 
-    /***
+    /**
      * Gets the subscription usage records grouped by days.
+     * 
+     * @return The subscription usage records grouped by days.
      */
     public ISubscriptionDailyUsageRecordCollection getDaily()
     {
     	return new SubscriptionDailyUsageRecordCollectionOperations( this.getPartner(), 
     			this.getContext().getItem1(), this.getContext().getItem2() );
     }
-
 }

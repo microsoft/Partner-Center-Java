@@ -29,8 +29,7 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
      * Initializes a new instance of the SubscriptionMonthlyUsageRecordCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
-     * @param subscriptionId The subscription id.
+     * @param customerId The customer identifier.
      */
     public SubscriptionMonthlyUsageRecordCollectionOperations( IPartner rootPartnerOperations,
                                                              String customerId )
@@ -40,7 +39,6 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
         {
             throw new IllegalArgumentException( "customerId should be set." );
         }
-
     }
 
     /**
@@ -59,5 +57,4 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
                                                         Locale.US ) );
         return partnerServiceProxy.get();
     }
-
 }

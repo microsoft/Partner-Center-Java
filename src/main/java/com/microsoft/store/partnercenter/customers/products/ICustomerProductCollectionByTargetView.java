@@ -29,7 +29,7 @@ public interface ICustomerProductCollectionByTargetView
     /**
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
-     * @param customersQuery The product segment filter.
+     * @param targetSegment The product segment filter.
      * @return The product collection operations by customer, by target view and by target segment.
      */
     ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment( String targetSegment );

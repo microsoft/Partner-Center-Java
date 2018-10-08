@@ -13,7 +13,9 @@ public interface IUtilizationCollection
 	extends IPartnerComponent<Tuple<String, String>>
 {
 	/***
-	 * Gets Azure subscription utilization behavior.
+	 * Gets the Azure subscription utilization behavior.
+	 * 
+	 * @return The Azure subscription utilization behavior.
 	 */
 	IAzureUtilizationCollection getAzure();
 }

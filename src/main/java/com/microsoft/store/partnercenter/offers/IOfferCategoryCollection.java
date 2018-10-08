@@ -20,9 +20,7 @@ public interface IOfferCategoryCollection
     /**
      * Retrieves all offer categories available to the partner for the provided country.
      * 
-     * @param country The country.
      * @return All offer categories for the provided country.
      */
     ResourceCollection<OfferCategory> get();
-
 }

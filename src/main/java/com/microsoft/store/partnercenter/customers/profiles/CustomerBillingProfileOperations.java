@@ -28,7 +28,7 @@ public class CustomerBillingProfileOperations
      * Initializes a new instance of the CustomerBillingProfileOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
      */
     public CustomerBillingProfileOperations( IPartner rootPartnerOperations, String customerId )
     {

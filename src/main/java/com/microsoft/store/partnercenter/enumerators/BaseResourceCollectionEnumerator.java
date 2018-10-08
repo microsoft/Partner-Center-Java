@@ -17,7 +17,7 @@ import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
 /**
- * Base implementation for resource collection enumerators. The type of the resource collection.
+ * Base implementation for resource collection enumerators. 
  */
 public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWithLinks<StandardResourceCollectionLinks>>
     extends BasePartnerComponentString
@@ -36,6 +36,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
      * @param rootPartnerOperations The root partner operations instance.
      * @param resourceCollection The initial resource collection.
      * @param resourceCollectionConverter An optional converter.
+     * @param responseType The type of the resource collection.
      */
     protected BaseResourceCollectionEnumerator( IPartner rootPartnerOperations, T resourceCollection,
                                                 ObjectMapper resourceCollectionConverter,
@@ -52,7 +53,9 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     }
 
     /**
-     * Gets whether the current customer collection is the first page of results or not.
+     * Gets whether the current collection is the first page of results or not.
+     * 
+     * @return A flag indicating whether the current collection is the first page of results or not.
      */
     @Override
     public boolean isFirstPage()
@@ -66,7 +69,9 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     }
 
     /**
-     * Gets whether the current customer collection is the last page of results or not.
+     * Gets whether the current collection is the last page of results or not.
+     * 
+     * @return A flag indicating whether the current collection is the last page of results or not.
      */
     @Override
     public boolean isLastPage()
@@ -82,6 +87,8 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     /**
      * Gets whether the current result collection has a value or not. This indicates if the collection has been fully
      * enumerated or not.
+     * 
+     * @return A flag indicating whether the current result collection has a value or not.
      */
     @Override
     public boolean hasValue()
@@ -91,6 +98,8 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
 
     /**
      * The current resource collection.
+     * 
+     * @return The current resource collection.
      */
     @Override
     public T getCurrent()
@@ -99,10 +108,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     }
 
     /**
-     * Retrieves the next customer result set.
-     * 
-     * @param context An optional request context. If not provided, the context associated with the partner operations
-     *            will be used.
+     * Retrieves the next result set.
      */
     @Override
     public void next()
@@ -110,6 +116,11 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         this.next( null );
     }
 
+    /**
+     * Retrieves the next result set.
+     * 
+     * @param context The request context.
+     */
     @Override
     public void next( IRequestContext context )
     {
@@ -148,10 +159,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     }
 
     /**
-     * Retrieves the previous customer result set.
-     * 
-     * @param context An optional request context. If not provided, the context associated with the partner operations
-     *            will be used.
+     * Retrieves the previous result set.
      */
     @Override
     public void previous()
@@ -159,6 +167,11 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         this.previous(null);
     }
 
+    /**
+     * Retrieves the previous result set.
+     * 
+     * @param context The request context.
+     */
     @Override
     public void previous( IRequestContext context )
     {

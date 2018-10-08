@@ -24,18 +24,22 @@ public interface ICustomerCollection
 {
     /**
      * Gets the customer usage record operations.
+     * 
+     * @return The customer usage record operations.
      */
     ICustomerUsageRecordCollection getUsageRecords();
 
     /**
      * Gets the customer relationship request operations.
+     * 
+     * @return The customer replationship request operations.
      */
     ICustomerRelationshipRequest getRelationshipRequests();
 
     /**
      * Gets a single customer operations.
      * 
-     * @param customerId The customer id.
+     * @param customerId The customer identifier.
      * @return The customer operations.
      */
     ICustomer byId( String customerId );
@@ -52,7 +56,7 @@ public interface ICustomerCollection
      * the page size or filter or do both at the same time. - Sort is not supported. - You can navigate to other pages
      * by specifying a seek query with the seek operation and the continuation token sent by the previous operation.
      * 
-     * @param customersQuery A query to apply onto customers. Check {@see #QueryFactory} to see how to build queries.
+     * @param customersQuery A query to apply onto customers. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
      * @return The requested customers.
      */
     SeekBasedResourceCollection<Customer> query( IQuery customersQuery );

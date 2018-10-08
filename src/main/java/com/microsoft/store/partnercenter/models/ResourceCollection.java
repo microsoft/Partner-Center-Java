@@ -38,5 +38,4 @@ public class ResourceCollection<TResource>
     {
     	super(resourceCollection);
     }
-
 }

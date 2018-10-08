@@ -12,7 +12,7 @@ package com.microsoft.store.partnercenter.models.analytics;
 public abstract class CustomerLicensesInsightsBase
 {
     /**
-     * Gets or sets the Customer Id.
+     * Gets or sets The customer identifier.
      */
     private String __CustomerId;
 

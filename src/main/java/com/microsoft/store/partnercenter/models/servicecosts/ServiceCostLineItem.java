@@ -301,7 +301,7 @@ public class ServiceCostLineItem
     }
 
     /***
-     * Gets or sets the Customer Tenant ID.
+     * Gets or sets The customer identifier.
      */
 	@JsonProperty( "customerId" )
     private String __CustomerId;

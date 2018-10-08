@@ -14,11 +14,11 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.products.Product;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
+import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
  * Product operations by customer id and by target view implementation class.
@@ -33,7 +33,6 @@ public class CustomerProductCollectionByTargetViewOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      * @param targetView The target view which contains the products.
-     * @param targetSegement The target segment used for filtering the products. 
      */
     public CustomerProductCollectionByTargetViewOperations( IPartner rootPartnerOperations, String customerId, String targetView )
     {
@@ -75,7 +74,7 @@ public class CustomerProductCollectionByTargetViewOperations
     /**
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
-     * @param customersQuery The product segment filter.
+     * @param targetSegment The product segment filter.
      * @return The product collection operations by customer, by target view and by target segment.
      */
     @Override

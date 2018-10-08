@@ -13,21 +13,27 @@ public abstract class Contract
     extends ResourceBase
 {
     protected Contract()
-
     {
         super();
     }
 
-    /**
-     * Gets or sets the order identifier.
-     */
     private String __OrderId = new String();
 
+    /**
+     * Gets the order identifier.
+     * 
+     * @return The order identifier.
+     */
     public String getOrderId()
     {
         return __OrderId;
     }
 
+    /**
+     * Sets the order identifier.
+     * 
+     * @param value The order identifier.
+     */
     public void setOrderId( String value )
     {
         __OrderId = value;
@@ -35,6 +41,8 @@ public abstract class Contract
 
     /**
      * Gets the contract type.
+     * 
+     * @return The contract type.
      */
     public abstract ContractType getContractType();
 

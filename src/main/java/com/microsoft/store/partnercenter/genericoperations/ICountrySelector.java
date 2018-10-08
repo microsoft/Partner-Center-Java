@@ -13,8 +13,10 @@ public interface ICountrySelector<TOperations> {
 
 	/***
 	 * Customizes operations based on the given country.
+	 *
+	 * @param country The country to be used by the returned operations.
+     *
 	 * @return An operations interface customized for the provided country.
-	 * @param: The country to be used by the returned operations.
 	 */
 	TOperations byCountry( String country );
 }

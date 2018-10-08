@@ -11,13 +11,14 @@ import com.microsoft.store.partnercenter.genericoperations.IEntityCreateOperatio
 import com.microsoft.store.partnercenter.models.licenses.LicenseUpdate;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Represents the behavior of the customers user's directory roles.
  */
 public interface ICustomerUserLicenseUpdates 
 	extends IPartnerComponent<Tuple<String,String>>,
-    IEntityCreateOperations<LicenseUpdate, LicenseUpdate>  {
-    /***
+    IEntityCreateOperations<LicenseUpdate, LicenseUpdate>  
+{
+    /**
      * Assign licenses to a user.
      * This method serves three scenarios:
      * 1. Add license to a customer user.
@@ -28,5 +29,4 @@ public interface ICustomerUserLicenseUpdates
      * @return The customer user's directory roles.
      */
 	LicenseUpdate create( LicenseUpdate newLicenseUpdate );
-
 }

@@ -16,27 +16,36 @@ public interface IPartnerProfileCollection
 {
     /**
      * Gets the operations available for the legal business profile.
+     * 
+     * @return The operations available for the legal business profile.
      */
     ILegalBusinessProfile getLegalBusinessProfile();
 
     /**
      * Gets the operations available for the partner network profile.
+     * 
+     * @return The operations available for the partner network profile.
      */
     IMpnProfile getMpnProfile();
 
     /**
      * Gets the operations available for the partner support profile.
+     * 
+     * @return The operations available for the partner support profile.
      */
     ISupportProfile getSupportProfile();
 
     /**
      * Gets the operations available for the organization profile.
+     * 
+     * @return The operations available for the organization profile.
      */
     IOrganizationProfile getOrganizationProfile();
 
     /**
      * Gets the operations available for the partner billing profile.
+     * 
+     * @return The operations available for the partner billing profile.
      */
     IBillingProfile getBillingProfile();
-
 }

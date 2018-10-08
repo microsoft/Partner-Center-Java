@@ -29,7 +29,8 @@ public class CustomerUserRoleCollectionOperations
      * Initializes a new instance of the CustomerUserRoleCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
+     * @param userId The user identifier.
      */
     public CustomerUserRoleCollectionOperations( IPartner rootPartnerOperations, String customerId, String userId )
     {

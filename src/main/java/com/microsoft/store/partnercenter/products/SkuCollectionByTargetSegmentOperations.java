@@ -33,7 +33,6 @@ public class SkuCollectionByTargetSegmentOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
-     * @param skuId                 Identifier for the SKU.
      * @param country               The country on which to base the product.
      * @param targetSegment         The target segment used for filtering the availabilities.
      */

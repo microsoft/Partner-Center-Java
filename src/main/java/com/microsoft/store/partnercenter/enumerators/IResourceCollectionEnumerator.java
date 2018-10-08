@@ -18,22 +18,30 @@ public interface IResourceCollectionEnumerator<T extends ResourceBaseWithLinks<S
 {
     /**
      * Gets whether the current result collection is the first page of results or not.
+     * 
+     * @return A flag indicating whether or not the result collect is the fist page of results or not.
      */
     boolean isFirstPage();
 
     /**
      * Gets whether the current result collection is the last page of results or not.
+     * 
+     * @return A flag indicating whether the current result collection is the last page of results or not.
      */
     boolean isLastPage();
 
     /**
      * Gets whether the current result collection has a value or not. This indicates if the collection has been fully
      * enumerated or not.
+     * 
+     * @return A flag indicating whether the current result collection has a value or not.
      */
     boolean hasValue();
 
     /**
      * The current resource collection.
+     * 
+     * @return The current resoure collection.
      */
     T getCurrent();
 

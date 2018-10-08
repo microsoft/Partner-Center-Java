@@ -33,7 +33,6 @@ public class SkuCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param productId             Identifier for the product.
-     * @param skuId                 Identifier for the SKU.
      * @param country               The country on which to base the product.
      */
     public SkuCollectionOperations( IPartner rootPartnerOperations, String productId, String country )
@@ -62,7 +61,7 @@ public class SkuCollectionOperations
     /**
      * Retrieves the operations that can be applied on SKUs that belong to a segment.
      * 
-     * @param targetSegement The SKU segment filter.
+     * @param targetSegment The SKU segment filter.
      * @return The SKU collection operations by target segment.
      */
     public ISkuCollectionByTargetSegment byTargetSegment(String targetSegment)

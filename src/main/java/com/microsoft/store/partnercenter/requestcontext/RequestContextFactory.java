@@ -10,20 +10,22 @@ import java.util.UUID;
 
 public class RequestContextFactory
 {
-    /***
+    /**
      * A singleton instance of the request context factory.
      */
     private static RequestContextFactory __instance = new RequestContextFactory();
 
-    /***
+    /**
      * Prevents a default instance of the <see cref="RequestContextFactory"/> class from being created.
      */
     private RequestContextFactory()
     {
     }
 
-    /***
+    /**
      * Gets an instance of the request context factory.
+     * 
+     * @return An instance of the request context factory.
      */
     public static RequestContextFactory getInstance()
     {
@@ -102,5 +104,4 @@ public class RequestContextFactory
     {
         return new RequestContext( correlationId, requestId, locale );
     }
-
 }

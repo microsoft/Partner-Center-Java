@@ -31,15 +31,19 @@ public class UserPartnerCredentials
      * 
      * @param clientId The client id of the application in Azure Active Directory.
      * @param aadAuthenticationToken The Azure Active Directory token.
-     * @param aadTokenRefresher An optional delegate which will be called when the Azure Active Directory token expires
-     *            and can no longer be used to generate the partner credentials. This delegate should return an up to
-     *            date Azure Active Directory token.
      */
     public UserPartnerCredentials( String clientId, AuthenticationToken aadAuthenticationToken )
     {
         this( clientId, aadAuthenticationToken, null );
     }
 
+    /**
+     * Initializes a new instance of the UserPartnerCredentials class.
+     * 
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param aadAuthenticationToken The Azure Active Directory token.
+     * @param loginHandler Delegate used to refresh the Azure Active Directory token.
+     */
     public UserPartnerCredentials( String clientId, AuthenticationToken aadAuthenticationToken,
                                    IAadLoginHandler loginHandler )
     {
@@ -65,7 +69,6 @@ public class UserPartnerCredentials
      *
      * @param credentials The outdated partner credentials.
      * @param context The partner context.
-     * @return A task that is complete when the credential refresh is done.
      */
     @Override
     public void onCredentialsRefreshNeeded( IPartnerCredentials credentials, IRequestContext context )

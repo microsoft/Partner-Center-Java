@@ -11,8 +11,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import org.joda.time.DateTime;
-
 import com.microsoft.aad.adal4j.AuthenticationContext;
 import com.microsoft.aad.adal4j.AuthenticationResult;
 import com.microsoft.aad.adal4j.ClientCredential;
@@ -23,6 +21,8 @@ import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.utils.StringHelper;
+
+import org.joda.time.DateTime;
 
 /**
  * Partner service credentials based on Azure Active Directory application credentials.
@@ -96,31 +96,45 @@ public class ApplicationPartnerCredentials
         PartnerService.getInstance().setRefreshCredentialsHandler( this );
     }
 
-    /**
-     * Gets the active directory authentication endpoint.
-     */
     private String __ActiveDirectoryAuthority;
 
+    /**
+     * Gets the Active Directory authentication endpoint.
+     * 
+     * @return The Active Directory authentication endpoint
+     */
     public String getActiveDirectoryAuthority()
     {
         return __ActiveDirectoryAuthority;
     }
 
+    /**
+     * Sets the Active Directory authentication endpoint.
+     * 
+     * @param value The Active Directory authentication endpoint.
+     */
     public void setActiveDirectoryAuthority( String value )
     {
         __ActiveDirectoryAuthority = value;
     }
 
-    /**
-     * Gets the Graph API endpoint.
-     */
     private String __GraphApiEndpoint;
 
+    /**
+     * Gets the Graph API endpoint.
+     * 
+     * @return The Graph API endpoint.
+     */
     public String getGraphApiEndpoint()
     {
         return __GraphApiEndpoint;
     }
 
+    /**
+     * Set the Graph API end point.
+     * 
+     * @param value The Graph API endpoint
+     */
     public void setGraphApiEndpoint( String value )
     {
         __GraphApiEndpoint = value;
@@ -129,8 +143,7 @@ public class ApplicationPartnerCredentials
     /**
      * Authenticates with the partner service.
      * 
-     * @param requestContext An optional request context.
-     * @return A task that is complete when the authentication is complete.
+     * @param requestContext The request context.
      */
     @Override
     public void authenticate( IRequestContext requestContext )
@@ -174,8 +187,7 @@ public class ApplicationPartnerCredentials
      * Called when a partner credentials instance needs to be refreshed.
      * 
      * @param credentials The outdated partner credentials.
-     * @param context The partner context.
-     * @return A task that is complete when the credential refresh is complete.
+     * @param context The request context.
      */
     @Override
     public void onCredentialsRefreshNeeded( IPartnerCredentials credentials, IRequestContext context )

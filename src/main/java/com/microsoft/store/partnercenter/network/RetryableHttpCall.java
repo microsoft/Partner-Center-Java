@@ -12,16 +12,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.joda.time.LocalTime;
-
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.retries.IRetryPolicy;
 import com.microsoft.store.partnercenter.retries.IRetryableOperation;
+
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.joda.time.LocalTime;
 
 /**
  * Implements retryable HTTP calls. Use this class with the retry policy you need to implement HTTP call retries.
@@ -38,8 +37,6 @@ public class RetryableHttpCall
 
     /**
      * Initializes a new instance of the RetryableHttpCall class.
-     * 
-     * @param retryPolicy An optional retry policy. The default policy will be used if not provided.
      */
     public RetryableHttpCall()
     {
@@ -56,16 +53,24 @@ public class RetryableHttpCall
         this.setRetryPolicy( retryPolicy );
     }
 
-    /**
-     * Gets or set the retry policy.
-     */
-    private IRetryPolicy __RetryPolicy;
 
+    private IRetryPolicy __RetryPolicy;
+    
+    /**
+     * Gets the retry policy.
+     * 
+     * @return The retry policy.
+     */
     public IRetryPolicy getRetryPolicy()
     {
         return __RetryPolicy;
     }
 
+    /**
+     * Sets the retry policy.
+     * 
+     * @param value The retry policy.
+     */
     public void setRetryPolicy( IRetryPolicy value )
     {
         __RetryPolicy = value;
@@ -74,15 +79,12 @@ public class RetryableHttpCall
     /**
      * Executes an HTTP operation with the configured retry policy.
      * 
-     * @param request
-     * @param partnerServiceClient
-     * @param responsePromise
-     * @param httpCall The HTTP call.
-     * @return The HTTP response.
-     * @throws IOException
-     * @throws ClientProtocolException
+     * @param httpClient The client used to perform the HTTP operation.
+     * @param request The request to be performed.
+     * 
+     * @return The response from the HTTP operation.
+     * @throws IOException If a new operation fails.
      */
-
     public CloseableHttpResponse execute( CloseableHttpClient httpClient, HttpUriRequest request )
         throws IOException
     {

@@ -80,16 +80,9 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Initializes a new instance of the PartnerServiceProxy class.
 	 * 
-	 * @param rootPartnerOperations
-	 *            The root partner operations instance.
-	 * @param resourcePath
-	 *            The resource path which will be appended to the root URL.
-	 * @param errorHandler
-	 *            An optional handler for failed responses. The default will be used
-	 *            if not provided.
-	 * @param jsonConverter
-	 *            An optional JSON response converter. The default will be used if
-	 *            not provided.
+	 * @param responseClass Type of the response.
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param resourcePath The resource path which will be appended to the root URL.
 	 */
 	public PartnerServiceProxy(TypeReference<TResponse> responseClass, IPartner rootPartnerOperations,
 			String resourcePath) 
@@ -355,7 +348,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	 * Executes a GET request against the partner service.
 	 * 
 	 * @return The GET response.
-	 * @throws PartnerException
+	 * @throws PartnerException If a network operation fails.
 	 */
 	@Override
 	public TResponse get() 
@@ -413,8 +406,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Executes a POST request against the partner service.
 	 * 
-	 * @param content
-	 *            The request body content.
+	 * @param content The request body content.
 	 * @return The POST response.
 	 */
 	@Override
@@ -441,8 +433,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Executes a PATCH request against the partner service.
 	 *
-	 * @param content
-	 *            The request body content.
+	 * @param content The request body content.
 	 * @return The PATCH response.
 	 */
 	@Override
@@ -470,8 +461,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Executes a PUT request against the partner service.
 	 * 
-	 * @param content
-	 *            The request body content.
+	 * @param content The request body content.
 	 * @return The PUT response.
 	 */
 	@Override
@@ -498,7 +488,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Executes a DELETE request against the partner service.
 	 * 
-	 * @throws PartnerException
+	 * @throws PartnerException If a network operation fails.
 	 */
 	@Override
 	public void delete() 
@@ -510,7 +500,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Executes a HEAD request against the partner service.
 	 * 
-	 * @throws PartnerException
+	 * @throws PartnerException If a network operation fails.
 	 */
 	@Override
 	public void head() 
@@ -549,8 +539,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	 * Sends an HTTP request to the partner service after checking that the
 	 * credentials are not expired. It will also handle the response.
 	 * 
-	 * @param httpOperation
-	 *            The HTTP operation to execute.
+	 * @param httpOperation The HTTP operation to execute.
 	 * @return A deserialized HTTP response.
 	 */
 	private TResponse send(RequestBuilder request) 

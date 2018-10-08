@@ -24,7 +24,7 @@ public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, 
 	 * Initializes a new instance of the DirectoryRoleOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance
-	 * @param customerId The customer tenant id.
+	 * @param customerId The customer identifier.
 	 * @param roleId The directory role id
 	 */
 	public DirectoryRoleOperations( IPartner rootPartnerOperations, String customerId, String roleId )

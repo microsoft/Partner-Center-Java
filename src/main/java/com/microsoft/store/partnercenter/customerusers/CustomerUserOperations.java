@@ -28,12 +28,12 @@ public class CustomerUserOperations
      */
     private ICustomerUserRoleCollection customerUserDirectoryRoleCollectionOperations;
     
-    /***
+    /**
      * The customer user license collection operations.
      */
     private ICustomerUserLicenseCollection customerUserLicenseCollectionOperations;
 
-    /***
+    /**
      * The customer user license update operations.
      */
     private ICustomerUserLicenseUpdates customerUserLicenseUpdateOperations;
@@ -42,7 +42,8 @@ public class CustomerUserOperations
      * Initializes a new instance of the CustomerUserOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
+     * @param userId The user identifier.
      */
     public CustomerUserOperations( IPartner rootPartnerOperations, String customerId, String userId )
     {
@@ -55,7 +56,6 @@ public class CustomerUserOperations
         {
             throw new IllegalArgumentException( "userId must be set" );
         }
-        //this.customerUserId = customerUserId;
     }
 
     /**
@@ -86,6 +86,12 @@ public class CustomerUserOperations
 	    partnerServiceProxy.delete();
 	}
 
+    /**
+     * Updates the customer user.
+     * 
+     * @param customerUser The customer to be updated.
+     * @return The updated user. 
+     */
 	@Override
 	public CustomerUser patch( CustomerUser customerUser ) {		
         if ( customerUser == null )
@@ -100,7 +106,7 @@ public class CustomerUserOperations
         return partnerServiceProxy.patch( customerUser );
 	}
 	
-	/***
+	/**
 	 * Retrieves the customer user's directory roles.
 	 * 
 	 * @return The customer user's directory roles.
@@ -114,7 +120,7 @@ public class CustomerUserOperations
         return customerUserDirectoryRoleCollectionOperations;
 	}
 
-	/***
+	/**
 	 * Gets the current user's license collection operation.
 	 * 
 	 * @return The customer user's licenses collection operations.
@@ -128,7 +134,7 @@ public class CustomerUserOperations
         return customerUserLicenseCollectionOperations;
 	}
 
-	/***
+	/**
 	 * Gets the current user's license updates operation.
 	 * 
 	 * @return The customer user's license updates collection operations.
@@ -141,6 +147,4 @@ public class CustomerUserOperations
         }
         return customerUserLicenseUpdateOperations;
 	}
-
-
 }

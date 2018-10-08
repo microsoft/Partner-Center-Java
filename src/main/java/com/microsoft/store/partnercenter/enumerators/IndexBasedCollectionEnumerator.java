@@ -25,6 +25,7 @@ public class IndexBasedCollectionEnumerator<T extends ResourceBase, TResourceCol
      * @param partnerOperations A partner operations instance.
      * @param pagedResourceCollection The paged resource collection to enumerate from.
      * @param resourceCollectionConverter The resource collection converter.
+     * @param responseType The type of resource collection.
      */
     public IndexBasedCollectionEnumerator( IPartner partnerOperations,
                                            TResourceCollection pagedResourceCollection,
@@ -33,5 +34,4 @@ public class IndexBasedCollectionEnumerator<T extends ResourceBase, TResourceCol
     {
         super( partnerOperations, pagedResourceCollection, resourceCollectionConverter, responseType );
     }
-
 }

@@ -66,7 +66,7 @@ public class CustomerSkuCollectionOperations
     /**
      * Retrieves the operations that can be applied on skus that belong to a segment.
      * 
-     * @param targetSegement The SKU segment filter.
+     * @param targetSegment The SKU segment filter.
      * @return The sku collection operations by target segment.
      */
     @Override

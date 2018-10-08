@@ -22,11 +22,11 @@ public class CustomerOfferCategoryCollectionOperations
 	extends BasePartnerComponentString
 	implements ICustomerOfferCategoryCollection
 {
-	/***
+	/**
 	 * Initializes a new instance of the CustomerOfferCategoryCollectionOperations class.
 	 * 
-	 * @param rootPartnerOperations
-	 * @param customerId
+     * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
 	 */
 	public CustomerOfferCategoryCollectionOperations( IPartner rootPartnerOperations, String customerId )
 	{
@@ -37,8 +37,10 @@ public class CustomerOfferCategoryCollectionOperations
         }
 	}
 
-	/***
+	/**
 	 * Gets the offer categories available to customer from partner.
+	 * 
+	 * @return The offer categories available to customer from partner.
 	 */
 	@Override
 	public ResourceCollection<OfferCategory> get()

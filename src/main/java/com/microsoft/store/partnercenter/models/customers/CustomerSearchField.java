@@ -38,6 +38,11 @@ public enum CustomerSearchField
         this.name = name;
     }
 
+    /**
+     * Converts the object to a string. 
+     * 
+     * @return A string that represents this object.
+     */
     @Override
     public String toString()
     {

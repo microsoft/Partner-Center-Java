@@ -29,6 +29,7 @@ public class CustomerAgreementCollectionOperations
      * Initializes a new instance of the CustomerAgreementCollectionOperations class.
      *
      * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId The customer identifier.
      */
     public CustomerAgreementCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {
@@ -39,7 +40,7 @@ public class CustomerAgreementCollectionOperations
         }
     }
 
-    /***
+    /**
      * Adds accepted agreement.
      *
      * @param newAgreement Agreement to add.
@@ -59,10 +60,10 @@ public class CustomerAgreementCollectionOperations
                         .get( "CreateCustomerAgreement" ).getPath(), this.getContext(), Locale.US ) ).post( newAgreement );
     }
 
-    /***
+    /**
      * Retrieves all agreements.
      *
-     * @return The agreements.
+     * @return A collection of all agreements.
      */
     @Override
     public ResourceCollection<Agreement> get()

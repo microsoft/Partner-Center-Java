@@ -57,6 +57,8 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
 
     /**
      * Gets the total count.
+     * 
+     * @return The total count.
      */
     public int getTotalCount()
     {
@@ -70,21 +72,28 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
 
     /**
      * Gets the collection items.
+     * 
+     * @return The items in the collection.
      */
     public Iterable<TResource> getItems()
     {
         return this.items;
     }
 
+    /**
+     * Sets the collection items.
+     * 
+     * @param value The items in the collection.
+     */
     public void setItems( List<TResource> value )
     {
         this.items = value;
     }
 
     /**
-     * Returns a summary of the resource collection.
+     * Converts this object to a string.
      * 
-     * @return A summary of the resource collection.
+     * @return A string that represents this object.
      */
     @Override
     public String toString()

@@ -20,7 +20,6 @@ public abstract class ResourceBaseWithLinks<TLinks>
     protected ResourceBaseWithLinks( String objectType )
     {
         super( objectType );
-        //this.__Links = new TLinks();
     }
 
     /**
@@ -31,19 +30,25 @@ public abstract class ResourceBaseWithLinks<TLinks>
         super();
     }
 
-    /**
-     * Gets or sets the links.
-     */
-    public TLinks __Links;
+    private TLinks __Links;
 
+    /**
+     * Gets the links.
+     * 
+     * @return The links.
+     */
     public TLinks getLinks()
     {
         return __Links;
     }
 
+    /**
+     * Sets the links.
+     * 
+     * @param value The links.
+     */
     public void setLinks( TLinks value )
     {
         __Links = value;
     }
-
 }

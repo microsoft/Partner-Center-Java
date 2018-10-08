@@ -15,8 +15,7 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 
 /**
- * Factory method for creating a new instance of index based collection enumerator. The type of resource. /// The type
- * of resource collection.
+ * Factory method for creating a new instance of index based collection enumerator. 
  */
 public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TResourceCollection extends ResourceCollection<T>>
     extends BasePartnerComponentString
@@ -28,9 +27,9 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
      * Initializes a new instance of the IndexBasedCollectionEnumeratorFactory class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
+     * @param responseType The type of resource.
      */
-    public IndexBasedCollectionEnumeratorFactory( IPartner rootPartnerOperations,
-                                                  TypeReference<TResourceCollection> responseType )
+    public IndexBasedCollectionEnumeratorFactory( IPartner rootPartnerOperations, TypeReference<TResourceCollection> responseType )
     {
         super( rootPartnerOperations );
         this.responseType = responseType;
@@ -46,9 +45,10 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
     @Override
     public IResourceCollectionEnumerator<TResourceCollection> create( TResourceCollection resourceCollection )
     {
-        return new IndexBasedCollectionEnumerator<T, TResourceCollection>( this.getPartner(), resourceCollection, null,
-                                                                           responseType );// new
-                                                                                          // ResourceCollectionConverter<Invoice>());
+        return new IndexBasedCollectionEnumerator<T, TResourceCollection>(
+            this.getPartner(),
+            resourceCollection, 
+            null,
+            responseType );
     }
-
 }

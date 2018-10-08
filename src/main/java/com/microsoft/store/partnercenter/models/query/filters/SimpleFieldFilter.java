@@ -98,7 +98,7 @@ public class SimpleFieldFilter
      * 
      * @param filterExpressionGenerator The filter expression generator to use.
      * @return The filter expression according to the provided generator language.
-     * @throws ArgumentNullException if the passed filter expression generator is null.
+     * @throws IllegalArgumentException if the passed filter expression generator is null.
      */
     public String generateExpression( IFilterExpressionGenerator filterExpressionGenerator )
     {

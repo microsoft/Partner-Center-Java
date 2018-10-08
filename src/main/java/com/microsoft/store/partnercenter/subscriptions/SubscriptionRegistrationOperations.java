@@ -31,7 +31,7 @@ public class SubscriptionRegistrationOperations
      * Initializes a new instance of the SubscriptionRegistrationOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer Id.
+     * @param customerId            The customer identifier.
      * @param subscriptionId        The subscription id.
      */
     public SubscriptionRegistrationOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )

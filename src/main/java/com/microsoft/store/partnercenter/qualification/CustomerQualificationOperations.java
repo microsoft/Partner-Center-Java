@@ -29,7 +29,7 @@ public class CustomerQualificationOperations
 	 * Initializes a new instance of the CustomerQualificationOperationsclass.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
-	 * @param componentContext The customer identifier.
+	 * @param customerId The customer identifier.
 	 */
 	public CustomerQualificationOperations( IPartner rootPartnerOperations, String customerId )
 	{

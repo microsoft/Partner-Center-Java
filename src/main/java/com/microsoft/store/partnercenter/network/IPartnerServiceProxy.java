@@ -23,63 +23,116 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
     extends IPartnerComponentString
 {
     /**
-     * Gets or sets the assigned Microsoft Id.
+     * Gets the request identifer.
+     * 
+     * @return The request identifier.
      */
     UUID getRequestId();
 
+    /**
+     * Sets the request identifier.
+     * 
+     * @param value The reqeust identifier.
+     */
     void setRequestId( UUID value );
 
     /**
-     * Gets or sets the assigned Microsoft correlation Id.
+     * Gets the correlation identifier.
+     * 
+     * @return The correlation identifier.
      */
     UUID getCorrelationId();
 
+    /**
+     * Sets the correlation identifier.
+     * 
+     * @param value The correlation identifier.
+     */
     void setCorrelationId( UUID value );
 
     /**
-     * Gets or sets the assigned Locale.
+     * Gets the locale.
+     * 
+     * @return The locale
      */
     String getLocale();
 
+    /**
+     * Sets the locale.
+     * 
+     * @param value The locale.
+     */
     void setLocale( String value );
 
     /**
-     * Gets or sets the e-tag used for concurrency control.
+     * Gets the e-tag used for concurrency control.
+     * 
+     * @return The e-tag used for concurrency control.
      */
     String getIfMatch();
 
+    /**
+     * Sets the e-tag used for concurrency control.
+     * 
+     * @param value The e-tag used for concurrency control.
+     */
     void setIfMatch( String value );
 
     /**
-     * Gets or sets the request content type.
+     * Gets the request content type.
+     * 
+     * @return The request content type.
      */
     String getContentType();
 
+    /**
+     * Sets the request content type.
+     * 
+     * @param value The request content type.
+     */
     void setContentType( String value );
 
     /**
-     * Gets or sets the accepted response type.
+     * Gets the accepted response type.
+     * 
+     * @return The accepted response type.
      */
     String getAccept();
 
+    /**
+     * Sets the accepted response type.
+     * 
+     * @param value The accepted response type.
+     */
     void setAccept( String value );
 
     /**
      * Gets the additional request headers.
+     * 
+     * @return The additional request headers.
      */
     Collection<KeyValuePair<String, String>> getAdditionalRequestHeaders();
 
     /**
      * Gets a collection of Uri parameters which will be added to the request query string. You can add your own uri
      * parameters to this collection.
+     * 
+     * @return A collection of URI parameters.
      */
     Collection<KeyValuePair<String, String>> getUriParameters();
 
     /**
-     * Gets or sets the resource path which will be appended to the root URL.
+     * Gets the resource path which will be appended to the root URL.
+     * 
+     * @return The resource path which will be appended to the root URL.
      */
     String getResourcePath();
 
+    /**
+     * Sets the resource path which will be appended to the root URL.
+     * 
+     * @param value The resource path which will be appended to the root URL.
+     */
     void setResourcePath( String value );
 
     /**
@@ -91,6 +144,7 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
 
     /***
      * Executes a file content request against the partner service.
+     * 
      * @return The file content stream.
      */
     InputStream getFileContent();

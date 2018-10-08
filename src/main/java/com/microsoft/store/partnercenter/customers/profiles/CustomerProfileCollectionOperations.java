@@ -33,7 +33,7 @@ public class CustomerProfileCollectionOperations
      * Initializes a new instance of the CustomerProfileCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
      */
     public CustomerProfileCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {

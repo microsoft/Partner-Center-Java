@@ -26,7 +26,7 @@ public interface IOrder
 
     /***
      * Patches the order.
-     * @param An order that has the properties to be patched set.
+     * @param partialOrder An order that has the properties to be patched set.
      * @return The updated order
      */
     Order patch(Order partialOrder);

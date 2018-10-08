@@ -12,7 +12,8 @@ public interface IInvoiceDocuments extends IPartnerComponentString
 {
     /***
      * Gets an invoice statement operations.
+     * 
+     * @return An invoice statement operations.
      */
     IInvoiceStatement getStatement();
-
 }

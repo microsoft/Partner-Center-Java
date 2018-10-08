@@ -13,44 +13,51 @@ import com.microsoft.store.partnercenter.genericoperations.IEntityPatchOperation
 import com.microsoft.store.partnercenter.models.users.CustomerUser;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Encapsulates a customer user behavior.
  */
 public interface ICustomerUser
 	extends IPartnerComponent<Tuple<String, String>>, IEntityGetOperations<CustomerUser>, 
 	IEntityDeleteOperations<CustomerUser>, IEntityPatchOperations<CustomerUser>
 {
-    /***
+    /**
      * Gets the current user's directory role collection operations.
+     * 
+     * @return The current user's directory role collection operations.
      */
 	ICustomerUserRoleCollection getDirectoryRoles();
 
-    /***
+    /**
      * Gets the current user's licenses collection operations.
+     * 
+     * @return The current user's licenses collection operations.
      */
     ICustomerUserLicenseCollection getLicenses();
 
-    /***
+    /**
      * Gets the current user's license updates operations.
+     * 
+     * @return The current user's license updates operations.
      */
     ICustomerUserLicenseUpdates getLicenseUpdates();
 
-    /***
+    /**
      * Retrieves the customer user.
-     * <returns>The customer user.</returns>
+     * 
+     * @return The customer user.
      */    
     CustomerUser get();
 
-    /***
+    /**
      * Deletes a user.
      */
     void delete();
 
-    /***
+    /**
      * Updates the customer user.
-     * <param name="entity">Customer user entity.</param>
-     * <returns>The updated user.</returns>
+     * 
+     * @param entity Customer user entity.
+     * @return The updated user. 
      */
     CustomerUser patch( CustomerUser entity );
-
 }

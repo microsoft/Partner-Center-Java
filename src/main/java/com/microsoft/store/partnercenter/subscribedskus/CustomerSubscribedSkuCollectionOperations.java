@@ -30,6 +30,7 @@ public class CustomerSubscribedSkuCollectionOperations
      * Initializes a new instance of the CustomerSubscribedSkuCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId The customer identifier.
      */
     public CustomerSubscribedSkuCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {
@@ -40,7 +41,7 @@ public class CustomerSubscribedSkuCollectionOperations
         }
     }
 
-	/***
+	/**
 	 * Retrieves all the customer subscribed products.
 	 * 
 	 * @return All the customer subscribed products.
@@ -56,7 +57,7 @@ public class CustomerSubscribedSkuCollectionOperations
         return partnerServiceProxy.get();
 	}
 
-    /*** 
+    /***
      * Retrieves all the customer subscribed products.
      * 
      * @param licenseGroupIds group identifiers.

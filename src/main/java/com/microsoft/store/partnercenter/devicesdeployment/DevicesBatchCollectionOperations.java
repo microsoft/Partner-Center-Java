@@ -11,10 +11,10 @@ import java.text.MessageFormat;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
+import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatch;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatchCreationRequest;
-import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
@@ -56,7 +56,7 @@ public class DevicesBatchCollectionOperations
     /***
 	 * Creates a new devices batch along with the devices.
 	 * 
-	 * @param newDevices The new devices batch.
+	 * @param newDeviceBatch The new devices batch.
 	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
     public String create( DeviceBatchCreationRequest newDeviceBatch )

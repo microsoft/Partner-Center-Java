@@ -58,6 +58,12 @@ public class CustomerUsersCollectionOperations
         }
     }
 
+    /**
+     * Creates a new user.
+     * 
+     * @param newCustomerUser The user to be created.
+     * @return The newly created user.
+     */
 	@Override
 	public CustomerUser create( CustomerUser newCustomerUser ) {
         if ( newCustomerUser == null )
@@ -88,9 +94,10 @@ public class CustomerUsersCollectionOperations
 	}
 
     /***
-     * Retrieves the customer user by Id.
+     * Retrieves the customer user operations for the specified user.
      * 
-     * @return All the customer users.
+     * @param userId The user identifier.
+     * @return The customer user operations for the specified user.
      */
 	@Override
 	public ICustomerUser byId( String userId ) {
@@ -100,6 +107,7 @@ public class CustomerUsersCollectionOperations
 	/***
 	 * Queries customer users associated to the partner's customers.
 	 * 
+     * @param customerUsersQuery A query to apply onto customer users. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
 	 * @return Customer user collection.
 	 */
 	@Override
@@ -195,5 +203,4 @@ public class CustomerUsersCollectionOperations
         }
         return partnerServiceProxy.get();
 	}
-
 }

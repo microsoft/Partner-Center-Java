@@ -64,7 +64,6 @@ public class OfferOperations
     /**
      * Retrieves the offer details.
      * 
-     * @param country The country.
      * @return The offer details.
      */
     public Offer get()

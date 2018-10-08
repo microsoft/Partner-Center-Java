@@ -14,17 +14,23 @@ import java.util.UUID;
 public interface IRequestContext
 {
     /**
-     * Gets the request Id. Uniquely identifies the partner service operation.
+     * Gets the request identifier. Uniquely identifies the partner service operation.
+     * 
+     * @return The request identifier.
      */
     UUID getRequestId();
 
     /**
-     * Gets the correlation Id. This Id is used to group logical operations together.
+     * Gets the correlation identifier. This identifier is used to group logical operations together.
+     * 
+     * @return The correlation identifier.
      */
     UUID getCorrelationId();
 
     /**
-     * Gets the Locale.
+     * Gets the locale.
+     * 
+     * @return The locale.
      */
     String getLocale();
 

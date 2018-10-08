@@ -21,7 +21,6 @@ public interface IOfferAddOns
     /**
      * Retrieves all the offers for the provided country.
      * 
-     * @param country The country.
      * @return The offers for the provided country.
      */
     ResourceCollection<Offer> get();

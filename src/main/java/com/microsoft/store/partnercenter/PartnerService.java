@@ -49,6 +49,8 @@ public class PartnerService
     
     /***
      * Gets an instance of the partner service.
+     * 
+     * @return An instance of the partner service.
      */
     public static PartnerService getInstance()
     {
@@ -57,11 +59,21 @@ public class PartnerService
 
 	private String __ApiRootUrl;
 
+    /**
+     * Gets the API root URL.
+     * 
+     * @return The API root URL.
+     */
     public String getApiRootUrl()
     {
         return __ApiRootUrl;
     }
 
+    /**
+     * Sets the API root URL.
+     * 
+     * @param value The API root URL.
+     */
     public void setApiRootUrl( String value )
     {
         __ApiRootUrl = value;
@@ -69,11 +81,21 @@ public class PartnerService
 
     private String __PartnerServiceApiVersion;
 
+    /**
+     * Gets the partner service API version. 
+     * 
+     * @return The partner service API version.
+     */
     public String getPartnerServiceApiVersion()
     {
         return __PartnerServiceApiVersion;
     }
 
+    /**
+     * Set the partner service API version.
+     * 
+     * @param value The partner service API version.
+     */
     private void setPartnerServiceApiVersion( String value )
     {
         __PartnerServiceApiVersion = value;
@@ -94,6 +116,11 @@ public class PartnerService
 
     private Configuration __Configuration;
 
+    /**
+     * Gets the partner service configuration.
+     * 
+     * @return The partner service configuration.
+     */
     public Configuration getConfiguration()
     {
         return __Configuration;
@@ -175,9 +202,9 @@ public class PartnerService
     }
 
     /**
-     * Creates a {@see #IPartner} instance and configures it using the provided partner credentials.
+     * Creates a {@link IPartner} instance and configures it using the provided partner credentials.
      * 
-     * @param credentials The partner credentials. Use the {@see #IPartnerCredentials} class to obtain these.
+     * @param credentials The partner credentials.
      * @return A configured partner operations object.
      */
     public IAggregatePartner createPartnerOperations( IPartnerCredentials credentials )

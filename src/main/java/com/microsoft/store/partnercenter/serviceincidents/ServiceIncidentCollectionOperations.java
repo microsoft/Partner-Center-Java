@@ -60,10 +60,10 @@ public class ServiceIncidentCollectionOperations
 	}
 
 	/***
-	 * Gets a list of service incidents that match the query.
+	 * Retrieves all service incidents.
 	 * 
-	 * @param serviceIncidentsQuery The query used to filter the response.
-	 * @return 
+	 * @param serviceIncidentsQuery A query to retrieve service incidents based on the active status.
+	 * @return The list of service incidents.
 	 */
 	@Override
 	public ResourceCollection<ServiceIncidents> get( IQuery serviceIncidentsQuery )
@@ -102,5 +102,4 @@ public class ServiceIncidentCollectionOperations
 
         return partnerServiceProxy.get();
 	}
-
 }

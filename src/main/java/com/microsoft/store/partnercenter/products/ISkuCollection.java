@@ -31,7 +31,7 @@ public interface ISkuCollection
     /**
      * Retrieves the operations that can be applied on SKUs that belong to a segment.
      * 
-     * @param targetSegement The SKU segment filter.
+     * @param targetSegment The SKU segment filter.
      * @return The SKU collection operations by target segment.
      */
     ISkuCollectionByTargetSegment byTargetSegment(String targetSegment);

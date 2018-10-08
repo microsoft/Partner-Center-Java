@@ -24,7 +24,8 @@ public class InvoiceStatementOperations
 {
 
     /***
-     * Initializes a new instance of the <see cref="InvoiceStatementOperations"/> class.
+     * Initializes a new instance of the InvoiceStatementOperations class.
+     * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param invoiceId The invoice identifier.
      */
@@ -56,5 +57,4 @@ public class InvoiceStatementOperations
         
         return partnerServiceProxy.getFileContent();
 	}
-
 }

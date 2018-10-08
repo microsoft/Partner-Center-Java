@@ -86,6 +86,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates offer collection enumerators.
+     * 
+     * @return A factory that creates offer collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Offer>> getOffers()
     {
@@ -103,6 +105,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates customer collection enumerators.
+     * 
+     * @return A factory that creates customer collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<Customer>> getCustomers()
     {
@@ -120,6 +124,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates customer collection enumerators.
+     * 
+     * @return A factory that creates customer collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<CustomerUser>> getCustomerUsers()
     {
@@ -137,6 +143,8 @@ public class ResourceCollectionEnumeratorContainer
     
     /**
      * Gets a factory that creates invoice collection enumerators.
+     * 
+     * @return A factory that creates invoice collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Invoice>> getInvoices()
     {
@@ -155,6 +163,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates service request collection enumerators.
+     * 
+     * @return A factory that creates service request collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<ServiceRequest>> getServiceRequests()
     {
@@ -172,6 +182,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates invoice line item collection enumerators.
+     * 
+     * @return A factory that creates invoice line item collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<InvoiceLineItem>> getInvoiceLineItems()
     {
@@ -189,6 +201,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates audit records collection enumerators.
+     * 
+     * @return A factory that creates audit records collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<AuditRecord>> getAuditRecords()
     {
@@ -206,7 +220,9 @@ public class ResourceCollectionEnumeratorContainer
     }
 
     /**
-     * Gets factories that create enumerators for utilization records for different subscriptions.
+     * Gets a factory that create enumerators for utilization records for different subscriptions.
+     * 
+     * @return A factory that create enumerators for utilization records for different subscriptions.
      */
     public IUtilizationCollectionEnumeratorContainer getUtilization()
     {
@@ -221,6 +237,8 @@ public class ResourceCollectionEnumeratorContainer
 
     /**
      * Gets a factory that creates product collection enumerators.
+     * 
+     * @return A factory that creates product collection enumerators.
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Product>> getProducts()
     {

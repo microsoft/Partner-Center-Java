@@ -11,9 +11,9 @@ import java.text.MessageFormat;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
+import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
-import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
@@ -44,7 +44,7 @@ public class ConfigurationPolicyCollectionOperations
 	/***
 	 * Retrieves a specific customer's devices batch upload status behavior.
 	 * 
-	 * @param trackingId The tracking identifier.
+	 * @param policyId The policy identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
     @Override 

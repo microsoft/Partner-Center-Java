@@ -34,6 +34,7 @@ public class CustomerSkuCollectionByTargetSegmentOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer id for which to retrieve the SKUs.
      * @param productId The product id for which to retrieve its SKUs.
+     * @param targetSegment The target segment used for filtering the SKUs.
      */
     public CustomerSkuCollectionByTargetSegmentOperations( IPartner rootPartnerOperations, String customerId, String productId, String targetSegment )
     {

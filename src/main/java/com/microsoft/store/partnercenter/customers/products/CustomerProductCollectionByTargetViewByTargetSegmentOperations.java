@@ -33,7 +33,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      * @param targetView The target view which contains the products.
-     * @param targetSegement The target segment used for filtering the products. 
+     * @param targetSegment The target segment used for filtering the products. 
      */
     public CustomerProductCollectionByTargetViewByTargetSegmentOperations( IPartner rootPartnerOperations, String customerId, String targetView, String targetSegment )
     {

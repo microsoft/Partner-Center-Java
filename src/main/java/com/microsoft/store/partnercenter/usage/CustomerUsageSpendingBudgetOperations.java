@@ -29,7 +29,7 @@ public class CustomerUsageSpendingBudgetOperations
      * Initializes a new instance of the CustomerUsageSpendingBudgetOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      */
     public CustomerUsageSpendingBudgetOperations( IPartner rootPartnerOperations, String customerId )
     {

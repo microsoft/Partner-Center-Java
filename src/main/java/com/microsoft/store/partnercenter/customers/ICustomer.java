@@ -51,133 +51,172 @@ public interface ICustomer
     /**
      * Gets the orders behavior for the customer.
      *
-     * @return The customer orders.
+     * @return The order behavior for the customer.
      */
     IOrderCollection getOrders();
 
     /**
-     * Obtains the profiles behavior for the customer.
+     * Gets the profiles behavior for the customer.
      * 
-     * @return The customer profiles.
+     * @return The profiles behavior for the customer
      */
     ICustomerProfileCollection getProfiles();
 
     /**
-     * Obtains the subscriptions behavior for the customer.
+     * Gets the subscriptions behavior for the customer.
      * 
-     * @return The customer subscriptions.
+     * @return The subscriptions behavior for the customer.
      */
     ISubscriptionCollection getSubscriptions();
 
     /**
-     * Obtains the service requests behavior for the customer.
+     * Gets the service requests behavior for the customer.
+     * 
+     * @return The service requests behavior for the customer.
      */
     IServiceRequestCollection getServiceRequests();
 
     /**
-     * Obtains the managed services behavior for the customer.
+     * Gets the managed services behavior for the customer.
+     * 
+     * @return The managed services behavior for the customer.
      */
     IManagedServiceCollection getManagedServices();
 
-    /***
-     * Obtains the Offer Categories behavior for the customer.
+    /**
+     * Gets the offer categories behavior for the customer.
+     * 
+     * @return The offer categories behavior for the customer.
      */
     ICustomerOfferCategoryCollection getOfferCategories();
 
-    /***
-     * Obtains the Offers behavior for the customer.
+    /**
+     * Gets the offers behavior for the customer.
+     * 
+     * @return The offers behavior for the customer.
      */
     ICustomerOfferCollection getOffers();
     
     /**
-     * Obtains the customer usage summary behavior for the customer.
+     * Gets the customer usage summary behavior for the customer.
+     * 
+     * @return The customer usage summary behavior for the customer.
      */
     ICustomerUsageSummary getUsageSummary();
 
     /**
-     * Obtains the usage spending budget behavior for the customer.
+     * Gets the usage spending budget behavior for the customer.
+     * 
+     * @return The usage spending budget behavior for the customer.
      */
     ICustomerUsageSpendingBudget getUsageBudget();
     
-    /***
-     * Obtains the qualification behavior of the customer.
+    /**
+     * Gets the qualification behavior of the customer.
+     * 
+     * @return The qualification behavior of the customer.
      */
     ICustomerQualification getQualification();
 
-
-    /***
-     * Obtains the users behavior for the customer.
+    /**
+     * Gets the users behavior for the customer.
+     * 
+     * @return The users behavior for the customer.
      */
     ICustomerUserCollection getUsers();
 
-    /***
-     * Obtains the directory role behavior for the customer.
+    /**
+     * Gets the directory role behavior for the customer.
+     * 
+     * @return The directory role behavior for the customer.
      */
     IDirectoryRoleCollection getDirectoryRoles();
 
-    /***
-     * Obtains the directory role behavior for the customer.
+    /**
+     * Gets the directory role behavior for the customer.
+     * 
+     * @return The directory role behavior for the customer.
      */
     ICustomerSubscribedSkuCollection getSubscribedSkus();
 
-    /***
-     * Obtains the Cart collection behavior for the customer.
+    /**
+     * Gets the Cart collection behavior for the customer.
+     * 
+     * @return The Cart collection behavior for the customer.
      */
     ICartCollection getCarts();
     
-    /***
-     * Obtains the Products behavior for the customer.
+    /**
+     * Gets the products behavior for the customer.
+     * 
+     * @return The products behavior for the customer.
      */
     ICustomerProductCollection getProducts();
 
-    /***
-     * Obtains the service costs behavior for the customer.
+    /**
+     * Gets the service costs behavior for the customer.
+     * 
+     * @return The service costs behavior for the customer.
      */
     ICustomerServiceCostsCollection getServiceCosts();
 
-    /***
-     * Obtains the devices batch behavior of the customer.
+    /**
+     * Gets the devices batch behavior of the customer.
+     * 
+     * @return The devices batch behavior of the customer.
      */
     IDevicesBatchCollection getDeviceBatches();
 
-    /***
-     * Obtains the device policy behavior of the customer.
+    /**
+     * Gets the device policy behavior of the customer.
+     * 
+     * @return The device policy behavior of the customer.
      */
     ICustomerDeviceCollection getDevicePolicy();
 
-    /***
-     * Obtains the devices batch upload status behavior of the customer.
+    /**
+     * Gets the devices batch upload status behavior of the customer.
+     * 
+     * @return The devices batch upload status behavior of the customer.
      */
     IBatchJobStatusCollection getBatchUploadStatus();
 
-    /***
-     * Obtains the relationship collection behavior for the customer.
+    /**
+     * Gets the relationship collection behavior for the customer.
+     * 
+     * @return The relationship collection behavior for the customer.
      */
     ICustomerRelationshipCollection getRelationships();
 
-    /***
-     * Obtains the analytics collection behavior for the customer.
+    /**
+     * Gets the analytics collection behavior for the customer.
+     * 
+     * @return The analytics collection behavior for the customer.
      */
     ICustomerAnalyticsCollection getAnalytics();
 
-    /***
-     * Obtains the entitlement collection behavior for the customer.
+    /**
+     * Gets the entitlement collection behavior for the customer.
+     * 
+     * @return The entitlement collection behavior for the customer.
      */
     IEntitlementCollection getEntitlements();
 
-    /***
-     * Obtains the configuration policies behavior for the customer.
+    /**
+     * Gets the configuration policies behavior for the customer.
+     * 
+     * @return The configuration policies behavior for the customer.
      */
     IConfigurationPolicyCollection getConfigurationPolicies();
 
-    /***
+    /**
      * Retrieves the customer information.
      * 
      * @return The customer information.
      */
     Customer get();
     
-    /***
+    /**
      * Deletes the customer from a testing in production account. This won't work for real accounts.
      */
     void delete();

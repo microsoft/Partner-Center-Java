@@ -29,7 +29,7 @@ public class SubscriptionUsageSummaryOperations
      * Initializes a new instance of the SubscriptionUsageSummaryOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      * @param subscriptionId The subscription id.
      */
     public SubscriptionUsageSummaryOperations( IPartner rootPartnerOperations, String customerId,

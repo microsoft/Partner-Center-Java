@@ -8,8 +8,8 @@ package com.microsoft.store.partnercenter.devicesdeployment;
 
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
-import com.microsoft.store.partnercenter.utils.StringHelper;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
+import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
  * Represents the operations that apply to devices batch of the customer.
@@ -23,8 +23,8 @@ public class DevicesBatchOperations
      * Initializes a new instance of the DevicesBatchOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId            The customer identifier.
      * @param deviceBatchId         The device batch identifier.
-     * @param deviceId              The device identifier.
      */
     public DevicesBatchOperations(IPartner rootPartnerOperations, String customerId, String deviceBatchId) {
         super(rootPartnerOperations, new Tuple<String, String>(customerId, deviceBatchId));
@@ -39,7 +39,7 @@ public class DevicesBatchOperations
     }
 
 	/***
-	 * Obtains the devices behavior of the devices batch.
+	 * Gets the devices behavior of the devices batch.
 	 * 
 	 * @return The devices behavior of the devices batch.
 	 */

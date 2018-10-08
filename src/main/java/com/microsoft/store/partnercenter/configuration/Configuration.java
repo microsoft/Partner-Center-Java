@@ -36,13 +36,20 @@ public class Configuration
         private Map<String, String> AdditionalHeaders;
 
         /**
-         * @return
+         * Get the URI path of the API.
+         * 
+         * @return The URI path of the API.
          */
         public String getPath()
         {
             return Path;
         }
 
+        /**
+         * Set the URI path of the API.
+         * 
+         * @param path The URI path of the API.
+         */
         public void setPath( String path )
         {
             Path = path;
@@ -91,14 +98,20 @@ public class Configuration
     private Map<String, Api> Apis;
 
     /**
-     * Gets or sets the Partner Service API root. 
+     * Gets the partner service API root. 
      * 
+     * @return The partner service API root.
      */
     public String getPartnerServiceApiRoot()
     {
         return PartnerServiceApiRoot;
     }
 
+    /**
+     *  The partner service API root.
+     * 
+     * @param partnerServiceApiRoot The partner service API root.
+     */
     public void setPartnerServiceApiRoot( String partnerServiceApiRoot )
     {
         PartnerServiceApiRoot = partnerServiceApiRoot;
@@ -115,55 +128,100 @@ public class Configuration
     }
 
     /**
-     * Gets or sets the Partner Service API version. 
+     * Gets the partner service API version. 
      * 
-     * @return The Partner Service API version. 
+     * @return The partner service API version. 
      */
     public String getPartnerServiceApiVersion()
     {
         return PartnerServiceApiVersion;
     }
 
+    /**
+     * Sets the partner service API version. 
+     * 
+     * @param partnerServiceApiVersion The partner service API version.
+     */
     public void setPartnerServiceApiVersion( String partnerServiceApiVersion )
     {
         PartnerServiceApiVersion = partnerServiceApiVersion;
     }
 
+    /**
+     * Gets the default max retry attempts.
+     * 
+     * @return The default max retry attempts.
+     */
     public int getDefaultMaxRetryAttempts()
     {
         return DefaultMaxRetryAttempts;
     }
 
+    /**
+     * Sets the default max retry attempts. 
+     * 
+     * @param defaultMaxRetryAttempts The default max retry attempts.
+     */
     public void setDefaultMaxRetryAttempts( int defaultMaxRetryAttempts )
     {
         DefaultMaxRetryAttempts = defaultMaxRetryAttempts;
     }
 
+    /**
+     * Gets the default authentication token expiry buffer in seconds.
+     * 
+     * @return The default authentication token expiry buffer in seconds.
+     */
     public int getDefaultAuthenticationTokenExpiryBufferInSeconds()
     {
         return DefaultAuthenticationTokenExpiryBufferInSeconds;
     }
 
+    /**
+     * Sets the default authentication token expiry buffer in seconds.
+     * 
+     * @param defaultAuthenticationTokenExpiryBufferInSeconds The default authentication token expiry buffer in seconds.
+     */
     public void setDefaultAuthenticationTokenExpiryBufferInSeconds( int defaultAuthenticationTokenExpiryBufferInSeconds )
     {
         DefaultAuthenticationTokenExpiryBufferInSeconds = defaultAuthenticationTokenExpiryBufferInSeconds;
     }
 
+    /**
+     * Gets the default locale.
+     * 
+     * @return The default locale.
+     */
     public String getDefaultLocale()
     {
         return DefaultLocale;
     }
 
+    /**
+     * Sets the default locale.
+     * 
+     * @param defaultLocale The default locale.
+     */
     public void setDefaultLocale( String defaultLocale )
     {
         DefaultLocale = defaultLocale;
     }
 
+    /**
+     * Gets the available APIs.
+     * 
+     * @return The available APIs.
+     */
     public Map<String, Api> getApis()
     {
         return Apis;
     }
 
+    /**
+     * Sets the available APIs. 
+     * 
+     * @param apis The available APIs.
+     */
     public void setApis( Map<String, Api> apis )
     {
         Apis = apis;

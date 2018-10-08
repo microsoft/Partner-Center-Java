@@ -22,7 +22,7 @@ public class CategoryOffersCollectionOperations
 	implements ICategoryOffersCollection
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the CategoryOffersCollectionOperations class.
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param categoryId The category identifier which contains the offers.
@@ -33,8 +33,9 @@ public class CategoryOffersCollectionOperations
 		super(rootPartnerOperations, new Tuple<String, String>( categoryId, country ));
 	}
 
-	/***
+	/**
 	 * Retrieves all the offers in the given offer category.
+	 * 
 	 * @return The offers in the given offer category.
 	 */
 	@Override
@@ -55,7 +56,7 @@ public class CategoryOffersCollectionOperations
 		return partnerServiceProxy.get();
 	}
 
-	/***
+	/**
 	 * Retrieves a subset of offers in the given offer category.
 	 * 
 	 * @param offset The starting index.

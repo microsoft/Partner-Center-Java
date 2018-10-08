@@ -82,49 +82,68 @@ public class RequestContext
         this.setLocale( locale );
     }
 
-    /**
-     * Gets the request Id. Uniquely identifies the operation.
-     */
     private UUID __RequestId;
-
+    
+    /**
+     * Gets the request identifier. Uniquely identifies the operation.
+     * 
+     * @return the request identifier.
+     */
     @Override
     public UUID getRequestId()
     {
         return __RequestId;
     }
 
+    /**
+     * Sets the request identifier.
+     * 
+     * @param value The request identifier.
+     */
     public void setRequestId( UUID value )
     {
         __RequestId = value;
     }
 
-    /**
-     * Gets the correlation Id. This Id is used to group logical operations together.
-     */
     private UUID __CorrelationId;
 
+    /**
+     * Gets the correlation identifier. This identifier is used to group logical operations together.
+     */
     @Override
     public UUID getCorrelationId()
     {
         return __CorrelationId;
     }
 
+    /**
+     * Sets the correlation identifier.
+     * 
+     * @param value The correlation identifier.
+     */
     public void setCorrelationId( UUID value )
     {
         __CorrelationId = value;
     }
 
-    /**
-     * Gets the Locale.
-     */
     private String __Locale = new String();
 
+    /**
+     * Gets the locale.
+     * 
+     * @return The locale.
+     */
     @Override
     public String getLocale()
     {
         return __Locale;
     }
 
+    /**
+     * Sets the locale.
+     * 
+     * @param value The locale.
+     */
     public void setLocale( String value )
     {
         __Locale = value;
@@ -141,5 +160,4 @@ public class RequestContext
         return MessageFormat.format( "Request Id: {0}, Correlation Id: {1}, Locale: {2}"
             + this.getRequestId().toString(), this.getCorrelationId().toString(), this.getLocale(), Locale.US );
     }
-
 }

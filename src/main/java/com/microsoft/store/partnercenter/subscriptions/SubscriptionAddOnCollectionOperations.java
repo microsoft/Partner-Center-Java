@@ -30,7 +30,7 @@ public class SubscriptionAddOnCollectionOperations
      * Initializes a new instance of the SubscriptionAddOnCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      * @param subscriptionId The subscription id.
      */
     public SubscriptionAddOnCollectionOperations( IPartner rootPartnerOperations, String customerId,

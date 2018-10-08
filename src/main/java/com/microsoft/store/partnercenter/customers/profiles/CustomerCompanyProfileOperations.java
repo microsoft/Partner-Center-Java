@@ -67,5 +67,4 @@ public class CustomerCompanyProfileOperations
     {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
 }

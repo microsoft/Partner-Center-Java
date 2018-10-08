@@ -18,12 +18,15 @@ public interface ICustomerProfileCollection
 {
     /**
      * Gets the customer's billing profile operations.
+     * 
+     * @return The customer's billing profile operations. 
      */
     ICustomerProfile<CustomerBillingProfile> getBilling();
 
     /**
      * Gets the customer's company profile operations.
+     * 
+     * @return The customer's company profile operations.
      */
     ICustomerReadonlyProfile<CustomerCompanyProfile> getCompany();
-
 }

@@ -36,6 +36,8 @@ public abstract class BasePartnerCredentials
 
     /**
      * Gets the partner service token.
+     * 
+     * @return The partner service token.
      */
     @Override
     public String getPartnerServiceToken()
@@ -52,31 +54,45 @@ public abstract class BasePartnerCredentials
         return this.getAADToken().getExpiryTime();
     }
 
-    /**
-     * Gets or sets the Azure Active Directory token.
-     */
     private AuthenticationToken __AADToken;
 
+    /**
+     * Gets the Azure Active Directory token.
+     * 
+     * @return The Azure Active Directory token.
+     */
     protected AuthenticationToken getAADToken()
     {
         return __AADToken;
     }
 
+    /**
+     * Sets the Azure Active Directory token.
+     * 
+     * @param value The Azure Active Directory token.
+     */
     protected void setAADToken( AuthenticationToken value )
     {
         __AADToken = value;
     }
 
+    private String __ClientId = new String();
+    
     /**
      * Gets the Azure Active Directory client identifier.
+     *
+     * @return The Azure Active Directory client identifier.
      */
-    private String __ClientId = new String();
-
     protected String getClientId()
     {
         return __ClientId;
     }
 
+    /**
+     * Sets the Azure Active Directory client identifier.
+     * 
+     * @param value The Azure Active Directory client identifier.
+     */
     protected void setClientId( String value )
     {
         __ClientId = value;
@@ -85,7 +101,7 @@ public abstract class BasePartnerCredentials
     /**
      * Indicates whether the partner credentials have expired or not.
      * 
-     * @return True if credentials have expired. False if not.
+     * @return true if credentials have expired; othwerise, false.
      */
     @Override
     public boolean isExpired()
@@ -95,14 +111,17 @@ public abstract class BasePartnerCredentials
 
     /**
      * Authenticates with the partner service.
-     * 
-     * @return A task that is complete when authentication is finished.
      */
     public void authenticate()
     {
         authenticate( null );
     }
 
+    /**
+     * Authenticates with the partner service.
+     * 
+     * @param requestContext The request context.
+     */
     public void authenticate( IRequestContext requestContext )
     {
         // Do nothing, leave it to sub classes

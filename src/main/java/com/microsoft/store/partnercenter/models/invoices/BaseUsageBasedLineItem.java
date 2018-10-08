@@ -334,7 +334,7 @@ public abstract class BaseUsageBasedLineItem
     }
 
     /**
-     *  Gets or sets the customer id.
+     *  Gets or sets The customer identifier.
      */
     private String __CustomerId;
 

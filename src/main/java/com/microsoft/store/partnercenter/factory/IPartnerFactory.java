@@ -10,16 +10,15 @@ import com.microsoft.store.partnercenter.IAggregatePartner;
 import com.microsoft.store.partnercenter.IPartnerCredentials;
 
 /**
- * Creates instances of {@see IPartner} .
+ * Creates instances of {@link com.microsoft.store.partnercenter.IPartner}.
  */
 public interface IPartnerFactory
 {
     /**
-     * Builds a {@see #IAggregatePartner} instance and configures it using the provided partner credentials.
+     * Builds a {@link IAggregatePartner} instance and configures it using the provided partner credentials.
      * 
      * @param credentials The partner credentials. Use the extensions to obtain these.
      * @return A configured partner object.
      */
     IAggregatePartner build( IPartnerCredentials credentials );
-
 }

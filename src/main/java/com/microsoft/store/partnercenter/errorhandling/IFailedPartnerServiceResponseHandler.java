@@ -20,11 +20,16 @@ public interface IFailedPartnerServiceResponseHandler
      * Handles failed partner service responses.
      * 
      * @param response The partner service response.
-     * @param context An optional partner context.
      * @return The exception to throw.
      */
     PartnerException handleFailedResponse( HttpResponse response );
 
+    /**
+     * Handles failed partner service responses.
+     * 
+     * @param response The partner service response.
+     * @param context The reqeust context.
+     * @return The exception to throw.
+     */
     PartnerException handleFailedResponse( HttpResponse response, IRequestContext context );
-
 }

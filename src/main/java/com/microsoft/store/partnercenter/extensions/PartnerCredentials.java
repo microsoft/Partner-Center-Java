@@ -31,6 +31,8 @@ public class PartnerCredentials
 
     /***
      * Gets an instance of the partner credentials.
+     * 
+     * @return An instance of the partner credentials.
      */
     public static PartnerCredentials getInstance()
     {
@@ -52,6 +54,15 @@ public class PartnerCredentials
                                                                     null );
     }
 
+    /**
+     * Generates partner credentials for third party applications using application credentials.
+     *
+     * @param clientId The client id of the application in Azure Active Directory.
+     * @param applicationSecret The application secret with Azure Active Directory.
+     * @param aadApplicationDomain The application domain in Azure Active Directory.
+     * @param requestContext The request context.
+     * @return The partner service credentials.
+     */
     public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
                                                                         String aadApplicationDomain,
                                                                         IRequestContext requestContext )
@@ -124,5 +135,4 @@ public class PartnerCredentials
 
         return partnerCredentials;
     }
-
 }

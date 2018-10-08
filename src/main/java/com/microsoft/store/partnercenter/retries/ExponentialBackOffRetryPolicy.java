@@ -31,13 +31,20 @@ public class ExponentialBackOffRetryPolicy
     }
 
     /**
-     * Gets or sets the maximum number of retries to perform.
+     * Gets the maximum number of retries to perform.
+     * 
+     * @return The maximum number of retries to perform.
      */
     public int getMaxRetries()
     {
         return this.maxRetries;
     }
 
+    /**
+     * Sets the maximum number of retries to perform.
+     * 
+     * @param value The maximum number of retry attempts.
+     */
     public void setMaxRetries( int value )
     {
         if ( value <= 0 )

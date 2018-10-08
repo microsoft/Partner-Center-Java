@@ -19,6 +19,8 @@ public interface IUtilizationCollectionEnumeratorContainer
 {
     /***
      * Gets a factory that creates Azure utilization record collection enumerators.
+     * 
+     * @return A factory that creates Azure utilization record collection enumerators.
      */
     IResourceCollectionEnumeratorFactory<ResourceCollection<AzureUtilizationRecord>> getAzure();
 }

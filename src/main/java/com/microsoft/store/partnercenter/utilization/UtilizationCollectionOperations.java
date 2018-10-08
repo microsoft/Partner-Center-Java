@@ -16,12 +16,12 @@ public class UtilizationCollectionOperations
 	implements IUtilizationCollection
 {
 	
-    /***
+    /**
      * A reference to Azure utilization collection object.
      */
     private IAzureUtilizationCollection azureUtilizationOperations;
 
-	/***
+	/**
 	 * Initializes a new instance of the UtilizationCollectionOperations class.
 	 * @param rootPartnerOperations The root partner operations.
 	 * @param customerId The customer identifier.
@@ -50,13 +50,14 @@ public class UtilizationCollectionOperations
         		);
 	}
 
-	/***
-	 * Gets Azure subscription utilization behavior.
+	/**
+	 * Gets the Azure subscription utilization behavior.
+	 * 
+	 * @return the Azure subscription utilization behavior.
 	 */
 	@Override
 	public IAzureUtilizationCollection getAzure()
 	{
 		return this.azureUtilizationOperations;
 	}
-
 }

@@ -23,7 +23,7 @@ public interface IConfigurationPolicyCollection
 	/***
 	 * Retrieves a specific customer's devices batch upload status behavior.
 	 * 
-	 * @param trackingId The tracking identifier.
+	 * @param policyId The policy identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
     IConfigurationPolicy byId( String policyId );

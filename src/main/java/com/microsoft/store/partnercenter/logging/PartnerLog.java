@@ -36,6 +36,8 @@ public class PartnerLog
 
     /**
      * Gets the singleton log manager instance.
+     * 
+     * @return An instance of the log manager.
      */
     public static PartnerLog getInstance()
     {
@@ -48,6 +50,8 @@ public class PartnerLog
 
     /**
      * Gets the registered loggers collection. You can add your custom loggers here.
+     * 
+     * @return The registered loggers collection.
      */
     public List<ILogger> getLoggers()
     {

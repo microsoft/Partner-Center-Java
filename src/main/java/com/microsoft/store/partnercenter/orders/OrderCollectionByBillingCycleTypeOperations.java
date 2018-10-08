@@ -15,11 +15,11 @@ import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.offers.BillingCycleType;
 import com.microsoft.store.partnercenter.models.orders.Order;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
+import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
  * Order collection by billing cycle type operations implementation class.
@@ -32,7 +32,8 @@ public class OrderCollectionByBillingCycleTypeOperations
      * Initializes a new instance of the OrderCollectionByBillingCycleTypeOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
+     * @param billingCyleType The billing type.
      */
     public OrderCollectionByBillingCycleTypeOperations( IPartner rootPartnerOperations, String customerId, BillingCycleType billingCyleType )
     {

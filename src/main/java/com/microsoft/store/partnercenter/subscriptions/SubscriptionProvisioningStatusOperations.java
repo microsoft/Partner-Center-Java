@@ -30,7 +30,7 @@ public class SubscriptionProvisioningStatusOperations
      * Initializes a new instance of the SubscriptionProvisioningStatusOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer Id.
+     * @param customerId            The customer identifier.
      * @param subscriptionId        The subscription id.
      */
     public SubscriptionProvisioningStatusOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )

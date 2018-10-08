@@ -13,7 +13,7 @@ public class RateCardCollectionOperations extends BasePartnerComponentString imp
 
 	private IAzureRateCard __azureRateCardOperations;
 	
-	/***
+	/**
 	 * Initializes a new instance of the RateCardCollectionOperationsclass.
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
@@ -24,8 +24,10 @@ public class RateCardCollectionOperations extends BasePartnerComponentString imp
 		__azureRateCardOperations = new AzureRateCardOperations( rootPartnerOperations );
 	}
 
-	/***
+	/**
 	 * Gets the Azure rate card operations.
+	 * 
+	 * @return The Azure rate card operations.
 	 */
 	@Override
 	public IAzureRateCard getAzure()

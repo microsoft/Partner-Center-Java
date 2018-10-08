@@ -18,14 +18,15 @@ public interface IOffer
 {
     /**
      * Gets the operations for the current offer's add-ons.
+     * 
+     * @return The operations for the current offer's add-ons
      */
     IOfferAddOns getAddOns();
 
     /**
-     * Retrieves an offer for the provided offer Id, country.
+     * Retrieves an offer for the provided offer identifer, country.
      * 
-     * @param country The country.
-     * @return The requested offer for the given country and Id.
+     * @return The requested offer for the given country and identifier.
      */
     Offer get();
 }

@@ -43,6 +43,8 @@ public class UtilizationCollectionEnumeratorContainer
 
 	/***
 	 * Gets a factory that creates Azure utilization record collection enumerators.
+	 * 
+	 * @return A factory that creates Azure utilization record collection enumerators.
 	 */
 	@Override
 	public IResourceCollectionEnumeratorFactory<ResourceCollection<AzureUtilizationRecord>> getAzure()

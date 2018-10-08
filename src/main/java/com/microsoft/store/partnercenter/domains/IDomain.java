@@ -14,7 +14,7 @@ public interface IDomain extends IPartnerComponentString, IEntityExistsOperation
     /***
      * Checks if the domain is available or not.
      * 
-     * @return True if the domain exists, false otherwise.
+     * @return true if the domain exists, false otherwise.
      */
     boolean exists();
 }

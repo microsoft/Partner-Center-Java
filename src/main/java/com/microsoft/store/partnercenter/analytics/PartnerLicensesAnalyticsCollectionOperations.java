@@ -30,7 +30,6 @@ public class PartnerLicensesAnalyticsCollectionOperations
      * Initializes a new instance of the PartnerLicensesAnalyticsCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The identifier of the customer.
      */
     public PartnerLicensesAnalyticsCollectionOperations( IPartner rootPartnerOperations )
     {

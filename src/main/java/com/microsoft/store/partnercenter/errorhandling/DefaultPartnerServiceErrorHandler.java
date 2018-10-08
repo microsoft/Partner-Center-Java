@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Locale;
 
-import org.apache.http.HttpResponse;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
@@ -20,6 +18,8 @@ import com.microsoft.store.partnercenter.models.ApiFault;
 import com.microsoft.store.partnercenter.network.HttpStatusCode;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.utils.StringHelper;
+
+import org.apache.http.HttpResponse;
 
 /**
  * The default handling policy for failed partner service responses.
@@ -31,7 +31,6 @@ public class DefaultPartnerServiceErrorHandler
      * Handles failed partner service responses.
      * 
      * @param response The partner service response.
-     * @param context An optional partner context.
      * @return The exception to throw.
      */
     @Override
@@ -40,6 +39,13 @@ public class DefaultPartnerServiceErrorHandler
         return handleFailedResponse( response, null );
     }
 
+    /**
+     * Handles failed partner service responses.
+     * 
+     * @param response The partner service response.
+     * @param context An optional partner context.
+     * @return The exception to throw.
+     */
     @Override
     public PartnerException handleFailedResponse( HttpResponse response, IRequestContext context )
     {
@@ -130,5 +136,4 @@ public class DefaultPartnerServiceErrorHandler
         }
         return errorCategory;
     }
-
 }

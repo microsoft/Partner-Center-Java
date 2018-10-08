@@ -30,7 +30,7 @@ public class SubscriptionSupportContactOperations
      * Initializes a new instance of the SubscriptionSupportContactOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer Id.
+     * @param customerId            The customer identifier.
      * @param subscriptionId        The subscription id.
      */
     public SubscriptionSupportContactOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )

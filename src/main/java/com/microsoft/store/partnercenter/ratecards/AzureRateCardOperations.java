@@ -22,7 +22,7 @@ public class AzureRateCardOperations
 	extends BasePartnerComponentString 
 	implements IAzureRateCard 
 {
-	/***
+	/**
 	 * Initializes a new instance of the "AzureRateCardOperations" class.
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
@@ -31,7 +31,7 @@ public class AzureRateCardOperations
 		super(rootPartnerOperations);
 	}
 
-	/***
+	/**
 	 * Gets the Azure rate card which provides real-time prices for Azure offers.
 	 * @param currency An optional three letter ISO code for the currency in which the resource rates will be provided.
 	 * 				    The default is the currency associated with the market in the partner's profile.
@@ -67,7 +67,7 @@ public class AzureRateCardOperations
 		return partnerServiceProxy.get();
 	}
 
-	/***
+	/**
 	 * Gets the Azure CSL rate card which provides real-time prices for Azure offers.
 	 * @param currency An optional three letter ISO code for the currency in which the resource rates will be provided.
 	 * 				    The default is the currency associated with the market in the partner's profile.

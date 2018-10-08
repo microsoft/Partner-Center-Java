@@ -17,7 +17,6 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 public interface ICustomerReadonlyProfile<T extends ResourceBase> 
 	extends IPartnerComponentString, IEntityGetOperations<T> 
 {
-	
     /*** 
      * Retrieves the customer profile.
      * @return The customer profile.

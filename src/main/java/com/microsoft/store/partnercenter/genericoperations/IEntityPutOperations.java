@@ -14,6 +14,7 @@ public interface IEntityPutOperations<T>
     /**
      * Updates an entity.
      * 
+     * @param entity The modified entity object. 
      * @return The updated entity.
      */
     T put(T entity);

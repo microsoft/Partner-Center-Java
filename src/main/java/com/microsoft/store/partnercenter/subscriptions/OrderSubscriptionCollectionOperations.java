@@ -32,7 +32,7 @@ public class OrderSubscriptionCollectionOperations
      * Initializes a new instance of the OrderSubscriptionCollectionOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer Id.
+     * @param customerId The customer identifier.
      * @param orderId The order Id.
      */
     public OrderSubscriptionCollectionOperations( IPartner rootPartnerOperations, String customerId,

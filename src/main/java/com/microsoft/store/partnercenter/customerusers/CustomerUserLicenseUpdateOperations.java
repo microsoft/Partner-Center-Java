@@ -21,12 +21,14 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class CustomerUserLicenseUpdateOperations 
 	extends BasePartnerComponent<Tuple<String, String>> 
-	implements ICustomerUserLicenseUpdates {
+    implements ICustomerUserLicenseUpdates
+{
     /**
      * Initializes a new instance of the CustomerUserLicenseUpdateOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer tenant Id.
+     * @param customerId The customer identifier.
+     * @param userId The user identifier.
      */
     public CustomerUserLicenseUpdateOperations( IPartner rootPartnerOperations, String customerId, String userId )
     {
@@ -40,7 +42,6 @@ public class CustomerUserLicenseUpdateOperations
             throw new IllegalArgumentException( "userId can't be null" );
         }
     }
-
 
 	/**
      * Assign licenses to a user.

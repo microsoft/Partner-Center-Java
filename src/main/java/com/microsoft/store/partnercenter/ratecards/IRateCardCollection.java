@@ -8,14 +8,16 @@ package com.microsoft.store.partnercenter.ratecards;
 
 import com.microsoft.store.partnercenter.IPartnerComponentString;
 
-/***
+/**
 * Holds operations that apply to rate cards.
 */
 public interface IRateCardCollection
 	extends IPartnerComponentString
 {
-	/***
+	/**
 	 * Gets the Azure rate card operations.
+	 * 
+	 * @return The Azure rate card operations.
 	 */
 	IAzureRateCard getAzure();
 }

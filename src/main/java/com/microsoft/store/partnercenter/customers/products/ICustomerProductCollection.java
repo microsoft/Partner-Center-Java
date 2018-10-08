@@ -27,6 +27,7 @@ public interface ICustomerProductCollection
     /***
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer.
      * 
+     * @param targetView The product target view.
      * @return The catalog view operations by target view
      */
     ICustomerProductCollectionByTargetView byTargetView(String targetView);

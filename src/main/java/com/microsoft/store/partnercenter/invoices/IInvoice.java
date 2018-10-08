@@ -20,6 +20,8 @@ public interface IInvoice
 {
 	/***
 	 * Gets an invoice document operations.
+     * 
+     * @return An invoice document operations.
 	 */
     IInvoiceDocuments getDocuments();
 	
