@@ -157,9 +157,10 @@ public class PartnerException
     public String toString()
     {
         return MessageFormat.format( "PartnerException: ErrorCategory: {0}, ServiceErrorPayload: {1}, Context: {2}, Base Description: {3}",
-                                     this.getErrorCategory().toString(), this.getServiceErrorPayload() != null
-                                                     ? this.getServiceErrorPayload().toString() : "null",
-                                     this.getContext(), super.toString() );
+                                     this.getErrorCategory(), 
+                                     this.getServiceErrorPayload() != null ? this.getServiceErrorPayload().toString() : "null",
+                                     this.getContext(), 
+                                     super.toString() );
 
     }
 }

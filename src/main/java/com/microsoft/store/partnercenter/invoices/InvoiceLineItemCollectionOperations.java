@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.invoices;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -85,8 +84,7 @@ public class InvoiceLineItemCollectionOperations
                         PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceLineItems" ).getPath(),
                         this.getContext(),
                         this.billingProvider, 
-                        this.invoiceLineItemType, 
-                        Locale.US ) );
+                        this.invoiceLineItemType ));
 
         return partnerServiceProxy.get();
 	}
@@ -108,8 +106,7 @@ public class InvoiceLineItemCollectionOperations
                     MessageFormat.format( 
                         PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceLineItems" ).getPath(),
                         this.getContext(), this.billingProvider, 
-                        this.invoiceLineItemType, 
-                        Locale.US ) );
+                        this.invoiceLineItemType));
 
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( 
             PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceLineItems" ).getParameters().get( "Size" ),

@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.profiles;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -45,8 +42,9 @@ public class LegalBusinessProfileOperations
         IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath());
 
         return partnerServiceProxy.get();
     }
@@ -63,10 +61,10 @@ public class LegalBusinessProfileOperations
         IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath());
 
         return partnerServiceProxy.put( legalBusinessProfile );
     }
-
 }

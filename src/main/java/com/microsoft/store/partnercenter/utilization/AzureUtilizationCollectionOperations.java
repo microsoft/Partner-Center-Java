@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.utilization;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import org.joda.time.DateTime;
 
@@ -75,8 +74,7 @@ public class AzureUtilizationCollectionOperations
                 MessageFormat.format( 
                     PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getPath(),
                     this.getContext().getItem1(),
-                    this.getContext().getItem2(), 
-                    Locale.US ) );
+                    this.getContext().getItem2()));
 
         if ( startTime != null )
         {

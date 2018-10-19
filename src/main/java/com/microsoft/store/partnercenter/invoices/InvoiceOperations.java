@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.invoices;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -77,8 +76,7 @@ public class InvoiceOperations
             }, 
             this.getPartner(), MessageFormat.format( 
                 PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoice" ).getPath(),
-                this.getContext(),
-                Locale.US ) );
+                this.getContext()));
 
         return partnerServiceProxy.get();
     }

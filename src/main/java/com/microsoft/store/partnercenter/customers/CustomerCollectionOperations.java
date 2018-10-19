@@ -9,7 +9,6 @@ package com.microsoft.store.partnercenter.customers;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -128,8 +127,9 @@ public class CustomerCollectionOperations
             new PartnerServiceProxy<>( 
                 new TypeReference<Customer>()
                 {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomer" ).getPath(),
-                                                            this.getContext() ) );
+                }, this.getPartner(), MessageFormat.format( 
+                    PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomer" ).getPath(),
+                    this.getContext() ) );
         return partnerServiceProxy.post( newCustomer );
     }
 
@@ -145,8 +145,9 @@ public class CustomerCollectionOperations
             new PartnerServiceProxy<>( 
                 new TypeReference<SeekBasedResourceCollection<Customer>>()
                 {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath(),
-                                                            Locale.US ) );
+                }, this.getPartner(), 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath());
+
         return partnerServiceProxy.get();
     }
 

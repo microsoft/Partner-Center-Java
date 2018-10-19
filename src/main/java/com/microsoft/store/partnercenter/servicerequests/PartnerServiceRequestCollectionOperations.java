@@ -9,7 +9,6 @@ package com.microsoft.store.partnercenter.servicerequests;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -147,8 +146,9 @@ public class PartnerServiceRequestCollectionOperations
         IPartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceRequest>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAllServiceRequestsPartner" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+           PartnerService.getInstance().getConfiguration().getApis().get( "GetAllServiceRequestsPartner" ).getPath());
 
         return partnerServiceProxy.get();
     }

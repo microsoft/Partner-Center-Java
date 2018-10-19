@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.servicerequests;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -46,10 +43,10 @@ public class SupportTopicsCollectionOperations
         IPartnerServiceProxy<SupportTopic, ResourceCollection<SupportTopic>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<SupportTopic>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestSupportTopics" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestSupportTopics" ).getPath());
 
         return partnerServiceProxy.get();
     }
-
 }

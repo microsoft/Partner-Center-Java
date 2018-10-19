@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.profiles;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -45,8 +42,9 @@ public class BillingProfileOperations
         IPartnerServiceProxy<BillingProfile, BillingProfile> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<BillingProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerBillingProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerBillingProfile" ).getPath());
 
         return partnerServiceProxy.get();
     }
@@ -63,10 +61,10 @@ public class BillingProfileOperations
         IPartnerServiceProxy<BillingProfile, BillingProfile> partnerServiceProxy =
             new PartnerServiceProxy<BillingProfile, BillingProfile>( new TypeReference<BillingProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdatePartnerBillingProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "UpdatePartnerBillingProfile" ).getPath());
 
         return partnerServiceProxy.put( updatePayload );
     }
-
 }

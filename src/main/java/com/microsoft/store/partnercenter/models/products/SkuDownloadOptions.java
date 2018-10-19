@@ -68,7 +68,7 @@ public class SkuDownloadOptions
 
     public void setCPUandFileType( String value )
     {
-        __OptionTitle = value;
+        __CPUandFileType = value;
     }
 
     /**

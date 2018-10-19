@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.subscriptions;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -252,9 +251,13 @@ public class SubscriptionOperations
         IPartnerServiceProxy<Subscription, Subscription> partnerServiceProxy =
             new PartnerServiceProxy<Subscription, Subscription>( new TypeReference<Subscription>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscription" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscription" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
+
         return partnerServiceProxy.get();
     }
 
@@ -274,10 +277,13 @@ public class SubscriptionOperations
         PartnerServiceProxy<Subscription, Subscription> partnerApiServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<Subscription>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSubscription" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSubscription" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
+
         return partnerApiServiceProxy.patch( subscription );
     }
-
 }

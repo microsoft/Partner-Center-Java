@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.relationshiprequests;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -46,8 +43,10 @@ public class CustomerRelationshipRequestOperations
         IPartnerServiceProxy<CustomerRelationshipRequest, CustomerRelationshipRequest> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<CustomerRelationshipRequest>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerRelationshipRequest" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerRelationshipRequest" ).getPath());
+
         return partnerServiceProxy.get();
     }
 }

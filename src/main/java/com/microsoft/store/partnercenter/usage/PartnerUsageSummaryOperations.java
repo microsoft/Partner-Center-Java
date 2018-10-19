@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.usage;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -45,10 +42,10 @@ public class PartnerUsageSummaryOperations
         IPartnerServiceProxy<PartnerUsageSummary, PartnerUsageSummary> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<PartnerUsageSummary>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerUsageSummary" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerUsageSummary" ).getPath());
 
         return partnerServiceProxy.get();
     }
-
 }

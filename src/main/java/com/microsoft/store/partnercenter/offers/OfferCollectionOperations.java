@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.offers;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -63,8 +60,9 @@ public class OfferCollectionOperations
         IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Offer>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath());
 
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
                                                                                       this.getContext() ) );
@@ -85,8 +83,9 @@ public class OfferCollectionOperations
         IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
                 new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Offer>>()
                 {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath(),
-                                                            Locale.US ) );
+                }, 
+                this.getPartner(), 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getPath());
 
             partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
                                                                                           this.getContext() ) );
@@ -107,5 +106,4 @@ public class OfferCollectionOperations
     {
         return new CategoryOffersCollectionOperations( this.getPartner(), categoryId, this.getContext() );
     }
-
 }

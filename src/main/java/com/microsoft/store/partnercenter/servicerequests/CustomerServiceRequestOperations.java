@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.servicerequests;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -60,9 +59,12 @@ public class CustomerServiceRequestOperations
         IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestCustomer" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestCustomer" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
 
         return partnerServiceProxy.get();
     }
@@ -79,9 +81,12 @@ public class CustomerServiceRequestOperations
         IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateServiceRequestCustomer" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateServiceRequestCustomer" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
 
         return partnerServiceProxy.patch( updatePayload );
     }

@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.subscriptions;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -64,8 +63,8 @@ public class SubscriptionRegistrationOperations
                 this.getPartner(), 
                 MessageFormat.format(
                     PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSubscriptionRegistrationStatus" ).getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2(),
-                    Locale.US ) );
+                    this.getContext().getItem1(), 
+                    this.getContext().getItem2()));
 
         HttpResponse response = partnerServiceProxy.post("success");
 

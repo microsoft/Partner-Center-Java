@@ -87,7 +87,7 @@ public class DefaultPartnerServiceErrorHandler
         }
         catch ( IOException e )
         {
-            // LogManager.Instance.Error( "Could not parse error response: " + deserializationProblem.toString() );
+            PartnerLog.getInstance().logError("Could not parse error response: " + e.toString() );
         }
 
         PartnerErrorCategory errorCategory;
@@ -108,7 +108,8 @@ public class DefaultPartnerServiceErrorHandler
      */
     private static PartnerErrorCategory toPartnerErrorCategory( int statusCode )
     {
-        PartnerErrorCategory errorCategory = PartnerErrorCategory.NOT_SPECIFIED;
+        PartnerErrorCategory errorCategory;
+        
         switch ( statusCode )
         {
             case HttpStatusCode.BadRequest:
@@ -133,6 +134,7 @@ public class DefaultPartnerServiceErrorHandler
                 errorCategory = PartnerErrorCategory.SERVER_ERROR;
                 break;
         }
+
         return errorCategory;
     }
 }

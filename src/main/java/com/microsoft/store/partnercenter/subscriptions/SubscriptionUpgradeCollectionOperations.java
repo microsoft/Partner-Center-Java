@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.subscriptions;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -61,9 +60,12 @@ public class SubscriptionUpgradeCollectionOperations
         PartnerServiceProxy<Upgrade, ResourceCollection<Upgrade>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Upgrade>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
+                this.getContext().getItem1(), this.getContext().getItem2()));
+
         return partnerServiceProxy.get();
     }
 
@@ -79,10 +81,13 @@ public class SubscriptionUpgradeCollectionOperations
         PartnerServiceProxy<Upgrade, UpgradeResult> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<UpgradeResult>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
+                    this.getContext().getItem1(),
+                    this.getContext().getItem2()));
+
         return partnerServiceProxy.post( subscriptionUpgrade );
     }
-
 }

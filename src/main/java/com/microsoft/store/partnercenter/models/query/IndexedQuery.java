@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.models.query;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 /**
  * A query that supports pagination. Use this for huge datasets.
@@ -84,14 +83,14 @@ public class IndexedQuery
     public String toString()
     {
         StringBuilder result = new StringBuilder();
-        // result.appendLine(MessageFormat.format( "Index: {0}, Page size: {1}",
-        // this.getIndex(), this.getPageSize()));
-        result.append( MessageFormat.format( "Index: {0}, Page size: {1}", this.getIndex(), this.getPageSize(),
-                                             Locale.US )
+
+        result.append( MessageFormat.format( 
+            "Index: {0}, Page size: {1}", 
+            this.getIndex(), 
+            this.getPageSize())
             + "\n" );
+
         result.append( super.toString() + "\n" );
         return result.toString();
-
     }
-
 }

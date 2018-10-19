@@ -64,7 +64,5 @@ public class Sort
     public String toString()
     {
         return MessageFormat.format( "Sort: {0}, {1}", this.getSortField(), this.getSortDirection() );
-
     }
-
 }

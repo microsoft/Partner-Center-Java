@@ -9,7 +9,6 @@ package com.microsoft.store.partnercenter.invoices;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -104,8 +103,9 @@ public class InvoiceCollection
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath() );
 
         return partnerServiceProxy.get();
     }
@@ -128,8 +128,9 @@ public class InvoiceCollection
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath());
 
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Offset" ),
                                                                                       String.valueOf( offset ) ) );
@@ -159,8 +160,9 @@ public class InvoiceCollection
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
                 new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
                 {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
-                                                            Locale.US ) );
+                }, 
+                this.getPartner(), 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath() );
 
         if ( query.getType() == QueryType.INDEXED )
         {

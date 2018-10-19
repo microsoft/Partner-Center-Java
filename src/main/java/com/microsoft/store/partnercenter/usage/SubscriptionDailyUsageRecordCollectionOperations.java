@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.usage;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -60,10 +59,13 @@ public class SubscriptionDailyUsageRecordCollectionOperations
         PartnerServiceProxy<SubscriptionDailyUsageRecord, ResourceCollection<SubscriptionDailyUsageRecord>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<SubscriptionDailyUsageRecord>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscriptionDailyUsageRecords" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(),
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscriptionDailyUsageRecords" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
+
         return partnerServiceProxy.get();
     }
-
 }

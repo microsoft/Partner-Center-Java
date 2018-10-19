@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.offers;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -51,13 +48,15 @@ public class OfferCategoryCollectionOperations
         IPartnerServiceProxy<OfferCategory, ResourceCollection<OfferCategory>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<OfferCategory>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOfferCategories" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetOfferCategories" ).getPath());
 
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOfferCategories" ).getParameters().get( "Country" ),
-                                                                                      this.getContext() ) );
+        partnerServiceProxy.getUriParameters().add( 
+            new KeyValuePair<String, String>( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetOfferCategories" ).getParameters().get( "Country" ),
+                this.getContext() ) );
 
         return partnerServiceProxy.get();
     }
-
 }

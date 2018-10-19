@@ -6,9 +6,6 @@
 
 package com.microsoft.store.partnercenter.profiles;
 
-import java.text.MessageFormat;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
@@ -46,8 +43,9 @@ public class MpnProfileOperations
         IPartnerServiceProxy<MpnProfile, MpnProfile> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<MpnProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getPath());
 
         return partnerServiceProxy.get();
     }
@@ -64,13 +62,15 @@ public class MpnProfileOperations
         IPartnerServiceProxy<MpnProfile, MpnProfile> partnerServiceProxy =
             new PartnerServiceProxy<MpnProfile, MpnProfile>( new TypeReference<MpnProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getPath(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(),
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getPath());
 
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getParameters().get( "MpnId" ),
-                                                                                      mpnId ) );
+        partnerServiceProxy.getUriParameters().add(
+            new KeyValuePair<String, String>( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getParameters().get( "MpnId" ), 
+                mpnId ) );
 
         return partnerServiceProxy.get();
     }
-
 }

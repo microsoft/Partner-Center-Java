@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.subscriptions;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -60,10 +59,13 @@ public class SubscriptionAddOnCollectionOperations
         PartnerServiceProxy<Subscription, ResourceCollection<Subscription>> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Subscription>>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAddOnSubscriptions" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
-        return partnerServiceProxy.get();
-    }
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetAddOnSubscriptions" ).getPath(),
+                this.getContext().getItem1(),
+                this.getContext().getItem2()));
 
+                return partnerServiceProxy.get();
+    }
 }

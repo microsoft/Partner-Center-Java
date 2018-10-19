@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.orders;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -59,9 +58,13 @@ public class OrderOperations
         IPartnerServiceProxy<Order, Order> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<Order>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrder" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetOrder" ).getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
+
         return partnerServiceProxy.get();
     }
 
@@ -82,10 +85,13 @@ public class OrderOperations
         IPartnerServiceProxy<Order, Order> partnerServiceProxy =
             new PartnerServiceProxy<>( new TypeReference<Order>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateOrder" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(),
-                                                        Locale.US ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateOrder" ).getPath(),
+                    this.getContext().getItem1(), 
+                    this.getContext().getItem2()));
+
         return partnerServiceProxy.patch( order );
     }
-
 }

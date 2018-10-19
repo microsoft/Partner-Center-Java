@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.models.query.filters;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 /**
  * A simple filter applied to a field. An example is (Year lessThan 1999).
@@ -121,8 +120,10 @@ public class SimpleFieldFilter
      */
     public String toString()
     {
-        return MessageFormat.format( "( {0} {1} {2} )", this.getField(), this.getOperator(), this.getValue(),
-                                     Locale.US );
+        return MessageFormat.format(
+             "( {0} {1} {2} )", 
+             this.getField(), 
+             this.getOperator(), 
+             this.getValue());
     }
-
 }
