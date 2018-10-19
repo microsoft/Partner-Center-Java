@@ -108,7 +108,7 @@ public class AzureUtilizationCollectionOperations
 		    (
 		    	new KeyValuePair<String, String>
 		        (
-		        	PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "Granularity "),
+		        	PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "Granularity" ),
 		        	granularity.toString()
 		        )
 		    );

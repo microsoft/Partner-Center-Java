@@ -103,4 +103,4 @@ buildNumber.properties
 
 # IntelliJ IDEA Configs
 .idea
-partnersdk.iml
+partnercenter.iml
