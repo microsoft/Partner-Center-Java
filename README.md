@@ -2,7 +2,7 @@
 
 ![Build Status](https://dev.azure.com/partnercenter/sdk/_apis/build/status/partner-center-java-CI)
 
-![Maven Status](https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/com/microsoft/store/partnercenter/maven-metadata.xml.svg) [![GitHub issues](https://img.shields.io/github/issues/Microsoft/Partner-Center-Java.svg)](https://github.com/Microsoft/Partner-Center-Java/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Microsoft/Partner-Center-Java.svg)](https://gitHub.com/Microsoft/Partner-Center-Java/pull/)
+[![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.store/partnercenter.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.microsoft.store%22%20AND%20a:%22partnercenter%22) [![GitHub issues](https://img.shields.io/github/issues/Microsoft/Partner-Center-Java.svg)](https://github.com/Microsoft/Partner-Center-Java/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Microsoft/Partner-Center-Java.svg)](https://gitHub.com/Microsoft/Partner-Center-Java/pull/)
 
 The Partner Center Java SDK provides an SDK to interact with Microsoft's Partner Center service. This enables the partners to perform the Partner Center operations programmatically. The Java SDK is the latest addition to existing portfolio of REST APIs and the .NET SDK. This is currently tested and supports Java version 7 or later.
 
@@ -14,7 +14,7 @@ Jar dependency binary information for maven and gradle can be found here at [mav
 <dependency>
     <groupId>com.microsoft.store</groupId>
     <artifactId>partnercenter</artifactId>
-    <version>1.8.0</version>
+    <version>1.8.1</version>
 </dependency>
 ```
 
@@ -41,3 +41,9 @@ Run the following maven command to build:
 ```bash
 mvn clean package -DskipTests
 ```
+
+## Related Projects
+
+[Partner Center Java SDK Samples](https://github.com/Microsoft/Partner-Center-Java-Samples) - Sample console application that demonstrates the supported scenarios of this SDK.
+
+[Partner Center .NET SDK Samples](https://github.com/PartnerCenterSamples/Partner-Center-SDK-Samples) - Sample console application that demonstrates the supported scenarios of the Partner Center .NET SDK.
