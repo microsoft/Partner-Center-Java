@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionSupportContactOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ public class SubscriptionSupportContactOperations
     public SupportContact get()
     {
         IPartnerServiceProxy<SupportContact, SupportContact> partnerServiceProxy =
-            new PartnerServiceProxy<SupportContact, SupportContact>(
+            new PartnerServiceProxy<>(
                 new TypeReference<SupportContact>()
                 {
                 }, 
@@ -78,7 +78,7 @@ public class SubscriptionSupportContactOperations
     public SupportContact update(SupportContact supportContact)
     {
         IPartnerServiceProxy<SupportContact, SupportContact> partnerServiceProxy =
-        new PartnerServiceProxy<SupportContact, SupportContact>(
+        new PartnerServiceProxy<>(
             new TypeReference<SupportContact>()
             {
             }, 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Cart.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,13 +12,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 import com.microsoft.store.partnercenter.models.orders.Order;
 
-/***
+/**
  * Represents a result of a cart checkout.
  */
 public class CartCheckoutResult 
     extends ResourceBase
 {
-    /***
+    /**
      * Gets or sets the orders created.
      */
 	@JsonProperty( "orders" )
@@ -34,7 +34,7 @@ public class CartCheckoutResult
     	__Orders = value;
     }
 
-    /***
+    /**
      * Gets or sets a collection of order failure information.
      */
 	@JsonProperty( "orderErrors" )

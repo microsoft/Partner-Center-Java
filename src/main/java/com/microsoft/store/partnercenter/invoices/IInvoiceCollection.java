@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IInvoiceCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -42,13 +42,13 @@ public interface IInvoiceCollection
      */
     IInvoice byId( String invoiceId );
     
-    /***
+    /**
      * Retrieves all the invoices.
      * @return The invoices.
      */
     ResourceCollection<Invoice> get();
     
-    /***
+    /**
      * Queries invoices associated to the partner.
      * @param query The query.
      * @return The invoices.

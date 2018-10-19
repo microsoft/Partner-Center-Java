@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IResourceCollectionEnumeratorContainer.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -67,14 +67,14 @@ public interface IResourceCollectionEnumeratorContainer
      */
     IResourceCollectionEnumeratorFactory<ResourceCollection<InvoiceLineItem>> getInvoiceLineItems();
 
-    /***
+    /**
      * Gets a factory that creates audit record collection enumerators.
      * 
      * @return A factory that creates audit record collection enumerators.
      */
     IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<AuditRecord>> getAuditRecords();
 
-    /***
+    /**
      * Gets a factory that create enumerators for utilization records for different subscriptions.
      * 
      * @return A factory that create enumerators for utilization records for different subscriptions.

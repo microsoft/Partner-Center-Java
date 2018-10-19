@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="TestConstants.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public class TestConstants
     public static final String AAD_AUTHORITY_ENDPOINT = "https://login.microsoftonline.com";
 
     /**
-     * The the unique identifier of an agreement template.
+     * The unique identifier of an agreement template.
      */
     public static final String AGREEMENT_TEMPLATE_ID = "998b88de-aa99-4388-a42c-1b3517d49490";
 

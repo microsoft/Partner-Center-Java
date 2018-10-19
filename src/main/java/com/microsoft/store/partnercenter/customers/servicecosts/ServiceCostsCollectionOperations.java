@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostsCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ public class ServiceCostsCollectionOperations
         }
     }
 
-    /***
+    /**
      * Gets the customer's service cost line items.
      * 
      * @return The customer's service cost line items.
@@ -55,7 +55,7 @@ public class ServiceCostsCollectionOperations
         return this.serviceCostLineItems;
     }
 
-    /***
+    /**
      * Gets the customer's service cost summary.
      * 
      * @return The customer's service cost summary.

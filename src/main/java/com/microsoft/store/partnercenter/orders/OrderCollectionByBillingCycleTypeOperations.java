@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OrderCollectionByBillingCycleTypeOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ public class OrderCollectionByBillingCycleTypeOperations
     public ResourceCollection<Order> get()
     {
         IPartnerServiceProxy<Order, ResourceCollection<Order>> partnerServiceProxy =
-            new PartnerServiceProxy<Order, ResourceCollection<Order>>( 
+            new PartnerServiceProxy<>( 
                 new TypeReference<ResourceCollection<Order>>()
                 {
                 }, 

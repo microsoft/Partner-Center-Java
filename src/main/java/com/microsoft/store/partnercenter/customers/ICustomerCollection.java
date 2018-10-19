@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ public interface ICustomerCollection
      */
     ICustomer byId( String customerId );
 
-    /***
+    /**
      * Retrieves all the partner's customers.
      * 
      * @return The partner's customers.

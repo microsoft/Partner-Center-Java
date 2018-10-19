@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="Sort.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.models.query.sort;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 /**
  * Specifies sort field and direction.
@@ -64,7 +63,7 @@ public class Sort
      */
     public String toString()
     {
-        return MessageFormat.format( "Sort: {0}, {1}", this.getSortField(), this.getSortDirection(), Locale.US );
+        return MessageFormat.format( "Sort: {0}, {1}", this.getSortField(), this.getSortDirection() );
 
     }
 

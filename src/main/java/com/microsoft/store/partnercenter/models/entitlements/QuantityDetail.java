@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="QuantityDetail.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,11 +8,11 @@ package com.microsoft.store.partnercenter.models.entitlements;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/***
+/**
  * Class that represents an Quantity Detail.
  */
 public class QuantityDetail {	
-    /***
+    /**
 	 * Gets or sets quantity.
 	 */
 	@JsonProperty( "quantity" )
@@ -28,7 +28,7 @@ public class QuantityDetail {
 		__Quantity = value;
 	}
 
-	/***
+	/**
 	 *Gets or sets Status.
 	 */
 	@JsonProperty( "status" )

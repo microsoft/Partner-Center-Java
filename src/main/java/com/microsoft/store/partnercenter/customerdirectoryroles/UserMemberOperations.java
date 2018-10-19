@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="UserMemberOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customerdirectoryroles;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -28,8 +27,7 @@ public class UserMemberOperations
 	extends BasePartnerComponent<TripletTuple<String, String, String>>
 	implements IUserMember
 {
-
-	/***
+	/**
 	 * Initializes a new instance of the UserMemberOperations class.
 	 * 
 	 * @param rootPartnerOperations The partner operations instance.
@@ -56,20 +54,20 @@ public class UserMemberOperations
         }
 	}
 
-	/***
+	/**
 	 * Remove directory user member from directory role.
 	 */
 	@Override
 	public void delete()
 	{
         IPartnerServiceProxy<DirectoryRole, DirectoryRole> partnerServiceProxy =
-                new PartnerServiceProxy<DirectoryRole, DirectoryRole>( new TypeReference<DirectoryRole>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "RemoveCustomerUserMemberFromDirectoryRole" ).getPath(),
-        				this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3(), Locale.US ) );
+                new PartnerServiceProxy<>( 
+					new TypeReference<DirectoryRole>()
+					{
+					}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "RemoveCustomerUserMemberFromDirectoryRole" ).getPath(),
+							this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ) );
 
         partnerServiceProxy.delete();
         return;
     }
-
 }

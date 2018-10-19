@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureInstanceData.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class AzureInstanceData
 {
-    /***
+    /**
      * Gets or sets the fully qualified Azure resource ID, which includes the resource groups and the instance name.
      */
     private URI __ResourceUri;
@@ -24,7 +24,7 @@ public class AzureInstanceData
 		this.__ResourceUri = value;
 	}
 
-    /***
+    /**
      * Gets or sets the region in which the this service was run.
      */
     private String __Location;
@@ -37,7 +37,7 @@ public class AzureInstanceData
 		this.__Location = value;
 	}
 
-    /***
+    /**
      * Gets or sets the unique namespace used to identify the resource for Azure Marketplace 3rd party usage.
      */
     private String __PartNumber;
@@ -50,7 +50,7 @@ public class AzureInstanceData
 		this.__PartNumber = value;
 	}
 
-    /***
+    /**
      * Gets or sets the unique namespace used to identify the 3rd party order for Azure Marketplace.
      */
     private String __OrderNumber;
@@ -64,8 +64,8 @@ public class AzureInstanceData
 		this.__OrderNumber = value;
 	}
 
-	/***
-     * Gets or sets the the resource tags specified by the user.
+	/**
+     * Gets or sets the resource tags specified by the user.
      */
     private Map<String, String> __Tags;
 
@@ -77,8 +77,8 @@ public class AzureInstanceData
 		this.__Tags = value;
 	}
 
-	/***
-     * Gets or sets the the additional info fields.
+	/**
+     * Gets or sets the additional info fields.
      */
     private Map<String, String> __AdditionalInfo;
 

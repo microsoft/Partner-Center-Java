@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IServiceRequest.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,14 +19,14 @@ public interface IServiceRequest
     extends IPartnerComponent<Tuple<String, String>>, IEntityGetOperations<ServiceRequest>,
     IEntityPatchOperations<ServiceRequest>
 {
-	/***
+	/**
 	 * Retrieves the service request.
 	 * 
 	 * @return The service request information.
 	 */
     ServiceRequest get();
     
-    /***
+    /**
      * Patches a service request.
      * 
      * @param serviceRequest The service request that has the properties to be patched set.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerServiceProxy.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -181,7 +181,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Gets or sets the e-tag used for concurrency control.
 	 */
-	private String __IfMatch = new String();
+	private String __IfMatch;
 
 	@Override
 	public String getIfMatch() 
@@ -198,7 +198,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Gets or sets the request content type.
 	 */
-	private String __ContentType = new String();
+	private String __ContentType;
 
 	@Override
 	public String getContentType() 
@@ -215,7 +215,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Gets or sets the accepted response type.
 	 */
-	private String __Accept = new String();
+	private String __Accept;
 
 	@Override
 	public String getAccept() 
@@ -280,7 +280,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Gets or sets the resource path which will be appended to the root URL.
 	 */
-	private String __ResourcePath = new String();
+	private String __ResourcePath;
 
 	@Override
 	public String getResourcePath() 
@@ -357,7 +357,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 		return this.send(request);
 	}
 
-	/***
+	/**
 	 * Executes a file content request against the partner service.
 	 * 
 	 * @return The file content stream.

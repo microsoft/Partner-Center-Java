@@ -1,10 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerAgreementCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.agreements;
+
+import java.text.MessageFormat;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -14,9 +16,6 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
-
-import java.text.MessageFormat;
-import java.util.Locale;
 
 /**
  * Implements the operations on an Agreement collection.
@@ -57,7 +56,7 @@ public class CustomerAgreementCollectionOperations
 
         return new PartnerServiceProxy<Agreement, Agreement>( new TypeReference<Agreement>() {}, this.getPartner(),
                 MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
-                        .get( "CreateCustomerAgreement" ).getPath(), this.getContext(), Locale.US ) ).post( newAgreement );
+                        .get( "CreateCustomerAgreement" ).getPath(), this.getContext() ) ).post( newAgreement );
     }
 
     /**
@@ -72,6 +71,6 @@ public class CustomerAgreementCollectionOperations
                 new TypeReference<ResourceCollection<Agreement>>() {}, this.getPartner(),
                 MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
                                 .get( "GetCustomerAgreements" ).getPath(),
-                        this.getContext(), Locale.US ) ).get();
+                        this.getContext() ) ).get();
     }
 }

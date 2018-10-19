@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AvailabilityCollectionByTargetSegmentOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ public class AvailabilityCollectionByTargetSegmentOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all the availabilities for the provided SKU on a specific target segment.
      * 
      * @return The availability for the provided SKU on a specific target segment.
@@ -67,7 +67,7 @@ public class AvailabilityCollectionByTargetSegmentOperations
     public ResourceCollection<Availability> get()
     {
         IPartnerServiceProxy<Availability, ResourceCollection<Availability>> partnerServiceProxy =
-            new PartnerServiceProxy<Availability, ResourceCollection<Availability>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Availability>>()
                 {
                 }, 

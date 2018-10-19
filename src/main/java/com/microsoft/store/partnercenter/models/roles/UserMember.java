@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="UserMember.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 
 @JsonIgnoreProperties( { "roleId" } )
 public class UserMember extends ResourceBase {
-    /***
+    /**
      * Gets or sets the id of the member.
      */
 	@JsonProperty( "id" )
@@ -28,7 +28,7 @@ public class UserMember extends ResourceBase {
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets the display name.
      */
 	@JsonProperty( "DisplayName" )
@@ -44,7 +44,7 @@ public class UserMember extends ResourceBase {
     	__DisplayName = value;
     }
 
-    /***
+    /**
      * Gets or sets the name of the user principal.
      */
 	@JsonProperty( "UserPrincipalName" )

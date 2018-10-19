@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IOrderCollectionByBillingCycleType.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 public interface IOrderCollectionByBillingCycleType
     extends IPartnerComponent<Tuple<String, BillingCycleType>>,  IEntireEntityCollectionRetrievalOperations<Order, ResourceCollection<Order>>
 {
-    /***
+    /**
      * Retrieves all customer orders.
      * @return The customer orders.
      */

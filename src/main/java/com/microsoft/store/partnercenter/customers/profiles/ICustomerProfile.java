@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 public interface ICustomerProfile<T extends ResourceBase>
     extends ICustomerReadonlyProfile<T>, IEntityUpdateOperations<T>
 {
-    /***
+    /**
      *  Updates the customer profile.
      * 
      * @param customerProfile The customer profile information.

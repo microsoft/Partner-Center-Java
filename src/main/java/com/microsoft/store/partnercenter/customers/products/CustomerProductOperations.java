@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerProductOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ public class CustomerProductOperations
         }
     }
 
-    /***
+    /**
      * Retrieves the product information
      * 
      * @return The product information.
@@ -60,7 +60,7 @@ public class CustomerProductOperations
     public Product get()
     {
         IPartnerServiceProxy<Product, Product> partnerServiceProxy =
-        new PartnerServiceProxy<Product, Product>( new TypeReference<Product>()
+        new PartnerServiceProxy<>( new TypeReference<Product>()
         {
         }, 
         this.getPartner(), 

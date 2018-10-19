@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ApiFault.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ public class ApiFault
     /**
      * Gets or sets the error code.
      */
-    private String __ErrorCode = new String();
+    private String __ErrorCode;
 
     public String getErrorCode()
     {
@@ -42,7 +42,7 @@ public class ApiFault
     /**
      * Gets or sets the error message.
      */
-    private String __ErrorMessage = new String();
+    private String __ErrorMessage;
 
     public String getErrorMessage()
     {
@@ -94,7 +94,5 @@ public class ApiFault
 
         apiFaultDescription.append( super.toString() + "\n" );
         return apiFaultDescription.toString();
-
     }
-
 }

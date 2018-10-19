@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ParameterValidator.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ public class ParameterValidator
         }
     }
     
-    /***
+    /**
      * Ensures that a given country code is valid.
      * @param countryCode The country code to validate.
      */

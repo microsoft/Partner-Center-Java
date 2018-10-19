@@ -1,11 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerCompanyProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.models.customers;
 
+import com.microsoft.store.partnercenter.models.Address;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
@@ -15,30 +16,55 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class CustomerCompanyProfile
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
+    /**
+     * Initializes a new instance of the CustomerCompanyProfile class.
+     */
     public CustomerCompanyProfile()
     {
     }
 
-    private String __TenantId;
+    private Address __Address; 
 
     /**
-     * Gets the tenant identifier.
+     * Gets the address of the customer.
      * 
-     * @return The tenant identifier.
+     * @return The address of the customer.
      */
-    public String getTenantId()
+    public Address getAddress()
     {
-        return __TenantId;
+        return __Address;
     }
 
     /**
-     * Sets the tenant identifier.
+     * Sets the address of the customer.
      * 
-     * @param value The tenant identifier.
+     * @param value The address of the customer.
      */
-    public void setTenantId( String value )
+    public void setAddress(Address value)
     {
-        __TenantId = value;
+        __Address = value;
+    }
+
+    private String __CompanyName;
+
+    /**
+     * Gets the name of the company.
+     * 
+     * @return The name of the company.
+     */
+    public String getCompanyName()
+    {
+        return __CompanyName;
+    }
+
+    /**
+     * Sets the name of the company.
+     * 
+     * @param value The name of the company.
+     */
+    public void setCompanyName( String value )
+    {
+        __CompanyName = value;
     }
 
     private String __Domain;
@@ -63,25 +89,47 @@ public class CustomerCompanyProfile
         __Domain = value;
     }
 
-    private String __CompanyName;
+    private String __Email; 
 
     /**
-     * Gets the name of the company.
+     * Gets the email address of the contact at the customer.
      * 
-     * @return The name of the company.
+     * @return The name email address of the contact at the customer.
      */
-    public String getCompanyName()
+    public String getEmail()
     {
-        return __CompanyName;
+        return __Email;        
     }
 
     /**
-     * Sets the name of the company.
+     * Sets the email address of the contact at the customer.
      * 
-     * @param value The name of the company.
+     * @param value The email address of the contact at the customer.
      */
-    public void setCompanyName( String value )
+    public void setEmail ( String value )
     {
-        __CompanyName = value;
+        __Email = value;        
+    }
+
+    private String __TenantId;
+
+    /**
+     * Gets the tenant identifier.
+     * 
+     * @return The tenant identifier.
+     */
+    public String getTenantId()
+    {
+        return __TenantId;
+    }
+
+    /**
+     * Sets the tenant identifier.
+     * 
+     * @param value The tenant identifier.
+     */
+    public void setTenantId( String value )
+    {
+        __TenantId = value;
     }
 }

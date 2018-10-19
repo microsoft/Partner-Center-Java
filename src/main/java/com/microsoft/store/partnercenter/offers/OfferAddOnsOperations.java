@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OfferAddOnsOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ public class OfferAddOnsOperations
     public ResourceCollection<Offer> get()
     {
         IPartnerServiceProxy<ResourceCollection<Offer>, ResourceCollection<Offer>> partnerServiceProxy =
-            new PartnerServiceProxy<ResourceCollection<Offer>, ResourceCollection<Offer>>( 
+            new PartnerServiceProxy<>( 
                 new TypeReference<ResourceCollection<Offer>>()
                 {
                 },

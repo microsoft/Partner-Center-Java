@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerUsageSpendingBudget.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,13 +18,13 @@ public interface ICustomerUsageSpendingBudget
     extends IPartnerComponentString, IEntityGetOperations<SpendingBudget>,
     IEntityPatchOperations<SpendingBudget>
 {
-    /***
+    /**
      * Retrieves the customer's usage spending budget.
      * @return The customer's usage spending budget.
      */
     SpendingBudget get();
 
-    /***
+    /**
      * Patches the customer's usage spending budget.
      * 
      * @param spendingBudget The new customer's usage spending budget.

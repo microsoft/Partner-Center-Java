@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerCredentials.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,19 +17,19 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  */
 public class PartnerCredentials
 {
-    /***
+    /**
      * A singleton instance of the partner credentials.
      */
     private static PartnerCredentials __instance = new PartnerCredentials();
 
-    /***
+    /**
      * Prevents a default instance of the PartnerCredentials class from being created.
      */
     private PartnerCredentials()
     {
     }
 
-    /***
+    /**
      * Gets an instance of the partner credentials.
      * 
      * @return An instance of the partner credentials.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="MpnProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ public class MpnProfile
     /**
      * Gets or sets the organization name.
      */
-    private String __PartnerName = new String();
+    private String __PartnerName;
 
     public String getPartnerName()
     {
@@ -33,7 +33,7 @@ public class MpnProfile
     /**
      * Gets or sets the Microsoft Partner Network Id
      */
-    private String __MpnId = new String();
+    private String __MpnId;
 
     public String getMpnId()
     {

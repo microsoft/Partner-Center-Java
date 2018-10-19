@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BasePartnerComponent.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -33,32 +33,32 @@ public abstract class BasePartnerComponent<TContext>
     /**
      * Gets a reference to the partner operations instance that generated this component.
      */
-    private IPartner __Partner;
+    private IPartner partner;
 
     @Override
     public IPartner getPartner()
     {
-        return __Partner;
+        return partner;
     }
 
     private void setPartner( IPartner value )
     {
-        __Partner = value;
+        partner = value;
     }
 
     /**
      * Gets the component context object.
      */
-    private TContext __Context;
+    private TContext context;
 
     @Override
     public TContext getContext()
     {
-        return __Context;
+        return context;
     }
 
     private void setContext( TContext value )
     {
-        __Context = value;
+        context = value;
     }
 }

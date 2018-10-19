@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DeviceCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ public class DeviceCollectionOperations
         }
     }
 
-	/***
+	/**
 	 * Retrieves a specific customer's device behavior.
 	 * 
 	 * @param deviceId The device identifier.
@@ -64,7 +64,7 @@ public class DeviceCollectionOperations
         return new DeviceOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), deviceId);
     }
 
-    /***
+    /**
 	 * Adds devices to existing devices batch.
 	 * 
 	 * @param newDevices The new devices to be created.
@@ -73,7 +73,8 @@ public class DeviceCollectionOperations
     @Override
     public String create( List<Device> newDevices )
     {
-        IPartnerServiceProxy<List<Device>, HttpResponse> partnerServiceProxy = new PartnerServiceProxy<List<Device>, HttpResponse>(
+        IPartnerServiceProxy<List<Device>, HttpResponse> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<HttpResponse>() 
                 {
                 }, 
@@ -87,7 +88,7 @@ public class DeviceCollectionOperations
         return response.getFirstHeader("Location").getValue();        
     }
 
-    /***
+    /**
      * Retrieves all devices.
      * 
      * @return All of the devices.
@@ -95,7 +96,8 @@ public class DeviceCollectionOperations
     @Override
     public ResourceCollection<Device> get()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<Device>> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ResourceCollection<Device>>(
+        IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<Device>> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Device>>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetDevices").getPath(),

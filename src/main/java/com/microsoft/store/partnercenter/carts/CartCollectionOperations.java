@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CartCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -66,12 +66,13 @@ public class CartCollectionOperations
             throw new IllegalArgumentException( "Cart cannot be null" );
         }
         IPartnerServiceProxy<Cart, Cart> partnerServiceProxy =
-            new PartnerServiceProxy<Cart, Cart>( new TypeReference<Cart>()
-            {
-            }, 
-            this.getPartner(), 
-            MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCart" ).getPath(),
-                this.getContext() ) );
+            new PartnerServiceProxy<>( 
+                new TypeReference<Cart>()
+                {
+                }, 
+                this.getPartner(), 
+                MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCart" ).getPath(),
+                    this.getContext() ) );
 
         return partnerServiceProxy.post( newCart );
     }

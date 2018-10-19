@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDeviceCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,14 +16,14 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.Device;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Represents the operations that can be done on the partner's devices.
  */
 public interface IDeviceCollection 
 	extends IPartnerComponent<Tuple<String, String>>,
 	IEntireEntityCollectionRetrievalOperations<Device, ResourceCollection<Device>>, IEntityCreateOperations<List<Device>, String>, IEntitySelector<IDevice>
 {
-	/***
+	/**
 	 * Retrieves a specific customer's device behavior.
 	 * 
 	 * @param deviceId The device identifier.
@@ -31,7 +31,7 @@ public interface IDeviceCollection
 	 */
     IDevice byId( String deviceId );
 
-    /***
+    /**
 	 * Adds devices to existing devices batch.
 	 * 
 	 * @param newDevices The new devices to be created.
@@ -39,7 +39,7 @@ public interface IDeviceCollection
 	 */
     String create( List<Device> newDevices );
 
-    /***
+    /**
      * Retrieves all devices.
      * 
      * @return All of the devices.

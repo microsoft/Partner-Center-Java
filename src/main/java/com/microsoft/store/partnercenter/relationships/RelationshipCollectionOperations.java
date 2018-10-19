@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="RelationshipCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class RelationshipCollectionOperations
         super( rootPartnerOperations );
     }
 
-    /***
+    /**
      * Retrieves all the partner relationships.
      * 
      * @param partnerRelationshipType The type of partner relationship.
@@ -52,7 +52,7 @@ public class RelationshipCollectionOperations
     public ResourceCollection<PartnerRelationship> get(PartnerRelationshipType partnerRelationshipType)
     {
         IPartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>> partnerServiceProxy =
-            new PartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>>(
+            new PartnerServiceProxy<>(
                  new TypeReference<ResourceCollection<PartnerRelationship>>()
                 {
                 }, 
@@ -67,7 +67,7 @@ public class RelationshipCollectionOperations
         return partnerServiceProxy.get();
     }
 
-    /***
+    /**
      * Queries partner relationships associated to the partner.
      * 
      * @param partnerRelationshipType The type of partner relationship.
@@ -76,13 +76,13 @@ public class RelationshipCollectionOperations
      */
     public ResourceCollection<PartnerRelationship> Query(PartnerRelationshipType partnerRelationshipType, IQuery query)
     {
-        if ( query != null && query.getType() !=  QueryType.SIMPLE )
+        if ( query.getType() !=  QueryType.SIMPLE )
         {
             throw new IllegalArgumentException( "This type of query is not supported." );
         }
 
         IPartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>> partnerServiceProxy =
-            new PartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<PartnerRelationship>>()
                 {
                 }, 

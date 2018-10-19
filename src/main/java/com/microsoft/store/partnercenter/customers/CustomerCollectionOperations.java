@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -125,10 +125,11 @@ public class CustomerCollectionOperations
             throw new IllegalArgumentException( "Customer cannot be null" );
         }
         IPartnerServiceProxy<Customer, Customer> partnerServiceProxy =
-            new PartnerServiceProxy<Customer, Customer>( new TypeReference<Customer>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomer" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+            new PartnerServiceProxy<>( 
+                new TypeReference<Customer>()
+                {
+                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomer" ).getPath(),
+                                                            this.getContext() ) );
         return partnerServiceProxy.post( newCustomer );
     }
 
@@ -141,10 +142,11 @@ public class CustomerCollectionOperations
     public SeekBasedResourceCollection<Customer> get()
     {
         IPartnerServiceProxy<Customer, SeekBasedResourceCollection<Customer>> partnerServiceProxy =
-            new PartnerServiceProxy<Customer, SeekBasedResourceCollection<Customer>>( new TypeReference<SeekBasedResourceCollection<Customer>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath(),
-                                                        Locale.US ) );
+            new PartnerServiceProxy<>( 
+                new TypeReference<SeekBasedResourceCollection<Customer>>()
+                {
+                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath(),
+                                                            Locale.US ) );
         return partnerServiceProxy.get();
     }
 
@@ -170,7 +172,7 @@ public class CustomerCollectionOperations
         }
 
         PartnerServiceProxy<Customer, SeekBasedResourceCollection<Customer>> partnerServiceProxy =
-            new PartnerServiceProxy<Customer, SeekBasedResourceCollection<Customer>>( new TypeReference<SeekBasedResourceCollection<Customer>>()
+            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Customer>>()
             {
             }, this.getPartner(), PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath() );
 
@@ -194,7 +196,7 @@ public class CustomerCollectionOperations
                 // if the query specifies a page size, validate it and add it to the request
                 ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, customersQuery.getPageSize(),
                                                    MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                         MIN_PAGE_SIZE, MAX_PAGE_SIZE, Locale.US ) );
+                                                                         MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
                 partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
                                                                                               String.valueOf( customersQuery.getPageSize() ) ) );
             }
@@ -224,6 +226,7 @@ public class CustomerCollectionOperations
             }
 
         }
+        
         return partnerServiceProxy.get();
     }
 }

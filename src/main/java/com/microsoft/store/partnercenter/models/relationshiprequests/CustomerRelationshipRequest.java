@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerRelationshipRequest.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,16 +16,23 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 public class CustomerRelationshipRequest
     extends ResourceBase
 {
-    /**
-     * Gets or sets the URL to be used by the customer to establish a relationship with a partner.
-     */
     private URI __Url;
 
+    /**
+     * Gets the URL to be used by the customer to establish a relationship with a partner.
+     * 
+     * @return The URL to be used by the customer to establish a relationship with a partner.
+     */
     public URI getUrl()
     {
         return __Url;
     }
 
+    /**
+     * Sets the URL to be used by the customer to establish a relationship with a partner.
+     * 
+     * @param value The URL to be used by the customer to establish a relationship with a partner.
+     */
     public void setUrl( URI value )
     {
         __Url = value;

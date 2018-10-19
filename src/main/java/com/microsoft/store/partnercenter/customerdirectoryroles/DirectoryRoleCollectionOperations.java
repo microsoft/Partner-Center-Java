@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="DirectoryRoleCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customerdirectoryroles;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -28,7 +27,7 @@ public class DirectoryRoleCollectionOperations
 	implements IDirectoryRoleCollection
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the DirectoryRoleCollectionOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
@@ -43,7 +42,7 @@ public class DirectoryRoleCollectionOperations
         }
 	}
 
-	/***
+	/**
 	 * Gets a directory role operations object.
 	 * 
 	 * @param roleId The directory role id.
@@ -55,7 +54,7 @@ public class DirectoryRoleCollectionOperations
 		return new DirectoryRoleOperations( this.getPartner(), this.getContext(), roleId );
 	}
 
-	/***
+	/**
 	 * Retrieves all customer directory roles.
 	 * 
 	 * @return All the customer directory roles.
@@ -64,10 +63,11 @@ public class DirectoryRoleCollectionOperations
 	public ResourceCollection<DirectoryRole> get()
 	{
         IPartnerServiceProxy<DirectoryRole, ResourceCollection<DirectoryRole>> partnerServiceProxy =
-                new PartnerServiceProxy<DirectoryRole, ResourceCollection<DirectoryRole>>( new TypeReference<ResourceCollection<DirectoryRole>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerDirectoryRoles" ).getPath(),
-        				this.getContext(), Locale.US ) );
+                new PartnerServiceProxy<>( 
+					new TypeReference<ResourceCollection<DirectoryRole>>()
+					{
+					}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerDirectoryRoles" ).getPath(),
+							this.getContext() ) );
         
         return partnerServiceProxy.get();
 	}

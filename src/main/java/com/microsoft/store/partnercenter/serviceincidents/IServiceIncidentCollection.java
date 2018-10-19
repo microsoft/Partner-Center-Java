@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IServiceIncidentCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ import com.microsoft.store.partnercenter.models.serviceincidents.ServiceIncident
 public interface IServiceIncidentCollection
 		extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<ServiceIncidents, ResourceCollection<ServiceIncidents>>
 {
-	/***
+	/**
 	 * Retrieves all service incidents.
 	 * 
 	 * @param serviceIncidentsQuery A query to retrieve service incidents based on the active status.

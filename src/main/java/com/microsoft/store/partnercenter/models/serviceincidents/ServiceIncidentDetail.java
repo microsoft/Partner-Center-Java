@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceIncidentDetail.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,82 +8,82 @@ package com.microsoft.store.partnercenter.models.serviceincidents;
 
 import org.joda.time.DateTime;
 
-/***
+/**
  * Represents an office service health incident message.
  */
 public class ServiceIncidentDetail
 {
-    /***
+    /**
      * Gets or sets the Incident ID.
      */
     private String __Id;
 
-    /***
+    /**
      * Gets or sets the message type.
      */
     private MessageType __MessageType;
 
-    /***
+    /**
      * Gets or sets the Incident start time.
      */
     private DateTime __StartTime;
 
-    /***
+    /**
      * Gets or sets the Incident End time.
      */
     private DateTime __EndTime;
 
-    /***
+    /**
      * Gets or sets the status.
      */
     private ServiceIncidentStatus __Status;
 
-    /***
+    /**
      * Gets or sets the Service Health messages.
      */
     private Iterable<ServiceIncidentHistory> __Messages;
 
-    /***
+    /**
      * Gets or sets the workload name.
      */
     private String __Workload;
 
-    /***
+    /**
      * Gets or sets the affected workload names.
      */
     private Iterable<String> __AffectedWorkloadNames;
 
-    /***
+    /**
      * Gets or sets the impacted area.
      */
     private String __ImpactedArea;
 
-    /***
+    /**
      * Gets or sets a value indicating whether an incident is resolved or not.
      */
     private boolean __Resolved;
 
-    /***
+    /**
      * Gets or sets the affected tenant count.
      */
     private int __ImpactedCustomers;
 
-    /***
+    /**
      * Gets or sets the date by which partner is expected to complete an action - set only for message center type messages.
      */
     private DateTime __RequiredBy;
 
-    /***
+    /**
      * Gets or sets the category of message center - set only for message center type messages.
      */
     private String __Category;
 
-    /***
+    /**
      * Gets or sets the type of action to be followed up with - set only for message center type messages.
      */
     private String __ActionType;
 
-    /***
+    /**
      * Gets or sets the severity of the message - set only for message center type messages.
      */
     private ServiceIncidentStatus __Severity;

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AvailabilityOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -54,14 +54,14 @@ public class AvailabilityOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves the availability information.
      * 
      * @return The availability information.
      */
     public Availability get()
     {
-        IPartnerServiceProxy<Availability, Availability> partnerServiceProxy = new PartnerServiceProxy<Availability, Availability>(
+        IPartnerServiceProxy<Availability, Availability> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<Availability>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetAvailability").getPath(),

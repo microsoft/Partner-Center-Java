@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionDailyUsageRecord.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ import org.joda.time.DateTime;
 public class SubscriptionDailyUsageRecord
     extends UsageRecordBase
 {
-    /***
+    /**
      * Gets or sets the subscription ID.
      */
 	private String __ResourceId;
@@ -29,7 +29,7 @@ public class SubscriptionDailyUsageRecord
     	__ResourceId = value;
     }
 
-    /***
+    /**
      * Gets or sets the subscription name.
      */
     private String __ResourceName;
@@ -44,7 +44,7 @@ public class SubscriptionDailyUsageRecord
     	__ResourceName = value;
     }
 
-    /***
+    /**
      * Gets or sets the estimated total cost of daily usage for the subscription.
      */
     private double __TotalCost;

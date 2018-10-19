@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OfferCategory.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,77 +18,77 @@ public class OfferCategory
     /**
      * Gets or sets the category identifier.
      */
-    private String __Id;
+    private String id;
 
     public String getId()
     {
-        return __Id;
+        return id;
     }
 
     public void setId( String value )
     {
-        __Id = value;
+        id = value;
     }
 
     /**
      * Gets or sets the category name.
      */
-    private String __Name;
+    private String name;
 
     public String getName()
     {
-        return __Name;
+        return name;
     }
 
     public void setName( String value )
     {
-        __Name = value;
+        name = value;
     }
 
     /**
      * Gets or sets the category rank in collection This property should be set only in case of offer category
      * collections
      */
-    private int __Rank;
+    private int rank;
 
     public int getRank()
     {
-        return __Rank;
+        return rank;
     }
 
     public void setRank( int value )
     {
-        __Rank = value;
+        rank = value;
     }
 
     /**
      * Gets or sets the locale to which the offer category applies.
      */
-    private String __Locale;
+    private String locale;
 
     public String getLocale()
     {
-        return __Locale;
+        return locale;
     }
 
     public void setLocale( String value )
     {
-        __Locale = value;
+        locale = value;
     }
 
     /**
      * Gets or sets the country where the offer category applies
      */
-    private String __Country;
+    private String country;
 
     public String getCountry()
     {
-        return __Country;
+        return country;
     }
 
     public void setCountry( String value )
     {
-        __Country = value;
+        country = value;
     }
 
     /**
@@ -96,16 +96,22 @@ public class OfferCategory
      * 
      * @param obj The object to compare with this instance.
      * @return true if the specified object is equal to this instance; otherwise, false.
-     *         .
      */
-    public boolean equals( OfferCategory obj )
+    public boolean equals( Object obj )
     {
-        if ( obj == null )
+        if(obj == this) 
+        {
+            return true; 
+        }
+
+        if ( obj == null || getClass() != obj.getClass() )
         {
             return false;
         }
 
-        return this.getId().equalsIgnoreCase( obj.getId() );
+        OfferCategory other = (OfferCategory)obj;
+
+        return this.getId().equalsIgnoreCase( other.getId() );
 
     }
 
@@ -119,5 +125,4 @@ public class OfferCategory
     {
         return this.getId().hashCode();
     }
-
 }

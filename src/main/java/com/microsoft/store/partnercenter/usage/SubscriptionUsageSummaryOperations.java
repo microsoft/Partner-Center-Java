@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionUsageSummaryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -36,6 +36,7 @@ public class SubscriptionUsageSummaryOperations
                                                String subscriptionId )
     {
         super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set." );
@@ -45,7 +46,6 @@ public class SubscriptionUsageSummaryOperations
         {
             throw new IllegalArgumentException( "subscriptionId must be set." );
         }
-
     }
 
     /**
@@ -56,14 +56,12 @@ public class SubscriptionUsageSummaryOperations
     @Override
     public SubscriptionUsageSummary get()
     {
-
         PartnerServiceProxy<SubscriptionUsageSummary, SubscriptionUsageSummary> partnerServiceProxy =
-            new PartnerServiceProxy<SubscriptionUsageSummary, SubscriptionUsageSummary>( new TypeReference<SubscriptionUsageSummary>()
+            new PartnerServiceProxy<>( new TypeReference<SubscriptionUsageSummary>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscriptionUsageSummary" ).getPath(),
                                                         this.getContext().getItem1(), this.getContext().getItem2(),
                                                         Locale.US ) );
         return partnerServiceProxy.get();
     }
-
 }

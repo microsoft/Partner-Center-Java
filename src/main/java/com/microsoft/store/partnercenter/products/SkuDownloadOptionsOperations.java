@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SkuDownloadOptionsOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -51,14 +51,14 @@ public class SkuDownloadOptionsOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves all download options for the provided SKU
      * 
      * @return The SKU download options
      */
     public ResourceCollection<SkuDownloadOptions> get()
     {
-        IPartnerServiceProxy<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>> partnerServiceProxy = new PartnerServiceProxy<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>>(
+        IPartnerServiceProxy<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<ResourceCollection<SkuDownloadOptions>>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetSkuDownloadOptions").getPath(),

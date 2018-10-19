@@ -1,12 +1,11 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureRateCardOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 package com.microsoft.store.partnercenter.ratecards;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -42,10 +41,10 @@ public class AzureRateCardOperations
 	public AzureRateCard get(String currency, String region)
 	{
         IPartnerServiceProxy<AzureRateCard, AzureRateCard> partnerServiceProxy =
-                new PartnerServiceProxy<AzureRateCard, AzureRateCard>( new TypeReference<AzureRateCard>()
+                new PartnerServiceProxy<>( new TypeReference<AzureRateCard>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureRateCard" ).getPath(),
-                                                            this.getContext(), Locale.US ) );
+                                                            this.getContext() ) );
 
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )
@@ -78,10 +77,10 @@ public class AzureRateCardOperations
 	public AzureRateCard getShared(String currency, String region)
 	{
         IPartnerServiceProxy<AzureRateCard, AzureRateCard> partnerServiceProxy =
-                new PartnerServiceProxy<AzureRateCard, AzureRateCard>( new TypeReference<AzureRateCard>()
+                new PartnerServiceProxy<>( new TypeReference<AzureRateCard>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureSharedRateCard" ).getPath(),
-                                                            this.getContext(), Locale.US ) );
+                                                            this.getContext() ) );
 
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )

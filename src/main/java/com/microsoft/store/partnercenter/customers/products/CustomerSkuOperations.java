@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerSkuOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ public class CustomerSkuOperations
         }
     }
 
-    /***
+    /**
      * Retrieves the operations for the current SKU's availabilities.
      * 
      * @return The operations for the current SKU's availabilities.
@@ -76,7 +76,7 @@ public class CustomerSkuOperations
         return availabilities;
     }
 
-    /***
+    /**
      * Retrieves the operations for the current SKU's download options.
      * 
      * @return The operations for the current SKU's download options.
@@ -92,7 +92,7 @@ public class CustomerSkuOperations
         return downloadOptions;
     }
 
-    /***
+    /**
      * Retrieves the SKU information.
      * 
      * @return The SKUs information.
@@ -101,7 +101,7 @@ public class CustomerSkuOperations
     public Sku get()
     {
         IPartnerServiceProxy<Sku, Sku> partnerServiceProxy =
-        new PartnerServiceProxy<Sku, Sku>( new TypeReference<Sku>()
+        new PartnerServiceProxy<>( new TypeReference<Sku>()
         {
         }, 
         this.getPartner(), 

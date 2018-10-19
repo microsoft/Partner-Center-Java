@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerQualification.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,14 +14,14 @@ import com.microsoft.store.partnercenter.models.customers.CustomerQualification;
 public interface ICustomerQualification
 		extends IPartnerComponentString, IEntityGetOperations<CustomerQualification>, IEntityUpdateOperations<CustomerQualification>
 {
-	/***
+	/**
 	 * Retrieves the customer qualification.
 	 * 
 	 * @return Customer Qualification.
 	 */
     CustomerQualification get();
     
-    /***
+    /**
      * Updates the customer qualification.
      * 
      * @param customerQualification Customer Qualification.

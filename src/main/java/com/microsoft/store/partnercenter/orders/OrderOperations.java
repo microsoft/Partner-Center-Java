@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OrderOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -36,6 +36,7 @@ public class OrderOperations
     public OrderOperations( IPartner rootPartnerOperations, String customerId, String orderId )
     {
         super( rootPartnerOperations, new Tuple<String, String>( customerId, orderId ) );
+
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set." );
@@ -45,7 +46,6 @@ public class OrderOperations
         {
             throw new IllegalArgumentException( "orderId must be set." );
         }
-
     }
 
     /**
@@ -57,7 +57,7 @@ public class OrderOperations
     public Order get()
     {
         IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<Order, Order>( new TypeReference<Order>()
+            new PartnerServiceProxy<>( new TypeReference<Order>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrder" ).getPath(),
                                                         this.getContext().getItem1(), this.getContext().getItem2(),
@@ -78,8 +78,9 @@ public class OrderOperations
         {
             throw new IllegalArgumentException( "Order can't be null" );
         }
+
         IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<Order, Order>( new TypeReference<Order>()
+            new PartnerServiceProxy<>( new TypeReference<Order>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateOrder" ).getPath(),
                                                         this.getContext().getItem1(), this.getContext().getItem2(),

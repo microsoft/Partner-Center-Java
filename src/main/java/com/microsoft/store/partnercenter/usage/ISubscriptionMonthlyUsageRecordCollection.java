@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISubscriptionMonthlyUsageRecordCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ public interface ISubscriptionMonthlyUsageRecordCollection
     extends IPartnerComponentString,
     IEntireEntityCollectionRetrievalOperations<SubscriptionMonthlyUsageRecord, ResourceCollection<SubscriptionMonthlyUsageRecord>>
 {
-    /***
+    /**
      * Retrieves the customer's subscription usage records.
      * @return The customer's subscription usage records.
      */

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISkuCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ public interface ISkuCollection
     extends IPartnerComponent<Tuple<String, String>>,
     IEntitySelector<ISku>, IEntireEntityCollectionRetrievalOperations<Sku, ResourceCollection<Sku>>
 {
-    /***
+    /**
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.

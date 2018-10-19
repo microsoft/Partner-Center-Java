@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CategoryOffersCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ public class CategoryOffersCollectionOperations
 	public ResourceCollection<Offer> get() 
 	{
 		IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
-				new PartnerServiceProxy<Offer, ResourceCollection<Offer>>(
+				new PartnerServiceProxy<>(
 					new TypeReference<ResourceCollection<Offer>>()
 					{
 					}, 
@@ -67,7 +67,7 @@ public class CategoryOffersCollectionOperations
 	public ResourceCollection<Offer> get(int offset, int size)
 	{
 		IPartnerServiceProxy<Offer, ResourceCollection<Offer>> partnerServiceProxy =
-				new PartnerServiceProxy<Offer, ResourceCollection<Offer>>(new TypeReference<ResourceCollection<Offer>>()
+				new PartnerServiceProxy<>(new TypeReference<ResourceCollection<Offer>>()
 				{
 				}, 
 				this.getPartner(), 
@@ -78,9 +78,9 @@ public class CategoryOffersCollectionOperations
 		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Country" ),
 																						this.getContext().getItem2() ) );
 		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Offset" ),
-																						Integer.valueOf( offset ).toString() ) );
+																						Integer.toString( offset ) ) );
 		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetOffers" ).getParameters().get( "Size" ),
-																						Integer.valueOf( size ).toString() ) );
+																						Integer.toString( size ) ) );
 
 		return partnerServiceProxy.get();       
 	}

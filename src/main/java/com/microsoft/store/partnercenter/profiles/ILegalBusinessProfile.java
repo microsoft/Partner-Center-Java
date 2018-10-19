@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ILegalBusinessProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,13 +18,13 @@ public interface ILegalBusinessProfile
     extends IPartnerComponentString, IEntityGetOperations<LegalBusinessProfile>,
     IEntityUpdateOperations<LegalBusinessProfile>
 {
-	/***
+	/**
 	 * Retrieves the legal business profile.
 	 * @return The legal business profile.
 	 */
 	LegalBusinessProfile get();
     
-    /***
+    /**
      * Updates the partner's legal business profile.
      * @param legalBusinessProfile The legal business profile information.
      * @return The updated legal business profile.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerUserCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,14 +13,14 @@ import com.microsoft.store.partnercenter.models.SeekBasedResourceCollection;
 import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.users.CustomerUser;
 
-/***
+/**
  * Represents the behavior of the customers users
  */
 public interface ICustomerUserCollection     
 	extends IPartnerComponentString, IEntityCreateOperations<CustomerUser, CustomerUser>,
 	IEntireEntityCollectionRetrievalOperations<CustomerUser, SeekBasedResourceCollection<CustomerUser>>
 {
-    /*** 
+    /** 
      * Gets a single customer user operations.
      * 
      * @param userId The user identifier.
@@ -28,7 +28,7 @@ public interface ICustomerUserCollection
      */
     ICustomerUser byId( String userId );
 
-    /***
+    /**
      * Queries users associated to the customer.
      * - Count queries are not supported by this operation.
      * - You can set page size, filter and sort option.
@@ -40,7 +40,7 @@ public interface ICustomerUserCollection
      */
     SeekBasedResourceCollection<CustomerUser> query( IQuery customerUsersQuery );
 
-    /***
+    /**
      * Create a new user for the customer.
      * 
      * @param newEntity The user object containing details for the new user to be created.
@@ -48,7 +48,7 @@ public interface ICustomerUserCollection
      */
     CustomerUser create( CustomerUser newEntity );
     
-    /***
+    /**
      * Retrieves all the customer users.
      * 
      * @return All the customer users.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProductCollectionByCountryByTargetViewOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ public class ProductCollectionByCountryByTargetViewOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves the operations that can be applied on products that belong to a given country, catalog view and target segment.
      * 
      * @param targetSegment The target segment filter.
@@ -56,7 +56,7 @@ public class ProductCollectionByCountryByTargetViewOperations
         return new ProductCollectionByCountryByTargetViewByTargetSegmentOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), targetSegment);
     }
 
-    /***
+    /**
      * Retrieves all the products in the given country, catalog view and target segment.
      * 
      * @return The products in the given country, catalog view and target segment.
@@ -64,7 +64,7 @@ public class ProductCollectionByCountryByTargetViewOperations
     public ResourceCollection<Product> get()
     {
         IPartnerServiceProxy<Product, ResourceCollection<Product>> partnerServiceProxy =
-            new PartnerServiceProxy<Product, ResourceCollection<Product>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Product>>()
                 {
                 }, 

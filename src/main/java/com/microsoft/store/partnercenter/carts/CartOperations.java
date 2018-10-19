@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CartOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -53,8 +53,9 @@ public class CartOperations
     public CartCheckoutResult checkout() 
     {
         IPartnerServiceProxy<String, CartCheckoutResult> partnerServiceProxy = 
-            new PartnerServiceProxy<String, CartCheckoutResult>(
-                new TypeReference<CartCheckoutResult>() {
+            new PartnerServiceProxy<>(
+                new TypeReference<CartCheckoutResult>() 
+                {
                 }, this.getPartner(),
                 MessageFormat.format(
                         PartnerService.getInstance().getConfiguration().getApis().get("PlaceOrder").getPath(),
@@ -71,8 +72,9 @@ public class CartOperations
     @Override
     public Cart get() 
     {
-        IPartnerServiceProxy<Cart, Cart> partnerServiceProxy = new PartnerServiceProxy<Cart, Cart>(
-                new TypeReference<Cart>() {
+        IPartnerServiceProxy<Cart, Cart> partnerServiceProxy = new PartnerServiceProxy<>(
+                new TypeReference<Cart>() 
+                {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetCart").getPath(),
                         this.getContext().getItem1(), this.getContext().getItem2()));
@@ -90,7 +92,7 @@ public class CartOperations
     @Override
     public Cart put(Cart cart) 
     {
-        IPartnerServiceProxy<Cart, Cart> partnerServiceProxy = new PartnerServiceProxy<Cart, Cart>(
+        IPartnerServiceProxy<Cart, Cart> partnerServiceProxy = new PartnerServiceProxy<>(
                 new TypeReference<Cart>() {
                 }, this.getPartner(),
                 MessageFormat.format(

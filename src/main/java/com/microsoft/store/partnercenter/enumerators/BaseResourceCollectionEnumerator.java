@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BaseResourceCollectionEnumerator.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -138,7 +138,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         {
             // get the next page
             PartnerServiceProxy<T, T> partnerServiceProxy =
-                new PartnerServiceProxy<T, T>( 
+                new PartnerServiceProxy<>( 
                     responseType, 
                     this.getPartner(),
                     this.resourceCollection.getLinks().getNext().getUri().toString() );
@@ -190,7 +190,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         {
             // get the previous page
             PartnerServiceProxy<T, T> partnerServiceProxy =
-                new PartnerServiceProxy<T, T>( responseType, this.getPartner(),
+                new PartnerServiceProxy<>( responseType, this.getPartner(),
                                                this.resourceCollection.getLinks().getPrevious().getUri().toString() );
             // the links already contains the query parameters, let's not replicate them
             partnerServiceProxy.setIsUrlPathAlreadyBuilt( true );

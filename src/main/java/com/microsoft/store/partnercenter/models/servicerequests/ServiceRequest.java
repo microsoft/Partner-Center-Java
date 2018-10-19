@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceRequest.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 

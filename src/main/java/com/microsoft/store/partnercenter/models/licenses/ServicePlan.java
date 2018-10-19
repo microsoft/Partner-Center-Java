@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServicePlan.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ package com.microsoft.store.partnercenter.models.licenses;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ServicePlan {
-    /***
+    /**
      * Gets or sets the localized display name for service plan.
      */
     @JsonProperty( "DisplayName" )
@@ -25,7 +25,7 @@ public class ServicePlan {
     	__DisplayName = value;
     }
 
-    /***
+    /**
      * Gets or sets the service name.
      */
     @JsonProperty( "ServiceName" )
@@ -41,7 +41,7 @@ public class ServicePlan {
     	__ServiceName = value;
     }
 
-    /***
+    /**
      * Gets or sets the service plan id.
      */
     @JsonProperty( "Id" )
@@ -57,7 +57,7 @@ public class ServicePlan {
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets the service plan status of a service plan.
      */
     @JsonProperty( "CapabilityStatus" )
@@ -73,7 +73,7 @@ public class ServicePlan {
     	__CapabilityStatus = value;
     }
 
-    /***
+    /**
      * Gets or sets the target type of a service plan.
      * It can be used to filter service plans which are applicable to user or tenant.
      * For example, if we need to know all service plans applicable to user , we can filter where target type == "User".

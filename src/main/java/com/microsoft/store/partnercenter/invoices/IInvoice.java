@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IInvoice.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,14 +18,14 @@ import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItemType;
 public interface IInvoice
     extends IPartnerComponentString, IEntityGetOperations<Invoice>
 {
-	/***
+	/**
 	 * Gets an invoice document operations.
      * 
      * @return An invoice document operations.
 	 */
     IInvoiceDocuments getDocuments();
 	
-    /***
+    /**
      * Creates an invoice line item collection operations given a billing provider and invoice line item type.
      * 
      * @param billingProvider The billing provider.

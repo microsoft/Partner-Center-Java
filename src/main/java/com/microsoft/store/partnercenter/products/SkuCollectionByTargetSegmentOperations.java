@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SkuCollectionByTargetSegmentOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ public class SkuCollectionByTargetSegmentOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all the skus for the provided product and target segment.
      * 
      * @return The SKUs for the provided product and target segment.
@@ -61,7 +61,7 @@ public class SkuCollectionByTargetSegmentOperations
     public ResourceCollection<Sku> get()
     {
         IPartnerServiceProxy<Sku, ResourceCollection<Sku>> partnerServiceProxy =
-            new PartnerServiceProxy<Sku, ResourceCollection<Sku>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Sku>>()
                 {
                 }, 

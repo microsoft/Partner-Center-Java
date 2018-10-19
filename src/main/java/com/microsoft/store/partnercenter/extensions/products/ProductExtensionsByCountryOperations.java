@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProductExtensionsByCountryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ public class ProductExtensionsByCountryOperations
         }
     }
 
-	/***
+	/**
 	 * Retrieves inventory validation results for the provided country.
 	 * 
 	 * @param checkRequest The request for the inventory check.
@@ -48,7 +48,7 @@ public class ProductExtensionsByCountryOperations
     public List<InventoryItem> checkInventory(InventoryCheckRequest checkRequest)
     {
         IPartnerServiceProxy<InventoryCheckRequest, List<InventoryItem>> partnerServiceProxy = 
-            new PartnerServiceProxy<InventoryCheckRequest, List<InventoryItem>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<List<InventoryItem>>() {
                 }, this.getPartner(),
                 PartnerService.getInstance().getConfiguration().getApis().get("CheckInventory").getPath());

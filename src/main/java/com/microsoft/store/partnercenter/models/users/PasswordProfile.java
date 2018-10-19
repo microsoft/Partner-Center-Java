@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PasswordProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ package com.microsoft.store.partnercenter.models.users;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PasswordProfile {
-    /***
+    /**
      * Gets or sets a value indicating whether force change password on first login is required or not.
      */
 	@JsonProperty("ForceChangePassword")
@@ -26,7 +26,7 @@ public class PasswordProfile {
     }
 
 
-    /***
+    /**
      * Gets or sets the password.
      */
     @JsonProperty("Password")

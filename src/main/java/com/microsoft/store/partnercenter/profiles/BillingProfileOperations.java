@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BillingProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class BillingProfileOperations
     public BillingProfile get()
     {
         IPartnerServiceProxy<BillingProfile, BillingProfile> partnerServiceProxy =
-            new PartnerServiceProxy<BillingProfile, BillingProfile>( new TypeReference<BillingProfile>()
+            new PartnerServiceProxy<>( new TypeReference<BillingProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerBillingProfile" ).getPath(),
                                                         Locale.US ) );

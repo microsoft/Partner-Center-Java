@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IAzureUtilizationCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,13 +15,13 @@ import com.microsoft.store.partnercenter.models.utilizations.AzureUtilizationGra
 import com.microsoft.store.partnercenter.models.utilizations.AzureUtilizationRecord;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Groups behavior related to Azure subscription utilization records.
  */
 public interface IAzureUtilizationCollection
 	extends IPartnerComponent<Tuple<String, String>>
 {
-    /***
+    /**
      * Retrieves utilization records for the Azure subscription.
      * @param startTime The starting time of when the utilization was metered in the billing system.
      * @param endTime The ending time of when the utilization was metered in the billing system.
@@ -39,7 +39,7 @@ public interface IAzureUtilizationCollection
         boolean showDetails,
         int size);
 
-    /***
+    /**
      * Seeks pages of of utilization for resources that belong to an Azure subscription owned by a customer of the partner.
      * @param continuationToken The continuation token from the previous results.
      * @param seekOperation The seek operation to perform. Next is only supported.

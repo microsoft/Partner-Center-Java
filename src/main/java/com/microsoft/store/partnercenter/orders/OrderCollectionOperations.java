@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OrderCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -55,10 +55,10 @@ public class OrderCollectionOperations
             throw new IllegalArgumentException( "Order can't be null" );
         }
         IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<Order, Order>( new TypeReference<Order>()
+            new PartnerServiceProxy<>( new TypeReference<Order>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrders" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.post( newOrder );
     }
 

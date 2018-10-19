@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DirectoryRoleOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,10 +17,9 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  */
 public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, String>> implements IDirectoryRole
 {
-	
     private IUserMemberCollection directoryRoleUserMemberOperations;
 
-	/***
+	/**
 	 * Initializes a new instance of the DirectoryRoleOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance
@@ -44,7 +43,7 @@ public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, 
         this.directoryRoleUserMemberOperations = new UserMemberCollectionOperations( this.getPartner(), customerId, roleId );
 	}
 
-	/***
+	/**
 	 * Gets the current directory role's user member collection operations.
 	 * 
 	 * @return current directory role's user member collection operations
@@ -54,5 +53,4 @@ public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, 
 	{
 		return this.directoryRoleUserMemberOperations;
 	}
-
 }

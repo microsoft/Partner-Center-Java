@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="LicenseWarning.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,11 +8,11 @@ package com.microsoft.store.partnercenter.models.licenses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/***
+/**
  * Model for license warnings.
  */
 public class LicenseWarning {
-    /***
+    /**
      * Gets or sets the warning code.
      */
     @JsonProperty( "Code" )
@@ -30,7 +30,7 @@ public class LicenseWarning {
 
 
 
-    /***
+    /**
      * Gets or sets the warning message.
      */
     @JsonProperty( "Message" )
@@ -47,7 +47,7 @@ public class LicenseWarning {
     }
 
 
-    /***
+    /**
      * Gets or sets the list of service plan names.
      */
     @JsonProperty( "ServicePlans" )

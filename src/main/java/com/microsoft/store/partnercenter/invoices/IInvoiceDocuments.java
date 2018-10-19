@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IInvoiceDocuments.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 
 public interface IInvoiceDocuments extends IPartnerComponentString
 {
-    /***
+    /**
      * Gets an invoice statement operations.
      * 
      * @return An invoice statement operations.

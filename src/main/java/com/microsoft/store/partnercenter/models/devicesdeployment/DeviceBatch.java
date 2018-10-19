@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Device.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,11 +12,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.Link;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
-/***
+/**
  *  Represents a devices batch associated with a customer.
  */
 public class DeviceBatch extends StandardResourceLinks {
-	/***
+	/**
 	 * Gets or sets the devices batch unique identifier.
 	 */
 	@JsonProperty( "Id" )
@@ -32,7 +32,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		__Id = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the name of the tenant who created the batch.
 	 */
 	@JsonProperty( "createdBy" )
@@ -48,7 +48,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		__CreatedBy = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the date the batch was created.
 	 */
 	@JsonProperty( "creationDate" )
@@ -64,7 +64,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		__CreationDate = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the count of devices in the batch.
 	 */
 	@JsonProperty( "devicesCount" )
@@ -80,7 +80,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		__DevicesCount = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the link to the devices under the batch.
 	 */
 	@JsonProperty( "devicesLink" )

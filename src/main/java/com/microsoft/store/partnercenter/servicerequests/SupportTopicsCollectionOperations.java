@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SupportTopicsCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ public class SupportTopicsCollectionOperations
     public ResourceCollection<SupportTopic> get()
     {
         IPartnerServiceProxy<SupportTopic, ResourceCollection<SupportTopic>> partnerServiceProxy =
-            new PartnerServiceProxy<SupportTopic, ResourceCollection<SupportTopic>>( new TypeReference<ResourceCollection<SupportTopic>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<SupportTopic>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestSupportTopics" ).getPath(),
                                                         Locale.US ) );

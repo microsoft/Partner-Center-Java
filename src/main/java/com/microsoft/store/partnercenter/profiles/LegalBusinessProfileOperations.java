@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="LegalBusinessProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class LegalBusinessProfileOperations
     public LegalBusinessProfile get()
     {
         IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
-            new PartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile>( new TypeReference<LegalBusinessProfile>()
+            new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath(),
                                                         Locale.US ) );
@@ -61,7 +61,7 @@ public class LegalBusinessProfileOperations
     public LegalBusinessProfile update( LegalBusinessProfile legalBusinessProfile )
     {
         IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
-            new PartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile>( new TypeReference<LegalBusinessProfile>()
+            new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath(),
                                                         Locale.US ) );

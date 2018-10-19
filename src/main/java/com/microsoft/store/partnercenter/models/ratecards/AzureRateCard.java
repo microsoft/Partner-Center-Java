@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureRateCard.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,12 +8,12 @@ package com.microsoft.store.partnercenter.models.ratecards;
 
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents an offer term tied to an Azure rate card.
  */
 public class AzureRateCard extends ResourceBase 
 {
-    /***
+    /**
      *  Gets or sets the locale for the localizable properties in the rate card meters.
      */
     private String __Locale;
@@ -28,8 +28,8 @@ public class AzureRateCard extends ResourceBase
     	__Locale = value;
     }
 
-    /***
-     *  Gets or sets the currency for the the meter rates.
+    /**
+     *  Gets or sets the currency for the meter rates.
      */
     private String __Currency;
 
@@ -43,7 +43,7 @@ public class AzureRateCard extends ResourceBase
     	__Currency = value;
     }
 
-    /***
+    /**
      * Gets or sets a value indicating whether the tax is included or not.
      */
     private boolean __IsTaxIncluded;
@@ -58,7 +58,7 @@ public class AzureRateCard extends ResourceBase
     	__IsTaxIncluded = value;
     }
 
-    /***
+    /**
      * Gets or sets a collection of meters.
      */
     private Iterable<AzureMeter> __Meters;
@@ -73,7 +73,7 @@ public class AzureRateCard extends ResourceBase
     	__Meters = value;
     }
 
-    /***
+    /**
      * Gets or sets a collection of offer terms.
      */
     private Iterable<AzureOfferTerm> __OfferTerms;

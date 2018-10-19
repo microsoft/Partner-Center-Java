@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ConfigurationPolicyOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -50,7 +50,8 @@ public class ConfigurationPolicyOperations
     @Override
     public ConfigurationPolicy get() 
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy>(
+        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<ConfigurationPolicy>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicy").getPath(),
@@ -59,7 +60,7 @@ public class ConfigurationPolicyOperations
         return partnerServiceProxy.get();
     }
 
-    /***
+    /**
      *  Patches the configuration policy.
      * 
      * @param policy The policy to be updated.
@@ -68,7 +69,7 @@ public class ConfigurationPolicyOperations
     @Override
     public ConfigurationPolicy patch(ConfigurationPolicy policy)
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy>(
+        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<ConfigurationPolicy>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),
@@ -77,12 +78,12 @@ public class ConfigurationPolicyOperations
         return partnerServiceProxy.put(policy);
     }
 
-    /***
+    /**
      *  Deletes the configuration policy.
      */
     public void delete()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy>(
+        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<ConfigurationPolicy>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AvailabilityCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ public class AvailabilityCollectionOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
@@ -64,7 +64,7 @@ public class AvailabilityCollectionOperations
         return new AvailabilityOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), availabilityId, this.getContext().getItem3());
     }
 
-    /***
+    /**
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.
@@ -75,7 +75,7 @@ public class AvailabilityCollectionOperations
         return new AvailabilityCollectionByTargetSegmentOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3(), targetSegment);
     }
 
-    /***
+    /**
      * Retrieves all the availabilities for the provided SKU.
      * 
      * @return The availabilities for the provided SKU.
@@ -83,7 +83,7 @@ public class AvailabilityCollectionOperations
     public ResourceCollection<Availability> get()
     {
         IPartnerServiceProxy<Availability, ResourceCollection<Availability>> partnerServiceProxy =
-            new PartnerServiceProxy<Availability, ResourceCollection<Availability>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Availability>>()
                 {
                 }, 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Offer.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -429,6 +429,6 @@ public class Offer
 
     public void setReselleeQualifications( String[] value )
     {
-    	__ResellerQualifications = value;
+    	__ReselleeQualifications = value;
     }
 }

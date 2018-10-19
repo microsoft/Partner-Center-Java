@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureDataMarketLineItem.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,64 +8,64 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
 {
-    /***
+    /**
      * Gets or sets the units included in the order.
      */
     private int __IncludedQuantity;
 
-    /***
+    /**
      * Gets or sets the quantity consumed above allowed usage.
      */
     private int __OverageQuantity;
 
-    /***
+    /**
      * Gets or sets the price of each unit.
      */
     private int __ListPrice;
 
-    /***
+    /**
      * Gets or sets the price of quantity consumed.
      */
     private int __ConsumptionPrice;
 
-    /***
+    /**
      * Gets or sets the discount on consumption.
      */
     private int __ConsumptionDiscount;
 
-    /***
+    /**
      * Gets or sets the price charged before taxes.
      */
     private int __PretaxCharges;
 
-    /***
+    /**
      * Gets or sets the amount of tax charged.
      */
     private int __TaxAmount;
 
-    /***
+    /**
      * Gets or sets the total charges after tax.
      * Pretax Charges + Tax Amount
      */
     
     private int __PostTaxTotal;
 
-    /***
+    /**
      * Gets or sets the currency associated with the prices.
      */
     private String __CurrencyCode;
 
-    /***
+    /**
      * Gets or sets the effective price before taxes.
      */
     private int __PretaxEffectiveRate;
 
-    /***
+    /**
      * Gets or sets the effective price after taxes.
      */
     private int __PostTaxEffectiveRate;
 
-    /***
+    /**
      * Gets or sets the charge type. Example: Assess Usage Fee For Current Cycle.
      */
     private String __ChargeType;
@@ -238,7 +238,7 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
 		this.__ChargeType = __ChargeType;
 	}
 
-	/***
+	/**
      * Returns the type of invoice line item
      * 
      * @return The type of invoice line item.

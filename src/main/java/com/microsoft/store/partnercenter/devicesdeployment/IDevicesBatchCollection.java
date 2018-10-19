@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDevicesBatchCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,14 +15,14 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatch;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatchCreationRequest;
 
-/***
+/**
  * Represents the operations that can be done on the partner's devices batches.
  */
 public interface IDevicesBatchCollection 
 	extends IPartnerComponentString,
 	IEntireEntityCollectionRetrievalOperations<DeviceBatch, ResourceCollection<DeviceBatch>>, IEntitySelector<IDevicesBatch>, IEntityCreateOperations<DeviceBatchCreationRequest, String>
 {
-	/***
+	/**
 	 * Retrieves a specific customer devices batch behavior.
 	 * 
 	 * @param deviceBatchId The devices batch id
@@ -30,7 +30,7 @@ public interface IDevicesBatchCollection
 	 */
     IDevicesBatch byId( String deviceBatchId );
 
-    /***
+    /**
      * Retrieves all devices batches.
      * 
      * @return All of the device batches.

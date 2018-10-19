@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureUtilizationRecord.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,12 +12,12 @@ import org.joda.time.DateTime;
 
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * A utilization record for an Azure subscription resource.
  */
 public class AzureUtilizationRecord extends ResourceBase
 {
-	/***
+	/**
 	 * Gets or sets the start of the usage aggregation time range.
 	 * The response is grouped by the time of consumption (when the resource was actually used VS. when was it reported to the billing system).
 	 */
@@ -31,7 +31,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__UsageStartTime = usageStartTime;
 	}
 
-    /***
+    /**
      * Gets or sets the end of the usage aggregation time range.
      * The response is grouped by the time of consumption (when the resource was actually used VS. when was it reported to the billing system).
      */
@@ -45,7 +45,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__UsageEndTime = usageEndTime;
 	}
 
-    /***
+    /**
      * Gets or sets the Azure resource which was used.
      */
 	private AzureResource __Resource;
@@ -58,7 +58,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__Resource = resource;
 	}
 
-    /***
+    /**
      * Gets or sets the quantity consumed of the Azure resource.
      */
 	private double __Quantity;
@@ -71,7 +71,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__Quantity = quantity;
 	}
 
-    /***
+    /**
      * Gets or sets the type of quantity (hours, bytes, etc...).
      */
 	private String __Unit;
@@ -84,7 +84,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__Unit = unit;
 	}
 
-    /***
+    /**
      * Gets or sets the key-value pairs of instance-level details.
      */
 	private Map<String, String> __InfoFields;
@@ -97,7 +97,7 @@ public class AzureUtilizationRecord extends ResourceBase
 		this.__InfoFields = infoFields;
 	}
 
-	/***
+	/**
      * Gets or sets the instance details.
      */
 	private AzureInstanceData __InstanceData;

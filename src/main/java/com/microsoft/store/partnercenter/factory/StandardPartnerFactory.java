@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="StandardPartnerFactory.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -27,5 +27,4 @@ public class StandardPartnerFactory
     {
         return new AggregatePartnerOperations( credentials );
     }
-
 }

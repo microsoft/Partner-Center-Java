@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDirectoryRole.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
  */
 public interface IDirectoryRole extends IPartnerComponent<Tuple<String, String>>
 {
-    /***
+    /**
      * Gets the current directory role's user member collection operations.
      * 
      * @return The current directory role's user member collection operations

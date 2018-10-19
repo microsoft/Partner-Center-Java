@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="DebugWindowLogger.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+// <copyright file="SystemOutLogger.java" company="Microsoft">
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -44,5 +44,4 @@ public class SystemOutLogger
     {
         System.out.println( "Default logger ERROR: " + message );
     }
-
 }

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionMonthlyUsageRecordCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
     public ResourceCollection<SubscriptionMonthlyUsageRecord> get()
     {
         PartnerServiceProxy<SubscriptionMonthlyUsageRecord, ResourceCollection<SubscriptionMonthlyUsageRecord>> partnerServiceProxy =
-            new PartnerServiceProxy<SubscriptionMonthlyUsageRecord, ResourceCollection<SubscriptionMonthlyUsageRecord>>( new TypeReference<ResourceCollection<SubscriptionMonthlyUsageRecord>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<SubscriptionMonthlyUsageRecord>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscriptionUsageRecords" ).getPath(),
                                                         this.getContext(),

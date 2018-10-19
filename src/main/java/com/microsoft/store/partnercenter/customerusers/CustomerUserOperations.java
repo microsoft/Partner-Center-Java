@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerUserOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customerusers;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -66,10 +65,10 @@ public class CustomerUserOperations
 	@Override
 	public CustomerUser get() {
         IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-                new PartnerServiceProxy<CustomerUser, CustomerUser>( new TypeReference<CustomerUser>()
+                new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUserDetails" ).getPath(),
-                                                            this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+                                                            this.getContext().getItem1(), this.getContext().getItem2() ) );
         return partnerServiceProxy.get();
 	}
 
@@ -79,10 +78,10 @@ public class CustomerUserOperations
 	@Override
 	public void delete() {
 		IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-	            new PartnerServiceProxy<CustomerUser, CustomerUser>( new TypeReference<CustomerUser>()
+	            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
 	            {
 	            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "DeleteCustomerUser" ).getPath(),
-	                                                        this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+	                                                        this.getContext().getItem1(), this.getContext().getItem2() ) );
 	    partnerServiceProxy.delete();
 	}
 
@@ -99,10 +98,10 @@ public class CustomerUserOperations
             throw new IllegalArgumentException( "customerUser null" );
         }
         PartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerUser, CustomerUser>( new TypeReference<CustomerUser>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerUser" ).getPath(),
-            												this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+            												this.getContext().getItem1(), this.getContext().getItem2() ) );
         return partnerServiceProxy.patch( customerUser );
 	}
 	

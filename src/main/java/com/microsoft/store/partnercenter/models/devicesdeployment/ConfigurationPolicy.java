@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ConfigurationPolicy.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,11 +13,11 @@ import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents a configuration policy associated with a customer.
  */
 public class ConfigurationPolicy extends ResourceBase {
-	/***
+	/**
 	 * Gets or sets the policy unique identifier.
 	 */
 	@JsonProperty( "id" )
@@ -33,7 +33,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__Id = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the name associated with the policy.
 	 */
 	@JsonProperty( "name" )
@@ -49,7 +49,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__Name = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the category of the policy.
 	 */
 	@JsonProperty( "category" )
@@ -65,7 +65,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__Category = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the description for a policy.
 	 */
 	@JsonProperty( "description" )
@@ -81,7 +81,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__Description = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the number of devices assigned to a policy.
 	 */
 	@JsonProperty( "devicesAssignedCount" )
@@ -97,7 +97,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__DevicesAssignedCount = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the settings for a policy.
 	 */
 	@JsonProperty( "policySettings" )
@@ -113,7 +113,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__PolicySettings = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the date the policy was created.
 	 */
 	@JsonProperty( "createdDate" )
@@ -129,7 +129,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		__CreatedDate = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the date the policy was modified.
 	 */
 	@JsonProperty( "lastModifiedDate" )

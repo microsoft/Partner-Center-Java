@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDomainCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 
 public interface IDomainCollection extends IPartnerComponentString
 {
-    /***
+    /**
      * Obtains a specific domain behavior.
      * 
      * @param domain The domain.

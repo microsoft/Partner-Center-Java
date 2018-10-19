@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureMeter.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,12 +12,12 @@ import org.joda.time.DateTime;
 
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents a record of operation performed by a 
  * Partner user or application
  */
 public class AzureMeter extends ResourceBase {
-    /***
+    /**
      * Gets or sets the meter unique identifier.
      */
     private String __Id;
@@ -32,7 +32,7 @@ public class AzureMeter extends ResourceBase {
     	__Id = value;
     }
 
-    /***
+    /**
      *  Gets or sets the name of meter.
      */
     private String __Name;
@@ -47,7 +47,7 @@ public class AzureMeter extends ResourceBase {
     	__Name = value;
     }
 
-    /***
+    /**
      * Gets or sets the meter rates. 
      * The dictionary key is the meter quantity and the value is the meter rate.
      */
@@ -63,7 +63,7 @@ public class AzureMeter extends ResourceBase {
     	__Rates = value;
     }
 
-    /***
+    /**
      * Gets or sets the azure meter tags.
      */
     private Iterable<String> __Tags;
@@ -78,7 +78,7 @@ public class AzureMeter extends ResourceBase {
     	__Tags = value;
     }
 
-    /***
+    /**
      * Gets or sets the category of the meter.
      * Example: Storage.
      */
@@ -94,7 +94,7 @@ public class AzureMeter extends ResourceBase {
     	__Category = value;
     }
 
-    /***
+    /**
      * Gets or sets the subcategory of the meter.
      * Example: SKU.
      */
@@ -110,7 +110,7 @@ public class AzureMeter extends ResourceBase {
     	__Subcategory = value;
     }
 
-    /***
+    /**
      * Gets or sets the region.
      */
     private String __Region;
@@ -125,7 +125,7 @@ public class AzureMeter extends ResourceBase {
     	__Region = value;
     }
 
-    /***
+    /**
      * Gets or sets the base unit for the rates.
      */
     private String __Unit;
@@ -140,7 +140,7 @@ public class AzureMeter extends ResourceBase {
     	__Unit = value;
     }
 
-    /***
+    /**
      * Gets or sets the included quantity which is free of charge.
      */
     private int __IncludedQuantity;
@@ -155,7 +155,7 @@ public class AzureMeter extends ResourceBase {
     	__IncludedQuantity = value;
     }
 
-    /***
+    /**
      * Gets or sets the date this meter is in effect.
      */
     private DateTime __EffectiveDate;

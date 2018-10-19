@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerAvailabilityCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ public class CustomerServiceCostsCollectionOperations
         }
     }
 
-    /***
+    /**
      * Obtains the service cost operations by billing period.
      * 
      * @param billingPeriod The billing period.

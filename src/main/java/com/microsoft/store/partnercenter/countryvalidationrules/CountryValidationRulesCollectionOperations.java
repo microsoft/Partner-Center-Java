@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CountryValidationRulesCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ public class CountryValidationRulesCollectionOperations
 	extends BasePartnerComponentString
 	implements ICountryValidationRulesCollection 
 {
-	/***
+	/**
 	 * Initializes a new instance of the CountryValidationRulesCollectionOperations class.
 	 * @param rootPartnerOperations The root partner operation instance.
 	 */
@@ -26,7 +26,7 @@ public class CountryValidationRulesCollectionOperations
 		super(rootPartnerOperations);
 	}
 
-	/***
+	/**
 	 * Obtains a specific behavior for country validation rules.
 	 * 
 	 * @param country The country

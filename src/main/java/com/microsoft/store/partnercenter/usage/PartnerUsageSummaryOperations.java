@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerUsageSummaryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class PartnerUsageSummaryOperations
     public PartnerUsageSummary get()
     {
         IPartnerServiceProxy<PartnerUsageSummary, PartnerUsageSummary> partnerServiceProxy =
-            new PartnerServiceProxy<PartnerUsageSummary, PartnerUsageSummary>( new TypeReference<PartnerUsageSummary>()
+            new PartnerServiceProxy<>( new TypeReference<PartnerUsageSummary>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerUsageSummary" ).getPath(),
                                                         Locale.US ) );

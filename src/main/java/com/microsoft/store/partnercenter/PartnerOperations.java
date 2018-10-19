@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -88,7 +88,7 @@ public class PartnerOperations
 	 */
 	private IPartnerServiceRequestCollection serviceRequests;
 	
-	/***
+	/**
 	 * The service incidents operations.
 	 */
 	private IServiceIncidentCollection serviceIncidents;
@@ -113,37 +113,37 @@ public class PartnerOperations
 	 */
 	private IAuditRecordsCollection auditRecords;
 	
-	/***
+	/**
 	 * The rate cards collection operations.
 	 */
 	private IRateCardCollection rateCards;
 
-	/***
+	/**
 	 * The analytics collection operations.
 	 */
 	private IPartnerAnalyticsCollection analytics;
 
-	/***
+	/**
 	 * The extensions operations available to the partner.
 	 */
 	private IExtensions extensions; 
 
-	/***
+	/**
 	 * The products operations available to the partner.
 	 */
 	private IProductCollection products; 
 
-	/***
+	/**
 	 * The relationship collection operations.
 	 */
 	private IRelationshipCollection relationships;
 
-	/***
+	/**
 	 * The validation operations available to the partner.
 	 */
 	private IValidationOperations validations;
 
-	/***
+	/**
 	 * The agreement metadata collection operations.
 	 */
 	private IAgreementDetailsCollection agreements;
@@ -171,31 +171,31 @@ public class PartnerOperations
 	/**
 	 * Gets the partner credentials.
 	 */
-	private IPartnerCredentials __Credentials;
+	private IPartnerCredentials credentials;
 
 	public IPartnerCredentials getCredentials()
 	{
-		return __Credentials;
+		return credentials;
 	}
 
 	private void setCredentials( IPartnerCredentials value )
 	{
-		__Credentials = value;
+		credentials = value;
 	}
 
 	/**
 	 * Gets the partner context.
 	 */
-	private IRequestContext __RequestContext;
+	private IRequestContext requestContext;
 
 	public IRequestContext getRequestContext()
 	{
-		return __RequestContext;
+		return requestContext;
 	}
 
 	private void setRequestContext( IRequestContext value )
 	{
-		__RequestContext = value;
+		requestContext = value;
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class PartnerOperations
 		return this.analytics;
 	}
 	
-	/***
+	/**
 	 * Gets the extensions operations available to the partner.
 	 */
 	public IExtensions getExtensions()
@@ -377,7 +377,7 @@ public class PartnerOperations
 		return extensions;
 	}
 
-	/***
+	/**
 	 * Gets the product operations available to the partner.
 	 */
 	public IProductCollection getProducts()
@@ -390,7 +390,7 @@ public class PartnerOperations
 		return this.products;
 	}
 
-	/***
+	/**
      * Gets the relationship collection operations available to the partner.
      */    
 	public IRelationshipCollection getRelationships()
@@ -403,7 +403,7 @@ public class PartnerOperations
 		return this.relationships;
 	}
 
-	/***
+	/**
      * Gets the validation operations available to the partner.
      */    
 	public IValidationOperations getValidations()
@@ -416,7 +416,7 @@ public class PartnerOperations
 		return this.validations;
 	}
 
-	/***
+	/**
 	 * Gets the agreement metadata operations.
 	 */
 	@Override

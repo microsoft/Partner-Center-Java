@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ConfigurationPolicyCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ public class ConfigurationPolicyCollectionOperations
         }
     }
 
-	/***
+	/**
 	 * Retrieves a specific customer's devices batch upload status behavior.
 	 * 
 	 * @param policyId The policy identifier.
@@ -53,7 +53,7 @@ public class ConfigurationPolicyCollectionOperations
         return new ConfigurationPolicyOperations(this.getPartner(), this.getContext(), policyId);
     }
 
-    /***
+    /**
 	 * Creates a new configuration policy.
 	 * 
      * @param newPolicy The new configuration policy information.
@@ -62,7 +62,8 @@ public class ConfigurationPolicyCollectionOperations
     @Override
     public ConfigurationPolicy create(ConfigurationPolicy newPolicy)
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy>(
+        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<ConfigurationPolicy>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("CreateConfigurationPolicy").getPath(),
@@ -71,7 +72,7 @@ public class ConfigurationPolicyCollectionOperations
         return partnerServiceProxy.post(newPolicy);
     }
 
-    /***
+    /**
 	 * Retrieves all configuration policies.
 	 * 
 	 * @return The collection of configuration policies.
@@ -79,7 +80,7 @@ public class ConfigurationPolicyCollectionOperations
     @Override
     public ResourceCollection<ConfigurationPolicy> get()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>>(
+        IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>> partnerServiceProxy = new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<ConfigurationPolicy>>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),

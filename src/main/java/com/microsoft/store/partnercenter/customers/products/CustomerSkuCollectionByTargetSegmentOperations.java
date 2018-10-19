@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerSkuCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ public class CustomerSkuCollectionByTargetSegmentOperations
     public ResourceCollection<Sku> get()
     {
         IPartnerServiceProxy<Sku, ResourceCollection<Sku>> partnerServiceProxy =
-        new PartnerServiceProxy<Sku, ResourceCollection<Sku>>( new TypeReference<ResourceCollection<Sku>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Sku>>()
         {
         }, 
         this.getPartner(), 

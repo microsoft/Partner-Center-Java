@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IAuditRecordsCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,13 +13,13 @@ import com.microsoft.store.partnercenter.models.SeekBasedResourceCollection;
 import com.microsoft.store.partnercenter.models.auditing.AuditRecord;
 import com.microsoft.store.partnercenter.models.query.IQuery;
 
-/***
+/**
  * Represents the operations that can be done on partners audit collection.
  */
 public interface IAuditRecordsCollection 
 	extends IPartnerComponentString
 {
-    /***
+    /**
      * Queries audit records associated to the partner.
      * The following queries are supported:
      * - Specify the number of audit record to return.

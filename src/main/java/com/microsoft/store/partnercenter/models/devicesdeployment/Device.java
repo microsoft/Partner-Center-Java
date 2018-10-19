@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Device.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,11 +14,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
-/***
+/**
  * Represents a device associated with a customer.
  */
 public class Device extends ResourceBase {
-	/***
+	/**
 	 * Gets or sets the device unique identifier.
 	 */
 	@JsonProperty( "Id" )
@@ -34,7 +34,7 @@ public class Device extends ResourceBase {
 		__Id = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the serial number associated with a device.
 	 */
 	@JsonProperty( "serialNumber" )
@@ -50,7 +50,7 @@ public class Device extends ResourceBase {
 		__SerialNumber = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the product key uniquely associated with a device.
 	 */
 	@JsonProperty( "productKey" )
@@ -66,7 +66,7 @@ public class Device extends ResourceBase {
 		__ProductKey = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the hardware hash associated with a device.
 	 */
 	@JsonProperty( "hardwareHash" )
@@ -82,7 +82,7 @@ public class Device extends ResourceBase {
 		__HardwareHash = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the device model name associated with the device.
 	 */
 	@JsonProperty( "modelName" )
@@ -98,7 +98,7 @@ public class Device extends ResourceBase {
 		__ModelName = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the OEM manufacturer name.
 	 */
 	@JsonProperty( "oemManufacturerName" )
@@ -114,7 +114,7 @@ public class Device extends ResourceBase {
 		__OemManufacturerName = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the list of policies assigned to a device.
 	 */
 	@JsonProperty( "policies" )
@@ -130,7 +130,7 @@ public class Device extends ResourceBase {
 		__Policies = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the UTC date the device was uploaded.
 	 */
 	@JsonProperty( "uploadedDate" )
@@ -146,7 +146,7 @@ public class Device extends ResourceBase {
 		__UploadedDate = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the list of HTTP methods allowed on a device as GET, PATCH, DELETE.
 	 */
 	@JsonProperty( "allowedOperations" )

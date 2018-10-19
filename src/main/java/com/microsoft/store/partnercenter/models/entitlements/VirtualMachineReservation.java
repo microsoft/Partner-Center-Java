@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="VirtualMachineReservation.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -24,127 +24,127 @@ public class VirtualMachineReservation
      * Gets or sets display name.
      */
     @JsonProperty( "displayName" )
-    private String __DisplayName;
+    private String displayName;
 
     public String getDisplayName()
     {
-        return __DisplayName;
+        return displayName;
     }
 
     public void setDisplayName( String value )
     {
-        __DisplayName = value;
+        displayName = value;
     }
 
     /**
      * Gets or sets display name.
      */
     @JsonProperty( "reservationId" )
-    private String __ReservationId;
+    private String reservationId;
 
     public String getReservationId()
     {
-        return __ReservationId;
+        return reservationId;
     }
 
     public void setReservationId( String value )
     {
-        __ReservationId = value;
+        reservationId = value;
     }
 
     /**
      * Gets or sets applied scopes.
      */
     @JsonProperty( "appliedScopes" )
-    private Iterator<String> __AppliedScopes;
+    private Iterator<String> appliedScopes;
 
     public Iterator<String> getAppliedScopes()
     {
-        return __AppliedScopes;
+        return appliedScopes;
     }
 
     public void setAppliedScopes( Iterator<String> value )
     {
-        __AppliedScopes = value;
+        appliedScopes = value;
     }
 
     /**
      * Gets or sets scope type.
      */
     @JsonProperty( "scopeType" )
-    private String __ScopeType;
+    private String scopeType;
 
     public String getScopeType()
     {
-        return __ScopeType;
+        return scopeType;
     }
 
     public void setScopeType( String value )
     {
-        __ScopeType = value;
+        scopeType = value;
     }
 
     /**
      * Gets or sets quantity.
      */
     @JsonProperty( "quantity" )
-    private Integer __Quantity;
+    private Integer quantity;
 
     public Integer getQuantity()
     {
-        return __Quantity;
+        return quantity;
     }
 
     public void setQuantity( Integer value )
     {
-        __Quantity = value;
+        quantity = value;
     }
 
     /**
      * Gets or sets expiry date time.
      */
     @JsonProperty( "expiryDateTime" )
-    private DateTime __ExpiryDateTime;
+    private DateTime expiryDateTime;
 
     public DateTime getExpiryDateTime()
     {
-        return __ExpiryDateTime;
+        return expiryDateTime;
     }
 
     public void setExpiryDateTime( DateTime value )
     {
-        __ExpiryDateTime = value;
+        expiryDateTime = value;
     }
 
     /**
      * Gets or sets effective date time.
      */
     @JsonProperty( "effectiveDateTime" )
-    private DateTime __EffectiveDateTime;
+    private DateTime effectiveDateTime;
 
     public DateTime getEffectiveDateTime()
     {
-        return __ExpiryDateTime;
+        return effectiveDateTime;
     }
 
     public void setEffectiveDateTime( DateTime value )
     {
-        __ExpiryDateTime = value;
+        effectiveDateTime = value;
     }
 
     /**
      * Gets or sets effective date time.
      */
     @JsonProperty( "provisioningState" )
-    private String __ProvisioningState;
+    private String provisioningState;
 
     public String getProvisioningState()
     {
-        return __ProvisioningState;
+        return provisioningState;
     }
 
     public void setProvisioningState( String value )
     {
-        __ProvisioningState = value;
+        provisioningState = value;
     }
 }

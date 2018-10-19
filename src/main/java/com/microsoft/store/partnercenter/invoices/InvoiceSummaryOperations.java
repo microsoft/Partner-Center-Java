@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="InvoiceSummaryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.invoices;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -22,7 +21,7 @@ public class InvoiceSummaryOperations
 	implements IInvoiceSummary
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the InvoiceSummaryOperations class.
 	 * 
      * @param rootPartnerOperations The root partner operations instance.
@@ -32,17 +31,17 @@ public class InvoiceSummaryOperations
 		super(rootPartnerOperations);
 	}
 
-	/***
+	/**
 	 * Retrieves summary of the partner's billing information.
 	 */
 	@Override
 	public InvoiceSummary get()
 	{
         IPartnerServiceProxy<InvoiceSummary, InvoiceSummary> partnerServiceProxy =
-                new PartnerServiceProxy<InvoiceSummary, InvoiceSummary>( new TypeReference<InvoiceSummary>()
+                new PartnerServiceProxy<>( new TypeReference<InvoiceSummary>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceSummary" ).getPath(),
-                                                            this.getContext(), Locale.US ) );
+                                                            this.getContext() ) );
 
         return partnerServiceProxy.get();
 	}

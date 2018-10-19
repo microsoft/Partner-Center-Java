@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DomainOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 public class DomainOperations extends BasePartnerComponentString implements IDomain
  {
-	/***
+	/**
 	 * Initializes a new instance of the DomainOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance
@@ -35,7 +35,7 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 		}
 	}
 
-	/***
+	/**
 	 * Checks the availability of a domain.
 	 * 
 	 * @return A boolean value to indicate if the domain is available.
@@ -44,7 +44,7 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	public boolean exists()
     {
         IPartnerServiceProxy<String, String> partnerServiceProxy =
-                new PartnerServiceProxy<String, String>( new TypeReference<String>()
+                new PartnerServiceProxy<>( new TypeReference<String>()
                 {
 				}, 
 				this.getPartner(), 

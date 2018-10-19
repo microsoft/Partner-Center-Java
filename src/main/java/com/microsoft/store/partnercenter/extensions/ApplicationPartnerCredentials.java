@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ApplicationPartnerCredentials.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ public class ApplicationPartnerCredentials
         PartnerService.getInstance().setRefreshCredentialsHandler( this );
     }
 
-    private String __ActiveDirectoryAuthority;
+    private String activeDirectoryAuthority;
 
     /**
      * Gets the Active Directory authentication endpoint.
@@ -105,7 +105,7 @@ public class ApplicationPartnerCredentials
      */
     public String getActiveDirectoryAuthority()
     {
-        return __ActiveDirectoryAuthority;
+        return activeDirectoryAuthority;
     }
 
     /**
@@ -115,10 +115,10 @@ public class ApplicationPartnerCredentials
      */
     public void setActiveDirectoryAuthority( String value )
     {
-        __ActiveDirectoryAuthority = value;
+        activeDirectoryAuthority = value;
     }
 
-    private String __GraphApiEndpoint;
+    private String graphApiEndpoint;
 
     /**
      * Gets the Graph API endpoint.
@@ -127,7 +127,7 @@ public class ApplicationPartnerCredentials
      */
     public String getGraphApiEndpoint()
     {
-        return __GraphApiEndpoint;
+        return graphApiEndpoint;
     }
 
     /**
@@ -137,7 +137,7 @@ public class ApplicationPartnerCredentials
      */
     public void setGraphApiEndpoint( String value )
     {
-        __GraphApiEndpoint = value;
+        graphApiEndpoint = value;
     }
 
     /**
@@ -159,7 +159,7 @@ public class ApplicationPartnerCredentials
             AuthenticationContext authenticationContext =
                 new AuthenticationContext( activeDirectoryEndpoint.toString(), false, service );
 
-                if ( null != requestContext )
+            if ( null != requestContext )
             {
                 authenticationContext.setCorrelationId( requestContext.getCorrelationId().toString() );
             }
@@ -177,7 +177,10 @@ public class ApplicationPartnerCredentials
         }
         finally
         {
-            service.shutdown();
+            if(service != null)
+            {
+               service.shutdown();
+            }
         }
 
         this.setAADToken( new AuthenticationToken( authResult.getAccessToken(), new DateTime( authResult.getExpiresOnDate() ) ) );

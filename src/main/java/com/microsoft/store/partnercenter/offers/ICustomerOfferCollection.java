@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerOfferCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,14 +14,14 @@ import com.microsoft.store.partnercenter.models.offers.Offer;
 public interface ICustomerOfferCollection
 	extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<Offer, ResourceCollection<Offer>>
 {
-    /***
+    /**
      * Retrieves all the offers for the provided Customer.
      * 
      * @return The offers for the provided customer.
      */
     ResourceCollection<Offer> get();
     
-    /***
+    /**
      *  Retrieves a subset of offers for the provided customer.
      *  
 	 *  @param offset The starting index.

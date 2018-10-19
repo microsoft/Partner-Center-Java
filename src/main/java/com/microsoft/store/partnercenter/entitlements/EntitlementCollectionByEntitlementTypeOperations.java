@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="EntitlementCollectionByEntitlementTypeOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ public class EntitlementCollectionByEntitlementTypeOperations
         }
     }
 
-    /***
+    /**
      * Retrieves entitlement collection with the given entitlement type.
      * 
      * @return The entitlement collection with the given entitlement type.
@@ -58,7 +58,8 @@ public class EntitlementCollectionByEntitlementTypeOperations
     @Override
     public ResourceCollection<Entitlement> get()
     {
-        IPartnerServiceProxy<Entitlement, ResourceCollection<Entitlement>> partnerServiceProxy = new PartnerServiceProxy<Entitlement, ResourceCollection<Entitlement>>(
+        IPartnerServiceProxy<Entitlement, ResourceCollection<Entitlement>> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Entitlement>>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetEntitlements").getPath(),

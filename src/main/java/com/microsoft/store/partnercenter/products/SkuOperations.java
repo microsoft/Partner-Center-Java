@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SkuOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -27,12 +27,12 @@ public class SkuOperations
     extends BasePartnerComponent<TripletTuple<String, String, String>> 
     implements ISku 
 {
-    /***
+    /**
      * The availability operations.
      */  
     private IAvailabilityCollection availabilities;
    
-    /***
+    /**
      * The SKU download options operations.
      */  
     private ISkuDownloadOptions downloadOptions; 
@@ -60,7 +60,7 @@ public class SkuOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves the operations for the current SKU's availabilities.
      * 
      * @return The operations for the current SKU's availabilities.
@@ -75,7 +75,7 @@ public class SkuOperations
         return availabilities;
     }
 
-    /***
+    /**
      * Retrieves the operations for the current SKU's download options.
      * 
      * @return The operations for the current SKU's download options.
@@ -90,14 +90,14 @@ public class SkuOperations
         return downloadOptions;
     }
 
-    /***
+    /**
      * Retrieves the SKU information.
      * 
      * @return The SKUs information.
      */
     public Sku get()
     {
-        IPartnerServiceProxy<Sku, Sku> partnerServiceProxy = new PartnerServiceProxy<Sku, Sku>(
+        IPartnerServiceProxy<Sku, Sku> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<Sku>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetSku").getPath(),

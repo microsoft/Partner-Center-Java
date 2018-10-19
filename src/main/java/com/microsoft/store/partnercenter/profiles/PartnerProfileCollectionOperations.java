@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerProfileCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -115,5 +115,4 @@ public class PartnerProfileCollectionOperations
         }
         return this.partnerBillingProfile;
     }
-
 }

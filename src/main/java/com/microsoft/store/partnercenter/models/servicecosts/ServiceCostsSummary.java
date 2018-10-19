@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostLineItem.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ import org.joda.time.DateTime;
 public class ServiceCostsSummary 
     extends ResourceBaseWithLinks<ServiceCostsSummaryLinks> 
 {
-    /***
+    /**
      * Gets or sets the start of the billing period.
      */
 	@JsonProperty( "billingStartDate" )
@@ -33,7 +33,7 @@ public class ServiceCostsSummary
     	__BillingStartDate = value;
     }
 
-    /***
+    /**
      * Gets or sets the end of the billing period.
      */
 	@JsonProperty( "billingEndDate" )
@@ -49,7 +49,7 @@ public class ServiceCostsSummary
     	__BillingEndDate = value;
     }
 
-    /***
+    /**
      * Gets or sets the total charge for this item before taxes.
      */
 	@JsonProperty( "pretaxTotal" )
@@ -65,7 +65,7 @@ public class ServiceCostsSummary
     	__PretaxTotal = value;
     }
 
-    /***
+    /**
      * Gets or sets the tax incurred.
      */
 	@JsonProperty( "tax" )
@@ -81,7 +81,7 @@ public class ServiceCostsSummary
     	__Tax = value;
     }
 
-    /***
+    /**
      * Gets or sets the total for this item inclusive of taxes.
      */
 	@JsonProperty( "afterTaxTotal" )
@@ -97,7 +97,7 @@ public class ServiceCostsSummary
     	__AfterTaxTotal = value;
     }
 
-    /***
+    /**
      * Gets or sets the currency code for the costs.
      */
 	@JsonProperty( "currencyCode" )
@@ -113,7 +113,7 @@ public class ServiceCostsSummary
     	__CurrencyCode = value;
     }
 
-    /***
+    /**
      * Gets or sets the currency symbol for the costs.
      */
 	@JsonProperty( "currencySymbol" )
@@ -129,7 +129,7 @@ public class ServiceCostsSummary
     	__CurrencySymbol = value;
     }
 
-    /***
+    /**
      * Gets or sets The customer identifier.
      */
 	@JsonProperty( "customerId" )

@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerUsageSummaryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.usage;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -34,11 +33,11 @@ public class CustomerUsageSummaryOperations
     public CustomerUsageSummaryOperations( IPartner rootPartnerOperations, String customerId )
     {
         super( rootPartnerOperations, customerId );
+
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set." );
         }
-
     }
 
     /**
@@ -50,12 +49,11 @@ public class CustomerUsageSummaryOperations
     public CustomerUsageSummary get()
     {
         IPartnerServiceProxy<CustomerUsageSummary, CustomerUsageSummary> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerUsageSummary, CustomerUsageSummary>( new TypeReference<CustomerUsageSummary>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerUsageSummary>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsageSummary" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
 
         return partnerServiceProxy.get();
     }
-
 }

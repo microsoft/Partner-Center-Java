@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerServiceRequestCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ public class PartnerServiceRequestCollectionOperations
         }
 
         PartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>>( new TypeReference<ResourceCollection<ServiceRequest>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceRequest>>()
             {
             }, this.getPartner(), PartnerService.getInstance().getConfiguration().getApis().get( "SearchPartnerServiceRequests" ).getPath() );
 
@@ -107,7 +107,7 @@ public class PartnerServiceRequestCollectionOperations
             // if the query specifies a page size, validate it and add it to the request
             ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
                                                MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                     MIN_PAGE_SIZE, MAX_PAGE_SIZE, Locale.US ) );
+                                                                     MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
             partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchPartnerServiceRequests" ).getParameters().get( "Size" ),
                                                                                           String.valueOf( serviceRequestsQuery.getPageSize() ) ) );
             partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchPartnerServiceRequests" ).getParameters().get( "Offset" ),
@@ -145,7 +145,7 @@ public class PartnerServiceRequestCollectionOperations
     public ResourceCollection<ServiceRequest> get()
     {
         IPartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>>( new TypeReference<ResourceCollection<ServiceRequest>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceRequest>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAllServiceRequestsPartner" ).getPath(),
                                                         Locale.US ) );
@@ -173,7 +173,7 @@ public class PartnerServiceRequestCollectionOperations
         }
 
         IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ServiceRequest>( new TypeReference<ServiceRequest>()
+            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
             {
             }, 
             this.getPartner(), 

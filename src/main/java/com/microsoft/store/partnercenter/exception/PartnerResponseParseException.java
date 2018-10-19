@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerResponseParseException.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.exception;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
@@ -92,7 +91,7 @@ public class PartnerResponseParseException
     public String toString()
     {
         return MessageFormat.format( "PartnerApiParsingException: Response: {0}, Base Description: {1}",
-                                     this.getResponse().toString(), super.toString(), Locale.US );
+                                     this.getResponse().toString(), super.toString() );
 
     }
 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DomainCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ public class DomainCollectionOperations
 	implements IDomainCollection
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the DomainCollectionOperations class
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
@@ -24,7 +24,7 @@ public class DomainCollectionOperations
 		super(rootPartnerOperations);
 	}
 
-	/***
+	/**
 	 * Obtains a specific domain behavior.
 	 * 
 	 * @param domain The domain.

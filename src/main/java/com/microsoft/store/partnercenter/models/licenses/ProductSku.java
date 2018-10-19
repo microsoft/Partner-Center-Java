@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProductSku.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,11 +8,11 @@ package com.microsoft.store.partnercenter.models.licenses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/***
+/**
  * Model for product details.
  */
 public class ProductSku {
-    /***
+    /**
      * Gets or sets the product id for the product SKU.
      */
     @JsonProperty( "id" )
@@ -28,7 +28,7 @@ public class ProductSku {
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets a localized display name for the product SKU.
      */
     @JsonProperty( "name" )
@@ -45,7 +45,7 @@ public class ProductSku {
     }
 
 
-    /***
+    /**
      * Gets or sets a SKU part number name for the product.
      * For example, for Office 365 Plan E3 , this value is "EnterprisePack".
      * This can be used in place of Id if the id is not available.
@@ -63,7 +63,7 @@ public class ProductSku {
     	__SkuPartNumber = value;
     }
 
-    /***
+    /**
      * Gets or sets the target type of a product.
      * It can be used to filter products which are applicable to user or tenant.
      * For example, if we need to know all products applicable to user , we can filter where target type == "User".
@@ -81,7 +81,7 @@ public class ProductSku {
     	__TargetType = value;
     }
 
-    /***
+    /**
      * Gets or sets the group id of a license. For example 'Windows 10 Enterprise E3'
      * is managed through Group1.
      */

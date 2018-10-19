@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostLineItem.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ import org.joda.time.DateTime;
 public class ServiceCostLineItem 
     extends ResourceBase 
 {
-    /***
+    /**
      * Gets or sets the start date for the charge.
      */
 	@JsonProperty( "startDate" )
@@ -33,7 +33,7 @@ public class ServiceCostLineItem
     	__StartDate = value;
     }
 
-    /***
+    /**
      * Gets or sets the end date for the charge.
      */
 	@JsonProperty( "endDate" )
@@ -49,7 +49,7 @@ public class ServiceCostLineItem
     	__EndDate = value;
     }
 
-    /***
+    /**
      * Gets or sets the friendly name for the subscription.
      */
 	@JsonProperty( "subscriptionFriendlyName" )
@@ -65,7 +65,7 @@ public class ServiceCostLineItem
     	__SubscriptionFriendlyName = value;
     }
 
-    /***
+    /**
      * Gets or sets the subscription identifier.
      */
 	@JsonProperty( "subscriptionId" )
@@ -81,7 +81,7 @@ public class ServiceCostLineItem
     	__SubscriptionId = value;
     }
 
-    /***
+    /**
      * Gets or sets the order identifier.
      */
 	@JsonProperty( "orderId" )
@@ -97,7 +97,7 @@ public class ServiceCostLineItem
     	__OrderId = value;
     }
 
-    /***
+    /**
      * Gets or sets the offer identifier.
      */
 	@JsonProperty( "offerId" )
@@ -113,7 +113,7 @@ public class ServiceCostLineItem
     	__OfferId = value;
     }
 
-    /***
+    /**
      * Gets or sets the offer name.
      */
 	@JsonProperty( "offerName" )
@@ -129,7 +129,7 @@ public class ServiceCostLineItem
     	__OfferName = value;
     }
 
-    /***
+    /**
      * Gets or sets the ResellerMPNId. In 2-tier partner scenarios, this refers to the MPN identifier.
      */
 	@JsonProperty( "resellerMPNId" )
@@ -145,8 +145,8 @@ public class ServiceCostLineItem
     	__ResellerMPNId = value;
     }
 
-    /***
-     * Gets or sets the the charge type associated.
+    /**
+     * Gets or sets the charge type associated.
      * Charges:
      *  PURCHASE_FEE: Initial charge for a subscription.
      *  CYCLE_FEE: Periodic charges for a subscription.
@@ -188,7 +188,7 @@ public class ServiceCostLineItem
     	__ChargeType = value;
     }
 
-    /***
+    /**
      * Gets or sets the quantity used or purchased.
      */
 	@JsonProperty( "quantity" )
@@ -204,7 +204,7 @@ public class ServiceCostLineItem
     	__Quantity = value;
     }
 
-    /***
+    /**
      * Gets or sets the price per unit.
      */
 	@JsonProperty( "unitPrice" )
@@ -220,7 +220,7 @@ public class ServiceCostLineItem
     	__UnitPrice = value;
     }
 
-    /***
+    /**
      * Gets or sets the total charge for this item before taxes.
      */
 	@JsonProperty( "pretaxTotal" )
@@ -236,7 +236,7 @@ public class ServiceCostLineItem
     	__PretaxTotal = value;
     }
 
-    /***
+    /**
      * Gets or sets the tax incurred.
      */
 	@JsonProperty( "tax" )
@@ -252,7 +252,7 @@ public class ServiceCostLineItem
     	__Tax = value;
     }
 
-    /***
+    /**
      * Gets or sets the total for this item inclusive of taxes.
      */
 	@JsonProperty( "afterTaxTotal" )
@@ -268,7 +268,7 @@ public class ServiceCostLineItem
     	__AfterTaxTotal = value;
     }
 
-    /***
+    /**
      * Gets or sets the currency code for the costs.
      */
 	@JsonProperty( "currencyCode" )
@@ -284,7 +284,7 @@ public class ServiceCostLineItem
     	__CurrencyCode = value;
     }
 
-    /***
+    /**
      * Gets or sets the currency symbol for the costs.
      */
 	@JsonProperty( "currencySymbol" )
@@ -300,7 +300,7 @@ public class ServiceCostLineItem
     	__CurrencySymbol = value;
     }
 
-    /***
+    /**
      * Gets or sets The customer identifier.
      */
 	@JsonProperty( "customerId" )
@@ -316,7 +316,7 @@ public class ServiceCostLineItem
     	__CustomerId = value;
     }
 
-    /***
+    /**
      * Gets or sets the customer name.
      */
 	@JsonProperty( "customerName" )

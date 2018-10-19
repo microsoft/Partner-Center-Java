@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerProductCollectionByTargetView.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface ICustomerProductCollectionByTargetView
     extends IPartnerComponent<Tuple<String, String>>,
     IEntireEntityCollectionRetrievalOperations<Product, ResourceCollection<Product>>
 {
-    /***
+    /**
      * Retrieves all the products in a given catalog view that apply to a given customer.
      * 
      * @return The products in a given catalog view that apply to a given customer.

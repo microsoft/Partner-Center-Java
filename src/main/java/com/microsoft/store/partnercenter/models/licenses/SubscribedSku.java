@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscribedSku.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,11 +11,11 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Model for subscribed products owned by a tenant.
  */
 public class SubscribedSku extends ResourceBase {
-    /***
+    /**
      * Gets or sets the number of units available for assignment. This is calculated as Total units - Consumed units.
      */
 	@JsonProperty( "AvailableUnits" )
@@ -31,7 +31,7 @@ public class SubscribedSku extends ResourceBase {
     	__AvailableUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the number of units active for assignment.
      */
     @JsonProperty( "ActiveUnits" )
@@ -46,7 +46,7 @@ public class SubscribedSku extends ResourceBase {
     	__ActiveUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the number of consumed units.
      */
     @JsonProperty( "ConsumedUnits" )
@@ -62,7 +62,7 @@ public class SubscribedSku extends ResourceBase {
     	__ConsumedUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the number of suspended units.
      */
     @JsonProperty( "SuspendedUnits" )
@@ -78,7 +78,7 @@ public class SubscribedSku extends ResourceBase {
     	__SuspendedUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the total units, which is sum of active and warning units.
      */
     @JsonProperty( "TotalUnits" )
@@ -94,7 +94,7 @@ public class SubscribedSku extends ResourceBase {
     	__TotalUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the number of warning units.
      */
     @JsonProperty( "WarningUnits" )
@@ -110,7 +110,7 @@ public class SubscribedSku extends ResourceBase {
     	__WarningUnits = value;
     }
 
-    /***
+    /**
      * Gets or sets the products.
      */
     @JsonProperty( "ProductSku" )
@@ -126,7 +126,7 @@ public class SubscribedSku extends ResourceBase {
     	__ProductSku = value;
     }
 
-    /***
+    /**
      * Gets or sets the collection of service plans of a product.
      */
     @JsonProperty( "ServicePlans" )
@@ -142,7 +142,7 @@ public class SubscribedSku extends ResourceBase {
     	__ServicePlans = value;
     }
 
-    /***
+    /**
      *  Gets or sets the SKU status of a product.
      */
     @JsonProperty( "CapabilityStatus" )

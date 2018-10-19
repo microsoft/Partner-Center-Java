@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="InvoiceSummaryCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,14 +15,14 @@ import com.microsoft.store.partnercenter.models.invoices.InvoiceSummary;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
-/***
+/**
  * Represents the operations that can be done on invoice summary collection.
  */
 public class InvoiceSummaryCollectionOperations
 	extends BasePartnerComponentString
 	implements IInvoiceSummaryCollection
 {
-	/***
+	/**
 	 * Initializes a new instance of the InvoiceSummaryCollectionOperations class.
 	 * 
 	 * @param rootPartnerOperations The partner operations.
@@ -32,13 +32,13 @@ public class InvoiceSummaryCollectionOperations
 		super( rootPartnerOperations, null );
 	}
 
-	/***
+	/**
 	 * Retrieves the invoice summary collection. This operation is currently only supported for user based credentials.
 	 */
     public ResourceCollection<InvoiceSummary> get()
 	{
         IPartnerServiceProxy<InvoiceSummary, ResourceCollection<InvoiceSummary>> partnerServiceProxy =
-                new PartnerServiceProxy<InvoiceSummary, ResourceCollection<InvoiceSummary>>( 
+                new PartnerServiceProxy<>( 
                     new TypeReference<ResourceCollection<InvoiceSummary>>()
                     {
                     }, 

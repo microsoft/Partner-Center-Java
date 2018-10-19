@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDevice.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,14 +12,14 @@ import com.microsoft.store.partnercenter.genericoperations.IEntityPatchOperation
 import com.microsoft.store.partnercenter.models.devicesdeployment.Device;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 
-/***
+/**
  * Represents the operations that can be done on the partner's device.
  */
 public interface IDevice
 	extends IPartnerComponent<TripletTuple<String,String, String>>, 
 	IEntityDeleteOperations<Device>, IEntityPatchOperations<Device>
 {
-    /***
+    /**
      *  Updates a device associated to the customer with a configuration policy.
      * 
      * @param updateDevice The device to be updated.
@@ -27,7 +27,7 @@ public interface IDevice
      */
 	Device patch(Device updateDevice);
 
-    /***
+    /**
      * Deletes the device.
      */
     void delete();

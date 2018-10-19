@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionConversionCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -68,13 +68,13 @@ public class SubscriptionConversionCollectionOperations
         return partnerServiceProxy.post(conversion);
     }
   
-    /***
+    /**
      * Retrieves all conversions for the trial subscription.
      * @return The subscription conversions.
      */
     public ResourceCollection<Conversion> get()
     {
-        IPartnerServiceProxy<Conversion, ResourceCollection<Conversion>> partnerServiceProxy = new PartnerServiceProxy<Conversion, ResourceCollection<Conversion>>(
+        IPartnerServiceProxy<Conversion, ResourceCollection<Conversion>> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<ResourceCollection<Conversion>>()
             {
             }, 

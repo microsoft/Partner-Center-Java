@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerProductCollectionByTargetViewByTargetSegmentOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all the products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
      * @return The products in a given catalog view and that apply to a given customer, filtered by target segment.
@@ -64,7 +64,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
     public ResourceCollection<Product> get()
     {
         IPartnerServiceProxy<Product, ResourceCollection<Product>> partnerServiceProxy =
-        new PartnerServiceProxy<Product, ResourceCollection<Product>>( new TypeReference<ResourceCollection<Product>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Product>>()
         {
         }, 
         this.getPartner(), 

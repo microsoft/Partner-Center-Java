@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="UriDeserializer.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,6 +16,7 @@ import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.microsoft.store.partnercenter.logging.PartnerLog;
 
 public class UriDeserializer 
 	extends JsonDeserializer<URI>
@@ -35,7 +36,7 @@ public class UriDeserializer
 			}
 	        catch (URISyntaxException e)
 	        {
-				e.printStackTrace();
+				PartnerLog.getInstance().logError( e.toString() );
 			}
 		}
 		else if( currentToken.equals( JsonToken.VALUE_NULL ) )

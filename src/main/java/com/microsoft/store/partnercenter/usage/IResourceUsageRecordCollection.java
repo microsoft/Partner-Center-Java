@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IResourceUsageRecordCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface IResourceUsageRecordCollection
     extends IPartnerComponent<Tuple<String, String>>,
     IEntireEntityCollectionRetrievalOperations<AzureResourceMonthlyUsageRecord, ResourceCollection<AzureResourceMonthlyUsageRecord>>
 {
-	/***
+	/**
 	 * Retrieves the subscription's resource usage records.
 	 * @return The subscription's resource usage records.
 	 */

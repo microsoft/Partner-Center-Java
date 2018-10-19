@@ -1,17 +1,17 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceIncidents.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.models.serviceincidents;
 
-/***
+/**
  * Represents a service incident.
  */
 public class ServiceIncidents
 {
-    /***
+    /**
      * Gets or sets the workload display name.
      */
     private String __Workload;
@@ -30,7 +30,7 @@ public class ServiceIncidents
 		this.__Workload = __Workload;
 	}
 
-    /***
+    /**
      * Gets or sets the Incident list.
      */
     private Iterable<ServiceIncidentDetail> __Incidents;
@@ -49,7 +49,7 @@ public class ServiceIncidents
 		this.__Incidents = __Incidents;
 	}
 
-    /***
+    /**
      * Gets or sets the cumulative status of the service.
      */
     private ServiceIncidentStatus __Status;
@@ -68,7 +68,7 @@ public class ServiceIncidents
 		this.__Status = __Status;
 	}
 
-    /***
+    /**
      * Gets or sets the message center messages.
      */
     private Iterable<ServiceIncidentDetail> __MessageCenterMessages;

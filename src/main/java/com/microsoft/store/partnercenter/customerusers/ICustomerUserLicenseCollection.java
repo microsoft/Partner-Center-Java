@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerUserLicenseCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,21 +15,21 @@ import com.microsoft.store.partnercenter.models.licenses.License;
 import com.microsoft.store.partnercenter.models.licenses.LicenseGroupId;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Represents the behavior of the customers user's directory roles.
  */
 public interface ICustomerUserLicenseCollection 
 	extends IPartnerComponent<Tuple<String,String>>,
     IEntireEntityCollectionRetrievalOperations<License, ResourceCollection<License>>{
     
-    /***
+    /**
      * Retrieves the assigned licenses to a customer user.
      * 
      * @return The customer user's directory roles.
      */
     ResourceCollection<License> get();
 
-    /***
+    /**
      * Retrieves the assigned licenses to a customer user.
      * 
      * @param licenseGroupIds License group identifier

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICart.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ import com.microsoft.store.partnercenter.genericoperations.IEntityPutOperations;
 import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-/***
+/**
  * Encapsulates a customer cart behavior.
  */
 public interface ICart 

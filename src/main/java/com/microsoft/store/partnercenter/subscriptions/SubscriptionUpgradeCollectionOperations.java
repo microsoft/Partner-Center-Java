@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionUpgradeCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ public class SubscriptionUpgradeCollectionOperations
     public ResourceCollection<Upgrade> get()
     {
         PartnerServiceProxy<Upgrade, ResourceCollection<Upgrade>> partnerServiceProxy =
-            new PartnerServiceProxy<Upgrade, ResourceCollection<Upgrade>>( new TypeReference<ResourceCollection<Upgrade>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Upgrade>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
                                                         this.getContext().getItem1(), this.getContext().getItem2(),
@@ -77,7 +77,7 @@ public class SubscriptionUpgradeCollectionOperations
     public UpgradeResult create( Upgrade subscriptionUpgrade )
     {
         PartnerServiceProxy<Upgrade, UpgradeResult> partnerServiceProxy =
-            new PartnerServiceProxy<Upgrade, UpgradeResult>( new TypeReference<UpgradeResult>()
+            new PartnerServiceProxy<>( new TypeReference<UpgradeResult>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
                                                         this.getContext().getItem1(), this.getContext().getItem2(),

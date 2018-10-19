@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProvisioningStatus.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,7 +8,7 @@ package com.microsoft.store.partnercenter.models.subscriptions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/***
+/**
  * Lists the available status for a subscription provisioning status.
  */
 public enum ProvisioningStatus 

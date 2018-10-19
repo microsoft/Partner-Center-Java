@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IProductCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 public interface IProductCollection
     extends IPartnerComponentString
 {
-    /***
+    /**
      *  Retrieves the operations that can be applied on products from a given country.
      * 
      * @param country The country name.

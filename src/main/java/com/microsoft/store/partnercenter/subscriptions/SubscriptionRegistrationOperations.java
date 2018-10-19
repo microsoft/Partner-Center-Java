@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionRegistrationOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ public class SubscriptionRegistrationOperations
     public String register()
     {
         IPartnerServiceProxy<String, HttpResponse> partnerServiceProxy =
-            new PartnerServiceProxy<String, HttpResponse>(
+            new PartnerServiceProxy<>(
                 new TypeReference<HttpResponse>()
                 {
                 }, 

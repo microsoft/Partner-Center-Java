@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DirectoryRole.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,11 +9,11 @@ package com.microsoft.store.partnercenter.models.roles;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents a customer directory role object.
  */
 public class DirectoryRole extends ResourceBase {
-    /***
+    /**
      * Gets or sets the name of the directory role.
      */
 	@JsonProperty( "name" )
@@ -29,7 +29,7 @@ public class DirectoryRole extends ResourceBase {
     	__Name = value;
     }
 
-    /***
+    /**
      * Gets or sets the id of the directory role.
      */
 	@JsonProperty( "id" )

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AuditRecord.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,11 +13,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.products.BillingCycleType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
-/***
+/**
  * Represents a line item on a cart.
  */
 public class CartLineItem  {
-    /***
+    /**
      * Gets or sets a unique identifier of a cart line item.
      */
 	@JsonProperty( "id" )
@@ -33,7 +33,7 @@ public class CartLineItem  {
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets the catalog item identifier.
      */
 	@JsonProperty( "catalogItemId" )
@@ -49,7 +49,7 @@ public class CartLineItem  {
     	__CatalogItemId = value;
     }
 
-    /***
+    /**
      *  Gets or sets the friendly name for the result contract (subscription)
      */
     @JsonProperty( "friendlyName" )
@@ -65,7 +65,7 @@ public class CartLineItem  {
     	__FriendlyName = value;
     }
 
-    /***
+    /**
      *  Gets or sets the product quantity.
      */
     @JsonProperty( "quantity" )
@@ -81,7 +81,7 @@ public class CartLineItem  {
     	__Quantity = value;
     }
 
-    /***
+    /**
      *  Gets or sets the currency code.
      */
     @JsonProperty( "currencyCode" )
@@ -97,7 +97,7 @@ public class CartLineItem  {
     	__CurrencyCode = value;
     }
 
-    /***
+    /**
      * Gets or sets the type of billing cycle for the selected catalog item.
      */
     @JsonProperty( "billingCycle" )
@@ -113,7 +113,7 @@ public class CartLineItem  {
     	__BillingCycle = value;
     }
 
-    /***
+    /**
      * Gets or sets a collection of participants on this purchase.
      */
     @JsonProperty( "participants" )
@@ -129,7 +129,7 @@ public class CartLineItem  {
     	__Participants = value;
     }
 
-    /***
+    /**
      *  Gets or sets a context that will be used for provisioning of the catalog item.
      */
     @JsonProperty( "provisioningContext" )
@@ -145,7 +145,7 @@ public class CartLineItem  {
     	__ProvisioningContext = value;
     }
 
-    /***
+    /**
      * Gets or sets the order group which indicates which items can be place in a single order.
      */
     @JsonProperty( "orderGroup" )
@@ -161,7 +161,7 @@ public class CartLineItem  {
     	__OrderGroup = value;
     }
 
-    /***
+    /**
      * Gets or sets an error associated to this cart line item.
      */
     @JsonProperty( "error" )

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OrganizationProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class OrganizationProfileOperations
     public OrganizationProfile get()
     {
         IPartnerServiceProxy<OrganizationProfile, OrganizationProfile> partnerServiceProxy =
-            new PartnerServiceProxy<OrganizationProfile, OrganizationProfile>( new TypeReference<OrganizationProfile>()
+            new PartnerServiceProxy<>( new TypeReference<OrganizationProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrganizationProfile" ).getPath(),
                                                         Locale.US ) );
@@ -61,12 +61,11 @@ public class OrganizationProfileOperations
     public OrganizationProfile update( OrganizationProfile updatePayload )
     {
         IPartnerServiceProxy<OrganizationProfile, OrganizationProfile> partnerServiceProxy =
-            new PartnerServiceProxy<OrganizationProfile, OrganizationProfile>( new TypeReference<OrganizationProfile>()
+            new PartnerServiceProxy<>( new TypeReference<OrganizationProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrganizationProfile" ).getPath(),
                                                         Locale.US ) );
 
         return partnerServiceProxy.put( updatePayload );
     }
-
 }

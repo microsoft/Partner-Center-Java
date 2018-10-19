@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="RequestContext.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.requestcontext;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 import java.util.UUID;
 
 import com.microsoft.store.partnercenter.PartnerService;
@@ -126,7 +125,7 @@ public class RequestContext
         __CorrelationId = value;
     }
 
-    private String __Locale = new String();
+    private String __Locale;
 
     /**
      * Gets the locale.
@@ -158,6 +157,6 @@ public class RequestContext
     public String toString()
     {
         return MessageFormat.format( "Request Id: {0}, Correlation Id: {1}, Locale: {2}"
-            + this.getRequestId().toString(), this.getCorrelationId().toString(), this.getLocale(), Locale.US );
+            + this.getRequestId().toString(), this.getCorrelationId().toString(), this.getLocale() );
     }
 }

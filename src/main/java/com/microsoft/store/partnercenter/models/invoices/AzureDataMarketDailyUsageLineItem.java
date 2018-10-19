@@ -10,23 +10,23 @@ import org.joda.time.DateTime;
 
 public class AzureDataMarketDailyUsageLineItem extends BaseAzureDataMarketLineItem {
 
-    /***
+    /**
      * Gets or sets the usage date the resource.
      */
     private DateTime __UsageDate;
 
-    /***
+    /**
      * Gets or sets the metered service name.
      * Example: Storage.
      */
     private String __MeteredServiceName;
 
-    /***
+    /**
      * Gets or sets the metered service type.
      */
     private String __MeteredServiceType;
 
-    /***
+    /**
      * Gets or sets the customer assigned friendly name for the resource instance.
      */
     private String __ResourceFriendlyName;
@@ -87,7 +87,7 @@ public class AzureDataMarketDailyUsageLineItem extends BaseAzureDataMarketLineIt
 		this.__ResourceFriendlyName = __ResourceFriendlyName;
 	}
 
-	/***
+	/**
 	 * Returns the type of invoice line item.
 	 * 
 	 * @return The type of invoice line item.

@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerUserLicenseUpdateOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customerusers;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -61,12 +60,10 @@ public class CustomerUserLicenseUpdateOperations
             throw new IllegalArgumentException( "LicenseUpdate entity can't be null" );
         }
         IPartnerServiceProxy<LicenseUpdate, LicenseUpdate> partnerServiceProxy =
-            new PartnerServiceProxy<LicenseUpdate, LicenseUpdate>( new TypeReference<LicenseUpdate>()
+            new PartnerServiceProxy<>( new TypeReference<LicenseUpdate>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "SetCustomerUserLicenseUpdates" ).getPath(),
-                                                        this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+                                                        this.getContext().getItem1(), this.getContext().getItem2() ) );
         return partnerServiceProxy.post( entity );
     }
-
-
 }

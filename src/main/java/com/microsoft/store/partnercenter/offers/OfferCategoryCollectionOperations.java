@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OfferCategoryCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ public class OfferCategoryCollectionOperations
     public ResourceCollection<OfferCategory> get()
     {
         IPartnerServiceProxy<OfferCategory, ResourceCollection<OfferCategory>> partnerServiceProxy =
-            new PartnerServiceProxy<OfferCategory, ResourceCollection<OfferCategory>>( new TypeReference<ResourceCollection<OfferCategory>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<OfferCategory>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOfferCategories" ).getPath(),
                                                         Locale.US ) );

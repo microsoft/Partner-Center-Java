@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BatchUploadDetails.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,11 +12,11 @@ import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents the result of devices batch upload.
  */
 public class BatchUploadDetails extends ResourceBase {
-	/***
+	/**
 	 * Gets or sets the tracking ID of the batch of devices uploaded.
 	 */
 	@JsonProperty( "batchTrackingId" )
@@ -32,7 +32,7 @@ public class BatchUploadDetails extends ResourceBase {
 		__BatchTrackingId = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the status.
 	 */
 	@JsonProperty( "status" )
@@ -48,7 +48,7 @@ public class BatchUploadDetails extends ResourceBase {
 		__Status = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the batch started time.
 	 */
 	@JsonProperty( "startedTime" )
@@ -64,7 +64,7 @@ public class BatchUploadDetails extends ResourceBase {
 		__StartedTime = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the batch upload completed time.
 	 */
 	@JsonProperty( "completedTime" )
@@ -80,7 +80,7 @@ public class BatchUploadDetails extends ResourceBase {
 		__CompletedTime = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the device upload status.
 	 */
 	@JsonProperty( "devicesStatus" )

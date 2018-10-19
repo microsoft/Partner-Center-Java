@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customers;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -103,12 +102,12 @@ public class CustomerOperations
      */
     private IManagedServiceCollection managedServices;
 
-    /***
+    /**
      * The offer operations.
      */
     private ICustomerOfferCollection offers;
 
-    /***
+    /**
      * The offer category operations.
      */
     private ICustomerOfferCategoryCollection offerCategories;
@@ -123,7 +122,7 @@ public class CustomerOperations
      */
     private ICustomerUsageSpendingBudget usageBudget;
 
-    /***
+    /**
      * The customer qualification operations.
      */
     private ICustomerQualification customerQualification;
@@ -133,7 +132,7 @@ public class CustomerOperations
      */
     private ICustomerUserCollection customerUserCollectionOperations;
 
-    /***
+    /**
      * The directory role collection operations.
      */
     private IDirectoryRoleCollection directoryRoleCollectionOperations;
@@ -178,17 +177,17 @@ public class CustomerOperations
      */
     private ICustomerRelationshipCollection customerRelationshipCollectionOperations;
 
-    /***
+    /**
      * The customer analytics collection operations.
      */
     private ICustomerAnalyticsCollection analytics;
 
-    /***
+    /**
      * The entitlement collection operations.
      */
     private IEntitlementCollection entitlements;
 
-    /***
+    /**
      * The customer configuration policies operations.
      */
     private IConfigurationPolicyCollection configurationPolicies; 
@@ -296,7 +295,7 @@ public class CustomerOperations
         return this.managedServices;
     }
 
-	/***
+	/**
 	 * Obtains the Offer Categories behavior for the customer.
 	 */
     @Override
@@ -308,7 +307,7 @@ public class CustomerOperations
         return this.offerCategories;
 	}
 
-	/***
+	/**
 	 * Obtains the Offers behavior for the customer.
 	 */
 	@Override
@@ -350,7 +349,7 @@ public class CustomerOperations
         return this.usageBudget;
     }
 
-	/***
+	/**
 	 * Obtains the Customer qualification.
 	 */
 	@Override
@@ -378,7 +377,7 @@ public class CustomerOperations
         return this.customerUserCollectionOperations;
 	}
 
-	/***
+	/**
 	 * Obtains the Customer qualification.
 	 */
 	@Override
@@ -502,7 +501,7 @@ public class CustomerOperations
         return this.batchUploadStatusCollection;
     }
 
-    /***
+    /**
      * Obtains the relationship collection behavior for the customer.
      */
     public ICustomerRelationshipCollection getRelationships()
@@ -515,7 +514,7 @@ public class CustomerOperations
         return this.customerRelationshipCollectionOperations;
     }
 
-    /***
+    /**
      * Obtains the customer level analytics collection object.
      */
     public ICustomerAnalyticsCollection getAnalytics()
@@ -528,7 +527,7 @@ public class CustomerOperations
         return this.analytics;
     }
 
-    /***
+    /**
      * Obtains the entitlement collection object.
      */
     public IEntitlementCollection getEntitlements()
@@ -541,7 +540,7 @@ public class CustomerOperations
         return this.entitlements;
     }
 
-    /***
+    /**
      * Obtains the configuration policies behavior for the customer.
      */
     public IConfigurationPolicyCollection getConfigurationPolicies()
@@ -563,10 +562,10 @@ public class CustomerOperations
     public Customer get()
     {
         IPartnerServiceProxy<Customer, Customer> partnerServiceProxy =
-            new PartnerServiceProxy<Customer, Customer>( new TypeReference<Customer>()
+            new PartnerServiceProxy<>( new TypeReference<Customer>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomer" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.get();
     }
 
@@ -577,10 +576,10 @@ public class CustomerOperations
     public void delete()
     {
         IPartnerServiceProxy<Customer, Customer> partnerServiceProxy =
-            new PartnerServiceProxy<Customer, Customer>( new TypeReference<Customer>()
+            new PartnerServiceProxy<>( new TypeReference<Customer>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "DeleteCustomer" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         partnerServiceProxy.delete();
     }
 }

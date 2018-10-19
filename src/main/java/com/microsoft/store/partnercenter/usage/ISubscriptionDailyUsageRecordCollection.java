@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISubscriptionDailyUsageRecordCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface ISubscriptionDailyUsageRecordCollection
     extends IPartnerComponent<Tuple<String, String>>,
     IEntireEntityCollectionRetrievalOperations<SubscriptionDailyUsageRecord, ResourceCollection<SubscriptionDailyUsageRecord>>
 {
-    /***
+    /**
      * Retrieves the subscription's daily usage records.
      * @return The subscription's daily usage records.
      */

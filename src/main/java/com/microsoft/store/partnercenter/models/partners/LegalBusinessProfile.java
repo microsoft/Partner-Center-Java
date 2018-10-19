@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="LegalBusinessProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ public class LegalBusinessProfile
         __CompanyApproverEmail = value;
     }
 
-    /***
+    /**
      * Gets or sets the vetting status.
      */
     private VettingStatus __VettingStatus;
@@ -114,7 +114,7 @@ public class LegalBusinessProfile
     	__VettingStatus = value;
     }
 
-    /***
+    /**
      *  Gets or sets the vetting sub status.
      */
     private VettingSubStatus __VettingSubStatus;

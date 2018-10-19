@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IRelationshipCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.relationships.PartnerRelationshi
 public interface IRelationshipCollection
     extends IPartnerComponentString
 {
-    /***
+    /**
      * Retrieves all the partner relationships.
      * 
      * @param partnerRelationshipType The type of partner relationship.
@@ -26,7 +26,7 @@ public interface IRelationshipCollection
      */
     ResourceCollection<PartnerRelationship> get(PartnerRelationshipType partnerRelationshipType);
 
-    /***
+    /**
      * Queries partner relationships associated to the partner.
      * 
      * @param partnerRelationshipType The type of partner relationship.

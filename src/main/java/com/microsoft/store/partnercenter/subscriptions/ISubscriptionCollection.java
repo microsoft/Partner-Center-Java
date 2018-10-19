@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISubscriptionCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ public interface ISubscriptionCollection
      */
     ISubscription byId( String subscriptionId );
     
-    /***
+    /**
      * Retrieves all subscriptions.
      * @return The subscriptions.
      */

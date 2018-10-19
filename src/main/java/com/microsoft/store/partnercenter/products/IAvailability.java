@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IAvailability" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ public interface IAvailability
     extends IPartnerComponent<QuadrupleTuple<String, String, String, String>>,
     IEntityGetOperations<Availability>
 {
-    /***
+    /**
      * Retrieves the availability information.
      * 
      * @return The availability information.

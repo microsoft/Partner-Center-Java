@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerRelationshipCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.relationships.PartnerRelationshi
 public interface ICustomerRelationshipCollection
     extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<PartnerRelationship, ResourceCollection<PartnerRelationship>>
 {
-    /***
+    /**
      * Retrieves all the partner relationships associated to the customer based on the logged in partner.
      * 
      * @return The partner relationships.

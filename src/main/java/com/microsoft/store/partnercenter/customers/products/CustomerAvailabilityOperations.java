@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerAvailabilityOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ public class CustomerAvailabilityOperations
         }
     }
 
-    /***
+    /**
      * Retrieves the availability information.
      * 
      * @return The availability information.
@@ -69,7 +69,7 @@ public class CustomerAvailabilityOperations
     public Availability get()
     {
         IPartnerServiceProxy<Availability, Availability> partnerServiceProxy =
-        new PartnerServiceProxy<Availability, Availability>( new TypeReference<Availability>()
+        new PartnerServiceProxy<>( new TypeReference<Availability>()
         {
         }, 
         this.getPartner(), 

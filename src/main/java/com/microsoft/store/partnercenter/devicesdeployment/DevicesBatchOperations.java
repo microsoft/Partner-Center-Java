@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DevicesBatchOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ public class DevicesBatchOperations
         }
     }
 
-	/***
+	/**
 	 * Gets the devices behavior of the devices batch.
 	 * 
 	 * @return The devices behavior of the devices batch.

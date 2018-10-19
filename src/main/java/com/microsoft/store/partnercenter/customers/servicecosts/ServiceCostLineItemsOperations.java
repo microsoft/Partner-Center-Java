@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostsCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ public class ServiceCostLineItemsOperations
         }
     }
 
-    /***
+    /**
      * Retrieves a customer's service cost line items.
      * 
      * @return The service cost line items.
@@ -50,7 +50,7 @@ public class ServiceCostLineItemsOperations
 	public ResourceCollection<ServiceCostLineItem> get()
     {
         IPartnerServiceProxy<ServiceCostLineItem, ResourceCollection<ServiceCostLineItem>> partnerServiceProxy =
-        new PartnerServiceProxy<ServiceCostLineItem, ResourceCollection<ServiceCostLineItem>>( 
+        new PartnerServiceProxy<>( 
             new TypeReference<ResourceCollection<ServiceCostLineItem>>()
             {
             }, 

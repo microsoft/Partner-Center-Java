@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="LogManager.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+// <copyright file="PartnerLog.java" company="Microsoft">
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -72,7 +72,6 @@ public class PartnerLog
                 logger.logInformation( message );
             }
         }
-
     }
 
     /**
@@ -89,7 +88,6 @@ public class PartnerLog
                 logger.logWarning( message );
             }
         }
-
     }
 
     /**
@@ -106,7 +104,5 @@ public class PartnerLog
                 logger.logError( message );
             }
         }
-
     }
-
 }

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IAvailabilityCollection" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ public interface IAvailabilityCollection
     extends IPartnerComponent<TripletTuple<String, String, String>>,
     IEntireEntityCollectionRetrievalOperations<Availability, ResourceCollection<Availability>>, IEntitySelector<IAvailability>
 {
-    /***
+    /**
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
@@ -28,7 +28,7 @@ public interface IAvailabilityCollection
      */    
     IAvailability byId( String availabilityId );
 
-    /***
+    /**
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.
@@ -36,7 +36,7 @@ public interface IAvailabilityCollection
      */    
     IAvailabilityCollectionByTargetSegment byTargetSegment(String targetSegment);
 
-    /***
+    /**
      * Retrieves all the availabilities for the provided SKU.
      * 
      * @return The availabilities for the provided SKU.

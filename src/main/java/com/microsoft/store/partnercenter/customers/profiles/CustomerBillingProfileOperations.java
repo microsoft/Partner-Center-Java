@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerBillingProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customers.profiles;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -37,7 +36,6 @@ public class CustomerBillingProfileOperations
         {
             throw new IllegalArgumentException( "customerId can't be null" );
         }
-
     }
 
     /**
@@ -52,7 +50,7 @@ public class CustomerBillingProfileOperations
             new PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile>( new TypeReference<CustomerBillingProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerBillingProfile" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.get();
     }
 
@@ -73,7 +71,7 @@ public class CustomerBillingProfileOperations
             new PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile>( new TypeReference<CustomerBillingProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerBillingProfile" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.put( billingProfile );
     }
 }

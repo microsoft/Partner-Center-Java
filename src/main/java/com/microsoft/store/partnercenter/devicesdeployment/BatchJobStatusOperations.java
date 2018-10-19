@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BatchJobStatusOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -50,7 +50,8 @@ public class BatchJobStatusOperations
     @Override
     public BatchUploadDetails get() 
     {
-        IPartnerServiceProxy<BatchUploadDetails, BatchUploadDetails> partnerServiceProxy = new PartnerServiceProxy<BatchUploadDetails, BatchUploadDetails>(
+        IPartnerServiceProxy<BatchUploadDetails, BatchUploadDetails> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
                 new TypeReference<BatchUploadDetails>() {
                 }, this.getPartner(),
                 MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetBatchUploadStatus").getPath(),

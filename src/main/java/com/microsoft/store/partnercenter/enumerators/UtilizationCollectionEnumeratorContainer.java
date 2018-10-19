@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="UtilizationCollectionEnumeratorContainer.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,19 +14,19 @@ import com.microsoft.store.partnercenter.factory.IndexBasedCollectionEnumeratorF
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.utilizations.AzureUtilizationRecord;
 
-/***
+/**
  * Utilization collection enumerator container implementation class.
  */
 public class UtilizationCollectionEnumeratorContainer
 	extends BasePartnerComponentString
 	implements IUtilizationCollectionEnumeratorContainer
 {
-	/***
+	/**
      * A reference to an Azure utilization record enumerator factory.
      */
     private IndexBasedCollectionEnumeratorFactory<AzureUtilizationRecord, ResourceCollection<AzureUtilizationRecord>> azureUtilizationRecordEnumeratorFactory;
 
-    /***
+    /**
      * Initializes a new instance of the UtilizationCollectionEnumeratorContainer class.
      * @param rootPartnerOperations The root partner operations instance.
      */
@@ -34,14 +34,14 @@ public class UtilizationCollectionEnumeratorContainer
     {
 		super(rootPartnerOperations);
 		this.azureUtilizationRecordEnumeratorFactory =
-			new IndexBasedCollectionEnumeratorFactory<AzureUtilizationRecord, ResourceCollection<AzureUtilizationRecord>>
+			new IndexBasedCollectionEnumeratorFactory<>
 			(
 				this.getPartner(), 
 				new TypeReference<ResourceCollection<AzureUtilizationRecord>>(){}  
 			);
 	}
 
-	/***
+	/**
 	 * Gets a factory that creates Azure utilization record collection enumerators.
 	 * 
 	 * @return A factory that creates Azure utilization record collection enumerators.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerService.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -25,20 +25,20 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  */
 public class PartnerService
 {
-    /***
+    /**
      * A singleton instance of the partner service.
      */
-    private static PartnerService __instance = new PartnerService();
+    private static PartnerService instance = new PartnerService();
 
-    /***
+    /**
      * Prevents a default instance of the PartnerService class from being created.
      */
     private PartnerService()
     {
         // set the global partner service properties, for now we point to Krishna's server
         setConfiguration( readPartnerSdkConfiguration() );
-        setApiRootUrl( __Configuration.getPartnerServiceApiRoot() );
-        setPartnerServiceApiVersion( __Configuration.getPartnerServiceApiVersion() );    	
+        setApiRootUrl( configuration.getPartnerServiceApiRoot() );
+        setPartnerServiceApiVersion( configuration.getPartnerServiceApiVersion() );    	
         // initialize the partner factory
         setFactory( new StandardPartnerFactory() );
         // define the default retry policy as exponential with 3 retry attempts
@@ -47,14 +47,14 @@ public class PartnerService
         PartnerLog.getInstance().getLoggers().add( new SystemOutLogger() );
     }
     
-    /***
+    /**
      * Gets an instance of the partner service.
      * 
      * @return An instance of the partner service.
      */
     public static PartnerService getInstance()
     {
-        return PartnerService.__instance;
+        return PartnerService.instance;
     }
 
 	private String __ApiRootUrl;
@@ -79,7 +79,7 @@ public class PartnerService
         __ApiRootUrl = value;
     }
 
-    private String __PartnerServiceApiVersion;
+    private String partnerServiceApiVersion;
 
     /**
      * Gets the partner service API version. 
@@ -88,7 +88,7 @@ public class PartnerService
      */
     public String getPartnerServiceApiVersion()
     {
-        return __PartnerServiceApiVersion;
+        return partnerServiceApiVersion;
     }
 
     /**
@@ -98,23 +98,23 @@ public class PartnerService
      */
     private void setPartnerServiceApiVersion( String value )
     {
-        __PartnerServiceApiVersion = value;
+        partnerServiceApiVersion = value;
     }
 
-    private String __ApplicationName;
+    private String applicationName;
 
     public String getApplicationName()
     {
-        return __ApplicationName;
+        return applicationName;
     }
 
     @SuppressWarnings("unused")
 	private void setApplicationName( String value )
     {
-    	__ApplicationName = value;
+    	applicationName = value;
     }
 
-    private Configuration __Configuration;
+    private Configuration configuration;
 
     /**
      * Gets the partner service configuration.
@@ -123,24 +123,24 @@ public class PartnerService
      */
     public Configuration getConfiguration()
     {
-        return __Configuration;
+        return configuration;
     }
 
     private void setConfiguration( Configuration value )
     {
-        __Configuration = value;
+        configuration = value;
     }
 
-    private IPartnerFactory __Factory;
+    private IPartnerFactory factory;
 
     public IPartnerFactory getFactory()
     {
-        return __Factory;
+        return factory;
     }
 
     void setFactory( IPartnerFactory value )
     {
-        __Factory = value;
+        factory = value;
     }
 
     private IPartnerCredentials refreshCredentialsHandler;
@@ -158,16 +158,16 @@ public class PartnerService
     /**
      * Gets the default retry policy used by the partner SDK.
      */
-    private IRetryPolicy __RetryPolicy;
+    private IRetryPolicy retryPolicy;
 
     public IRetryPolicy getRetryPolicy()
     {
-        return __RetryPolicy;
+        return retryPolicy;
     }
 
     public void setRetryPolicy( IRetryPolicy value )
     {
-        __RetryPolicy = value;
+        retryPolicy = value;
     }
     
     private String proxyHostName;

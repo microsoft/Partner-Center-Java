@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OfferCountrySelector.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ public class OfferCountrySelector
 	implements ICountrySelector<IOfferCollection>
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the OfferCountrySelector class.
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
@@ -25,7 +25,7 @@ public class OfferCountrySelector
 		super(rootPartnerOperations);
 	}
 
-	/***
+	/**
 	 * Scopes offers behavior to a specific country.
 	 */
 	@Override

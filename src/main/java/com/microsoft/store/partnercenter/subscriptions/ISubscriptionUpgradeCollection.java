@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISubscriptionUpgradeCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ public interface ISubscriptionUpgradeCollection
     IEntireEntityCollectionRetrievalOperations<Upgrade, ResourceCollection<Upgrade>>,
     IEntityCreateOperations<Upgrade, UpgradeResult>
 {
-	/***
+	/**
 	 * Submits a subscription upgrade.
      * 
 	 * @param upgrade The new subscription upgrade information.
@@ -30,7 +30,7 @@ public interface ISubscriptionUpgradeCollection
 	 */
     UpgradeResult create( Upgrade upgrade );
 
-    /***
+    /**
      * Retrieves all subscription upgrades.
      * @return The subscription upgrades.
      */

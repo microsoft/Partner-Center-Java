@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerOfferCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,14 +19,14 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
-/***
+/**
  * Customer Offer operations implementation class.
  */
 public class CustomerOfferCollectionOperations 
 	extends BasePartnerComponentString 
 	implements ICustomerOfferCollection
 {
-	/***
+	/**
 	 * Initializes a new instance of the CustomerOfferCollectionOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
@@ -35,19 +35,20 @@ public class CustomerOfferCollectionOperations
 	public CustomerOfferCollectionOperations(IPartner rootPartnerOperations, String customerId )
 	{
 		super(rootPartnerOperations, customerId);
+
 		if ( StringHelper.isNullOrEmpty( customerId ) )
         {
             throw new IllegalArgumentException("customerId must be set.");
         }
 	}
 
-	/***
+	/**
 	 * Gets the offers available to customer from partner.
 	 */
 	public ResourceCollection<Offer> get()
 	{
         IPartnerServiceProxy<ResourceCollection<Offer>, ResourceCollection<Offer>> partnerServiceProxy =
-                new PartnerServiceProxy<ResourceCollection<Offer>, ResourceCollection<Offer>>( 
+                new PartnerServiceProxy<>( 
 					new TypeReference<ResourceCollection<Offer>>()
 					{
 					}, 
@@ -59,7 +60,7 @@ public class CustomerOfferCollectionOperations
         return partnerServiceProxy.get();
 	}
 
-    /***
+    /**
      *  Gets a segment of the offers available to customer from partner..
      *  
 	 *  @param offset The starting index.

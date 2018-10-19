@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICountryValidationRulesCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.genericoperations.ICountrySelector;
 public interface ICountryValidationRulesCollection 
 	extends IPartnerComponentString, ICountrySelector<ICountryValidationRules>
 {
-    /***
+    /**
      * Obtains behavior for a specific country's validation rules.
      *
      * @param country The country's ISO2 code.

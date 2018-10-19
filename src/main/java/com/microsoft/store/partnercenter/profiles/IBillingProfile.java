@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IBillingProfile.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,13 +18,13 @@ public interface IBillingProfile
     extends IPartnerComponentString, IEntityGetOperations<BillingProfile>,
     IEntityUpdateOperations<BillingProfile>
 {
-	/***
+	/**
 	 * Retrieves a partner's billing profile.
 	 * @return The billing profile.
 	 */
     BillingProfile get();
     
-    /***
+    /**
      * Updates the partner's billing profile.
      * @param billingProfile The billing profile information.
      * @return The updated billing profile.

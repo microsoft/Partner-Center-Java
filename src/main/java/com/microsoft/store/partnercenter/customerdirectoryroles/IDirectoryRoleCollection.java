@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IDirectoryRoleCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ public interface IDirectoryRoleCollection
 	extends IPartnerComponentString,
 	IEntireEntityCollectionRetrievalOperations<DirectoryRole, ResourceCollection<DirectoryRole>>, IEntitySelector<IDirectoryRole>
 {
-	/***
+	/**
 	 * Gets a directory role behavior.
 	 * 
 	 * @param roleId The directory role identifier.
@@ -28,7 +28,7 @@ public interface IDirectoryRoleCollection
 	 */
     IDirectoryRole byId( String roleId );
 
-    /***
+    /**
      * Retrieves all customer directory roles.
      * @return All the customer directory roles.
      */

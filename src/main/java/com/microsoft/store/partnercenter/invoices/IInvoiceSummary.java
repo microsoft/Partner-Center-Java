@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IInvoiceSummary.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ import com.microsoft.store.partnercenter.models.invoices.InvoiceSummary;
 public interface IInvoiceSummary
 	extends IPartnerComponentString, IEntityGetOperations<InvoiceSummary>
 {
-    /***
+    /**
      * Retrieves the invoice summary. This operation is currently only supported for user based credentials.
      * 
      * @return The invoice summary.

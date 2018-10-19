@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerSkuCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ public class CustomerSkuCollectionOperations
         }
     }
 
-    /***
+    /**
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.
@@ -84,7 +84,7 @@ public class CustomerSkuCollectionOperations
     public ResourceCollection<Sku> get()
     {
         IPartnerServiceProxy<Sku, ResourceCollection<Sku>> partnerServiceProxy =
-        new PartnerServiceProxy<Sku, ResourceCollection<Sku>>( new TypeReference<ResourceCollection<Sku>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Sku>>()
         {
         }, 
         this.getPartner(), 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OfferOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ public class OfferOperations
     public Offer get()
     {
         IPartnerServiceProxy<Offer, Offer> partnerServiceProxy =
-            new PartnerServiceProxy<Offer, Offer>(
+            new PartnerServiceProxy<>(
                  new TypeReference<Offer>()
                 {
                 }, 

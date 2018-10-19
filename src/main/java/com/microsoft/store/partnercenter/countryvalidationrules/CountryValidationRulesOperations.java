@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CountryValidationRulesOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.countryvalidationrules;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -18,7 +17,7 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 
-/***
+/**
  * The country validation rules operations implementation.
  */
 public class CountryValidationRulesOperations 
@@ -26,7 +25,7 @@ public class CountryValidationRulesOperations
 	implements ICountryValidationRules 
 {
 
-	/***
+	/**
 	 * Initializes a new instance of the CountryValidationRulesOperations class.
 	 * @param rootPartnerOperations The root partner operations instance
 	 * @param country The country
@@ -37,17 +36,21 @@ public class CountryValidationRulesOperations
 		ParameterValidator.isValidCountryCode( country );
 	}
 
-	/***
+	/**
 	 * Gets the market specific validation data by country.
 	 */
 	@Override
 	public CountryValidationRules get() 
 	{
         IPartnerServiceProxy<CountryValidationRules, CountryValidationRules> partnerServiceProxy =
-                new PartnerServiceProxy<CountryValidationRules, CountryValidationRules>( new TypeReference<CountryValidationRules>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCountryValidationRulesByCountry" ).getPath(),
-                                                            this.getContext(), Locale.US ) );
+                new PartnerServiceProxy<>( 
+					new TypeReference<CountryValidationRules>()
+					{
+					}, 
+					this.getPartner(), MessageFormat.format( 
+						PartnerService.getInstance().getConfiguration().getApis().get( "GetCountryValidationRulesByCountry" ).getPath(),
+						this.getContext() ) );
+						
         return partnerServiceProxy.get();
 	}
 }

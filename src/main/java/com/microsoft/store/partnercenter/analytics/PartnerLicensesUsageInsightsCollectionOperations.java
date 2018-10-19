@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerLicensesAnalyticsCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ public class PartnerLicensesUsageInsightsCollectionOperations
     public ResourceCollection<PartnerLicensesUsageInsights> get()
     {
         PartnerServiceProxy<PartnerLicensesUsageInsights, ResourceCollection<PartnerLicensesUsageInsights>> partnerServiceProxy =
-            new PartnerServiceProxy<PartnerLicensesUsageInsights, ResourceCollection<PartnerLicensesUsageInsights>>( 
+            new PartnerServiceProxy<>( 
                 new TypeReference<ResourceCollection<PartnerLicensesUsageInsights>>()
                 {
                 }, 

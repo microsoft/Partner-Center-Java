@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="UserMemberCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customerdirectoryroles;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -33,8 +32,7 @@ public class UserMemberCollectionOperations
 	extends BasePartnerComponent<Tuple<String, String>> 
 	implements IUserMemberCollection
 {
-
-	/***
+	/**
 	 * Initializes a new instance of the UserMemberCollectionOperations class
 	 * 
 	 * @param rootPartnerOperations The partner operations instance.
@@ -55,7 +53,7 @@ public class UserMemberCollectionOperations
         }
 	}
 
-	/***
+	/**
 	 * Get a single user member operations object.
 	 * 
 	 * @param userId The user identifier.
@@ -67,7 +65,7 @@ public class UserMemberCollectionOperations
 		return new UserMemberOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), userId );
 	}
 
-	/***
+	/**
 	 * Adds customer user to a directory role.
 	 * 
 	 * @param newEntity The user to be added,
@@ -85,12 +83,12 @@ public class UserMemberCollectionOperations
                 new PartnerServiceProxy<UserMember, UserMember>( new TypeReference<UserMember>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "AddUserToCustomerDirectoryRole" ).getPath(),
-        				this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+        				this.getContext().getItem1(), this.getContext().getItem2() ) );
         
         return partnerServiceProxy.post( newEntity );
 	}
 
-	/***
+	/**
 	 * Gets all the user members of a customer directory role.
 	 * 
 	 * @return The directory role user memberships.
@@ -99,15 +97,15 @@ public class UserMemberCollectionOperations
 	public SeekBasedResourceCollection<UserMember> get()
 	{
         IPartnerServiceProxy<DirectoryRole, SeekBasedResourceCollection<UserMember>> partnerServiceProxy =
-                new PartnerServiceProxy<DirectoryRole, SeekBasedResourceCollection<UserMember>>( new TypeReference<SeekBasedResourceCollection<UserMember>>()
+                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<UserMember>>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerDirectoryRoleUserMembers" ).getPath(),
-        				this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+        				this.getContext().getItem1(), this.getContext().getItem2() ) );
         
         return partnerServiceProxy.get();
 	}
 
-	/***
+	/**
 	 * Retrieves the user members of a customer directory role.
 	 * 
 	 * @param query A query to apply onto user member collection.
@@ -126,12 +124,11 @@ public class UserMemberCollectionOperations
             throw new IllegalArgumentException( "query can't be a count query." );
         }
 
-
         IPartnerServiceProxy<DirectoryRole, SeekBasedResourceCollection<UserMember>> partnerServiceProxy =
-                new PartnerServiceProxy<DirectoryRole, SeekBasedResourceCollection<UserMember>>( new TypeReference<SeekBasedResourceCollection<UserMember>>()
+                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<UserMember>>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerDirectoryRoleUserMembers" ).getPath(),
-        				this.getContext().getItem1(), this.getContext().getItem2(), Locale.US ) );
+        				this.getContext().getItem1(), this.getContext().getItem2() ) );
 
         if ( query.getType() == QueryType.SEEK )
         {
@@ -164,5 +161,4 @@ public class UserMemberCollectionOperations
 
         return partnerServiceProxy.get();
 	}
-
 }

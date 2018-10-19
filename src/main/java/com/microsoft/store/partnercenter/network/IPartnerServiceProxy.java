@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IPartnerServiceProxy.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -142,7 +142,7 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
      */
     TResponse get();
 
-    /***
+    /**
      * Executes a file content request against the partner service.
      * 
      * @return The file content stream.
@@ -178,7 +178,7 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
      */
     void delete();
 
-    /***
+    /**
      * Executes a HEAD request against the partner service.
      */
     void head();

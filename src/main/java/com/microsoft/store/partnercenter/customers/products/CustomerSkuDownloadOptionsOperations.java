@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerSkuDownloadOptionsOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ public class CustomerSkuDownloadOptionsOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all download options for the provided SKU
      * 
      * @return The SKU download options
@@ -64,7 +64,7 @@ public class CustomerSkuDownloadOptionsOperations
     public ResourceCollection<SkuDownloadOptions> get()
     {
         IPartnerServiceProxy<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>> partnerServiceProxy =
-        new PartnerServiceProxy<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>>( new TypeReference<ResourceCollection<SkuDownloadOptions>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<SkuDownloadOptions>>()
         {
         }, 
         this.getPartner(), 

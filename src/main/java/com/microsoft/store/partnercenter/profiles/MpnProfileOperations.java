@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="MpnProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ public class MpnProfileOperations
     public MpnProfile get()
     {
         IPartnerServiceProxy<MpnProfile, MpnProfile> partnerServiceProxy =
-            new PartnerServiceProxy<MpnProfile, MpnProfile>( new TypeReference<MpnProfile>()
+            new PartnerServiceProxy<>( new TypeReference<MpnProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetMpnProfile" ).getPath(),
                                                         Locale.US ) );

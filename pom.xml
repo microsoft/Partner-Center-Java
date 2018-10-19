@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.store</groupId>
   <artifactId>partnercenter</artifactId>
-  <version>1.8.0</version>
+  <version>1.8.1</version>
   <packaging>jar</packaging>
   <name>Partner Center Java SDK</name>
   <description>SDK for accessing Microsoft Partner Center API.</description>
@@ -104,7 +104,7 @@
     <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>adal4j</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.3</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="InvoiceOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ public class InvoiceOperations
         }
     }
 
-	/***
+	/**
 	 * Gets an invoice documents operations.
 	 */
     @Override
@@ -51,7 +51,7 @@ public class InvoiceOperations
     	return new InvoiceDocumentsOperations( this.getPartner(), this.getContext() );
 	}
 
-    /***
+    /**
      * Creates an invoice line item collection operation given a billing provider and invoice line item type.
      * 
      * @param billingProvider The billing provider.
@@ -72,7 +72,7 @@ public class InvoiceOperations
     public Invoice get()
     {
         IPartnerServiceProxy<Invoice, Invoice> partnerServiceProxy =
-            new PartnerServiceProxy<Invoice, Invoice>( new TypeReference<Invoice>()
+            new PartnerServiceProxy<>( new TypeReference<Invoice>()
             {
             }, 
             this.getPartner(), MessageFormat.format( 

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerAvailabilityCollectionByTargetSegmentOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ public class CustomerAvailabilityCollectionByTargetSegmentOperations
     public ResourceCollection<Availability> get()
     {
         IPartnerServiceProxy<Availability, ResourceCollection<Availability>> partnerServiceProxy =
-        new PartnerServiceProxy<Availability, ResourceCollection<Availability>>( new TypeReference<ResourceCollection<Availability>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Availability>>()
         {
         }, 
         this.getPartner(), 

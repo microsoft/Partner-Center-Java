@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Cart.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,12 +14,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
-/***
+/**
  * This class represents a model of a cart object.
  */
 public class Cart 
     extends ResourceBaseWithLinks<StandardResourceLinks> {
-    /***
+    /**
      * Gets or sets a unique cart identifier.
      */
 	@JsonProperty( "id" )
@@ -35,7 +35,7 @@ public class Cart
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets the creation timestamp.
      */
 	@JsonProperty( "creationTimestamp" )
@@ -51,7 +51,7 @@ public class Cart
     	__CreationTimestamp = value;
     }
 
-    /***
+    /**
      *   Gets or sets the last modified timestamp.
      */
     @JsonProperty( "lastModifiedTimestamp" )
@@ -67,7 +67,7 @@ public class Cart
     	__LastModifiedTimestamp = value;
     }
 
-    /***
+    /**
      *  Gets or sets the expiration timestamp.
      */
     @JsonProperty( "expirationTimestamp" )
@@ -83,7 +83,7 @@ public class Cart
     	__ExpirationTimestamp = value;
     }
 
-    /***
+    /**
      *  Gets or sets the last modified user or application.
      */
     @JsonProperty( "lineItems" )

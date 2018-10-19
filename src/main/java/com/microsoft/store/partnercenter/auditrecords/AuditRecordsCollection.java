@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AuditRecordsCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,8 +8,6 @@ package com.microsoft.store.partnercenter.auditrecords;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-
-import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -26,6 +24,8 @@ import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
+
+import org.joda.time.DateTime;
 
 /**
  * An Implementation of {@code IAuditRecordsCollection} for handling common partner component properties and behavior.
@@ -44,15 +44,16 @@ public class AuditRecordsCollection
 	@Override
 	public SeekBasedResourceCollection<AuditRecord> query( DateTime startDate, DateTime endDate, IQuery query )
 	{
-        if ( query != null && query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
+        if ( query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
         {
             throw new IllegalArgumentException( "This type of query is not supported." );
         }
 
         IPartnerServiceProxy<AuditRecord, SeekBasedResourceCollection<AuditRecord>> partnerServiceProxy = 
-        		new PartnerServiceProxy<AuditRecord, SeekBasedResourceCollection<AuditRecord>>( new TypeReference<SeekBasedResourceCollection<AuditRecord>>()
-                {
-                }, this.getPartner(), PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getPath() );
+        		new PartnerServiceProxy<>( 
+                    new TypeReference<SeekBasedResourceCollection<AuditRecord>>()
+                    {
+                    }, this.getPartner(), PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getPath() );
 
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>(
         		PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get( "StartDate" ),
@@ -78,7 +79,7 @@ public class AuditRecordsCollection
             	new KeyValuePair<String, String>
             	(
             		PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get("Size"), 
-            		Integer.valueOf( query.getPageSize() ).toString()  
+            		Integer.toString( query.getPageSize() )  
             	)
             );
         }
@@ -126,5 +127,4 @@ public class AuditRecordsCollection
 
         return partnerServiceProxy.get();
 	}
-
 }

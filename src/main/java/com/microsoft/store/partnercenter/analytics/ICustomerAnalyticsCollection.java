@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerAnalyticsCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,7 +8,7 @@ package com.microsoft.store.partnercenter.analytics;
 
 import com.microsoft.store.partnercenter.IPartnerComponentString;
 
-/***
+/**
  * Holds operations that apply to customer analytics collection.
  */
 public interface ICustomerAnalyticsCollection 

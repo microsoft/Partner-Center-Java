@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerServiceCostsCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ import com.microsoft.store.partnercenter.models.servicecosts.ServiceCostsBilling
 public interface ICustomerServiceCostsCollection
     extends IPartnerComponentString
 {
-    /***
+    /**
      * Obtains the service cost operations by billing period.
      * 
      * @param billingPeriod The billing period.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISupportTopicsCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ public interface ISupportTopicsCollection
     extends IPartnerComponentString,
     IEntireEntityCollectionRetrievalOperations<SupportTopic, ResourceCollection<SupportTopic>>
 {
-	/***
+	/**
 	 * Retrieves all the support topics.
 	 * @return The support topics.
 	 */

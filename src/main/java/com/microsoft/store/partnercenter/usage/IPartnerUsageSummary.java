@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IPartnerUsageSummary.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.models.usage.PartnerUsageSummary;
 public interface IPartnerUsageSummary
     extends IPartnerComponentString, IEntityGetOperations<PartnerUsageSummary>
 {
-	/***
+	/**
 	 * Retrieves the partner's usage summary.
 	 * @return The partner's usage summary.
 	 */

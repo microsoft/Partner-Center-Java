@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerUsersCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,7 +9,6 @@ package com.microsoft.store.partnercenter.customerusers;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -71,14 +70,14 @@ public class CustomerUsersCollectionOperations
             throw new IllegalArgumentException( "CustomerUser can't be null" );
         }
         IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerUser, CustomerUser>( new TypeReference<CustomerUser>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomerUser" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.post( newCustomerUser );
 	}
 
-    /***
+    /**
      * Retrieves all the customer users.
      * 
      * @return All the customer users.
@@ -86,25 +85,26 @@ public class CustomerUsersCollectionOperations
     @Override
 	public SeekBasedResourceCollection<CustomerUser> get() {		
         IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-                new PartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
+                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-                                                            this.getContext(), Locale.US ) );
+                                                            this.getContext() ) );
         return partnerServiceProxy.get();
 	}
 
-    /***
+    /**
      * Retrieves the customer user operations for the specified user.
      * 
      * @param userId The user identifier.
      * @return The customer user operations for the specified user.
      */
 	@Override
-	public ICustomerUser byId( String userId ) {
+    public ICustomerUser byId( String userId ) 
+    {
 		return new CustomerUserOperations( this.getPartner(), this.getContext() , userId );
 	}
 
-	/***
+	/**
 	 * Queries customer users associated to the partner's customers.
 	 * 
      * @param customerUsersQuery A query to apply onto customer users. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
@@ -123,10 +123,10 @@ public class CustomerUsersCollectionOperations
         }
 
         IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
+            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-            					  this.getContext(), Locale.US ) );
+            					  this.getContext() ) );
 
         if ( customerUsersQuery.getType() == QueryType.SEEK )
         {
@@ -148,7 +148,7 @@ public class CustomerUsersCollectionOperations
                 // if the query specifies a page size, validate it and add it to the request
                 ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, customerUsersQuery.getPageSize(),
                                                    MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                         MIN_PAGE_SIZE, MAX_PAGE_SIZE, Locale.US ) );
+                                                                         MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
                 partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
                                                                                               String.valueOf( customerUsersQuery.getPageSize() ) ) );
             }

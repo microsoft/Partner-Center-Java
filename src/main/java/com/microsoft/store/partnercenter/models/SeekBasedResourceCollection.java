@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SeekBasedResourceCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ public class SeekBasedResourceCollection<T>
     /**
      * Gets or sets the continuation token.
      */
-    private String __ContinuationToken = new String();
+    private String __ContinuationToken;
 
     public String getContinuationToken()
     {

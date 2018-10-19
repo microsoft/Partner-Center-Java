@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="InvoiceCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ public class InvoiceCollection
     public SeekBasedResourceCollection<Invoice> get()
     {
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-            new PartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
+            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
                                                         Locale.US ) );
@@ -126,7 +126,7 @@ public class InvoiceCollection
                                            MessageFormat.format( "The page size must be an integer within the allowed range: {0}-{1}.",
                                                                  MinPageSize, MaxPageSize ) );
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-            new PartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
+            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
                                                         Locale.US ) );
@@ -139,7 +139,7 @@ public class InvoiceCollection
         return partnerServiceProxy.get();
     }
     
-    /***
+    /**
      * Asynchronously retrieves all invoices associated to the partner.
      * @param query The query parameter
      * @return The subset of invoices.
@@ -157,7 +157,7 @@ public class InvoiceCollection
         }
 
         IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-                new PartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
+                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
                 {
                 }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath(),
                                                             Locale.US ) );
@@ -191,5 +191,4 @@ public class InvoiceCollection
         
         return partnerServiceProxy.get();
     }
-
 }

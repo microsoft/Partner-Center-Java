@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SkuOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ public class ProductOperations
     extends BasePartnerComponent<Tuple<String, String>> 
     implements IProduct 
 {
-    /***
+    /**
      * The product skus operations..
      */  
     private ISkuCollection skus;
@@ -65,14 +65,14 @@ public class ProductOperations
         return skus; 
     }
 
-    /***
+    /**
      * Retrieves the product information
      * 
      * @return The product information.
      */
     public Product get()
     {
-        IPartnerServiceProxy<Product, Product> partnerServiceProxy = new PartnerServiceProxy<Product, Product>(
+        IPartnerServiceProxy<Product, Product> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<Product>() {
             }, this.getPartner(),
             MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetProduct").getPath(),

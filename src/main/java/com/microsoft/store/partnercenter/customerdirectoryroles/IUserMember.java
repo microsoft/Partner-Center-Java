@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IUserMember.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 public interface IUserMember
 	extends IPartnerComponent<TripletTuple<String,String,String>>, IEntityDeleteOperations<UserMember>
 {
-    /***
+    /**
      * Remove directory user member from directory role.
      */
     void delete();

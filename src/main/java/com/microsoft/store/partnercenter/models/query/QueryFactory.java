@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="QueryFactory.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,19 +14,19 @@ import com.microsoft.store.partnercenter.models.query.sort.Sort;
  */
 public class QueryFactory
 {
-    /***
+    /**
      * A singleton instance of the query factory.
      */
     private static QueryFactory __instance = new QueryFactory();
 
-    /***
+    /**
      * Prevents a default instance of the QueryFactory class from being created.
      */
     private QueryFactory()
     {
     }
     
-    /***
+    /**
      * Gets an instance of the query factory.
      * 
      * @return An instance of the query factory.

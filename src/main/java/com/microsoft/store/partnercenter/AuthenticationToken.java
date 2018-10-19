@@ -1,16 +1,15 @@
 // -----------------------------------------------------------------------
 // <copyright file="AuthenticationToken.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter;
 
-import org.joda.time.Duration;
-
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
 /**
  * Represents an authentication token for a resource.
@@ -27,7 +26,7 @@ public final class AuthenticationToken
     {
         if ( StringHelper.isNullOrWhiteSpace( token ) )
         {
-            throw new IllegalArgumentException( "token can't be empty." );
+            throw new IllegalArgumentException( "token connot be empty." );
         }
 
         this.setToken( token );
@@ -38,47 +37,47 @@ public final class AuthenticationToken
     /**
      * Gets the token.
      */
-    private String __Token = new String();
+    private String token;
 
     public String getToken()
     {
-        return __Token;
+        return token;
     }
 
     private void setToken( String value )
     {
-        __Token = value;
+        token = value;
     }
 
     /**
      * Gets the token expiry time.
      */
-    private DateTime __ExpiryTime;
+    private DateTime expiryTime;
 
     public DateTime getExpiryTime()
     {
-        return __ExpiryTime;
+        return expiryTime;
     }
 
     private void setExpiryTime( DateTime value )
     {
-        __ExpiryTime = value;
+        expiryTime = value;
     }
 
     /**
      * Gets or sets the amount of time to deduct from the actual expiry time in order to give time for processing
      * without letting the token expire while processing is still in progress.
      */
-    private Duration __ExpiryBuffer;
+    private Duration expiryBuffer;
 
     public Duration getExpiryBuffer()
     {
-        return __ExpiryBuffer;
+        return expiryBuffer;
     }
 
     public void setExpiryBuffer( Duration value )
     {
-        __ExpiryBuffer = value;
+        expiryBuffer = value;
     }
 
     /**

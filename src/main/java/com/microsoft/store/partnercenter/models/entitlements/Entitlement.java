@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="Entitlement.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,12 +12,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
-/***
+/**
  * Class that represents an entitlement.
  */
 public class Entitlement
      extends ResourceBaseWithLinks<StandardResourceLinks> {
-	/***
+	/**
 	 * Gets or sets included entitlements.
 	 */
 	@JsonProperty( "IncludedEntitlements" )
@@ -33,7 +33,7 @@ public class Entitlement
 		__IncludedEntitlements = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets reference order related to the entitlement.
 	 */
 	@JsonProperty( "ReferenceOrder" )
@@ -49,7 +49,7 @@ public class Entitlement
 		__ReferenceOrder = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets product id.
 	 */
 	@JsonProperty( "productId" )
@@ -65,7 +65,7 @@ public class Entitlement
 		__ProductId = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets quantity.
 	 */
 	@JsonProperty( "Quantity" )
@@ -81,7 +81,7 @@ public class Entitlement
 		__Quantity = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets the quantity details (quantity - state).
 	 */
 	@JsonProperty( "quantityDetails" )
@@ -97,7 +97,7 @@ public class Entitlement
 		__QuantityDetails = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets collection of entitled artifacts.
 	 */
 	@JsonProperty( "entitledArtifacts" )
@@ -113,7 +113,7 @@ public class Entitlement
 		__EntitledArtifacts = value;
 	}
 
-	/***
+	/**
 	 *   Gets or sets skuId.
 	 */
 	@JsonProperty( "skuId" )
@@ -129,7 +129,7 @@ public class Entitlement
 		__SkuId = value;
 	}
 
-	/***
+	/**
 	 *  Gets or sets entitlement type.
 	 */
 	@JsonProperty( "entitlementType" )

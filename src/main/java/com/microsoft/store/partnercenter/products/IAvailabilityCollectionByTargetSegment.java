@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IAvailabilityCollectionByTargetSegment" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface IAvailabilityCollectionByTargetSegment
     extends IPartnerComponent<QuadrupleTuple<String, String, String, String>>,
     IEntireEntityCollectionRetrievalOperations<Availability, ResourceCollection<Availability>>
 {
-    /***
+    /**
      * Retrieves all the availabilities for the provided SKU on a specific target segment.
      * 
      * @return The availability for the provided SKU on a specific target segment.

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureOfferTerm.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -10,12 +10,12 @@ import org.joda.time.DateTime;
 
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents an offer term tied to an Azure rate card.
  */
 public class AzureOfferTerm extends ResourceBase 
 {
-    /***
+    /**
      *  Gets or sets the offer name.
      */
     private String __Name;
@@ -30,7 +30,7 @@ public class AzureOfferTerm extends ResourceBase
     	__Name = value;
     }
 
-    /***
+    /**
      * Gets or sets the applied discount, if any.
      */
     private double __Discount;
@@ -45,7 +45,7 @@ public class AzureOfferTerm extends ResourceBase
     	__Discount = value;
     }
 
-    /***
+    /**
      * Gets or sets the excluded meter IDs from the offer term, if any.
      */
     private Iterable<String> __ExcludedMeterIds;
@@ -60,7 +60,7 @@ public class AzureOfferTerm extends ResourceBase
     	__ExcludedMeterIds = value;
     }
 
-    /***
+    /**
      * Gets or sets the date this meter is in effect.
      */
     private DateTime __EffectiveDate;

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="OneTimeInvoiceLineItem.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -17,166 +17,166 @@ public class OneTimeInvoiceLineItem
     /**
      * Gets or sets the partner commerce account Id.
      */
-    private String __PartnerId;
+    private String partnerId;
 
     public String getPartnerId()
     {
-        return __PartnerId;
+        return partnerId;
     }
 
     public void setPartnerId( String value )
     {
-        __PartnerId = value;
+        partnerId = value;
     }
 
     /**
      * Gets or sets the customer commerce account Id.
      */
-    private String __CustomerId;
+    private String customerId;
 
     public String getCustomerId()
     {
-        return __CustomerId;
+        return customerId;
     }
 
     public void setCustomerId( String value )
     {
-        __CustomerId = value;
+        customerId = value;
     }
 
     /**
      * Gets or sets the customer name.
      */
-    private String __CustomerName;
+    private String customerName;
 
     public String getCustomerName()
     {
-        return __CustomerName;
+        return customerName;
     }
 
     public void setCustomerName( String value )
     {
-        __CustomerName = value;
+        customerName = value;
     }
 
     /**
      * Gets or sets the MPN Id associated to this line item.
      */
-    private int __MpnId;
+    private int mpnId;
 
     public int getMpnId()
     {
-        return __MpnId;
+        return mpnId;
     }
 
     public void setMpnId( int value )
     {
-        __MpnId = value;
+        mpnId = value;
     }
 
     /**
      * Gets or sets the order unique identifier.
      */
-    private String __OrderId;
+    private String orderId;
 
     public String getOrderId()
     {
-        return __OrderId;
+        return orderId;
     }
 
     public void setOrderId( String value )
     {
-        __OrderId = value;
+        orderId = value;
     }
 
     /**
      * Gets or sets the type of charge
      */
-    private String __ChargeType;
+    private String chargeType;
 
     public String getChargeType()
     {
-        return __ChargeType;
+        return chargeType;
     }
 
     public void setChargeType( String value )
     {
-        __ChargeType = value;
+        chargeType = value;
     }
 
     /**
      * Gets or sets the unit price
      */
-    private double __UnitPrice;
+    private double unitPrice;
 
     public double getUnitPrice()
     {
-        return __UnitPrice;
+        return unitPrice;
     }
 
     public void setUnitPrice( double value )
     {
-        __UnitPrice = value;
+        unitPrice = value;
     }
 
     /**
      * Gets or sets the number of units associated with this line item
      */
-    private int __Quantity;
+    private int quantity;
 
     public int getQuantity()
     {
-        return __Quantity;
+        return quantity;
     }
 
     public void setQuantity( int value )
     {
-        __Quantity = value;
+        quantity = value;
     }
 
     /**
      * Gets or sets the amount after discount
      */
-    private double __Subtotal;
+    private double subtotal;
 
     public double getSubtotal()
     {
-        return __Subtotal;
+        return subtotal;
     }
 
     public void setSubtotal( double value )
     {
-        __Subtotal = value;
+        subtotal = value;
     }
 
     /**
      * Gets or sets the total amount after discount and tax
      */
-    private double __TotalForCustomer;
+    private double totalForCustomer;
 
     public double getTotalForCustomer()
     {
-        return __TotalForCustomer;
+        return totalForCustomer;
     }
 
     public void setTotalForCustomer( double value )
     {
-        __TotalForCustomer = value;
+        totalForCustomer = value;
     }
 
     /**
      * Gets or sets the currency used for this line item.
      */
-    private String __Currency;
+    private String currency;
 
     public String getCurrency()
     {
-        return __Currency;
+        return currency;
     }
 
     public void setCurrency( String value )
     {
-        __Currency = value;
+        currency = value;
     }
 
     /**
@@ -202,180 +202,180 @@ public class OneTimeInvoiceLineItem
     /**
      *  Gets or sets the discount details associated with this purchase.
      */
-    private String __DiscountDetails;
+    private String discountDetails;
 
     public String getDiscountDetails()
     {
-        return __DiscountDetails;
+        return discountDetails;
     }
 
     public void setDiscountDetails( String value )
     {
-        __DiscountDetails = value;
+        discountDetails = value;
     }
 
     /**
      *  Gets or sets the taxes charged.
      */
-    private double __TaxTotal;
+    private double taxTotal;
 
     public double getTaxTotal()
     {
-        return __TaxTotal;
+        return taxTotal;
     }
 
     public void setTaxTotal( double value )
     {
-        __TaxTotal = value;
+        taxTotal = value;
     }
 
     /**
      *  Gets or sets the SKU name.
      */
-    private double __SkuName;
+    private double skuName;
 
     public double getSkuName()
     {
-        return __SkuName;
+        return skuName;
     }
 
     public void setSkuName( double value )
     {
-        __SkuName = value;
+        skuName = value;
     }
 
     /**
      *  Gets or sets the product name.
      */
-    private String __ProductName;
+    private String productName;
 
     public String getProductName()
     {
-        return __ProductName;
+        return productName;
     }
 
     public void setProductName( String value )
     {
-        __ProductName = value;
+        productName = value;
     }
 
     /**
      *  Gets or sets the availability unique identifier.
      */
-    private String __AvailabilityId;
+    private String availabilityId;
 
     public String getAvailabilityId()
     {
-        return __AvailabilityId;
+        return availabilityId;
     }
 
     public void setAvailabilityId( String value )
     {
-        __AvailabilityId = value;
+        availabilityId = value;
     }
 
     /**
      *  Gets or sets the sku unique identifier.
      */
-    private String __SkuId;
+    private String skuId;
 
     public String getSkuId()
     {
-        return __SkuId;
+        return skuId;
     }
 
     public void setSkuId( String value )
     {
-        __SkuId = value;
+        skuId = value;
     }
 
     /**
      * Gets or sets the product unique identifier.
      */
-    private String __ProductId;
+    private String productId;
 
     public String getProductId()
     {
-        return __ProductId;
+        return productId;
     }
 
     public void setProductId( String value )
     {
-        __ProductId = value;
+        productId = value;
     }
 
     /**
      * Gets or sets the date when order created.
      */
-    private DateTime __OrderDate;
+    private DateTime orderDate;
 
     public DateTime getOrderDate()
     {
-        return __OrderDate;
+        return orderDate;
     }
 
     public void setOrderDate( DateTime value )
     {
-        __OrderDate = value;
+        orderDate = value;
     }
 
     /**
      * Gets or sets the Reseller MPN Id of the Tier 2 partner associated to this line item.
      */
-    private String __ResellerMpnId;
+    private String resellerMpnId;
 
     public String getResellerMpnId()
     {
-        return __ResellerMpnId;
+        return resellerMpnId;
     }
 
     public void setResellerMpnId( String value )
     {
-        __ResellerMpnId = value;
+        resellerMpnId = value;
     }
 
     /**
      * Gets or sets the invoice number.
      */
-    private String __InvoiceNumber;
+    private String invoiceNumber;
 
     public String getInvoiceNumber()
     {
-        return __InvoiceNumber;
+        return invoiceNumber;
     }
 
     public void setInvoiceNumber( String value )
     {
-        __InvoiceNumber = value;
+        invoiceNumber = value;
     }
 
     /**
      * Gets or sets the customer country.
      */
-    private String __CustomerCountry;
+    private String customerCountry;
 
     public String getCustomerCountry()
     {
-        return __CustomerCountry;
+        return customerCountry;
     }
 
     public void setCustomerCountry( String value )
     {
-        __CustomerCountry = value;
+        customerCountry = value;
     }
 
     /**
      *  Gets or sets the customer domain name.
      */
-    private String __CustomerDomainName;
+    private String customerDomainName;
 
     public String getCustomerDomainName()
     {
-        return __CustomerDomainName;
+        return customerDomainName;
     }
 
     public void setCustomerDomainName( String value )
     {
-        __CustomerCountry = value;
+        customerDomainName = value;
     }
 }

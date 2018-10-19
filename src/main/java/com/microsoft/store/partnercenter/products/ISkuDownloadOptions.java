@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISkuDownloadOptions" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface ISkuDownloadOptions
     extends IPartnerComponent<TripletTuple<String, String, String>>,
     IEntireEntityCollectionRetrievalOperations<SkuDownloadOptions, ResourceCollection<SkuDownloadOptions>>
 {
-    /***
+    /**
      * Retrieves all download options for the provided SKU
      * 
      * @return The SKU download options

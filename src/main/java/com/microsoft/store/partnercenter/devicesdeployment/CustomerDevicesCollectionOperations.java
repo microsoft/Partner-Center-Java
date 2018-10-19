@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerDevicesCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ public class CustomerDevicesCollectionOperations
         }
     }
 
-    /***
+    /**
 	 * Updates the devices with configuration policies.
 	 * 
 	 * @param devicePolicyUpdateRequest The device policy update request with devices to be updated..
@@ -51,11 +51,12 @@ public class CustomerDevicesCollectionOperations
     @Override
     public String update(DevicePolicyUpdateRequest devicePolicyUpdateRequest)
     {
-        IPartnerServiceProxy<DevicePolicyUpdateRequest, HttpResponse> partnerServiceProxy = new PartnerServiceProxy<DevicePolicyUpdateRequest, HttpResponse>(
-            new TypeReference<HttpResponse>() {
-            }, this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevicesWithPolicies").getPath(),
-                    this.getContext() ));
+        IPartnerServiceProxy<DevicePolicyUpdateRequest, HttpResponse> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
+                new TypeReference<HttpResponse>() {
+                }, this.getPartner(),
+                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevicesWithPolicies").getPath(),
+                        this.getContext() ));
 
         HttpResponse response = partnerServiceProxy.patch( devicePolicyUpdateRequest );  
 

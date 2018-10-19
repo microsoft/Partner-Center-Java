@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerUsageSummary.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ public class PartnerUsageSummary
         __CustomersTrendingOver = value;
     }
     
-    /***
+    /**
      * Gets or sets the number of customers with a usage-based subscription.
      */
     private long __CustomersWithUsageBasedSubscription;

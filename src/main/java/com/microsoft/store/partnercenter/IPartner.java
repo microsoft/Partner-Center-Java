@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IPartner.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -98,14 +98,14 @@ public interface IPartner
      */
     IPartnerServiceRequestCollection getServiceRequests();
     
-    /***
+    /**
      * Gets the service health operations that can be performed on a partner's subscribed services.
      * 
      * @return The service health operations that can be performed on a partner's subscribed services.
      */
     IServiceIncidentCollection getServiceIncidents();
 
-    /***
+    /**
      *  Gets the country validation rules collection operations available to the partner.
      * 
      * @return The country validation rules collection operations available to the partner.
@@ -119,7 +119,7 @@ public interface IPartner
      */
     IPartnerUsageSummary getUsageSummary();
 
-    /***
+    /**
      * Gets the domains operations available to the partner.
      * 
      * @return The domains operations available to the partner.
@@ -133,49 +133,49 @@ public interface IPartner
      */
     IAuditRecordsCollection getAuditRecords();
 
-    /***
+    /**
      * Gets the rate card operations available to the partner.
      * 
      * @return The rate card operations available to the partner.
      */
     IRateCardCollection getRateCards();
 
-    /***
+    /**
      * Gets the analytics collection operations.
      * 
      * @return The analytics collection operations.
      */
     IPartnerAnalyticsCollection getAnalytics();
 
-    /***
+    /**
      * Gets the extensions operations available to the partner.
      * 
      * @return The extensions operations available to the partner.
      */
     IExtensions getExtensions();
 
-    /***
+    /**
      * Gets the product operations available to the partner.
      * 
      * @return The product operations available to the partner.
      */
     IProductCollection getProducts();
 
-    /***
+    /**
      * Gets the relationship collection operations available to the partner.
      * 
      * @return The relationship collection operations available to the partner.
      */    
     IRelationshipCollection getRelationships();
 
-    /***
+    /**
      * Gets the validation operations available to the partner.
      * 
      * @return The validation operations available to the partner.
      */    
     IValidationOperations getValidations();
 
-    /***
+    /**
      * Gets the agreement metadata operations.
      * 
      * @return The agreement metadata operations.

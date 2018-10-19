@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SimpleFieldFilter.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ public class SimpleFieldFilter
     /**
      * Gets or sets the filtered field name.
      */
-    private String __Field = new String();
+    private String __Field;
 
     public String getField()
     {
@@ -81,7 +81,7 @@ public class SimpleFieldFilter
     /**
      * Gets or sets the filter value.
      */
-    private String __Value = new String();
+    private String __Value;
 
     public String getValue()
     {

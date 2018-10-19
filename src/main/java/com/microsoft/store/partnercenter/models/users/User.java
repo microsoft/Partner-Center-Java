@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="User.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
 public class User extends ResourceBaseWithLinks<StandardResourceLinks>
 {
-    /***
+    /**
      * Gets or sets the user object identifier.
      */
 	@JsonProperty( "id" )
@@ -30,7 +30,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__Id = value;
     }
 
-    /***
+    /**
      * Gets or sets the name of the user principal.
      */
 	@JsonProperty( "UserPrincipalName" )
@@ -47,7 +47,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     }
 
 
-    /***
+    /**
      * Gets or sets the first name.
      */
 	@JsonProperty( "FirstName" )
@@ -63,7 +63,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__FirstName = value;
     }
 
-    /***
+    /**
      * Gets or sets the last name.
      */
 	@JsonProperty( "LastName" )
@@ -79,7 +79,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__LastName = value;
     }
 
-    /***
+    /**
      * Gets or sets the display name.
      */
 	@JsonProperty( "DisplayName" )
@@ -95,7 +95,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__DisplayName = value;
     }
 
-    /***
+    /**
      * Gets or sets the password profile.
      */
 	@JsonProperty( "PasswordProfile" )
@@ -111,7 +111,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__PasswordProfile = value;
     }
 
-    /***
+    /**
      * Gets or sets the last directory sync time for the user.
      */
 	@JsonProperty( "LastDirectorySyncTime" )
@@ -127,7 +127,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__LastDirectorySyncTime = value;
     }
 
-    /***
+    /**
      * Gets or sets user domain type.
      */
 	@JsonProperty( "UserDomainType" )
@@ -143,7 +143,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__UserDomainType = value;
     }
 
-    /***
+    /**
      * Gets or sets the state of the user, for the deleted user this is "Inactive" and for the normal user it is "Active".
      */
 	@JsonProperty( "State" )
@@ -159,7 +159,7 @@ public class User extends ResourceBaseWithLinks<StandardResourceLinks>
     	__State = value;
     }
 
-    /***
+    /**
      * Gets or sets the deleted time for the inactive user.
      */
 	@JsonProperty( "softDeletionTime" )

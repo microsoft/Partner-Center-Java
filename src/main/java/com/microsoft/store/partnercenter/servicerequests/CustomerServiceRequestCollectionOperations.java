@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerServiceRequestCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,7 +9,6 @@ package com.microsoft.store.partnercenter.servicerequests;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -56,11 +55,11 @@ public class CustomerServiceRequestCollectionOperations
     public CustomerServiceRequestCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {
         super( rootPartnerOperations, customerId );
+
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId can't be null" );
         }
-
     }
 
     /**
@@ -95,17 +94,17 @@ public class CustomerServiceRequestCollectionOperations
         }
 
         PartnerServiceProxy<ServiceRequest, SeekBasedResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, SeekBasedResourceCollection<ServiceRequest>>( new TypeReference<SeekBasedResourceCollection<ServiceRequest>>()
+            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<ServiceRequest>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
 
         if ( serviceRequestsQuery.getType() == QueryType.INDEXED )
         {
             // if the query specifies a page size, validate it and add it to the request
             ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
                                                MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                     MIN_PAGE_SIZE, MAX_PAGE_SIZE, Locale.US ) );
+                                                                     MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
             partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getParameters().get( "Size" ),
                                                                                           String.valueOf( serviceRequestsQuery.getPageSize() ) ) );
             partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getParameters().get( "Offset" ),
@@ -143,12 +142,11 @@ public class CustomerServiceRequestCollectionOperations
     public ResourceCollection<ServiceRequest> get()
     {
         IPartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>>( new TypeReference<ResourceCollection<ServiceRequest>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceRequest>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAllServiceRequestsCustomer" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
 
         return partnerServiceProxy.get();
     }
-
 }

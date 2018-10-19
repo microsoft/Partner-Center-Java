@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostsSummaryLinks.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class ServiceCostsSummaryLinks 
     extends StandardResourceLinks
 {
-    /***
+    /**
      * Gets or sets the link to the service cost line items.
      */
 	@JsonProperty( "serviceCostLineItems" )

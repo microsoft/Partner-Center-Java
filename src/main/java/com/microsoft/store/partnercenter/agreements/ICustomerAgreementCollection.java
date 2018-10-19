@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerAgreementCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ public interface ICustomerAgreementCollection
         extends IPartnerComponentString,
         IEntireEntityCollectionRetrievalOperations<Agreement, ResourceCollection<Agreement>>
 {
-    /***
+    /**
      * Adds accepted agreement.
      *
      * @param newEntity Agreement to add.
@@ -27,7 +27,7 @@ public interface ICustomerAgreementCollection
      */
     Agreement create( Agreement newEntity );
 
-    /***
+    /**
      * Retrieves all agreements.
      *
      * @return The agreements.

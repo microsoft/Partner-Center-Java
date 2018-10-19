@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProductCollectionByCountryByTargetViewByTargetSegmentOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all the products in the given country, catalog view and target segment.
      * 
      * @return The products in the given country, catalog view and target segment.
@@ -59,7 +59,7 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
     public ResourceCollection<Product> get()
     {
         IPartnerServiceProxy<Product, ResourceCollection<Product>> partnerServiceProxy =
-            new PartnerServiceProxy<Product, ResourceCollection<Product>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Product>>()
                 {
                 }, 

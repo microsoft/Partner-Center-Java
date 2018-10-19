@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="RetryableHttpCall.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.logging.PartnerLog;
@@ -53,8 +52,7 @@ public class RetryableHttpCall
         this.setRetryPolicy( retryPolicy );
     }
 
-
-    private IRetryPolicy __RetryPolicy;
+    private IRetryPolicy retryPolicy;
     
     /**
      * Gets the retry policy.
@@ -63,7 +61,7 @@ public class RetryableHttpCall
      */
     public IRetryPolicy getRetryPolicy()
     {
-        return __RetryPolicy;
+        return retryPolicy;
     }
 
     /**
@@ -73,7 +71,7 @@ public class RetryableHttpCall
      */
     public void setRetryPolicy( IRetryPolicy value )
     {
-        __RetryPolicy = value;
+        retryPolicy = value;
     }
 
     /**
@@ -107,7 +105,6 @@ public class RetryableHttpCall
 
         while ( attempts == 0 || this.getRetryPolicy().shouldRetry( attempts ) )
         {
-
             try
             {
                 PartnerLog.getInstance().logInformation( "Starting request. Attempt " + attempts + "\t Time: "
@@ -132,9 +129,13 @@ public class RetryableHttpCall
             catch ( IOException e )
             {
                 operationException = e;
-                PartnerLog.getInstance().logError( MessageFormat.format( "RetryableHttpCall: Attempt {0} failed: {1}",
-                                                                         attempts, e, Locale.US ) );
+                PartnerLog.getInstance().logError(
+                     MessageFormat.format(
+                         "RetryableHttpCall: Attempt {0} failed: {1}",
+                         attempts, 
+                         e ) );
             }
+
             ++attempts;
 
             if ( this.getRetryPolicy().shouldRetry( attempts ) )
@@ -146,7 +147,6 @@ public class RetryableHttpCall
                 }
                 catch ( InterruptedException e )
                 {
-
                 }
             }
             else

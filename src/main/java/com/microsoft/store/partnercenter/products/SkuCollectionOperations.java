@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SkuCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ public class SkuCollectionOperations
         ParameterValidator.isValidCountryCode(country);
     }
 
-    /***
+    /**
      * Retrieves the operations tied with a specific SKU.
      * 
      * @param skuId Identifier for the SKU.
@@ -77,7 +77,7 @@ public class SkuCollectionOperations
     public ResourceCollection<Sku> get()
     {
         IPartnerServiceProxy<Sku, ResourceCollection<Sku>> partnerServiceProxy =
-            new PartnerServiceProxy<Sku, ResourceCollection<Sku>>(
+            new PartnerServiceProxy<>(
                 new TypeReference<ResourceCollection<Sku>>()
                 {
                 }, 

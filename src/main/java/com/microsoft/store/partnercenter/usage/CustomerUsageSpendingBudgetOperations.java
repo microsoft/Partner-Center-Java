@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerUsageSpendingBudgetOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.usage;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -38,7 +37,6 @@ public class CustomerUsageSpendingBudgetOperations
         {
             throw new IllegalArgumentException( "customerId must be set." );
         }
-
     }
 
     /**
@@ -50,10 +48,10 @@ public class CustomerUsageSpendingBudgetOperations
     public SpendingBudget get()
     {
         IPartnerServiceProxy<SpendingBudget, SpendingBudget> partnerServiceProxy =
-            new PartnerServiceProxy<SpendingBudget, SpendingBudget>( new TypeReference<SpendingBudget>()
+            new PartnerServiceProxy<>( new TypeReference<SpendingBudget>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsageSpendingBudget" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.get();
     }
 
@@ -71,10 +69,10 @@ public class CustomerUsageSpendingBudgetOperations
             throw new IllegalArgumentException( "usage spending budget is required." );
         }
         IPartnerServiceProxy<SpendingBudget, SpendingBudget> partnerServiceProxy =
-            new PartnerServiceProxy<SpendingBudget, SpendingBudget>( new TypeReference<SpendingBudget>()
+            new PartnerServiceProxy<>( new TypeReference<SpendingBudget>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PatchCustomerUsageSpendingBudget" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.patch( usageSpendingBudget );
     }
 

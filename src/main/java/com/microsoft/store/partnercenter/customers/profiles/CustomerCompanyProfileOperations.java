@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerCompanyProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.customers.profiles;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -35,9 +34,8 @@ public class CustomerCompanyProfileOperations
         super( rootPartnerOperations, customerId );
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
-            throw new IllegalArgumentException( "customerId can't be null" );
+            throw new IllegalArgumentException( "customerId cannot be null" );
         }
-
     }
 
     /**
@@ -48,23 +46,11 @@ public class CustomerCompanyProfileOperations
     @Override
     public CustomerCompanyProfile get()
     {
-
         PartnerServiceProxy<CustomerCompanyProfile, CustomerCompanyProfile> partnerServiceProxy =
             new PartnerServiceProxy<CustomerCompanyProfile, CustomerCompanyProfile>( new TypeReference<CustomerCompanyProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerCompanyProfile" ).getPath(),
-                                                        this.getContext(), Locale.US ) );
+                                                        this.getContext() ) );
         return partnerServiceProxy.get();
-    }
-
-    /**
-     * Updates the customer's company profile.
-     * 
-     * @param companyProfile A customer company profile with updated fields.
-     * @return The updated customer company profile.
-     */
-    public CustomerCompanyProfile update( CustomerCompanyProfile companyProfile )
-    {
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

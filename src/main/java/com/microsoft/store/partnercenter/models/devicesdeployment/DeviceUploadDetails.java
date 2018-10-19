@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BatchUploadDetails.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,11 +9,11 @@ package com.microsoft.store.partnercenter.models.devicesdeployment;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents the status of batch upload of devices.
  */
 public class DeviceUploadDetails extends ResourceBase {
-	/***
+	/**
 	 * Gets or sets the device Id.
 	 */
 	@JsonProperty( "deviceId" )
@@ -29,7 +29,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		__DeviceId = value;
 	}
 
-	/***
+	/**
      * Gets or sets the serial number.
 	 */
 	@JsonProperty( "serialNumber" )
@@ -45,7 +45,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		__SerialNumber = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the product key.
 	 */
 	@JsonProperty( "productKey" )
@@ -61,7 +61,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		__ProductKey = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the device upload status.
 	 */
 	@JsonProperty( "status" )
@@ -77,7 +77,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		__Status = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the error code upon device upload failure.
 	 */
 	@JsonProperty( "errorCode" )
@@ -93,7 +93,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		__ErrorCode = value;
     }
 
-	/***
+	/**
 	 * Gets or sets the error description upon device upload failure.
 	 */
 	@JsonProperty( "errorDescription" )

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ProductCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ public class ProductCollectionOperations
         super( rootPartnerOperations, null );
     }
 
-    /***
+    /**
      *  Retrieves the operations that can be applied on products from a given country.
      * 
      * @param country The country name.

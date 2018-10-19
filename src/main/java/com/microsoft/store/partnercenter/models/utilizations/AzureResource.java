@@ -1,17 +1,17 @@
 // -----------------------------------------------------------------------
 // <copyright file="AzureResource.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.models.utilizations;
 
-/***
+/**
  * Represents an Azure resource being metered.
  */
 public class AzureResource
 {
-	/***
+	/**
 	 * Gets or sets the unique identifier of the Azure resource that was consumed. Also known as resourceID or resourceGUID.
 	 */
 	private String __Id;
@@ -24,7 +24,7 @@ public class AzureResource
 		this.__Id = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the friendly name of the Azure resource being consumed.
 	 */
 	private String __Name;
@@ -37,7 +37,7 @@ public class AzureResource
 		this.__Name = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the category of the consumed Azure resource.
 	 */
 	private String __Category;
@@ -50,7 +50,7 @@ public class AzureResource
 		this.__Category = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the sub-category of the consumed Azure resource.
 	 */
 	private String __Subcategory;
@@ -63,7 +63,7 @@ public class AzureResource
 		this.__Subcategory = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the region of the consumed Azure resource.
 	 */
 	private String __Region;

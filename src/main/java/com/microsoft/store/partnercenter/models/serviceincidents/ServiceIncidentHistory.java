@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceIncidentHistory.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -8,12 +8,12 @@ package com.microsoft.store.partnercenter.models.serviceincidents;
 
 import org.joda.time.DateTime;
 
-/***
+/**
  * Represents the message history for service incident. *
  */
 public class ServiceIncidentHistory
 {
-	/***
+	/**
 	 * Gets or sets the published time.
 	 */
     private DateTime __PublishedTime;
@@ -32,7 +32,7 @@ public class ServiceIncidentHistory
 		this.__PublishedTime = __PublishedTime;
 	}
 
-    /***
+    /**
      * Gets or sets the Message text.
      */
     private String __MessageText;

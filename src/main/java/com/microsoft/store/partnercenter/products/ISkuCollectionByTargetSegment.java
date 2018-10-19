@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISkuCollectionByTargetSegment.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ public interface ISkuCollectionByTargetSegment
     extends IPartnerComponent<TripletTuple<String, String, String>>,
     IEntireEntityCollectionRetrievalOperations<Sku, ResourceCollection<Sku>>
 {
-    /***
+    /**
      * Retrieves all the skus for the provided product and target segment.
      * 
      * @return The SKUs for the provided product and target segment.

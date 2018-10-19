@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerRelationshipRequestOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ public class CustomerRelationshipRequestOperations
     public CustomerRelationshipRequest get()
     {
         IPartnerServiceProxy<CustomerRelationshipRequest, CustomerRelationshipRequest> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerRelationshipRequest, CustomerRelationshipRequest>( new TypeReference<CustomerRelationshipRequest>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerRelationshipRequest>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerRelationshipRequest" ).getPath(),
                                                         Locale.US ) );

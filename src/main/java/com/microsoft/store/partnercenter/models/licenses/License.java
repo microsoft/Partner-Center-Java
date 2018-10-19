@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="License.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -9,11 +9,11 @@ package com.microsoft.store.partnercenter.models.licenses;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Model for user licenses assigned to a user.
  */
 public class License extends ResourceBase {
-    /***
+    /**
      * Gets or sets the service plan collection. Service plans refer to services that user is assigned to use.
      * For example , Delve is a service plan which a user is either assigned to use or can be assigned to use.
      */
@@ -30,7 +30,7 @@ public class License extends ResourceBase {
     	__ServicePlans = value;
     }
 
-    /***
+    /**
      * Gets or sets the product SKU which the license applies to.
      */
 	@JsonProperty( "productSku" )    

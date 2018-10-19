@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="DeviceOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ public class DeviceOperations
         }
     }
 
-    /***
+    /**
      * Updates a device associated to the customer with a configuration policy.
      * 
      * @param updateDevice Payload of the update request.
@@ -58,25 +58,27 @@ public class DeviceOperations
     @Override
     public Device patch(Device updateDevice)
     {
-        IPartnerServiceProxy<Device, Device> partnerServiceProxy = new PartnerServiceProxy<Device, Device>(
-            new TypeReference<Device>() {
-            }, this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevice").getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
+        IPartnerServiceProxy<Device, Device> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
+                new TypeReference<Device>() {
+                }, this.getPartner(),
+                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevice").getPath(),
+                        this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
 
         return partnerServiceProxy.put(updateDevice);
     }
 
-    /***
+    /**
      *  Deletes a device associated to the customer.
      */
     public void delete()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy>(
-            new TypeReference<ConfigurationPolicy>() {
-            }, this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("DeleteDevice").getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
+        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
+            new PartnerServiceProxy<>(
+                new TypeReference<ConfigurationPolicy>() {
+                }, this.getPartner(),
+                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("DeleteDevice").getPath(),
+                        this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
 
         partnerServiceProxy.delete();
     }

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="IUtilizationCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 public interface IUtilizationCollection
 	extends IPartnerComponent<Tuple<String, String>>
 {
-	/***
+	/**
 	 * Gets the Azure subscription utilization behavior.
 	 * 
 	 * @return The Azure subscription utilization behavior.

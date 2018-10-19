@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="BatchUploadDetails.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,11 +11,11 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-/***
+/**
  * Represents a devices batch creation model.
  */
 public class DeviceBatchCreationRequest extends ResourceBase {
-	/***
+	/**
 	 * Gets or sets the devices batch unique identifier.
 	 */
 	@JsonProperty( "batchId" )
@@ -31,7 +31,7 @@ public class DeviceBatchCreationRequest extends ResourceBase {
 		__BatchId = value;
 	}
 
-	/***
+	/**
 	 * Gets or sets the list of devices to be uploaded.
 	 */
 	@JsonProperty( "devices" )

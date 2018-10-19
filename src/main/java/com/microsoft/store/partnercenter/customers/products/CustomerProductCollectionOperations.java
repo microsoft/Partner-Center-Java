@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerProductCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ public class CustomerProductCollectionOperations
         return new CustomerProductOperations(this.getPartner(), this.getContext(), productId);        
     }
 
-    /***
+    /**
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer.
      * 
      * @return The catalog view operations by target view

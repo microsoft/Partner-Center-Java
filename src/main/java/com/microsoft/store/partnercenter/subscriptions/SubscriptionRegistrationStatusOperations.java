@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SubscriptionRegistrationStatusOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ public class SubscriptionRegistrationStatusOperations
     public SubscriptionRegistrationStatus get()
     {
         IPartnerServiceProxy<SubscriptionRegistrationStatus, SubscriptionRegistrationStatus> partnerServiceProxy =
-            new PartnerServiceProxy<SubscriptionRegistrationStatus, SubscriptionRegistrationStatus>(
+            new PartnerServiceProxy<>(
                 new TypeReference<SubscriptionRegistrationStatus>()
                 {
                 }, 

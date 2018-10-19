@@ -15,7 +15,7 @@ public class InvoiceDocumentsOperations
 	implements IInvoiceDocuments
 {
 	
-	/***
+	/**
 	 * Initializes a new instance of the InvoiceDocumentsOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
@@ -31,7 +31,7 @@ public class InvoiceDocumentsOperations
         }
 	}
 
-	/***
+	/**
 	 * Gets an invoice statement operations.
 	 */
 	@Override

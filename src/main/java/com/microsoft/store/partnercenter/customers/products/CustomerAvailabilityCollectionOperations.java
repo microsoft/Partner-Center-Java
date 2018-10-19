@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerAvailabilityCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ public class CustomerAvailabilityCollectionOperations
         }
     }
 
-    /***
+    /**
      * Retrieves the operations tied with a specific availability.
      * 
      * @param availabilityId Identifier for the availability.
@@ -78,7 +78,7 @@ public class CustomerAvailabilityCollectionOperations
     public ResourceCollection<Availability> get()
     {
         IPartnerServiceProxy<Availability, ResourceCollection<Availability>> partnerServiceProxy =
-        new PartnerServiceProxy<Availability, ResourceCollection<Availability>>( new TypeReference<ResourceCollection<Availability>>()
+        new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Availability>>()
         {
         }, 
         this.getPartner(), 
@@ -88,7 +88,7 @@ public class CustomerAvailabilityCollectionOperations
         return partnerServiceProxy.get();
     }
 
-    /***
+    /**
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.
      * 
      * @param targetSegment The availability segment filter.

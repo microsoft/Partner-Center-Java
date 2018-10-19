@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="SupportProfileOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class SupportProfileOperations
     public SupportProfile get()
     {
         IPartnerServiceProxy<SupportProfile, SupportProfile> partnerServiceProxy =
-            new PartnerServiceProxy<SupportProfile, SupportProfile>( new TypeReference<SupportProfile>()
+            new PartnerServiceProxy<>( new TypeReference<SupportProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetSupportProfile" ).getPath(),
                                                         Locale.US ) );
@@ -61,7 +61,7 @@ public class SupportProfileOperations
     public SupportProfile update( SupportProfile updatePayload )
     {
         IPartnerServiceProxy<SupportProfile, SupportProfile> partnerServiceProxy =
-            new PartnerServiceProxy<SupportProfile, SupportProfile>( new TypeReference<SupportProfile>()
+            new PartnerServiceProxy<>( new TypeReference<SupportProfile>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSupportProfile" ).getPath(),
                                                         Locale.US ) );

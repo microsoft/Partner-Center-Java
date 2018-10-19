@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerSubscriptionCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.subscriptions;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -73,10 +72,10 @@ public class PartnerSubscriptionCollectionOperations
     public ResourceCollection<Subscription> get( int offset, int size )
     {
         PartnerServiceProxy<Subscription, ResourceCollection<Subscription>> partnerServiceProxy =
-            new PartnerServiceProxy<Subscription, ResourceCollection<Subscription>>( new TypeReference<ResourceCollection<Subscription>>()
+            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Subscription>>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerSubscriptionsByPartner" ).getPath(),
-                                                        this.getContext().getItem1(), Locale.US ) );
+                                                        this.getContext().getItem1() ) );
 
         partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerSubscriptionsByPartner" ).getParameters().get( "PartnerId" ),
                                                                                       this.getContext().getItem2() ) );

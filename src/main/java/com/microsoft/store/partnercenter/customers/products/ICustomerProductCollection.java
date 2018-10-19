@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ICustomerProductCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ public interface ICustomerProductCollection
      */
     IProduct byId( String productId );
 
-    /***
+    /**
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer.
      * 
      * @param targetView The product target view.

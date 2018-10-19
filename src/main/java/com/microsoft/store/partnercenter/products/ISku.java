@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ISku.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -18,21 +18,21 @@ public interface ISku
     extends IPartnerComponent<TripletTuple<String, String, String>>,
     IEntityGetOperations<Sku>
 {
-    /***
+    /**
      * Retrieves the operations for the current SKU's availabilities.
      * 
      * @return The operations for the current SKU's availabilities.
      */    
     IAvailabilityCollection getAvailabilities();
 
-    /***
+    /**
      * Retrieves the operations for the current SKU's download options.
      * 
      * @return The operations for the current SKU's download options.
      */    
     ISkuDownloadOptions getDownloadOptions();
 
-    /***
+    /**
      * Retrieves the SKU information.
      * 
      * @return The SKUs information.

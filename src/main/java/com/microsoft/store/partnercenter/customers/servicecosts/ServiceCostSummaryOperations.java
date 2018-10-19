@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="ServiceCostSummaryOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ public class ServiceCostSummaryOperations
         }
     }
 
-    /***
+    /**
      * Retrieves a customer's service cost line items.
      * 
      * @return The service cost line items.
@@ -49,7 +49,7 @@ public class ServiceCostSummaryOperations
 	public ServiceCostsSummary get()
     {
         IPartnerServiceProxy<ServiceCostsSummary, ServiceCostsSummary> partnerServiceProxy =
-        new PartnerServiceProxy<ServiceCostsSummary, ServiceCostsSummary >( new TypeReference<ServiceCostsSummary>()
+        new PartnerServiceProxy<>( new TypeReference<ServiceCostsSummary>()
         {
         }, 
         this.getPartner(), 

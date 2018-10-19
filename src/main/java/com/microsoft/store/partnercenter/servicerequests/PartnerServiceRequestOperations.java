@@ -1,13 +1,12 @@
 // -----------------------------------------------------------------------
 // <copyright file="PartnerServiceRequestOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.servicerequests;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -35,11 +34,11 @@ public class PartnerServiceRequestOperations
     public PartnerServiceRequestOperations( IPartner rootPartnerOperations, String serviceRequestId )
     {
         super( rootPartnerOperations, new Tuple<String, String>( serviceRequestId, "" ) );
+
         if ( StringHelper.isNullOrWhiteSpace( serviceRequestId ) )
         {
             throw new IllegalArgumentException( "serviceRequestId can't be null" );
         }
-
     }
 
     /**
@@ -51,10 +50,10 @@ public class PartnerServiceRequestOperations
     public ServiceRequest get()
     {
         IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ServiceRequest>( new TypeReference<ServiceRequest>()
+            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestPartner" ).getPath(),
-                                                        this.getContext().getItem1(), Locale.US ) );
+                                                        this.getContext().getItem1() ) );
 
         return partnerServiceProxy.get();
     }
@@ -69,10 +68,10 @@ public class PartnerServiceRequestOperations
     public ServiceRequest patch( ServiceRequest updatePayload )
     {
         IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<ServiceRequest, ServiceRequest>( new TypeReference<ServiceRequest>()
+            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
             {
             }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestPartner" ).getPath(),
-                                                        this.getContext().getItem1(), Locale.US ) );
+                                                        this.getContext().getItem1() ) );
 
         return partnerServiceProxy.patch( updatePayload );
     }

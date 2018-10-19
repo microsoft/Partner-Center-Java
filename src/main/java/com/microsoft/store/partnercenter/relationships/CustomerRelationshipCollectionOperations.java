@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
 // <copyright file="CustomerRelationshipCollectionOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation.  All rights reserved.
+//      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -41,14 +41,14 @@ public class CustomerRelationshipCollectionOperations
         }
     }
 
-    /***
+    /**
      * Retrieves all the partner relationships associated to the customer based on the logged in partner.
      * 
      * @return The partner relationships.
      */
     public ResourceCollection<PartnerRelationship> get()
     {
-        IPartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>> partnerServiceProxy = new PartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>>(
+        IPartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>> partnerServiceProxy = new PartnerServiceProxy<>(
             new TypeReference<ResourceCollection<PartnerRelationship>>() {
             }, 
             this.getPartner(),
