@@ -6,33 +6,49 @@
 
 package com.microsoft.store.partnercenter.models.invoices;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Different providers of billing information.
  */
-public enum DocumentType {
+public enum DocumentType
+{
     /**
      * Value if not set.
      */
-    @JsonProperty("none")
-    NONE,
+    NONE("none"),
 
     /**
      * Indicates that document type is an invoice.
      */
-    @JsonProperty("invoice")
-    INVOICE,
+    INVOICE("invoice"),
 
     /**
      * Indicates that document type is an void note.
      */
-    @JsonProperty("void_note")
-    VOID_NOTE,
+    VOID_NOTE("void_note"),
 
     /**
      * Indicates that document type is an adjustment note.
      */
-    @JsonProperty("adjustment_note")
-    ADJUSTMENT_NOTE
+    ADJUSTMENT_NOTE("adjustment_note");
+
+    private final String value;
+
+    DocumentType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

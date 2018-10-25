@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter.models.auditing;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Enumeration to represent type of resource being performed.
@@ -16,78 +16,84 @@ public enum ResourceType
     /**
      * The undefined
      */
-    @JsonProperty("undefined")
-    UNDEFINED, 
+    UNDEFINED("undefined"),
 
     /**
      * Customer Resource
      */
-    @JsonProperty("customer")
-    CUSTOMER,
+    CUSTOMER("customer"),
 
     /**
      * Customer User
      */
-    @JsonProperty("customer_user")
-    CUSTOMER_USER,
+    CUSTOMER_USER("customer_user"),
 
     /**
      * Order Resource
      */
-    @JsonProperty("order")
-    ORDER,
+    ORDER("order"),
 
     /**
      * Subscription Resource
      */
-    @JsonProperty("subscription")
-    SUBSCRIPTION,
+    SUBSCRIPTION("subscription"),
 
     /**
      * License Resource
      */
-    @JsonProperty("license")
-    LICENSE,
+    LICENSE("license"),
 
     /**
      * Third party add on Resource
      */
-    @JsonProperty("third_party_add_on")
-    THIRD_PARTY_ADD_ON,
+    THIRD_PARTY_ADD_ON("third_party_add_on"),
 
     /**
      * MPN association Resource
      */
-    @JsonProperty("mpn_association")
-    MPN_ASSOCIATION,
+    MPN_ASSOCIATION("mpn_association"),
 
     /**
      * Transfer Resource
      */
-    @JsonProperty("transfer")
-    TRANSFER, 
+    TRANSFER("transfer"),
 
     /**
      * Application Resource
      */
-    @JsonProperty("application")
-    APPLICATION,
- 
+    APPLICATION("application"),
+
     /**
      * Application Credential Resource
      */
-    @JsonProperty("application_credential")
-    APPLICATION_CREDENTIAL,
+    APPLICATION_CREDENTIAL("application_credential"),
 
     /**
      * Partner User Resource
      */
-    @JsonProperty("partner_user")
-    PARTNER_USER,
+    PARTNER_USER("partner_user"),
 
     /**
      * Partner Relationship Resource
      */
-    @JsonProperty("partner_relationship")
-    PARTNER_RELATIONSHIP
+    PARTNER_RELATIONSHIP("partner_relationship");
+
+    private final String value;
+
+    ResourceType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

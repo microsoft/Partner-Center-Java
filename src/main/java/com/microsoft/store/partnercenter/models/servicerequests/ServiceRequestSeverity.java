@@ -6,31 +6,46 @@
 
 package com.microsoft.store.partnercenter.models.servicerequests;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ServiceRequestSeverity
 {
     /**
      * Describes service required status Severity Unknown
      */
-    @JsonProperty( "unknown" ) 
-    UNKNOWN, 
-    
+    UNKNOWN("unknown"),
+
     /**
      * Service Request Impact Critical
      */
-    @JsonProperty( "critical" ) 
-    CRITICAL, 
-    
+    CRITICAL("critical"),
+
     /**
      * Service Request Impact Moderate
      */
-    @JsonProperty( "moderate" ) 
-    MODERATE, 
-    
+    MODERATE("moderate"),
+
     /**
      * Service Request Impact Minimal
      */
-    @JsonProperty( "minimal" ) 
-    MINIMAL
+    MINIMAL("minimal");
+
+    private final String value;
+
+    ServiceRequestSeverity(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

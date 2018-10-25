@@ -6,33 +6,49 @@
 
 package com.microsoft.store.partnercenter.models.auditing;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Represents status of an operation
  */
-public enum OperationStatus {
+public enum OperationStatus
+{
     /**
      * Indicates success of the operation
      */
-    @JsonProperty("succeeded")
-    SUCCEEDED,
+    SUCCEEDED("succeeded"),
 
     /**
      * Indicates failure of the operation
      */
-    @JsonProperty("failed")
-    FAILED,
+    FAILED("failed"),
 
     /**
      * Indicates that the operation is still in progress
      */
-    @JsonProperty("progress")
-    PROGRESS,
+    PROGRESS("progress"),
 
     /**
      * Indicates that the operation is declined
      */
-    @JsonProperty("decline")
-    DECLINE
+    DECLINE("decline");
+
+    private final String value;
+
+    OperationStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

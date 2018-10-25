@@ -6,22 +6,49 @@
 
 package com.microsoft.store.partnercenter.models.subscriptions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Lists the available status for a subscription provisioning status.
  */
 public enum ProvisioningStatus 
 {
-    @JsonProperty("none")
-    NONE,
+    /**
+     * None.
+     */
+    NONE("none"),
 
-    @JsonProperty("success")
-    SUCCESS,
+    /**
+     * Success.
+     */
+    SUCCESS("success"),
 
-    @JsonProperty("pending")
-    PENDING,
+    /**
+     * Pending.
+     */
+    PENDING("pending"),
 
-    @JsonProperty("failed")
-    FAILED
+    /**
+     * Failed.
+     */
+    FAILED("failed");
+
+    private final String value;
+
+    ProvisioningStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

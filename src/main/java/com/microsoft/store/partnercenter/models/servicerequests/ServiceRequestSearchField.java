@@ -6,6 +6,8 @@
 
 package com.microsoft.store.partnercenter.models.servicerequests;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 /**
  * Lists the supported service request search fields
  */
@@ -14,18 +16,24 @@ public enum ServiceRequestSearchField
     /**
      * Service request status
      */
-	STATUS( "Status" );
+    STATUS("Status");
 
-    private String name;
+    private String value;
 
-    private ServiceRequestSearchField( String name )
+    ServiceRequestSearchField(String value)
     {
-        this.name = name;
+        this.value = value;
     }
 
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
     @Override
     public String toString()
     {
-        return this.name;
+        return value;
     }
 }

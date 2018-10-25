@@ -6,31 +6,46 @@
 
 package com.microsoft.store.partnercenter.models.servicerequests;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ServiceRequestStatus
 {
     /**
      * Describes service request status Default Service Request Status
      */
-    @JsonProperty( "none" ) 
-    NONE, 
-    
+    NONE("none"),
+
     /**
      * Service Request Status Open
      */
-    @JsonProperty( "open" ) 
-    OPEN, 
-    
+    OPEN("open"),
+
     /**
      * Service Request Status Closed
      */
-    @JsonProperty( "closed" ) 
-    CLOSED, 
-    
+    CLOSED("closed"),
+
     /**
      * Service Request Status Action Required
      */
-    @JsonProperty( "attention_needed" ) 
-    ATTENTION_NEEDED
+    ATTENTION_NEEDED("attention_needed");
+
+    private final String value;
+
+    ServiceRequestStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

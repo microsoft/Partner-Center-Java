@@ -6,72 +6,81 @@
 
 package com.microsoft.store.partnercenter.models.query.filters;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum FieldFilterOperation
 {
     /**
      * Enumerates supported filter operations. Equals filter.
      */
-    @JsonProperty( "Equals" ) 
-    EQUALS, 
-    
+    EQUALS("Equals"),
+
     /**
      * Not equals filter.
      */
-    @JsonProperty( "NotEquals" ) 
-    NOT_EQUALS, 
-    
+    NOT_EQUALS("NotEquals"),
+
     /**
      * Greater than filter.
      */
-    @JsonProperty( "GreaterThan" ) 
-    GREATER_THAN,
-    
+    GREATER_THAN("GreaterThan"),
+
     /**
      * Greater than or equal filter.
      */
-    @JsonProperty( "GreaterThanOrEquals" ) 
-    GREATER_THAN_OR_EQUALS, 
-    
+    GREATER_THAN_OR_EQUALS("GreaterThanOrEquals"),
+
     /**
      * Less than filter.
      */
-    @JsonProperty( "LessThan" )
-    LESS_THAN, 
-    
+    LESS_THAN("LessThan"),
+
     /**
      * Less than or equals filter.
      */
-    @JsonProperty( "LessThanOrEquals" ) 
-    LESS_THAN_OR_EQUALS, 
-    
+    LESS_THAN_OR_EQUALS("LessThanOrEquals"),
+
     /**
      * Substring filter.
      */
-    @JsonProperty( "Substring" ) 
-    SUBSTRING, 
-    
+    SUBSTRING("Substring"),
+
     /**
      * And filter.
      */
-    @JsonProperty( "And" ) 
-    AND, 
-    
+    AND("And"),
+
     /**
      * Or filter.
      */
-    @JsonProperty( "Or" ) OR, 
-    
+    OR("Or"),
+
     /**
      * String starts with filter.
      */
-    @JsonProperty( "StartsWith" ) 
-    STARTS_WITH, 
-    
+    STARTS_WITH("StartsWith"),
+
     /**
      * String does not starts with filter.
      */
-    @JsonProperty( "NotStartsWith" ) 
-    NOT_STARTS_WITH
+    NOT_STARTS_WITH("NotStartsWith");
+
+    private final String value;
+
+    FieldFilterOperation(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

@@ -6,21 +6,39 @@
 
 package com.microsoft.store.partnercenter.models.carts;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Types of Participants
  */
-public enum ParticipantType {
+public enum ParticipantType
+{
     /**
      * Default value if not known
      */
-    @JsonProperty("unknown")
-    UNKNOWN,
+    UNKNOWN("unknown"),
 
     /**
      * An indirect reseller with a transaction role.
      */
-    @JsonProperty("transaction_reseller")
-    TRANSACTION_RESELLER
+    TRANSACTION_RESELLER("transaction_reseller");
+
+    private final String value;
+
+    ParticipantType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

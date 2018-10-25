@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter.models.customers;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * When a partner creates a new customer by default the customer is assigned "CustomerQualification.None". If the partner validates that the customer
@@ -18,18 +18,34 @@ public enum CustomerQualification
     /**
      * No Qualification
      */
-    @JsonProperty( "none" ) 
-    NONE,
+    NONE("none"),
 
     /**
      * Education Qualification
      */
-    @JsonProperty( "education" ) 
-    EDUCATION,
-    
+    EDUCATION("education"),
+
     /**
      *  Non-Profit / Charity Qualification
      */
-    @JsonProperty( "nonprofit" ) 
-    NONPROFIT
+    NONPROFIT("nonprofit");
+
+    private final String value;
+
+    CustomerQualification(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

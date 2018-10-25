@@ -6,6 +6,8 @@
 
 package com.microsoft.store.partnercenter.models.customers;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 /**
  * List of search fields for customer search
  */
@@ -14,26 +16,26 @@ public enum CustomerSearchField
     /**
      * Customer Company name
      */
-    COMPANY_NAME( "CompanyName" ), 
+    COMPANY_NAME("CompanyName"),
     
     /**
      * Customer domain name
      */
-    DOMAIN_NAME( "Domain" ),
+    DOMAIN_NAME("Domain"),
 
     /**
      * The indirect reseller
      */
-    INDIRECT_RESELLER( "IndirectReseller" ),
+    INDIRECT_RESELLER("IndirectReseller"),
 
     /**
      * The indirect CSP
      */
-    INDIRECT_CLOUD_SOLUTION_PROVIDER ( "IndirectCloudSolutionProvider" );
+    INDIRECT_CLOUD_SOLUTION_PROVIDER("IndirectCloudSolutionProvider");
 
     private String name;
 
-    private CustomerSearchField( String name )
+    CustomerSearchField(String name)
     {
         this.name = name;
     }
@@ -43,9 +45,10 @@ public enum CustomerSearchField
      * 
      * @return A string that represents this object.
      */
+    @JsonValue
     @Override
     public String toString()
     {
-        return this.name;
+        return name;
     }
 }

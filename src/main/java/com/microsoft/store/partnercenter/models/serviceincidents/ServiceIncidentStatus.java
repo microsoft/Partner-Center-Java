@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter.models.serviceincidents;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Represents the status of partner center services.
@@ -16,24 +16,39 @@ public enum ServiceIncidentStatus
     /**
      * Default status - normal.
      */
-    @JsonProperty( "normal" ) 
-    NORMAL,
+    NORMAL("normal"),
 
     /**
      * Informational status.
      */
-    @JsonProperty( "information" ) 
-    INFORMATION,
+    INFORMATION("information"),
 
     /**
      * Warning status.
      */
-    @JsonProperty( "warning" ) 
-    WARNING,
+    WARNING("warning"),
 
     /**
      * Critical status.
      */
-    @JsonProperty( "critical" ) 
-    CRITICAL
+    CRITICAL("critical");
+
+    private final String value;
+
+    ServiceIncidentStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

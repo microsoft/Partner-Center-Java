@@ -6,19 +6,36 @@
 
 package com.microsoft.store.partnercenter.models.query.sort;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum SortDirection
 {
     /**
      * Sort direction enumeration. Ascending sort.
      */
-    @JsonProperty( "ascending" ) 
-    ASCENDING, 
-    
+    ASCENDING("ascending"),
+
     /**
      * Descending sort.
      */
-    @JsonProperty( "descending" ) 
-    DESCENDING
+    DESCENDING("descending");
+
+    private final String value;
+
+    SortDirection(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

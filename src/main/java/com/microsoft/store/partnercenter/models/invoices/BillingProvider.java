@@ -6,37 +6,51 @@
 
 package com.microsoft.store.partnercenter.models.invoices;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum BillingProvider
 {
     /**
      * Different providers of billing information Enum initializer
      */
-    @JsonProperty( "none" )
-    NONE, 
-    
+    NONE("none"),
+
     /**
     * Bill is provided by Office. Example: O365, and In-tune.
     */
-    @JsonProperty( "office" )
-    OFFICE, 
-    
+    OFFICE("office"),
+
     /**
     * Bill is provided by Azure. Example: Azure Services.
     */
-    @JsonProperty( "azure" )
-    AZURE,
-    
+    AZURE("azure"),
+
     /**
     * Bill is provided by Azure Data Market.
     */
-    @JsonProperty( "azureDataMarket" )
-    AZURE_DATA_MARKET,
+    AZURE_DATA_MARKET("azureDataMarket"),
 
     /**
     * Bill is provided for one time purchases.
     */
-    @JsonProperty( "oneTime" ) 
-    ONE_TIME
+    ONE_TIME("oneTime");
+
+    private final String value;
+
+    BillingProvider(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

@@ -6,30 +6,46 @@
 
 package com.microsoft.store.partnercenter.models.partners;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum VettingStatus {
+public enum VettingStatus
+{
     /**
      * None vetting status
      */
-    @JsonProperty( "none" ) 
-    NONE,
+    NONE("none"),
 
     /**
      * Pending vetting status
      */
-    @JsonProperty( "pending" ) 
-    PENDING,
+    PENDING("pending"),
 
     /**
      * Authorized vetting status
      */
-    @JsonProperty( "authorized" ) 
-    AUTHORIZED,
+    AUTHORIZED("authorized"),
 
     /**
      * Rejected vetting status
      */
-    @JsonProperty( "rejected" ) 
-    REJECTED
+    REJECTED("rejected");
+
+    private final String value;
+
+    VettingStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

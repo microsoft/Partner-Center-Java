@@ -6,25 +6,41 @@
 
 package com.microsoft.store.partnercenter.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ContractType
 {
     /**
      * Describes the type of contract Refers to a contract which provides subscription for the order item placed
      */
-    @JsonProperty( "subscription" ) 
-    SUBSCRIPTION,
+    SUBSCRIPTION("subscription"),
     
     /**
      * Refers to a contract which provides a product key result for the order item placed
      */
-    @JsonProperty( "productkey" ) 
-    PRODUCTKEY,
+    PRODUCTKEY("productkey"),
     
     /**
      * Refers to a contract which provides Redemption code result for the order item placed.
      */
-    @JsonProperty( "redemptioncode" ) 
-    REDEMPTIONCODE
+    REDEMPTIONCODE("redemptioncode");
+
+    private final String value;
+
+    ContractType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

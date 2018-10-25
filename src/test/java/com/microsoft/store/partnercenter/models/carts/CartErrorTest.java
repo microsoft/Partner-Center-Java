@@ -1,3 +1,9 @@
+// -----------------------------------------------------------------------
+// <copyright file="CartErrorTest.java" company="Microsoft">
+//      Copyright (c) Microsoft Corporation. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
 package com.microsoft.store.partnercenter.models.carts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

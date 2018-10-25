@@ -6,27 +6,44 @@
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * List of entitlement artifact types.
  */
-public enum EntitlementType {
+public enum EntitlementType
+{
     /**
      * Enum initializer.
      */
-    @JsonProperty("unknown")
-    UNKNOWN,
+    UNKNOWN("unknown"),
 
     /**
      * Virtual machine reserved instance entitlement.
      */
-    @JsonProperty("virtual_machine_reserved_instance")
-    VIRTUAL_MACHINE_RESERVED_INSTANCE,
+    VIRTUAL_MACHINE_RESERVED_INSTANCE("virtual_machine_reserved_instance"),
 
     /**
      * Software entitlement.
      */
-    @JsonProperty("software")
-    SOFTWARE
+    SOFTWARE("software");
+
+    private final String value;
+
+    EntitlementType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

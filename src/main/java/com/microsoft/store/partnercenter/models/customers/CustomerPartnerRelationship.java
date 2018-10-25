@@ -6,43 +6,56 @@
 
 package com.microsoft.store.partnercenter.models.customers;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum CustomerPartnerRelationship
 {
     /**
      *  Unknown. Used for initialization.
      */
-    @JsonProperty( "unknown" ) 
-    UNKNWON, 
-    
+    UNKNWON("unknown"),
+
     /**
      * None. Used to remove reseller relationship between the customer and partner.
      */
-    @JsonProperty( "none" ) 
-    NONE,
-    
+    NONE("none"),
+
     /**
      * The reseller relationship
      */
-    @JsonProperty( "reseller" ) 
-    RESELLER,
-    
+    RESELLER("reseller"),
+
     /**
      * The advisor relationship
      */
-    @JsonProperty( "advisor" ) 
-    ADVISOR,
-    
+    ADVISOR("advisor"),
+
     /**
      * Indicates that the partner is a syndication partner of the customer.
      */
-    @JsonProperty( "syndication" ) 
-    SYNDICATION,
-    
+    SYNDICATION("syndication"),
+
     /**
      * Indicates that the partner is a Microsoft Support agent for the customer.
      */
-    @JsonProperty( "microsoftSupport" ) 
-    MICROSOFT_SUPPORT
+    MICROSOFT_SUPPORT("microsoftSupport");
+
+    private final String value;
+
+    CustomerPartnerRelationship(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

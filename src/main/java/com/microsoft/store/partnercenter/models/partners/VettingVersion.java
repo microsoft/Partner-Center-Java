@@ -6,27 +6,43 @@
 
 package com.microsoft.store.partnercenter.models.partners;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum VettingVersion 
 {
     /**
      *  None vetting version
      */
-    @JsonProperty( "none" ) 
-    NONE,
+    NONE("none"),
 
     /**
      * Latest vetting information: Will always get the latest vetting information no
      * matter if it is vetted or not
      */
-    @JsonProperty( "current" ) 
-    CURRENT,
+    CURRENT("current"),
 
     /**
      * Latest finalized vetting information: Will return the latest vetting information
      * that is either (Authorized or Rejected)
      */
-    @JsonProperty( "last_finalized" ) 
-    LAST_FINALIZED
+    LAST_FINALIZED("last_finalized");
+
+    private final String value;
+
+    VettingVersion(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

@@ -6,37 +6,51 @@
 
 package com.microsoft.store.partnercenter.models.query;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum SeekOperation
 {
     /**
      * Specifies how to seek a query. Gets the next set of results.
      */
-    @JsonProperty( "Next" ) 
-    NEXT, 
-    
+    NEXT("Next"),
+
     /**
      * Gets the previous set of results.
      */
-    @JsonProperty( "Previous" ) 
-    PREVIOUS, 
-    
+    PREVIOUS("Previous"),
+
     /**
      * Gets the first set of results.
      */
-    @JsonProperty( "First" ) 
-    FIRST, 
-    
+    FIRST("First"),
+
     /**
      * Gets the last set of results.
      */
-    @JsonProperty( "Last" ) 
-    LAST, 
-    
+    LAST("Last"),
+
     /**
      * Gets a set of results using a page index. E.g. Get the seventh set of results.
      */
-    @JsonProperty( "PageIndex" ) 
-    PAGE_INDEX
+    PAGE_INDEX("PageIndex");
+
+    private final String value;
+
+    SeekOperation(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

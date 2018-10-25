@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter.models.serviceincidents;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Represents the status of partner center services.
@@ -16,24 +16,39 @@ public enum MessageType
     /**
      * Default type none.
      */
-    @JsonProperty( "none" ) 
-    NONE,
-	
+    NONE("none"),
+
     /**
      * Active incident.
      */
-    @JsonProperty( "incident" ) 
-    INCIDENT,
-	
+    INCIDENT("incident"),
+
     /**
      * Message center message.
      */
-    @JsonProperty( "message_center" ) 
-    MESSAGE_CENTER,
-	
+    MESSAGE_CENTER("message_center"),
+
     /**
      * All types.
      */
-    @JsonProperty( "all" ) 
-    ALL
+    ALL("all");
+
+    private final String value;
+
+    MessageType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

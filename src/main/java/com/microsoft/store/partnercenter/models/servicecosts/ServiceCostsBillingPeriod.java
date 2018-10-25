@@ -6,18 +6,44 @@
 
 package com.microsoft.store.partnercenter.models.servicecosts;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Represents service costs billing periods.
  */
-public enum ServiceCostsBillingPeriod {
-    @JsonProperty("none")
-    NONE,
+public enum ServiceCostsBillingPeriod
+{
+    /**
+     * None.
+     */
+    NONE("none"),
 
-    @JsonProperty("most_recent")
-    MOST_RECENT,
+    /**
+     * Most recent.
+     */
+    MOST_RECENT("most_recent"),
 
-    @JsonProperty("current")
-    CURRENT
+    /**
+     * Current.
+     */
+    CURRENT("current");
+
+    private final String value;
+
+    ServiceCostsBillingPeriod(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

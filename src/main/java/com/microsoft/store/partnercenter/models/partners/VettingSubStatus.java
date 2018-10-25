@@ -6,54 +6,66 @@
 
 package com.microsoft.store.partnercenter.models.partners;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum VettingSubStatus {
+public enum VettingSubStatus
+{
     /**
      * None vetting sub status
      */
-    @JsonProperty( "none" )
-    NONE,
+    NONE("none"),
 
     /**
      * The entry step
      */
-    @JsonProperty( "entry" ) 
-    ENTRY,
+    ENTRY("entry"),
 
     /**
      * Email ownership check for business accounts
      */
-    @JsonProperty( "email_ownership" ) 
-    EMAIL_OWNERSHIP,
+    EMAIL_OWNERSHIP("email_ownership"),
 
     /**
      * Email Domain for business accounts
      */
-    @JsonProperty( "email_domain" ) 
-    EMAIL_DOMAIN,
+    EMAIL_DOMAIN("email_domain"),
 
     /**
      * Employment verification sub status
      */
-    @JsonProperty( "employment_verification" ) 
-    EMPLOYMENT_VERIFICATION,
+    EMPLOYMENT_VERIFICATION("employment_verification"),
 
     /**
      * Decision making process
      */
-    @JsonProperty( "decision" ) 
-    DECISION,
+    DECISION("decision"),
 
     /**
      * Other vetting sub status
      */
-    @JsonProperty( "other" ) 
-    OTHER,
+    OTHER("other"),
 
     /**
      * Business verification sub status
      */
-    @JsonProperty( "business_verification" ) 
-    BUSINESS_VERIFICATION
+    BUSINESS_VERIFICATION("business_verification");
+
+    private final String value;
+
+    VettingSubStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

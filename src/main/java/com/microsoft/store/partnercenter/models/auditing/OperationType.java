@@ -6,9 +6,7 @@
 
 package com.microsoft.store.partnercenter.models.auditing;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-// @JsonProperty("update_customer_qualification")
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Enumeration to represent type of operation being performed.
@@ -18,192 +16,179 @@ public enum OperationType
     /**
      * The undefined
      */
-    @JsonProperty("undefined")
-    UNDEFINED,
+    UNDEFINED("undefined"),
 
     /**
      * Update Customer Qualification
      */
-    @JsonProperty("update_customer_qualification")
-    UPDATE_CUSTOMER_QUALIFICATION,
-    
+    UPDATE_CUSTOMER_QUALIFICATION("update_customer_qualification"),
+
     /**
      * Updates an existing subscription.
      */
-    @JsonProperty("update_subscription")
-    UPDATE_SUBSCRIPTION,
+    UPDATE_SUBSCRIPTION("update_subscription"),
 
     /**
      * Transition a subscription.
      */
-    @JsonProperty("upgrade_subscription")
-    UPGRADE_SUBSCRIPTION,
-   
+    UPGRADE_SUBSCRIPTION("upgrade_subscription"),
+
     /**
      * Convert a trial subscription to a paid one.
      */
-    @JsonProperty("convert_trial_subscription")
-    CONVERT_TRIAL_SUBSCRIPTION,
+    CONVERT_TRIAL_SUBSCRIPTION("convert_trial_subscription"),
 
     /**
      * Adding a Customer
      */
-    @JsonProperty("add_customer")
-    ADD_CUSTOMER,
- 
+    ADD_CUSTOMER("add_customer"),
+
     /**
      * Update a Customer Billing Profile
      */
-    @JsonProperty("update_customer_billing_profile")
-    UPDATE_CUSTOMER_BILLING_PROFILE,
+    UPDATE_CUSTOMER_BILLING_PROFILE("update_customer_billing_profile"),
 
     /**
      * Update a Customer's Partner Contract Company Name
      */
-    @JsonProperty("update_customer_partner_contract_company_Name")
-    UPDATECUSTOMERPARTNERCONTRACTCOMPANYNAME,
+    UPDATECUSTOMERPARTNERCONTRACTCOMPANYNAME("update_customer_partner_contract_company_Name"),
 
     /**
      * Updates a customer spending budget.
      */
-    @JsonProperty("update_Customer_spending_budget")
-    UPDATECUSTOMERSPENDINGBUDGET, 
+    UPDATECUSTOMERSPENDINGBUDGET("update_Customer_spending_budget"),
 
     /**
      * Deleting a customer. This only happens in the sandbox integration accounts.
      */
-    @JsonProperty("delete_customer")
-    DELETE_CUSTOMER,
-    
+    DELETE_CUSTOMER("delete_customer"),
+
     /**
      * Remove Partner Customer relationship.
      */
-    @JsonProperty("remove_partner_customer_relationship")
-    REMOVE_PARTNER_CUSTOMER_RELATIONSHIP,
+    REMOVE_PARTNER_CUSTOMER_RELATIONSHIP("remove_partner_customer_relationship"),
 
     /**
      * Create a new order.
      */
-    @JsonProperty("create_order")
-    CREATE_ORDER,
-    
+    CREATE_ORDER("create_order"),
+
     /**
      * Updates an existing order.
      */
-    @JsonProperty("update_order")
-    UPDATE_ORDER,
-    
+    UPDATE_ORDER("update_order"),
+
     /**
      * Creates a customer user.
      */
-    @JsonProperty("create_customer_user")
-    CREATE_CUSTOMER_USER,
-    
+    CREATE_CUSTOMER_USER("create_customer_user"),
+
     /**
      * Deletes a customer user.
      */
-    @JsonProperty("delete_customer_user")
-    DELETE_CUSTOMER_USER,
-    
+    DELETE_CUSTOMER_USER("delete_customer_user"),
+
     /**
      * Updates a customer user.
      */
-    @JsonProperty("update_customer_user")
-    UPDATE_CUSTOMER_USER,
-    
+    UPDATE_CUSTOMER_USER("update_customer_user"),
+
     /**
      * Updates a customer user licenses.
      */
-    @JsonProperty("Update_customer_user_licenses")
-    UPDATE_CUSTOMER_USER_LICENSES,
-    
+    UPDATE_CUSTOMER_USER_LICENSES("Update_customer_user_licenses"),
+
     /**
      * Reset customer user password.
      */
-    @JsonProperty("reset_customer_user_password")
-    RESET_CUSTOMER_USER_PASSWORD,
-    
+    RESET_CUSTOMER_USER_PASSWORD("reset_customer_user_password"),
+
     /**
      * Update customer user UPN.
      */
-    @JsonProperty("update_customer_user_principal_name")
-    UPDATE_CUSTOMER_USER_PRINCIPAL_NAME,
-    
+    UPDATE_CUSTOMER_USER_PRINCIPAL_NAME("update_customer_user_principal_name"),
+
     /**
      * Restore customer user.
      */
-    @JsonProperty("restore_customer_user")
-    RESTORE_CUSTOMER_USER,
-    
+    RESTORE_CUSTOMER_USER("restore_customer_user"),
+
     /**
      * Create MPN association.
      */
-    @JsonProperty("create_mpn_association")
-    CREATE_MPN_ASSOCIATION,
-    
+    CREATE_MPN_ASSOCIATION("create_mpn_association"),
+
     /**
      * Update MPN association.
      */
-    @JsonProperty("update_mpn_association")
-    UPDATE_MPN_ASSOCIATION,
-    
+    UPDATE_MPN_ASSOCIATION("update_mpn_association"),
+
     /**
      * Updates a Sfb customer user licenses.
      */
-    @JsonProperty("update_sfb_customer_user_licenses")
-    UPDATE_SFB_CUSTOMER_USER_LICENSES,
-    
+    UPDATE_SFB_CUSTOMER_USER_LICENSES("update_sfb_customer_user_licenses"),
+
     /**
      * Update transfer.
      */
-    @JsonProperty("update_transfer")
-    UPDATE_TRANSFER,
-    
+    UPDATE_TRANSFER("update_transfer"),
+
     /**
      * Creates a partner relationship.
      */
-    @JsonProperty("create_partner_relationship")
-    CREATE_PARTNER_RELATIONSHIP,
-    
+    CREATE_PARTNER_RELATIONSHIP("create_partner_relationship"),
+
     /**
      * Add and registers an application.
      */
-    @JsonProperty("register_application")
-    REGISTER_APPLICATION,
-    
+    REGISTER_APPLICATION("register_application"),
+
     /**
      * Unregisters an application.
      */
-    @JsonProperty("unregister_application")
-    UNREGISTER_APPLICATION,
-    
+    UNREGISTER_APPLICATION("unregister_application"),
+
     /**
      * An application credential was added.
      */
-    @JsonProperty("add_application_credential")
-    ADD_APPLICATION_CREDENTIAL,
-    
+    ADD_APPLICATION_CREDENTIAL("add_application_credential"),
+
     /**
      * An application credential was removed.
      */
-    @JsonProperty("remove_application_credential")
-    REMOVE_APPLICATION_CREDENTIAL,
-    
+    REMOVE_APPLICATION_CREDENTIAL("remove_application_credential"),
+
     /**
      * Creates a partner user.
      */
-    @JsonProperty("create_partner_user")
-    CREATE_PARTNER_USER,    
-    
+    CREATE_PARTNER_USER("create_partner_user"),
+
     /**
      * Updates a partner user.
      */
-    @JsonProperty("update_partner_user")
-    UPDATE_PARTNER_USER,
-    
+    UPDATE_PARTNER_USER("update_partner_user"),
+
     /**
      * Removes a partner user.
      */
-    @JsonProperty("Remove_partner_user")
-    remove_partner_user,
+    remove_partner_user("Remove_partner_user");
+
+    private final String value;
+
+    OperationType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

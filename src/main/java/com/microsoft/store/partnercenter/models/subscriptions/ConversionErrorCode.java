@@ -6,21 +6,49 @@
 
 package com.microsoft.store.partnercenter.models.subscriptions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * The type of errors that prevent trial subscription conversion from happening.
  */
-public enum ConversionErrorCode {
-    @JsonProperty("other")
-    OTHER,
+public enum ConversionErrorCode
+{
+    /**
+     * Other.
+     */
+    OTHER("other"),
 
-    @JsonProperty("conversions_not_found")
-    CONVERSIONS_NOT_FOUND,
+    /**
+     * Conversions not found.
+     */
+    CONVERSIONS_NOT_FOUND("conversions_not_found"),
 
-    @JsonProperty("pending")
-    PENDING,
+    /**
+     * Pending.
+     */
+    PENDING("pending"),
 
-    @JsonProperty("failed")
-    FAILED
+    /**
+     * Failed.
+     */
+    FAILED("failed");
+
+    private final String value;
+
+    ConversionErrorCode(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

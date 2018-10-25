@@ -6,30 +6,46 @@
 
 package com.microsoft.store.partnercenter.models.subscriptions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum SubscriptionStatus
 {
     /**
      * Enum representing the available states for a subscription Indicates nothing - no status, used as an initializer
      */
-    @JsonProperty( "none" ) 
-    NONE, 
-    
+    NONE("none"),
+
     /**
      * Subscription state: Active
      */
-    @JsonProperty( "active" ) 
-    ACTIVE, 
-    
+    ACTIVE("active"),
+
     /**
      * Subscription state: Suspended
      */
-    @JsonProperty( "suspended" ) 
-    SUSPENDED, 
-    
+    SUSPENDED("suspended"),
+
     /**
      * Subscription state: Deleted
      */
-    @JsonProperty( "deleted" ) DELETED
+    DELETED("deleted");
+
+    private final String value;
+
+    SubscriptionStatus(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

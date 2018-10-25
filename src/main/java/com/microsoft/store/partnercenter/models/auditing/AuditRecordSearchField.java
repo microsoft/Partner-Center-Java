@@ -6,27 +6,44 @@
 
 package com.microsoft.store.partnercenter.models.auditing;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Lists the supported audit search fields.
  */
-public enum AuditRecordSearchField {
+public enum AuditRecordSearchField
+{
     /**
      * Customer company name.
      */
-    @JsonProperty("CompanyName")
-    COMPANY_NAME,
+    COMPANY_NAME("CompanyName"),
 
     /**
      * Customer identifier (GUID).
      */
-    @JsonProperty("CustomerId")
-    CUSTOMER_ID,
+    CUSTOMER_ID("CustomerId"),
 
     /**
      * Resource Type as defined in available Resource Types (Example: Order, Subscription).
      */
-    @JsonProperty("ResourceType")
-    RESOURCE_TYPE
+    RESOURCE_TYPE("ResourceType");
+
+    private final String value;
+
+    AuditRecordSearchField(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

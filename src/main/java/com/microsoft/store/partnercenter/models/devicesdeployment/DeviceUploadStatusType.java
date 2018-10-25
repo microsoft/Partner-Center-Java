@@ -6,39 +6,54 @@
 
 package com.microsoft.store.partnercenter.models.devicesdeployment;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  *  Devices Batch upload status.
  */
-public enum DeviceUploadStatusType {
-	/**
-	 *  Should never happen.
-	 */
-    @JsonProperty("unknown")
-    UNKNOWN,
+public enum DeviceUploadStatusType
+{
+    /**
+     * Should never happen.
+     */
+    UNKNOWN("unknown"),
 
     /**
      * Batch is queued.
      */
-    @JsonProperty("queued")
-    QUEUED,
+    QUEUED("queued"),
 
     /**
      * Batch is processing.
      */
-    @JsonProperty("processing")
-    PROCESSING,
+    PROCESSING("processing"),
 
     /**
      * Batch is complete.
      */
-    @JsonProperty("finished")
-    FINISHED,
+    FINISHED("finished"),
 
     /**
      * Batch is complete with an error.
      */
-    @JsonProperty("finished_with_errors")
-    FINISHED_WITH_ERRORS
+    FINISHED_WITH_ERRORS("finished_with_errors");
+
+    private final String value;
+
+    DeviceUploadStatusType(String value)
+    {
+        this.value = value;
+    }
+
+    /**
+     * Converts the object to a string.
+     *
+     * @return A string that represents this object.
+     */
+    @JsonValue
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }
