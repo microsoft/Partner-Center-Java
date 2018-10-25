@@ -46,4 +46,4 @@ mvn clean package -DskipTests
 
 [Partner Center Java SDK Samples](https://github.com/Microsoft/Partner-Center-Java-Samples) - Sample console application that demonstrates the supported scenarios of this SDK.
 
-[Partner Center .NET SDK Samples](https://github.com/PartnerCenterSamples/Partner-Center-SDK-Samples) - Sample console application that demonstrates the supported scenarios of the Partner Center .NET SDK.
+[Partner Center .NET SDK Samples](https://github.com/PartnerCenterSamples/Partner-Center-SDK-Samples) - Sample console application that demonstrates the supported scenarios of the Partner Center .NET SDK. 
