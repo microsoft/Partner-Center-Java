@@ -64,10 +64,14 @@ public class UserMemberOperations
                 new PartnerServiceProxy<>( 
 					new TypeReference<DirectoryRole>()
 					{
-					}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "RemoveCustomerUserMemberFromDirectoryRole" ).getPath(),
-							this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ) );
+					}, 
+					this.getPartner(),
+					MessageFormat.format( 
+						PartnerService.getInstance().getConfiguration().getApis().get( "RemoveCustomerUserMemberFromDirectoryRole" ).getPath(),
+						this.getContext().getItem1(), 
+						this.getContext().getItem2(), 
+						this.getContext().getItem3() ) );
 
         partnerServiceProxy.delete();
-        return;
     }
 }

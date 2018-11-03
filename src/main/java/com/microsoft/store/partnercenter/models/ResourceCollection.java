@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ResourceCollection<TResource>
     extends ResourceCollectionWithLinks<TResource, StandardResourceCollectionLinks>
 {
-
     /**
      * Initializes a new instance of the ResourceCollection class.
      * 

@@ -20,12 +20,12 @@ public class PartnerLog
     /**
      * The singleton log manager instance.
      */
-    private static PartnerLog LogManagerSingleton = null;
+    private static PartnerLog logManagerSingleton = null;
 
     /**
      * The registered loggers collection.
      */
-    private final List<ILogger> registeredLoggers = new ArrayList<ILogger>();
+    private final List<ILogger> registeredLoggers = new ArrayList<>();
 
     /**
      * Prevents a default instance of the LogManager class from being created.
@@ -41,11 +41,11 @@ public class PartnerLog
      */
     public static PartnerLog getInstance()
     {
-        if ( PartnerLog.LogManagerSingleton == null )
+        if ( PartnerLog.logManagerSingleton == null )
         {
-            PartnerLog.LogManagerSingleton = new PartnerLog();
+            PartnerLog.logManagerSingleton = new PartnerLog();
         }
-        return PartnerLog.LogManagerSingleton;
+        return PartnerLog.logManagerSingleton;
     }
 
     /**

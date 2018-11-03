@@ -19,5 +19,4 @@ public class SecureString
     {
         this.length = length;
     }
-
 }

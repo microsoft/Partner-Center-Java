@@ -17,7 +17,7 @@ public abstract class Contract
         super();
     }
 
-    private String __OrderId;
+    private String orderId;
 
     /**
      * Gets the order identifier.
@@ -26,7 +26,7 @@ public abstract class Contract
      */
     public String getOrderId()
     {
-        return __OrderId;
+        return orderId;
     }
 
     /**
@@ -36,7 +36,7 @@ public abstract class Contract
      */
     public void setOrderId( String value )
     {
-        __OrderId = value;
+        orderId = value;
     }
 
     /**

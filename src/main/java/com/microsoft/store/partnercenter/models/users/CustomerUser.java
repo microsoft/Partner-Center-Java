@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
-//<copyright file="CustomerUser.java" company="Microsoft">
+// <copyright file="CustomerUser.java" company="Microsoft">
 //   Copyright (c) Microsoft Corporation. All rights reserved.
-//</copyright>
+// </copyright>
 //-----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.models.users;
@@ -14,15 +14,15 @@ public class CustomerUser extends User
      * Gets or sets usage location, the location where user intends to use the license.
      */
 	@JsonProperty("UsageLocation")
-    private String __UsageLocation;
+    private String usageLocation;
 	
     public String getUsageLocation()
     {
-        return __UsageLocation;
+        return usageLocation;
     }
 
     public void setUsageLocation( String value )
     {
-    	__UsageLocation = value;
+    	usageLocation = value;
     }
 }

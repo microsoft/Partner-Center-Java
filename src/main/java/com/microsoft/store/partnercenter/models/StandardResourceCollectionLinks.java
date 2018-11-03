@@ -14,31 +14,31 @@ public class StandardResourceCollectionLinks extends StandardResourceLinks
     /**
      * Gets or sets the next page of items.
      */
-    private Link __Next;
+    private Link next;
 
     public Link getNext()
     {
-        return __Next;
+        return next;
     }
 
     public void setNext( Link value )
     {
-        __Next = value;
+        next = value;
     }
 
     /**
      * Gets or sets the previous page of items.
      */
-    private Link __Previous;
+    private Link previous;
 
     public Link getPrevious()
     {
-        return __Previous;
+        return previous;
     }
 
     public void setPrevious( Link value )
     {
-        __Previous = value;
+        previous = value;
     }
 
 }

@@ -70,16 +70,16 @@ public class PartnerResponseParseException
     /**
      * Gets the HTTP response payload which could not be parsed.
      */
-    private String __Response;
+    private String response;
 
     public String getResponse()
     {
-        return __Response;
+        return response;
     }
 
     public void setResponse( String value )
     {
-        __Response = value;
+        response = value;
     }
 
     /**

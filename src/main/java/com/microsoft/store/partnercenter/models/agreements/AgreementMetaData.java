@@ -18,63 +18,63 @@ public class AgreementMetaData
      * Gets or sets the unique identifier of an agreement template.
      */
     @JsonProperty( "templateId" )
-    private String __TemplateId;
+    private String templateId;
 
     public String getTemplateId()
     {
-        return __TemplateId;
+        return templateId;
     }
 
     public void setTemplateId( String value )
     {
-        __TemplateId = value;
+        templateId = value;
     }
 
     /**
      * Gets or sets agreement type.
      */
     @JsonProperty( "agreementType" )
-    private AgreementType __AgreementType;
+    private AgreementType agreementType;
 
     public AgreementType getAgreementType()
     {
-        return __AgreementType;
+        return agreementType;
     }
 
     public void setAgreementType( AgreementType value )
     {
-        __AgreementType = value;
+        agreementType = value;
     }
 
     /**
      * Gets or sets URL to the agreement template.
      */
     @JsonProperty( "agreementLink" )
-    private String __AgreementLink;
+    private String agreementLink;
 
     public String getAgreementLink()
     {
-        return __AgreementLink;
+        return agreementLink;
     }
 
     public void setAgreementLink( String value )
     {
-        __AgreementLink = value;
+        agreementLink = value;
     }
 
     /**
      * Gets or sets the version rank of an agreement template.
      */
     @JsonProperty( "versionRank" )
-    private int __VersionRank;
+    private int versionRank;
 
     public int getVersionRank()
     {
-        return __VersionRank;
+        return versionRank;
     }
 
     public void setVersionRank( int value )
     {
-        __VersionRank = value;
+        versionRank = value;
     }
 }

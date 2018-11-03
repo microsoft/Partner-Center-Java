@@ -80,10 +80,14 @@ public class UserMemberCollectionOperations
         }
 
         IPartnerServiceProxy<UserMember, UserMember> partnerServiceProxy =
-                new PartnerServiceProxy<UserMember, UserMember>( new TypeReference<UserMember>()
+                new PartnerServiceProxy<>( new TypeReference<UserMember>()
                 {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "AddUserToCustomerDirectoryRole" ).getPath(),
-        				this.getContext().getItem1(), this.getContext().getItem2() ) );
+				}, 
+				this.getPartner(),
+				MessageFormat.format( 
+					PartnerService.getInstance().getConfiguration().getApis().get( "AddUserToCustomerDirectoryRole" ).getPath(),
+					this.getContext().getItem1(), 
+					this.getContext().getItem2() ) );
         
         return partnerServiceProxy.post( newEntity );
 	}

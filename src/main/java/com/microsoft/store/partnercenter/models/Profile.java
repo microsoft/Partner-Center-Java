@@ -15,76 +15,75 @@ public abstract class Profile<T>
     /**
      * Gets or sets the profile identifier.
      */
-    private String __Id;
+    private String id;
 
     public String getId()
     {
-        return __Id;
+        return id;
     }
 
     public void setId( String value )
     {
-        __Id = value;
+        id = value;
     }
 
     /**
      * Gets or sets the email.
      */
-    private String __Email;
+    private String email;
 
     public String getEmail()
     {
-        return __Email;
+        return email;
     }
 
     public void setEmail( String value )
     {
-        __Email = value;
+        email = value;
     }
 
     /**
      * Gets or sets the country.
      */
-    private String __Country;
+    private String country;
 
     public String getCountry()
     {
-        return __Country;
+        return country;
     }
 
     public void setCountry( String value )
     {
-        __Country = value;
+        country = value;
     }
 
     /**
      * Gets or sets the region.
      */
-    private String __Region;
+    private String region;
 
     public String getRegion()
     {
-        return __Region;
+        return region;
     }
 
     public void setRegion( String value )
     {
-        __Region = value;
+        region = value;
     }
 
     /**
      * Gets or sets the language.
      */
-    private String __Language;
+    private String language;
 
     public String getLanguage()
     {
-        return __Language;
+        return language;
     }
 
     public void setLanguage( String value )
     {
-        __Language = value;
+        language = value;
     }
-
 }

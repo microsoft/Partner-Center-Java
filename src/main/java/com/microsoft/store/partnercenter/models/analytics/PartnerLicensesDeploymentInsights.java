@@ -16,31 +16,31 @@ public class PartnerLicensesDeploymentInsights
     /**
      * Gets or sets the number of licenses sold as of processed time stamp.
      */
-    private long __LicensesSold;
+    private long licensesSold;
 
     public long getLicensesSold()
     {
-        return __LicensesSold;
+        return licensesSold;
     }
 
     public void setLicensesSold( long value )
     {
-        __LicensesSold = value;
+        licensesSold = value;
     }
 
     /**
      * Gets or sets the percentage of licenses deployed by all the customers 
      * of this partner.
      */
-    private double __ProratedDeploymentPercent;
+    private double proratedDeploymentPercent;
 
     public double getProratedDeploymentPercent()
     {
-        return __ProratedDeploymentPercent;
+        return proratedDeploymentPercent;
     }
 
     public void setProratedDeploymentPercent( double value )
     {
-        __ProratedDeploymentPercent = value;
+        proratedDeploymentPercent = value;
     }
 }

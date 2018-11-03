@@ -45,7 +45,7 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
     @Override
     public IResourceCollectionEnumerator<TResourceCollection> create( TResourceCollection resourceCollection )
     {
-        return new IndexBasedCollectionEnumerator<T, TResourceCollection>(
+        return new IndexBasedCollectionEnumerator<>(
             this.getPartner(),
             resourceCollection, 
             null,

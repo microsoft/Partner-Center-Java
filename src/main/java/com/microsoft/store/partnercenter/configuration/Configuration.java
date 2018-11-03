@@ -77,25 +77,28 @@ public class Configuration
     }
 
     @JsonProperty("PartnerCenterClient")
-    private String PartnerCenterClient;
+    private String partnerCenterClient;
 
     @JsonProperty( "PartnerServiceApiRoot" )
-    private String PartnerServiceApiRoot;
+    private String partnerServiceApiRoot;
 
     @JsonProperty( "PartnerServiceApiVersion" )
-    private String PartnerServiceApiVersion;
+    private String partnerServiceApiVersion;
 
     @JsonProperty( "DefaultMaxRetryAttempts" )
-    private int DefaultMaxRetryAttempts;
+    private int defaultMaxRetryAttempts;
 
     @JsonProperty( "DefaultAuthenticationTokenExpiryBufferInSeconds" )
-    private int DefaultAuthenticationTokenExpiryBufferInSeconds;
+    private int defaultAuthenticationTokenExpiryBufferInSeconds;
 
     @JsonProperty( "DefaultLocale" )
-    private String DefaultLocale;
+    private String defaultLocale;
 
     @JsonProperty( "Apis" )
-    private Map<String, Api> Apis;
+    private Map<String, Api> apis;
+
+    @JsonProperty("SdkVersion")
+    private String sdkVersion; 
 
     /**
      * Gets the partner service API root. 
@@ -104,17 +107,17 @@ public class Configuration
      */
     public String getPartnerServiceApiRoot()
     {
-        return PartnerServiceApiRoot;
+        return partnerServiceApiRoot;
     }
 
     /**
      *  The partner service API root.
      * 
-     * @param partnerServiceApiRoot The partner service API root.
+     * @param value The partner service API root.
      */
-    public void setPartnerServiceApiRoot( String partnerServiceApiRoot )
+    public void setPartnerServiceApiRoot( String value )
     {
-        PartnerServiceApiRoot = partnerServiceApiRoot;
+        partnerServiceApiRoot = value;
     }
 
     /**
@@ -124,7 +127,7 @@ public class Configuration
      */
     public String getPartnerCenterClient()
     {
-        return PartnerCenterClient;
+        return partnerCenterClient;
     }
 
     /**
@@ -134,17 +137,17 @@ public class Configuration
      */
     public String getPartnerServiceApiVersion()
     {
-        return PartnerServiceApiVersion;
+        return partnerServiceApiVersion;
     }
 
     /**
      * Sets the partner service API version. 
      * 
-     * @param partnerServiceApiVersion The partner service API version.
+     * @param value The partner service API version.
      */
-    public void setPartnerServiceApiVersion( String partnerServiceApiVersion )
+    public void setPartnerServiceApiVersion( String value )
     {
-        PartnerServiceApiVersion = partnerServiceApiVersion;
+        partnerServiceApiVersion = value;
     }
 
     /**
@@ -154,7 +157,7 @@ public class Configuration
      */
     public int getDefaultMaxRetryAttempts()
     {
-        return DefaultMaxRetryAttempts;
+        return defaultMaxRetryAttempts;
     }
 
     /**
@@ -162,9 +165,9 @@ public class Configuration
      * 
      * @param defaultMaxRetryAttempts The default max retry attempts.
      */
-    public void setDefaultMaxRetryAttempts( int defaultMaxRetryAttempts )
+    public void setDefaultMaxRetryAttempts( int value )
     {
-        DefaultMaxRetryAttempts = defaultMaxRetryAttempts;
+        defaultMaxRetryAttempts = value;
     }
 
     /**
@@ -174,17 +177,17 @@ public class Configuration
      */
     public int getDefaultAuthenticationTokenExpiryBufferInSeconds()
     {
-        return DefaultAuthenticationTokenExpiryBufferInSeconds;
+        return defaultAuthenticationTokenExpiryBufferInSeconds;
     }
 
     /**
      * Sets the default authentication token expiry buffer in seconds.
      * 
-     * @param defaultAuthenticationTokenExpiryBufferInSeconds The default authentication token expiry buffer in seconds.
+     * @param value The default authentication token expiry buffer in seconds.
      */
-    public void setDefaultAuthenticationTokenExpiryBufferInSeconds( int defaultAuthenticationTokenExpiryBufferInSeconds )
+    public void setDefaultAuthenticationTokenExpiryBufferInSeconds( int value )
     {
-        DefaultAuthenticationTokenExpiryBufferInSeconds = defaultAuthenticationTokenExpiryBufferInSeconds;
+        defaultAuthenticationTokenExpiryBufferInSeconds = value;
     }
 
     /**
@@ -194,7 +197,7 @@ public class Configuration
      */
     public String getDefaultLocale()
     {
-        return DefaultLocale;
+        return defaultLocale;
     }
 
     /**
@@ -202,9 +205,9 @@ public class Configuration
      * 
      * @param defaultLocale The default locale.
      */
-    public void setDefaultLocale( String defaultLocale )
+    public void setDefaultLocale( String value )
     {
-        DefaultLocale = defaultLocale;
+        defaultLocale = value;
     }
 
     /**
@@ -214,16 +217,16 @@ public class Configuration
      */
     public Map<String, Api> getApis()
     {
-        return Apis;
+        return apis;
     }
-
+    
     /**
-     * Sets the available APIs. 
+     * Gets the SDK version. 
      * 
-     * @param apis The available APIs.
+     * @return The version of the SDK.
      */
-    public void setApis( Map<String, Api> apis )
+    public String getSdkVersion()
     {
-        Apis = apis;
+        return sdkVersion;
     }
 }

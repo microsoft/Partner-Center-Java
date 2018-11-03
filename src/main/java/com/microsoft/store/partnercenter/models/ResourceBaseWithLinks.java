@@ -30,7 +30,7 @@ public abstract class ResourceBaseWithLinks<TLinks>
         super();
     }
 
-    private TLinks __Links;
+    private TLinks links;
 
     /**
      * Gets the links.
@@ -39,7 +39,7 @@ public abstract class ResourceBaseWithLinks<TLinks>
      */
     public TLinks getLinks()
     {
-        return __Links;
+        return links;
     }
 
     /**
@@ -49,6 +49,6 @@ public abstract class ResourceBaseWithLinks<TLinks>
      */
     public void setLinks( TLinks value )
     {
-        __Links = value;
+        links = value;
     }
 }

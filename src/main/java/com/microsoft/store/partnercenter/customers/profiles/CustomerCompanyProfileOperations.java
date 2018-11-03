@@ -47,10 +47,14 @@ public class CustomerCompanyProfileOperations
     public CustomerCompanyProfile get()
     {
         PartnerServiceProxy<CustomerCompanyProfile, CustomerCompanyProfile> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerCompanyProfile, CustomerCompanyProfile>( new TypeReference<CustomerCompanyProfile>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerCompanyProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerCompanyProfile" ).getPath(),
-                                                        this.getContext() ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerCompanyProfile" ).getPath(),
+                this.getContext() ) );
+                
         return partnerServiceProxy.get();
     }
 }

@@ -14,16 +14,15 @@ public class StandardResourceLinks
     /**
      * Gets or sets the self uri.
      */
-    private Link __Self;
+    private Link self;
 
     public Link getSelf()
     {
-        return __Self;
+        return self;
     }
 
     public void setSelf( Link value )
     {
-        __Self = value;
+        self = value;
     }
-
 }

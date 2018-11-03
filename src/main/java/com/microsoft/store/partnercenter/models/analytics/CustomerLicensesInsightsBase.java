@@ -14,60 +14,60 @@ public abstract class CustomerLicensesInsightsBase
     /**
      * Gets or sets The customer identifier.
      */
-    private String __CustomerId;
+    private String customerId;
 
     public String getCustomerId()
     {
-        return __CustomerId;
+        return customerId;
     }
 
     public void setCustomerId( String value )
     {
-        __CustomerId = value;
+        customerId = value;
     }
 
     /**
      * Gets or sets the Customer Name.
      */
-    private String __CustomerName;
+    private String customerName;
 
     public String getCustomerName()
     {
-        return __CustomerName;
+        return customerName;
     }
 
     public void setCustomerName( String value )
     {
-        __CustomerName = value;
+        customerName = value;
     }
 
     /**
      * Gets or sets the product/plan name of the given service. (Example: OFFICE 365 BUSINESS ESSENTIALS).
      */
-    private String __ProductName;
+    private String productName;
 
     public String getProductName()
     {
-        return __ProductName;
+        return productName;
     }
 
     public void setProductName( String value )
     {
-        __ProductName = value;
+        productName = value;
     }
 
     /**
      * Gets or sets the Service Code of the License. Example (Office 365 : O365).
      */
-    private String __ServiceCode;
+    private String serviceCode;
 
     public String getServiceCode()
     {
-        return __ServiceCode;
+        return serviceCode;
     }
 
     public void setServiceCode( String value )
     {
-        __ServiceCode = value;
+        serviceCode = value;
     }
 }

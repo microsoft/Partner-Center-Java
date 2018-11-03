@@ -18,31 +18,30 @@ public class UserCredentials
     /**
      * Gets or sets the name of the user.
      */
-    private String __UserName;
+    private String userName;
 
     public String getUserName()
     {
-        return __UserName;
+        return userName;
     }
 
     public void setUserName( String value )
     {
-        __UserName = value;
+        userName = value;
     }
 
     /**
      * Gets or sets the password.
      */
-    private String __Password;
+    private String password;
 
     public String getPassword()
     {
-        return __Password;
+        return password;
     }
 
     public void setPassword( String value )
     {
-        __Password = value;
+        password = value;
     }
-
 }

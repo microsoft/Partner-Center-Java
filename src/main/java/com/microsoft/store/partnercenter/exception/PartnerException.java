@@ -106,46 +106,46 @@ public class PartnerException
     /**
      * Gets the error classification that resulted in this exception.
      */
-    private PartnerErrorCategory __ErrorCategory;
+    private PartnerErrorCategory errorCategory;
 
     public PartnerErrorCategory getErrorCategory()
     {
-        return __ErrorCategory;
+        return errorCategory;
     }
 
     public void setErrorCategory( PartnerErrorCategory value )
     {
-        __ErrorCategory = value;
+        errorCategory = value;
     }
 
     /**
      * Gets the service error payload.
      */
-    private ApiFault __ServiceErrorPayload;
+    private ApiFault serviceErrorPayload;
 
     public ApiFault getServiceErrorPayload()
     {
-        return __ServiceErrorPayload;
+        return serviceErrorPayload;
     }
 
     public void setServiceErrorPayload( ApiFault value )
     {
-        __ServiceErrorPayload = value;
+        serviceErrorPayload = value;
     }
 
     /**
      * Gets the partner context associated with the exception.
      */
-    private IRequestContext __Context;
+    private IRequestContext context;
 
     public IRequestContext getContext()
     {
-        return __Context;
+        return context;
     }
 
     public void setContext( IRequestContext value )
     {
-        __Context = value;
+        context = value;
     }
 
     /**

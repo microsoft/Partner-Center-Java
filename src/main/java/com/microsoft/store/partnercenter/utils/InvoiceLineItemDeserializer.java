@@ -47,29 +47,26 @@ public class InvoiceLineItemDeserializer
         String billingProvider = jsonNode.get( "billingProvider" ).textValue();
         String invoiceLineItemType = jsonNode.get( "invoiceLineItemType" ).textValue();
 
-        if ( invoiceLineItemType.equals( "usage_line_items" ) )
+        if (invoiceLineItemType.equals("usage_line_items"))
         {
-            if ( billingProvider.equalsIgnoreCase( BillingProvider.AZURE.toString() ) )
+            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
             {
-                target = mapper.readValue( parser, DailyUsageLineItem.class );
+                reader = mapper.readerFor(DailyUsageLineItem.class);
             }
         }
-        else if ( invoiceLineItemType.equals( "billing_line_items" ) )
+        else if (invoiceLineItemType.equals("billing_line_items"))
         {
-            if ( billingProvider.equalsIgnoreCase( BillingProvider.AZURE.toString()))
+            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
             {
                 reader = mapper.readerFor(UsageBasedLineItem.class);
-                target = reader.readValue(jsonNode);
             }
-            else if ( billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
             {
                 reader = mapper.readerFor(LicenseBasedLineItem.class);
-                target = reader.readValue(jsonNode);
             }
-            else if ( billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.toString()))
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.toString()))
             {
                 reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
-                target = reader.readValue(jsonNode);
             } 
         }
         else
@@ -77,11 +74,13 @@ public class InvoiceLineItemDeserializer
             throw new IOException(MessageFormat.format( "InvoiceLineItemConverter cannot deserialize invoice line items with type {0}", invoiceLineItemType));
         }
         
-        if (target == null)
+        if (reader == null)
         {
             throw new IOException(MessageFormat.format( "InvoiceLineItemConverter cannot deserialize invoice line items with type {0} and billing provider: {1}", invoiceLineItemType, billingProvider));
         }
-        
-        return (InvoiceLineItem) target;
+
+        target = reader.readValue(jsonNode);
+
+        return (InvoiceLineItem)target;
     }
 }

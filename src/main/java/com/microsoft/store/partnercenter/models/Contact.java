@@ -14,60 +14,60 @@ public class Contact
     /**
      * Gets or sets the first name.
      */
-    private String __FirstName;
+    private String firstName;
 
     public String getFirstName()
     {
-        return __FirstName;
+        return firstName;
     }
 
     public void setFirstName( String value )
     {
-        __FirstName = value;
+        firstName = value;
     }
 
     /**
      * Gets or sets the last name.
      */
-    private String __LastName;
+    private String lastName;
 
     public String getLastName()
     {
-        return __LastName;
+        return lastName;
     }
 
     public void setLastName( String value )
     {
-        __LastName = value;
+        lastName = value;
     }
 
     /**
      * Gets or sets the email.
      */
-    private String __Email;
+    private String email;
 
     public String getEmail()
     {
-        return __Email;
+        return email;
     }
 
     public void setEmail( String value )
     {
-        __Email = value;
+        email = value;
     }
 
     /**
      * Gets or sets the phone number.
      */
-    private String __PhoneNumber;
+    private String phoneNumber;
 
     public String getPhoneNumber()
     {
-        return __PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber( String value )
     {
-        __PhoneNumber = value;
+        phoneNumber = value;
     }
 }

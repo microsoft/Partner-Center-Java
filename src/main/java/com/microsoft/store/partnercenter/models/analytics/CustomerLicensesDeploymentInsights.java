@@ -15,45 +15,45 @@ public class CustomerLicensesDeploymentInsights
     /**
      * Gets or sets the number of License/seats deployed as of processed date.
      */
-    private long __LicensesDeployed;
+    private long licenseDeployed;
 
     public long getLicensesDeployed()
     {
-        return __LicensesDeployed;
+        return licenseDeployed;
     }
 
     public void setLicensesDeployed( long value )
     {
-        __LicensesDeployed = value;
+        licenseDeployed = value;
     }
 
     /**
      * Gets or sets the number of sold seats/licenses as of processed time stamp.
      */
-    private long __LicensesSold;
+    private long licensesSold;
 
     public long getLicensesSold()
     {
-        return __LicensesSold;
+        return licensesSold;
     }
 
     public void setLicensesSold( long value )
     {
-        __LicensesSold = value;
+        licensesSold = value;
     }
 
     /**
      * Gets or sets the deployment percent of the licenses of the customer.
      */
-    private double __DeploymentPercent;
+    private double deploymentPercent;
 
     public double getDeploymentPercent()
     {
-        return __DeploymentPercent;
+        return deploymentPercent;
     }
 
     public void setDeploymentPercent( double value )
     {
-        __DeploymentPercent = value;
+        deploymentPercent = value;
     }
 }

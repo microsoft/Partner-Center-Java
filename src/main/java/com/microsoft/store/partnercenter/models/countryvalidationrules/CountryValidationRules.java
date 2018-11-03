@@ -16,222 +16,221 @@ public class CountryValidationRules extends ResourceBase
     /**
      * Gets or sets the ISO2 code.
      */
-    private String __Iso2Code;
+    private String iso2Code;
 
     public String getIso2Code() {
-		return __Iso2Code;
+		return iso2Code;
 	}
 
-	public void setIso2Code(String __Iso2Code) {
-		this.__Iso2Code = __Iso2Code;
+	public void setIso2Code(String value) {
+		iso2Code = value;
 	}
 
 	/**
      * Gets or sets the default culture.
      */
-    private String __DefaultCulture;
+    private String defaultCulture;
 
 	public String getDefaultCulture() {
-		return __DefaultCulture;
+		return defaultCulture;
 	}
 
-	public void setDefaultCulture(String __DefaultCulture) {
-		this.__DefaultCulture = __DefaultCulture;
+	public void setDefaultCulture(String value) {
+		defaultCulture = value;
 	}
 
     /**
      * Gets or sets a value indicating whether the state is required or not.
      */
-    private boolean __IsStateRequired;
+    private boolean isStateRequired;
 
-	public boolean is__IsStateRequired() {
-		return __IsStateRequired;
+	public boolean getIsStateRequired() {
+		return isStateRequired;
 	}
 
-	public void setIsStateRequired(boolean __IsStateRequired) {
-		this.__IsStateRequired = __IsStateRequired;
+	public void setIsStateRequired(boolean value) {
+		isStateRequired = value;
 	}
 
     /**
      * Gets or sets a list of states in the country.
      */
-    private Iterable<String> __SupportedStatesList;
+    private Iterable<String> supportedStatesList;
 
 	public Iterable<String> getSupportedStatesList() {
-		return __SupportedStatesList;
+		return supportedStatesList;
 	}
 
-	public void setSupportedStatesList(Iterable<String> __SupportedStatesList) {
-		this.__SupportedStatesList = __SupportedStatesList;
+	public void setSupportedStatesList(Iterable<String> value) {
+		supportedStatesList = value;
 	}
 
     /**
      * Gets or sets a list of supported languages.
      */
-    private Iterable<String> __SupportedLanguagesList;
+    private Iterable<String> supportedLanguagesList;
 
 	public Iterable<String> getSupportedLanguagesList() {
-		return __SupportedLanguagesList;
+		return supportedLanguagesList;
 	}
 
-	public void setSupportedLanguagesList(Iterable<String> __SupportedLanguagesList) {
-		this.__SupportedLanguagesList = __SupportedLanguagesList;
+	public void setSupportedLanguagesList(Iterable<String> value) {
+		supportedLanguagesList = value;
 	}
 
     /**
      * Gets or sets a list of supported cultures.
      */
-    private Iterable<String> __SupportedCulturesList;
+    private Iterable<String> supportedCulturesList;
 
 	public Iterable<String> getSupportedCulturesList() {
-		return __SupportedCulturesList;
+		return supportedCulturesList;
 	}
 
-	public void setSupportedCulturesList(Iterable<String> __SupportedCulturesList) {
-		this.__SupportedCulturesList = __SupportedCulturesList;
+	public void setSupportedCulturesList(Iterable<String> value) {
+		supportedCulturesList = value;
 	}
 
     /**
      * Gets or sets a value indicating whether a postal code is required or not.
      */
-    private boolean __IsPostalCodeRequired;
+    private boolean isPostalCodeRequired;
 
-	public boolean is__IsPostalCodeRequired() {
-		return __IsPostalCodeRequired;
+	public boolean getIsPostalCodeRequired() {
+		return isPostalCodeRequired;
 	}
 
-	public void setIsPostalCodeRequired(boolean __IsPostalCodeRequired) {
-		this.__IsPostalCodeRequired = __IsPostalCodeRequired;
+	public void setIsPostalCodeRequired(boolean value) {
+		isPostalCodeRequired = value;
 	}
 
     /**
      * Gets or sets the postal code regular expression.
      */
-    private String __PostalCodeRegex;
+    private String postalCodeRegex;
 
 	public String getPostalCodeRegex() {
-		return __PostalCodeRegex;
+		return postalCodeRegex;
 	}
 
-	public void setPostalCodeRegex(String __PostalCodeRegex) {
-		this.__PostalCodeRegex = __PostalCodeRegex;
+	public void setPostalCodeRegex(String value) {
+		postalCodeRegex = value;
 	}
 
     /**
      * Gets or sets a value indicating whether a city is required or not.
      */
-    private boolean __IsCityRequired;
+    private boolean isCityRequired;
 
-	public boolean is__IsCityRequired() {
-		return __IsCityRequired;
+	public boolean getIsCityRequired() {
+		return isCityRequired;
 	}
 
-	public void setIsCityRequired(boolean __IsCityRequired) {
-		this.__IsCityRequired = __IsCityRequired;
+	public void setIsCityRequired(boolean value) {
+		isCityRequired = value;
 	}
 
     /**
      * Gets or sets a value indicating whether a VAT Id is required or not.
      */
-    private boolean __IsVatIdSupported;
+    private boolean isVatIdSupported;
 
-	public boolean is__IsVatIdSupported() {
-		return __IsVatIdSupported;
+	public boolean getIsVatIdSupported() {
+		return isVatIdSupported;
 	}
 
-	public void setIsVatIdSupported(boolean __IsVatIdSupported) {
-		this.__IsVatIdSupported = __IsVatIdSupported;
+	public void setIsVatIdSupported(boolean value) {
+		this.isVatIdSupported = value;
 	}
 
     /**
      * Gets or sets the tax Id format.
      */
-    private String __TaxIdFormat;
+    private String taxIdFormat;
 
     public String getTaxIdFormat() {
-		return __TaxIdFormat;
+		return taxIdFormat;
 	}
 
-	public void setTaxIdFormat(String __TaxIdFormat) {
-		this.__TaxIdFormat = __TaxIdFormat;
+	public void setTaxIdFormat(String value) {
+		taxIdFormat = value;
 	}
 
     /**
      * Gets or sets the tax Id sample.
      */
-    private String __TaxIdSample;
+    private String taxIdSample;
 
 	public String getTaxIdSample() {
-		return __TaxIdSample;
+		return taxIdSample;
 	}
 
-	public void setTaxIdSample(String __TaxIdSample) {
-		this.__TaxIdSample = __TaxIdSample;
+	public void setTaxIdSample(String value) {
+		taxIdSample = value;
 	}
 
     /**
      * Gets or sets the tax Id regular expression.
      */
-    private String __VatIdRegex;
+    private String vatIdRegex;
 
 	public String getVatIdRegex() {
-		return __VatIdRegex;
+		return vatIdRegex;
 	}
 
-	public void setVatIdRegex(String __VatIdRegex) {
-		this.__VatIdRegex = __VatIdRegex;
+	public void setVatIdRegex(String value) {
+		vatIdRegex = value;
 	}
 
     /**
      * Gets or sets the phone number regular expression.
      */
-    private String __PhoneNumberRegex;
+    private String phoneNumberRegex;
 
 	public String getPhoneNumberRegex() {
-		return __PhoneNumberRegex;
+		return phoneNumberRegex;
 	}
 
-	public void setPhoneNumberRegex(String __PhoneNumberRegex) {
-		this.__PhoneNumberRegex = __PhoneNumberRegex;
+	public void setPhoneNumberRegex(String value) {
+		phoneNumberRegex = value;
 	}
 
     /**
      * Gets or sets a value indicating whether a tax Id is supported or not.
      */
-    private boolean __IsTaxIdSupported;
+    private boolean isTaxIdSupported;
 
-	public boolean is__IsTaxIdSupported() {
-		return __IsTaxIdSupported;
+	public boolean getIsTaxIdSupported() {
+		return isTaxIdSupported;
 	}
 
-	public void setIsTaxIdSupported(boolean __IsTaxIdSupported) {
-		this.__IsTaxIdSupported = __IsTaxIdSupported;
+	public void setIsTaxIdSupported(boolean value) {
+		isTaxIdSupported = value;
 	}
 
     /**
      * Gets or sets a value indicating whether a tax Id is optional or not.
      */
-    private boolean __IsTaxIdOptional;
+    private boolean isTaxIdOptional;
 
-	public boolean is__IsTaxIdOptional() {
-		return __IsTaxIdOptional;
+	public boolean getIsTaxIdOptional() {
+		return isTaxIdOptional;
 	}
 
-	public void setIsTaxIdOptional(boolean __IsTaxIdOptional) {
-		this.__IsTaxIdOptional = __IsTaxIdOptional;
+	public void setIsTaxIdOptional(boolean value) {
+		isTaxIdOptional = value;
 	}
 
     /**
      * Gets or sets the country calling codes.
      */
-    private Iterable<String> __CountryCallingCodesList;
+    private Iterable<String> countryCallingCodesList;
 
     public Iterable<String> getCountryCallingCodesList() {
-		return __CountryCallingCodesList;
+		return countryCallingCodesList;
 	}
 
-	public void setCountryCallingCodesList(Iterable<String> __CountryCallingCodesList) {
-		this.__CountryCallingCodesList = __CountryCallingCodesList;
+	public void setCountryCallingCodesList(Iterable<String> value) {
+		countryCallingCodesList = value;
 	}
-
 }

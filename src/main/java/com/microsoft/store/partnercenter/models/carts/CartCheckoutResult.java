@@ -22,31 +22,31 @@ public class CartCheckoutResult
      * Gets or sets the orders created.
      */
 	@JsonProperty( "orders" )
-    private List<Order> __Orders;
+    private List<Order> orders;
 
     public List<Order> getOrders()
     {
-        return __Orders;
+        return orders;
     }
 
     public void setOrders( List<Order> value )
     {
-    	__Orders = value;
+    	orders = value;
     }
 
     /**
      * Gets or sets a collection of order failure information.
      */
 	@JsonProperty( "orderErrors" )
-    private List<OrderError> __OrderErrors;
+    private List<OrderError> orderErrors;
 
     public List<OrderError> getOrderErrors()
     {
-        return __OrderErrors;
+        return orderErrors;
     }
 
     public void setOrderErrors( List<OrderError> value )
     {
-    	__OrderErrors = value;
+    	orderErrors = value;
     }
  }

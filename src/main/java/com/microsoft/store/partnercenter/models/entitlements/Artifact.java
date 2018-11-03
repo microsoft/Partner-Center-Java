@@ -6,6 +6,8 @@
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
@@ -16,19 +18,49 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class Artifact
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
-    /**
-     * Gets or sets Artifact Type.
-     */
-    @JsonProperty( "artifactType" )
-    private ArtifactType __ArtifactType;
+    @JsonProperty("artifactType")
+    private String artifactType;
 
-    public ArtifactType getArtifactType()
+    @JsonProperty("dynamicAttributes")
+    private Map<String, Object> dynamicAttributes;
+    
+    /**
+     * Gets the artifact type.
+     * 
+     * @return The artifact type.
+     */
+    public String getArtifactType()
     {
-        return __ArtifactType;
+        return artifactType;
     }
 
-    public void setArtifactType( ArtifactType value )
+    /**
+     * Sets the artifact type.
+     * 
+     * @param value The type of artifact.
+     */
+    public void setArtifactType(String value)
     {
-        __ArtifactType = value;
+        artifactType = value;
+    }
+
+    /**
+     * Gets the dynamic attributes
+     * 
+     * @return The dynamic attributes.
+     */
+    public Map<String, Object> getDynamicAttributes()
+    {
+        return dynamicAttributes;
+    }
+
+    /**
+     * Sets the dynamic attributes.
+     * 
+     * @param value The available dynamic attributes.
+     */
+    public void setDynamicAttributes(Map<String, Object> value)
+    {
+        dynamicAttributes = value;
     }
 }

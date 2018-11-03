@@ -39,31 +39,31 @@ public class SimpleQuery
     /**
      * Gets or sets the query filter.
      */
-    private FieldFilter __Filter;
+    private FieldFilter filter;
 
     public FieldFilter getFilter()
     {
-        return __Filter;
+        return filter;
     }
 
     public void setFilter( FieldFilter value )
     {
-        __Filter = value;
+        filter = value;
     }
 
     /**
      * Gets or sets the query sorting options.
      */
-    private Sort __Sort;
+    private Sort sort;
 
     public Sort getSort()
     {
-        return __Sort;
+        return sort;
     }
 
     public void setSort( Sort value )
     {
-        __Sort = value;
+        sort = value;
     }
 
     /**
@@ -85,9 +85,6 @@ public class SimpleQuery
         }
 
         String result = stringRepresentation.toString();
-        // return StringHelper.isNullOrWhiteSpace(result) ? super.ToString() : result;
         return result == null || result.isEmpty() ? super.toString() : result;
-
     }
-
 }

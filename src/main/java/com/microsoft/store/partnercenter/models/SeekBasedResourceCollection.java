@@ -24,7 +24,6 @@ public class SeekBasedResourceCollection<T>
      */
     @JsonCreator
     public SeekBasedResourceCollection(@JsonProperty("items")  List<T> items )
-
     {
         super( items );
     }
@@ -35,7 +34,6 @@ public class SeekBasedResourceCollection<T>
      * @param resourceCollection The resource collection.
      */
     public SeekBasedResourceCollection( ResourceCollection<T> resourceCollection )
-
     {
         super( resourceCollection );
     }
@@ -47,7 +45,6 @@ public class SeekBasedResourceCollection<T>
      * @param continuationToken The continuation token.
      */
     public SeekBasedResourceCollection( List<T> items, String continuationToken )
-
     {
         this( items );
         this.setContinuationToken( continuationToken );
@@ -56,16 +53,15 @@ public class SeekBasedResourceCollection<T>
     /**
      * Gets or sets the continuation token.
      */
-    private String __ContinuationToken;
+    private String continuationToken;
 
     public String getContinuationToken()
     {
-        return __ContinuationToken;
+        return continuationToken;
     }
 
     public void setContinuationToken( String value )
     {
-        __ContinuationToken = value;
+        continuationToken = value;
     }
-
 }

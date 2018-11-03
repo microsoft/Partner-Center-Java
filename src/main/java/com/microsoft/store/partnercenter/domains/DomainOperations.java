@@ -50,8 +50,7 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 				this.getPartner(), 
 				MessageFormat.format( 
 					PartnerService.getInstance().getConfiguration().getApis().get( "CheckDomainAvailability" ).getPath(),
-					this.getContext(), 
-					Locale.US ) );
+					this.getContext() ) );
         
         try
         {

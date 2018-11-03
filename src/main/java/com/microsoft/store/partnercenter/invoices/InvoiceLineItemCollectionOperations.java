@@ -98,7 +98,7 @@ public class InvoiceLineItemCollectionOperations
 	public ResourceCollection<InvoiceLineItem> get( int size, int offset )
 	{
         IPartnerServiceProxy<InvoiceLineItem, ResourceCollection<InvoiceLineItem>> partnerServiceProxy =
-                new PartnerServiceProxy<InvoiceLineItem, ResourceCollection<InvoiceLineItem>>( 
+                new PartnerServiceProxy<>( 
                     new TypeReference<ResourceCollection<InvoiceLineItem>>()
                     {
                     }, 

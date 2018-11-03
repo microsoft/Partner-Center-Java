@@ -23,79 +23,79 @@ public class Cart
      * Gets or sets a unique cart identifier.
      */
 	@JsonProperty( "id" )
-    private String __Id;
+    private String id;
 
     public String getId()
     {
-        return __Id;
+        return id;
     }
 
     public void setId( String value )
     {
-    	__Id = value;
+    	id = value;
     }
 
     /**
      * Gets or sets the creation timestamp.
      */
 	@JsonProperty( "creationTimestamp" )
-    private DateTime __CreationTimestamp;
+    private DateTime creationTimestamp;
 
     public DateTime getCreationTimestamp()
     {
-        return __CreationTimestamp;
+        return creationTimestamp;
     }
 
     public void setCreationTimestamp( DateTime value )
     {
-    	__CreationTimestamp = value;
+    	creationTimestamp = value;
     }
 
     /**
      *   Gets or sets the last modified timestamp.
      */
     @JsonProperty( "lastModifiedTimestamp" )
-    private DateTime __LastModifiedTimestamp;
+    private DateTime lastModifiedTimestamp;
 
     public DateTime getLastModifiedTimestamp()
     {
-        return __LastModifiedTimestamp;
+        return lastModifiedTimestamp;
     }
 
     public void setLastModifiedTimestamp( DateTime value )
     {
-    	__LastModifiedTimestamp = value;
+    	lastModifiedTimestamp = value;
     }
 
     /**
      *  Gets or sets the expiration timestamp.
      */
     @JsonProperty( "expirationTimestamp" )
-    private DateTime __ExpirationTimestamp;
+    private DateTime expirationTimestamp;
 
     public DateTime getExpirationTimestamp()
     {
-        return __ExpirationTimestamp;
+        return expirationTimestamp;
     }
 
     public void setExpirationTimestamp( DateTime value )
     {
-    	__ExpirationTimestamp = value;
+    	expirationTimestamp = value;
     }
 
     /**
      *  Gets or sets the last modified user or application.
      */
     @JsonProperty( "lineItems" )
-    private List<CartLineItem> __LineItems;
+    private List<CartLineItem> lineItems;
 
     public List<CartLineItem> getLineItems()
     {
-        return __LineItems;
+        return lineItems;
     }
 
     public void setLineItems( List<CartLineItem> value )
     {
-    	__LineItems = value;
+    	lineItems = value;
     }
  }

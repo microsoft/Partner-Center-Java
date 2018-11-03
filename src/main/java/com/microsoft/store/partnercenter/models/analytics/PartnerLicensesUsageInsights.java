@@ -16,31 +16,31 @@ public class PartnerLicensesUsageInsights
     /**
      * Gets or sets the Workload name. For example: Exchange.
      */
-    private String __WorkloadName;
+    private String workloadName;
 
     public String getWorkloadName()
     {
-        return __WorkloadName;
+        return workloadName;
     }
 
     public void setWorkloadName( String value )
     {
-        __WorkloadName = value;
+        workloadName = value;
     }
 
     /**
      *  Gets or sets the usage percentage of the given workload out of qualified 
      * licenses of all customers of the partner.
      */
-    private double __ProratedLicensesUsagePercent;
+    private double proratedLicensesUsagePercent;
 
     public double getProratedLicensesUsagePercent()
     {
-        return __ProratedLicensesUsagePercent;
+        return proratedLicensesUsagePercent;
     }
 
     public void setProratedLicensesUsagePercent( double value )
     {
-        __ProratedLicensesUsagePercent = value;
+        proratedLicensesUsagePercent = value;
     }
 }

@@ -6,8 +6,6 @@
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
-import java.util.Iterator;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
@@ -16,132 +14,189 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
  * Class that represents an entitlement.
  */
 public class Entitlement
-     extends ResourceBaseWithLinks<StandardResourceLinks> {
-	/**
-	 * Gets or sets included entitlements.
-	 */
-	@JsonProperty( "IncludedEntitlements" )
-	private Iterator<Entitlement> __IncludedEntitlements;
+	 extends ResourceBaseWithLinks<StandardResourceLinks> 
+{
+	@JsonProperty("entitledArtifacts")
+	private Iterable<Artifact> entitledArtifacts;
 
-	public Iterator<Entitlement> getIncludedEntitlements()
-	{
-		return __IncludedEntitlements;
-	}
+	@JsonProperty("entitlementType")
+	private String entitlementType;
 
-	public void setIncludedEntitlements( Iterator<Entitlement> value )
-	{
-		__IncludedEntitlements = value;
-	}
+	@JsonProperty("includedEntitlements")
+	private Iterable<Entitlement> includedEntitlements;
 
-	/**
-	 * Gets or sets reference order related to the entitlement.
-	 */
-	@JsonProperty( "ReferenceOrder" )
-	private ReferenceOrder __ReferenceOrder;
+	@JsonProperty("productId")
+	private String productId;
 
-	public ReferenceOrder getReferenceOrder()
-	{
-		return __ReferenceOrder;
-	}
+	@JsonProperty("quantity")
+	private Integer quantity;
 
-	public void setReferenceOrder( ReferenceOrder value )
-	{
-		__ReferenceOrder = value;
-	}
+	@JsonProperty("quantityDetails")
+	private Iterable<QuantityDetail> quantityDetails;
+
+	@JsonProperty("referenceOrder")
+	private ReferenceOrder referenceOrder;
+
+	@JsonProperty("skuId")
+	private String skuId;
 
 	/**
-	 *  Gets or sets product id.
+	 * Gets the collection of entitled artifacts.
+	 * 
+	 * @return The collection of entitled artifacts.
 	 */
-	@JsonProperty( "productId" )
-	private String __ProductId;
+	public Iterable<Artifact> getEntitledArtifacts()
+	{
+		return entitledArtifacts;
+	}
 
+	/**
+	 * Sets the collection of entitled artifacts.
+	 * 
+	 * @param value The collection of entitled artifacts.
+	 */
+	public void setEntitledArtifacts(Iterable<Artifact> value)
+	{
+		entitledArtifacts = value;
+	}
+
+	/**
+	 * Gets the entitlement type.
+	 * 
+	 * @return The entitlement type.
+	 */
+	public String getEntitlementType()
+	{
+		return entitlementType;
+	}
+
+	/**
+	 * Sets the entitlement type.
+	 * 
+	 * @param value The entitlement type.
+	 */
+	public void setEntitlementType(String value)
+	{
+		entitlementType = value;
+	}
+
+	/**
+	 * Gets the included entitlements.
+	 * 
+	 * @return The included entitlements.
+	 */
+	public Iterable<Entitlement> getIncludedEntitlements()
+	{
+		return includedEntitlements;
+	}
+
+	/**
+	 * Sets the included entitlements.
+	 * 
+	 * @param value The included entitlements.
+	 */
+	public void setIncludedEntitlements(Iterable<Entitlement> value)
+	{
+		includedEntitlements = value;
+	}
+
+	/**
+	 * Gets the product identifier.
+	 * 
+	 * @return The product identifier.
+	 */
 	public String getProductId()
 	{
-		return __ProductId;
-	}
-
-	public void setProductId( String value )
-	{
-		__ProductId = value;
+		return productId;
 	}
 
 	/**
-	 * Gets or sets quantity.
+	 * Sets the product identifier.
+	 * 
+	 * @param value The product identifier.
 	 */
-	@JsonProperty( "Quantity" )
-	private Integer __Quantity;
+	public void setProductId(String value)
+	{
+		productId = value;
+	}
 
+	/**
+	 * Gets the quantity.
+	 * 
+	 * @return The quantity.
+	 */
 	public Integer getQuantity()
 	{
-		return __Quantity;
-	}
-
-	public void setQuantity( Integer value )
-	{
-		__Quantity = value;
+		return quantity;
 	}
 
 	/**
-	 *  Gets or sets the quantity details (quantity - state).
+	 * Sets the quantity.
+	 * 
+	 * @param value The quantity.
 	 */
-	@JsonProperty( "quantityDetails" )
-	private Iterator<QuantityDetail> __QuantityDetails;
-
-	public Iterator<QuantityDetail> getQuantityDetails()
+	public void setQuantity(Integer value)
 	{
-		return __QuantityDetails;
-	}
-
-	public void setQuantityDetails( Iterator<QuantityDetail> value )
-	{
-		__QuantityDetails = value;
+		quantity = value;
 	}
 
 	/**
-	 *  Gets or sets collection of entitled artifacts.
+	 * Gets the quantity details (quantity - state).
+	 * 
+	 * @return The quantity details (quantity - state).
 	 */
-	@JsonProperty( "entitledArtifacts" )
-	private Iterator<Artifact> __EntitledArtifacts;
-
-	public Iterator<Artifact> getEntitledArtifacts()
+	public Iterable<QuantityDetail> getQuantityDetails()
 	{
-		return __EntitledArtifacts;
-	}
-
-	public void setEntitledArtifacts( Iterator<Artifact> value )
-	{
-		__EntitledArtifacts = value;
+		return quantityDetails;
 	}
 
 	/**
-	 *   Gets or sets skuId.
+	 * Sets the quantity details (quantity - state).
+	 * 
+	 * @param value The quantity details (quantity - state).
 	 */
-	@JsonProperty( "skuId" )
-	private String __SkuId;
+	public void setQuantityDetails(Iterable<QuantityDetail> value)
+	{
+		quantityDetails = value;
+	}
 
+	/**
+	 * Gets the reference order related to the entitlement.
+	 * 
+	 * @return The reference order related to the entitlement.
+	 */
+	public ReferenceOrder getReferenceOrder()
+	{
+		return referenceOrder;
+	}
+
+	/**
+	 * Sets the reference order related to the entitlement.
+	 * 
+	 * @param value The reference order related to the entitlement.
+	 */
+	public void setReferenceOrder(ReferenceOrder value)
+	{
+		referenceOrder = value;
+	}
+
+	/**
+	 * Gets the SKU identifier.
+	 * 
+	 * @return The SKU identifier.
+	 */
 	public String getSkuId()
 	{
-		return __SkuId;
-	}
-
-	public void setSkuId( String value )
-	{
-		__SkuId = value;
+		return skuId;
 	}
 
 	/**
-	 *  Gets or sets entitlement type.
+	 * Sets the SKU identifier.
+	 * 
+	 * @param value The SKU identifier.
 	 */
-	@JsonProperty( "entitlementType" )
-	private EntitlementType __EntitlementType;
-
-	public EntitlementType getEntitlementType()
+	public void setSkuId(String value)
 	{
-		return __EntitlementType;
-	}
-
-	public void setEntitlementType( EntitlementType value )
-	{
-		__EntitlementType = value;
+		skuId = value;
 	}
 }

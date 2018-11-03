@@ -20,7 +20,7 @@ public class PartnerCredentials
     /**
      * A singleton instance of the partner credentials.
      */
-    private static PartnerCredentials __instance = new PartnerCredentials();
+    private static PartnerCredentials instance = new PartnerCredentials();
 
     /**
      * Prevents a default instance of the PartnerCredentials class from being created.
@@ -36,7 +36,7 @@ public class PartnerCredentials
      */
     public static PartnerCredentials getInstance()
     {
-        return PartnerCredentials.__instance;
+        return PartnerCredentials.instance;
     }
     
     /**

@@ -31,8 +31,8 @@ public class RetryableHttpCall
      * Responses with codes listed here will not be retried.
      */
     private final List<Integer> nonRetryableHttpCodes =
-        Arrays.asList( HttpStatusCode.BadRequest, HttpStatusCode.Unauthorized, HttpStatusCode.Forbidden,
-                       HttpStatusCode.NotFound, HttpStatusCode.Conflict, HttpStatusCode.ExpectationFailed );
+        Arrays.asList( HttpStatusCode.BADREQUEST, HttpStatusCode.UNAUTHORIZED, HttpStatusCode.FORBIDDEN,
+                       HttpStatusCode.NOTFOUND, HttpStatusCode.CONFLICT, HttpStatusCode.EXPECTATIONFAILED );
 
     /**
      * Initializes a new instance of the RetryableHttpCall class.

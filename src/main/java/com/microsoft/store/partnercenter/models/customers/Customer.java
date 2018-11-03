@@ -26,7 +26,7 @@ public class Customer
     }
 
     @JsonProperty( "id" )
-    private String __Id;
+    private String id;
 
     /**
      * Gets the identifier.
@@ -35,7 +35,7 @@ public class Customer
      */
     public String getId()
     {
-        return __Id;
+        return id;
     }
 
     /**
@@ -45,11 +45,11 @@ public class Customer
      */
     public void setId( String value )
     {
-        __Id = value;
+        id = value;
     }
 
     @JsonProperty( "commerceId" )
-    private String __CommerceId;
+    private String commerceId;
 
     /**
      * Gets the commerce identifier.
@@ -58,7 +58,7 @@ public class Customer
      */
     public String getCommerceId()
     {
-        return __CommerceId;
+        return commerceId;
     }
 
     /**
@@ -68,11 +68,11 @@ public class Customer
      */
     public void setCommerceId( String value )
     {
-        __CommerceId = value;
+        commerceId = value;
     }
 
     @JsonProperty( "companyProfile" )
-    private CustomerCompanyProfile __CompanyProfile;
+    private CustomerCompanyProfile companyProfile;
 
     /**
      * Gets the company profile.
@@ -81,7 +81,7 @@ public class Customer
      */
     public CustomerCompanyProfile getCompanyProfile()
     {
-        return __CompanyProfile;
+        return companyProfile;
     }
 
     /**
@@ -91,11 +91,11 @@ public class Customer
      */
     public void setCompanyProfile( CustomerCompanyProfile value )
     {
-        __CompanyProfile = value;
+        companyProfile = value;
     }
 
     @JsonProperty( "billingProfile" )
-    private CustomerBillingProfile __BillingProfile;
+    private CustomerBillingProfile billingProfile;
 
     /**
      * Gets the billing profile.
@@ -104,7 +104,7 @@ public class Customer
      */
     public CustomerBillingProfile getBillingProfile()
     {
-        return __BillingProfile;
+        return billingProfile;
     }
 
     /**
@@ -114,11 +114,11 @@ public class Customer
      */
     public void setBillingProfile( CustomerBillingProfile value )
     {
-        __BillingProfile = value;
+        billingProfile = value;
     }
 
     @JsonProperty( "relationshipToPartner" )
-    private CustomerPartnerRelationship __RelationshipToPartner;
+    private CustomerPartnerRelationship relationshipToPartner;
 
     /**
      * Gets the relationship to the partner.
@@ -127,7 +127,7 @@ public class Customer
      */
     public CustomerPartnerRelationship getRelationshipToPartner()
     {
-        return __RelationshipToPartner;
+        return relationshipToPartner;
     }
 
     /**
@@ -137,11 +137,11 @@ public class Customer
      */
     public void setRelationshipToPartner( CustomerPartnerRelationship value )
     {
-        __RelationshipToPartner = value;
+        relationshipToPartner = value;
     }
 
     @JsonProperty( "allowDelegatedAccess" )
-    private Boolean __AllowDelegatedAccess;
+    private Boolean allowDelegatedAccess;
 
     /**
      * Gets a flag indicating whether allow delegated access is enabled or not.
@@ -150,7 +150,7 @@ public class Customer
      */
     public Boolean getAllowDelegatedAccess()
     {
-        return __AllowDelegatedAccess;
+        return allowDelegatedAccess;
     }
 
     /**
@@ -160,12 +160,12 @@ public class Customer
      */
     public void setAllowDelegatedAccess( Boolean value )
     {
-        __AllowDelegatedAccess = value;
+        allowDelegatedAccess = value;
     }
 
 
     @JsonProperty( "userCredentials" )
-    private UserCredentials __UserCredentials;
+    private UserCredentials userCredentials;
 
     /**
      * Gets the user credentials.
@@ -174,7 +174,7 @@ public class Customer
      */
     public UserCredentials getUserCredentials()
     {
-        return __UserCredentials;
+        return userCredentials;
     }
 
     /**
@@ -184,11 +184,11 @@ public class Customer
      */
     public void setUserCredentials( UserCredentials value )
     {
-        __UserCredentials = value;
+        userCredentials = value;
     }
 
     @JsonProperty( "customDomains" )
-    private List<String> __CustomDomains;
+    private List<String> customDomains;
    
     /**
      * Gets the custom domains.
@@ -197,7 +197,7 @@ public class Customer
      */
     public List<String> getCustomDomains()
     {
-        return __CustomDomains;
+        return customDomains;
     }
 
     /**
@@ -207,11 +207,11 @@ public class Customer
      */
     public void setCustomDomains( List<String> value )
     {
-        __CustomDomains = value;
+        customDomains = value;
     }
 
     @JsonProperty( "associatedPartnerId" )
-    private String __AssociatedPartnerId;
+    private String associatedPartnerId;
 
     /**
      * Gets the indirect reseller associated to this customer account. 
@@ -220,7 +220,7 @@ public class Customer
      */
     public String getAssociatedPartnerId()
     {
-        return __AssociatedPartnerId;
+        return associatedPartnerId;
     }
 
     /**
@@ -231,6 +231,6 @@ public class Customer
      */
     public void setAssociatedPartnerId( String value )
     {
-        __AssociatedPartnerId = value;
+        associatedPartnerId = value;
     }
 }

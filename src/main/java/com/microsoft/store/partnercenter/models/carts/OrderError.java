@@ -19,47 +19,47 @@ public class OrderError
      * Gets or sets the order group identifier with failure.
      */
 	@JsonProperty( "orderGroupId" )
-    private String __OrderGroupId;
+    private String orderGroupId;
 
     public String getOrderGroupId()
     {
-        return __OrderGroupId;
+        return orderGroupId;
     }
 
     public void setOrderGroupId( String value )
     {
-    	__OrderGroupId = value;
+    	orderGroupId = value;
     }
 
     /**
      * Gets or sets the error code associated with the issue.
      */
 	@JsonProperty( "code" )
-    private int __Code;
+    private int code;
 
     public int getCode()
     {
-        return __Code;
+        return code;
     }
 
     public void setCode( int value )
     {
-    	__Code = value;
+    	code = value;
     }
 
     /**
      * Gets or sets the description of the issue.
      */
 	@JsonProperty( "description" )
-    private String __Description;
+    private String description;
 
     public String getDescription()
     {
-        return __Description;
+        return description;
     }
 
     public void setDescription( String value )
     {
-    	__Description = value;
+    	description = value;
     }
  }

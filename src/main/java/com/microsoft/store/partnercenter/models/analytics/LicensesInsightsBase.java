@@ -19,45 +19,45 @@ public abstract class LicensesInsightsBase
     /**
      * Gets or sets the Last Processed date for data.
      */
-    private DateTime __ProcessedDateTime;
+    private DateTime processedDateTime;
 
     public DateTime getProcessedDateTime()
     {
-        return __ProcessedDateTime;
+        return processedDateTime;
     }
 
     public void setProcessedDateTime( DateTime value )
     {
-        __ProcessedDateTime = value;
+        processedDateTime = value;
     }
 
     /**
      * Gets or sets the Service name (Example : Office, CRM).
      */
-    private String __ServiceName;
+    private String serviceName;
 
     public String getServiceName()
     {
-        return __ServiceName;
+        return serviceName;
     }
 
     public void setServiceName( String value )
     {
-        __ServiceName = value;
+        serviceName = value;
     }
 
     /**
      * Gets or sets the Channel name of service (Example: Reseller, Direct).
      */
-    private String __Channel;
+    private String channel;
 
     public String getChannel()
     {
-        return __Channel;
+        return channel;
     }
 
     public void setChannel( String value )
     {
-        __Channel = value;
+        channel = value;
     }
 }

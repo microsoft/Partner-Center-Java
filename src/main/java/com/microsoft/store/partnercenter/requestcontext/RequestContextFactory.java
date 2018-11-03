@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
-//<copyright file="RequestContextFactory.java" company="Microsoft">
+// <copyright file="RequestContextFactory.java" company="Microsoft">
 //   Copyright (c) Microsoft Corporation. All rights reserved.
-//</copyright>
+// </copyright>
 //-----------------------------------------------------------------------
 
 package com.microsoft.store.partnercenter.requestcontext;
@@ -13,7 +13,7 @@ public class RequestContextFactory
     /**
      * A singleton instance of the request context factory.
      */
-    private static RequestContextFactory __instance = new RequestContextFactory();
+    private static RequestContextFactory instance = new RequestContextFactory();
 
     /**
      * Prevents a default instance of the <see cref="RequestContextFactory"/> class from being created.
@@ -29,7 +29,7 @@ public class RequestContextFactory
      */
     public static RequestContextFactory getInstance()
     {
-        return RequestContextFactory.__instance;
+        return RequestContextFactory.instance;
     }
 
     /**

@@ -14,75 +14,75 @@ public class CustomerLicensesUsageInsights
     /**
      * Gets or sets the Workload Code. (Example : Exchange - EXO).
      */
-    private String __WorkloadCode;
+    private String workloadCode;
 
     public String getWorkloadCode()
     {
-        return __WorkloadCode;
+        return workloadCode;
     }
 
     public void setWorkloadCode( String value )
     {
-        __WorkloadCode = value;
+        workloadCode = value;
     }
 
     /**
      * Gets or sets the Workload name (Example: Exchange).
      */
-    private String __WorkloadName;
+    private String workloadName;
 
     public String getWorkloadName()
     {
-        return __WorkloadName;
+        return workloadName;
     }
 
     public void setWorkloadName( String value )
     {
-        __WorkloadName = value;
+        workloadName = value;
     }
 
     /**
      * Gets or sets the total active seats as of processed time stamp.
      */
-    private long __LicensesActive;
+    private long licensesActive;
 
     public long getLicensesActive()
     {
-        return __LicensesActive;
+        return licensesActive;
     }
 
     public void setLicensesActive( long value )
     {
-        __LicensesActive = value;
+        licensesActive = value;
     }
 
     /**
      * Gets or sets the total qualified entitlements as of processed time stamp.
      */
-    private long __LicensesQualified;
+    private long licensesQualified;
 
     public long getLicensesQualified()
     {
-        return __LicensesQualified;
+        return licensesQualified;
     }
 
     public void setLicensesQualified( long value )
     {
-        __LicensesQualified = value;
+        licensesQualified = value;
     }
 
     /**
      * Gets or sets the usage percent of the given workload.
      */
-    private long __UsagePercent;
+    private long usagePrecent;
 
     public long getUsagePercent()
     {
-        return __UsagePercent;
+        return usagePrecent;
     }
 
     public void setUsagePercent( long value )
     {
-        __UsagePercent = value;
+        usagePrecent = value;
     }
 }

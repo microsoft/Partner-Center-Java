@@ -22,16 +22,16 @@ public class Agreement
      * who is providing confirmation on behalf of the partner organization.
      */
     @JsonProperty( "userId" )
-    private String __UserId;
+    private String userId;
 
     public String getUserId()
     {
-        return __UserId;
+        return userId;
     }
 
     public void setUserId( String value )
     {
-        __UserId = value;
+        userId = value;
     }
 
     /**
@@ -39,79 +39,79 @@ public class Agreement
      * who accepted the Microsoft Cloud Agreement.
      */
     @JsonProperty( "primaryContact" )
-    private Contact __PrimaryContact;
+    private Contact primaryContact;
 
     public Contact getPrimaryContact()
     {
-        return __PrimaryContact;
+        return primaryContact;
     }
 
     public void setPrimaryContact( Contact value )
     {
-        __PrimaryContact = value;
+        primaryContact = value;
     }
 
     /**
      * Gets or sets the unique identifier of the agreement that the customer accepted.
      */
     @JsonProperty( "templateId" )
-    private String __TemplateId;
+    private String templateId;
 
     public String getTemplateId()
     {
-        return __TemplateId;
+        return templateId;
     }
 
     public void setTemplateId( String value )
     {
-        __TemplateId = value;
+        templateId = value;
     }
 
     /**
      * Gets or sets the date when the customer accepted the agreement.
      */
     @JsonProperty( "dateAgreed" )
-    private DateTime __DateAgreed;
+    private DateTime dateAgreed;
 
     public DateTime getDateAgreed()
     {
-        return __DateAgreed;
+        return dateAgreed;
     }
 
     public void setDateAgreed( DateTime value )
     {
-        __DateAgreed = value;
+        dateAgreed = value;
     }
 
     /**
      * Gets or sets agreement type.
      */
     @JsonProperty( "type" )
-    private AgreementType __Type;
+    private AgreementType type;
 
     public AgreementType getType()
     {
-        return __Type;
+        return type;
     }
 
     public void setType( AgreementType value )
     {
-        __Type = value;
+        type = value;
     }
 
     /**
      * Gets or sets URL to the agreement template.
      */
     @JsonProperty( "agreementLink" )
-    private String __AgreementLink;
+    private String agreementLink;
 
     public String getAgreementLink()
     {
-        return __AgreementLink;
+        return agreementLink;
     }
 
     public void setAgreementLink( String value )
     {
-        __AgreementLink = value;
+        agreementLink = value;
     }
 }

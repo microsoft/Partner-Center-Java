@@ -47,10 +47,14 @@ public class CustomerBillingProfileOperations
     public CustomerBillingProfile get()
     {
         PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile>( new TypeReference<CustomerBillingProfile>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerBillingProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerBillingProfile" ).getPath(),
-                                                        this.getContext() ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerBillingProfile" ).getPath(),
+                this.getContext() ) );
+                
         return partnerServiceProxy.get();
     }
 
@@ -67,11 +71,16 @@ public class CustomerBillingProfileOperations
         {
             throw new IllegalArgumentException( "billingProfile null" );
         }
+        
         PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile> partnerServiceProxy =
-            new PartnerServiceProxy<CustomerBillingProfile, CustomerBillingProfile>( new TypeReference<CustomerBillingProfile>()
+            new PartnerServiceProxy<>( new TypeReference<CustomerBillingProfile>()
             {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerBillingProfile" ).getPath(),
-                                                        this.getContext() ) );
+            }, 
+            this.getPartner(), 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerBillingProfile" ).getPath(),
+                this.getContext() ) );
+
         return partnerServiceProxy.put( billingProfile );
     }
 }

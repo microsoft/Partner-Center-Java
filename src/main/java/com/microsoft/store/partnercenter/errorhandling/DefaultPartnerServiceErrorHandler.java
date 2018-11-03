@@ -112,22 +112,22 @@ public class DefaultPartnerServiceErrorHandler
         
         switch ( statusCode )
         {
-            case HttpStatusCode.BadRequest:
+            case HttpStatusCode.BADREQUEST:
                 errorCategory = PartnerErrorCategory.BAD_INPUT;
                 break;
-            case HttpStatusCode.Unauthorized:
+            case HttpStatusCode.UNAUTHORIZED:
                 errorCategory = PartnerErrorCategory.UNAUTHORIZED;
                 break;
-            case HttpStatusCode.Forbidden:
+            case HttpStatusCode.FORBIDDEN:
                 errorCategory = PartnerErrorCategory.FORBIDDEN;
                 break;
-            case HttpStatusCode.NotFound:
+            case HttpStatusCode.NOTFOUND:
                 errorCategory = PartnerErrorCategory.NOT_FOUND;
                 break;
-            case HttpStatusCode.Conflict:
+            case HttpStatusCode.CONFLICT:
                 errorCategory = PartnerErrorCategory.ALREADY_EXISTS;
                 break;
-            case HttpStatusCode.ServiceUnavailable:
+            case HttpStatusCode.SERVICEUNAVAILABLE:
                 errorCategory = PartnerErrorCategory.SERVER_BUSY;
                 break;
             default:

@@ -21,159 +21,159 @@ public class CartLineItem  {
      * Gets or sets a unique identifier of a cart line item.
      */
 	@JsonProperty( "id" )
-    private String __Id;
+    private String id;
 
     public String getId()
     {
-        return __Id;
+        return id;
     }
 
     public void setId( String value )
     {
-    	__Id = value;
+    	id = value;
     }
 
     /**
      * Gets or sets the catalog item identifier.
      */
 	@JsonProperty( "catalogItemId" )
-    private String __CatalogItemId;
+    private String catalogItemId;
 
     public String getCatalogItemId()
     {
-        return __CatalogItemId;
+        return catalogItemId;
     }
 
     public void setCatalogItemId( String value )
     {
-    	__CatalogItemId = value;
+    	catalogItemId = value;
     }
 
     /**
      *  Gets or sets the friendly name for the result contract (subscription)
      */
     @JsonProperty( "friendlyName" )
-    private String __FriendlyName;
+    private String friendlyName;
 
     public String getFriendlyName()
     {
-        return __FriendlyName;
+        return friendlyName;
     }
 
     public void setFriendlyName( String value )
     {
-    	__FriendlyName = value;
+    	friendlyName = value;
     }
 
     /**
      *  Gets or sets the product quantity.
      */
     @JsonProperty( "quantity" )
-    private Integer __Quantity;
+    private Integer quantity;
 
     public Integer getQuantity()
     {
-        return __Quantity;
+        return quantity;
     }
 
     public void setQuantity( Integer value )
     {
-    	__Quantity = value;
+    	quantity = value;
     }
 
     /**
      *  Gets or sets the currency code.
      */
     @JsonProperty( "currencyCode" )
-    private String __CurrencyCode;
+    private String currencyCode;
 
     public String getCurrencyCode()
     {
-        return __CurrencyCode;
+        return currencyCode;
     }
 
     public void setCurrencyCode( String value )
     {
-    	__CurrencyCode = value;
+    	currencyCode = value;
     }
 
     /**
      * Gets or sets the type of billing cycle for the selected catalog item.
      */
     @JsonProperty( "billingCycle" )
-    private BillingCycleType __BillingCycle;
+    private BillingCycleType billingCycle;
 
     public BillingCycleType getBillingCycle()
     {
-        return __BillingCycle;
+        return billingCycle;
     }
 
     public void setBillingCycle( BillingCycleType value )
     {
-    	__BillingCycle = value;
+    	billingCycle = value;
     }
 
     /**
      * Gets or sets a collection of participants on this purchase.
      */
     @JsonProperty( "participants" )
-    private Collection<KeyValuePair<ParticipantType, String>> __Participants;
+    private Collection<KeyValuePair<ParticipantType, String>> participants;
 
     public Collection<KeyValuePair<ParticipantType, String>> getParticipants()
     {
-        return __Participants;
+        return participants;
     }
 
     public void setParticipants( Collection<KeyValuePair<ParticipantType, String>> value )
     {
-    	__Participants = value;
+    	participants = value;
     }
 
     /**
      *  Gets or sets a context that will be used for provisioning of the catalog item.
      */
     @JsonProperty( "provisioningContext" )
-    private Map<String, String> __ProvisioningContext;
+    private Map<String, String> provisioningContext;
 
     public Map<String, String> getProvisioningContext()
     {
-        return __ProvisioningContext;
+        return provisioningContext;
     }
 
     public void setProvisioningContext( Map<String, String> value )
     {
-    	__ProvisioningContext = value;
+    	provisioningContext = value;
     }
 
     /**
      * Gets or sets the order group which indicates which items can be place in a single order.
      */
     @JsonProperty( "orderGroup" )
-    private String __OrderGroup;
+    private String orderGroup;
 
     public String getOrderGroup()
     {
-        return __OrderGroup;
+        return orderGroup;
     }
 
     public void setOrderGroup( String value )
     {
-    	__OrderGroup = value;
+    	orderGroup = value;
     }
 
     /**
      * Gets or sets an error associated to this cart line item.
      */
     @JsonProperty( "error" )
-    private CartError __Error;
+    private CartError error;
 
     public CartError getError()
     {
-        return __Error;
+        return error;
     }
 
     public void setError( CartError value )
     {
-    	__Error = value;
+    	error = value;
     }
 }

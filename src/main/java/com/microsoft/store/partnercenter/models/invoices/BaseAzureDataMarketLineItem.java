@@ -13,287 +13,287 @@ public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 	/**
 	 * Gets or sets the partner's Azure Active Directory tenant Id.
 	 */
-	private String __PartnerId;
+	private String partnerId;
 
 	/**
 	 * Gets or sets the partner name.
 	 */
-	private String __PartnerName;
+	private String partnerName;
 
 	/**
 	 * Gets or sets the customer company name.
 	 */
-	private String __CustomerCompanyName;
+	private String customerCompanyName;
 
 	/**
 	 * Gets or sets the partner's Id. For direct reseller, this is the partner's MPN Id.
 	 * For indirect reseller, this is the VAR's MPN Id.
 	 */
-	private int __PartnerMpnId;
+	private int partnerMpnId;
 
 	/**
 	 * Gets or sets the invoice number.
 	 */
-	private String __InvoiceNumber;
+	private String invoiceNumber;
 
 	/**
 	 * Gets or sets the date charge begins.
 	 */
-	private DateTime __ChargeStartDate;
+	private DateTime chargeStartDate;
 
 	/**
 	 * Gets or sets the date charge ends.
 	 */
-	private DateTime __ChargeEndDate;
+	private DateTime chargeEndDate;
 
 	/**
 	 * Gets or sets the subscription Id.
 	 */
-	private String __SubscriptionId;
+	private String subscriptionId;
 
 	/**
 	 * Gets or sets the subscription name.
 	 */
-	private String __SubscriptionName;
+	private String subscriptionName;
 
 	/**
 	 * Gets or sets the description of the subscription.
 	 */
-	private String __SubscriptionDescription;
+	private String subscriptionDescription;
 
 	/**
 	 * Gets or sets the order Id.
 	 */
-	private String __OrderId;
+	private String orderId;
 
 	/**
 	 * Gets or sets the service name. Example: Azure Data Service.
 	 */
-	private String __ServiceName;
+	private String serviceName;
 
 	/**
 	 * Gets or sets the resource name. Example: Database (GB/month).
 	 */
-	private String __ResourceName;
+	private String resourceName;
 
 	/**
 	 * Gets or sets the region associated with the resource instance.
 	 */
-	private String __Region;
+	private String region;
 
 	/**
 	 * Gets or sets the total units consumed.
 	 */
-	private int __ConsumedQuantity;
+	private int consumedQuantity;
 
 	/**
-	 * @return the __PartnerId
+	 * @return the partnerId
 	 */
 	public String getPartnerId() {
-		return __PartnerId;
+		return partnerId;
 	}
 
 	/**
-	 * @param __PartnerId the __PartnerId to set
+	 * @param partnerId the partnerId to set
 	 */
-	public void setPartnerId(String __PartnerId) {
-		this.__PartnerId = __PartnerId;
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
 	}
 
 	/**
-	 * @return the __PartnerName
+	 * @return the partnerName
 	 */
 	public String getPartnerName() {
-		return __PartnerName;
+		return partnerName;
 	}
 
 	/**
-	 * @param __PartnerName the __PartnerName to set
+	 * @param partnerName the partnerName to set
 	 */
-	public void setPartnerName(String __PartnerName) {
-		this.__PartnerName = __PartnerName;
+	public void setPartnerName(String partnerName) {
+		this.partnerName = partnerName;
 	}
 
 	/**
-	 * @return the __CustomerCompanyName
+	 * @return the customerCompanyName
 	 */
 	public String getCustomerCompanyName() {
-		return __CustomerCompanyName;
+		return customerCompanyName;
 	}
 
 	/**
-	 * @param __CustomerCompanyName the __CustomerCompanyName to set
+	 * @param customerCompanyName the customerCompanyName to set
 	 */
-	public void setCustomerCompanyName(String __CustomerCompanyName) {
-		this.__CustomerCompanyName = __CustomerCompanyName;
+	public void setCustomerCompanyName(String customerCompanyName) {
+		this.customerCompanyName = customerCompanyName;
 	}
 
 	/**
-	 * @return the __PartnerMpnId
+	 * @return the partnerMpnId
 	 */
 	public int getPartnerMpnId() {
-		return __PartnerMpnId;
+		return partnerMpnId;
 	}
 
 	/**
-	 * @param __PartnerMpnId the __PartnerMpnId to set
+	 * @param partnerMpnId the partnerMpnId to set
 	 */
-	public void setPartnerMpnId(int __PartnerMpnId) {
-		this.__PartnerMpnId = __PartnerMpnId;
+	public void setPartnerMpnId(int partnerMpnId) {
+		this.partnerMpnId = partnerMpnId;
 	}
 
 	/**
-	 * @return the __InvoiceNumber
+	 * @return the invoiceNumber
 	 */
 	public String getInvoiceNumber() {
-		return __InvoiceNumber;
+		return invoiceNumber;
 	}
 
 	/**
-	 * @param __InvoiceNumber the __InvoiceNumber to set
+	 * @param invoiceNumber the invoiceNumber to set
 	 */
-	public void setInvoiceNumber(String __InvoiceNumber) {
-		this.__InvoiceNumber = __InvoiceNumber;
+	public void setInvoiceNumber(String invoiceNumber) {
+		this.invoiceNumber = invoiceNumber;
 	}
 
 	/**
-	 * @return the __ChargeStartDate
+	 * @return the chargeStartDate
 	 */
 	public DateTime getChargeStartDate() {
-		return __ChargeStartDate;
+		return chargeStartDate;
 	}
 
 	/**
-	 * @param __ChargeStartDate the __ChargeStartDate to set
+	 * @param chargeStartDate the chargeStartDate to set
 	 */
-	public void setChargeStartDate(DateTime __ChargeStartDate) {
-		this.__ChargeStartDate = __ChargeStartDate;
+	public void setChargeStartDate(DateTime chargeStartDate) {
+		this.chargeStartDate = chargeStartDate;
 	}
 
 	/**
-	 * @return the __ChargeEndDate
+	 * @return the chargeEndDate
 	 */
 	public DateTime getChargeEndDate() {
-		return __ChargeEndDate;
+		return chargeEndDate;
 	}
 
 	/**
-	 * @param __ChargeEndDate the __ChargeEndDate to set
+	 * @param chargeEndDate the chargeEndDate to set
 	 */
-	public void setChargeEndDate(DateTime __ChargeEndDate) {
-		this.__ChargeEndDate = __ChargeEndDate;
+	public void setChargeEndDate(DateTime chargeEndDate) {
+		this.chargeEndDate = chargeEndDate;
 	}
 
 	/**
-	 * @return the __SubscriptionId
+	 * @return the subscriptionId
 	 */
 	public String getSubscriptionId() {
-		return __SubscriptionId;
+		return subscriptionId;
 	}
 
 	/**
-	 * @param __SubscriptionId the __SubscriptionId to set
+	 * @param subscriptionId the subscriptionId to set
 	 */
-	public void setSubscriptionId(String __SubscriptionId) {
-		this.__SubscriptionId = __SubscriptionId;
+	public void setSubscriptionId(String subscriptionId) {
+		this.subscriptionId = subscriptionId;
 	}
 
 	/**
-	 * @return the __SubscriptionName
+	 * @return the subscriptionName
 	 */
 	public String getSubscriptionName() {
-		return __SubscriptionName;
+		return subscriptionName;
 	}
 
 	/**
-	 * @param __SubscriptionName the __SubscriptionName to set
+	 * @param subscriptionName the subscriptionName to set
 	 */
-	public void setSubscriptionName(String __SubscriptionName) {
-		this.__SubscriptionName = __SubscriptionName;
+	public void setSubscriptionName(String subscriptionName) {
+		this.subscriptionName = subscriptionName;
 	}
 
 	/**
-	 * @return the __SubscriptionDescription
+	 * @return the subscriptionDescription
 	 */
 	public String getSubscriptionDescription() {
-		return __SubscriptionDescription;
+		return subscriptionDescription;
 	}
 
 	/**
-	 * @param __SubscriptionDescription the __SubscriptionDescription to set
+	 * @param subscriptionDescription the subscriptionDescription to set
 	 */
-	public void setSubscriptionDescription(String __SubscriptionDescription) {
-		this.__SubscriptionDescription = __SubscriptionDescription;
+	public void setSubscriptionDescription(String subscriptionDescription) {
+		this.subscriptionDescription = subscriptionDescription;
 	}
 
 	/**
-	 * @return the __OrderId
+	 * @return the orderId
 	 */
 	public String getOrderId() {
-		return __OrderId;
+		return orderId;
 	}
 
 	/**
-	 * @param __OrderId the __OrderId to set
+	 * @param orderId the orderId to set
 	 */
-	public void setOrderId(String __OrderId) {
-		this.__OrderId = __OrderId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	/**
-	 * @return the __ServiceName
+	 * @return the serviceName
 	 */
 	public String getServiceName() {
-		return __ServiceName;
+		return serviceName;
 	}
 
 	/**
-	 * @param __ServiceName the __ServiceName to set
+	 * @param serviceName the serviceName to set
 	 */
-	public void setServiceName(String __ServiceName) {
-		this.__ServiceName = __ServiceName;
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
 	}
 
 	/**
-	 * @return the __ResourceName
+	 * @return the resourceName
 	 */
 	public String getResourceName() {
-		return __ResourceName;
+		return resourceName;
 	}
 
 	/**
-	 * @param __ResourceName the __ResourceName to set
+	 * @param resourceName the resourceName to set
 	 */
-	public void setResourceName(String __ResourceName) {
-		this.__ResourceName = __ResourceName;
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
 	}
 
 	/**
-	 * @return the __Region
+	 * @return the region
 	 */
 	public String getRegion() {
-		return __Region;
+		return region;
 	}
 
 	/**
-	 * @param __Region the __Region to set
+	 * @param region the region to set
 	 */
-	public void setRegion(String __Region) {
-		this.__Region = __Region;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
 	/**
-	 * @return the __ConsumedQuantity
+	 * @return the consumedQuantity
 	 */
 	public int getConsumedQuantity() {
-		return __ConsumedQuantity;
+		return consumedQuantity;
 	}
 
 	/**
-	 * @param __ConsumedQuantity the __ConsumedQuantity to set
+	 * @param consumedQuantity the consumedQuantity to set
 	 */
-	public void setConsumedQuantity(int __ConsumedQuantity) {
-		this.__ConsumedQuantity = __ConsumedQuantity;
+	public void setConsumedQuantity(int consumedQuantity) {
+		this.consumedQuantity = consumedQuantity;
 	}
 
 	/**

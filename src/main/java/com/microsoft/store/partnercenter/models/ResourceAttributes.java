@@ -35,31 +35,31 @@ public class ResourceAttributes
     /**
      * Gets or sets the etag. the object version in providers
      */
-    private String __Etag;
+    private String etag;
 
     public String getEtag()
     {
-        return __Etag;
+        return etag;
     }
 
     public void setEtag( String value )
     {
-        __Etag = value;
+        etag = value;
     }
 
     /**
      * Gets or sets the object type.
      */
-    private String __ObjectType;
+    private String objectType;
 
     public String getObjectType()
     {
-        return __ObjectType;
+        return objectType;
     }
 
     public void setObjectType( String value )
     {
-        __ObjectType = value;
+        objectType = value;
     }
 
 }

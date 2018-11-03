@@ -27,46 +27,46 @@ public class ApiFault
     /**
      * Gets or sets the error code.
      */
-    private String __ErrorCode;
+    private String errorCode;
 
     public String getErrorCode()
     {
-        return __ErrorCode;
+        return errorCode;
     }
 
     public void setErrorCode( String value )
     {
-        __ErrorCode = value;
+        errorCode = value;
     }
 
     /**
      * Gets or sets the error message.
      */
-    private String __ErrorMessage;
+    private String errorMessage;
 
     public String getErrorMessage()
     {
-        return __ErrorMessage;
+        return errorMessage;
     }
 
     public void setErrorMessage( String value )
     {
-        __ErrorMessage = value;
+        errorMessage = value;
     }
 
     /**
      * Gets or sets the error data.
      */
-    private Iterable<Object> __ErrorData;
+    private Iterable<Object> errorData;
 
     public Iterable<Object> getErrorData()
     {
-        return __ErrorData;
+        return errorData;
     }
 
     public void setErrorData( Iterable<Object> value )
     {
-        __ErrorData = value;
+        errorData = value;
     }
 
     /**

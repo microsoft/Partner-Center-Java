@@ -54,7 +54,7 @@ public abstract class BasePartnerCredentials
         return this.getAADToken().getExpiryTime();
     }
 
-    private AuthenticationToken __AADToken;
+    private AuthenticationToken token;
 
     /**
      * Gets the Azure Active Directory token.
@@ -63,7 +63,7 @@ public abstract class BasePartnerCredentials
      */
     protected AuthenticationToken getAADToken()
     {
-        return __AADToken;
+        return token;
     }
 
     /**
@@ -73,10 +73,10 @@ public abstract class BasePartnerCredentials
      */
     protected void setAADToken( AuthenticationToken value )
     {
-        __AADToken = value;
+        token = value;
     }
 
-    private String __ClientId;
+    private String clientId;
     
     /**
      * Gets the Azure Active Directory client identifier.
@@ -85,7 +85,7 @@ public abstract class BasePartnerCredentials
      */
     protected String getClientId()
     {
-        return __ClientId;
+        return clientId;
     }
 
     /**
@@ -95,7 +95,7 @@ public abstract class BasePartnerCredentials
      */
     protected void setClientId( String value )
     {
-        __ClientId = value;
+        clientId = value;
     }
 
     /**
@@ -125,6 +125,5 @@ public abstract class BasePartnerCredentials
     public void authenticate( IRequestContext requestContext )
     {
         // Do nothing, leave it to sub classes
-        return;
     }
 }

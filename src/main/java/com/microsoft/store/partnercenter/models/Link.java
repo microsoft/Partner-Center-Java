@@ -29,7 +29,6 @@ public class Link
      * @param uri The URI.
      */
     public Link( URI uri )
-
     {
         this( uri, "GET" );
     }
@@ -42,7 +41,6 @@ public class Link
      * @param headers Optional HTTP headers.
      */
     public Link( URI uri, String method, Collection<KeyValuePair<String, String>> headers )
-
     {
         this.setUri( uri );
         this.setMethod( method );
@@ -50,7 +48,6 @@ public class Link
     }
 
     public Link( URI uri, String string )
-
     {
         this( uri, string, null );
     }
@@ -59,45 +56,45 @@ public class Link
      * Gets the URI.
      */
     @JsonDeserialize( using = UriDeserializer.class )
-    private URI __Uri;
+    private URI uri;
 
     public URI getUri()
     {
-        return __Uri;
+        return uri;
     }
 
     public void setUri( URI value )
     {
-        __Uri = value;
+        uri = value;
     }
 
     /**
      * Gets the method.
      */
-    private String __Method;
+    private String method;
 
     public String getMethod()
     {
-        return __Method;
+        return method;
     }
 
     public void setMethod( String value )
     {
-        __Method = value;
+        method = value;
     }
 
     /**
      * Gets the link headers.
      */
-    private Collection<KeyValuePair<String, String>> __Headers;
+    private Collection<KeyValuePair<String, String>> headers;
 
     public Collection<KeyValuePair<String, String>> getHeaders()
     {
-        return __Headers;
+        return headers;
     }
 
     public void setHeaders( Collection<KeyValuePair<String, String>> value )
     {
-        __Headers = value;
+        headers = value;
     }
 }

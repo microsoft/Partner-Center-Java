@@ -15,7 +15,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class OperationTypeTest
+public class OperationTypeTest
 {
     private static final String UNDEFINED_VALUE = "undefined";
     private static final String UPDATE_CUSTOMER_QUALIFICATION_VALUE = "update_customer_qualification";
@@ -48,7 +48,7 @@ class OperationTypeTest
     private static final String REMOVE_APPLICATION_CREDENTIAL_VALUE = "remove_application_credential";
     private static final String CREATE_PARTNER_USER_VALUE = "create_partner_user";
     private static final String UPDATE_PARTNER_USER_VALUE = "update_partner_user";
-    private static final String remove_partner_user_VALUE = "Remove_partner_user";
+    private static final String remove_partner_user_VALUE = "remove_partner_user";
     private static final String UNDEFINED_JSON = '"' + UNDEFINED_VALUE + '"';
     private static final String UPDATE_CUSTOMER_QUALIFICATION_JSON = '"' + UPDATE_CUSTOMER_QUALIFICATION_VALUE + '"';
     private static final String UPDATE_SUBSCRIPTION_JSON = '"' + UPDATE_SUBSCRIPTION_VALUE + '"';
@@ -124,7 +124,7 @@ class OperationTypeTest
         assertEquals(OperationType.REMOVE_APPLICATION_CREDENTIAL, jsonConverter.readValue(REMOVE_APPLICATION_CREDENTIAL_JSON, OperationType.class));
         assertEquals(OperationType.CREATE_PARTNER_USER, jsonConverter.readValue(CREATE_PARTNER_USER_JSON, OperationType.class));
         assertEquals(OperationType.UPDATE_PARTNER_USER, jsonConverter.readValue(UPDATE_PARTNER_USER_JSON, OperationType.class));
-        assertEquals(OperationType.remove_partner_user, jsonConverter.readValue(remove_partner_user_JSON, OperationType.class));
+        assertEquals(OperationType.REMOVE_PARTNER_USER, jsonConverter.readValue(remove_partner_user_JSON, OperationType.class));
     }
 
     @Test
@@ -161,7 +161,7 @@ class OperationTypeTest
         assertEquals(REMOVE_APPLICATION_CREDENTIAL_JSON, jsonConverter.writeValueAsString(OperationType.REMOVE_APPLICATION_CREDENTIAL));
         assertEquals(CREATE_PARTNER_USER_JSON, jsonConverter.writeValueAsString(OperationType.CREATE_PARTNER_USER));
         assertEquals(UPDATE_PARTNER_USER_JSON, jsonConverter.writeValueAsString(OperationType.UPDATE_PARTNER_USER));
-        assertEquals(remove_partner_user_JSON, jsonConverter.writeValueAsString(OperationType.remove_partner_user));
+        assertEquals(remove_partner_user_JSON, jsonConverter.writeValueAsString(OperationType.REMOVE_PARTNER_USER));
     }
 
     @Test
@@ -198,6 +198,6 @@ class OperationTypeTest
         assertEquals(REMOVE_APPLICATION_CREDENTIAL_VALUE, OperationType.REMOVE_APPLICATION_CREDENTIAL.toString());
         assertEquals(CREATE_PARTNER_USER_VALUE, OperationType.CREATE_PARTNER_USER.toString());
         assertEquals(UPDATE_PARTNER_USER_VALUE, OperationType.UPDATE_PARTNER_USER.toString());
-        assertEquals(remove_partner_user_VALUE, OperationType.remove_partner_user.toString());
+        assertEquals(remove_partner_user_VALUE, OperationType.REMOVE_PARTNER_USER.toString());
     }
 }

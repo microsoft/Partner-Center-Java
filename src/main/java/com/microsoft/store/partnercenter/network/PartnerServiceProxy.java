@@ -15,7 +15,6 @@ import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Locale;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -35,11 +34,13 @@ import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.exception.PartnerResponseParseException;
 import com.microsoft.store.partnercenter.logging.PartnerLog;
+import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.requestcontext.RequestContext;
 import com.microsoft.store.partnercenter.requestcontext.RequestContextFactory;
+import com.microsoft.store.partnercenter.utils.ArtifactDeserializer;
 import com.microsoft.store.partnercenter.utils.InvoiceLineItemDeserializer;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 import com.microsoft.store.partnercenter.utils.UriDeserializer;
@@ -303,28 +304,30 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	/**
 	 * Gets an optional JSON converter to use.
 	 */
-	private ObjectMapper __JsonConverter;
+	private ObjectMapper jsonConverter;
 
 	public ObjectMapper getJsonConverter() 
 	{
-		if (__JsonConverter == null) {
-			__JsonConverter = new ObjectMapper();
-			__JsonConverter.registerModule(new JodaModule());
-			__JsonConverter.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
-			__JsonConverter.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-			__JsonConverter.setSerializationInclusion(Include.NON_NULL);
-			__JsonConverter.registerModule(
+		if (jsonConverter == null) {
+			jsonConverter = new ObjectMapper();
+			jsonConverter.registerModule(new JodaModule());
+			jsonConverter.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+			jsonConverter.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+			jsonConverter.setSerializationInclusion(Include.NON_NULL);
+			jsonConverter.registerModule(
+				new SimpleModule().addDeserializer(Artifact.class, new ArtifactDeserializer()));
+			jsonConverter.registerModule(
 					new SimpleModule().addDeserializer(InvoiceLineItem.class, new InvoiceLineItemDeserializer()));
-			__JsonConverter.registerModule(new SimpleModule().addDeserializer(URI.class, new UriDeserializer()));
-			__JsonConverter.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			jsonConverter.registerModule(new SimpleModule().addDeserializer(URI.class, new UriDeserializer()));
+			jsonConverter.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		}
 
-		return __JsonConverter;
+		return jsonConverter;
 	}
 
 	public void setJsonConverter(ObjectMapper value) 
 	{
-		__JsonConverter = value;
+		jsonConverter = value;
 	}
 
 	private TypeReference<TResponse> responseClass;
@@ -566,6 +569,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 
 	private void addHttpHeaders(RequestBuilder request) 
 	{
+		request.setHeader("MS-SdkVersion", PartnerService.getInstance().getSdkVersion());
 		request.setHeader("MS-Contract-Version", PartnerService.getInstance().getPartnerServiceApiVersion());
 		request.setHeader("MS-RequestId", this.getRequestId().toString());
 		request.setHeader("MS-CorrelationId", this.getCorrelationId().toString());
@@ -617,8 +621,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 					PartnerLog.getInstance().logError(
 						MessageFormat.format(
 							"Refreshing the credentials has failed: {0}",
-							refreshProblem, 
-							Locale.US));
+							refreshProblem));
 
 					throw new PartnerException("Refreshing the credentials has failed.", this.requestContext,
 							PartnerErrorCategory.UNAUTHORIZED, refreshProblem);
@@ -751,8 +754,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 					MessageFormat.format(
 						"{0}={1}", 
 						queryParameter.getKey(), 
-						queryParameter.getValue(), 
-						Locale.US));
+						queryParameter.getValue()));
 		}
 
 		return queryStringBuilder.toString();

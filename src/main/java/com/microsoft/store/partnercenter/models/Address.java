@@ -14,151 +14,150 @@ public class Address
     /**
      * Gets or sets the Country in ISO country code format.
      */
-    private String __Country;
+    private String country;
 
     public String getCountry()
     {
-        return __Country;
+        return country;
     }
 
     public void setCountry( String value )
     {
-        __Country = value;
+        country = value;
     }
 
     /**
      * Gets or sets the region.
      */
-    private String __Region;
+    private String region;
 
     public String getRegion()
     {
-        return __Region;
+        return region;
     }
 
     public void setRegion( String value )
     {
-        __Region = value;
+        region = value;
     }
 
     /**
      * Gets or sets the city.
      */
-    private String __City;
+    private String city;
 
     public String getCity()
     {
-        return __City;
+        return city;
     }
 
     public void setCity( String value )
     {
-        __City = value;
+        city = value;
     }
 
     /**
      * Gets or sets the state.
      */
-    private String __State;
+    private String state;
 
     public String getState()
     {
-        return __State;
+        return state;
     }
 
     public void setState( String value )
     {
-        __State = value;
+        state = value;
     }
 
     /**
      * Gets or sets the first address line.
      */
-    private String __AddressLine1;
+    private String addressLine1;
 
     public String getAddressLine1()
     {
-        return __AddressLine1;
+        return addressLine1;
     }
 
     public void setAddressLine1( String value )
     {
-        __AddressLine1 = value;
+        addressLine1 = value;
     }
 
     /**
      * Gets or sets the second address line.
      */
-    private String __AddressLine2;
+    private String addressLine2;
 
     public String getAddressLine2()
     {
-        return __AddressLine2;
+        return addressLine2;
     }
 
     public void setAddressLine2( String value )
     {
-        __AddressLine2 = value;
+        addressLine2 = value;
     }
 
     /**
      * Gets or sets the postal code.
      */
-    private String __PostalCode;
+    private String postalCode;
 
     public String getPostalCode()
     {
-        return __PostalCode;
+        return postalCode;
     }
 
     public void setPostalCode( String value )
     {
-        __PostalCode = value;
+        postalCode = value;
     }
 
     /**
      * Gets or sets the first name.
      */
-    private String __FirstName;
+    private String firstName;
 
     public String getFirstName()
     {
-        return __FirstName;
+        return firstName;
     }
 
     public void setFirstName( String value )
     {
-        __FirstName = value;
+        firstName = value;
     }
 
     /**
      * Gets or sets the last name.
      */
-    private String __LastName;
+    private String lastName;
 
     public String getLastName()
     {
-        return __LastName;
+        return lastName;
     }
 
     public void setLastName( String value )
     {
-        __LastName = value;
+        lastName = value;
     }
 
     /**
      * Gets or sets the phone.
      */
-    private String __PhoneNumber;
+    private String phoneNumber;
 
     public String getPhoneNumber()
     {
-        return __PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber( String value )
     {
-        __PhoneNumber = value;
+        phoneNumber = value;
     }
-
 }

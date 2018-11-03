@@ -21,7 +21,7 @@ public class AuditRecord extends ResourceBase
 	 *  Gets or sets the id of the app invoking the operation
 	 */
 	@JsonProperty( "applicationid" )
-	private String __ApplicationId;
+	private String applicationId;
 
 	/**
      * Gets the identifier of the application invoking the operation.
@@ -30,7 +30,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getApplicationId()
 	{
-		return __ApplicationId;
+		return applicationId;
 	}
 
 	/**
@@ -40,11 +40,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setApplicationId( String value )
 	{
-		__ApplicationId = value;
+		applicationId = value;
 	}
 
 	@JsonProperty( "customizedData" )
-	private Iterable<KeyValuePair<String, String>> __CustomizedData;
+	private Iterable<KeyValuePair<String, String>> customizedData;
 
 	/**
      * Gets the dictionary which holds additional data that is customized to the operation performed.
@@ -53,7 +53,7 @@ public class AuditRecord extends ResourceBase
      */
 	public Iterable<KeyValuePair<String, String>> getCustomizedData()
 	{
-		return __CustomizedData;
+		return customizedData;
 	}
 
 	/**
@@ -63,11 +63,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setCustomizedData( Iterable<KeyValuePair<String, String>> value )
 	{
-		__CustomizedData = value;
+		customizedData = value;
 	}
 
 	@JsonProperty( "customerId" )
-	private String __CustomerId;
+	private String customerId;
 
 	/**
      * Gets the identifier of customer in whose context operation was performed.
@@ -76,7 +76,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getCustomerId()
 	{
-		return __CustomerId;
+		return customerId;
 	}
 
 	/**
@@ -86,11 +86,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setCustomerId( String value )
 	{
-		__CustomerId = value;
+		customerId = value;
 	}
 
 	@JsonProperty( "customerName" )
-	private String __CustomerName;
+	private String customerName;
 
 	/**
      * Gets the name of customer in whose context operation was performed.
@@ -99,7 +99,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getCustomerName()
 	{
-		return __CustomerName;
+		return customerName;
 	}
 
 	/**
@@ -109,11 +109,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setCustomerName( String value )
 	{
-		__CustomerName = value;
+		customerName = value;
 	}
 
 	@JsonProperty( "id" )
-	public String __Id; 
+	public String id; 
 
 	/**
      * Gets the unique identifier for the audit record.
@@ -122,7 +122,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String Id()
 	{
-		return __Id;
+		return id;
 	}
 
     /**
@@ -132,14 +132,14 @@ public class AuditRecord extends ResourceBase
      */
 	public void setId(String value)
 	{
-		__Id = value;
+		id = value;
 	}
 
 	/**
 	 * Gets or sets the date time when the operation was performed
 	 */
 	@JsonProperty( "operationDate" )
-	private DateTime __OperationDate;
+	private DateTime operationDate;
 
 	/**
      * Gets the date and time when the operation was performed.
@@ -148,7 +148,7 @@ public class AuditRecord extends ResourceBase
      */
 	public DateTime getOperationDate()
 	{
-		return __OperationDate;
+		return operationDate;
 	}
 
     /**
@@ -158,11 +158,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setOperationDate( DateTime value )
 	{
-		__OperationDate = value;
+		operationDate = value;
 	}
 
 	@JsonProperty( "operationStatus" )
-	private OperationStatus __OperationStatus;
+	private OperationStatus operationStatus;
 
 	/**
      * Gets the status of the operation that is audited.
@@ -171,7 +171,7 @@ public class AuditRecord extends ResourceBase
      */
 	public OperationStatus getOperationStatus()
 	{
-		return __OperationStatus;
+		return operationStatus;
 	}
 
 	/**
@@ -181,11 +181,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setOperationStatus( OperationStatus value )
 	{
-		__OperationStatus = value;
+		operationStatus = value;
 	}
 
 	@JsonProperty( "operationType" )
-	private OperationType __OperationType;
+	private OperationType operationType;
 
 	/**
      * Gets the type of the operation being performed.
@@ -194,7 +194,7 @@ public class AuditRecord extends ResourceBase
      */
 	public OperationType getOperationType()
 	{
-		return __OperationType;
+		return operationType;
 	}
 
 	/**
@@ -204,11 +204,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setOperationType( OperationType value )
 	{
-		__OperationType = value;
+		operationType = value;
 	}
 
 	@JsonProperty( "partnerId" )
-	private String __PartnerId;
+	private String partnerId;
 
 	/**
      * Gets the identifier of the parnter that performed the operation.
@@ -217,7 +217,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getPartnerId()
 	{
-		return __PartnerId;
+		return partnerId;
 	}
 
 	/**
@@ -227,11 +227,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setPartnerId( String value )
 	{
-		__PartnerId = value;
+		partnerId = value;
 	}
 
 	@JsonProperty( "resourceNewValue" )
-	private String __ResourceNewValue;
+	private String resourceNewValue;
 
 	/**
      * Gets the new value of the resource.
@@ -240,7 +240,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getResourceNewValue()
 	{
-		return __ResourceNewValue;
+		return resourceNewValue;
 	}
 
 	/**
@@ -250,11 +250,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setResourceNewValue( String value )
 	{
-		__ResourceNewValue = value;
+		resourceNewValue = value;
 	}
 
 	@JsonProperty( "resourceOldValue" )
-	private String __ResourceOldValue;
+	private String resourceOldValue;
 
 	/**
      * Gets the old value of the resource.
@@ -263,7 +263,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getResourceOldValue()
 	{
-		return __ResourceOldValue;
+		return resourceOldValue;
 	}
 
 	/**
@@ -273,11 +273,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setResourceOldValue( String value )
 	{
-		__ResourceOldValue = value;
+		resourceOldValue = value;
 	}
 
 	@JsonProperty( "resourceType" )
-	private ResourceType __ResourceType;
+	private ResourceType resourceType;
 
 	/**
      * Gets the type of the resource acted upon by the operation.
@@ -286,7 +286,7 @@ public class AuditRecord extends ResourceBase
      */
 	public ResourceType getResourceType()
 	{
-		return __ResourceType;
+		return resourceType;
 	}
 
 	/**
@@ -296,11 +296,11 @@ public class AuditRecord extends ResourceBase
      */
 	public void setResourceType( ResourceType value )
 	{
-		__ResourceType = value;
+		resourceType = value;
 	}
 
 	@JsonProperty( "userPrincipalName" )
-	private String __UserPrincipalName;
+	private String userPrincipalName;
 
 	/**
      * Gets the identifier of the user who performed the operation. This could be in the context of application.
@@ -309,7 +309,7 @@ public class AuditRecord extends ResourceBase
      */
 	public String getUserPrincipalName()
 	{
-		return __UserPrincipalName;
+		return userPrincipalName;
 	}
 
 	/**
@@ -319,6 +319,6 @@ public class AuditRecord extends ResourceBase
      */
 	public void setUserPrincipalName( String value )
 	{
-		__UserPrincipalName = value;
+		userPrincipalName = value;
 	}
 }

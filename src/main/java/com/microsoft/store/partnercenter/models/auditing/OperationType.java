@@ -171,7 +171,7 @@ public enum OperationType
     /**
      * Removes a partner user.
      */
-    remove_partner_user("Remove_partner_user");
+    REMOVE_PARTNER_USER("remove_partner_user");
 
     private final String value;
 

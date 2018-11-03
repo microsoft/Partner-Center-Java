@@ -17,31 +17,31 @@ public class CartError extends ResourceBase {
      * Gets or sets a cart error code.
      */
 	@JsonProperty( "errorCode" )
-    private CartErrorCode __ErrorCode;
+    private CartErrorCode errorCode;
 
     public CartErrorCode getErrorCode()
     {
-        return __ErrorCode;
+        return errorCode;
     }
 
     public void setErrorCode( CartErrorCode value )
     {
-    	__ErrorCode = value;
+    	errorCode = value;
     }
 
     /**
      * Gets or sets an error description.
      */
 	@JsonProperty( "errorDescription" )
-    private String __ErrorDescription;
+    private String errorDescription;
 
     public String getErrorDescription()
     {
-        return __ErrorDescription;
+        return errorDescription;
     }
 
     public void setErrorDescription( String value )
     {
-    	__ErrorDescription = value;
+    	errorDescription = value;
     }
 }
