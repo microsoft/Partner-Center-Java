@@ -12,7 +12,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * Agreement details collection operations implementation class.
@@ -39,9 +38,9 @@ public class AgreementDetailsCollectionOperations
     @Override
     public ResourceCollection<AgreementMetaData> get()
     {
-        return new PartnerServiceProxy<AgreementMetaData, ResourceCollection<AgreementMetaData>>(
-                new TypeReference<ResourceCollection<AgreementMetaData>>() {}, this.getPartner(),
-                PartnerService.getInstance().getConfiguration().getApis()
-                                .get( "GetAgreementsDetails" ).getPath()).get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetAgreementsDetails" ).getPath());
     }
 }

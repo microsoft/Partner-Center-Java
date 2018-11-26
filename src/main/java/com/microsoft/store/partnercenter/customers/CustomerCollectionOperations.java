@@ -141,14 +141,10 @@ public class CustomerCollectionOperations
     @Override
     public SeekBasedResourceCollection<Customer> get()
     {
-        IPartnerServiceProxy<Customer, SeekBasedResourceCollection<Customer>> partnerServiceProxy =
-            new PartnerServiceProxy<>( 
-                new TypeReference<SeekBasedResourceCollection<Customer>>()
-                {
-                }, this.getPartner(), 
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath());
-
-        return partnerServiceProxy.get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(), 
+            new TypeReference<SeekBasedResourceCollection<Customer>>(){},
+            PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath());
     }
 
     /**

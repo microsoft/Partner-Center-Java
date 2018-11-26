@@ -7,7 +7,6 @@
 package com.microsoft.store.partnercenter.domains;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -42,30 +41,30 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	 */
 	@Override
 	public boolean exists()
-    {
-        IPartnerServiceProxy<String, String> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<String>()
-                {
+	{
+		IPartnerServiceProxy<String, String> partnerServiceProxy =
+				new PartnerServiceProxy<>( new TypeReference<String>()
+				{
 				}, 
 				this.getPartner(), 
 				MessageFormat.format( 
 					PartnerService.getInstance().getConfiguration().getApis().get( "CheckDomainAvailability" ).getPath(),
 					this.getContext() ) );
-        
-        try
-        {
-        	partnerServiceProxy.head();
-        }
-        catch( PartnerException ex )
-        {
-        	if( ex.getErrorCategory().equals( PartnerErrorCategory.NOT_FOUND ) )
-        	{
-        		return false;
-        	}
-        	
-        	throw ex;
-        }
-        
-        return true;
+		
+		try
+		{
+			partnerServiceProxy.head();
+		}
+		catch( PartnerException ex )
+		{
+			if( ex.getErrorCategory().equals( PartnerErrorCategory.NOT_FOUND ) )
+			{
+				return false;
+			}
+			
+			throw ex;
+		}
+		
+		return true;
 	}
 }

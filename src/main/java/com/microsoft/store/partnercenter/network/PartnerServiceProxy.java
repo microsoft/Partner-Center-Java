@@ -356,7 +356,7 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	@Override
 	public TResponse get() 
 	{
-		RequestBuilder request = RequestBuilder.get(this.buildPartnerServiceApiUri());
+	 	RequestBuilder request = RequestBuilder.get(this.buildPartnerServiceApiUri());
 		return this.send(request);
 	}
 
@@ -575,8 +575,8 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 		request.setHeader("MS-CorrelationId", this.getCorrelationId().toString());
 		request.setHeader("X-Locale", getLocale());
 
-		if (PartnerService.getInstance().getPartnerServiceApiVersion() != null
-				&& PartnerService.getInstance().getPartnerServiceApiVersion().trim().isEmpty() != true) 
+		if (PartnerService.getInstance().getApplicationName() != null
+				&& PartnerService.getInstance().getApplicationName().trim().isEmpty() != true) 
 		{
 			request.setHeader("MS-PartnerCenter-Application", PartnerService.getInstance().getApplicationName());
 		}

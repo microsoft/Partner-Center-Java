@@ -32,12 +32,12 @@ public class OrderSubscriptionCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
-     * @param orderId The order Id.
+     * @param orderId The order identifier.
      */
-    public OrderSubscriptionCollectionOperations( IPartner rootPartnerOperations, String customerId,
-                                                  String orderId )
+    public OrderSubscriptionCollectionOperations( IPartner rootPartnerOperations, String customerId, String orderId )
     {
         super( rootPartnerOperations, new Tuple<String, String>( customerId, orderId ) );
+       
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set." );
@@ -47,7 +47,6 @@ public class OrderSubscriptionCollectionOperations
         {
             throw new IllegalArgumentException( "orderId must be set." );
         }
-
     }
 
     /**
@@ -70,5 +69,4 @@ public class OrderSubscriptionCollectionOperations
         return partnerServiceProxy.get();
 
     }
-
 }

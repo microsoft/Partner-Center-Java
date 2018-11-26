@@ -25,6 +25,8 @@ import com.microsoft.store.partnercenter.extensions.IExtensions;
 import com.microsoft.store.partnercenter.genericoperations.ICountrySelector;
 import com.microsoft.store.partnercenter.invoices.IInvoiceCollection;
 import com.microsoft.store.partnercenter.invoices.InvoiceCollection;
+import com.microsoft.store.partnercenter.network.IPartnerServiceClient;
+import com.microsoft.store.partnercenter.network.PartnerServiceClient;
 import com.microsoft.store.partnercenter.offers.IOfferCategoryCollection;
 import com.microsoft.store.partnercenter.offers.IOfferCollection;
 import com.microsoft.store.partnercenter.offers.OfferCategoryCountrySelector;
@@ -149,6 +151,11 @@ public class PartnerOperations
 	private IAgreementDetailsCollection agreements;
 
 	/**
+	 * The partner service used for performing HTTP operations.
+	 */
+	private IPartnerServiceClient serviceClient; 
+
+	/**
 	 * Initializes a new instance of the PartnerOperations class.
 	 * 
 	 * @param credentials The partner credentials.
@@ -164,8 +171,11 @@ public class PartnerOperations
 		{
 			throw new IllegalArgumentException( "context can't be null" );
 		}
+	
 		this.setCredentials( credentials );
 		this.setRequestContext( context );
+
+		serviceClient = new PartnerServiceClient(PartnerService.getInstance().getApiRootUrl());
 	}
 
 	/**
@@ -391,8 +401,8 @@ public class PartnerOperations
 	}
 
 	/**
-     * Gets the relationship collection operations available to the partner.
-     */    
+	 * Gets the relationship collection operations available to the partner.
+	 */    
 	public IRelationshipCollection getRelationships()
 	{
 		if(this.relationships == null)
@@ -404,8 +414,8 @@ public class PartnerOperations
 	}
 
 	/**
-     * Gets the validation operations available to the partner.
-     */    
+	 * Gets the validation operations available to the partner.
+	 */    
 	public IValidationOperations getValidations()
 	{
 		if(this.validations == null)
@@ -428,5 +438,15 @@ public class PartnerOperations
 		}
 
 		return this.agreements;
+	}
+
+	/**
+	 * Gets the partner service client.
+	 * 
+	 * @return The partner service client.
+	 */
+	public IPartnerServiceClient getServiceClient()
+	{
+		return serviceClient;
 	}
 }

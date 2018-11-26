@@ -33,6 +33,7 @@ public class CustomerAgreementCollectionOperations
     public CustomerAgreementCollectionOperations( IPartner rootPartnerOperations, String customerId )
     {
         super( rootPartnerOperations, customerId );
+
         if ( StringHelper.isNullOrWhiteSpace( customerId ) )
         {
             throw new IllegalArgumentException( "customerId must be set" );
@@ -67,10 +68,11 @@ public class CustomerAgreementCollectionOperations
     @Override
     public ResourceCollection<Agreement> get()
     {
-        return new PartnerServiceProxy<Agreement, ResourceCollection<Agreement>>(
-                new TypeReference<ResourceCollection<Agreement>>() {}, this.getPartner(),
-                MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis()
-                                .get( "GetCustomerAgreements" ).getPath(),
-                        this.getContext() ) ).get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(), 
+            new TypeReference<ResourceCollection<Agreement>>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerAgreements" ).getPath(),
+                this.getContext()));
     }
 }

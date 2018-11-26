@@ -16,6 +16,7 @@ import com.microsoft.store.partnercenter.enumerators.IResourceCollectionEnumerat
 import com.microsoft.store.partnercenter.extensions.IExtensions;
 import com.microsoft.store.partnercenter.genericoperations.ICountrySelector;
 import com.microsoft.store.partnercenter.invoices.IInvoiceCollection;
+import com.microsoft.store.partnercenter.network.IPartnerServiceClient;
 import com.microsoft.store.partnercenter.offers.IOfferCategoryCollection;
 import com.microsoft.store.partnercenter.offers.IOfferCollection;
 import com.microsoft.store.partnercenter.products.IProductCollection;
@@ -181,4 +182,11 @@ public interface IPartner
      * @return The agreement metadata operations.
      */
     IAgreementDetailsCollection getAgreementDetails();
+
+    /**
+     * Gets the partner service client.
+     * 
+     * @return The partner service client.
+     */
+    IPartnerServiceClient getServiceClient();
 }

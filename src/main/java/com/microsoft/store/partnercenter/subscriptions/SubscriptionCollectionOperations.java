@@ -13,7 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
-import com.microsoft.store.partnercenter.genericoperations.IEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.subscriptions.Subscription;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
@@ -81,7 +80,7 @@ public class SubscriptionCollectionOperations
      * @return The partner subscriptions operations.
      */
     @Override
-    public IEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner( String partnerId )
+    public IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner( String partnerId )
     {
         ParameterValidator.isValidUriQueryValue( partnerId, "partnerId is an invalid query value" );
         return new PartnerSubscriptionCollectionOperations( this.getPartner(), this.getContext(), partnerId );
@@ -90,7 +89,7 @@ public class SubscriptionCollectionOperations
     /**
      * Retrieves a specific customer subscription behavior.
      *
-     * @param subscriptionId The subscription id.
+     * @param subscriptionId The subscription identifier
      * @return The customer subscription.
      */
     @Override
@@ -109,10 +108,12 @@ public class SubscriptionCollectionOperations
     public ResourceCollection<Subscription> get()
     {
         PartnerServiceProxy<Subscription, ResourceCollection<Subscription>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<Subscription>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerSubscriptions" ).getPath(),
-                                                        this.getContext() ) );
+            new PartnerServiceProxy<>( 
+                new TypeReference<ResourceCollection<Subscription>>(){}, 
+                this.getPartner(), MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerSubscriptions" ).getPath(),
+                this.getContext() ) );
+
         return partnerServiceProxy.get();
     }
 }

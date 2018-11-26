@@ -90,7 +90,7 @@ public class SubscriptionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
-     * @param subscriptionId The subscription id.
+     * @param subscriptionId The subscription identifier
      */
     public SubscriptionOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
     {

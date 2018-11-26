@@ -6,15 +6,15 @@
 
 package com.microsoft.store.partnercenter.models.subscriptions;
 
-import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
-import org.joda.time.format.ISODateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.Contract;
 import com.microsoft.store.partnercenter.models.ContractType;
 import com.microsoft.store.partnercenter.models.invoices.BillingType;
+
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * The subscription resource represents the life cycle of a subscription and includes properties that define the states
@@ -24,138 +24,267 @@ public class Subscription
     extends Contract
 {
     /**
+     * The available actions for the subscription.
+     */
+    @JsonProperty("actions")
+    private Iterable<String> actions;
+
+    /** 
+     * The date and time the subscription was created.
+     */
+    @JsonProperty("creationDate")
+    private DateTime creationDate;
+
+    /** 
+     * The friendly name for the subscription.
+     */
+    @JsonProperty("friendlyName")
+    private String friendlyName;
+
+    /**
+     * A flag indicating whether or not the subscription has purchasable addons. 
+     */
+    @JsonProperty("hasPurchasableAddons")
+    private boolean hasPurchasableAddons;
+
+    /**
+     * The identifier for the subscription.
+     */
+    @JsonProperty("id")
+    private String id; 
+
+    /**
+     * A flag indiciating whether or not the subscription is a trial.
+     */
+    @JsonProperty("isTrial")
+    private boolean isTrial;
+
+    /**
+     * The identifier for the offer that created the subscription.
+     */
+    @JsonProperty("offerId")
+    private String offerId;
+
+    /**
+     * The name of the offer that created the subscription.
+     */
+    @JsonProperty("offerName")
+    private String offerName;
+
+    /**
+     * The partner subscription identifier for the subscription.
+     */
+    @JsonProperty("parentSubscriptionId")
+    private String parentSubscriptionId;
+
+    /**
+     * The quantity for the subscription.
+     */
+    @JsonProperty("quantity")
+    private int quantity;
+
+    /**
+     * The units defining the quantity for the subscription.
+     */
+    @JsonProperty("unitType")
+    private String unitType;
+
+    /**
      * Initializes a new instance of the subscription class.
      */
     public Subscription()
-
     {
         this.setLinks( new SubscriptionLinks() );
     }
 
     /**
-     * Gets or sets the subscription identifier.
+     * Gets the available actions for the subscription.
+     * 
+     * @return The available actions for the subscription.
      */
-    private String __Id;
-
-    public String getId()
+    public Iterable<String> getActions()
     {
-        return __Id;
-    }
-
-    public void setId( String value )
-    {
-        __Id = value;
+        return actions;
     }
 
     /**
-     * Gets or sets the offer identifier.
+     * Gets the date and time when the subscription was created.
+     * 
+     * @return The date and time when the subscription was created.
      */
-    private String __OfferId;
-
-    public String getOfferId()
-    {
-        return __OfferId;
-    }
-
-    public void setOfferId( String value )
-    {
-        __OfferId = value;
-    }
-
-    /**
-     * Gets or sets the offer identifier.
-     */
-    private String __OfferName;
-
-    public String getOfferName()
-    {
-        return __OfferName;
-    }
-
-    public void setOfferName( String value )
-    {
-    	__OfferName = value;
-    }
-
-    /**
-     * Gets or sets the friendly name for the subscription.
-     */
-    private String __FriendlyName;
-
-    public String getFriendlyName()
-    {
-        return __FriendlyName;
-    }
-
-    public void setFriendlyName( String value )
-    {
-        __FriendlyName = value;
-    }
-
-    /**
-     * Gets or sets the quantity. For example, in case of seat based billing, this property is set to seat count
-     */
-    private int __Quantity;
-
-    public int getQuantity()
-    {
-        return __Quantity;
-    }
-
-    public void setQuantity( int value )
-    {
-        __Quantity = value;
-    }
-
-    /**
-     * Gets or sets the units defining Quantity for the subscription.
-     */
-    private String __UnitType;
-
-    public String getUnitType()
-    {
-        return __UnitType;
-    }
-
-    public void setUnitType( String value )
-    {
-        __UnitType = value;
-    }
-
-    /**
-     * Gets or sets the parent subscription identifier.
-     */
-    private String __ParentSubscriptionId;
-
-    public String getParentSubscriptionId()
-    {
-        return __ParentSubscriptionId;
-    }
-
-    public void setParentSubscriptionId( String value )
-    {
-        __ParentSubscriptionId = value;
-    }
-
-    /**
-     * Gets or sets the creation date.
-     */
-    private DateTime __CreationDate;
-
     public DateTime getCreationDate()
     {
-        return __CreationDate;
+        return creationDate;
     }
 
-    /*@JsonProperty( "creationDate" )
-    public void setCreationDate( String value )
-    {
-        __CreationDate = ISODateTimeFormat.dateTimeNoMillis().parseLocalDateTime( value );
-    }*/
-
+    /**
+     * Sets the date and time when the subscription was created.
+     * 
+     * @param value The date and time when the subscription was created.
+     */
     public void setCreationDate( DateTime value )
     {
-        __CreationDate = value;
+        creationDate = value;
+    }
+
+    /**
+     * Gets the friendly name for the subscription.
+     * 
+     * @return The friendly name for the subscription.
+     */
+    public String getFriendlyName()
+    {
+        return friendlyName;
+    }
+
+    /**
+     * Sets the friendly name for the subscription.
+     * 
+     * @param value The friendly name for the subscription.
+     */
+    public void setFriendlyName( String value )
+    {
+        friendlyName = value;
+    }
+
+    /**
+     * Gets a flag indicating whether or not the subscription has purchasable addons.
+     * 
+     * @return A flag indicating whether or not the subscription has purchasable addons.
+     */
+    public Boolean getHasPurchasableAddOns()
+    {
+        return hasPurchasableAddons;
+    }
+
+    /**
+     * Gets the subscription identifier.
+     * 
+     * @return The identifier for the subscription.
+     */
+    public String getId()
+    {
+        return id;
+    }
+
+    /**
+     * Sets the identifier for the subscription.
+     * 
+     * @param value The identifier for the subscription.
+     */
+    public void setId( String value )
+    {
+        id = value;
+    }
+
+    /**
+     * Gets a flag indicating whether or not the subscription is a trial.
+     * 
+     * @return A flag indicating whether or not the subscription is a trial.
+     */
+    public Boolean getIsTrial()
+    {
+        return isTrial;
+    }
+
+    /**
+     * Gets the offer identifier that created the subscription.
+     * 
+     * @return The offer identifier that created the subscription.
+     */
+    public String getOfferId()
+    {
+        return offerId;
+    }
+
+    /**
+     * Sets the offer identifier that created the subscription.
+     * 
+     * @param value The offer identifier that created the subscription.
+     */
+    public void setOfferId( String value )
+    {
+        offerId = value;
+    }
+
+    /**
+     * Get the name of the offer that created the subscription. 
+     * 
+    * @return The name of the offer that created the subscription.
+    */
+    public String getOfferName()
+    {
+        return offerName;
+    }
+
+    /**
+     * Sets the name of the offer that created the subscription.
+     * 
+     * @param value The name of the offer that created the subscription.
+     */
+    public void setOfferName( String value )
+    {
+    	offerName = value;
+    }
+
+    /**
+     * Gets the parent subscription identifier for the subscription. 
+     * 
+     * @return The parent subscription identifier for the subscription. 
+     */
+    public String getParentSubscriptionId()
+    {
+        return parentSubscriptionId;
+    }
+
+    /**
+     * Sets the parent subscription identifier for the subscription. 
+     * 
+     * @param value The parent subscription identifier for the subscription. 
+     */
+    public void setParentSubscriptionId( String value )
+    {
+        parentSubscriptionId = value;
+    }
+
+    /**
+     * Gets the quantity for the subscription. In the case of seat based billing, this value is the seat count.
+     * 
+     * @return The quantity for the subscription.
+     */
+    public int getQuantity()
+    {
+        return quantity;
+    }
+
+    /**
+     * Sets the quantity for the subscription. In the case of seat based billing, this value is the seat count.
+     * 
+     * @param value The quantity for the subscription.
+     */
+    public void setQuantity( int value )
+    {
+        quantity = value;
+    }
+
+    /**
+     * Gets the units defining the quantity for the subscription.
+     * 
+     * @return The units defining the quantity for the subscription.
+     */
+    public String getUnitType()
+    {
+        return unitType;
+    }
+
+    /**
+     * Sets the units defining the quantity for the subscription.
+     * 
+     * @param value The units defining the quantity for the subscription.
+     */
+    public void setUnitType( String value )
+    {
+        unitType = value;
     }
 
     /**

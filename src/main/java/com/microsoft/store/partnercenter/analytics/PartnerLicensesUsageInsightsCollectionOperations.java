@@ -6,15 +6,12 @@
 
 package com.microsoft.store.partnercenter.analytics;
 
-import java.text.MessageFormat;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.analytics.PartnerLicensesUsageInsights;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * Implements the operations on partner licenses usage insights collection.
@@ -41,16 +38,9 @@ public class PartnerLicensesUsageInsightsCollectionOperations
     @Override
     public ResourceCollection<PartnerLicensesUsageInsights> get()
     {
-        PartnerServiceProxy<PartnerLicensesUsageInsights, ResourceCollection<PartnerLicensesUsageInsights>> partnerServiceProxy =
-            new PartnerServiceProxy<>( 
-                new TypeReference<ResourceCollection<PartnerLicensesUsageInsights>>()
-                {
-                }, 
-                this.getPartner(), 
-                MessageFormat.format( 
-                    PartnerService.getInstance().getConfiguration().getApis().get( "PartnerLicensesUsageInsights" ).getPath(),
-                    this.getContext() ) );
-        
-        return partnerServiceProxy.get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ResourceCollection<PartnerLicensesUsageInsights>>(){}, 
+            PartnerService.getInstance().getConfiguration().getApis().get( "PartnerLicensesUsageInsights" ).getPath());
     }
   }

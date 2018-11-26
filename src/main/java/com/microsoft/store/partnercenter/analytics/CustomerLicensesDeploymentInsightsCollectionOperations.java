@@ -14,7 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.analytics.CustomerLicensesDeploymentInsights;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -48,16 +47,11 @@ public class CustomerLicensesDeploymentInsightsCollectionOperations
     @Override
     public ResourceCollection<CustomerLicensesDeploymentInsights> get()
     {
-        PartnerServiceProxy<CustomerLicensesDeploymentInsights, ResourceCollection<CustomerLicensesDeploymentInsights>> partnerServiceProxy =
-            new PartnerServiceProxy<>( 
-                new TypeReference<ResourceCollection<CustomerLicensesDeploymentInsights>>()
-                {
-                }, 
-                this.getPartner(), 
-                MessageFormat.format( 
-                    PartnerService.getInstance().getConfiguration().getApis().get( "CustomerLicensesDeploymentInsights" ).getPath(),
-                    this.getContext() ) );
-        
-        return partnerServiceProxy.get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ResourceCollection<CustomerLicensesDeploymentInsights>>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get( "CustomerLicensesDeploymentInsights" ).getPath(),
+                this.getContext()));
     }
 }
