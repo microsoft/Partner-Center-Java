@@ -13,11 +13,9 @@ import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
-import org.apache.http.HttpResponse;
+import okhttp3.Response;
 
 /**
  * This class implements the operations available on a customer's subscription registration.
@@ -55,19 +53,15 @@ public class SubscriptionRegistrationOperations
      */
     public String register()
     {
-        IPartnerServiceProxy<String, HttpResponse> partnerServiceProxy =
-            new PartnerServiceProxy<>(
-                new TypeReference<HttpResponse>()
-                {
-                }, 
-                this.getPartner(), 
-                MessageFormat.format(
-                    PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSubscriptionRegistrationStatus" ).getPath(),
-                    this.getContext().getItem1(), 
-                    this.getContext().getItem2()));
-
-        HttpResponse response = partnerServiceProxy.post("success");
-
-        return response.getFirstHeader("Location").getValue();
+        Response response = this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<Response>(){}, 
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateSubscriptionRegistrationStatus").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            "success");
+        
+        return response.header("location");
     }
 }

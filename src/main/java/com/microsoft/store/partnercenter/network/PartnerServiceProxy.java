@@ -653,7 +653,6 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	 * @return The configured response result.
 	 * @throws PartnerException
 	 */
-	@SuppressWarnings("unchecked")
 	private TResponse handleResponse(CloseableHttpResponse response) {
 		String responseBody = null;
 
@@ -676,17 +675,11 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 						responseBody = responseBody.substring(1);
 					}
 
-					if (StringHelper.isNullOrEmpty(responseBody)) {
-						response.close();
-						// TODO - Find a better solution for this. There is not a way to check the
-						// object type of a null object, so this is a work around.
-						return (TResponse) response;
-					}
-
 					responseObj = getJsonConverter().readValue(responseBody, responseClass);
 				}
 
 				response.close();
+
 				return responseObj;
 			} 
 			catch (IOException deserializationProblem) 

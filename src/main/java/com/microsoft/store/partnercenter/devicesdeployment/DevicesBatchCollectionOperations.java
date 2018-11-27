@@ -19,78 +19,76 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
-import org.apache.http.HttpResponse;
+import okhttp3.Response;
 
 /**
  * Implements operations that apply to devices batch collection.
  */
 public class DevicesBatchCollectionOperations
-    extends BasePartnerComponentString
-    implements IDevicesBatchCollection
+	extends BasePartnerComponentString
+	implements IDevicesBatchCollection
 {
-    /**
-     * Initializes a new instance of the DevicesBatchOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            Identifier for the customer.
-     */
-    public DevicesBatchCollectionOperations(IPartner rootPartnerOperations, String customerId) {
-        super(rootPartnerOperations, customerId);
+	/**
+	 * Initializes a new instance of the DevicesBatchOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId            Identifier for the customer.
+	 */
+	public DevicesBatchCollectionOperations(IPartner rootPartnerOperations, String customerId) {
+		super(rootPartnerOperations, customerId);
 
-        if (StringHelper.isNullOrWhiteSpace(customerId)) {
-            throw new IllegalArgumentException("customerId must be set");
-        }
-    }
-    
+		if (StringHelper.isNullOrWhiteSpace(customerId)) {
+			throw new IllegalArgumentException("customerId must be set");
+		}
+	}
+	
 	/**
 	 * Retrieves a specific customer devices batch behavior.
 	 * 
 	 * @param deviceBatchId The devices batch identifier.
 	 * @return The devices batch behavior.
 	 */
-    public IDevicesBatch byId( String deviceBatchId )
-    {
-        return new DevicesBatchOperations(this.getPartner(), this.getContext(), deviceBatchId); 
-    }
+	public IDevicesBatch byId( String deviceBatchId )
+	{
+		return new DevicesBatchOperations(this.getPartner(), this.getContext(), deviceBatchId); 
+	}
 
-    /**
+	/**
 	 * Creates a new devices batch along with the devices.
 	 * 
 	 * @param newDeviceBatch The new devices batch.
 	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
-    public String create( DeviceBatchCreationRequest newDeviceBatch )
-    {
-        IPartnerServiceProxy<DeviceBatchCreationRequest, HttpResponse> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<HttpResponse>() {
-                }, this.getPartner(),
-                MessageFormat.format(
-                    PartnerService.getInstance().getConfiguration().getApis().get("CreateDeviceBatch").getPath(),
-                    this.getContext() ));
+	public String create( DeviceBatchCreationRequest newDeviceBatch )
+	{
+		Response response = this.getPartner().getServiceClient().post(
+			this.getPartner(), 
+			new TypeReference<Response>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("CreateDeviceBatch").getPath(),
+				this.getContext()),
+			newDeviceBatch);
 
-        HttpResponse response = partnerServiceProxy.post( newDeviceBatch );
+		return response.header("location");
+	}
 
-        return response.getFirstHeader("location").getValue();
-    }
+	/**
+	 * Retrieves all devices batches.
+	 * 
+	 * @return All of the device batches.
+	 */
+	public ResourceCollection<DeviceBatch> get()
+	{
+		IPartnerServiceProxy<DeviceBatch, ResourceCollection<DeviceBatch>> partnerServiceProxy = 
+			new PartnerServiceProxy<>(
+				new TypeReference<ResourceCollection<DeviceBatch>>() 
+				{
+				}, 
+				this.getPartner(),
+				MessageFormat.format(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetDeviceBatches").getPath(),
+						this.getContext() ));
 
-    /**
-     * Retrieves all devices batches.
-     * 
-     * @return All of the device batches.
-     */
-    public ResourceCollection<DeviceBatch> get()
-    {
-        IPartnerServiceProxy<DeviceBatch, ResourceCollection<DeviceBatch>> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<ResourceCollection<DeviceBatch>>() 
-                {
-                }, 
-                this.getPartner(),
-                MessageFormat.format(
-                    PartnerService.getInstance().getConfiguration().getApis().get("GetDeviceBatches").getPath(),
-                        this.getContext() ));
-
-        return partnerServiceProxy.get();
-    }
+		return partnerServiceProxy.get();
+	}
 }

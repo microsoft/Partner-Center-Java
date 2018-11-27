@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +24,8 @@ import com.microsoft.rest.RestClient;
 import com.microsoft.rest.ServiceClient;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
+import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
+import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.utils.ArtifactDeserializer;
@@ -31,7 +34,9 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
 import com.microsoft.store.partnercenter.utils.UriDeserializer;
 
 import okhttp3.Headers;
+import okhttp3.MediaType;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class PartnerServiceClient 
@@ -82,6 +87,11 @@ public class PartnerServiceClient
 	 * The name of the X-Locale header.
 	 */
 	static final String LOCALE_HEADER = "X-Locale";
+
+	/**
+	 * The JSON media type used when building a body request.
+	 */
+	static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
 
 	/**
 	 * The name of the MS-PartnerCenter-Application header.
@@ -146,6 +156,102 @@ public class PartnerServiceClient
 			ex.printStackTrace();
 		}
 	   
+		return null;
+	}
+
+	/**
+	 * Executes a PATCH operation against the partner service.
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address of the request. 
+	 * @param content The content for the body of the request.
+	 */
+	@SuppressWarnings("unchecked")
+	public <T, U> U patch(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
+	{
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Request request;
+		Response response;
+		String responseBody; 
+
+		try
+		{
+			request = new Request.Builder()
+				.headers(headers)
+				.url(buildUrl(relativeUri))
+				.patch(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
+				.build();
+
+			response = httpClient().newCall(request).execute();
+			responseBody = response.body().string();
+
+			if(StringHelper.isNullOrEmpty(responseBody))
+			{
+				return (U)response;
+			}
+			else
+			{
+				return getJsonConverter().readValue(responseBody, responseType);
+			}
+		}
+		catch (JsonProcessingException e)
+		{
+			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
+		}	
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+
+		return null;
+	}
+
+	/**
+	 * Executes a POST operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations. 
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address fo the request.
+	 * @param content The conent for the body of the request.
+	 */
+	@SuppressWarnings("unchecked")
+	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
+	{
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Request request;
+		Response response;
+		String responseBody; 
+
+		try
+		{
+			request = new Request.Builder()
+				.headers(headers)
+				.url(buildUrl(relativeUri))
+				.post(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
+				.build();
+
+			response = httpClient().newCall(request).execute();
+			responseBody = response.body().string();
+
+			if(StringHelper.isNullOrEmpty(responseBody))
+			{
+				return (U)response;
+			}
+			else
+			{
+				return getJsonConverter().readValue(responseBody, responseType);
+			}
+		}
+		catch (JsonProcessingException e)
+		{
+			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
+		}	
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+
 		return null;
 	}
 
