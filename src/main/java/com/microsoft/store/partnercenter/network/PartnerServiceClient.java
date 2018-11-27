@@ -11,6 +11,7 @@ import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -22,12 +23,16 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import com.microsoft.rest.RestClient;
 import com.microsoft.rest.ServiceClient;
+import com.microsoft.rest.ServiceResponseBuilder;
+import com.microsoft.rest.serializer.JacksonAdapter;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
+import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
+import com.microsoft.store.partnercenter.requestcontext.RequestContextFactory;
 import com.microsoft.store.partnercenter.utils.ArtifactDeserializer;
 import com.microsoft.store.partnercenter.utils.InvoiceLineItemDeserializer;
 import com.microsoft.store.partnercenter.utils.StringHelper;
@@ -115,7 +120,13 @@ public class PartnerServiceClient
 	 */
 	public PartnerServiceClient(String baseUrl)
 	{
-		super(baseUrl);
+		super(
+			new RestClient.Builder()
+				.withBaseUrl(baseUrl)
+				.withRetryStrategy(new PartnerServiceRetryStrategy())
+				.withSerializerAdapter(new JacksonAdapter())
+				.withResponseBuilderFactory(new ServiceResponseBuilder.Factory())
+				.build());
 	}
 
 	/**
@@ -282,16 +293,22 @@ public class PartnerServiceClient
 		return jsonConverter;
 	}
 	
-	private String buildUrl(String resourcePath)
+	/**
+	 * Constructs the address for the request.
+	 * 
+	 * @param relativUri Relative address for the resource being requested.
+	 * @return The address for the request.
+	 */
+	private String buildUrl(String relativUri)
 	{
-		if(StringHelper.isNullOrEmpty(resourcePath))
+		if(StringHelper.isNullOrEmpty(relativUri))
 		{
 			throw new IllegalArgumentException("resourcePath cannot be null");
 		}
 
 		StringBuilder baseUri = new StringBuilder(
 			PartnerService.getInstance().getApiRootUrl() + "/"
-				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + resourcePath);
+				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + relativUri);
 
 		return baseUri.toString();
 	}
@@ -305,12 +322,25 @@ public class PartnerServiceClient
 	private Map<String, String> getRequestHeaders(IPartner rootPartnerOperations)
 	{
 		Map<String, String> headers = new HashMap<>();
+		IRequestContext requestContext; 
+
+		if (rootPartnerOperations.getRequestContext().getRequestId().equals(new UUID(0, 0)))
+		{
+			requestContext = RequestContextFactory.getInstance().create(
+				rootPartnerOperations.getRequestContext().getCorrelationId(),
+				UUID.randomUUID(),
+				rootPartnerOperations.getRequestContext().getLocale());
+		}
+		else
+		{
+			requestContext = rootPartnerOperations.getRequestContext();
+		}
 
 		headers.put(AUTHORIZATION_HEADER, AUTHORIZATION_SCHEME + " " +  rootPartnerOperations.getCredentials().getPartnerServiceToken());
 		headers.put(CONTRACT_VERSION_HEADER, PartnerService.getInstance().getPartnerServiceApiVersion());
-		headers.put(CORRELATION_ID_HEADER, rootPartnerOperations.getRequestContext().getCorrelationId().toString());
-		headers.put(LOCALE_HEADER, rootPartnerOperations.getRequestContext().getLocale());
-		headers.put(REQUEST_ID_HEADER, rootPartnerOperations.getRequestContext().getRequestId().toString());
+		headers.put(CORRELATION_ID_HEADER, requestContext.getCorrelationId().toString());
+		headers.put(LOCALE_HEADER, requestContext.getLocale());
+		headers.put(REQUEST_ID_HEADER, requestContext.getRequestId().toString());
 		headers.put(SDK_VERSION_HEADER, PartnerService.getInstance().getSdkVersion());
 
 		if (PartnerService.getInstance().getApplicationName() != null
