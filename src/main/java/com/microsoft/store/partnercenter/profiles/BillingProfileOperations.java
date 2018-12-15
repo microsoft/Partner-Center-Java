@@ -11,60 +11,51 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.partners.BillingProfile;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * The partner billing profile operations implementation.
  */
 public class BillingProfileOperations
-    extends BasePartnerComponentString
-    implements IBillingProfile
+	extends BasePartnerComponentString
+	implements IBillingProfile
 {
-    /**
-     * Initializes a new instance of the BillingProfileOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     */
-    public BillingProfileOperations( IPartner rootPartnerOperations )
-    {
-        super( rootPartnerOperations );
-    }
+	/**
+	 * Initializes a new instance of the BillingProfileOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 */
+	public BillingProfileOperations( IPartner rootPartnerOperations )
+	{
+		super( rootPartnerOperations );
+	}
 
-    /**
-     * Retrieves the partner billing profile.
-     * 
-     * @return The partner billing profile.
-     */
-    @Override
-    public BillingProfile get()
-    {
-        IPartnerServiceProxy<BillingProfile, BillingProfile> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<BillingProfile>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerBillingProfile" ).getPath());
+	/**
+	 * Retrieves the partner billing profile.
+	 * 
+	 * @return The partner billing profile.
+	 */
+	@Override
+	public BillingProfile get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<BillingProfile>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetPartnerBillingProfile").getPath());
+	}
 
-        return partnerServiceProxy.get();
-    }
-
-    /**
-     * Updates the partner billing profile.
-     * 
-     * @param updatePayload Payload of the update request.
-     * @return Updated partner billing profile.
-     */
-    @Override
-    public BillingProfile update( BillingProfile updatePayload )
-    {
-        IPartnerServiceProxy<BillingProfile, BillingProfile> partnerServiceProxy =
-            new PartnerServiceProxy<BillingProfile, BillingProfile>( new TypeReference<BillingProfile>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "UpdatePartnerBillingProfile" ).getPath());
-
-        return partnerServiceProxy.put( updatePayload );
-    }
+	/**
+	 * Updates the partner billing profile.
+	 * 
+	 * @param updatePayload Payload of the update request.
+	 * @return Updated partner billing profile.
+	 */
+	@Override
+	public BillingProfile update( BillingProfile updatePayload )
+	{
+		return this.getPartner().getServiceClient().put(
+			this.getPartner(),
+			new TypeReference<BillingProfile>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("UpdatePartnerBillingProfile").getPath(),
+			updatePayload);
+	}
 }

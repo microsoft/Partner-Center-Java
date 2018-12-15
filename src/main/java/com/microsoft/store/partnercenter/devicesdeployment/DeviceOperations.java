@@ -15,8 +15,6 @@ import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
 import com.microsoft.store.partnercenter.models.devicesdeployment.Device;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -58,14 +56,14 @@ public class DeviceOperations
     @Override
     public Device patch(Device updateDevice)
     {
-        IPartnerServiceProxy<Device, Device> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<Device>() {
-                }, this.getPartner(),
-                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevice").getPath(),
-                        this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
-
-        return partnerServiceProxy.put(updateDevice);
+        return this.getPartner().getServiceClient().put(
+            this.getPartner(),
+            new TypeReference<Device>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevice").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            updateDevice);
     }
 
     /**

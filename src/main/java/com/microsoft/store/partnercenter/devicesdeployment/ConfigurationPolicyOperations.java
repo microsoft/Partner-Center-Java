@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
@@ -68,13 +66,14 @@ public class ConfigurationPolicyOperations
     @Override
     public ConfigurationPolicy patch(ConfigurationPolicy policy)
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<>(
-            new TypeReference<ConfigurationPolicy>() {
-            }, this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2()));
-
-        return partnerServiceProxy.put(policy);
+        return this.getPartner().getServiceClient().put(
+            this.getPartner(),
+            new TypeReference<ConfigurationPolicy>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            policy);
     }
 
     /**

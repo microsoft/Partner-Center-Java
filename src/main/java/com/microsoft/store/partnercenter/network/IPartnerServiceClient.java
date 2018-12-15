@@ -64,6 +64,16 @@ public interface IPartnerServiceClient
     <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters);
 
     /**
+     * Executes a PUT operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations. 
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address fo the request.
+     * @param content The conent for the body of the request.
+     */
+    <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content);
+
+    /**
      * Executes a DELETE operation against the partner service. 
      * 
      * @param rootPartnerOperations An instance of the partner operations. 

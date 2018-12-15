@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.customers.CustomerQualification;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -35,9 +33,9 @@ public class CustomerQualificationOperations
 		super( rootPartnerOperations, customerId );
 
 		if ( StringHelper.isNullOrEmpty( customerId ) )
-        {
-            throw new IllegalArgumentException("customerId must be set.");
-        }
+		{
+			throw new IllegalArgumentException("customerId must be set.");
+		}
 	}
 
 	/**
@@ -48,13 +46,12 @@ public class CustomerQualificationOperations
 	@Override
 	public CustomerQualification get()
 	{
-        IPartnerServiceProxy<CustomerQualification, CustomerQualification> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<CustomerQualification>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerQualification" ).getPath(),
-                                                            this.getContext() ) );
-        
-        return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<CustomerQualification>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerQualification").getPath(),
+				this.getContext()));
 	}
 
 	/**
@@ -66,16 +63,17 @@ public class CustomerQualificationOperations
 	@Override
 	public CustomerQualification update( CustomerQualification customerQualification )
 	{
-        if ( customerQualification == null )
-        {
-            throw new IllegalArgumentException( "customerQualification null" );
-        }
-        PartnerServiceProxy<CustomerQualification, CustomerQualification> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<CustomerQualification>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerQualification" ).getPath(),
-															this.getContext() ) );
-															
-        return partnerServiceProxy.put( customerQualification );
+		if ( customerQualification == null )
+		{
+			throw new IllegalArgumentException( "customerQualification null" );
+		}
+		
+		return this.getPartner().getServiceClient().put(
+			this.getPartner(),
+			new TypeReference<CustomerQualification>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerQualification").getPath(),
+				this.getContext()),
+			customerQualification);
 	}
 }

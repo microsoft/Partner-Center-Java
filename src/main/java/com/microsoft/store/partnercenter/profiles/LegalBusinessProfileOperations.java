@@ -11,60 +11,51 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.partners.LegalBusinessProfile;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * The legal business profile operations implementation.
  */
 public class LegalBusinessProfileOperations
-    extends BasePartnerComponentString
-    implements ILegalBusinessProfile
+	extends BasePartnerComponentString
+	implements ILegalBusinessProfile
 {
-    /**
-     * Initializes a new instance of the LegalBusinessProfileOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     */
-    public LegalBusinessProfileOperations( IPartner rootPartnerOperations )
-    {
-        super( rootPartnerOperations );
-    }
+	/**
+	 * Initializes a new instance of the LegalBusinessProfileOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 */
+	public LegalBusinessProfileOperations( IPartner rootPartnerOperations )
+	{
+		super( rootPartnerOperations );
+	}
 
-    /**
-     * Retrieves the legal business profile.
-     * 
-     * @return The legal business profile.
-     */
-    @Override
-    public LegalBusinessProfile get()
-    {
-        IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath());
+	/**
+	 * Retrieves the legal business profile.
+	 * 
+	 * @return The legal business profile.
+	 */
+	@Override
+	public LegalBusinessProfile get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<LegalBusinessProfile>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetLegalBusinessProfile").getPath());
+	}
 
-        return partnerServiceProxy.get();
-    }
-
-    /**
-     * Updates the Legal Business Profile.
-     * 
-     * @param legalBusinessProfile Payload of the update request.
-     * @return Updated Legal Business Profile.
-     */
-    @Override
-    public LegalBusinessProfile update( LegalBusinessProfile legalBusinessProfile )
-    {
-        IPartnerServiceProxy<LegalBusinessProfile, LegalBusinessProfile> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<LegalBusinessProfile>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetLegalBusinessProfile" ).getPath());
-
-        return partnerServiceProxy.put( legalBusinessProfile );
-    }
+	/**
+	 * Updates the Legal Business Profile.
+	 * 
+	 * @param legalBusinessProfile Payload of the update request.
+	 * @return Updated Legal Business Profile.
+	 */
+	@Override
+	public LegalBusinessProfile update( LegalBusinessProfile legalBusinessProfile )
+	{
+		return this.getPartner().getServiceClient().put(
+			this.getPartner(),
+			new TypeReference<LegalBusinessProfile>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetLegalBusinessProfile").getPath(),
+			legalBusinessProfile);
+	}
 }

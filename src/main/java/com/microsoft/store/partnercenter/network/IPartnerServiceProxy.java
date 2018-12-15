@@ -148,12 +148,4 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
      * @return The file content stream.
      */
     InputStream getFileContent();
-
-    /**
-     * Executes a PUT request against the partner service.
-     *
-     * @param content The request body content.
-     * @return The PUT response.
-     */
-    TResponse put( TRequest content );
 }

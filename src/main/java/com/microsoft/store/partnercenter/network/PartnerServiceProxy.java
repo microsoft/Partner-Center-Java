@@ -8,7 +8,6 @@ package com.microsoft.store.partnercenter.network;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.MessageFormat;
@@ -18,7 +17,6 @@ import java.util.Collection;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,7 +46,6 @@ import com.microsoft.store.partnercenter.utils.UriDeserializer;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.RequestBuilder;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
@@ -404,33 +401,6 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 		{
 			throw new PartnerException(error.getMessage(), error);
 		}
-	}
-
-	/**
-	 * Executes a PUT request against the partner service.
-	 * 
-	 * @param content The request body content.
-	 * @return The PUT response.
-	 */
-	@Override
-	public TResponse put(TRequest content) 
-	{
-		RequestBuilder request = RequestBuilder.put(this.buildPartnerServiceApiUri());
-	
-		try 
-		{
-			request.setEntity(new StringEntity(getJsonConverter().writeValueAsString(content)));
-		}
-		catch (UnsupportedEncodingException e) 
-		{
-			throw new PartnerException("", this.requestContext, PartnerErrorCategory.REQUEST_PARSING);
-		}
-		catch (JsonProcessingException e) 
-		{
-			throw new PartnerException("", this.requestContext, PartnerErrorCategory.REQUEST_PARSING);
-		}
-
-		return this.send(request);
 	}
 
 	/**

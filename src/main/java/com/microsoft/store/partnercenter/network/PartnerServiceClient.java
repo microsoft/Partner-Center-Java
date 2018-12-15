@@ -317,6 +317,55 @@ public class PartnerServiceClient
 	}
 
 	/**
+	 * Executes a PUT operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations. 
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address fo the request.
+	 * @param content The conent for the body of the request.
+	 */
+	@SuppressWarnings("unchecked")
+	public <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
+	{
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Request request;
+		Response response;
+		String responseBody; 
+
+		try
+		{
+			request = new Request.Builder()
+				.headers(headers)
+				.url(buildUrl(relativeUri, null))
+				.put(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
+				.build();
+
+			response = httpClient().newCall(request).execute();
+			responseBody = response.body().string();
+
+			if(StringHelper.isNullOrEmpty(responseBody))
+			{
+				return (U)response;
+			}
+			else
+			{
+				return getJsonConverter().readValue(responseBody, responseType);
+			}
+		}
+		catch (JsonProcessingException e)
+		{
+			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
+		}	
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+
+		return null;
+	}
+
+
+	/**
 	 * Executes a DELETE operation against the partner service. 
 	 * 
 	 * @param rootPartnerOperations An instance of the partner operations. 
