@@ -11,8 +11,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.Address;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * The validations collection operations implementation.
@@ -44,13 +42,10 @@ public class ValidationOperations
             throw new IllegalArgumentException( "The address is a required parameter." );
         }
 
-        IPartnerServiceProxy<Address, Boolean> partnerServiceProxy =
-            new PartnerServiceProxy<Address, Boolean>( new TypeReference<Boolean>()
-            {
-            }, 
-            this.getPartner(),
-            PartnerService.getInstance().getConfiguration().getApis().get( "AddressValidation" ).getPath());
-
-       return partnerServiceProxy.post(address);
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<Boolean>(){},
+            PartnerService.getInstance().getConfiguration().getApis().get("AddressValidation").getPath(),
+            address);
     }
 }

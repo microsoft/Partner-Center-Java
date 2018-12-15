@@ -73,21 +73,23 @@ public class SubscriptionUpgradeCollectionOperations
      * Performs a subscription upgrade.
      * 
      * @param subscriptionUpgrade The subscription upgrade to perform.
-     * @return A task containing the subscription upgrade result.
+     * @return The subscription upgrade result.
      */
     @Override
     public UpgradeResult create( Upgrade subscriptionUpgrade )
     {
-        PartnerServiceProxy<Upgrade, UpgradeResult> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<UpgradeResult>()
-            {
-            }, 
-            this.getPartner(), 
-            MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "PostSubscriptionUpgrade" ).getPath(),
-                    this.getContext().getItem1(),
-                    this.getContext().getItem2()));
+        if ( subscriptionUpgrade == null )
+        {
+            throw new IllegalArgumentException( "The subscriptionUpgrade is a required parameter." );
+        }
 
-        return partnerServiceProxy.post( subscriptionUpgrade );
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<UpgradeResult>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("PostSubscriptionUpgrade").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            subscriptionUpgrade);
     }
 }

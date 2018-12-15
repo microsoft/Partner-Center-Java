@@ -155,7 +155,7 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
      * @param content The request body content.
      * @return The POST response.
      */
-    TResponse post( TRequest content );
+     // TResponse post( TRequest content );
 
     /**
      * Executes a PATCH request against the partner service.
@@ -181,5 +181,5 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
     /**
      * Executes a HEAD request against the partner service.
      */
-    void head();
+    // void head();
 }

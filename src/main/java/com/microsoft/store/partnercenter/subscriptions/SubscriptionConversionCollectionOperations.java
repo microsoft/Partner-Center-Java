@@ -49,7 +49,7 @@ public class SubscriptionConversionCollectionOperations
         }
     }
 
-        /**
+    /**
      * Submits a trial subscription conversion.
      *
      * @param conversion The new subscription conversion information
@@ -57,15 +57,14 @@ public class SubscriptionConversionCollectionOperations
      */
     public ConversionResult create(Conversion conversion)
     {
-        IPartnerServiceProxy<Conversion, ConversionResult> partnerServiceProxy = new PartnerServiceProxy<Conversion, ConversionResult>(
-            new TypeReference<ConversionResult>() 
-            {
-            }, 
-            this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionConversions").getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2() ));
-
-        return partnerServiceProxy.post(conversion);
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<ConversionResult>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionConversions").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            conversion);
     }
   
     /**

@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.microsoft.rest.retry.RetryStrategy;
-import com.microsoft.store.partnercenter.PartnerService;
 
 import okhttp3.Response;
 
@@ -20,6 +19,11 @@ import okhttp3.Response;
  */
 public class PartnerServiceRetryStrategy extends RetryStrategy 
 {
+    /**
+     * The maximum number of retry attempts. 
+     */
+    private int maxRetryAttempts;
+
     /**
      * The name of the retry strategy.
      */
@@ -39,10 +43,14 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
 
     /**
      * Initializes a new instance of the {@link PartnerServiceRetryStrategy} class.
+     * 
+     * @param maxRetryAttempts The maximum number of retry attempts.
      */
-    public PartnerServiceRetryStrategy()
+    public PartnerServiceRetryStrategy(int maxRetryAttempts)
     {
         super(Name, true);
+
+        this.maxRetryAttempts = maxRetryAttempts;
     }   
 
     /**
@@ -56,12 +64,9 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
     @Override
     public boolean shouldRetry(int retryCount, Response response)
     {
-        if(retryCount > PartnerService.getInstance().getConfiguration().getDefaultMaxRetryAttempts())
-        {
-            return false;
-        }
+        double exponentialBackOffTime = ( Math.pow( 2, retryCount ) - 1 ) / 2;
 
-        if(nonRetryableHttpCodes.contains(response.code()))
+        if(retryCount > maxRetryAttempts && nonRetryableHttpCodes.contains(response.code()))
         {
             return false;
         }
@@ -69,6 +74,14 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
         if(response.isSuccessful())
         {
             return false;
+        }
+
+        try
+        {
+            Thread.sleep((long)exponentialBackOffTime);
+        }
+        catch ( InterruptedException e )
+        {
         }
         
         return true;

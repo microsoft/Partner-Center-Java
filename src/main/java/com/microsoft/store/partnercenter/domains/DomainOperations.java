@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 public class DomainOperations extends BasePartnerComponentString implements IDomain
  {
@@ -28,6 +26,7 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	protected DomainOperations( IPartner rootPartnerOperations, String domain )
 	{
 		super( rootPartnerOperations, domain );
+		
 		if( domain == null || domain.trim().isEmpty() )
 		{
 			throw new IllegalArgumentException( "Domain string cannot be null or empty" );
@@ -42,18 +41,14 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	@Override
 	public boolean exists()
 	{
-		IPartnerServiceProxy<String, String> partnerServiceProxy =
-				new PartnerServiceProxy<>( new TypeReference<String>()
-				{
-				}, 
-				this.getPartner(), 
-				MessageFormat.format( 
-					PartnerService.getInstance().getConfiguration().getApis().get( "CheckDomainAvailability" ).getPath(),
-					this.getContext() ) );
-		
 		try
 		{
-			partnerServiceProxy.head();
+			this.getPartner().getServiceClient().head(
+				this.getPartner(),
+				new TypeReference<String>(){}, 
+				MessageFormat.format( 
+					PartnerService.getInstance().getConfiguration().getApis().get("CheckDomainAvailability").getPath(),
+					this.getContext()));
 		}
 		catch( PartnerException ex )
 		{

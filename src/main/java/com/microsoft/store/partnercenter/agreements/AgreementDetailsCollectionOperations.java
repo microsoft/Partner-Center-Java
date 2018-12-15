@@ -41,6 +41,6 @@ public class AgreementDetailsCollectionOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetAgreementsDetails" ).getPath());
+            PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath());
     }
 }

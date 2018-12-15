@@ -23,7 +23,6 @@ import com.microsoft.store.partnercenter.models.customers.Customer;
 import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.relationshiprequests.CustomerRelationshipRequestOperations;
 import com.microsoft.store.partnercenter.relationshiprequests.ICustomerRelationshipRequest;
@@ -121,16 +120,16 @@ public class CustomerCollectionOperations
     {
         if ( newCustomer == null )
         {
-            throw new IllegalArgumentException( "Customer cannot be null" );
+            throw new IllegalArgumentException("The newCustomer parameter cannot be null." );
         }
-        IPartnerServiceProxy<Customer, Customer> partnerServiceProxy =
-            new PartnerServiceProxy<>( 
-                new TypeReference<Customer>()
-                {
-                }, this.getPartner(), MessageFormat.format( 
-                    PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomer" ).getPath(),
-                    this.getContext() ) );
-        return partnerServiceProxy.post( newCustomer );
+
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<Customer>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("CreateCustomer").getPath(),
+                this.getContext()),
+            newCustomer);
     }
 
     /**

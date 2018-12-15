@@ -8,7 +8,9 @@ package com.microsoft.store.partnercenter.network;
 
 import java.io.IOException;
 import java.net.URI;
+import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -31,6 +33,7 @@ import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.requestcontext.RequestContextFactory;
 import com.microsoft.store.partnercenter.utils.ArtifactDeserializer;
@@ -123,7 +126,9 @@ public class PartnerServiceClient
 		super(
 			new RestClient.Builder()
 				.withBaseUrl(baseUrl)
-				.withRetryStrategy(new PartnerServiceRetryStrategy())
+				.withRetryStrategy(
+					new PartnerServiceRetryStrategy(
+						PartnerService.getInstance().getConfiguration().getDefaultMaxRetryAttempts()))
 				.withSerializerAdapter(new JacksonAdapter())
 				.withResponseBuilderFactory(new ServiceResponseBuilder.Factory())
 				.build());
@@ -149,13 +154,44 @@ public class PartnerServiceClient
 	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
-		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri)).get().build();
+		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).get().build();
 		Response response; 
 		T value;
 
 		try
 		{
-			 response = httpClient().newCall(request).execute();
+			response = httpClient().newCall(request).execute();
+
+			value = getJsonConverter().readValue(response.body().string(), responseType);
+			response.close();
+			
+			return value;
+		} 
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+	   
+		return null;
+	}
+
+    /**
+     * Executes a HEAD operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations.
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address of the request. 
+     */
+	public <T> T head(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
+	{
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).head().build();
+		Response response; 
+		T value;
+
+		try
+		{
+			response = httpClient().newCall(request).execute();
 
 			value = getJsonConverter().readValue(response.body().string(), responseType);
 			response.close();
@@ -190,7 +226,7 @@ public class PartnerServiceClient
 		{
 			request = new Request.Builder()
 				.headers(headers)
-				.url(buildUrl(relativeUri))
+				.url(buildUrl(relativeUri, null))
 				.patch(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
@@ -226,8 +262,22 @@ public class PartnerServiceClient
 	 * @param relativeUri The relative address fo the request.
 	 * @param content The conent for the body of the request.
 	 */
-	@SuppressWarnings("unchecked")
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
+	{
+		return post(rootPartnerOperations, responseType, relativeUri, content, null);
+	}
+
+	/**
+     * Executes a POST operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations. 
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address fo the request.
+     * @param content The conent for the body of the request.
+     * @param parameters Parameters to be added to the reqest.
+     */
+	@SuppressWarnings("unchecked")
+	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
 		Request request;
@@ -238,7 +288,7 @@ public class PartnerServiceClient
 		{
 			request = new Request.Builder()
 				.headers(headers)
-				.url(buildUrl(relativeUri))
+				.url(buildUrl(relativeUri, parameters))
 				.post(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
@@ -297,20 +347,42 @@ public class PartnerServiceClient
 	 * Constructs the address for the request.
 	 * 
 	 * @param relativUri Relative address for the resource being requested.
+	 * @param paramters The parameters to be added to the request.
 	 * @return The address for the request.
 	 */
-	private String buildUrl(String relativUri)
+	private String buildUrl(String relativUri, Collection<KeyValuePair<String, String>> parameters)
 	{
 		if(StringHelper.isNullOrEmpty(relativUri))
 		{
 			throw new IllegalArgumentException("resourcePath cannot be null");
 		}
 
-		StringBuilder baseUri = new StringBuilder(
+		StringBuilder address = new StringBuilder(
 			PartnerService.getInstance().getApiRootUrl() + "/"
 				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + relativUri);
 
-		return baseUri.toString();
+		if(parameters != null)
+		{
+			if (!parameters.isEmpty()) 
+			{
+				address.append("?");
+			}
+
+			for (KeyValuePair<String, String> queryParameter : parameters)
+			{
+				if (address.length() > 1) {
+					address.append("&");
+				}
+
+				address.append(
+					MessageFormat.format(
+						"{0}={1}", 
+						queryParameter.getKey(), 
+						queryParameter.getValue()));
+			} 
+		}
+
+		return address.toString();
 	}
 
 	/**

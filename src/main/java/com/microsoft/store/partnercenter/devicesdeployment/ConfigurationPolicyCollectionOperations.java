@@ -22,24 +22,24 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * Implements operations that apply to configuration policy collections.
  */
 public class ConfigurationPolicyCollectionOperations
-    extends BasePartnerComponentString
-    implements IConfigurationPolicyCollection
+	extends BasePartnerComponentString
+	implements IConfigurationPolicyCollection
 {
-    /**
-     * Initializes a new instance of the ConfigurationPolicyCollectionOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId Identifier for the customer.
-     */
-    public ConfigurationPolicyCollectionOperations( IPartner rootPartnerOperations, String customerId )
-    {
-        super( rootPartnerOperations, customerId );
+	/**
+	 * Initializes a new instance of the ConfigurationPolicyCollectionOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId Identifier for the customer.
+	 */
+	public ConfigurationPolicyCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	{
+		super( rootPartnerOperations, customerId );
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
-        {
-            throw new IllegalArgumentException( "customerId must be set" );
-        }
-    }
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		{
+			throw new IllegalArgumentException( "customerId must be set" );
+		}
+	}
 
 	/**
 	 * Retrieves a specific customer's devices batch upload status behavior.
@@ -47,45 +47,49 @@ public class ConfigurationPolicyCollectionOperations
 	 * @param policyId The policy identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
-    @Override 
-    public IConfigurationPolicy byId( String policyId )
-    {
-        return new ConfigurationPolicyOperations(this.getPartner(), this.getContext(), policyId);
-    }
+	@Override 
+	public IConfigurationPolicy byId( String policyId )
+	{
+		return new ConfigurationPolicyOperations(this.getPartner(), this.getContext(), policyId);
+	}
 
-    /**
+	/**
 	 * Creates a new configuration policy.
 	 * 
-     * @param newPolicy The new configuration policy information.
+	 * @param newPolicy The new configuration policy information.
 	 * @return The policy information that was just created.
 	 */
-    @Override
-    public ConfigurationPolicy create(ConfigurationPolicy newPolicy)
-    {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<ConfigurationPolicy>() {
-                }, this.getPartner(),
-                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("CreateConfigurationPolicy").getPath(),
-                        this.getContext()));
+	@Override
+	public ConfigurationPolicy create(ConfigurationPolicy newPolicy)
+	{
+		if ( newPolicy == null )
+		{
+			throw new IllegalArgumentException("The newPolicy parameter cannot be null" );
+		}
 
-        return partnerServiceProxy.post(newPolicy);
-    }
+		return this.getPartner().getServiceClient().post(
+			this.getPartner(), 
+			new TypeReference<ConfigurationPolicy>(){},
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("CreateConfigurationPolicy").getPath(),
+				this.getContext()),
+			newPolicy);
+	}
 
-    /**
+	/**
 	 * Retrieves all configuration policies.
 	 * 
 	 * @return The collection of configuration policies.
 	 */
-    @Override
-    public ResourceCollection<ConfigurationPolicy> get()
-    {
-        IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>> partnerServiceProxy = new PartnerServiceProxy<>(
-                new TypeReference<ResourceCollection<ConfigurationPolicy>>() {
-                }, this.getPartner(),
-                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),
-                        this.getContext()));
+	@Override
+	public ResourceCollection<ConfigurationPolicy> get()
+	{
+		IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>> partnerServiceProxy = new PartnerServiceProxy<>(
+				new TypeReference<ResourceCollection<ConfigurationPolicy>>() {
+				}, this.getPartner(),
+				MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),
+						this.getContext()));
 
-        return partnerServiceProxy.get();
-    }
+		return partnerServiceProxy.get();
+	}
 }

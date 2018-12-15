@@ -6,6 +6,8 @@
 
 package com.microsoft.store.partnercenter.extensions.products;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -14,8 +16,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.products.InventoryCheckRequest;
 import com.microsoft.store.partnercenter.models.products.InventoryItem;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
@@ -47,17 +47,17 @@ public class ProductExtensionsByCountryOperations
 	 */
     public List<InventoryItem> checkInventory(InventoryCheckRequest checkRequest)
     {
-        IPartnerServiceProxy<InventoryCheckRequest, List<InventoryItem>> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<List<InventoryItem>>() {
-                }, this.getPartner(),
-                PartnerService.getInstance().getConfiguration().getApis().get("CheckInventory").getPath());
+        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-        partnerServiceProxy.getUriParameters().add(
+        parameters.add(
             new KeyValuePair<String, String>(
-                PartnerService.getInstance().getConfiguration().getApis().get( "CheckInventory" ).getParameters().get( "Country" ),
+                PartnerService.getInstance().getConfiguration().getApis().get( "CheckInventory" ).getParameters().get("Country"),
                 this.getContext()));
-            
-        return partnerServiceProxy.post(checkRequest);
+
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(),
+            new TypeReference<List<InventoryItem>>(){}, 
+            PartnerService.getInstance().getConfiguration().getApis().get("CheckInventory").getPath(),
+            parameters);
     }
 }

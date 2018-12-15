@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.carts.Cart;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -63,17 +61,15 @@ public class CartCollectionOperations
     {
         if ( newCart == null )
         {
-            throw new IllegalArgumentException( "Cart cannot be null" );
+            throw new IllegalArgumentException( "The newCart cannot be null" );
         }
-        IPartnerServiceProxy<Cart, Cart> partnerServiceProxy =
-            new PartnerServiceProxy<>( 
-                new TypeReference<Cart>()
-                {
-                }, 
-                this.getPartner(), 
-                MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCart" ).getPath(),
-                    this.getContext() ) );
 
-        return partnerServiceProxy.post( newCart );
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<Cart>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("CreateCart").getPath(),
+                this.getContext()),
+            newCart);
     }
 }

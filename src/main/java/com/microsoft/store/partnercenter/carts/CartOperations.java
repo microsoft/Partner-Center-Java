@@ -14,10 +14,10 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.carts.Cart;
 import com.microsoft.store.partnercenter.models.carts.CartCheckoutResult;
+import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
 import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
-import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
  * Cart collection operations implementation class.
@@ -52,16 +52,14 @@ public class CartOperations
     @Override
     public CartCheckoutResult checkout() 
     {
-        IPartnerServiceProxy<String, CartCheckoutResult> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<CartCheckoutResult>() 
-                {
-                }, this.getPartner(),
-                MessageFormat.format(
-                        PartnerService.getInstance().getConfiguration().getApis().get("PlaceOrder").getPath(),
-                        this.getContext().getItem1(), this.getContext().getItem2()));
-
-        return partnerServiceProxy.post("success");
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<CartCheckoutResult>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("PlaceOrder").getPath(),
+                this.getContext().getItem1(),
+                this.getContext().getItem2()),
+            "success");
     }
 
     /**

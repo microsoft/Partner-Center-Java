@@ -172,15 +172,12 @@ public class PartnerServiceRequestCollectionOperations
             throw new IllegalArgumentException( "agentLocale can't be null" );
         }
 
-        IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
-            {
-            }, 
+        return this.getPartner().getServiceClient().post(
             this.getPartner(), 
-            MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get("CreateServiceRequest" ).getPath(),
-                agentLocale));
-
-        return partnerServiceProxy.post(serviceRequest);
+            new TypeReference<ServiceRequest>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("CreateServiceRequest").getPath(),
+                agentLocale),
+            serviceRequest);
     }
 }

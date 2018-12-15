@@ -407,33 +407,6 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	}
 
 	/**
-	 * Executes a POST request against the partner service.
-	 * 
-	 * @param content The request body content.
-	 * @return The POST response.
-	 */
-	@Override
-	public TResponse post(TRequest content) 
-	{
-		RequestBuilder request = RequestBuilder.post(this.buildPartnerServiceApiUri());
-		try 
-		{
-			request.setEntity(new StringEntity(getJsonConverter().writeValueAsString(content)));
-		} 
-		catch (UnsupportedEncodingException e)
-		{
-			throw new PartnerException("", this.requestContext, PartnerErrorCategory.REQUEST_PARSING);
-		} 
-		catch (JsonProcessingException e)
-		{
-
-			throw new PartnerException("", this.requestContext, PartnerErrorCategory.REQUEST_PARSING);
-		}
-
-		return this.send(request);
-	}
-
-	/**
 	 * Executes a PATCH request against the partner service.
 	 *
 	 * @param content The request body content.
@@ -497,18 +470,6 @@ public class PartnerServiceProxy<TRequest, TResponse> extends BasePartnerCompone
 	public void delete() 
 	{
 		RequestBuilder request = RequestBuilder.delete(this.buildPartnerServiceApiUri());
-		this.send(request);
-	}
-
-	/**
-	 * Executes a HEAD request against the partner service.
-	 * 
-	 * @throws PartnerException If a network operation fails.
-	 */
-	@Override
-	public void head() 
-	{
-		RequestBuilder request = RequestBuilder.head(this.buildPartnerServiceApiUri());
 		this.send(request);
 	}
 

@@ -51,14 +51,16 @@ public class OrderCollectionOperations
     {
         if ( newOrder == null )
         {
-            throw new IllegalArgumentException( "Order can't be null" );
+            throw new IllegalArgumentException("The newOrder parameter cannot be null.");
         }
-        IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<Order>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetOrders" ).getPath(),
-                                                        this.getContext() ) );
-        return partnerServiceProxy.post( newOrder );
+
+        return this.getPartner().getServiceClient().post(
+            this.getPartner(), 
+            new TypeReference<Order>(){},
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("GetOrders").getPath(),
+                this.getContext()),
+            newOrder);
     }
 
     /**

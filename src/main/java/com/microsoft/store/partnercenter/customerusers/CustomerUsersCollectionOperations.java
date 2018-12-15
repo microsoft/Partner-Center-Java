@@ -32,175 +32,178 @@ public class CustomerUsersCollectionOperations
 		extends BasePartnerComponent<String>
 		implements ICustomerUserCollection {
 
-    /**
-     * The minimum allowed page size for the collection.
-     */
-    private static final int MIN_PAGE_SIZE = 1;
+	/**
+	 * The minimum allowed page size for the collection.
+	 */
+	private static final int MIN_PAGE_SIZE = 1;
 
-    /**
-     * The maximum allowed page size for the collection.
-     */
-    private static final int MAX_PAGE_SIZE = 500;
+	/**
+	 * The maximum allowed page size for the collection.
+	 */
+	private static final int MAX_PAGE_SIZE = 500;
 
-    /**
-     * Initializes a new instance of the CustomerUsersCollectionOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer identifier.
-     */
-    public CustomerUsersCollectionOperations( IPartner rootPartnerOperations, String customerId )
-    {
-        super( rootPartnerOperations, customerId );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
-        {
-            throw new IllegalArgumentException( "customerId must be set" );
-        }
-    }
-
-    /**
-     * Creates a new user.
-     * 
-     * @param newCustomerUser The user to be created.
-     * @return The newly created user.
-     */
-	@Override
-	public CustomerUser create( CustomerUser newCustomerUser ) {
-        if ( newCustomerUser == null )
-        {
-            throw new IllegalArgumentException( "CustomerUser can't be null" );
-        }
-        IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "CreateCustomerUser" ).getPath(),
-                                                        this.getContext() ) );
-        return partnerServiceProxy.post( newCustomerUser );
+	/**
+	 * Initializes a new instance of the CustomerUsersCollectionOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
+	 */
+	public CustomerUsersCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	{
+		super( rootPartnerOperations, customerId );
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		{
+			throw new IllegalArgumentException( "customerId must be set" );
+		}
 	}
 
-    /**
-     * Retrieves all the customer users.
-     * 
-     * @return All the customer users.
-     */
-    @Override
+	/**
+	 * Creates a new user.
+	 * 
+	 * @param newCustomerUser The user to be created.
+	 * @return The newly created user.
+	 */
+	@Override
+	public CustomerUser create( CustomerUser newCustomerUser ) 
+	{
+		if ( newCustomerUser == null )
+		{
+			throw new IllegalArgumentException("The newCustomerUser parameter cannot be null.");
+		}
+
+		return this.getPartner().getServiceClient().post(
+			this.getPartner(), 
+			new TypeReference<CustomerUser>(){},
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("CreateCustomerUser").getPath(),
+				this.getContext()),
+			newCustomerUser);
+	}
+
+	/**
+	 * Retrieves all the customer users.
+	 * 
+	 * @return All the customer users.
+	 */
+	@Override
 	public SeekBasedResourceCollection<CustomerUser> get() {		
-        IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-                                                            this.getContext() ) );
-        return partnerServiceProxy.get();
+		IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
+				new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
+				{
+				}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
+															this.getContext() ) );
+		return partnerServiceProxy.get();
 	}
 
-    /**
-     * Retrieves the customer user operations for the specified user.
-     * 
-     * @param userId The user identifier.
-     * @return The customer user operations for the specified user.
-     */
+	/**
+	 * Retrieves the customer user operations for the specified user.
+	 * 
+	 * @param userId The user identifier.
+	 * @return The customer user operations for the specified user.
+	 */
 	@Override
-    public ICustomerUser byId( String userId ) 
-    {
+	public ICustomerUser byId( String userId ) 
+	{
 		return new CustomerUserOperations( this.getPartner(), this.getContext() , userId );
 	}
 
 	/**
 	 * Queries customer users associated to the partner's customers.
 	 * 
-     * @param customerUsersQuery A query to apply onto customer users. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
+	 * @param customerUsersQuery A query to apply onto customer users. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
 	 * @return Customer user collection.
 	 */
 	@Override
 	public SeekBasedResourceCollection<CustomerUser> query( IQuery customerUsersQuery ) {
-        if ( customerUsersQuery == null )
-        {
-            throw new IllegalArgumentException( "customerUsersQuery can't be null" );
-        }
+		if ( customerUsersQuery == null )
+		{
+			throw new IllegalArgumentException( "customerUsersQuery can't be null" );
+		}
 
-        if ( customerUsersQuery.getType() == QueryType.COUNT )
-        {
-            throw new IllegalArgumentException( "customerUsersQuery can't be a count query." );
-        }
+		if ( customerUsersQuery.getType() == QueryType.COUNT )
+		{
+			throw new IllegalArgumentException( "customerUsersQuery can't be a count query." );
+		}
 
-        IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-            					  this.getContext() ) );
+		IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
+			new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
+			{
+			}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
+								  this.getContext() ) );
 
-        if ( customerUsersQuery.getType() == QueryType.SEEK )
-        {
-            // if this is a seek query, add the seek operation and the continuation token to the request
-            if ( customerUsersQuery.getToken() == null )
-            {
-                throw new IllegalArgumentException( "customerUsersQuery.Token is required." );
-            }
+		if ( customerUsersQuery.getType() == QueryType.SEEK )
+		{
+			// if this is a seek query, add the seek operation and the continuation token to the request
+			if ( customerUsersQuery.getToken() == null )
+			{
+				throw new IllegalArgumentException( "customerUsersQuery.Token is required." );
+			}
 
-            partnerServiceProxy.getAdditionalRequestHeaders().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getAdditionalHeaders().get( "ContinuationToken" ),
-                                                                                                     customerUsersQuery.getToken().toString() ) );
-            partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "SeekOperation" ),
-                                                                                          customerUsersQuery.getSeekOperation().toString() ) );
-        }
-        else
-        {
-            if ( customerUsersQuery.getType() == QueryType.INDEXED )
-            {
-                // if the query specifies a page size, validate it and add it to the request
-                ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, customerUsersQuery.getPageSize(),
-                                                   MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                         MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
-                partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
-                                                                                              String.valueOf( customerUsersQuery.getPageSize() ) ) );
-            }
-            else
-            {
-                partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
-                                                                                              "0" ) );
-            }
-            if ( customerUsersQuery.getFilter() != null )
-            {
-                // add the filter to the request if specified
-                ObjectMapper mapper = new ObjectMapper();
-                try
-                {
-                    partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Filter" ),
-                                                                                                  URLEncoder.encode( mapper.writeValueAsString( customerUsersQuery.getFilter() ),
-                                                                                                                     "UTF-8" ) ) );
-                }
-                catch ( UnsupportedEncodingException e )
-                {
-                    throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-                }
-                catch ( JsonProcessingException e )
-                {
-                    throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-                }
-            }
-            if ( customerUsersQuery.getSort() != null )
-            {
-            	// add the sort details to the request if specified
-                ObjectMapper sortMapper = new ObjectMapper();
-            	try
-            	{
-            		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
-            																					  URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortField() ),
-            																					                     "UTF-8" ) ) ); 
+			partnerServiceProxy.getAdditionalRequestHeaders().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getAdditionalHeaders().get( "ContinuationToken" ),
+																									 customerUsersQuery.getToken().toString() ) );
+			partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "SeekOperation" ),
+																						  customerUsersQuery.getSeekOperation().toString() ) );
+		}
+		else
+		{
+			if ( customerUsersQuery.getType() == QueryType.INDEXED )
+			{
+				// if the query specifies a page size, validate it and add it to the request
+				ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, customerUsersQuery.getPageSize(),
+												   MessageFormat.format( "Allowed page size values are from {0}-{1}",
+																		 MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
+				partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
+																							  String.valueOf( customerUsersQuery.getPageSize() ) ) );
+			}
+			else
+			{
+				partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
+																							  "0" ) );
+			}
+			if ( customerUsersQuery.getFilter() != null )
+			{
+				// add the filter to the request if specified
+				ObjectMapper mapper = new ObjectMapper();
+				try
+				{
+					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Filter" ),
+																								  URLEncoder.encode( mapper.writeValueAsString( customerUsersQuery.getFilter() ),
+																													 "UTF-8" ) ) );
+				}
+				catch ( UnsupportedEncodingException e )
+				{
+					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				}
+				catch ( JsonProcessingException e )
+				{
+					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				}
+			}
+			if ( customerUsersQuery.getSort() != null )
+			{
+				// add the sort details to the request if specified
+				ObjectMapper sortMapper = new ObjectMapper();
+				try
+				{
+					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
+																								  URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortField() ),
+																													 "UTF-8" ) ) ); 
 
-            		partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
-							                                                                      URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortDirection() ),
-							                                                                                         "UTF-8" ) ) );
-                }
-                catch ( UnsupportedEncodingException e )
-                {
-                    throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-                }
-                catch ( JsonProcessingException e )
-                {
-                    throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-                }
-            }
-            
-        }
-        return partnerServiceProxy.get();
+					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
+																								  URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortDirection() ),
+																													 "UTF-8" ) ) );
+				}
+				catch ( UnsupportedEncodingException e )
+				{
+					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				}
+				catch ( JsonProcessingException e )
+				{
+					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				}
+			}
+			
+		}
+		return partnerServiceProxy.get();
 	}
 }
