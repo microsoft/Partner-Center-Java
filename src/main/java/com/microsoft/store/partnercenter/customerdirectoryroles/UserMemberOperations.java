@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.roles.DirectoryRole;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -39,19 +37,19 @@ public class UserMemberOperations
 	{
 		super(rootPartnerOperations, new TripletTuple<String, String, String>( customerId, roleId, userId ) );
 		if ( StringHelper.isNullOrEmpty( customerId ) )
-        {
-            throw new IllegalArgumentException("customerId must be set.");
-        }
+		{
+			throw new IllegalArgumentException("customerId must be set.");
+		}
 
-        if ( StringHelper.isNullOrEmpty( roleId ) )
-        {
-            throw new IllegalArgumentException("roleId must be set.");
-        }
+		if ( StringHelper.isNullOrEmpty( roleId ) )
+		{
+			throw new IllegalArgumentException("roleId must be set.");
+		}
 
-        if ( StringHelper.isNullOrEmpty( userId ) )
-        {
-            throw new IllegalArgumentException("userId must be set.");
-        }
+		if ( StringHelper.isNullOrEmpty( userId ) )
+		{
+			throw new IllegalArgumentException("userId must be set.");
+		}
 	}
 
 	/**
@@ -60,18 +58,13 @@ public class UserMemberOperations
 	@Override
 	public void delete()
 	{
-        IPartnerServiceProxy<DirectoryRole, DirectoryRole> partnerServiceProxy =
-                new PartnerServiceProxy<>( 
-					new TypeReference<DirectoryRole>()
-					{
-					}, 
-					this.getPartner(),
-					MessageFormat.format( 
-						PartnerService.getInstance().getConfiguration().getApis().get( "RemoveCustomerUserMemberFromDirectoryRole" ).getPath(),
-						this.getContext().getItem1(), 
-						this.getContext().getItem2(), 
-						this.getContext().getItem3() ) );
-
-        partnerServiceProxy.delete();
-    }
+		this.getPartner().getServiceClient().delete(
+			this.getPartner(),
+			new TypeReference<DirectoryRole>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("RemoveCustomerUserMemberFromDirectoryRole").getPath(),
+				this.getContext().getItem1(), 
+				this.getContext().getItem2(),
+				this.getContext().getItem3()));
+	}
 }

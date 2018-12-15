@@ -73,13 +73,13 @@ public class DeviceOperations
      */
     public void delete()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<ConfigurationPolicy>() {
-                }, this.getPartner(),
-                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("DeleteDevice").getPath(),
-                        this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3() ));
-
-        partnerServiceProxy.delete();
+        this.getPartner().getServiceClient().delete(
+            this.getPartner(),
+            new TypeReference<ConfigurationPolicy>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("DeleteDevice").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2(), 
+                this.getContext().getItem3()));
     }
 }

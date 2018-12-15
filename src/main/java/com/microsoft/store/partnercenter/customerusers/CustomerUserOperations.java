@@ -14,95 +14,101 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.users.CustomerUser;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class CustomerUserOperations 
 	extends BasePartnerComponent<Tuple<String,String>> 
 	implements ICustomerUser {
 
-    /**
-     * The customer user directory role collection operations.
-     */
-    private ICustomerUserRoleCollection customerUserDirectoryRoleCollectionOperations;
-    
-    /**
-     * The customer user license collection operations.
-     */
-    private ICustomerUserLicenseCollection customerUserLicenseCollectionOperations;
+	/**
+	 * The customer user directory role collection operations.
+	 */
+	private ICustomerUserRoleCollection customerUserDirectoryRoleCollectionOperations;
+	
+	/**
+	 * The customer user license collection operations.
+	 */
+	private ICustomerUserLicenseCollection customerUserLicenseCollectionOperations;
 
-    /**
-     * The customer user license update operations.
-     */
-    private ICustomerUserLicenseUpdates customerUserLicenseUpdateOperations;
+	/**
+	 * The customer user license update operations.
+	 */
+	private ICustomerUserLicenseUpdates customerUserLicenseUpdateOperations;
 
-    /**
-     * Initializes a new instance of the CustomerUserOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer identifier.
-     * @param userId The user identifier.
-     */
-    public CustomerUserOperations( IPartner rootPartnerOperations, String customerId, String userId )
-    {
-        super( rootPartnerOperations, new Tuple<String,String>(customerId, userId) );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
-        {
-            throw new IllegalArgumentException( "customerId must be set" );
-        }
-        if ( StringHelper.isNullOrWhiteSpace( userId ) )
-        {
-            throw new IllegalArgumentException( "userId must be set" );
-        }
-    }
-
-    /**
-     * Retrieves information of a specific customer user.
-     * 
-     * @return The customer user object.
-     */
-	@Override
-	public CustomerUser get() {
-        IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUserDetails" ).getPath(),
-                                                            this.getContext().getItem1(), this.getContext().getItem2() ) );
-        return partnerServiceProxy.get();
+	/**
+	 * Initializes a new instance of the CustomerUserOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
+	 * @param userId The user identifier.
+	 */
+	public CustomerUserOperations( IPartner rootPartnerOperations, String customerId, String userId )
+	{
+		super( rootPartnerOperations, new Tuple<String,String>(customerId, userId) );
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		{
+			throw new IllegalArgumentException( "customerId must be set" );
+		}
+		if ( StringHelper.isNullOrWhiteSpace( userId ) )
+		{
+			throw new IllegalArgumentException( "userId must be set" );
+		}
 	}
 
-    /**
-     * Deletes the customer user.
-     */
+	/**
+	 * Retrieves information of a specific customer user.
+	 * 
+	 * @return The customer user object.
+	 */
 	@Override
-	public void delete() {
-		IPartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-	            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
-	            {
-	            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "DeleteCustomerUser" ).getPath(),
-	                                                        this.getContext().getItem1(), this.getContext().getItem2() ) );
-	    partnerServiceProxy.delete();
+	public CustomerUser get() 
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<CustomerUser>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUserDetails").getPath(),
+				this.getContext().getItem1(), 
+				this.getContext().getItem2()));
 	}
 
-    /**
-     * Updates the customer user.
-     * 
-     * @param customerUser The customer to be updated.
-     * @return The updated user. 
-     */
+	/**
+	 * Deletes the customer user.
+	 */
 	@Override
-	public CustomerUser patch( CustomerUser customerUser ) {		
-        if ( customerUser == null )
-        {
-            throw new IllegalArgumentException( "customerUser null" );
-        }
-        PartnerServiceProxy<CustomerUser, CustomerUser> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<CustomerUser>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "UpdateCustomerUser" ).getPath(),
-            												this.getContext().getItem1(), this.getContext().getItem2() ) );
-        return partnerServiceProxy.patch( customerUser );
+	public void delete() 
+	{
+		this.getPartner().getServiceClient().delete(
+			this.getPartner(),
+			new TypeReference<CustomerUser>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("DeleteCustomerUser").getPath(),
+				this.getContext().getItem1(), 
+				this.getContext().getItem2()));
+	}
+
+	/**
+	 * Updates the customer user.
+	 * 
+	 * @param customerUser The customer to be updated.
+	 * @return The updated user. 
+	 */
+	@Override
+	public CustomerUser patch( CustomerUser customerUser )
+	{		
+		if ( customerUser == null )
+		{
+			throw new IllegalArgumentException( "customerUser cannot be null" );
+		}
+
+		return this.getPartner().getServiceClient().patch(
+			this.getPartner(),
+			new TypeReference<CustomerUser>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerUser").getPath(),
+				this.getContext().getItem1(), 
+				this.getContext().getItem2()),
+			customerUser);
 	}
 	
 	/**
@@ -111,12 +117,14 @@ public class CustomerUserOperations
 	 * @return The customer user's directory roles.
 	 */
 	@Override
-	public ICustomerUserRoleCollection getDirectoryRoles() {
-        if ( customerUserDirectoryRoleCollectionOperations == null )
-        {
-        	customerUserDirectoryRoleCollectionOperations = new CustomerUserRoleCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
-        }
-        return customerUserDirectoryRoleCollectionOperations;
+	public ICustomerUserRoleCollection getDirectoryRoles() 
+	{
+		if ( customerUserDirectoryRoleCollectionOperations == null )
+		{
+			customerUserDirectoryRoleCollectionOperations = new CustomerUserRoleCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+		}
+	
+		return customerUserDirectoryRoleCollectionOperations;
 	}
 
 	/**
@@ -125,12 +133,14 @@ public class CustomerUserOperations
 	 * @return The customer user's licenses collection operations.
 	 */
 	@Override
-	public ICustomerUserLicenseCollection getLicenses() {
-        if ( customerUserLicenseCollectionOperations == null )
-        {
-        	customerUserLicenseCollectionOperations = new CustomerUserLicenseCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
-        }
-        return customerUserLicenseCollectionOperations;
+	public ICustomerUserLicenseCollection getLicenses() 
+	{
+		if ( customerUserLicenseCollectionOperations == null )
+		{
+			customerUserLicenseCollectionOperations = new CustomerUserLicenseCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+		}
+	
+		return customerUserLicenseCollectionOperations;
 	}
 
 	/**
@@ -139,11 +149,13 @@ public class CustomerUserOperations
 	 * @return The customer user's license updates collection operations.
 	 */
 	@Override
-	public ICustomerUserLicenseUpdates getLicenseUpdates() {
-        if ( customerUserLicenseUpdateOperations == null )
-        {
-        	customerUserLicenseUpdateOperations = new CustomerUserLicenseUpdateOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
-        }
-        return customerUserLicenseUpdateOperations;
+	public ICustomerUserLicenseUpdates getLicenseUpdates() 
+	{
+		if ( customerUserLicenseUpdateOperations == null )
+		{
+			customerUserLicenseUpdateOperations = new CustomerUserLicenseUpdateOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+		}
+	
+		return customerUserLicenseUpdateOperations;
 	}
 }

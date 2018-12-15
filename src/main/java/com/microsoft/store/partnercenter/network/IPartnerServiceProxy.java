@@ -150,36 +150,10 @@ public interface IPartnerServiceProxy<TRequest, TResponse>
     InputStream getFileContent();
 
     /**
-     * Executes a POST request against the partner service.
-     * 
-     * @param content The request body content.
-     * @return The POST response.
-     */
-     // TResponse post( TRequest content );
-
-    /**
-     * Executes a PATCH request against the partner service.
-     *
-     * @param content The request body content.
-     * @return The PATCH response.
-     */
-    TResponse patch( TRequest content );
-
-    /**
      * Executes a PUT request against the partner service.
      *
      * @param content The request body content.
      * @return The PUT response.
      */
     TResponse put( TRequest content );
-
-    /**
-     * Executes a DELETE request against the partner service.
-     */
-    void delete();
-
-    /**
-     * Executes a HEAD request against the partner service.
-     */
-    // void head();
 }

@@ -175,13 +175,13 @@ public class PartnerServiceClient
 		return null;
 	}
 
-    /**
-     * Executes a HEAD operation against the partner service. 
-     * 
-     * @param rootPartnerOperations An instance of the partner operations.
-     * @param responseType The type of object to be returned.
-     * @param relativeUri The relative address of the request. 
-     */
+	/**
+	 * Executes a HEAD operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address of the request. 
+	 */
 	public <T> T head(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
@@ -268,14 +268,14 @@ public class PartnerServiceClient
 	}
 
 	/**
-     * Executes a POST operation against the partner service. 
-     * 
-     * @param rootPartnerOperations An instance of the partner operations. 
-     * @param responseType The type of object to be returned.
-     * @param relativeUri The relative address fo the request.
-     * @param content The conent for the body of the request.
-     * @param parameters Parameters to be added to the reqest.
-     */
+	 * Executes a POST operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations. 
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address fo the request.
+	 * @param content The conent for the body of the request.
+	 * @param parameters Parameters to be added to the reqest.
+	 */
 	@SuppressWarnings("unchecked")
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters)
 	{
@@ -317,11 +317,38 @@ public class PartnerServiceClient
 	}
 
 	/**
+	 * Executes a DELETE operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations. 
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address fo the request.
+	 */
+	public <T> void delete(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
+	{
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).delete().build();
+		Response response; 
+		T value;
+
+		try
+		{
+			response = httpClient().newCall(request).execute();
+
+			value = getJsonConverter().readValue(response.body().string(), responseType);
+			response.close();
+		} 
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+	}
+
+	/**
 	 * Gets the JSON converter. 
 	 * 
 	 * @return The configured JSON converter.
 	 */
-	public ObjectMapper getJsonConverter() 
+	private ObjectMapper getJsonConverter() 
 	{
 		if (jsonConverter == null) 
 		{

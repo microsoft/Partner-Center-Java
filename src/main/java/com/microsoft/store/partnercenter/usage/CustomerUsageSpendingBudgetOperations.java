@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.usage.SpendingBudget;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -47,12 +45,12 @@ public class CustomerUsageSpendingBudgetOperations
     @Override
     public SpendingBudget get()
     {
-        IPartnerServiceProxy<SpendingBudget, SpendingBudget> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SpendingBudget>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsageSpendingBudget" ).getPath(),
-                                                        this.getContext() ) );
-        return partnerServiceProxy.get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<SpendingBudget>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsageSpendingBudget").getPath(),
+                this.getContext()));
     }
 
     /**
@@ -68,12 +66,13 @@ public class CustomerUsageSpendingBudgetOperations
         {
             throw new IllegalArgumentException( "usage spending budget is required." );
         }
-        IPartnerServiceProxy<SpendingBudget, SpendingBudget> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SpendingBudget>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "PatchCustomerUsageSpendingBudget" ).getPath(),
-                                                        this.getContext() ) );
-        return partnerServiceProxy.patch( usageSpendingBudget );
-    }
 
+        return this.getPartner().getServiceClient().patch(
+            this.getPartner(),
+            new TypeReference<SpendingBudget>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("PatchCustomerUsageSpendingBudget").getPath(),
+                this.getContext()),
+            usageSpendingBudget);
+    }
 }

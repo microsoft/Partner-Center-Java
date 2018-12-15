@@ -50,14 +50,13 @@ public class ConfigurationPolicyOperations
     @Override
     public ConfigurationPolicy get() 
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = 
-            new PartnerServiceProxy<>(
-                new TypeReference<ConfigurationPolicy>() {
-                }, this.getPartner(),
-                MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicy").getPath(),
-                        this.getContext().getItem1(), this.getContext().getItem2()));
-
-        return partnerServiceProxy.get();
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ConfigurationPolicy>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicy").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
     }
 
     /**
@@ -83,12 +82,12 @@ public class ConfigurationPolicyOperations
      */
     public void delete()
     {
-        IPartnerServiceProxy<ConfigurationPolicy, ConfigurationPolicy> partnerServiceProxy = new PartnerServiceProxy<>(
-            new TypeReference<ConfigurationPolicy>() {
-            }, this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),
-                    this.getContext().getItem1(), this.getContext().getItem2()));
-
-        partnerServiceProxy.delete();
+        this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ConfigurationPolicy>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("DeleteConfigurationPolicy").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
     }
 }

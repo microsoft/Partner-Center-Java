@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.servicerequests.ServiceRequest;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -56,17 +54,13 @@ public class CustomerServiceRequestOperations
     @Override
     public ServiceRequest get()
     {
-        IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
-            {
-            }, 
-            this.getPartner(), 
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ServiceRequest>(){}, 
             MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceRequestCustomer" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("GetServiceRequestCustomer").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
-
-        return partnerServiceProxy.get();
     }
 
     /**
@@ -78,16 +72,13 @@ public class CustomerServiceRequestOperations
     @Override
     public ServiceRequest patch( ServiceRequest updatePayload )
     {
-        IPartnerServiceProxy<ServiceRequest, ServiceRequest> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ServiceRequest>()
-            {
-            }, 
-            this.getPartner(), 
+        return this.getPartner().getServiceClient().patch(
+            this.getPartner(),
+            new TypeReference<ServiceRequest>(){}, 
             MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateServiceRequestCustomer" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateServiceRequestCustomer").getPath(),
                 this.getContext().getItem1(), 
-                this.getContext().getItem2()));
-
-        return partnerServiceProxy.patch( updatePayload );
+                this.getContext().getItem2()),
+            updatePayload);
     }
 }

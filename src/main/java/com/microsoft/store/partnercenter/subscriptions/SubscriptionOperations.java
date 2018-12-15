@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.subscriptions.Subscription;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.usage.ISubscriptionUsageRecordCollection;
 import com.microsoft.store.partnercenter.usage.ISubscriptionUsageSummary;
 import com.microsoft.store.partnercenter.usage.SubscriptionUsageRecordCollectionOperations;
@@ -104,6 +102,7 @@ public class SubscriptionOperations
         {
             throw new IllegalArgumentException( "subscriptionId must be set." );
         }
+
         this.customerId = customerId;
         this.subscriptionId = subscriptionId;
     }
@@ -119,6 +118,7 @@ public class SubscriptionOperations
             this.subscriptionAddOnsOperations =
                 new SubscriptionAddOnCollectionOperations( this.getPartner(), this.customerId, this.subscriptionId );
         }
+
         return this.subscriptionAddOnsOperations;
     }
 
@@ -133,6 +133,7 @@ public class SubscriptionOperations
             this.subscriptionUpgradeOperations =
                 new SubscriptionUpgradeCollectionOperations( this.getPartner(), this.customerId, this.subscriptionId );
         }
+
         return this.subscriptionUpgradeOperations;
     }
 
@@ -147,6 +148,7 @@ public class SubscriptionOperations
             this.usageRecordsOperations =
                 new SubscriptionUsageRecordCollectionOperations( this.getPartner(), customerId, subscriptionId );
         }
+
         return this.usageRecordsOperations;
     }
 
@@ -161,6 +163,7 @@ public class SubscriptionOperations
             this.subscriptionUsageSummaryOperations =
                 new SubscriptionUsageSummaryOperations( this.getPartner(), customerId, subscriptionId );
         }
+
         return this.subscriptionUsageSummaryOperations;
     }
 
@@ -175,6 +178,7 @@ public class SubscriptionOperations
             this.subscriptionUtilizationOperations =
                 new UtilizationCollectionOperations( this.getPartner(), customerId, subscriptionId );
         }
+
         return this.subscriptionUtilizationOperations;
     }
 
@@ -248,17 +252,13 @@ public class SubscriptionOperations
     @Override
     public Subscription get()
     {
-        IPartnerServiceProxy<Subscription, Subscription> partnerServiceProxy =
-            new PartnerServiceProxy<Subscription, Subscription>( new TypeReference<Subscription>()
-            {
-            }, 
-            this.getPartner(), 
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<Subscription>(){}, 
             MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetSubscription" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("GetSubscription").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
-
-        return partnerServiceProxy.get();
     }
 
     /**
@@ -274,16 +274,14 @@ public class SubscriptionOperations
         {
             throw new IllegalArgumentException( "subscription is required." );
         }
-        PartnerServiceProxy<Subscription, Subscription> partnerApiServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<Subscription>()
-            {
-            }, 
-            this.getPartner(), 
-            MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateSubscription" ).getPath(),
-                this.getContext().getItem1(), 
-                this.getContext().getItem2()));
 
-        return partnerApiServiceProxy.patch( subscription );
+        return this.getPartner().getServiceClient().patch(
+            this.getPartner(),
+            new TypeReference<Subscription>(){}, 
+            MessageFormat.format( 
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateSubscription").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            subscription);
     }
 }

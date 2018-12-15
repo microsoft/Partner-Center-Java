@@ -41,8 +41,6 @@ import com.microsoft.store.partnercenter.entitlements.IEntitlementCollection;
 import com.microsoft.store.partnercenter.managedservices.IManagedServiceCollection;
 import com.microsoft.store.partnercenter.managedservices.ManagedServiceCollectionOperations;
 import com.microsoft.store.partnercenter.models.customers.Customer;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.offers.CustomerOfferCategoryCollectionOperations;
 import com.microsoft.store.partnercenter.offers.CustomerOfferCollectionOperations;
 import com.microsoft.store.partnercenter.offers.ICustomerOfferCategoryCollection;
@@ -222,6 +220,7 @@ public class CustomerOperations
 		{
 			this.agreements = new CustomerAgreementCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.agreements;
 	}
 
@@ -237,6 +236,7 @@ public class CustomerOperations
 		{
 			this.orders = new OrderCollectionOperations( this.getPartner(), this.getContext() );
 		}
+
 		return this.orders;
 	}
 
@@ -252,6 +252,7 @@ public class CustomerOperations
 		{
 			this.profiles = new CustomerProfileCollectionOperations( this.getPartner(), this.getContext() );
 		}
+
 		return this.profiles;
 	}
 
@@ -262,6 +263,7 @@ public class CustomerOperations
 		{
 			subscriptions = new SubscriptionCollectionOperations( this.getPartner(), this.getContext() );
 		}
+
 		return subscriptions;
 	}
 
@@ -277,6 +279,7 @@ public class CustomerOperations
 		{
 			this.serviceRequests = new CustomerServiceRequestCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.serviceRequests;
 	}
 
@@ -292,6 +295,7 @@ public class CustomerOperations
 		{
 			this.managedServices = new ManagedServiceCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.managedServices;
 	}
 
@@ -304,6 +308,7 @@ public class CustomerOperations
 		{
 			this.offerCategories = new CustomerOfferCategoryCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.offerCategories;
 	}
 
@@ -316,6 +321,7 @@ public class CustomerOperations
 		{
 			this.offers = new CustomerOfferCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.offers;
 	}
 
@@ -331,6 +337,7 @@ public class CustomerOperations
 		{
 			this.usageSummary = new CustomerUsageSummaryOperations( this.getPartner(), customerId );
 		}
+
 		return this.usageSummary;
 	}
 
@@ -346,6 +353,7 @@ public class CustomerOperations
 		{
 			this.usageBudget = new CustomerUsageSpendingBudgetOperations( this.getPartner(), customerId );
 		}
+
 		return this.usageBudget;
 	}
 
@@ -359,6 +367,7 @@ public class CustomerOperations
 		{
 			this.customerQualification = new CustomerQualificationOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.customerQualification;
 	}
 
@@ -374,6 +383,7 @@ public class CustomerOperations
 		{
 			this.customerUserCollectionOperations = new CustomerUsersCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.customerUserCollectionOperations;
 	}
 
@@ -387,6 +397,7 @@ public class CustomerOperations
 		{
 			this.directoryRoleCollectionOperations = new DirectoryRoleCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.directoryRoleCollectionOperations;
 	}
 
@@ -402,6 +413,7 @@ public class CustomerOperations
 		{
 			this.customerSubscribedSkuCollectionOperations = new CustomerSubscribedSkuCollectionOperations( this.getPartner(), this.customerId );
 		}
+
 		return this.customerSubscribedSkuCollectionOperations;
 	}
 	
@@ -562,24 +574,24 @@ public class CustomerOperations
 	public Customer get()
 	{
 		return this.getPartner().getServiceClient().get(
-			this.getPartner(), 
+			this.getPartner(),
 			new TypeReference<Customer>(){}, 
-			MessageFormat.format(
-				PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomer" ).getPath(),
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomer").getPath(),
 				this.getContext()));
 	}
 
 	/**
-	 * Deletes the customer from a testing in production account. This won't work for real accounts.
+	 * Deletes the customer from a testing in production account. This only works for customer in the integration sandbox.
 	 */
 	@Override
 	public void delete()
 	{
-		IPartnerServiceProxy<Customer, Customer> partnerServiceProxy =
-			new PartnerServiceProxy<>( new TypeReference<Customer>()
-			{
-			}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "DeleteCustomer" ).getPath(),
-														this.getContext() ) );
-		partnerServiceProxy.delete();
+		this.getPartner().getServiceClient().delete(
+			this.getPartner(),
+			new TypeReference<Customer>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("DeleteCustomer").getPath(),
+				this.getContext()));
 	}
 }

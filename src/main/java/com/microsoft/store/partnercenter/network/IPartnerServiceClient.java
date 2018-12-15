@@ -62,4 +62,13 @@ public interface IPartnerServiceClient
      * @param parameters Parameters to be added to the reqest.
      */
     <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters);
+
+    /**
+     * Executes a DELETE operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations. 
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address fo the request.
+     */
+    <T> void delete(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri);
 }

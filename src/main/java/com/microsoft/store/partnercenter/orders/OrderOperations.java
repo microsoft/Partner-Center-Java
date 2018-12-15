@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.orders.Order;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -55,17 +53,13 @@ public class OrderOperations
     @Override
     public Order get()
     {
-        IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<Order>()
-            {
-            }, 
-            this.getPartner(), 
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<Order>(){}, 
             MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetOrder" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
-
-        return partnerServiceProxy.get();
     }
 
     /**
@@ -82,16 +76,13 @@ public class OrderOperations
             throw new IllegalArgumentException( "Order can't be null" );
         }
 
-        IPartnerServiceProxy<Order, Order> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<Order>()
-            {
-            }, 
-            this.getPartner(), 
+        return this.getPartner().getServiceClient().patch(
+            this.getPartner(),
+            new TypeReference<Order>(){}, 
             MessageFormat.format( 
-                PartnerService.getInstance().getConfiguration().getApis().get( "UpdateOrder" ).getPath(),
-                    this.getContext().getItem1(), 
-                    this.getContext().getItem2()));
-
-        return partnerServiceProxy.patch( order );
+                PartnerService.getInstance().getConfiguration().getApis().get("UpdateOrder").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()),
+            order);
     }
 }
