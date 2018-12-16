@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.countryvalidationrules.CountryValidationRules;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 
 /**
@@ -42,15 +40,11 @@ public class CountryValidationRulesOperations
 	@Override
 	public CountryValidationRules get() 
 	{
-        IPartnerServiceProxy<CountryValidationRules, CountryValidationRules> partnerServiceProxy =
-                new PartnerServiceProxy<>( 
-					new TypeReference<CountryValidationRules>()
-					{
-					}, 
-					this.getPartner(), MessageFormat.format( 
-						PartnerService.getInstance().getConfiguration().getApis().get( "GetCountryValidationRulesByCountry" ).getPath(),
-						this.getContext() ) );
-						
-        return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<CountryValidationRules>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCountryValidationRulesByCountry").getPath(),
+				this.getContext()));
 	}
 }

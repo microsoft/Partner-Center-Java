@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.offers.OfferCategory;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class CustomerOfferCategoryCollectionOperations 
@@ -25,16 +23,16 @@ public class CustomerOfferCategoryCollectionOperations
 	/**
 	 * Initializes a new instance of the CustomerOfferCategoryCollectionOperations class.
 	 * 
-     * @param rootPartnerOperations The root partner operations instance.
+	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
 	public CustomerOfferCategoryCollectionOperations( IPartner rootPartnerOperations, String customerId )
 	{
 		super( rootPartnerOperations, customerId );
 		if ( StringHelper.isNullOrEmpty( customerId ) )
-        {
-            throw new IllegalArgumentException("customerId must be set.");
-        }
+		{
+			throw new IllegalArgumentException("customerId must be set.");
+		}
 	}
 
 	/**
@@ -45,16 +43,11 @@ public class CustomerOfferCategoryCollectionOperations
 	@Override
 	public ResourceCollection<OfferCategory> get()
 	{
-        IPartnerServiceProxy<ResourceCollection<OfferCategory>, ResourceCollection<OfferCategory>> partnerServiceProxy =
-                new PartnerServiceProxy<>( 
-					new TypeReference<ResourceCollection<OfferCategory>>()
-                	{
-					}, 
-					this.getPartner(), 
-					MessageFormat.format( 
-						PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerOfferCategories" ).getPath(),
-						this.getContext()));
-
-        return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<OfferCategory>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerOfferCategories").getPath(),
+				this.getContext()));
 	}
 }

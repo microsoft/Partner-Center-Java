@@ -15,8 +15,6 @@ import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatch;
 import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatchCreationRequest;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 import okhttp3.Response;
@@ -79,16 +77,11 @@ public class DevicesBatchCollectionOperations
 	 */
 	public ResourceCollection<DeviceBatch> get()
 	{
-		IPartnerServiceProxy<DeviceBatch, ResourceCollection<DeviceBatch>> partnerServiceProxy = 
-			new PartnerServiceProxy<>(
-				new TypeReference<ResourceCollection<DeviceBatch>>() 
-				{
-				}, 
-				this.getPartner(),
-				MessageFormat.format(
-					PartnerService.getInstance().getConfiguration().getApis().get("GetDeviceBatches").getPath(),
-						this.getContext() ));
-
-		return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<DeviceBatch>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetDeviceBatches").getPath(),
+				this.getContext()));
 	}
 }

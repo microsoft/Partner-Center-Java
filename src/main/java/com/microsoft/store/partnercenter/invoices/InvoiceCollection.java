@@ -9,6 +9,8 @@ package com.microsoft.store.partnercenter.invoices;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -24,8 +26,6 @@ import com.microsoft.store.partnercenter.models.invoices.Invoice;
 import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -33,164 +33,172 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * Represents the operations that can be done on Partner's invoices
  */
 public class InvoiceCollection
-    extends BasePartnerComponentString
-    implements IInvoiceCollection
+	extends BasePartnerComponentString
+	implements IInvoiceCollection
 {
-    /**
-     * The maximum allowed page size
-     */
-    private static final int MaxPageSize = 200;
+	/**
+	 * The maximum allowed page size
+	 */
+	private static final int MaxPageSize = 200;
 
-    /**
-     * The minimum allowed page size
-     */
-    private static final int MinPageSize = 1;
+	/**
+	 * The minimum allowed page size
+	 */
+	private static final int MinPageSize = 1;
 
-    /**
-     * Initializes a new instance of the InvoiceCollection class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     */
-    public InvoiceCollection( IPartner rootPartnerOperations )
-    {
-        super( rootPartnerOperations );
-    }
+	/**
+	 * Initializes a new instance of the InvoiceCollection class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 */
+	public InvoiceCollection( IPartner rootPartnerOperations )
+	{
+		super( rootPartnerOperations );
+	}
 
-    /**
-     * Gets a single invoice operations.
-     * 
-     * @param invoiceId The invoice id.
-     * @return The invoice operations.
-     */
-    @Override
-    public IInvoice byId( String invoiceId )
-    {
-        if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
-        {
-            throw new IllegalArgumentException( "invoiceId has to be set." );
-        }
-        return new InvoiceOperations( this.getPartner(), invoiceId );
-    }
+	/**
+	 * Gets a single invoice operations.
+	 * 
+	 * @param invoiceId The invoice id.
+	 * @return The invoice operations.
+	 */
+	@Override
+	public IInvoice byId( String invoiceId )
+	{
+		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+		{
+			throw new IllegalArgumentException( "invoiceId has to be set." );
+		}
+		return new InvoiceOperations( this.getPartner(), invoiceId );
+	}
 
-    /**
-     * Retrieves the partner's current account balance.
-     * 
-     * @return The account balance.
-     */
-    public IInvoiceSummary getSummary()
-    {
-        return new InvoiceSummaryOperations( this.getPartner() );
-    }
+	/**
+	 * Retrieves the partner's current account balance.
+	 * 
+	 * @return The account balance.
+	 */
+	public IInvoiceSummary getSummary()
+	{
+		return new InvoiceSummaryOperations( this.getPartner() );
+	}
 
-    /**
-     * Retrieves the invoice summary collection operations.
-     * 
-     * @return The invoice summary collection operations.
-     */
-    public IInvoiceSummaryCollection getSummaries()
-    { 
-        return new InvoiceSummaryCollectionOperations( this.getPartner() );
-    }
+	/**
+	 * Retrieves the invoice summary collection operations.
+	 * 
+	 * @return The invoice summary collection operations.
+	 */
+	public IInvoiceSummaryCollection getSummaries()
+	{ 
+		return new InvoiceSummaryCollectionOperations( this.getPartner() );
+	}
 
-    /**
-     * Retrieves all invoices associated to the partner.
-     * 
-     * @return The collection of invoices.
-     */
-    @Override
-    public SeekBasedResourceCollection<Invoice> get()
-    {
-        IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath() );
+	/**
+	 * Retrieves all invoices associated to the partner.
+	 * 
+	 * @return The collection of invoices.
+	 */
+	@Override
+	public SeekBasedResourceCollection<Invoice> get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<Invoice>>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getPath());
+	}
 
-        return partnerServiceProxy.get();
-    }
+	/**
+	 * Retrieves all invoices associated to the partner.
+	 * 
+	 * @param offset The page offset.
+	 * @param size The maximum number of invoices to return.
+	 * @return The subset of invoices.
+	 */
+	@Override
+	public SeekBasedResourceCollection<Invoice> get( int offset, int size )
+	{
+		ParameterValidator.isIntInclusive( 0, Integer.MAX_VALUE, offset,
+										   "The value of the page offset should be at least 0." );
+		ParameterValidator.isIntInclusive( MinPageSize, MaxPageSize, size,
+										   MessageFormat.format( "The page size must be an integer within the allowed range: {0}-{1}.",
+																 MinPageSize, MaxPageSize ) );
 
-    /**
-     * Retrieves all invoices associated to the partner.
-     * 
-     * @param offset The page offset.
-     * @param size The maximum number of invoices to return.
-     * @return The subset of invoices.
-     */
-    @Override
-    public SeekBasedResourceCollection<Invoice> get( int offset, int size )
-    {
-        ParameterValidator.isIntInclusive( 0, Integer.MAX_VALUE, offset,
-                                           "The value of the page offset should be at least 0." );
-        ParameterValidator.isIntInclusive( MinPageSize, MaxPageSize, size,
-                                           MessageFormat.format( "The page size must be an integer within the allowed range: {0}-{1}.",
-                                                                 MinPageSize, MaxPageSize ) );
-        IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
-            {
-            }, 
-            this.getPartner(), 
-            PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath());
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Offset" ),
-                                                                                      String.valueOf( offset ) ) );
-        partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Size" ),
-                                                                                      String.valueOf( size ) ) );
+		parameters.add(
+			new KeyValuePair<String, String>(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Offset"),
+				String.valueOf(offset)));
 
-        return partnerServiceProxy.get();
-    }
-    
-    /**
-     * Asynchronously retrieves all invoices associated to the partner.
-     * @param query The query parameter
-     * @return The subset of invoices.
-     */
-    public ResourceCollection<Invoice> query( IQuery query )
-    {
-        if ( query == null )
-        {
-            throw new IllegalArgumentException( "query can't be null" );
-        }
+		parameters.add(
+			new KeyValuePair<String, String>(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Size"),
+				String.valueOf(size)));
 
-        if ( query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
-        {
-            throw new IllegalArgumentException( "This type of query is not supported." );
-        }
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<Invoice>>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getPath(),
+			parameters);
+	}
+	
+	/**
+	 * Asynchronously retrieves all invoices associated to the partner.
+	 * @param query The query parameter
+	 * @return The subset of invoices.
+	 */
+	public ResourceCollection<Invoice> query( IQuery query )
+	{
+		if ( query == null )
+		{
+			throw new IllegalArgumentException( "query can't be null" );
+		}
 
-        IPartnerServiceProxy<Invoice, SeekBasedResourceCollection<Invoice>> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<Invoice>>()
-                {
-                }, 
-                this.getPartner(), 
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getPath() );
+		if ( query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
+		{
+			throw new IllegalArgumentException( "This type of query is not supported." );
+		}
 
-        if ( query.getType() == QueryType.INDEXED )
-        {
-            partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Size" ),
-                    String.valueOf( query.getPageSize() ) ) );
-            partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Offset" ),
-            		String.valueOf( query.getIndex() ) ) );            
-        }
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-        if ( query.getFilter() != null )
-        {
-            ObjectMapper mapper = new ObjectMapper();
-            try
-            {
-                partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoices" ).getParameters().get( "Filter" ),
-                        URLEncoder.encode( mapper.writeValueAsString( query.getFilter() ),
-                                           "UTF-8" ) ) );            	
-            }
-            catch ( UnsupportedEncodingException e )
-            {
-                throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
-            catch ( JsonProcessingException e )
-            {
-                throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
-        }
-        
-        return partnerServiceProxy.get();
-    }
+		if ( query.getType() == QueryType.INDEXED )
+		{
+			parameters.add(
+				new KeyValuePair<String, String>(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Size"),
+					String.valueOf(query.getPageSize())));
+
+			parameters.add(
+				new KeyValuePair<String, String>(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Offset"),
+					String.valueOf(query.getIndex())));      
+		}
+
+		if ( query.getFilter() != null )
+		{
+			ObjectMapper mapper = new ObjectMapper();
+
+			try
+			{
+				parameters.add(
+					new KeyValuePair<String, String>( 
+						PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Filter"),
+						URLEncoder.encode( mapper.writeValueAsString(query.getFilter()),
+						"UTF-8")));            	
+			}
+			catch ( UnsupportedEncodingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+			catch ( JsonProcessingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+		}
+
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<Invoice>>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getPath(),
+			parameters);
+	}
 }

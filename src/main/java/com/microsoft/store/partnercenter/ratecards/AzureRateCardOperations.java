@@ -5,7 +5,8 @@
 // -----------------------------------------------------------------------
 package com.microsoft.store.partnercenter.ratecards;
 
-import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -13,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ratecards.AzureRateCard;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class AzureRateCardOperations 
@@ -40,30 +39,37 @@ public class AzureRateCardOperations
 	 */
 	public AzureRateCard get(String currency, String region)
 	{
-        IPartnerServiceProxy<AzureRateCard, AzureRateCard> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<AzureRateCard>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureRateCard" ).getPath(),
-                                                            this.getContext() ) );
-
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )
 		{
-		    partnerServiceProxy.getUriParameters().add(
-		        new KeyValuePair<String, String>(
-		            PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureRateCard" ).getParameters().get( "Currency" ),
-		            currency));
+			parameters.add
+			(
+				new KeyValuePair<String, String>
+				(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureRateCard").getParameters().get("Currency"),
+					currency
+				) 
+			);
 		}
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( region ) )
 		{
-			partnerServiceProxy.getUriParameters().add(
-				new KeyValuePair<String, String>(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureRateCard" ).getParameters().get( "Region" ),
-				    region));
+			parameters.add
+			(
+				new KeyValuePair<String, String>
+				(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureRateCard").getParameters().get("Region"),
+					region
+				) 
+			);
 		}
 
-		return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<AzureRateCard>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetAzureRateCard").getPath(),
+			parameters);
 	}
 
 	/**
@@ -76,29 +82,36 @@ public class AzureRateCardOperations
 	 */
 	public AzureRateCard getShared(String currency, String region)
 	{
-        IPartnerServiceProxy<AzureRateCard, AzureRateCard> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<AzureRateCard>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureSharedRateCard" ).getPath(),
-                                                            this.getContext() ) );
-
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )
 		{
-		    partnerServiceProxy.getUriParameters().add(
-		        new KeyValuePair<String, String>(
-		            PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureSharedRateCard" ).getParameters().get( "Currency" ),
-		            currency));
+			parameters.add
+			(
+				new KeyValuePair<String, String>
+				(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureSharedRateCard").getParameters().get("Currency"),
+					currency
+				) 
+			);
 		}
 
 		if ( !StringHelper.isEmptyOrContainsWhiteSpace( region ) )
 		{
-			partnerServiceProxy.getUriParameters().add(
-				new KeyValuePair<String, String>(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureSharedRateCard" ).getParameters().get( "Region" ),
-				    region));
+			parameters.add
+			(
+				new KeyValuePair<String, String>
+				(
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureSharedRateCard").getParameters().get("Region"),
+					region
+				) 
+			);
 		}
 
-		return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<AzureRateCard>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetAzureSharedRateCard").getPath(),
+			parameters);
 	}
 }

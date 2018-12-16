@@ -9,6 +9,8 @@ package com.microsoft.store.partnercenter.serviceincidents;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -22,8 +24,6 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.serviceincidents.ServiceIncidents;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * Service incident collection operations implementation class.
@@ -49,13 +49,12 @@ public class ServiceIncidentCollectionOperations
 	@Override
 	public ResourceCollection<ServiceIncidents> get()
 	{
-        IPartnerServiceProxy<ServiceIncidents, ResourceCollection<ServiceIncidents>> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceIncidents>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceIncidents" ).getPath(),
-                                                            this.getContext() ) );
-        
-        return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<ServiceIncidents>>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetServiceIncidents").getPath(),
+				this.getContext()));
 	}
 
 	/**
@@ -67,38 +66,42 @@ public class ServiceIncidentCollectionOperations
 	@Override
 	public ResourceCollection<ServiceIncidents> get( IQuery serviceIncidentsQuery )
 	{
-        if ( serviceIncidentsQuery == null )
-        {
-            throw new IllegalArgumentException( "serviceIncidentsQuery can't be null" );
-        }
+		if ( serviceIncidentsQuery == null )
+		{
+			throw new IllegalArgumentException( "serviceIncidentsQuery can't be null" );
+		}
+		
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-        IPartnerServiceProxy<ServiceIncidents, ResourceCollection<ServiceIncidents>> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceIncidents>>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetServiceIncidents" ).getPath(),
-                                                            this.getContext() ) );
-        
+		if (serviceIncidentsQuery.getFilter() != null)
+		{
+			// add the filter to the request if specified
+			ObjectMapper mapper = new ObjectMapper();
 
-        if (serviceIncidentsQuery.getFilter() != null)
-        {
-            // add the filter to the request if specified
-        	ObjectMapper mapper = new ObjectMapper();
-            try
-            {
-            	partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchPartnerServiceRequests" ).getParameters().get( "Filter" ),
-            																					URLEncoder.encode( mapper.writeValueAsString( serviceIncidentsQuery.getFilter() ),
-                                                                                                "UTF-8" ) ) );
-            }
-            catch ( UnsupportedEncodingException e )
-            {
-            	throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
-            catch ( JsonProcessingException e )
-            {
-            	throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
-        }
-
-        return partnerServiceProxy.get();
+			try
+			{
+				parameters.add
+				( 
+					new KeyValuePair<String, String>( 
+						PartnerService.getInstance().getConfiguration().getApis().get("SearchPartnerServiceRequests").getParameters().get("Filter"),
+						URLEncoder.encode( mapper.writeValueAsString(serviceIncidentsQuery.getFilter()),
+						"UTF-8"))
+				);
+			}
+			catch ( UnsupportedEncodingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+			catch ( JsonProcessingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+		}
+		
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<ServiceIncidents>>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetServiceIncidents").getPath(),
+			parameters);
 	}
 }

@@ -12,12 +12,10 @@ import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceCollectionLinks;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 
 /**
- * Base implementation for resource collection enumerators. 
+ * Base implementation for resource collection enumerators.
  */
 public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWithLinks<StandardResourceCollectionLinks>>
     extends BasePartnerComponentString
@@ -136,25 +134,10 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         }
         else
         {
-            // get the next page
-            PartnerServiceProxy<T, T> partnerServiceProxy =
-                new PartnerServiceProxy<>( 
-                    responseType, 
-                    this.getPartner(),
-                    this.resourceCollection.getLinks().getNext().getUri().toString() );
-          
-            // the links already contains the version number, let's not replicate it
-            partnerServiceProxy.setIsUrlPathAlreadyBuilt( true );
-          
-            for (KeyValuePair<String, String> header : this.resourceCollection.getLinks().getNext().getHeaders())
-            {
-                partnerServiceProxy.getAdditionalRequestHeaders().add( 
-                    new KeyValuePair<String, String>( 
-                        header.getKey(),
-                        header.getValue() ) );
-            }
-
-            this.resourceCollection = partnerServiceProxy.get();
+            this.resourceCollection = this.getPartner().getServiceClient().get(
+                this.getPartner(),
+                responseType,
+                this.resourceCollection.getLinks().getNext());
         }
     }
 
@@ -184,22 +167,13 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
         {
             // we are done
             this.resourceCollection = null;
-
         }
         else
         {
-            // get the previous page
-            PartnerServiceProxy<T, T> partnerServiceProxy =
-                new PartnerServiceProxy<>( responseType, this.getPartner(),
-                                               this.resourceCollection.getLinks().getPrevious().getUri().toString() );
-            // the links already contains the query parameters, let's not replicate them
-            partnerServiceProxy.setIsUrlPathAlreadyBuilt( true );
-            for ( KeyValuePair<String, String> header : this.resourceCollection.getLinks().getPrevious().getHeaders() )
-            {
-                partnerServiceProxy.getAdditionalRequestHeaders().add( new KeyValuePair<String, String>( header.getKey(),
-                                                                                                         header.getValue() ) );
-            }
-            this.resourceCollection = partnerServiceProxy.get();
+           this.resourceCollection = this.getPartner().getServiceClient().get(
+                this.getPartner(),
+                responseType,
+                this.resourceCollection.getLinks().getPrevious());
         }
     }
 }

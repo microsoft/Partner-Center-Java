@@ -12,8 +12,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceSummary;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 
 /**
  * Represents the operations that can be done on invoice summary collection.
@@ -27,7 +25,7 @@ public class InvoiceSummaryCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The partner operations.
 	 */
-    public InvoiceSummaryCollectionOperations( IPartner rootPartnerOperations )
+	public InvoiceSummaryCollectionOperations( IPartner rootPartnerOperations )
 	{
 		super( rootPartnerOperations, null );
 	}
@@ -35,16 +33,11 @@ public class InvoiceSummaryCollectionOperations
 	/**
 	 * Retrieves the invoice summary collection. This operation is currently only supported for user based credentials.
 	 */
-    public ResourceCollection<InvoiceSummary> get()
+	public ResourceCollection<InvoiceSummary> get()
 	{
-        IPartnerServiceProxy<InvoiceSummary, ResourceCollection<InvoiceSummary>> partnerServiceProxy =
-                new PartnerServiceProxy<>( 
-                    new TypeReference<ResourceCollection<InvoiceSummary>>()
-                    {
-                    }, 
-                    this.getPartner(), 
-                    PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceSummaries" ).getPath());
-
-        return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<InvoiceSummary>>(){}, 
+			PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceSummaries").getPath());
 	}
 }

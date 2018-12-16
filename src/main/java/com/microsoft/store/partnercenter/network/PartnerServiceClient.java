@@ -7,6 +7,7 @@
 package com.microsoft.store.partnercenter.network;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
@@ -31,6 +32,7 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
+import com.microsoft.store.partnercenter.models.Link;
 import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
@@ -144,22 +146,33 @@ public class PartnerServiceClient
 		super(restClient);
 	}
 	
-	/**
-	 * Executes a GET operation against the partner service. 
-	 * 
-	 * @param rootPartnerOperations An instance of the partner operations.
-	 * @param responseType The type of object to be returned.
-	 * @param relativeUri The relative address of the request. 
-	 */
-	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
+    /**
+     * Executes a GET operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations.
+     * @param responseType The type of object to be returned.
+     * @param link A link object that represents the action for accessing the resource. 
+     */
+	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, Link link)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
-		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).get().build();
+		Map<String, String> requestHeaders;
+		Request request;
 		Response response; 
 		T value;
 
 		try
 		{
+			requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
+
+			if(link.getHeaders() != null)
+			{
+				for (KeyValuePair<String, String> header : link.getHeaders())
+				{
+					requestHeaders.put(header.getKey(), header.getValue());
+				}
+			}
+
+			request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(link.getUri().toString(), null, true)).get().build();
 			response = httpClient().newCall(request).execute();
 
 			value = getJsonConverter().readValue(response.body().string(), responseType);
@@ -176,6 +189,103 @@ public class PartnerServiceClient
 	}
 
 	/**
+	 * Executes a GET operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address of the request. 
+	 */
+	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
+	{
+		return get(rootPartnerOperations, responseType, relativeUri, null);
+	}
+
+    /**
+     * Executes a GET operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations.
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address of the request. 
+     * @param headers Headers to be added to the request.
+     * @param parameters Parameters to be added to the request.
+     */
+    public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri, Map<String, String> headers, Collection<KeyValuePair<String, String>> parameters)
+	{
+		Map<String, String> requestHeaders;
+		Request request;
+		Response response; 
+		T value;
+
+		try
+		{
+			requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
+
+			if(headers != null)
+			{
+				requestHeaders.putAll(headers);
+			}
+
+			request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(relativeUri, parameters, false)).get().build();
+			response = httpClient().newCall(request).execute();
+
+			value = getJsonConverter().readValue(response.body().string(), responseType);
+			response.close();
+			
+			return value;
+		} 
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+	   
+		return null;
+	}
+
+    /**
+     * Executes a file content request against the partner service.
+     * 
+     * @param rootPartnerOperations An instance of the partner operations.
+     * @param relativeUri The relative address of the request. 
+     * @param acceptType The value for the accept type header.
+     */
+	public InputStream getFileContents(IPartner rootPartnerOperations, String relativeUri, String acceptType)
+	{
+		InputStream responseStream; 
+		Request request; 
+		Response response; 
+
+		try
+		{
+			request = new Request.Builder().headers(Headers.of(getRequestHeaders(rootPartnerOperations, acceptType))).url(buildUrl(relativeUri, null, false)).get().build();
+			response = httpClient().newCall(request).execute();
+
+			responseStream = response.body().byteStream();
+			response.close();
+			
+			return responseStream;
+		} 
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+	   
+		return null;
+	}
+
+	/**
+     * Executes a GET operation against the partner service. 
+     * 
+     * @param rootPartnerOperations An instance of the partner operations.
+     * @param responseType The type of object to be returned.
+     * @param relativeUri The relative address of the request. 
+     * @param parameters Parameters to be added to the request.
+     */
+	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri, Collection<KeyValuePair<String, String>> parameters)
+	{
+		return get(rootPartnerOperations, responseType, relativeUri, null, parameters);
+	}
+
+	/**
 	 * Executes a HEAD operation against the partner service. 
 	 * 
 	 * @param rootPartnerOperations An instance of the partner operations.
@@ -184,8 +294,8 @@ public class PartnerServiceClient
 	 */
 	public <T> T head(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
-		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).head().build();
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
+		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null, false)).head().build();
 		Response response; 
 		T value;
 
@@ -217,7 +327,7 @@ public class PartnerServiceClient
 	@SuppressWarnings("unchecked")
 	public <T, U> U patch(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
 		Response response;
 		String responseBody; 
@@ -226,7 +336,7 @@ public class PartnerServiceClient
 		{
 			request = new Request.Builder()
 				.headers(headers)
-				.url(buildUrl(relativeUri, null))
+				.url(buildUrl(relativeUri, null, false))
 				.patch(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
@@ -279,7 +389,7 @@ public class PartnerServiceClient
 	@SuppressWarnings("unchecked")
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
 		Response response;
 		String responseBody; 
@@ -288,7 +398,7 @@ public class PartnerServiceClient
 		{
 			request = new Request.Builder()
 				.headers(headers)
-				.url(buildUrl(relativeUri, parameters))
+				.url(buildUrl(relativeUri, parameters, false))
 				.post(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
@@ -327,7 +437,7 @@ public class PartnerServiceClient
 	@SuppressWarnings("unchecked")
 	public <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
 		Response response;
 		String responseBody; 
@@ -336,7 +446,7 @@ public class PartnerServiceClient
 		{
 			request = new Request.Builder()
 				.headers(headers)
-				.url(buildUrl(relativeUri, null))
+				.url(buildUrl(relativeUri, null, false))
 				.put(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
@@ -374,8 +484,8 @@ public class PartnerServiceClient
 	 */
 	public <T> void delete(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri)
 	{
-		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations));
-		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null)).delete().build();
+		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
+		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null, false)).delete().build();
 		Response response; 
 		T value;
 
@@ -426,7 +536,7 @@ public class PartnerServiceClient
 	 * @param paramters The parameters to be added to the request.
 	 * @return The address for the request.
 	 */
-	private String buildUrl(String relativUri, Collection<KeyValuePair<String, String>> parameters)
+	private String buildUrl(String relativUri, Collection<KeyValuePair<String, String>> parameters, boolean isBuilt)
 	{
 		if(StringHelper.isNullOrEmpty(relativUri))
 		{
@@ -437,26 +547,29 @@ public class PartnerServiceClient
 			PartnerService.getInstance().getApiRootUrl() + "/"
 				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + relativUri);
 
-		if(parameters != null)
+		if(!isBuilt)
 		{
-			if (!parameters.isEmpty()) 
+			if(parameters != null)
 			{
-				address.append("?");
-			}
-
-			for (KeyValuePair<String, String> queryParameter : parameters)
-			{
-				if (address.length() > 1) {
-					address.append("&");
+				if (!parameters.isEmpty()) 
+				{
+					address.append("?");
 				}
 
-				address.append(
-					MessageFormat.format(
-						"{0}={1}", 
-						queryParameter.getKey(), 
-						queryParameter.getValue()));
-			} 
-		}
+				for (KeyValuePair<String, String> queryParameter : parameters)
+				{
+					if (address.length() > 1) {
+						address.append("&");
+					}
+
+					address.append(
+						MessageFormat.format(
+							"{0}={1}", 
+							queryParameter.getKey(), 
+							queryParameter.getValue()));
+				} 
+			}
+		} 
 
 		return address.toString();
 	}
@@ -467,7 +580,7 @@ public class PartnerServiceClient
 	 * @param rootPartnerOperations An instance of the root partner operations.
 	 * @return The headers for the HTTP request.
 	 */
-	private Map<String, String> getRequestHeaders(IPartner rootPartnerOperations)
+	private Map<String, String> getRequestHeaders(IPartner rootPartnerOperations, String acceptType)
 	{
 		Map<String, String> headers = new HashMap<>();
 		IRequestContext requestContext; 
@@ -503,7 +616,7 @@ public class PartnerServiceClient
 			CLIENT_HEADER,
 			PartnerService.getInstance().getConfiguration().getPartnerCenterClient());
 
-		headers.put(ACCEPT_HEADER, ACCEPT_HEADER_VALUE);
+		headers.put(ACCEPT_HEADER, acceptType);
 
 		return headers;
 	}

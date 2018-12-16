@@ -14,48 +14,45 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.managedservices.ManagedService;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
  * Implements a customer's managed services operations.
  */
 public class ManagedServiceCollectionOperations
-    extends BasePartnerComponentString
-    implements IManagedServiceCollection
+	extends BasePartnerComponentString
+	implements IManagedServiceCollection
 {
-    /**
-     * Initializes a new instance of the ManagedServiceCollectionOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer identifier.
-     */
-    public ManagedServiceCollectionOperations( IPartner rootPartnerOperations, String customerId )
-    {
-        super( rootPartnerOperations, customerId );
-        
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
-        {
-            throw new IllegalArgumentException( "customerId must be set" );
-        }
-    }
+	/**
+	 * Initializes a new instance of the ManagedServiceCollectionOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
+	 */
+	public ManagedServiceCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	{
+		super( rootPartnerOperations, customerId );
+		
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		{
+			throw new IllegalArgumentException( "customerId must be set" );
+		}
+	}
 
-    /**
-     * Gets managed services for a customer.
-     * 
-     * @return The customer's managed services.
-     */
-    @Override
-    public ResourceCollection<ManagedService> get()
-    {
-
-        IPartnerServiceProxy<ManagedService, ResourceCollection<ManagedService>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ManagedService>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerManagedServices" ).getPath(),
-                                                        this.getContext() ) );
-        return partnerServiceProxy.get();
-    }
+	/**
+	 * Gets managed services for a customer.
+	 * 
+	 * @return The customer's managed services.
+	 */
+	@Override
+	public ResourceCollection<ManagedService> get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<ManagedService>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerManagedServices").getPath(),
+				this.getContext()));
+	}
 
 }

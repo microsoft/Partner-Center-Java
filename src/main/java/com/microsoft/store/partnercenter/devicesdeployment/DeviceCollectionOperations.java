@@ -14,11 +14,8 @@ import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
-import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
 import com.microsoft.store.partnercenter.models.devicesdeployment.Device;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 import okhttp3.Response;
@@ -93,13 +90,12 @@ public class DeviceCollectionOperations
 	@Override
 	public ResourceCollection<Device> get()
 	{
-		IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<Device>> partnerServiceProxy = 
-			new PartnerServiceProxy<>(
-				new TypeReference<ResourceCollection<Device>>() {
-				}, this.getPartner(),
-				MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetDevices").getPath(),
-						this.getContext().getItem1(), this.getContext().getItem2() ));
-
-		return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<Device>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetDevices").getPath(),
+				this.getContext().getItem1(), 
+				this.getContext().getItem2()));
 	}
 }

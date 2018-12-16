@@ -9,6 +9,8 @@ package com.microsoft.store.partnercenter.servicerequests;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -24,8 +26,6 @@ import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.servicerequests.ServiceRequest;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -33,120 +33,131 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * The customer's service requests operations implementation.
  */
 public class CustomerServiceRequestCollectionOperations
-    extends BasePartnerComponentString
-    implements IServiceRequestCollection
+	extends BasePartnerComponentString
+	implements IServiceRequestCollection
 {
-    /**
-     * The minimum allowed page size for the collection.
-     */
-    private static final int MIN_PAGE_SIZE = 1;
+	/**
+	 * The minimum allowed page size for the collection.
+	 */
+	private static final int MIN_PAGE_SIZE = 1;
 
-    /**
-     * The maximum allowed page size for the collection.
-     */
-    private static final int MAX_PAGE_SIZE = 1000;
+	/**
+	 * The maximum allowed page size for the collection.
+	 */
+	private static final int MAX_PAGE_SIZE = 1000;
 
-    /**
-     * Initializes a new instance of the CustomerServiceRequestCollectionOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId The customer identifier.
-     */
-    public CustomerServiceRequestCollectionOperations( IPartner rootPartnerOperations, String customerId )
-    {
-        super( rootPartnerOperations, customerId );
+	/**
+	 * Initializes a new instance of the CustomerServiceRequestCollectionOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId The customer identifier.
+	 */
+	public CustomerServiceRequestCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	{
+		super( rootPartnerOperations, customerId );
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
-        {
-            throw new IllegalArgumentException( "customerId can't be null" );
-        }
-    }
+		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		{
+			throw new IllegalArgumentException( "customerId can't be null" );
+		}
+	}
 
-    /**
-     * Retrieves a Service Request specified by Id
-     * 
-     * @param serviceRequestId Service Request Id
-     * @return Service Request Operations
-     */
-    @Override
-    public IServiceRequest byId( String serviceRequestId )
-    {
-        return new CustomerServiceRequestOperations( this.getPartner(), this.getContext(), serviceRequestId );
-    }
+	/**
+	 * Retrieves a Service Request specified by Id
+	 * 
+	 * @param serviceRequestId Service Request Id
+	 * @return Service Request Operations
+	 */
+	@Override
+	public IServiceRequest byId( String serviceRequestId )
+	{
+		return new CustomerServiceRequestOperations( this.getPartner(), this.getContext(), serviceRequestId );
+	}
 
-    /**
-     * Queries for service requests associated with a customer
-     * 
-     * @param serviceRequestsQuery The query with search parameters
-     * @return A collection of service requests matching the criteria
-     */
-    @Override
-    public SeekBasedResourceCollection<ServiceRequest> query( IQuery serviceRequestsQuery )
-    {
-        if ( serviceRequestsQuery == null )
-        {
-            throw new IllegalArgumentException( "serviceRequestsQuery can't be null" );
-        }
+	/**
+	 * Queries for service requests associated with a customer
+	 * 
+	 * @param serviceRequestsQuery The query with search parameters
+	 * @return A collection of service requests matching the criteria
+	 */
+	@Override
+	public SeekBasedResourceCollection<ServiceRequest> query( IQuery serviceRequestsQuery )
+	{
+		if ( serviceRequestsQuery == null )
+		{
+			throw new IllegalArgumentException( "serviceRequestsQuery can't be null" );
+		}
 
-        if ( serviceRequestsQuery.getType() != QueryType.INDEXED && serviceRequestsQuery.getType() != QueryType.SIMPLE )
-        {
-            throw new IllegalArgumentException( "Specified query type is not supported." );
-        }
+		if ( serviceRequestsQuery.getType() != QueryType.INDEXED && serviceRequestsQuery.getType() != QueryType.SIMPLE )
+		{
+			throw new IllegalArgumentException( "Specified query type is not supported." );
+		}
 
-        PartnerServiceProxy<ServiceRequest, SeekBasedResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<ServiceRequest>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getPath(),
-                                                        this.getContext() ) );
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-        if ( serviceRequestsQuery.getType() == QueryType.INDEXED )
-        {
-            // if the query specifies a page size, validate it and add it to the request
-            ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
-                                               MessageFormat.format( "Allowed page size values are from {0}-{1}",
-                                                                     MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
-            partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getParameters().get( "Size" ),
-                                                                                          String.valueOf( serviceRequestsQuery.getPageSize() ) ) );
-            partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getParameters().get( "Offset" ),
-                                                                                          String.valueOf( serviceRequestsQuery.getIndex() ) ) );
-        }
-        if ( serviceRequestsQuery.getFilter() != null )
-        {
-            // add the filter to the request if specified
-            ObjectMapper mapper = new ObjectMapper();
-            try
-            {
-                partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "SearchCustomerServiceRequests" ).getParameters().get( "Filter" ),
-                                                                                              URLEncoder.encode( mapper.writeValueAsString( serviceRequestsQuery.getFilter() ),
-                                                                                                                 "UTF-8" ) ) );
-            }
-            catch ( JsonProcessingException e )
-            {
-                throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
-            catch ( UnsupportedEncodingException e )
-            {
-                throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
-            }
+		if ( serviceRequestsQuery.getType() == QueryType.INDEXED )
+		{
+			// if the query specifies a page size, validate it and add it to the request
+			ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
+											   MessageFormat.format( "Allowed page size values are from {0}-{1}",
+																	 MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
 
-        }
-        return partnerServiceProxy.get();
-    }
+			parameters.add( 
+				new KeyValuePair<String, String>( 
+					PartnerService.getInstance().getConfiguration().getApis().get("SearchCustomerServiceRequests").getParameters().get("Size"),
+					String.valueOf(serviceRequestsQuery.getPageSize())));
 
-    /**
-     * Retrieves Service Requests associated to the customer.
-     * 
-     * @return A collection of service requests
-     */
-    @Override
-    public ResourceCollection<ServiceRequest> get()
-    {
-        IPartnerServiceProxy<ServiceRequest, ResourceCollection<ServiceRequest>> partnerServiceProxy =
-            new PartnerServiceProxy<>( new TypeReference<ResourceCollection<ServiceRequest>>()
-            {
-            }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetAllServiceRequestsCustomer" ).getPath(),
-                                                        this.getContext() ) );
+			parameters.add( 
+				new KeyValuePair<String, String>( 
+					PartnerService.getInstance().getConfiguration().getApis().get("SearchCustomerServiceRequests").getParameters().get("Offset"),
+					String.valueOf(serviceRequestsQuery.getIndex())));
+		}
+		if ( serviceRequestsQuery.getFilter() != null )
+		{
+			// add the filter to the request if specified
+			ObjectMapper mapper = new ObjectMapper();
 
-        return partnerServiceProxy.get();
-    }
+			try
+			{
+				parameters.add(
+					new KeyValuePair<String, String>(
+						PartnerService.getInstance().getConfiguration().getApis().get("SearchCustomerServiceRequests").getParameters().get("Filter"),
+						URLEncoder.encode(mapper.writeValueAsString(serviceRequestsQuery.getFilter()),
+						"UTF-8")));
+			}
+			catch ( JsonProcessingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+			catch ( UnsupportedEncodingException e )
+			{
+				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+			}
+
+		}
+
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<ServiceRequest>>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("SearchCustomerServiceRequests").getPath(),
+				this.getContext()), 
+			parameters); 
+	}
+
+	/**
+	 * Retrieves Service Requests associated to the customer.
+	 * 
+	 * @return A collection of service requests
+	 */
+	@Override
+	public ResourceCollection<ServiceRequest> get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<ServiceRequest>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetAllServiceRequestsCustomer").getPath(),
+				this.getContext()));
+	}
 }

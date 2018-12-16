@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.relationships.PartnerRelationship;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -23,38 +21,36 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * of a customer with respect to the logged in partner.
  */
 public class CustomerRelationshipCollectionOperations
-    extends BasePartnerComponentString
-    implements ICustomerRelationshipCollection
+	extends BasePartnerComponentString
+	implements ICustomerRelationshipCollection
 {
-    /**
-     * Initializes a new instance of the CustomerRelationshipCollectionOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            Identifier for the customer.
-     */
-    public CustomerRelationshipCollectionOperations( IPartner rootPartnerOperations, String customerId )
-    {
-        super( rootPartnerOperations, customerId );
+	/**
+	 * Initializes a new instance of the CustomerRelationshipCollectionOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId            Identifier for the customer.
+	 */
+	public CustomerRelationshipCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	{
+		super( rootPartnerOperations, customerId );
 
-        if (StringHelper.isNullOrWhiteSpace(customerId)) {
-            throw new IllegalArgumentException("customerId must be set");
-        }
-    }
+		if (StringHelper.isNullOrWhiteSpace(customerId)) {
+			throw new IllegalArgumentException("customerId must be set");
+		}
+	}
 
-    /**
-     * Retrieves all the partner relationships associated to the customer based on the logged in partner.
-     * 
-     * @return The partner relationships.
-     */
-    public ResourceCollection<PartnerRelationship> get()
-    {
-        IPartnerServiceProxy<PartnerRelationship, ResourceCollection<PartnerRelationship>> partnerServiceProxy = new PartnerServiceProxy<>(
-            new TypeReference<ResourceCollection<PartnerRelationship>>() {
-            }, 
-            this.getPartner(),
-            MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetPartnerRelationshipsForCustomer").getPath(),
-                    this.getContext() ));
-
-        return partnerServiceProxy.get();
-    }
+	/**
+	 * Retrieves all the partner relationships associated to the customer based on the logged in partner.
+	 * 
+	 * @return The partner relationships.
+	 */
+	public ResourceCollection<PartnerRelationship> get()
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<PartnerRelationship>>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetPartnerRelationshipsForCustomer").getPath(),
+				this.getContext()));
+	}
 }

@@ -9,6 +9,10 @@ package com.microsoft.store.partnercenter.customerusers;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -23,8 +27,6 @@ import com.microsoft.store.partnercenter.models.query.IQuery;
 import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.users.CustomerUser;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -86,13 +88,14 @@ public class CustomerUsersCollectionOperations
 	 * @return All the customer users.
 	 */
 	@Override
-	public SeekBasedResourceCollection<CustomerUser> get() {		
-		IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-				new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
-				{
-				}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-															this.getContext() ) );
-		return partnerServiceProxy.get();
+	public SeekBasedResourceCollection<CustomerUser> get() 
+	{
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<CustomerUser>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getPath(),
+				this.getContext()));
 	}
 
 	/**
@@ -125,11 +128,8 @@ public class CustomerUsersCollectionOperations
 			throw new IllegalArgumentException( "customerUsersQuery can't be a count query." );
 		}
 
-		IPartnerServiceProxy<CustomerUser, SeekBasedResourceCollection<CustomerUser>> partnerServiceProxy =
-			new PartnerServiceProxy<>( new TypeReference<SeekBasedResourceCollection<CustomerUser>>()
-			{
-			}, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getPath(),
-								  this.getContext() ) );
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+		Map<String, String> headers = new HashMap<>();
 
 		if ( customerUsersQuery.getType() == QueryType.SEEK )
 		{
@@ -139,10 +139,14 @@ public class CustomerUsersCollectionOperations
 				throw new IllegalArgumentException( "customerUsersQuery.Token is required." );
 			}
 
-			partnerServiceProxy.getAdditionalRequestHeaders().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getAdditionalHeaders().get( "ContinuationToken" ),
-																									 customerUsersQuery.getToken().toString() ) );
-			partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "SeekOperation" ),
-																						  customerUsersQuery.getSeekOperation().toString() ) );
+			headers.put(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getAdditionalHeaders().get("ContinuationToken"),
+				customerUsersQuery.getToken().toString());
+			
+			parameters.add( 
+				new KeyValuePair<String, String>( 
+					PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("SeekOperation"),
+					customerUsersQuery.getSeekOperation().toString()));
 		}
 		else
 		{
@@ -151,14 +155,19 @@ public class CustomerUsersCollectionOperations
 				// if the query specifies a page size, validate it and add it to the request
 				ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, customerUsersQuery.getPageSize(),
 												   MessageFormat.format( "Allowed page size values are from {0}-{1}",
-																		 MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
-				partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
-																							  String.valueOf( customerUsersQuery.getPageSize() ) ) );
+																		 MIN_PAGE_SIZE, MAX_PAGE_SIZE));
+
+				parameters.add( 
+					new KeyValuePair<String, String>(
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
+						String.valueOf(customerUsersQuery.getPageSize())));
 			}
 			else
 			{
-				partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Size" ),
-																							  "0" ) );
+				parameters.add(
+					new KeyValuePair<String, String>(
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
+						"0"));
 			}
 			if ( customerUsersQuery.getFilter() != null )
 			{
@@ -166,9 +175,11 @@ public class CustomerUsersCollectionOperations
 				ObjectMapper mapper = new ObjectMapper();
 				try
 				{
-					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getParameters().get( "Filter" ),
-																								  URLEncoder.encode( mapper.writeValueAsString( customerUsersQuery.getFilter() ),
-																													 "UTF-8" ) ) );
+					parameters.add(
+						new KeyValuePair<String, String>(
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Filter"),
+							URLEncoder.encode(mapper.writeValueAsString(customerUsersQuery.getFilter()),
+							"UTF-8")));
 				}
 				catch ( UnsupportedEncodingException e )
 				{
@@ -183,15 +194,20 @@ public class CustomerUsersCollectionOperations
 			{
 				// add the sort details to the request if specified
 				ObjectMapper sortMapper = new ObjectMapper();
+
 				try
 				{
-					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
-																								  URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortField() ),
-																													 "UTF-8" ) ) ); 
+					parameters.add( 
+						new KeyValuePair<String, String>(
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("Sort"),
+							URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortField()),
+							"UTF-8"))); 
 
-					partnerServiceProxy.getUriParameters().add( new KeyValuePair<String, String>( PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsers" ).getParameters().get ( "Sort" ),
-																								  URLEncoder.encode( sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortDirection() ),
-																													 "UTF-8" ) ) );
+					parameters.add(
+						new KeyValuePair<String, String>(
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get ("Sort"),
+							URLEncoder.encode(sortMapper.writeValueAsString( customerUsersQuery.getSort().getSortDirection()),
+							"UTF-8")));
 				}
 				catch ( UnsupportedEncodingException e )
 				{
@@ -204,6 +220,14 @@ public class CustomerUsersCollectionOperations
 			}
 			
 		}
-		return partnerServiceProxy.get();
+
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<SeekBasedResourceCollection<CustomerUser>>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getPath(),
+				this.getContext()),
+			headers,
+			parameters);
 	}
 }

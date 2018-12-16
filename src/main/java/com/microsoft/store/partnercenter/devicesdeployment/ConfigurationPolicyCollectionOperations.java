@@ -14,8 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationPolicy;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -84,12 +82,11 @@ public class ConfigurationPolicyCollectionOperations
 	@Override
 	public ResourceCollection<ConfigurationPolicy> get()
 	{
-		IPartnerServiceProxy<ConfigurationPolicy, ResourceCollection<ConfigurationPolicy>> partnerServiceProxy = new PartnerServiceProxy<>(
-				new TypeReference<ResourceCollection<ConfigurationPolicy>>() {
-				}, this.getPartner(),
-				MessageFormat.format(PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),
-						this.getContext()));
-
-		return partnerServiceProxy.get();
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<ConfigurationPolicy>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),
+				this.getContext()));
 	}
 }

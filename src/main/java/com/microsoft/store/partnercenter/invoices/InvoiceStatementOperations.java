@@ -9,12 +9,9 @@ package com.microsoft.store.partnercenter.invoices;
 import java.io.InputStream;
 import java.text.MessageFormat;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
-import com.microsoft.store.partnercenter.network.IPartnerServiceProxy;
-import com.microsoft.store.partnercenter.network.PartnerServiceProxy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class InvoiceStatementOperations
@@ -22,20 +19,20 @@ public class InvoiceStatementOperations
 	implements IInvoiceStatement
 {
 
-    /**
-     * Initializes a new instance of the InvoiceStatementOperations class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param invoiceId The invoice identifier.
-     */
+	/**
+	 * Initializes a new instance of the InvoiceStatementOperations class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param invoiceId The invoice identifier.
+	 */
 	public InvoiceStatementOperations( IPartner rootPartnerOperations, String invoiceId )
 	{
 		super( rootPartnerOperations, invoiceId );
 		
-        if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
-        {
-            throw new IllegalArgumentException( "invoiceId has to be set." );
-        }
+		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+		{
+			throw new IllegalArgumentException( "invoiceId has to be set." );
+		}
 	}
 
 	/**
@@ -46,14 +43,11 @@ public class InvoiceStatementOperations
 	@Override
 	public InputStream get()
 	{
-        IPartnerServiceProxy<InputStream, InputStream> partnerServiceProxy =
-                new PartnerServiceProxy<>( new TypeReference<InputStream>()
-                {
-                }, this.getPartner(), MessageFormat.format( PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoiceStatement" ).getPath(),
-                                                            this.getContext() ) );
-
-        partnerServiceProxy.setAccept( "application/pdf" );
-        
-        return partnerServiceProxy.getFileContent();
+		return this.getPartner().getServiceClient().getFileContents(
+			this.getPartner(), 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceStatement").getPath(),
+				this.getContext()), 
+			"application/pdf");
 	}
 }
