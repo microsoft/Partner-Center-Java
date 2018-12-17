@@ -6,8 +6,6 @@
 
 package com.microsoft.store.partnercenter.network;
 
-import org.apache.http.HttpResponse;
-
 public class HttpStatusCode
 {
 	public static final int BADREQUEST = 400;
@@ -23,8 +21,4 @@ public class HttpStatusCode
 	public static final int SERVICEUNAVAILABLE = 503;
 
 	public static final int EXPECTATIONFAILED = 417;
-
-	public static boolean isSuccesful(HttpResponse request) {
-		return request.getStatusLine().getStatusCode() < 400;
-	}
 }

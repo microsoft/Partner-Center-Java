@@ -30,8 +30,11 @@ import com.microsoft.rest.ServiceResponseBuilder;
 import com.microsoft.rest.serializer.JacksonAdapter;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
+import com.microsoft.store.partnercenter.errorhandling.DefaultPartnerServiceErrorHandler;
+import com.microsoft.store.partnercenter.errorhandling.IFailedPartnerServiceResponseHandler;
 import com.microsoft.store.partnercenter.exception.PartnerErrorCategory;
 import com.microsoft.store.partnercenter.exception.PartnerException;
+import com.microsoft.store.partnercenter.exception.PartnerResponseParseException;
 import com.microsoft.store.partnercenter.models.Link;
 import com.microsoft.store.partnercenter.models.entitlements.Artifact;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
@@ -53,11 +56,6 @@ public class PartnerServiceClient
 	extends ServiceClient
 	implements IPartnerServiceClient
 {
-	/**
-	 * Provides the ability to serialize and deserialize objects.
-	 */
-	private ObjectMapper jsonConverter;
-
 	/**
 	 * The name of the accept header.
 	 */
@@ -119,6 +117,16 @@ public class PartnerServiceClient
 	static final String SDK_VERSION_HEADER = "MS-SdkVersion";
 
 	/**
+	 * Provides the ability to handle failed responses.
+	 */
+	private IFailedPartnerServiceResponseHandler errorHandler;
+
+	/**
+	 * Provides the ability to serialize and deserialize objects.
+	 */
+	private ObjectMapper jsonConverter;
+
+	/**
 	 * Initializes a new instance of the PartnerServiceClient class.
 	 *
 	 * @param baseUrl The base service endpoint address.
@@ -134,6 +142,8 @@ public class PartnerServiceClient
 				.withSerializerAdapter(new JacksonAdapter())
 				.withResponseBuilderFactory(new ServiceResponseBuilder.Factory())
 				.build());
+
+		errorHandler = new DefaultPartnerServiceErrorHandler();
 	}
 
 	/**
@@ -144,6 +154,8 @@ public class PartnerServiceClient
 	public PartnerServiceClient(RestClient restClient)
 	{
 		super(restClient);
+
+		errorHandler = new DefaultPartnerServiceErrorHandler();
 	}
 	
     /**
@@ -157,35 +169,19 @@ public class PartnerServiceClient
 	{
 		Map<String, String> requestHeaders;
 		Request request;
-		Response response; 
-		T value;
 
-		try
+		requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
+
+		if(link.getHeaders() != null)
 		{
-			requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
-
-			if(link.getHeaders() != null)
+			for (KeyValuePair<String, String> header : link.getHeaders())
 			{
-				for (KeyValuePair<String, String> header : link.getHeaders())
-				{
-					requestHeaders.put(header.getKey(), header.getValue());
-				}
+				requestHeaders.put(header.getKey(), header.getValue());
 			}
-
-			request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(link.getUri().toString(), null, true)).get().build();
-			response = httpClient().newCall(request).execute();
-
-			value = getJsonConverter().readValue(response.body().string(), responseType);
-			response.close();
-			
-			return value;
-		} 
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
 		}
-	   
-		return null;
+
+		request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(link.getUri().toString(), null, true)).get().build();
+		return handleResponse(rootPartnerOperations, request, responseType);
 	}
 
 	/**
@@ -213,32 +209,16 @@ public class PartnerServiceClient
 	{
 		Map<String, String> requestHeaders;
 		Request request;
-		Response response; 
-		T value;
 
-		try
+		requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
+
+		if(headers != null)
 		{
-			requestHeaders = getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE);
-
-			if(headers != null)
-			{
-				requestHeaders.putAll(headers);
-			}
-
-			request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(relativeUri, parameters, false)).get().build();
-			response = httpClient().newCall(request).execute();
-
-			value = getJsonConverter().readValue(response.body().string(), responseType);
-			response.close();
-			
-			return value;
-		} 
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
+			requestHeaders.putAll(headers);
 		}
-	   
-		return null;
+
+		request = new Request.Builder().headers(Headers.of(requestHeaders)).url(buildUrl(relativeUri, parameters, false)).get().build();
+		return handleResponse(rootPartnerOperations, request, responseType);
 	}
 
     /**
@@ -260,8 +240,7 @@ public class PartnerServiceClient
 			response = httpClient().newCall(request).execute();
 
 			responseStream = response.body().byteStream();
-			response.close();
-			
+
 			return responseStream;
 		} 
 		catch (IOException ex) 
@@ -296,24 +275,8 @@ public class PartnerServiceClient
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null, false)).head().build();
-		Response response; 
-		T value;
 
-		try
-		{
-			response = httpClient().newCall(request).execute();
-
-			value = getJsonConverter().readValue(response.body().string(), responseType);
-			response.close();
-			
-			return value;
-		} 
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
-		}
-	   
-		return null;
+		return handleResponse(rootPartnerOperations, request, responseType);
 	}
 
 	/**
@@ -324,13 +287,10 @@ public class PartnerServiceClient
 	 * @param relativeUri The relative address of the request. 
 	 * @param content The content for the body of the request.
 	 */
-	@SuppressWarnings("unchecked")
 	public <T, U> U patch(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
-		Response response;
-		String responseBody; 
 
 		try
 		{
@@ -340,28 +300,12 @@ public class PartnerServiceClient
 				.patch(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
-			response = httpClient().newCall(request).execute();
-			responseBody = response.body().string();
-
-			if(StringHelper.isNullOrEmpty(responseBody))
-			{
-				return (U)response;
-			}
-			else
-			{
-				return getJsonConverter().readValue(responseBody, responseType);
-			}
+			return handleResponse(rootPartnerOperations, request, responseType);
 		}
 		catch (JsonProcessingException e)
 		{
 			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
 		}	
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
-		}
-
-		return null;
 	}
 
 	/**
@@ -386,13 +330,10 @@ public class PartnerServiceClient
 	 * @param content The conent for the body of the request.
 	 * @param parameters Parameters to be added to the reqest.
 	 */
-	@SuppressWarnings("unchecked")
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
-		Response response;
-		String responseBody; 
 
 		try
 		{
@@ -402,28 +343,12 @@ public class PartnerServiceClient
 				.post(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
-			response = httpClient().newCall(request).execute();
-			responseBody = response.body().string();
-
-			if(StringHelper.isNullOrEmpty(responseBody))
-			{
-				return (U)response;
-			}
-			else
-			{
-				return getJsonConverter().readValue(responseBody, responseType);
-			}
+			return handleResponse(rootPartnerOperations, request, responseType);
 		}
 		catch (JsonProcessingException e)
 		{
 			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
 		}	
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
-		}
-
-		return null;
 	}
 
 	/**
@@ -434,13 +359,10 @@ public class PartnerServiceClient
 	 * @param relativeUri The relative address fo the request.
 	 * @param content The conent for the body of the request.
 	 */
-	@SuppressWarnings("unchecked")
 	public <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request;
-		Response response;
-		String responseBody; 
 
 		try
 		{
@@ -450,30 +372,13 @@ public class PartnerServiceClient
 				.put(RequestBody.create(JSON_MEDIA_TYPE, getJsonConverter().writeValueAsString(content)))
 				.build();
 
-			response = httpClient().newCall(request).execute();
-			responseBody = response.body().string();
-
-			if(StringHelper.isNullOrEmpty(responseBody))
-			{
-				return (U)response;
-			}
-			else
-			{
-				return getJsonConverter().readValue(responseBody, responseType);
-			}
+			return handleResponse(rootPartnerOperations, request, responseType);
 		}
 		catch (JsonProcessingException e)
 		{
 			throw new PartnerException("", rootPartnerOperations.getRequestContext(), PartnerErrorCategory.REQUEST_PARSING);
 		}	
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
-		}
-
-		return null;
 	}
-
 
 	/**
 	 * Executes a DELETE operation against the partner service. 
@@ -486,20 +391,8 @@ public class PartnerServiceClient
 	{
 		Headers headers = Headers.of(getRequestHeaders(rootPartnerOperations, ACCEPT_HEADER_VALUE));
 		Request request = new Request.Builder().headers(headers).url(buildUrl(relativeUri, null, false)).delete().build();
-		Response response; 
-		T value;
 
-		try
-		{
-			response = httpClient().newCall(request).execute();
-
-			value = getJsonConverter().readValue(response.body().string(), responseType);
-			response.close();
-		} 
-		catch (IOException ex) 
-		{
-			ex.printStackTrace();
-		}
+		handleResponse(rootPartnerOperations, request, responseType);
 	}
 
 	/**
@@ -619,5 +512,45 @@ public class PartnerServiceClient
 		headers.put(ACCEPT_HEADER, acceptType);
 
 		return headers;
+	}
+
+	@SuppressWarnings("unchecked")
+	private <T> T handleResponse(IPartner rootPartnerOperations, Request request, TypeReference<T> responseType)
+	{
+		Response response; 
+		String responseBody = null; 
+		T value; 
+
+		try
+		{
+			response = httpClient().newCall(request).execute();
+		
+			if(response.isSuccessful())
+			{
+				responseBody = response.body().string();
+
+				if(StringHelper.isNullOrEmpty(responseBody))
+				{
+					value = (T)response;
+				}
+				else
+				{
+					value = getJsonConverter().readValue(responseBody, responseType);
+				}
+
+				response.close();
+				return value; 
+			}
+
+			throw errorHandler.handleFailedResponse(response, rootPartnerOperations.getRequestContext());
+		}
+		catch (IOException ex) 
+		{
+			throw new PartnerResponseParseException(
+				responseBody, 
+				rootPartnerOperations.getRequestContext(), 
+				"Could not deserialize response. Detailed message: " + ex.getMessage(),
+				ex);
+		}
 	}
 }

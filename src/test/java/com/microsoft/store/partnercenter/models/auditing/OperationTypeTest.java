@@ -33,7 +33,7 @@ public class OperationTypeTest
     private static final String CREATE_CUSTOMER_USER_VALUE = "create_customer_user";
     private static final String DELETE_CUSTOMER_USER_VALUE = "delete_customer_user";
     private static final String UPDATE_CUSTOMER_USER_VALUE = "update_customer_user";
-    private static final String UPDATE_CUSTOMER_USER_LICENSES_VALUE = "Update_customer_user_licenses";
+    private static final String UPDATE_CUSTOMER_USER_LICENSES_VALUE = "update_customer_user_licenses";
     private static final String RESET_CUSTOMER_USER_PASSWORD_VALUE = "reset_customer_user_password";
     private static final String UPDATE_CUSTOMER_USER_PRINCIPAL_NAME_VALUE = "update_customer_user_principal_name";
     private static final String RESTORE_CUSTOMER_USER_VALUE = "restore_customer_user";

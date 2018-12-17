@@ -16,8 +16,6 @@ import com.microsoft.store.partnercenter.factory.IPartnerFactory;
 import com.microsoft.store.partnercenter.factory.StandardPartnerFactory;
 import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.logging.SystemOutLogger;
-import com.microsoft.store.partnercenter.retries.ExponentialBackOffRetryPolicy;
-import com.microsoft.store.partnercenter.retries.IRetryPolicy;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -42,9 +40,6 @@ public class PartnerService
 
 		// initialize the partner factory
 		setFactory( new StandardPartnerFactory() );
-
-		// define the default retry policy as exponential with 3 retry attempts
-		setRetryPolicy( new ExponentialBackOffRetryPolicy( getConfiguration().getDefaultMaxRetryAttempts() ) );
 
 		// Set the SDK value based on data from the configuration file.
 		sdkVersion = configuration.getSdkVersion();
@@ -161,21 +156,6 @@ public class PartnerService
 		refreshCredentialsHandler = partnerCredentials;
 	}
 
-	/**
-	 * Gets the default retry policy used by the partner SDK.
-	 */
-	private IRetryPolicy retryPolicy;
-
-	public IRetryPolicy getRetryPolicy()
-	{
-		return retryPolicy;
-	}
-
-	public void setRetryPolicy( IRetryPolicy value )
-	{
-		retryPolicy = value;
-	}
-	
 	private String proxyHostName;
 	
 	public String getProxyHostName()

@@ -96,7 +96,7 @@ public enum OperationType
     /**
      * Updates a customer user licenses.
      */
-    UPDATE_CUSTOMER_USER_LICENSES("Update_customer_user_licenses"),
+    UPDATE_CUSTOMER_USER_LICENSES("update_customer_user_licenses"),
 
     /**
      * Reset customer user password.

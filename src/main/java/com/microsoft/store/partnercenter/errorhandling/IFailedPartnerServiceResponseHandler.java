@@ -6,7 +6,7 @@
 
 package com.microsoft.store.partnercenter.errorhandling;
 
-import org.apache.http.HttpResponse;
+import okhttp3.Response;
 
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
@@ -22,7 +22,7 @@ public interface IFailedPartnerServiceResponseHandler
      * @param response The partner service response.
      * @return The exception to throw.
      */
-    PartnerException handleFailedResponse( HttpResponse response );
+    PartnerException handleFailedResponse( Response response );
 
     /**
      * Handles failed partner service responses.
@@ -31,5 +31,5 @@ public interface IFailedPartnerServiceResponseHandler
      * @param context The reqeust context.
      * @return The exception to throw.
      */
-    PartnerException handleFailedResponse( HttpResponse response, IRequestContext context );
+    PartnerException handleFailedResponse( Response response, IRequestContext context );
 }

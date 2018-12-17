@@ -34,7 +34,7 @@ public class PartnerException
      * 
      * @param message The exception message.
      */
-    public PartnerException( String message )
+    public PartnerException(String message)
     {
         this( message, null );
     }
@@ -46,7 +46,7 @@ public class PartnerException
      * @param innerException The exception that is the cause of the current exception, or a null reference if no inner
      *            exception is specified.
      */
-    public PartnerException( String message, Exception innerException )
+    public PartnerException(String message, Exception innerException)
     {
         super( message, innerException );
         this.setErrorCategory( PartnerErrorCategory.NOT_SPECIFIED );
@@ -59,7 +59,7 @@ public class PartnerException
      * @param context The partner context.
      * @param errorCategory The error category.
      */
-    public PartnerException( String message, IRequestContext context, PartnerErrorCategory errorCategory )
+    public PartnerException(String message, IRequestContext context, PartnerErrorCategory errorCategory)
     {
         this( message, context, errorCategory, null );
     }
@@ -72,8 +72,7 @@ public class PartnerException
      * @param errorCategory The error category.
      * @param innerException The inner exception.
      */
-    public PartnerException( String message, IRequestContext context, PartnerErrorCategory errorCategory,
-                             Exception innerException )
+    public PartnerException(String message, IRequestContext context, PartnerErrorCategory errorCategory, Exception innerException)
     {
         super( message, innerException );
         this.setErrorCategory( errorCategory );
@@ -86,18 +85,17 @@ public class PartnerException
      * @param apiFault The API fault object returned by the partner service.
      * @param context The partner context.
      */
-    public PartnerException( ApiFault apiFault, IRequestContext context )
+    public PartnerException(ApiFault apiFault, IRequestContext context)
     {
         this( apiFault, context, PartnerErrorCategory.NOT_SPECIFIED, null );
     }
 
-    public PartnerException( ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory )
+    public PartnerException(ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory)
     {
         this( apiFault, context, errorCategory, null );
     }
 
-    public PartnerException( ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory,
-                             Exception innerException )
+    public PartnerException(ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory, Exception innerException)
     {
         this( apiFault != null ? apiFault.getErrorMessage() : "", context, errorCategory, innerException );
         this.setServiceErrorPayload( apiFault );
