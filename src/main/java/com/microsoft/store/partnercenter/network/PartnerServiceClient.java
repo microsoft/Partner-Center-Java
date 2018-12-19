@@ -99,7 +99,7 @@ public class PartnerServiceClient
 	/**
 	 * The JSON media type used when building a body request.
 	 */
-	static final MediaType JSON_MEDIA_TYPE = MediaType.get("application/json; charset=utf-8");
+	static final MediaType JSON_MEDIA_TYPE = MediaType.parse("application/json; charset=utf-8");
 
 	/**
 	 * The name of the MS-PartnerCenter-Application header.
@@ -158,13 +158,13 @@ public class PartnerServiceClient
 		errorHandler = new DefaultPartnerServiceErrorHandler();
 	}
 	
-    /**
-     * Executes a GET operation against the partner service. 
-     * 
-     * @param rootPartnerOperations An instance of the partner operations.
-     * @param responseType The type of object to be returned.
-     * @param link A link object that represents the action for accessing the resource. 
-     */
+	/**
+	 * Executes a GET operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param link A link object that represents the action for accessing the resource. 
+	 */
 	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, Link link)
 	{
 		Map<String, String> requestHeaders;
@@ -196,16 +196,16 @@ public class PartnerServiceClient
 		return get(rootPartnerOperations, responseType, relativeUri, null);
 	}
 
-    /**
-     * Executes a GET operation against the partner service. 
-     * 
-     * @param rootPartnerOperations An instance of the partner operations.
-     * @param responseType The type of object to be returned.
-     * @param relativeUri The relative address of the request. 
-     * @param headers Headers to be added to the request.
-     * @param parameters Parameters to be added to the request.
-     */
-    public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri, Map<String, String> headers, Collection<KeyValuePair<String, String>> parameters)
+	/**
+	 * Executes a GET operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address of the request. 
+	 * @param headers Headers to be added to the request.
+	 * @param parameters Parameters to be added to the request.
+	 */
+	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri, Map<String, String> headers, Collection<KeyValuePair<String, String>> parameters)
 	{
 		Map<String, String> requestHeaders;
 		Request request;
@@ -221,13 +221,13 @@ public class PartnerServiceClient
 		return handleResponse(rootPartnerOperations, request, responseType);
 	}
 
-    /**
-     * Executes a file content request against the partner service.
-     * 
-     * @param rootPartnerOperations An instance of the partner operations.
-     * @param relativeUri The relative address of the request. 
-     * @param acceptType The value for the accept type header.
-     */
+	/**
+	 * Executes a file content request against the partner service.
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param relativeUri The relative address of the request. 
+	 * @param acceptType The value for the accept type header.
+	 */
 	public InputStream getFileContents(IPartner rootPartnerOperations, String relativeUri, String acceptType)
 	{
 		InputStream responseStream; 
@@ -252,13 +252,13 @@ public class PartnerServiceClient
 	}
 
 	/**
-     * Executes a GET operation against the partner service. 
-     * 
-     * @param rootPartnerOperations An instance of the partner operations.
-     * @param responseType The type of object to be returned.
-     * @param relativeUri The relative address of the request. 
-     * @param parameters Parameters to be added to the request.
-     */
+	 * Executes a GET operation against the partner service. 
+	 * 
+	 * @param rootPartnerOperations An instance of the partner operations.
+	 * @param responseType The type of object to be returned.
+	 * @param relativeUri The relative address of the request. 
+	 * @param parameters Parameters to be added to the request.
+	 */
 	public <T> T get(IPartner rootPartnerOperations, TypeReference<T> responseType, String relativeUri, Collection<KeyValuePair<String, String>> parameters)
 	{
 		return get(rootPartnerOperations, responseType, relativeUri, null, parameters);

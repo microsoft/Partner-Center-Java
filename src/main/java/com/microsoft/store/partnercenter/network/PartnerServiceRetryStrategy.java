@@ -80,7 +80,7 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
         {
             Thread.sleep((long)exponentialBackOffTime);
         }
-        catch ( InterruptedException e )
+        catch (InterruptedException ex)
         {
         }
         
