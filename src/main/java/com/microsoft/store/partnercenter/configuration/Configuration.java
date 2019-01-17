@@ -163,7 +163,7 @@ public class Configuration
     /**
      * Sets the default max retry attempts. 
      * 
-     * @param defaultMaxRetryAttempts The default max retry attempts.
+     * @param value The default max retry attempts.
      */
     public void setDefaultMaxRetryAttempts( int value )
     {
@@ -203,7 +203,7 @@ public class Configuration
     /**
      * Sets the default locale.
      * 
-     * @param defaultLocale The default locale.
+     * @param value The default locale.
      */
     public void setDefaultLocale( String value )
     {
