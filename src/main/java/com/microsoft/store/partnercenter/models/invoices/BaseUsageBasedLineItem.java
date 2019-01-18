@@ -338,7 +338,7 @@ public abstract class BaseUsageBasedLineItem
      */
     private String __CustomerId;
 
-    public String geCustomerId()
+    public String getCustomerId()
     {
         return __CustomerId;
     }
