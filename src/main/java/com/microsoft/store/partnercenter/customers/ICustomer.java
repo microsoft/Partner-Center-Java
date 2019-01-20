@@ -9,6 +9,7 @@ package com.microsoft.store.partnercenter.customers;
 import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.agreements.ICustomerAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
+import com.microsoft.store.partnercenter.applicationconsents.ICustomerApplicationConsentCollection;
 import com.microsoft.store.partnercenter.carts.ICartCollection;
 import com.microsoft.store.partnercenter.customerdirectoryroles.IDirectoryRoleCollection;
 import com.microsoft.store.partnercenter.customers.products.ICustomerProductCollection;
@@ -47,6 +48,13 @@ public interface ICustomer
      * @return The customer agreements.
      */
     ICustomerAgreementCollection getAgreements();
+
+    /**
+     * Gets the application consent behavior for the customer.
+     *
+     * @return The customer application consents.
+     */
+    ICustomerApplicationConsentCollection getApplicationConsents();
 
     /**
      * Gets the orders behavior for the customer.

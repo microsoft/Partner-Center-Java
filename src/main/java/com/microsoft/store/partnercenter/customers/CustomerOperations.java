@@ -16,6 +16,8 @@ import com.microsoft.store.partnercenter.agreements.CustomerAgreementCollectionO
 import com.microsoft.store.partnercenter.agreements.ICustomerAgreementCollection;
 import com.microsoft.store.partnercenter.analytics.CustomerAnalyticsCollectionOperations;
 import com.microsoft.store.partnercenter.analytics.ICustomerAnalyticsCollection;
+import com.microsoft.store.partnercenter.applicationconsents.CustomerApplicationConsentCollectionOperations;
+import com.microsoft.store.partnercenter.applicationconsents.ICustomerApplicationConsentCollection;
 import com.microsoft.store.partnercenter.carts.CartCollectionOperations;
 import com.microsoft.store.partnercenter.carts.ICartCollection;
 import com.microsoft.store.partnercenter.customerdirectoryroles.DirectoryRoleCollectionOperations;
@@ -79,6 +81,11 @@ public class CustomerOperations
 	 * The customer agreements operations.
 	 */
 	private ICustomerAgreementCollection agreements;
+
+	/**
+	 * The customer application consents operations.
+	 */
+	private ICustomerApplicationConsentCollection applicationConsents;
 
 	/**
 	 * The customer orders operations.
@@ -222,6 +229,22 @@ public class CustomerOperations
 		}
 
 		return this.agreements;
+	}
+
+	/**
+	 * Obtains the application consents for the customer.
+	 *
+	 * @return The customer application consents.
+	 */
+	@Override
+	public ICustomerApplicationConsentCollection getApplicationConsents()
+	{
+		if ( this.applicationConsents == null )
+		{
+			this.applicationConsents = new CustomerApplicationConsentCollectionOperations( this.getPartner(), this.customerId );
+		}
+
+		return this.applicationConsents;
 	}
 
 	/**
