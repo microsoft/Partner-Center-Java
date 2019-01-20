@@ -51,7 +51,7 @@ public class CustomerLicensesUsageInsightsCollectionOperations
             this.getPartner(),
             new TypeReference<ResourceCollection<CustomerLicensesUsageInsights>>(){},
             MessageFormat.format(
-                PartnerService.getInstance().getConfiguration().getApis().get( "CusotmerLicensesUsageInsights" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get( "CustomerLicensesUsageInsights" ).getPath(),
                 this.getContext()));
     }
 }

@@ -16,7 +16,7 @@
     "CustomerLicensesDeploymentInsights": {
       "Path": "customers/{0}/analytics/licenses/deployment"
     },
-    "CusotmerLicensesUsageInsights": {
+    "CustomerLicensesUsageInsights": {
       "Path": "customers/{0}/analytics/licenses/usage"
     },
     "GetOffers": {
