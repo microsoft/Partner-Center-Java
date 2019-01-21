@@ -82,6 +82,37 @@ public class Cart
     {
     	expirationTimestamp = value;
     }
+    /**
+     *  Gets or sets the user who last updated the cart.
+     */
+    @JsonProperty( "lastModifiedUser" )
+    private String lastModifiedUser;
+
+    public String getLastModifiedUser()
+    {
+        return lastModifiedUser;
+    }
+
+    public void setLastModifiedUser( String value )
+    {
+        lastModifiedUser = value;
+    }
+
+    /**
+     *  Gets or sets the status.
+     */
+    @JsonProperty( "status" )
+    private String status;
+
+    public String getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus( String value )
+    {
+        status = value;
+    }
 
     /**
      *  Gets or sets the last modified user or application.
