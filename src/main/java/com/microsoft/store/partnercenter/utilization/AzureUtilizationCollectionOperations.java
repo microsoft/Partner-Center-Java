@@ -25,6 +25,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 public class AzureUtilizationCollectionOperations 
 		extends BasePartnerComponent<Tuple<String, String>>
@@ -77,7 +78,7 @@ public class AzureUtilizationCollectionOperations
 				new KeyValuePair<String, String>
 				(
 					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "StartTime" ),
-					startTime.toString("yyyy-MM-dd'T'HH:mm:ssZ")
+					startTime.withZone(DateTimeZone.UTC).toString("yyyy-MM-dd'T'HH:mm:ss'Z'")
 				) 
 			);
 		}
@@ -89,7 +90,7 @@ public class AzureUtilizationCollectionOperations
 				new KeyValuePair<String, String>
 				(
 					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "EndTime" ),
-					endTime.toString("yyyy-MM-dd'T'HH:mm:ssZ")
+					endTime.withZone(DateTimeZone.UTC).toString("yyyy-MM-dd'T'HH:mm:ss'Z'")
 				) 
 			);
 		}
