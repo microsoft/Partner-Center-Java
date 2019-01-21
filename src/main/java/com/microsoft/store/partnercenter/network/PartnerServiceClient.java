@@ -450,7 +450,7 @@ public class PartnerServiceClient
 	 * Constructs the address for the request.
 	 * 
 	 * @param relativUri Relative address for the resource being requested.
-	 * @param paramters The parameters to be added to the request.
+	 * @param parameters The parameters to be added to the request.
 	 * @return The address for the request.
 	 */
 	private String buildUrl(String relativUri, Collection<KeyValuePair<String, String>> parameters, boolean isBuilt)
