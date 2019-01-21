@@ -54,7 +54,7 @@ public class Subscription
     private String id; 
 
     /**
-     * A flag indiciating whether or not the subscription is a trial.
+     * A flag indicating whether or not the subscription is a trial.
      */
     @JsonProperty("isTrial")
     private boolean isTrial;
@@ -76,6 +76,12 @@ public class Subscription
      */
     @JsonProperty("parentSubscriptionId")
     private String parentSubscriptionId;
+
+    /**
+     * The entitlement identifier for the subscription.
+     */
+    @JsonProperty("entitlementId")
+    private String entitlementId;
 
     /**
      * The quantity for the subscription.
@@ -245,6 +251,26 @@ public class Subscription
     public void setParentSubscriptionId( String value )
     {
         parentSubscriptionId = value;
+    }
+
+    /**
+     * Gets the entitlement identifier for the subscription.
+     *
+     * @return The entitlement identifier for the subscription.
+     */
+    public String getEntitlementId()
+    {
+        return entitlementId;
+    }
+
+    /**
+     * Sets the entitlement identifier for the subscription.
+     *
+     * @param value The entitlement identifier for the subscription.
+     */
+    public void setEntitlementId( final String value )
+    {
+        entitlementId = value;
     }
 
     /**
