@@ -96,6 +96,12 @@ public class Subscription
     private String unitType;
 
     /**
+     * The billing cycle type for the subscription
+     */
+    @JsonProperty("billingCycle")
+    private String billingCycle;
+
+    /**
      * Initializes a new instance of the subscription class.
      */
     public Subscription()
@@ -271,6 +277,24 @@ public class Subscription
     public void setEntitlementId( final String value )
     {
         entitlementId = value;
+    }
+
+    /**
+     * Gets the billing cycle type for the subscription.
+     *
+     * @return The billing cycle type
+     */
+    public String getBillingCycle() {
+        return billingCycle;
+    }
+
+    /**
+     * Sets the billing cycle type for the subscription
+     *
+     * @param billingCycle The billing cycle type for the subscription
+     */
+    public void setBillingCycle(String billingCycle) {
+        this.billingCycle = billingCycle;
     }
 
     /**
