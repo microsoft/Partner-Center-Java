@@ -13,7 +13,7 @@ public class CustomerUser extends User
     /**
      * Gets or sets usage location, the location where user intends to use the license.
      */
-	@JsonProperty("UsageLocation")
+	@JsonProperty("usageLocation")
     private String usageLocation;
 	
     public String getUsageLocation()
