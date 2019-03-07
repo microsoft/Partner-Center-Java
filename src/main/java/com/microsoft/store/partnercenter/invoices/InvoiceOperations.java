@@ -28,14 +28,14 @@ public class InvoiceOperations
 	 * Initializes a new instance of the InvoiceOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
-	 * @param invoiceId The invoice id.
+	 * @param invoiceId The invoice identifier.
 	 */
-	public InvoiceOperations( IPartner rootPartnerOperations, String invoiceId )
+	public InvoiceOperations(IPartner rootPartnerOperations, String invoiceId)
 	{
 		super( rootPartnerOperations, invoiceId );
 		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
 		{
-			throw new IllegalArgumentException( "invoiceId has to be set." );
+			throw new IllegalArgumentException("invoiceId has to be set.");
 		}
 	}
 
@@ -46,6 +46,17 @@ public class InvoiceOperations
 	public IInvoiceDocuments getDocuments()
 	{
 		return new InvoiceDocumentsOperations( this.getPartner(), this.getContext() );
+	}
+
+	/**
+     * Gets the available receipt operations.
+     * 
+     * @return The available receipt opreations.
+     */    
+	@Override
+	public IReceiptCollection getReceipts()
+	{
+		return new ReceiptCollectionOperations(this.getPartner(), this.getContext());
 	}
 
 	/**
@@ -72,7 +83,7 @@ public class InvoiceOperations
 			this.getPartner(),
 			new TypeReference<Invoice>(){}, 
 			MessageFormat.format( 
-				PartnerService.getInstance().getConfiguration().getApis().get( "GetInvoice" ).getPath(),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoice").getPath(),
 				this.getContext()));
 	}
 }

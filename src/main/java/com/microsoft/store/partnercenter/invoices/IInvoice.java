@@ -24,6 +24,13 @@ public interface IInvoice
      * @return An invoice document operations.
 	 */
     IInvoiceDocuments getDocuments();
+
+    /**
+     * Gets the available receipt operations.
+     * 
+     * @return The available receipt opreations.
+     */    
+    IReceiptCollection getReceipts();
 	
     /**
      * Creates an invoice line item collection operations given a billing provider and invoice line item type.
