@@ -30,6 +30,11 @@ class ResourceTypeTest
     private static final String APPLICATION_CREDENTIAL_VALUE = "application_credential";
     private static final String PARTNER_USER_VALUE = "partner_user";
     private static final String PARTNER_RELATIONSHIP_VALUE = "partner_relationship";
+    private static final String REFERRAL_VALUE = "referral";
+    private static final String SOFTWARE_KEY_VALUE = "software_key";
+    private static final String SOFTWARE_DOWNLOAD_LINK_VALUE = "software_download_link";
+    private static final String CREDIT_LIMIT_VALUE = "credit_limit";
+
     private static final String UNDEFINED_JSON = '"' + UNDEFINED_VALUE + '"';
     private static final String CUSTOMER_JSON = '"' + CUSTOMER_VALUE + '"';
     private static final String CUSTOMER_USER_JSON = '"' + CUSTOMER_USER_VALUE + '"';
@@ -43,6 +48,10 @@ class ResourceTypeTest
     private static final String APPLICATION_CREDENTIAL_JSON = '"' + APPLICATION_CREDENTIAL_VALUE + '"';
     private static final String PARTNER_USER_JSON = '"' + PARTNER_USER_VALUE + '"';
     private static final String PARTNER_RELATIONSHIP_JSON = '"' + PARTNER_RELATIONSHIP_VALUE + '"';
+    private static final String REFERRAL_JSON = '"' + REFERRAL_VALUE + '"';
+    private static final String SOFTWARE_KEY_JSON = '"' + SOFTWARE_KEY_VALUE + '"';
+    private static final String SOFTWARE_DOWNLOAD_LINK_JSON = '"' + SOFTWARE_DOWNLOAD_LINK_VALUE + '"';
+    private static final String CREDIT_LIMIT_JSON = '"' + CREDIT_LIMIT_VALUE + '"';
 
     private ObjectMapper jsonConverter;
 
@@ -68,6 +77,10 @@ class ResourceTypeTest
         assertEquals(ResourceType.APPLICATION_CREDENTIAL, jsonConverter.readValue(APPLICATION_CREDENTIAL_JSON, ResourceType.class));
         assertEquals(ResourceType.PARTNER_USER, jsonConverter.readValue(PARTNER_USER_JSON, ResourceType.class));
         assertEquals(ResourceType.PARTNER_RELATIONSHIP, jsonConverter.readValue(PARTNER_RELATIONSHIP_JSON, ResourceType.class));
+        assertEquals(ResourceType.REFERRAL, jsonConverter.readValue(REFERRAL_JSON, ResourceType.class));
+        assertEquals(ResourceType.SOFTWARE_KEY, jsonConverter.readValue(SOFTWARE_KEY_JSON, ResourceType.class));
+        assertEquals(ResourceType.SOFTWARE_DOWNLOAD_LINK, jsonConverter.readValue(SOFTWARE_DOWNLOAD_LINK_JSON, ResourceType.class));
+        assertEquals(ResourceType.CREDIT_LIMIT, jsonConverter.readValue(CREDIT_LIMIT_JSON, ResourceType.class));
     }
 
     @Test
@@ -86,7 +99,12 @@ class ResourceTypeTest
         assertEquals(APPLICATION_CREDENTIAL_JSON, jsonConverter.writeValueAsString(ResourceType.APPLICATION_CREDENTIAL));
         assertEquals(PARTNER_USER_JSON, jsonConverter.writeValueAsString(ResourceType.PARTNER_USER));
         assertEquals(PARTNER_RELATIONSHIP_JSON, jsonConverter.writeValueAsString(ResourceType.PARTNER_RELATIONSHIP));
+        assertEquals(REFERRAL_JSON, jsonConverter.writeValueAsString(ResourceType.REFERRAL));
+        assertEquals(SOFTWARE_KEY_JSON, jsonConverter.writeValueAsString(ResourceType.SOFTWARE_KEY));
+        assertEquals(SOFTWARE_DOWNLOAD_LINK_JSON, jsonConverter.writeValueAsString(ResourceType.SOFTWARE_DOWNLOAD_LINK));
+        assertEquals(CREDIT_LIMIT_JSON, jsonConverter.writeValueAsString(ResourceType.CREDIT_LIMIT));
     }
+
     @Test
     void convertToString()
     {
@@ -103,5 +121,9 @@ class ResourceTypeTest
         assertEquals(APPLICATION_CREDENTIAL_VALUE, ResourceType.APPLICATION_CREDENTIAL.toString());
         assertEquals(PARTNER_USER_VALUE, ResourceType.PARTNER_USER.toString());
         assertEquals(PARTNER_RELATIONSHIP_VALUE, ResourceType.PARTNER_RELATIONSHIP.toString());
+        assertEquals(REFERRAL_VALUE, ResourceType.REFERRAL.toString());
+        assertEquals(SOFTWARE_KEY_VALUE, ResourceType.SOFTWARE_KEY.toString());
+        assertEquals(SOFTWARE_DOWNLOAD_LINK_VALUE, ResourceType.SOFTWARE_DOWNLOAD_LINK.toString());
+        assertEquals(CREDIT_LIMIT_VALUE, ResourceType.CREDIT_LIMIT.toString());
     }
 }

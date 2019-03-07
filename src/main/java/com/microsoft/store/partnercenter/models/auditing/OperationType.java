@@ -171,7 +171,32 @@ public enum OperationType
     /**
      * Removes a partner user.
      */
-    REMOVE_PARTNER_USER("remove_partner_user");
+    REMOVE_PARTNER_USER("remove_partner_user"),
+
+    /**
+     * A referral was created.
+     */
+    CREATE_REFERRAL("create_referral"), 
+
+    /**
+     * A referral was updated.
+     */
+    UPDATE_REFERRAL("update_referral"), 
+    
+    /** 
+     * A software key was obtained.
+     */
+    GET_SOFTWARE_KEY("get_software_key"),
+    
+    /**
+     * A link to the software download was obtained.
+     */
+    GET_SOFTWARE_DOWNLOAD_LINK("get_software_download_link"),
+    
+    /**
+     * The credit limit for the partner was increased.
+     */
+    INCREASE_CREDIT_LIMIT("increase_credit_limit");
 
     private final String value;
 

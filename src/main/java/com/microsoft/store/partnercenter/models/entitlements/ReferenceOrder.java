@@ -14,36 +14,74 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
  * Class that represents an order linked to the entitlement.
  */
 public class ReferenceOrder
-     extends ResourceBaseWithLinks<StandardResourceLinks> {
-	/**
-	 * Gets or sets order id.
-	 */
-	@JsonProperty( "id" )
-	private String __Id;
+	 extends ResourceBaseWithLinks<StandardResourceLinks> 
+{
+	@JsonProperty("alternateId")
+	private String alternateId; 
 
+	@JsonProperty("id")
+	private String id;
+
+	@JsonProperty("lineItemId")
+	private String lineItemId;
+	
+	/**
+	 * Gets the alternate identifier value.
+	 * 
+	 * @return The value of the alternate identifier.
+	 */
+	public String getAlternateId()
+	{
+		return alternateId;
+	}
+
+	/**
+	 * Sets the alternate identifier value.
+	 * 
+	 * @param value The value of the alternate identifier.
+	 */
+	public void setAlternateId(String value)
+	{
+		alternateId = value;
+	}
+
+	/**
+	 * Gets the identifier value.
+	 * 
+	 * @return The value of the identifier.
+	 */
 	public String getId()
 	{
-		return __Id;
-	}
-
-	public void setId( String value )
-	{
-		__Id = value;
+		return id;
 	}
 
 	/**
-	 * Gets or sets order line item id.
+	 * Sets the identifier value.
+	 * 
+	 * @param value The value of the identifier.
 	 */
-	@JsonProperty( "lineItemId" )
-	private String __LineItemId;
-
-	public String getLineItemId()
+	public void setId( String value )
 	{
-		return __LineItemId;
+		id = value;
 	}
 
+	/**
+	 * Gets the line item identifier value.
+	 * 
+	 * @return The value of the line item identifier.
+	 */
+	public String getLineItemId()
+	{
+		return lineItemId;
+	}
+
+	/**
+	 * Sets the line item identifier value.
+	 * 
+	 * @param value The value of the line item identifier.
+	 */
 	public void setLineItemId( String value )
 	{
-		__LineItemId = value;
+		lineItemId = value;
 	}
 }

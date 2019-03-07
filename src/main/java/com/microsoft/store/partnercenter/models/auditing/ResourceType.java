@@ -76,7 +76,27 @@ public enum ResourceType
     /**
      * Partner Relationship Resource
      */
-    PARTNER_RELATIONSHIP("partner_relationship");
+    PARTNER_RELATIONSHIP("partner_relationship"),
+
+    /**
+     * The referral resource 
+     */
+    REFERRAL("referral"), 
+    
+    /**
+     * The software key resource
+     */
+    SOFTWARE_KEY("software_key"),
+
+    /**
+     * The software download link resource
+     */
+    SOFTWARE_DOWNLOAD_LINK("software_download_link"), 
+    
+    /**
+     * The credit limit resource
+     */
+    CREDIT_LIMIT("credit_limit");
 
     private final String value;
 

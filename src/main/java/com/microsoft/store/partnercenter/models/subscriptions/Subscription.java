@@ -13,8 +13,6 @@ import com.microsoft.store.partnercenter.models.ContractType;
 import com.microsoft.store.partnercenter.models.invoices.BillingType;
 
 import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
-import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * The subscription resource represents the life cycle of a subscription and includes properties that define the states
@@ -341,20 +339,15 @@ public class Subscription
      * Gets or sets the effective start date for this subscription. It is used to back date a migrated subscription or
      * to align it with another.
      */
-    private LocalDateTime __EffectiveStartDate;
+    private DateTime __EffectiveStartDate;
 
-    public LocalDateTime getEffectiveStartDate()
+    public DateTime getEffectiveStartDate()
     {
         return __EffectiveStartDate;
     }
 
     @JsonProperty( "effectiveStartDate" )
-    public void setEffectiveStartDate( String value )
-    {
-        __EffectiveStartDate = ISODateTimeFormat.dateTimeNoMillis().parseLocalDateTime( value );
-    }
-
-    public void setEffectiveStartDate( LocalDateTime value )
+    public void setEffectiveStartDate( DateTime value )
     {
         __EffectiveStartDate = value;
     }
@@ -363,21 +356,15 @@ public class Subscription
      * Gets or sets the commitment end date for this subscription. For the subscription which are not auto renewable
      * this represents a date far away in the future.
      */
-    private LocalDateTime __CommitmentEndDate;
+    private DateTime __CommitmentEndDate;
 
-    public LocalDateTime getCommitmentEndDate()
+    public DateTime getCommitmentEndDate()
     {
         return __CommitmentEndDate;
     }
 
     @JsonProperty( "commitmentEndDate" )
-    public void setCommitmentEndDate( String value )
-    {
-        __CommitmentEndDate = ISODateTimeFormat.dateTimeNoMillis().parseLocalDateTime( value );
-
-    }
-
-    public void setCommitmentEndDate( LocalDateTime value )
+    public void setCommitmentEndDate( DateTime value )
     {
         __CommitmentEndDate = value;
     }

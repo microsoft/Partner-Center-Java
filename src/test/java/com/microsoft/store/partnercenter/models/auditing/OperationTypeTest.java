@@ -48,7 +48,13 @@ public class OperationTypeTest
     private static final String REMOVE_APPLICATION_CREDENTIAL_VALUE = "remove_application_credential";
     private static final String CREATE_PARTNER_USER_VALUE = "create_partner_user";
     private static final String UPDATE_PARTNER_USER_VALUE = "update_partner_user";
-    private static final String remove_partner_user_VALUE = "remove_partner_user";
+    private static final String REMOVE_PARNTER_USER_VALUE = "remove_partner_user";
+    private static final String CREATE_REFERRAL_VALUE = "create_referral";
+    private static final String UPDATE_REFERRAL_VALUE = "update_referral";
+    private static final String GET_SOFTWARE_KEY_VALUE = "get_software_key";
+    private static final String GET_SOFTWARE_DOWNLOAD_LINK_VALUE = "get_software_download_link";
+    private static final String INCREASE_CREDIT_LIMIT_VALUE = "increase_credit_limit";
+
     private static final String UNDEFINED_JSON = '"' + UNDEFINED_VALUE + '"';
     private static final String UPDATE_CUSTOMER_QUALIFICATION_JSON = '"' + UPDATE_CUSTOMER_QUALIFICATION_VALUE + '"';
     private static final String UPDATE_SUBSCRIPTION_JSON = '"' + UPDATE_SUBSCRIPTION_VALUE + '"';
@@ -80,7 +86,12 @@ public class OperationTypeTest
     private static final String REMOVE_APPLICATION_CREDENTIAL_JSON = '"' + REMOVE_APPLICATION_CREDENTIAL_VALUE + '"';
     private static final String CREATE_PARTNER_USER_JSON = '"' + CREATE_PARTNER_USER_VALUE + '"';
     private static final String UPDATE_PARTNER_USER_JSON = '"' + UPDATE_PARTNER_USER_VALUE + '"';
-    private static final String remove_partner_user_JSON = '"' + remove_partner_user_VALUE + '"';
+    private static final String REMOVE_PARTNER_USER_JSON = '"' + REMOVE_PARNTER_USER_VALUE + '"';
+    private static final String CREATE_REFERRAL_JSON =  '"' + CREATE_REFERRAL_VALUE + '"';
+    private static final String UPDATE_REFERRAL_JSON = '"' + UPDATE_REFERRAL_VALUE + '"';
+    private static final String GET_SOFTWARE_KEY_JSON = '"' + GET_SOFTWARE_KEY_VALUE + '"';
+    private static final String GET_SOFTWARE_DOWNLOAD_LINK_JSON = '"' + GET_SOFTWARE_DOWNLOAD_LINK_VALUE + '"';
+    private static final String INCREASE_CREDIT_LIMIT_JSON = '"' + INCREASE_CREDIT_LIMIT_VALUE + '"';
 
     private ObjectMapper jsonConverter;
 
@@ -124,7 +135,12 @@ public class OperationTypeTest
         assertEquals(OperationType.REMOVE_APPLICATION_CREDENTIAL, jsonConverter.readValue(REMOVE_APPLICATION_CREDENTIAL_JSON, OperationType.class));
         assertEquals(OperationType.CREATE_PARTNER_USER, jsonConverter.readValue(CREATE_PARTNER_USER_JSON, OperationType.class));
         assertEquals(OperationType.UPDATE_PARTNER_USER, jsonConverter.readValue(UPDATE_PARTNER_USER_JSON, OperationType.class));
-        assertEquals(OperationType.REMOVE_PARTNER_USER, jsonConverter.readValue(remove_partner_user_JSON, OperationType.class));
+        assertEquals(OperationType.REMOVE_PARTNER_USER, jsonConverter.readValue(REMOVE_PARTNER_USER_JSON, OperationType.class));
+        assertEquals(OperationType.CREATE_REFERRAL, jsonConverter.readValue(CREATE_REFERRAL_JSON, OperationType.class));
+        assertEquals(OperationType.UPDATE_REFERRAL, jsonConverter.readValue(UPDATE_REFERRAL_JSON, OperationType.class));
+        assertEquals(OperationType.GET_SOFTWARE_KEY, jsonConverter.readValue(GET_SOFTWARE_KEY_JSON, OperationType.class));
+        assertEquals(OperationType.GET_SOFTWARE_DOWNLOAD_LINK, jsonConverter.readValue(GET_SOFTWARE_DOWNLOAD_LINK_JSON, OperationType.class));
+        assertEquals(OperationType.INCREASE_CREDIT_LIMIT, jsonConverter.readValue(INCREASE_CREDIT_LIMIT_JSON, OperationType.class));
     }
 
     @Test
@@ -161,7 +177,12 @@ public class OperationTypeTest
         assertEquals(REMOVE_APPLICATION_CREDENTIAL_JSON, jsonConverter.writeValueAsString(OperationType.REMOVE_APPLICATION_CREDENTIAL));
         assertEquals(CREATE_PARTNER_USER_JSON, jsonConverter.writeValueAsString(OperationType.CREATE_PARTNER_USER));
         assertEquals(UPDATE_PARTNER_USER_JSON, jsonConverter.writeValueAsString(OperationType.UPDATE_PARTNER_USER));
-        assertEquals(remove_partner_user_JSON, jsonConverter.writeValueAsString(OperationType.REMOVE_PARTNER_USER));
+        assertEquals(REMOVE_PARTNER_USER_JSON, jsonConverter.writeValueAsString(OperationType.REMOVE_PARTNER_USER));
+        assertEquals(CREATE_REFERRAL_JSON, jsonConverter.writeValueAsString(OperationType.CREATE_REFERRAL));
+        assertEquals(UPDATE_REFERRAL_JSON, jsonConverter.writeValueAsString(OperationType.UPDATE_REFERRAL));
+        assertEquals(GET_SOFTWARE_KEY_JSON, jsonConverter.writeValueAsString(OperationType.GET_SOFTWARE_KEY));
+        assertEquals(GET_SOFTWARE_DOWNLOAD_LINK_JSON, jsonConverter.writeValueAsString(OperationType.GET_SOFTWARE_DOWNLOAD_LINK));
+        assertEquals(INCREASE_CREDIT_LIMIT_JSON, jsonConverter.writeValueAsString(OperationType.INCREASE_CREDIT_LIMIT));
     }
 
     @Test
@@ -198,6 +219,11 @@ public class OperationTypeTest
         assertEquals(REMOVE_APPLICATION_CREDENTIAL_VALUE, OperationType.REMOVE_APPLICATION_CREDENTIAL.toString());
         assertEquals(CREATE_PARTNER_USER_VALUE, OperationType.CREATE_PARTNER_USER.toString());
         assertEquals(UPDATE_PARTNER_USER_VALUE, OperationType.UPDATE_PARTNER_USER.toString());
-        assertEquals(remove_partner_user_VALUE, OperationType.REMOVE_PARTNER_USER.toString());
+        assertEquals(REMOVE_PARNTER_USER_VALUE, OperationType.REMOVE_PARTNER_USER.toString());
+        assertEquals(CREATE_REFERRAL_VALUE, OperationType.CREATE_REFERRAL.toString());
+        assertEquals(UPDATE_REFERRAL_VALUE, OperationType.UPDATE_REFERRAL.toString());
+        assertEquals(GET_SOFTWARE_KEY_VALUE, OperationType.GET_SOFTWARE_KEY.toString());
+        assertEquals(GET_SOFTWARE_DOWNLOAD_LINK_VALUE, OperationType.GET_SOFTWARE_DOWNLOAD_LINK.toString());
+        assertEquals(INCREASE_CREDIT_LIMIT_VALUE, OperationType.INCREASE_CREDIT_LIMIT.toString());
     }
 }
