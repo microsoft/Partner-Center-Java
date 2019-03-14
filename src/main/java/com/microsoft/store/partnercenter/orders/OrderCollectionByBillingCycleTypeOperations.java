@@ -71,4 +71,41 @@ public class OrderCollectionByBillingCycleTypeOperations
 				this.getContext().getItem1()),
 			parameters);
 	}
+
+	/**
+     * Gets all customer orders.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The customer orders.
+     */
+	public ResourceCollection<Order> get(boolean includePrice)
+	{
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getParameters().get("BillingType"),
+				this.getContext().getItem2().toString()
+			) 
+		);
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getParameters().get("IncludePrice"),
+				String.valueOf(includePrice)
+			)
+		);
+
+		return this.getPartner().getServiceClient().get(
+			this.getPartner(),
+			new TypeReference<ResourceCollection<Order>>(){}, 
+			MessageFormat.format( 
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getPath(),
+				this.getContext().getItem1()),
+			parameters);
+	}
 }

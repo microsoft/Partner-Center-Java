@@ -33,7 +33,17 @@ public enum BillingProvider
     /**
     * Bill is provided for one time purchases.
     */
-    ONE_TIME("oneTime");
+    ONE_TIME("oneTime"),
+    
+    /**
+     * Indicates that the provider is third party .
+     */
+    EXTERNAL("external"), 
+    
+    /**
+     * Indicates that the provider is both first party and third party.
+     */
+    ALL("all");
 
     private final String value;
 

@@ -8,13 +8,13 @@ The Partner Center Java SDK provides an SDK to interact with Microsoft's Partner
 
 ## Consuming the SDK
 
-Jar dependency binary information for maven and gradle can be found here at [maven](https://mvnrepository.com/artifact/com.microsoft.store/partnercenter/1.8.0). If you would like to use the latest released version, add the following to your POM file:
+Jar dependency binary information for maven and gradle can be found here at [maven](https://mvnrepository.com/artifact/com.microsoft.store/partnercenter). If you would like to use the latest released version, add the following to your POM file:
 
 ```xml
 <dependency>
     <groupId>com.microsoft.store</groupId>
     <artifactId>partnercenter</artifactId>
-    <version>1.10.0</version>
+    <version>1.11.0</version>
 </dependency>
 ```
 
@@ -39,7 +39,7 @@ cd Partner-Center-Java
 Run the following maven command to build:
 
 ```bash
-mvn clean package -DskipTests
+mvn clean package
 ```
 
 ## Related Projects

@@ -16,7 +16,9 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
  * Represents a record of operation performed by a 
  * Partner user or application
  */
-public class AzureMeter extends ResourceBase {
+public class AzureMeter 
+    extends ResourceBase 
+{
     /**
      * Gets or sets the meter unique identifier.
      */
@@ -143,14 +145,14 @@ public class AzureMeter extends ResourceBase {
     /**
      * Gets or sets the included quantity which is free of charge.
      */
-    private int __IncludedQuantity;
+    private double __IncludedQuantity;
     
-    public int getIncludedQuantity()
+    public double getIncludedQuantity()
     {
         return __IncludedQuantity;
     }
 
-    public void setIncludedQuantity( int value )
+    public void setIncludedQuantity( double value )
     {
     	__IncludedQuantity = value;
     }
@@ -169,5 +171,4 @@ public class AzureMeter extends ResourceBase {
     {
     	__EffectiveDate = value;
     }
-
 }

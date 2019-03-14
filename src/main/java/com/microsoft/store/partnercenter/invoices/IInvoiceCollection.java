@@ -21,14 +21,21 @@ public interface IInvoiceCollection
     IEntitySelector<IInvoice>
 {
     /**
-     * Retrieves the partner's current account balance.
+     * Gets the available estimate operations.
+     * 
+     * @return THe available estimate operations.
+     */
+    IEstimateCollection getEstimates();
+
+    /**
+     * Gets the partner's current account balance.
      * 
      * @return invoice summary operations.
      */
     IInvoiceSummary getSummary();
     
     /**
-     * Retrieves the invoice summary collection operations.
+     * Gets the invoice summary collection operations.
      * 
      * @return The invoice summary collection operations.
      */
@@ -43,7 +50,7 @@ public interface IInvoiceCollection
     IInvoice byId( String invoiceId );
     
     /**
-     * Retrieves all the invoices.
+     * Gets all the invoices.
      * @return The invoices.
      */
     ResourceCollection<Invoice> get();

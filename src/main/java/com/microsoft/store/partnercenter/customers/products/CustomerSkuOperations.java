@@ -16,7 +16,6 @@ import com.microsoft.store.partnercenter.models.products.Sku;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 import com.microsoft.store.partnercenter.products.IAvailabilityCollection;
 import com.microsoft.store.partnercenter.products.ISku;
-import com.microsoft.store.partnercenter.products.ISkuDownloadOptions;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -26,8 +25,6 @@ public class CustomerSkuOperations extends BasePartnerComponent<TripletTuple<Str
 	implements ISku
 {
 	private IAvailabilityCollection availabilities;
-
-	private ISkuDownloadOptions downloadOptions;
 
 	/**
 	 * Initializes a new instance of the CustomerSkuOperations class.
@@ -71,22 +68,6 @@ public class CustomerSkuOperations extends BasePartnerComponent<TripletTuple<Str
 		}
 
 		return availabilities;
-	}
-
-	/**
-	 * Retrieves the operations for the current SKU's download options.
-	 * 
-	 * @return The operations for the current SKU's download options.
-	 */    
-	@Override
-	public ISkuDownloadOptions getDownloadOptions()
-	{
-		if(downloadOptions == null)
-		{
-			downloadOptions = new CustomerSkuDownloadOptionsOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3());
-		}
-
-		return downloadOptions;
 	}
 
 	/**

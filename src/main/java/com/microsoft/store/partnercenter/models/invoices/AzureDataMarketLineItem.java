@@ -6,49 +6,50 @@
 
 package com.microsoft.store.partnercenter.models.invoices;
 
-public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
+public class AzureDataMarketLineItem 
+	extends BaseAzureDataMarketLineItem
 {
     /**
      * Gets or sets the units included in the order.
      */
-    private int __IncludedQuantity;
+    private double __IncludedQuantity;
 
     /**
      * Gets or sets the quantity consumed above allowed usage.
      */
-    private int __OverageQuantity;
+    private double __OverageQuantity;
 
     /**
      * Gets or sets the price of each unit.
      */
-    private int __ListPrice;
+    private double __ListPrice;
 
     /**
      * Gets or sets the price of quantity consumed.
      */
-    private int __ConsumptionPrice;
+    private double __ConsumptionPrice;
 
     /**
      * Gets or sets the discount on consumption.
      */
-    private int __ConsumptionDiscount;
+    private double __ConsumptionDiscount;
 
     /**
      * Gets or sets the price charged before taxes.
      */
-    private int __PretaxCharges;
+    private double __PretaxCharges;
 
     /**
      * Gets or sets the amount of tax charged.
      */
-    private int __TaxAmount;
+    private double __TaxAmount;
 
     /**
      * Gets or sets the total charges after tax.
      * Pretax Charges + Tax Amount
      */
     
-    private int __PostTaxTotal;
+    private double __PostTaxTotal;
 
     /**
      * Gets or sets the currency associated with the prices.
@@ -58,12 +59,12 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
     /**
      * Gets or sets the effective price before taxes.
      */
-    private int __PretaxEffectiveRate;
+    private double __PretaxEffectiveRate;
 
     /**
      * Gets or sets the effective price after taxes.
      */
-    private int __PostTaxEffectiveRate;
+    private double __PostTaxEffectiveRate;
 
     /**
      * Gets or sets the charge type. Example: Assess Usage Fee For Current Cycle.
@@ -73,112 +74,112 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
     /**
 	 * @return the __IncludedQuantity
 	 */
-	public int getIncludedQuantity() {
+	public double getIncludedQuantity() {
 		return __IncludedQuantity;
 	}
 
 	/**
 	 * @param __IncludedQuantity the __IncludedQuantity to set
 	 */
-	public void setIncludedQuantity(int __IncludedQuantity) {
+	public void setIncludedQuantity(double __IncludedQuantity) {
 		this.__IncludedQuantity = __IncludedQuantity;
 	}
 
 	/**
 	 * @return the __OverageQuantity
 	 */
-	public int getOverageQuantity() {
+	public double getOverageQuantity() {
 		return __OverageQuantity;
 	}
 
 	/**
 	 * @param __OverageQuantity the __OverageQuantity to set
 	 */
-	public void setOverageQuantity(int __OverageQuantity) {
+	public void setOverageQuantity(double __OverageQuantity) {
 		this.__OverageQuantity = __OverageQuantity;
 	}
 
 	/**
 	 * @return the __ListPrice
 	 */
-	public int getListPrice() {
+	public double getListPrice() {
 		return __ListPrice;
 	}
 
 	/**
 	 * @param __ListPrice the __ListPrice to set
 	 */
-	public void setListPrice(int __ListPrice) {
+	public void setListPrice(double __ListPrice) {
 		this.__ListPrice = __ListPrice;
 	}
 
 	/**
 	 * @return the __ConsumptionPrice
 	 */
-	public int getConsumptionPrice() {
+	public double getConsumptionPrice() {
 		return __ConsumptionPrice;
 	}
 
 	/**
 	 * @param __ConsumptionPrice the __ConsumptionPrice to set
 	 */
-	public void setConsumptionPrice(int __ConsumptionPrice) {
+	public void setConsumptionPrice(double __ConsumptionPrice) {
 		this.__ConsumptionPrice = __ConsumptionPrice;
 	}
 
 	/**
 	 * @return the __ConsumptionDiscount
 	 */
-	public int getConsumptionDiscount() {
+	public double getConsumptionDiscount() {
 		return __ConsumptionDiscount;
 	}
 
 	/**
 	 * @param __ConsumptionDiscount the __ConsumptionDiscount to set
 	 */
-	public void setConsumptionDiscount(int __ConsumptionDiscount) {
+	public void setConsumptionDiscount(double __ConsumptionDiscount) {
 		this.__ConsumptionDiscount = __ConsumptionDiscount;
 	}
 
 	/**
 	 * @return the __PretaxCharges
 	 */
-	public int getPretaxCharges() {
+	public double getPretaxCharges() {
 		return __PretaxCharges;
 	}
 
 	/**
 	 * @param __PretaxCharges the __PretaxCharges to set
 	 */
-	public void setPretaxCharges(int __PretaxCharges) {
+	public void setPretaxCharges(double __PretaxCharges) {
 		this.__PretaxCharges = __PretaxCharges;
 	}
 
 	/**
 	 * @return the __TaxAmount
 	 */
-	public int getTaxAmount() {
+	public double getTaxAmount() {
 		return __TaxAmount;
 	}
 
 	/**
 	 * @param __TaxAmount the __TaxAmount to set
 	 */
-	public void setTaxAmount(int __TaxAmount) {
+	public void setTaxAmount(double __TaxAmount) {
 		this.__TaxAmount = __TaxAmount;
 	}
 
 	/**
 	 * @return the __PostTaxTotal
 	 */
-	public int getPostTaxTotal() {
+	public double getPostTaxTotal() {
 		return __PostTaxTotal;
 	}
 
 	/**
 	 * @param __PostTaxTotal the __PostTaxTotal to set
 	 */
-	public void setPostTaxTotal(int __PostTaxTotal) {
+	public void setPostTaxTotal(double __PostTaxTotal) {
 		this.__PostTaxTotal = __PostTaxTotal;
 	}
 
@@ -199,28 +200,28 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
 	/**
 	 * @return the __PretaxEffectiveRate
 	 */
-	public int getPretaxEffectiveRate() {
+	public double getPretaxEffectiveRate() {
 		return __PretaxEffectiveRate;
 	}
 
 	/**
 	 * @param __PretaxEffectiveRate the __PretaxEffectiveRate to set
 	 */
-	public void setPretaxEffectiveRate(int __PretaxEffectiveRate) {
+	public void setPretaxEffectiveRate(double __PretaxEffectiveRate) {
 		this.__PretaxEffectiveRate = __PretaxEffectiveRate;
 	}
 
 	/**
 	 * @return the __PostTaxEffectiveRate
 	 */
-	public int getPostTaxEffectiveRate() {
+	public double getPostTaxEffectiveRate() {
 		return __PostTaxEffectiveRate;
 	}
 
 	/**
 	 * @param __PostTaxEffectiveRate the __PostTaxEffectiveRate to set
 	 */
-	public void setPostTaxEffectiveRate(int __PostTaxEffectiveRate) {
+	public void setPostTaxEffectiveRate(double __PostTaxEffectiveRate) {
 		this.__PostTaxEffectiveRate = __PostTaxEffectiveRate;
 	}
 
@@ -247,5 +248,4 @@ public class AzureDataMarketLineItem extends BaseAzureDataMarketLineItem
 	public InvoiceLineItemType getInvoiceLineItemType() {
 		return InvoiceLineItemType.BILLINGLINEITEMS;
 	}
-
 }

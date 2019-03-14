@@ -8,7 +8,8 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 import org.joda.time.DateTime;
 
-public class AzureDataMarketDailyUsageLineItem extends BaseAzureDataMarketLineItem {
+public class AzureDataMarketDailyUsageLineItem 
+	extends BaseAzureDataMarketLineItem {
 
     /**
      * Gets or sets the usage date the resource.

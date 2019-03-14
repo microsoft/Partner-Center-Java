@@ -72,8 +72,18 @@ public class InvoiceCollection
 		return new InvoiceOperations( this.getPartner(), invoiceId );
 	}
 
+    /**
+     * Gets the available estimate operations.
+     * 
+     * @return THe available estimate operations.
+     */
+	public IEstimateCollection getEstimates()
+	{
+		return new EstimateCollectionOperations(this.getPartner());
+	}
+
 	/**
-	 * Retrieves the partner's current account balance.
+	 * Gets the partner's current account balance.
 	 * 
 	 * @return The account balance.
 	 */
@@ -83,7 +93,7 @@ public class InvoiceCollection
 	}
 
 	/**
-	 * Retrieves the invoice summary collection operations.
+	 * Gets the invoice summary collection operations.
 	 * 
 	 * @return The invoice summary collection operations.
 	 */
@@ -93,7 +103,7 @@ public class InvoiceCollection
 	}
 
 	/**
-	 * Retrieves all invoices associated to the partner.
+	 * Gets all invoices associated to the partner.
 	 * 
 	 * @return The collection of invoices.
 	 */
@@ -107,7 +117,7 @@ public class InvoiceCollection
 	}
 
 	/**
-	 * Retrieves all invoices associated to the partner.
+	 * Gets all invoices associated to the partner.
 	 * 
 	 * @param offset The page offset.
 	 * @param size The maximum number of invoices to return.
@@ -142,7 +152,7 @@ public class InvoiceCollection
 	}
 	
 	/**
-	 * Asynchronously retrieves all invoices associated to the partner.
+	 * Asynchronously Gets all invoices associated to the partner.
 	 * @param query The query parameter
 	 * @return The subset of invoices.
 	 */

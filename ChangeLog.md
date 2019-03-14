@@ -27,9 +27,27 @@
 * Entitlements
   * Added the AlternateId property to the reference order object
 * Invoices
-  * Added the ability to download the Taiwan tax receipt
+  * Added the ability to download the tax receipt
+  * Changed the the following types of the AzureDataMarketLineItem class from int to double
+    * ConsumptionDiscount
+    * ConsumptionPrice
+    * IncludedQuantity
+    * ListPrice
+    * OverageQuantity
+    * PostTaxEffectiveRate
+    * PostTaxTotal
+    * PretaxEffectiveRate
+    * PretaxCharges
+    * TaxAmount
+  * Changed the following type of the BaseAzureDataMarketLineItem class from int to double ConsumedQuantity
 * JDK
   * Modified the target JDK from 1.8 to 1.7
+* Orders
+  * Added the ability to include pricing details in the order information returned when requesting a list of customer orders
+* Products
+  * Removed the SKU download operations
+* Rate Card
+  * Changed the following type of the AzureMeter class from int to double IncludedQuantity
 * Subscriptions
   * Changed the type for the commitment end date from LocalDateTime to DateTime
   * Changed the type for the effective start date from LocalDateTime to DateTime

@@ -8,7 +8,8 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 import org.joda.time.DateTime;
 
-public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
+public abstract class BaseAzureDataMarketLineItem 
+	extends InvoiceLineItem
 {
 	/**
 	 * Gets or sets the partner's Azure Active Directory tenant Id.
@@ -84,7 +85,7 @@ public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 	/**
 	 * Gets or sets the total units consumed.
 	 */
-	private int consumedQuantity;
+	private double consumedQuantity;
 
 	/**
 	 * @return the partnerId
@@ -285,14 +286,14 @@ public abstract class BaseAzureDataMarketLineItem extends InvoiceLineItem
 	/**
 	 * @return the consumedQuantity
 	 */
-	public int getConsumedQuantity() {
+	public double getConsumedQuantity() {
 		return consumedQuantity;
 	}
 
 	/**
 	 * @param consumedQuantity the consumedQuantity to set
 	 */
-	public void setConsumedQuantity(int consumedQuantity) {
+	public void setConsumedQuantity(double consumedQuantity) {
 		this.consumedQuantity = consumedQuantity;
 	}
 

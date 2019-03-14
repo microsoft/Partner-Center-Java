@@ -20,8 +20,17 @@ public interface IOrderCollectionByBillingCycleType
     extends IPartnerComponent<Tuple<String, BillingCycleType>>,  IEntireEntityCollectionRetrievalOperations<Order, ResourceCollection<Order>>
 {
     /**
-     * Retrieves all customer orders.
+     * Gets all customer orders.
+     * 
      * @return The customer orders.
      */
     ResourceCollection<Order> get();
+
+    /**
+     * Gets all customer orders.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The customer orders.
+     */
+    ResourceCollection<Order> get(boolean includePrice);
 }

@@ -400,7 +400,8 @@
     "GetOrdersByBillingCyleType": {
       "Path": "customers/{0}/orders",
       "Parameters": {
-        "BillingType": "billingType"
+        "BillingType": "billingType",
+        "IncludePrice": "include_price"
       }
     },
     "GetOrder": {

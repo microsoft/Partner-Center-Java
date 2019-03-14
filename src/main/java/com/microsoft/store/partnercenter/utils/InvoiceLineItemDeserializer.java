@@ -16,12 +16,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.microsoft.store.partnercenter.models.invoices.AzureDataMarketDailyUsageLineItem;
 import com.microsoft.store.partnercenter.models.invoices.BillingProvider;
+import com.microsoft.store.partnercenter.models.invoices.DailyRatedUsageReconLineItem;
+import com.microsoft.store.partnercenter.models.invoices.DailyUsageLineItem;
+import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.models.invoices.LicenseBasedLineItem;
 import com.microsoft.store.partnercenter.models.invoices.OneTimeInvoiceLineItem;
-import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.models.invoices.UsageBasedLineItem;
-import com.microsoft.store.partnercenter.models.invoices.DailyUsageLineItem;
 
 public class InvoiceLineItemDeserializer
     extends StdDeserializer<InvoiceLineItem>
@@ -53,12 +55,24 @@ public class InvoiceLineItemDeserializer
             {
                 reader = mapper.readerFor(DailyUsageLineItem.class);
             }
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE_DATA_MARKET.toString()))
+            {
+                reader = mapper.readerFor(AzureDataMarketDailyUsageLineItem.class);
+            }
+            else if(billingProvider.equalsIgnoreCase(BillingProvider.EXTERNAL.toString()))
+            {
+                reader = mapper.readerFor(DailyRatedUsageReconLineItem.class);
+            }
         }
         else if (invoiceLineItemType.equals("billing_line_items"))
         {
             if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
             {
                 reader = mapper.readerFor(UsageBasedLineItem.class);
+            }
+            else if(billingProvider.equalsIgnoreCase(BillingProvider.AZURE_DATA_MARKET.toString()))
+            {
+                reader = mapper.readerFor(AzureDataMarketDailyUsageLineItem.class);
             }
             else if (billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
             {
@@ -67,7 +81,11 @@ public class InvoiceLineItemDeserializer
             else if (billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.toString()))
             {
                 reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
-            } 
+            }
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.ALL.toString()))
+            {
+                reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
+            }  
         }
         else
         {

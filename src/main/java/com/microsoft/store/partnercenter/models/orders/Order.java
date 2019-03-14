@@ -20,6 +20,11 @@ public class Order
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
+     * The total price for the order.
+     */
+    private double totalPrice;
+
+    /**
      * Gets or sets the order identifier.
      */
     @JsonProperty( "id" )
@@ -145,5 +150,26 @@ public class Order
     public void setBillingCycle( BillingCycleType value )
     {
         __BillingCycle = value;
+    }
+
+
+    /**
+     * Gets the total price for the order. Order price (will not be returned unless explicitly asked for) Note: this information is PRE-TAX.
+     *
+     * @return The total price for the order.
+     */
+    public double getTotalPrice()
+    {
+        return totalPrice;
+    }
+
+    /**
+     * Sets the total price for the order.
+     * 
+     * @param value The total price for the order.
+     */
+    public void setTotalPrice(double value)
+    {
+        totalPrice = value;
     }
 }

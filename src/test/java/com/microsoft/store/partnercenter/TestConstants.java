@@ -11,7 +11,9 @@ public class TestConstants
     /**
      * Private constructor prevents from being inadvertently instantiated.
      */
-    private TestConstants() {}
+    private TestConstants() 
+    {
+    }
 
     /**
      * The Active Directory authority endpoint address.
@@ -26,7 +28,7 @@ public class TestConstants
     /**
      * URL to the agreement template.
      */
-    public static final String AGREEMENT_TEMPLATE_URL = "https://docs.microsoft.com/en-us/partner-center/agreements";
+    public static final String AGREEMENT_TEMPLATE_URL = "https://docs.microsoft.com/partner-center/agreements";
 
     /**
      * The Azure Active Graph API endpoint.

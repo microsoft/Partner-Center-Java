@@ -31,11 +31,6 @@ public class SkuOperations
 	 * The availability operations.
 	 */  
 	private IAvailabilityCollection availabilities;
-   
-	/**
-	 * The SKU download options operations.
-	 */  
-	private ISkuDownloadOptions downloadOptions; 
 
 	/**
 	 * Initializes a new instance of the SkuOperations class.
@@ -73,21 +68,6 @@ public class SkuOperations
 		}
 
 		return availabilities;
-	}
-
-	/**
-	 * Retrieves the operations for the current SKU's download options.
-	 * 
-	 * @return The operations for the current SKU's download options.
-	 */    
-	public ISkuDownloadOptions getDownloadOptions()
-	{
-		if(downloadOptions == null)
-		{
-			downloadOptions = new SkuDownloadOptionsOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3());
-		}
-
-		return downloadOptions;
 	}
 
 	/**
