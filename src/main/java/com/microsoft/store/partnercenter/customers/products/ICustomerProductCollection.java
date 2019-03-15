@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.products.IProduct;
  * Holds operations that can be performed on products that apply to a given customer.
  */
 public interface ICustomerProductCollection
-    extends IPartnerComponentString, IEntitySelector<IProduct>
+    extends IPartnerComponentString, IEntitySelector<String, IProduct>
 {
     /**
      * Retrieves the operations tied with a specific product for a given customer.

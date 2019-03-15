@@ -26,22 +26,17 @@ public enum BillingProvider
     AZURE("azure"),
 
     /**
-    * Bill is provided by Azure Data Market.
-    */
-    AZURE_DATA_MARKET("azureDataMarket"),
-
-    /**
     * Bill is provided for one time purchases.
     */
     ONE_TIME("oneTime"),
     
     /**
-     * Indicates that the provider is third party .
+     * Indicates that the provider is marketplace
      */
-    EXTERNAL("external"), 
+    MARKETPLACE("marketplace"), 
     
     /**
-     * Indicates that the provider is both first party and third party.
+     * Indicates that the provider is both first party and marketplace
      */
     ALL("all");
 

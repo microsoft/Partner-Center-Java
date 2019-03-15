@@ -19,7 +19,7 @@ import com.microsoft.store.partnercenter.models.servicerequests.ServiceRequest;
  */
 public interface IServiceRequestCollection
     extends IPartnerComponentString,
-    IEntireEntityCollectionRetrievalOperations<ServiceRequest, ResourceCollection<ServiceRequest>>, IEntitySelector<IServiceRequest>
+    IEntireEntityCollectionRetrievalOperations<ServiceRequest, ResourceCollection<ServiceRequest>>, IEntitySelector<String, IServiceRequest>
 {
     /**
      * Gets a single service request

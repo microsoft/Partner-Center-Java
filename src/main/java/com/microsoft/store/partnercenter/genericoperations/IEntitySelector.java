@@ -6,12 +6,12 @@
 
 package com.microsoft.store.partnercenter.genericoperations;
 
-public interface IEntitySelector<TEntity>
+public interface IEntitySelector<TType, TEntity>
 {
     /**
      * Retrieves the behavior for an entity using the entity's identifier.
      * @param id The entity's identifier.
      * @return The entity's behavior.
      */
-    TEntity byId( String id );
+    TEntity byId( TType id );
 }

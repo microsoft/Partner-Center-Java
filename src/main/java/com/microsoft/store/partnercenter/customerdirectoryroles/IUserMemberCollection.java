@@ -22,7 +22,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 public interface IUserMemberCollection
 	extends IPartnerComponent<Tuple<String, String>>, IEntityCreateOperations<UserMember, UserMember>,
 		IEntireEntityCollectionRetrievalOperations<UserMember, SeekBasedResourceCollection<UserMember>>, 
-		IEntitySelector<IUserMember>
+		IEntitySelector<String, IUserMember>
 {
     /**
      * Gets a single user member behavior.

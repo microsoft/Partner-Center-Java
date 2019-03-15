@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.models.carts.Cart;
  */
 public interface ICartCollection
     extends IPartnerComponentString,
-    IEntityCreateOperations<Cart, Cart>, IEntitySelector<ICart>
+    IEntityCreateOperations<Cart, Cart>, IEntitySelector<String, ICart>
 {
     /**
      * Obtains a specific cart behavior.

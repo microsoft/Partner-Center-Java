@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.query.IQuery;
  */
 public interface IInvoiceCollection
     extends IPartnerComponentString, IEntityCollectionRetrievalOperations<Invoice, ResourceCollection<Invoice>>,
-    IEntitySelector<IInvoice>
+    IEntitySelector<String, IInvoice>
 {
     /**
      * Gets the available estimate operations.

@@ -40,10 +40,13 @@
     * PretaxCharges
     * TaxAmount
   * Changed the following type of the BaseAzureDataMarketLineItem class from int to double ConsumedQuantity
+  * Removed Azure Data Market billing provider type and models because this is no longer supported
 * JDK
   * Modified the target JDK from 1.8 to 1.7
 * Orders
-  * Added the ability to include pricing details in the order information returned when requesting a list of customer orders
+  * Added the ability to get the activation link for an order line item
+  * Added the ability to get the provisioning status for an order
+  * Added the ability to include pricing details when requesting order information
 * Products
   * Removed the SKU download operations
 * Rate Card

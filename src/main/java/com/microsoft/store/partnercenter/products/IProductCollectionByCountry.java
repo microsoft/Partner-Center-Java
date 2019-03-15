@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
  */
 public interface IProductCollectionByCountry
     extends IPartnerComponentString,
-    IEntitySelector<IProduct>
+    IEntitySelector<String, IProduct>
 {
     /**
      * Retrieves the operations tied with a specific product.

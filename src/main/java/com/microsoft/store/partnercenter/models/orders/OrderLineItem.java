@@ -17,11 +17,19 @@ public class OrderLineItem
     extends ResourceBaseWithLinks<OrderLineItemLinks>    
 {
     /**
-     * Initializes a new instance of the OrderLineItem class.
+     * The pricing for the order line item.
      */
-    public OrderLineItem()
-    {
-    }
+    private Pricing pricing;
+
+    /**
+     * The term duration for the order line item.
+     */
+    private String termDuration;
+
+    /**
+     * The transaction type for the order line item.
+     */
+    private String transactionType;
 
     /**
      * Gets or sets the line item number.
@@ -142,5 +150,35 @@ public class OrderLineItem
     public void setProvisioningContext( Map<String, String> value )
     {
         __ProvisioningContext = value;
+    }
+
+    /**
+     * Gets the pricing for the order line item.
+     * 
+     * @return The pricing for the order line item.
+     */
+    public Pricing getPricing()
+    {
+        return pricing;
+    }
+
+    /**
+     * Gets the term duration for the order line item.
+     * 
+     * @return The term duration for the order line item.
+     */
+    public String getTermDuration()
+    {
+        return termDuration;
+    }
+
+    /**
+     * Gets the transaction type for the order line item.
+     * 
+     * @return The transaction type for the order line item.
+     */
+    public String getTransactionType()
+    {
+        return transactionType;
     }
 }

@@ -96,7 +96,12 @@ public enum ResourceType
     /**
      * The credit limit resource
      */
-    CREDIT_LIMIT("credit_limit");
+    CREDIT_LIMIT("credit_limit"),
+    
+    /**
+     * THe invoice resource
+     */
+    INVOICE("invoice");
 
     private final String value;
 

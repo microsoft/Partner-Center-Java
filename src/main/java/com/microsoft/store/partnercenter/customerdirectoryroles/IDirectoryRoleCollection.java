@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.roles.DirectoryRole;
  */
 public interface IDirectoryRoleCollection 
 	extends IPartnerComponentString,
-	IEntireEntityCollectionRetrievalOperations<DirectoryRole, ResourceCollection<DirectoryRole>>, IEntitySelector<IDirectoryRole>
+	IEntireEntityCollectionRetrievalOperations<DirectoryRole, ResourceCollection<DirectoryRole>>, IEntitySelector<String, IDirectoryRole>
 {
 	/**
 	 * Gets a directory role behavior.

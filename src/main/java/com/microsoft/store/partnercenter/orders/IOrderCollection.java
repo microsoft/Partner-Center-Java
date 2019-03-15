@@ -11,6 +11,7 @@ import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollecti
 import com.microsoft.store.partnercenter.genericoperations.IEntityCreateOperations;
 import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
+import com.microsoft.store.partnercenter.models.offers.BillingCycleType;
 import com.microsoft.store.partnercenter.models.orders.Order;
 
 /**
@@ -18,26 +19,21 @@ import com.microsoft.store.partnercenter.models.orders.Order;
  */
 public interface IOrderCollection
     extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<Order, ResourceCollection<Order>>,
-    IEntityCreateOperations<Order, Order>, IEntitySelector<IOrder>
+    IEntityCreateOperations<Order, Order>, IEntitySelector<String, IOrder>
 {
     /**
-     * Obtains a specific order behavior.
+     * Gets the order collection behavior given a billing cycle type.
      * 
-     * @param orderId The order id.
-     * @return The order operations.
+     * @param billingCycleType The billing cycle type.
+     * @return The order collection by billing cycle type.
      */
-    IOrder byId( String orderId );
+    IOrderCollectionByBillingCycleType byBillingCycleType(BillingCycleType billingCycleType);
 
     /**
-     * Places a new order for the customer.
-     * @param newOrder The new order information.
-     * @return The order that was just placed.
+     * Gets a collection of orders.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The collection of orders.
      */
-    Order create(Order newOrder);
-
-    /**
-     * Retrieves all customer orders.
-     * @return The customer orders.
-     */
-    ResourceCollection<Order> get();
+    ResourceCollection<Order> get(Boolean includePrice);
 }

@@ -16,17 +16,54 @@ public class OrderLinks
     extends StandardResourceLinks
 {
     /**
-     * Gets or sets the link to the provisioning status of an order.
+     * The link to the patch operation.
      */
-    private Link __ProvisioningStatus;
+    private Link patchOperation;
 
-    public Link getProvisioningStatus()
+    /**
+     * The link to the provisioning status of an order.
+     */
+    private Link provisioningStatus;
+
+    /**
+     * Gets the link to the patch operation of an order.
+     * 
+     * @return The link to the patch operation of an oder.
+     */
+    public Link getPatchOperation()
     {
-        return __ProvisioningStatus;
+        return patchOperation;
     }
 
-    public void setProvisioningStatus( Link value )
+    /**
+     * Sets the link to the patch operation of an order.
+     * 
+     * @param value The link to the patch operation of an order.
+     * @return The link to the patch operation of an order.
+     */
+    public void setPatchOperation(Link value)
     {
-        __ProvisioningStatus = value;
+        patchOperation = value;
+    }
+
+    /**
+     * Gets the link to the provisioning status of an order.
+     * 
+     * @return The link to the provisioning status of an oder.
+     */
+    public Link getProvisioningStatus()
+    {
+        return provisioningStatus;
+    }
+
+    /**
+     * Sets the link to the provisioning status of an order.
+     * 
+     * @param value The link to the provisioning status of an order.
+     * @return The link to the provisioning status of an order.
+     */
+    public void setProvisioningStatus(Link value)
+    {
+        provisioningStatus = value;
     }
 }

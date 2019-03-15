@@ -20,7 +20,7 @@ import com.microsoft.store.partnercenter.models.devicesdeployment.DeviceBatchCre
  */
 public interface IDevicesBatchCollection 
 	extends IPartnerComponentString,
-	IEntireEntityCollectionRetrievalOperations<DeviceBatch, ResourceCollection<DeviceBatch>>, IEntitySelector<IDevicesBatch>, IEntityCreateOperations<DeviceBatchCreationRequest, String>
+	IEntireEntityCollectionRetrievalOperations<DeviceBatch, ResourceCollection<DeviceBatch>>, IEntitySelector<String, IDevicesBatch>, IEntityCreateOperations<DeviceBatchCreationRequest, String>
 {
 	/**
 	 * Retrieves a specific customer devices batch behavior.

@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.devicesdeployment.ConfigurationP
  */
 public interface IConfigurationPolicyCollection 
     extends IPartnerComponentString,
-    IEntireEntityCollectionRetrievalOperations<ConfigurationPolicy,ResourceCollection<ConfigurationPolicy>>, IEntityCreateOperations<ConfigurationPolicy, ConfigurationPolicy>, IEntitySelector<IConfigurationPolicy>
+    IEntireEntityCollectionRetrievalOperations<ConfigurationPolicy,ResourceCollection<ConfigurationPolicy>>, IEntityCreateOperations<ConfigurationPolicy, ConfigurationPolicy>, IEntitySelector<String, IConfigurationPolicy>
 {
 	/**
 	 * Retrieves a specific customer's devices batch upload status behavior.

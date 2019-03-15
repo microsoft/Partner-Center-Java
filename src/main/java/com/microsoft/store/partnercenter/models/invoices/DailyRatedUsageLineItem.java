@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------
-// <copyright file="DailyRatedUsageReconLineItem.java" company="Microsoft Corporation">
+// <copyright file="DailyRatedUsageLineItem.java" company="Microsoft Corporation">
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // ----------------------------------------------------------------
@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 /**
  * Represents unbilled, billed recon line items for daily rated usage.
  */
-public class DailyRatedUsageReconLineItem
+public class DailyRatedUsageLineItem
     extends InvoiceLineItem
 {
     /**
@@ -319,7 +319,7 @@ public class DailyRatedUsageReconLineItem
     @Override
     public BillingProvider getBillingProvider() 
     {
-        return BillingProvider.EXTERNAL;
+        return BillingProvider.MARKETPLACE;
     }
 
     /**
