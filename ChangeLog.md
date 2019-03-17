@@ -44,18 +44,6 @@
     * SubscriptionId
     * TermAndBillingCycle
     * UnitType
-  * Changed the the following types of the AzureDataMarketLineItem class from int to double
-    * ConsumptionDiscount
-    * ConsumptionPrice
-    * IncludedQuantity
-    * ListPrice
-    * OverageQuantity
-    * PostTaxEffectiveRate
-    * PostTaxTotal
-    * PretaxEffectiveRate
-    * PretaxCharges
-    * TaxAmount
-  * Changed the following type of the BaseAzureDataMarketLineItem class from int to double ConsumedQuantity
   * Removed Azure Data Market billing provider type and models because this is no longer supported
 * JDK
   * Modified the target JDK from 1.8 to 1.7
