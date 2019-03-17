@@ -12,7 +12,7 @@ import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.entitlements.Entitlement;
 
 /**
- *  Holds operations that can be performed on entitlements associated to the customer based on the logged in partner.
+ *  Represents the operations that can be performed on entitlements associated to the customer based on the logged in partner.
  */
 public interface IEntitlementCollection 
 	extends IPartnerComponentString, IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>>
@@ -24,4 +24,12 @@ public interface IEntitlementCollection
 	 * @return The entitlement collection operations by entitlement type.
 	 */
      IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>> byEntitlementType(String entitlementType);
+
+    /**
+     * Gets the entitlements for a customer.
+     * 
+     * @param showExpiry A flag to indicate if the expiry date is required to be returned along with the entitlement (if applicable).
+     * @return The collection of entitlements for the customer.
+     */
+    ResourceCollection<Entitlement> get(Boolean showExpiry);
 }

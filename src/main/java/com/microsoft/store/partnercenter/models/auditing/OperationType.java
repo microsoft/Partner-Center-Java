@@ -196,9 +196,9 @@ public enum OperationType
     /**
      * The credit limit for the partner was increased.
      */
-    INCREASE_CREDIT_LIMIT("increase_credit_limit"), 
-    
-    /**
+    INCREASE_CREDIT_LIMIT("increase_credit_limit"),
+	
+	/**
      * An invoice was created.
      */
     CREATE_INVOICE("create_invoice");

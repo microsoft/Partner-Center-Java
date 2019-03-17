@@ -18,32 +18,37 @@ import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Order operations implementation class.
+ * Order collection operations implementation class.
  */
-public class OrderLineItemActivationLinkOperations extends BasePartnerComponent<TripletTuple<String, String, Integer>>
-        implements IOrderLineItemActivationLink {
+public class OrderLineItemActivationLinkOperations 
+    extends BasePartnerComponent<TripletTuple<String, String, Integer>>
+    implements IOrderLineItemActivationLink         
+{
     /**
-     * Initializes a new instance of the OrderOperations class.
+     * Initializes a new instance of the OrderLineItemActivationLinkOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer identifier.
-     * @param orderId               The order identifier.
+     * @param customerId The identifier for the customer.
+     * @param orderId The identifier for the order.
+     * @param lineItemNumber The order line item number.
      */
-    public OrderLineItemActivationLinkOperations(IPartner rootPartnerOperations, String customerId, String orderId,
-            Integer lineItemNumber) {
+    public OrderLineItemActivationLinkOperations(IPartner rootPartnerOperations, String customerId, String orderId, int lineItemNumber) 
+    {
         super(rootPartnerOperations, new TripletTuple<String, String, Integer>(customerId, orderId, lineItemNumber));
 
-        if (StringHelper.isNullOrWhiteSpace(customerId)) {
-            throw new IllegalArgumentException("customerId must be set.");
+        if (StringHelper.isNullOrWhiteSpace(customerId)) 
+        {
+            throw new IllegalArgumentException("customerId must be set");
         }
 
-        if (StringHelper.isNullOrWhiteSpace(orderId)) {
-            throw new IllegalArgumentException("orderId must be set.");
+        if (StringHelper.isNullOrWhiteSpace(orderId)) 
+        {
+            throw new IllegalArgumentException("orderId must be set");
         }
     }
 
     /**
-     * Retrieves the order line item activation link collection.
+     * Gets the order line item activation link collection.
      * 
      * @return The order line item activation link collection.
      */

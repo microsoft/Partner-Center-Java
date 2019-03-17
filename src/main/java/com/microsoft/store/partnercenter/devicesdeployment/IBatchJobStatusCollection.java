@@ -22,5 +22,5 @@ public interface IBatchJobStatusCollection
 	 * @param trackingId The tracking identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
-    IBatchJobStatus byId( String trackingId );
+    IBatchJobStatus byId(String trackingId);
 }

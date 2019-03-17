@@ -22,14 +22,13 @@ public class Order
     /**
      * The total price for the order.
      */
-    @JsonProperty("totalPrice")
     private double totalPrice;
 
-    /** 
+	/** 
      * The transaction type for the order.
      */
-    @JsonProperty("tranactionType")
     private String transactionType;
+
 
     /**
      * Gets or sets the order identifier.
@@ -158,6 +157,7 @@ public class Order
     {
         __BillingCycle = value;
     }
+
 
     /**
      * Gets the total price for the order. Order price (will not be returned unless explicitly asked for) Note: this information is PRE-TAX.

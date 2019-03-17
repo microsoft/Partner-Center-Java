@@ -33,7 +33,7 @@ public interface IOrderCollection
      * Gets a collection of orders.
      * 
      * @param includePrice A flag indicating whether to include pricing details in the order information or not.
-     * @return The collection of orders.
+     * @return The collection of orders including pricing details (based on access permissions) when requested.
      */
     ResourceCollection<Order> get(Boolean includePrice);
 }

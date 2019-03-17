@@ -97,9 +97,9 @@ public enum ResourceType
      * The credit limit resource
      */
     CREDIT_LIMIT("credit_limit"),
-    
-    /**
-     * THe invoice resource
+	
+	/**
+     * The invoice resource
      */
     INVOICE("invoice");
 

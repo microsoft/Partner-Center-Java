@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------
-// <copyright file="BillingProvider.java" company="Microsoft Corporation">
+// <copyright file="BillingPeriod.java" company="Microsoft Corporation">
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // ----------------------------------------------------------------
@@ -8,41 +8,26 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum BillingProvider
+public enum BillingPeriod
 {
     /**
-     * Different providers of billing information Enum initializer
+     * Default period, does not mean anything.
      */
     NONE("none"),
 
     /**
-    * Bill is provided by Office. Example: O365, and In-tune.
+    * The current period that is ongoing.
     */
-    OFFICE("office"),
+    Current("current"),
 
     /**
-    * Bill is provided by Azure. Example: Azure Services.
+    * The previous period.
     */
-    AZURE("azure"),
-
-    /**
-    * Bill is provided for one time purchases.
-    */
-    ONE_TIME("oneTime"),
-    
-    /**
-     * Indicates that the provider is marketplace .
-     */
-    MARKETPLACE("marketplace"), 
-    
-    /**
-     * Indicates that the provider is both first party and marketplace.
-     */
-    ALL("all");
+    PREVIOUS("previous");
 
     private final String value;
 
-    BillingProvider(String value)
+    BillingPeriod(String value)
     {
         this.value = value;
     }

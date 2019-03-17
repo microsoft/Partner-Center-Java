@@ -35,15 +35,30 @@ public class OrderCollectionOperations
 	 */
 	public OrderCollectionOperations( IPartner rootPartnerOperations, String customerId )
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 	}
 
+    /**
+     * Gets the order collection behavior given a billing cycle type.
+     * 
+     * @param billingCycleType The billing cycle type.
+     * @return The order collection by billing cycle type.
+     */
+	public IOrderCollectionByBillingCycleType byBillingCycleType(BillingCycleType billingCycleType)
+	{
+		return new OrderCollectionByBillingCycleTypeOperations(
+			this.getPartner(), 
+			this.getContext(), 
+			billingCycleType);
+	}
+
 	/**
-	 * Gets a specific order behavior.
+	 * Get the order operations for the specified order.
 	 * 
 	 * @param orderId The order identifier.
 	 * @return The order operations.
@@ -52,18 +67,6 @@ public class OrderCollectionOperations
 	public IOrder byId( String orderId )
 	{
 		return new OrderOperations( this.getPartner(), this.getContext(), orderId );
-	}
-
-	/**
-     * Gets the order collection behavior given a billing cycle type.
-     * 
-     * @param billingCycleType The billing cycle type.
-     * @return The order collection by billing cycle type.
-     */
-	@Override
-	public IOrderCollectionByBillingCycleType byBillingCycleType(BillingCycleType billingCycleType)
-	{
-		return new OrderCollectionByBillingCycleTypeOperations(this.getPartner(), this.getContext(), billingCycleType);
 	}
 
 	/**
@@ -89,33 +92,36 @@ public class OrderCollectionOperations
 			newOrder);
 	}
 
-    /**
-     * Gets a collection of orders.
-     * 
-     * @return The collection of orders.
-     */
+	/**
+	 * Retrieves all the orders the customer made.
+	 * 
+	 * @return All the customer orders.
+	 */
 	@Override
 	public ResourceCollection<Order> get()
 	{
-		return this.get(false);
+		return get(false);
 	}
 
-    /**
+	/**
      * Gets a collection of orders.
      * 
      * @param includePrice A flag indicating whether to include pricing details in the order information or not.
-     * @return The collection of orders.
+     * @return The collection of orders including pricing details (based on access permissions) when requested.
      */
-	@Override
 	public ResourceCollection<Order> get(Boolean includePrice)
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		parameters.add(
-			new KeyValuePair<String, String>(
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrders").getParameters().get("IncludePrice"),
-				String.valueOf(includePrice)));   
-
+				String.valueOf(includePrice)
+			) 
+		);
+		
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 

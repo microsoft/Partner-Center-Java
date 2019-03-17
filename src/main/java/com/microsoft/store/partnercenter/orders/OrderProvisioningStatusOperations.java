@@ -20,24 +20,29 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
 /**
  * Implements operations that apply to order provisioning status.
  */
-public class OrderProvisioningStatusOperations extends BasePartnerComponent<Tuple<String, String>>
-        implements IOrderProvisioningStatus {
+public class OrderProvisioningStatusOperations
+    extends BasePartnerComponent<Tuple<String, String>>
+    implements IOrderProvisioningStatus
+{
     /**
      * Initializes a new instance of the OrderProvisioningStatusOperations class.
      * 
      * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer identifier.
-     * @param orderId               The order identifier.
+     * @param customerId The customer identifier.
+     * @param orderId The order identifier.
      */
-    public OrderProvisioningStatusOperations(IPartner rootPartnerOperations, String customerId, String orderId) {
+    public OrderProvisioningStatusOperations(IPartner rootPartnerOperations, String customerId, String orderId)
+    {
         super(rootPartnerOperations, new Tuple<String, String>(customerId, orderId));
 
-        if (StringHelper.isNullOrWhiteSpace(customerId)) {
-            throw new IllegalArgumentException("customerId must be set.");
+        if (StringHelper.isNullOrWhiteSpace(customerId))
+        {
+            throw new IllegalArgumentException( "customerId must be set");
         }
 
-        if (StringHelper.isNullOrWhiteSpace(orderId)) {
-            throw new IllegalArgumentException("orderId must be set.");
+        if (StringHelper.isNullOrWhiteSpace( orderId ) )
+        {
+            throw new IllegalArgumentException( "orderId must be set");
         }
     }
 
@@ -47,7 +52,7 @@ public class OrderProvisioningStatusOperations extends BasePartnerComponent<Tupl
      * @return The provisioning status for the order.
      */
     @Override
-    public ResourceCollection<OrderLineItemProvisioningStatus> get() 
+    public ResourceCollection<OrderLineItemProvisioningStatus> get()
     {
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
@@ -56,5 +61,5 @@ public class OrderProvisioningStatusOperations extends BasePartnerComponent<Tupl
                 PartnerService.getInstance().getConfiguration().getApis().get("GetOrderProvisioningStatus").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
-    }
+	}
 }

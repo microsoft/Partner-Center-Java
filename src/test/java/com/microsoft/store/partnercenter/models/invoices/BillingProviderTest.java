@@ -6,14 +6,15 @@
 
 package com.microsoft.store.partnercenter.models.invoices;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.store.partnercenter.TestJsonConverter;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microsoft.store.partnercenter.TestJsonConverter;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class BillingProviderTest
 {

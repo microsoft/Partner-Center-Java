@@ -49,7 +49,7 @@ public class OrderOperations
     }
 
     /**
-     * Retrieves the customer order.
+     * Gets the order information.
      * 
      * @return The customer order.
      */
@@ -70,11 +70,15 @@ public class OrderOperations
     {
         Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		parameters.add(
-			new KeyValuePair<String, String>(
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getParameters().get("IncludePrice"),
-                String.valueOf(includePrice)));   
-                
+				String.valueOf(includePrice)
+			) 
+        );
+        
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<Order>(){}, 
@@ -89,22 +93,28 @@ public class OrderOperations
      * Gets line item collection operations.
      * 
      * @return The line item collection operations.
-     */    
+     */
     @Override
     public IOrderLineItemCollection getOrderLineItems() 
     {
-        return new OrderLineItemCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
+        return new OrderLineItemCollectionOperations(
+            this.getPartner(),
+            this.getContext().getItem1(), 
+            this.getContext().getItem2());
     }
 
     /**
      * Gets the order provisioning status operations.
      * 
-     * @return The order provisioning status operation.
+     * @return The order provisioning status operations.
      */
     @Override
     public IOrderProvisioningStatus getProvisioningStatus() 
     {
-        return new OrderProvisioningStatusOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
+        return new OrderProvisioningStatusOperations(
+            this.getPartner(), 
+            this.getContext().getItem1(), 
+            this.getContext().getItem2());
     }
 
     /**
@@ -118,7 +128,7 @@ public class OrderOperations
     {
         if ( order == null )
         {
-            throw new IllegalArgumentException( "Order cannot be null" );
+            throw new IllegalArgumentException( "Order can't be null" );
         }
 
         return this.getPartner().getServiceClient().patch(

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// <copyright file="IOrderProvisioningStatus.java" company="Microsoft">
+// <copyright file="IOrderLineItemCollection.java" company="Microsoft">
 //      Copyright (c) Microsoft Corporation. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -13,9 +13,9 @@ import com.microsoft.store.partnercenter.models.orders.OrderLineItemProvisioning
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
- * Represents the available order provisioning status operations.
+ * Represents the operations that apply Order provisioning status.
  */
 public interface IOrderProvisioningStatus
-    extends IPartnerComponent<Tuple<String, String>>, IEntireEntityCollectionRetrievalOperations<OrderLineItemProvisioningStatus, ResourceCollection<OrderLineItemProvisioningStatus>>
+    extends  IPartnerComponent<Tuple<String, String>>, IEntireEntityCollectionRetrievalOperations<OrderLineItemProvisioningStatus, ResourceCollection<OrderLineItemProvisioningStatus>>
 {
 }

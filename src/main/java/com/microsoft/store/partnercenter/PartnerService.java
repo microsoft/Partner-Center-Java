@@ -34,7 +34,7 @@ public class PartnerService
 	private PartnerService()
 	{
 		// set the global partner service properties
-		setConfiguration( readPartnerSdkConfiguration() );
+		setConfiguration( readPartnerServiceConfiguration() );
 		setApiRootUrl( configuration.getPartnerServiceApiRoot() );
 		setPartnerServiceApiVersion( configuration.getPartnerServiceApiVersion() );    	
 
@@ -216,11 +216,11 @@ public class PartnerService
 	 * 
 	 * @return The partner SDK configuration.
 	 */
-	private Configuration readPartnerSdkConfiguration()
+	private Configuration readPartnerServiceConfiguration()
 	{
 		ObjectMapper mapper = new ObjectMapper();
 		InputStream is =
-			PartnerService.class.getClassLoader().getResourceAsStream( "PartnerSdkConfiguration.json" );
+			PartnerService.class.getClassLoader().getResourceAsStream( "PartnerService.json" );
 		try
 		{
 			return mapper.readValue( is, Configuration.class );

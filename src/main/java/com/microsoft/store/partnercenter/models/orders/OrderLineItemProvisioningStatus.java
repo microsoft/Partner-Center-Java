@@ -9,15 +9,15 @@ package com.microsoft.store.partnercenter.models.orders;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
 /**
- * Order line item provisioning status.
+ * Represents the order line item provisioning status.
  */
-public class OrderLineItemProvisioningStatus
+public class OrderLineItemProvisioningStatus 
     extends ResourceBase
 {
     /**
      * The order line item number.
      */
-    private int lineItemNumber; 
+    private int lineItemNumber;
 
     /**
      * The quantity provisioning information.
@@ -25,7 +25,7 @@ public class OrderLineItemProvisioningStatus
     private Iterable<QuantityProvisioningStatus> quantityProvisioningInformation;
 
     /**
-     * The status of the order line item number.
+     * The aggregated state of an order line item.
      */
     private String status;
 
@@ -40,7 +40,7 @@ public class OrderLineItemProvisioningStatus
     }
 
     /**
-     * Set the order line item number.
+     * Sets the order line item number.
      * 
      * @param value The order line item number.
      */
@@ -60,7 +60,7 @@ public class OrderLineItemProvisioningStatus
     }
 
     /**
-     * Set the quantity provisioning information.
+     * Sets the quantity provisioning information.
      * 
      * @param value The quantity provisioning information.
      */
@@ -70,7 +70,7 @@ public class OrderLineItemProvisioningStatus
     }
 
     /**
-     * Gets aggregated state of an order line item.
+     * Gets the aggregated state of an order line item.
      * 
      * @return The aggregated state of an order line item.
      */
@@ -80,7 +80,7 @@ public class OrderLineItemProvisioningStatus
     }
 
     /**
-     * Set the aggregated state of an order line item..
+     * Sets the aggregated state of an order line item.
      * 
      * @param value The aggregated state of an order line item.
      */

@@ -29,11 +29,13 @@ public class InvoiceLineItemDeserializer
 {
     private static final long serialVersionUID = 2L;
 
-    public InvoiceLineItemDeserializer() { 
+    public InvoiceLineItemDeserializer() 
+    { 
         this(null); 
     } 
  
-    public InvoiceLineItemDeserializer(Class<?> vc) { 
+    public InvoiceLineItemDeserializer(Class<?> vc) 
+    { 
         super(vc); 
     }
 

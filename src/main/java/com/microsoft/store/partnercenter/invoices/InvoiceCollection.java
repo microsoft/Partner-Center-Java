@@ -124,7 +124,7 @@ public class InvoiceCollection
 	 * @return The subset of invoices.
 	 */
 	@Override
-	public SeekBasedResourceCollection<Invoice> get( int offset, int size )
+	public SeekBasedResourceCollection<Invoice> get(int offset, int size)
 	{
 		ParameterValidator.isIntInclusive( 0, Integer.MAX_VALUE, offset,
 										   "The value of the page offset should be at least 0." );

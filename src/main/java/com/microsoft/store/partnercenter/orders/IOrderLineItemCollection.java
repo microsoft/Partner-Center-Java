@@ -11,7 +11,7 @@ import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
- * Represents the available order line item operations.
+ * Represents the available order line item collection operations.
  */
 public interface IOrderLineItemCollection
     extends IPartnerComponent<Tuple<String, String>>, IEntitySelector<Integer, IOrderLineItem>

@@ -18,13 +18,13 @@ public class OrderLineItemActivationLink
      */
     private int lineItemNumber;
 
-    /** 
+    /**
      * The activation link for the order line item.
      */
     private Link link;
 
     /**
-     * Gets the order line number.
+     * Gets the order line item number.
      * 
      * @return The order line item number.
      */
@@ -44,9 +44,9 @@ public class OrderLineItemActivationLink
     }
 
     /**
-     * Gets the order line activation link.
+     * Gets the activation link.
      * 
-     * @return The activation linke for the order line item.
+     * @return The activation link for the order line item.
      */
     public Link getLink()
     {
@@ -54,9 +54,9 @@ public class OrderLineItemActivationLink
     }
 
     /**
-     * Sets the order line activation link.
+     * Sets the activation link.
      * 
-     * @param value The order line activation link.
+     * @param value The activation link.
      */
     public void setLink(Link value)
     {

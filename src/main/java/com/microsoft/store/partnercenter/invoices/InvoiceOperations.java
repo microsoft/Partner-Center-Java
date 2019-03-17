@@ -12,6 +12,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
+import com.microsoft.store.partnercenter.models.invoices.BillingPeriod;
 import com.microsoft.store.partnercenter.models.invoices.BillingProvider;
 import com.microsoft.store.partnercenter.models.invoices.Invoice;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItemType;
@@ -69,6 +70,47 @@ public class InvoiceOperations
 	public IInvoiceLineItemCollection by( BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType )
 	{
 		return new InvoiceLineItemCollectionOperations( this.getPartner(), this.getContext(), billingProvider, invoiceLineItemType );
+	}
+
+    /**
+     * Creates an invoice line item collection operations given a billing provider and invoice line item type.
+     * 
+     * @param provider The type of billing provider.
+     * @param invoiceLineItemType The type of invoice line item type.
+     * @param currencyCode The currency code.
+     * @param period The period for unbilled recon.
+     * @param pageSize The number of records returned in a single operation.
+     */
+	public IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period)
+	{
+		return new ReconLineItemCollectionOperations(
+			this.getPartner(), 
+			this.getContext(), 
+			provider, 
+			invoiceLineItemType, 
+			currencyCode, 
+			period);
+	}
+
+    /**
+     * Creates an invoice line item collection operations given a billing provider and invoice line item type.
+     * 
+     * @param provider The type of billing provider.
+     * @param invoiceLineItemType The type of invoice line item type.
+     * @param currencyCode The currency code.
+     * @param period The period for unbilled recon.
+     * @param pageSize The number of records returned in a single operation.
+     */
+	public IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period, int pageSize)
+	{
+		return new ReconLineItemCollectionOperations(
+			this.getPartner(), 
+			this.getContext(), 
+			provider, 
+			invoiceLineItemType, 
+			currencyCode, 
+			period, 
+			pageSize);
 	}
 
 	/**

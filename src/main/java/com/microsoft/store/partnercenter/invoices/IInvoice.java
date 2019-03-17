@@ -8,6 +8,7 @@ package com.microsoft.store.partnercenter.invoices;
 
 import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntityGetOperations;
+import com.microsoft.store.partnercenter.models.invoices.BillingPeriod;
 import com.microsoft.store.partnercenter.models.invoices.BillingProvider;
 import com.microsoft.store.partnercenter.models.invoices.Invoice;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItemType;
@@ -40,11 +41,25 @@ public interface IInvoice
      * @return The invoice line item collection operations.
      */
     IInvoiceLineItemCollection by(BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType);
-    
+ 
     /**
-     * Retrieves the invoice. This operation is currently only supported for user based credentials.
+     * Creates an invoice line item collection operations given a billing provider and invoice line item type.
      * 
-     * @return The invoice.
+     * @param provider The type of billing provider.
+     * @param invoiceLineItemType The type of invoice line item type.
+     * @param currencyCode The currency code.
+     * @param period The period for unbilled recon.
      */
-    Invoice get();
+    IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period);
+
+    /**
+     * Creates an invoice line item collection operations given a billing provider and invoice line item type.
+     * 
+     * @param provider The type of billing provider.
+     * @param invoiceLineItemType The type of invoice line item type.
+     * @param currencyCode The currency code.
+     * @param period The period for unbilled recon.
+     * @param pageSize The number of records returned in a single operation.
+     */
+    IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period, int pageSize);
 }

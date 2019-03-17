@@ -12,11 +12,11 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Order operations implementation class.
+ * Implements the order collection operations.
  */
-public class OrderLineItemCollectionOperations
-    extends BasePartnerComponent<Tuple<String, String>>
-    implements IOrderLineItemCollection
+public class OrderLineItemCollectionOperations 
+    extends BasePartnerComponent<Tuple<String, String>> 
+    implements IOrderLineItemCollection 
 {
     /**
      * Initializes a new instance of the OrderLineItemCollectionOperations class.
@@ -25,33 +25,31 @@ public class OrderLineItemCollectionOperations
      * @param customerId The customer identifier.
      * @param orderId The order identifier.
      */
-    public OrderLineItemCollectionOperations( IPartner rootPartnerOperations, String customerId, String orderId )
-    {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, orderId ) );
+    public OrderLineItemCollectionOperations(IPartner rootPartnerOperations, String customerId, String orderId) {
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, orderId));
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId)) 
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( orderId ) )
+        if (StringHelper.isNullOrWhiteSpace(orderId)) 
         {
-            throw new IllegalArgumentException( "orderId must be set." );
+            throw new IllegalArgumentException("orderId must be set.");
         }
     }
 
     /**
-     * Gets the order line item operations.
+     * Gets the available order line item operations.
      * 
-     * @param id The order line item number.
-     * @return The order line item operations.
+     * @return The available order line item operations.
      */
     @Override
     public IOrderLineItem byId(Integer id) 
     {
         return new OrderLineItemOperations(
             this.getPartner(), 
-            this.getContext().getItem1(), 
+            this.getContext().getItem1(),
             this.getContext().getItem2(), 
             id);
     }

@@ -16,6 +16,81 @@ public class Availability
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
+     * A flag indicating whether the availability is purchasable or not.
+     */
+    private boolean isPurchasable;
+
+    /**
+     * A flag indicating whether the availability is renewable or not.
+     */
+    private boolean isRenewable;
+
+    /**
+     * The terms if applicable to this availability.
+     */
+    private Iterable<AvailabilityTerm> terms;
+
+    /**
+     * Gets a flag indicating whether the availability is purchasable or not.
+     * 
+     * @return A flag indicating whether the availability is purchasable or not.
+     */
+    public boolean getIsPurchasable()
+    {
+        return isPurchasable;
+    }
+
+    /**
+     * Sets a flag indicating whether the availability is purchasable or not.
+     * 
+     * @param value A flag indicating whether the availability is purchasable or not.
+     */
+    public void setIsPurchasable(boolean value)
+    {
+        isPurchasable = value;   
+    }
+
+    /**
+     * Gets a flag indicating whether the availability is renewable or not.
+     * 
+     * @return A flag indicating whether the availability is renewable or not.
+     */
+    public boolean getIsRenewable()
+    {
+        return isRenewable;
+    }
+
+    /**
+     * Sets a flag indicating whether the availability is renewable or not.
+     * 
+     * @param value A flag indicating whether the availability is renewable or not.
+     */
+    public void setIsRenewable(boolean value)
+    {
+        isRenewable = value;   
+    }
+
+    /**
+     * Gets the terms if applicable to this availability.
+     * 
+     * @return The terms if applicable to this availability.
+     */
+    public Iterable<AvailabilityTerm> getTerms()
+    {
+        return terms;
+    }
+
+    /**
+     * Sets the terms if applicable to this availability.
+     * 
+     * @param value The terms if applicable to this availability.
+     */
+    public void setTerms(Iterable<AvailabilityTerm> value)
+    {
+        terms = value;   
+    }
+
+    /**
      * Gets or sets the unique availability id.
      */
     private String __Id;
