@@ -21,7 +21,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
  */
 public interface IDeviceCollection 
 	extends IPartnerComponent<Tuple<String, String>>,
-	IEntireEntityCollectionRetrievalOperations<Device, ResourceCollection<Device>>, IEntityCreateOperations<List<Device>, String>, IEntitySelector<IDevice>
+	IEntireEntityCollectionRetrievalOperations<Device, ResourceCollection<Device>>, IEntityCreateOperations<List<Device>, String>, IEntitySelector<String, IDevice>
 {
 	/**
 	 * Retrieves a specific customer's device behavior.

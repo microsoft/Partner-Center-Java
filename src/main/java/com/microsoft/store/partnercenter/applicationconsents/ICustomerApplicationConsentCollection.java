@@ -16,7 +16,7 @@ import com.microsoft.store.partnercenter.models.applicationconsents.ApplicationC
  */
 public interface ICustomerApplicationConsentCollection
         extends IPartnerComponentString,
-        IEntitySelector<IApplicationConsent>,
+        IEntitySelector<String, IApplicationConsent>,
         IEntityCreateOperations<ApplicationConsent, ApplicationConsent>
 {
     /**

@@ -7,12 +7,15 @@
 package com.microsoft.store.partnercenter.orders;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.orders.Order;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -46,20 +49,72 @@ public class OrderOperations
     }
 
     /**
-     * Retrieves the customer order.
+     * Gets the order information.
      * 
      * @return The customer order.
      */
     @Override
     public Order get()
     {
+        return get(false);
+    }
+
+    /**
+     * Gets the order information.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The order information including pricing details (based on access permissions) when requested.
+     */
+    @Override
+    public Order get(Boolean includePrice)
+    {
+        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getParameters().get("IncludePrice"),
+				String.valueOf(includePrice)
+			) 
+        );
+        
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<Order>(){}, 
             MessageFormat.format( 
                 PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getPath(),
                 this.getContext().getItem1(), 
-                this.getContext().getItem2()));
+                this.getContext().getItem2()),
+            parameters);
+    }
+
+    /**
+     * Gets line item collection operations.
+     * 
+     * @return The line item collection operations.
+     */
+    @Override
+    public IOrderLineItemCollection getOrderLineItems() 
+    {
+        return new OrderLineItemCollectionOperations(
+            this.getPartner(),
+            this.getContext().getItem1(), 
+            this.getContext().getItem2());
+    }
+
+    /**
+     * Gets the order provisioning status operations.
+     * 
+     * @return The order provisioning status operations.
+     */
+    @Override
+    public IOrderProvisioningStatus getProvisioningStatus() 
+    {
+        return new OrderProvisioningStatusOperations(
+            this.getPartner(), 
+            this.getContext().getItem1(), 
+            this.getContext().getItem2());
     }
 
     /**

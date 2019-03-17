@@ -19,15 +19,24 @@ public interface IOrder
     extends IPartnerComponent<Tuple<String, String>>, IEntityGetOperations<Order>, IEntityPatchOperations<Order>
 {
     /**
-     * Retrieves the order information.
-     * @return The order information
+     * Gets the line item collection operations.
+     * 
+     * @return The line item collection operations.
      */
-    Order get();
+    IOrderLineItemCollection getOrderLineItems();
 
     /**
-     * Patches the order.
-     * @param partialOrder An order that has the properties to be patched set.
-     * @return The updated order
+     * Gets the order provisioning status operations.
+     * 
+     * @return The order provisioning status operations.
      */
-    Order patch(Order partialOrder);
+    IOrderProvisioningStatus getProvisioningStatus();
+
+    /**
+     * Gets the order information.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The order information including pricing details (based on access permissions) when requested.
+     */
+    Order get(Boolean includePrice);
 }

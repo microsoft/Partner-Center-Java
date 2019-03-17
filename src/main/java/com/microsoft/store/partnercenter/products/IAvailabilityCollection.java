@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.utils.TripletTuple;
  */
 public interface IAvailabilityCollection
     extends IPartnerComponent<TripletTuple<String, String, String>>,
-    IEntireEntityCollectionRetrievalOperations<Availability, ResourceCollection<Availability>>, IEntitySelector<IAvailability>
+    IEntireEntityCollectionRetrievalOperations<Availability, ResourceCollection<Availability>>, IEntitySelector<String, IAvailability>
 {
     /**
      * Retrieves the operations tied with a specific availability.

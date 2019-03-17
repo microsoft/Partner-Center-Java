@@ -13,6 +13,6 @@ import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
  * Represents the available operations for receipts.
  */
 public interface IReceiptCollection
-    extends IPartnerComponentString, IEntitySelector<IReceipt>
+    extends IPartnerComponentString, IEntitySelector<String, IReceipt>
 {
 }

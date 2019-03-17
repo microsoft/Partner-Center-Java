@@ -14,7 +14,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
-import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.entitlements.Entitlement;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
@@ -26,7 +25,7 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  */
 public class EntitlementCollectionByEntitlementTypeOperations
 	extends BasePartnerComponent<Tuple<String, String>>
-	implements IEntireEntityCollectionRetrievalOperations<Entitlement, ResourceCollection<Entitlement>>
+	implements IEntitlementCollectionByEntitlementType
 {
 	/**
 	 * Initializes a new instance of the EntitlementCollectionByEntitlementTypeOperations class.
@@ -37,26 +36,38 @@ public class EntitlementCollectionByEntitlementTypeOperations
 	 */
 	public EntitlementCollectionByEntitlementTypeOperations( IPartner rootPartnerOperations, String customerId, String entitlementType )
 	{
-		super( rootPartnerOperations, new Tuple<String, String>(customerId, entitlementType) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, entitlementType));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( entitlementType ) )
+		if (StringHelper.isNullOrWhiteSpace(entitlementType))
 		{
-			throw new IllegalArgumentException( "entitlementType must be set" );
+			throw new IllegalArgumentException("entitlementType must be set");
 		}
 	}
 
-	/**
-	 * Retrieves entitlement collection with the given entitlement type.
-	 * 
-	 * @return The entitlement collection with the given entitlement type.
-	 */
+    /**
+     * Gets an entitlement collection with the given entitlement type.
+     * 
+     * @return The collection of entitlements corresponding to a specific entitlement type for the customer.
+     */
 	@Override
 	public ResourceCollection<Entitlement> get()
+	{
+		return get(false);
+	}
+
+	/**
+     * Gets an entitlement collection with the given entitlement type.
+     * 
+     * @param showExpiry A flag to indicate if the expiry date is required to be returned along with the entitlement (if applicable).
+     * @return The collection of entitlements corresponding to a specific entitlement type for the customer.
+     */
+	@Override
+	public ResourceCollection<Entitlement> get(Boolean showExpiry)
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
@@ -66,6 +77,15 @@ public class EntitlementCollectionByEntitlementTypeOperations
 			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetEntitlements").getParameters().get("EntitlementType"),
 				this.getContext().getItem2()
+			) 
+		);
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetEntitlements").getParameters().get("ShowExpiry"),
+				String.valueOf(showExpiry)
 			) 
 		);
 

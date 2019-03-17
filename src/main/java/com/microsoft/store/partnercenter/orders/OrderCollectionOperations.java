@@ -7,13 +7,17 @@
 package com.microsoft.store.partnercenter.orders;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
+import com.microsoft.store.partnercenter.models.offers.BillingCycleType;
 import com.microsoft.store.partnercenter.models.orders.Order;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -31,11 +35,38 @@ public class OrderCollectionOperations
 	 */
 	public OrderCollectionOperations( IPartner rootPartnerOperations, String customerId )
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set");
 		}
+	}
+
+    /**
+     * Gets the order collection behavior given a billing cycle type.
+     * 
+     * @param billingCycleType The billing cycle type.
+     * @return The order collection by billing cycle type.
+     */
+	public IOrderCollectionByBillingCycleType byBillingCycleType(BillingCycleType billingCycleType)
+	{
+		return new OrderCollectionByBillingCycleTypeOperations(
+			this.getPartner(), 
+			this.getContext(), 
+			billingCycleType);
+	}
+
+	/**
+	 * Get the order operations for the specified order.
+	 * 
+	 * @param orderId The order identifier.
+	 * @return The order operations.
+	 */
+	@Override
+	public IOrder byId( String orderId )
+	{
+		return new OrderOperations( this.getPartner(), this.getContext(), orderId );
 	}
 
 	/**
@@ -61,17 +92,7 @@ public class OrderCollectionOperations
 			newOrder);
 	}
 
-	/**
-	 * Obtains a specific order behavior.
-	 * 
-	 * @param orderId The order id.
-	 * @return The order operations.
-	 */
-	@Override
-	public IOrder byId( String orderId )
-	{
-		return new OrderOperations( this.getPartner(), this.getContext(), orderId );
-	}
+
 
 	/**
 	 * Retrieves all the orders the customer made.
@@ -81,11 +102,34 @@ public class OrderCollectionOperations
 	@Override
 	public ResourceCollection<Order> get()
 	{
+		return get(false);
+	}
+
+	/**
+     * Gets a collection of orders.
+     * 
+     * @param includePrice A flag indicating whether to include pricing details in the order information or not.
+     * @return The collection of orders including pricing details (based on access permissions) when requested.
+     */
+	public ResourceCollection<Order> get(Boolean includePrice)
+	{
+		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrders").getParameters().get("IncludePrice"),
+				String.valueOf(includePrice)
+			) 
+		);
+		
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
 			MessageFormat.format( 
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrders").getPath(),
-				this.getContext()));
+				this.getContext()), 
+			parameters);
 	}
 }

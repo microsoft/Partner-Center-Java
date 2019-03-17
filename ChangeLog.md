@@ -24,7 +24,10 @@
 
 * Auditing
   * Added new operation and resource types
+* Devices
+  * Addressed issue with the device update operation
 * Entitlements
+  * Added the ability to obtain the expiration date for the entitlement (if applicable)
   * Added the AlternateId property to the reference order object
 * Invoices
   * Added the ability to download the tax receipt
@@ -46,11 +49,15 @@
   * Added the ability to include pricing details in the order information returned when requesting a list of customer orders
 * Products
   * Removed the SKU download operations
+* Qualifications
+  * Added the ability to update the customer qualification used for Government Community Cloud.
 * Rate Card
   * Changed the following type of the AzureMeter class from int to double IncludedQuantity
 * Subscriptions
   * Changed the type for the commitment end date from LocalDateTime to DateTime
   * Changed the type for the effective start date from LocalDateTime to DateTime
+* Validations
+  * Added the ability to request validation codes used to create Government Community Cloud customers
 
 ## Version 1.10.0
 

@@ -6,9 +6,10 @@
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
+
+import org.joda.time.DateTime;
 
 /**
  * Class that represents an entitlement.
@@ -16,28 +17,30 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class Entitlement
 	 extends ResourceBaseWithLinks<StandardResourceLinks> 
 {
-	@JsonProperty("entitledArtifacts")
 	private Iterable<Artifact> entitledArtifacts;
 
-	@JsonProperty("entitlementType")
 	private String entitlementType;
 
-	@JsonProperty("includedEntitlements")
+	/**
+	 * The entitlement expiry date for the entitlement.
+	 */
+	private DateTime expiryDate;
+
+	/**
+	 * The fulfillment state for the entitlement.
+	 */
+	private String fulfillmentState;
+
 	private Iterable<Entitlement> includedEntitlements;
 
-	@JsonProperty("productId")
 	private String productId;
 
-	@JsonProperty("quantity")
 	private Integer quantity;
 
-	@JsonProperty("quantityDetails")
 	private Iterable<QuantityDetail> quantityDetails;
 
-	@JsonProperty("referenceOrder")
 	private ReferenceOrder referenceOrder;
 
-	@JsonProperty("skuId")
 	private String skuId;
 
 	/**
@@ -78,6 +81,44 @@ public class Entitlement
 	public void setEntitlementType(String value)
 	{
 		entitlementType = value;
+	}
+
+	/**
+	 * Gets the expiry date for the entitlement.
+	 * 
+	 * @return The expiry date for the entitlement.
+	 */
+	public DateTime getExpiryDate()
+	{
+		return expiryDate;
+	}
+
+	/**
+	 * Sets the expiry date for the entitlement.
+	 * 
+	 * @param value The expiry date for the entitlement.
+	 */
+	public void setExpiryDate(DateTime value)
+	{
+		expiryDate = value;
+	}
+
+	/**
+	 * Gets the fulfillment state for the entitlement.
+	 */
+	public String getFulfillmentState()
+	{
+		return fulfillmentState;
+	}
+
+	/**
+	 * Sets the fulfillment state for the entitlement.
+	 * 
+	 * @param value THe the fulfillment state for the entitlement.
+	 */
+	public void setFulfillmentState(String value)
+	{
+		fulfillmentState = value;
 	}
 
 	/**

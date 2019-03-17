@@ -5,7 +5,7 @@
   "DefaultAuthenticationTokenExpiryBufferInSeconds": "30",
   "DefaultLocale": "en-US",
   "PartnerCenterClient": "Partner Center Java SDK",
-  "SdkVersion" : "1.11.0",
+  "SdkVersion": "1.12.0",
   "Apis": {
     "PartnerLicensesDeploymentInsights": {
       "Path": "analytics/licenses/deployment"
@@ -28,11 +28,11 @@
         "Size": "size"
       }
     },
-    "CreateCustomerAgreement": {
-      "Path": "customers/{0}/agreements"
-    },
     "GetAgreementsDetails": {
       "Path": "agreements"
+    },
+    "CreateCustomerAgreement": {
+      "Path": "customers/{0}/agreements"
     },
     "GetCustomerAgreements": {
       "Path": "customers/{0}/agreements"
@@ -276,8 +276,8 @@
     "GetCustomerSubscribedSkus": {
       "Path": "customers/{0}/subscribedskus",
       "Parameters": {
-        "customerId": "customer_id",
-        "licenseGroupIds": "licenseGroupIds"
+        "CustomerId": "customer_id",
+        "LicenseGroupIds": "licenseGroupIds"
       }
     },
     "GetCustomerDirectoryRoles": {
@@ -361,11 +361,23 @@
     "GetCustomerServiceCostLineItems": {
       "Path": "customers/{0}/servicecosts/{1}/lineitems"
     },
+    "GetActivationLinksByLineItemNumber": {
+      "Path": "customers/{0}/orders/{1}/lineitems/{2}/activationlinks"
+    },
+    "GetSubscriptionActivationLink": {
+      "Path": "{0}/subscriptions/{1}/activationlinks"
+    },
     "GetCustomerQualification": {
       "Path": "customers/{0}/qualification"
     },
     "UpdateCustomerQualification": {
-      "Path": "customers/{0}/qualification"
+      "Path": "customers/{0}/qualification",
+      "Parameters": {
+        "GovernmentCommunityCloudValidationCode": "code"
+      }
+    },
+    "GetValidationCodes": {
+      "Path": "customers/all/validations"
     },
     "GetCustomerManagedServices": {
       "Path": "customers/{0}/managedservices"
@@ -395,7 +407,10 @@
       "Path": "profiles/support"
     },
     "GetOrders": {
-      "Path": "customers/{0}/orders"
+      "Path": "customers/{0}/orders",
+      "Parameters": {
+        "IncludePrice": "include_price"
+      }
     },
     "GetOrdersByBillingCyleType": {
       "Path": "customers/{0}/orders",
@@ -405,7 +420,10 @@
       }
     },
     "GetOrder": {
-      "Path": "customers/{0}/orders/{1}"
+      "Path": "customers/{0}/orders/{1}",
+      "Parameters": {
+        "IncludePrice": "include_price"
+      }
     },
     "UpdateOrder": {
       "Path": "customers/{0}/orders/{1}"
@@ -507,6 +525,26 @@
     },
     "GetInvoiceSummaries": {
       "Path": "invoices/summaries"
+    },
+    "GetReconLineItems": {
+      "Path": "invoices/{0}/lineitems",
+      "Parameters": {
+        "Provider": "provider",
+        "InvoiceLineItemType": "invoiceLineItemType",
+        "CurrencyCode": "currencyCode",
+        "Period": "period",
+        "Size": "size",
+        "SeekOperation": "seekoperation"
+      },
+      "AdditionalHeaders": {
+        "ContinuationToken": "MS-ContinuationToken"
+      }
+    },
+    "GetEstimatesLinks": {
+      "Path": "invoices/estimates/links",
+      "Parameters": {
+        "CurrencyCode": "currencyCode"
+      }
     },
     "GetCustomerBillingProfile": {
       "Path": "customers/{0}/profiles/billing"
@@ -625,6 +663,9 @@
     "DeleteDevice": {
       "Path": "customers/{0}/deviceBatches/{1}/devices/{2}"
     },
+    "UpdateDevice": {
+      "Path": "customers/{0}/deviceBatches/{1}/devices/{2}"
+    },
     "GetBatchUploadStatus": {
       "Path": "customers/{0}/batchJobStatus/{1}"
     },
@@ -675,7 +716,11 @@
     "GetEntitlements": {
       "Path": "customers/{0}/entitlements",
       "Parameters": {
-        "EntitlementType": "entitlementType"
+        "EntitlementType": "entitlementType",
+        "ShowExpiry": "showExpiry"
+      },
+      "AdditionalHeaders": {
+        "Version": "version"
       }
     }
   }

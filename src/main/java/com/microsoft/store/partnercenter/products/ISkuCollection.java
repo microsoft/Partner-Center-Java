@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
  */
 public interface ISkuCollection
     extends IPartnerComponent<Tuple<String, String>>,
-    IEntitySelector<ISku>, IEntireEntityCollectionRetrievalOperations<Sku, ResourceCollection<Sku>>
+    IEntitySelector<String, ISku>, IEntireEntityCollectionRetrievalOperations<Sku, ResourceCollection<Sku>>
 {
     /**
      * Retrieves the operations tied with a specific SKU.

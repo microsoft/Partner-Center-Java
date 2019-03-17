@@ -10,6 +10,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntityGetOperations;
 import com.microsoft.store.partnercenter.genericoperations.IEntityUpdateOperations;
 import com.microsoft.store.partnercenter.models.customers.CustomerQualification;
+import com.microsoft.store.partnercenter.models.validationcodes.ValidationCode;
 
 public interface ICustomerQualification
 		extends IPartnerComponentString, IEntityGetOperations<CustomerQualification>, IEntityUpdateOperations<CustomerQualification>
@@ -27,6 +28,14 @@ public interface ICustomerQualification
      * @param customerQualification Customer Qualification.
      * @return The updated customer qualification.
      */
-    CustomerQualification update( CustomerQualification customerQualification );
+    CustomerQualification update(CustomerQualification customerQualification);
 
+    /**
+     * Updates the customer qualification. Used for GovernmentCommunityCloud with validation code after successful registration through Microsoft.
+     * 
+     * @param customerQualification The customer qualification value.
+     * @param governmentCommunityCloudValidationCode Validation code necessary to complete only Government Community Cloud customer creation.
+     * @return The updated customer qualification.
+     */
+    CustomerQualification update(CustomerQualification customerQualification, ValidationCode governmentCommunityCloudValidationCode);
 }

@@ -14,7 +14,7 @@ import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
  */
 public interface IBatchJobStatusCollection 
     extends IPartnerComponentString,
-    IEntitySelector<IBatchJobStatus>
+    IEntitySelector<String, IBatchJobStatus>
 {
 	/**
 	 * Retrieves a specific customer's devices batch upload status behavior.
@@ -22,5 +22,5 @@ public interface IBatchJobStatusCollection
 	 * @param trackingId The tracking identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
-    IBatchJobStatus byId( String trackingId );
+    IBatchJobStatus byId(String trackingId);
 }

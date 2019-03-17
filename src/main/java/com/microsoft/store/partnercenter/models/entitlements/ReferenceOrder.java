@@ -6,7 +6,6 @@
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
@@ -16,13 +15,19 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class ReferenceOrder
 	 extends ResourceBaseWithLinks<StandardResourceLinks> 
 {
-	@JsonProperty("alternateId")
+	/**
+	 * The alternate identifier value.
+	 */
 	private String alternateId; 
 
-	@JsonProperty("id")
+	/**
+	 * The identifier for the reference order.
+	 */
 	private String id;
 
-	@JsonProperty("lineItemId")
+	/**
+	 * The line item identifier.
+	 */
 	private String lineItemId;
 	
 	/**
