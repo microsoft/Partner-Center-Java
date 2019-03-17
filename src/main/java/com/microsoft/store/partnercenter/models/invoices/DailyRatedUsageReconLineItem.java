@@ -319,7 +319,7 @@ public class DailyRatedUsageReconLineItem
     @Override
     public BillingProvider getBillingProvider() 
     {
-        return BillingProvider.EXTERNAL;
+        return BillingProvider.MARKETPLACE;
     }
 
     /**

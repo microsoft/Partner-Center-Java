@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.microsoft.store.partnercenter.models.invoices.AzureDataMarketDailyUsageLineItem;
 import com.microsoft.store.partnercenter.models.invoices.BillingProvider;
 import com.microsoft.store.partnercenter.models.invoices.DailyRatedUsageReconLineItem;
 import com.microsoft.store.partnercenter.models.invoices.DailyUsageLineItem;
@@ -30,11 +29,13 @@ public class InvoiceLineItemDeserializer
 {
     private static final long serialVersionUID = 2L;
 
-    public InvoiceLineItemDeserializer() { 
+    public InvoiceLineItemDeserializer() 
+    { 
         this(null); 
     } 
  
-    public InvoiceLineItemDeserializer(Class<?> vc) { 
+    public InvoiceLineItemDeserializer(Class<?> vc) 
+    { 
         super(vc); 
     }
 
@@ -55,11 +56,7 @@ public class InvoiceLineItemDeserializer
             {
                 reader = mapper.readerFor(DailyUsageLineItem.class);
             }
-            else if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE_DATA_MARKET.toString()))
-            {
-                reader = mapper.readerFor(AzureDataMarketDailyUsageLineItem.class);
-            }
-            else if(billingProvider.equalsIgnoreCase(BillingProvider.EXTERNAL.toString()))
+            else if(billingProvider.equalsIgnoreCase(BillingProvider.MARKETPLACE.toString()))
             {
                 reader = mapper.readerFor(DailyRatedUsageReconLineItem.class);
             }
@@ -69,10 +66,6 @@ public class InvoiceLineItemDeserializer
             if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
             {
                 reader = mapper.readerFor(UsageBasedLineItem.class);
-            }
-            else if(billingProvider.equalsIgnoreCase(BillingProvider.AZURE_DATA_MARKET.toString()))
-            {
-                reader = mapper.readerFor(AzureDataMarketDailyUsageLineItem.class);
             }
             else if (billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
             {

@@ -29,8 +29,21 @@
 * Entitlements
   * Added the ability to obtain the expiration date for the entitlement (if applicable)
   * Added the AlternateId property to the reference order object
+  * Added the following properties to the Entitlement model
+    * FulfillmentState
+    * ExpiryDate
 * Invoices
   * Added the ability to download the tax receipt
+  * Added the following properties to the OneTimeInvoiceLineItem model
+    * AlternateId
+    * ChargeEndDate
+    * ChargeStartDate
+    * PublisherId
+    * PublisherName
+    * SubscriptionDescription
+    * SubscriptionId
+    * TermAndBillingCycle
+    * UnitType
   * Changed the the following types of the AzureDataMarketLineItem class from int to double
     * ConsumptionDiscount
     * ConsumptionPrice
@@ -43,11 +56,20 @@
     * PretaxCharges
     * TaxAmount
   * Changed the following type of the BaseAzureDataMarketLineItem class from int to double ConsumedQuantity
+  * Removed Azure Data Market billing provider type and models because this is no longer supported
 * JDK
   * Modified the target JDK from 1.8 to 1.7
 * Orders
+  * Added the ability to get the activation link for an order line item
   * Added the ability to include pricing details in the order information returned when requesting a list of customer orders
 * Products
+  * Added the following properties to the Availability model
+    * IsPurchasable
+    * IsRenewable
+    * Terms
+  * Added the following properties to the Product model
+    * IsMicrosoftProduct
+    * PublisherName
   * Removed the SKU download operations
 * Qualifications
   * Added the ability to update the customer qualification used for Government Community Cloud.

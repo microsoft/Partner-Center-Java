@@ -15,7 +15,232 @@ public class OneTimeInvoiceLineItem
     extends InvoiceLineItem
 {
     /**
-     * Gets or sets the partner commerce account Id.
+     * The alternate identifier (quote identifier).
+     */
+    private String alternateId;
+
+    /**
+     * The charge end date associated with this purchase.
+     */
+    private DateTime chargeEndDate;
+
+    /**
+     * The charge start date associated with this purchase.
+     */
+    private DateTime chargeStarDate;
+
+    /**
+     * The publisher identifier associated with this purchase.
+     */
+    private String publisherId;
+
+    /**
+     * The publisher name associated with this purchase.
+     */
+    private String publisherName;
+
+    /**
+     * The subscription description associated with this purchase.
+     */
+    private String subscriptionDescription;
+
+    /**
+     * The subscription id associated with this purchase.
+     */
+    private String subscriptionId;
+
+    /**
+     * The term and billing cycle associated with this purchase. 
+     */
+    private String termAndBillingCycle;
+    
+    /**
+     * The type of unit.
+     */
+    private String unitType;
+
+    /**
+     * Gets the alternate identifier (quote identifier).
+     * 
+     * @return The alternate identifier (quote identifier).
+     */
+    public String getAlternateId()
+    {
+        return alternateId;
+    }
+
+    /**
+     * Sets the alternate identifier (quote identifier).
+     * 
+     * @param value The alternate identifier (quote identifier).
+     */
+    public void setAlternateId(String value)
+    {
+        alternateId = value;
+    }
+
+    /**
+     * Gets the charge end date associated with this purchase.
+     * 
+     * @return The charge end date associated with this purchase.
+     */
+    public DateTime getChargeEndDate()
+    {
+        return chargeEndDate;
+    }
+
+    /**
+     * Sets the charge end date associated with this purchase.
+     * 
+     * @param value The charge end date associated with this purchase.
+     */
+    public void setChargeEndDate(DateTime value)    
+    {
+        chargeEndDate = value;
+    }
+
+    /**
+     * Gets the charge start date associated with this purchase.
+     * 
+     * @return The charge start date associated with this purchase.
+     */
+    public DateTime getChargeStartDate()
+    {
+        return chargeStarDate;
+    }
+
+    /**
+     * Sets the charge start date associated with this purchase.
+     * 
+     * @param value The charge start date associated with this purchase.
+     */
+    public void setChargeStartDate(DateTime value)    
+    {
+        chargeStarDate = value;
+    }
+
+    /**
+     * Gets the publisher identifier associated with this purchase.
+     * 
+     * @return The publisher identifier associated with this purchase.
+     */
+    public String getPublisherId()
+    {
+        return publisherId;
+    }
+
+    /**
+     * Sets the publisher identifier associated with this purchase.
+     * 
+     * @param value The publisher identifier associated with this purchase.
+     */
+    public void setPublisherId(String value)    
+    {
+        publisherId = value;
+    }
+
+    /**
+     * Gets the publisher name associated with this purchase.
+     * 
+     * @return The publisher name associated with this purchase.
+     */
+    public String getPublisherName()
+    {
+        return publisherName;
+    }
+
+    /**
+     * Sets the publisher name associated with this purchase.
+     * 
+     * @param value The publisher name associated with this purchase.
+     */
+    public void setPublisherName(String value)    
+    {
+        publisherName = value;
+    }
+
+    /**
+     * Gets the subscription description associated with this purchase.
+     * 
+     * @return The subscription description associated with this purchase.
+     */
+    public String getSubscriptionDescription()
+    {
+        return subscriptionDescription;
+    }
+
+    /**
+     * Sets the subscription description associated with this purchase.
+     * 
+     * @param value The subscription description associated with this purchase.
+     */
+    public void setSubscriptionDescription(String value)    
+    {
+        subscriptionDescription = value;
+    }
+
+    /**
+     * Gets the subscription identifier associated with this purchase.
+     * 
+     * @return The subscription identifier associated with this purchase.
+     */
+    public String getSubscriptionId()
+    {
+        return subscriptionId;
+    }
+
+    /**
+     * Sets the subscription identifier associated with this purchase.
+     * 
+     * @param value The subscription identifier associated with this purchase.
+     */
+    public void setSubscriptionId(String value)    
+    {
+        subscriptionId = value;
+    }
+
+    /**
+     * Gets the term and billing cycle associated with this purchase. 
+     * 
+     * @return The term and billing cycle associated with this purchase. 
+     */
+    public String getTermAndBillingCycle()
+    {
+        return termAndBillingCycle;
+    }
+
+    /**
+     * Sets term and billing cycle associated with this purchase. 
+     * 
+     * @param value The term and billing cycle associated with this purchase. 
+     */
+    public void setTermAndBillingCycle(String value)    
+    {
+        termAndBillingCycle = value;
+    }
+
+    /**
+     * Gets the type of unit. 
+     * 
+     * @return The type of unit.
+     */
+    public String getUnitType()
+    {
+        return unitType;
+    }
+
+    /**
+     * Sets type of unit.
+     * 
+     * @param value The type of unit.
+     */
+    public void setUnitType(String value)    
+    {
+        unitType = value;
+    }
+
+    /**
+     * Gets or sets the partner commerce account identifier.
      */
     private String partnerId;
 
