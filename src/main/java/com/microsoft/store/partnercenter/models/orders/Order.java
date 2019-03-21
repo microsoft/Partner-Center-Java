@@ -20,6 +20,11 @@ public class Order
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
+     * The currency symbol.
+     */
+    private String currencySymbol; 
+
+    /**
      * The total price for the order.
      */
     private double totalPrice;
@@ -158,6 +163,25 @@ public class Order
         __BillingCycle = value;
     }
 
+    /**
+     * Gets the currency symbol.
+     * 
+     * @return The currency symbol.
+     */
+    public String getCurrencySymbol()
+    {
+        return currencySymbol;
+    }    
+
+    /**
+     * Sets the currency symbol.
+     * 
+     * @param value The currency sybmol.
+     */
+    public void setCurrencySymbol(String value)
+    {
+        currencySymbol = value;
+    }
 
     /**
      * Gets the total price for the order. Order price (will not be returned unless explicitly asked for) Note: this information is PRE-TAX.
@@ -169,6 +193,16 @@ public class Order
         return totalPrice;
     }
 
+    /** 
+     * Sets the total price for the order.
+     * 
+     * @param value The total price for the order.
+     */
+    public void setsTotalPrice(double value)
+    {
+        totalPrice = value;
+    }
+
     /**
      * Gets the transaction type for the order.
      * 
@@ -177,5 +211,15 @@ public class Order
     public String getTransactionType()
     {
         return transactionType;
+    }
+
+    /** 
+     * Sets the transaction type for the order.
+     * 
+     * @param value The transaction type for the order.
+     */
+    public void setsTransactionType(String value)
+    {
+        transactionType = value;
     }
 }

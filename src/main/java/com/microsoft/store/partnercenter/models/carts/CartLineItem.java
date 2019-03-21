@@ -16,7 +16,13 @@ import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 /**
  * Represents a line item on a cart.
  */
-public class CartLineItem  {
+public class CartLineItem  
+{
+    /**
+     * The term duration if applicable.
+     */
+    private String termDuration; 
+
     /**
      * Gets or sets a unique identifier of a cart line item.
      */
@@ -175,5 +181,25 @@ public class CartLineItem  {
     public void setError( CartError value )
     {
     	error = value;
+    }
+
+    /**
+     * Gets the term duration if applicable.
+     * 
+     * @return The term duration if applicable.
+     */
+    public String getTermDuration()
+    {
+        return termDuration;
+    }
+
+    /**
+     * Sets the term duration if applicable.
+     * 
+     * @param value The term duration if applicable.
+     */
+    public void setTermDuration(String value)
+    {
+        termDuration = value;
     }
 }

@@ -11,6 +11,7 @@ import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.Contract;
 import com.microsoft.store.partnercenter.models.ContractType;
 import com.microsoft.store.partnercenter.models.invoices.BillingType;
+import com.microsoft.store.partnercenter.models.offers.BillingCycleType;
 
 import org.joda.time.DateTime;
 
@@ -26,6 +27,12 @@ public class Subscription
      */
     @JsonProperty("actions")
     private Iterable<String> actions;
+
+    /**
+     * The billing cycle type for the subscription
+     */
+    @JsonProperty("billingCycle")
+    private BillingCycleType billingCycle;
 
     /** 
      * The date and time the subscription was created.
@@ -50,6 +57,11 @@ public class Subscription
      */
     @JsonProperty("id")
     private String id; 
+
+    /**
+     * A flag indicating whether gets or sets the value indicating that the subscription is a Microsoft product.
+     */
+    private boolean isMicrosoftProduct;
 
     /**
      * A flag indicating whether or not the subscription is a trial.
@@ -82,22 +94,32 @@ public class Subscription
     private String entitlementId;
 
     /**
+     * The name of the publisher.
+     */
+    private String publisherName;
+
+    /**
      * The quantity for the subscription.
      */
     @JsonProperty("quantity")
     private int quantity;
 
     /**
+     * The refund options for this subscription if applicable.
+     */
+    private Iterable<RefundOption> refundOptions;
+
+    /**
+     *  The ISO 8601 representation of the term's duration. 
+     *  The current supported values are P1M (1 month), P1Y (1 year) and P3Y (3 years).
+     */
+    private String termDuration;
+
+    /**
      * The units defining the quantity for the subscription.
      */
     @JsonProperty("unitType")
     private String unitType;
-
-    /**
-     * The billing cycle type for the subscription
-     */
-    @JsonProperty("billingCycle")
-    private String billingCycle;
 
     /**
      * Initializes a new instance of the subscription class.
@@ -188,11 +210,31 @@ public class Subscription
     }
 
     /**
+     * Gets a flag indicating whether gets or sets the value indicating that the subscription is a Microsoft product.
+     * 
+     * @return A flag indicating whether gets or sets the value indicating that the subscription is a Microsoft product.
+     */
+    public boolean getIsMicrosoftProduct()
+    {
+        return isMicrosoftProduct;
+    }
+
+    /**
+     * Sets a flag indicating whether gets or sets the value indicating that the subscription is a Microsoft product.
+     * 
+     * @param value A flag indicating whether gets or sets the value indicating that the subscription is a Microsoft product.
+     */
+    public void setIsMicrosoftProduct(boolean value)
+    {
+        isMicrosoftProduct = value;
+    }
+
+    /**
      * Gets a flag indicating whether or not the subscription is a trial.
      * 
      * @return A flag indicating whether or not the subscription is a trial.
      */
-    public Boolean getIsTrial()
+    public boolean getIsTrial()
     {
         return isTrial;
     }
@@ -258,6 +300,26 @@ public class Subscription
     }
 
     /**
+     * Gets the name of the publisher.
+     * 
+     * @return The name of the publisher.
+     */
+    public String getPublisherName()
+    {
+        return publisherName;
+    }
+
+    /**
+     * Sets the name of the publisher.
+     * 
+     * @param value The name of the publisher.
+     */
+    public void setPublisherName(String value)
+    {
+        publisherName = value;
+    }
+
+    /**
      * Gets the entitlement identifier for the subscription.
      *
      * @return The entitlement identifier for the subscription.
@@ -282,7 +344,7 @@ public class Subscription
      *
      * @return The billing cycle type
      */
-    public String getBillingCycle() {
+    public BillingCycleType getBillingCycle() {
         return billingCycle;
     }
 
@@ -291,7 +353,7 @@ public class Subscription
      *
      * @param billingCycle The billing cycle type for the subscription
      */
-    public void setBillingCycle(String billingCycle) {
+    public void setBillingCycle(BillingCycleType billingCycle) {
         this.billingCycle = billingCycle;
     }
 
@@ -313,6 +375,26 @@ public class Subscription
     public void setQuantity( int value )
     {
         quantity = value;
+    }
+
+    /**
+     * Gets the ISO 8601 representation of the term's duration. The current supported values are P1M (1 month), P1Y (1 year) and P3Y (3 years).
+     *
+     * @return The ISO 8601 representation of the term's duration.
+     */
+    public String getTermDuration()
+    {
+        return termDuration;
+    }
+
+    /**
+     * Sets the ISO 8601 representation of the term's duration. The current supported values are P1M (1 month), P1Y (1 year) and P3Y (3 years).
+     *
+     *  @param value The ISO 8601 representation of the term's duration.
+     */
+    public void setTermDuration(String value)
+    {
+        termDuration = value;
     }
 
     /**
@@ -474,5 +556,25 @@ public class Subscription
     public void setSuspensionReasons( Iterable<String> value )
     {
         __SuspensionReasons = value;
+    }
+
+    /**
+     * Gets the refund options for this subscription if applicable.
+     * 
+     * @return The refund options for this subscription if applicable.
+     */
+    public Iterable<RefundOption> getRefundOptions()
+    {
+        return refundOptions;
+    }
+
+    /**
+     * Sets the refund options for this subscription if applicable.
+     * 
+     * @param value The refund options for this subscription if applicable.
+     */
+    public void setRefundOptions(Iterable<RefundOption> value)
+    {
+        refundOptions = value;
     }
 }

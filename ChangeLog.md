@@ -24,6 +24,8 @@
 
 * Auditing
   * Added new operation and resource types
+* Carts
+  * Added the TermDuration property to the CartLineItem model
 * Devices
   * Addressed issue with the device update operation
 * Entitlements
@@ -65,6 +67,12 @@
 * Rate Card
   * Changed the following type of the AzureMeter class from int to double IncludedQuantity
 * Subscriptions
+  * Added the following properties to the Subscription model
+    * IsMicrosoftProduct
+    * PublisherName
+    * RefundOptions
+    * TermDuration
+  * Changed the type for the billing cycle from string to BillingCycleType
   * Changed the type for the commitment end date from LocalDateTime to DateTime
   * Changed the type for the effective start date from LocalDateTime to DateTime
 * Validations
