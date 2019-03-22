@@ -19,7 +19,6 @@ public class ReceiptCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param invoiceId The invoice identifier.
-     * @param receiptId
 	 */
 	public ReceiptCollectionOperations(IPartner rootPartnerOperations, String invoiceId)
 	{

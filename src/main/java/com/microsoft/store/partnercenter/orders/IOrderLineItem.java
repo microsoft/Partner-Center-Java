@@ -17,6 +17,8 @@ public interface IOrderLineItem
 {
     /**
      * Gets the available customer order line item activation link operations.
+     * 
+     * @return The available customer order line item activation link operations.
      */
     IOrderLineItemActivationLink getActivationLink();
 }

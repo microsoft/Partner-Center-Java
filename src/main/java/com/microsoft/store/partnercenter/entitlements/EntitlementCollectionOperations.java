@@ -58,7 +58,6 @@ public class EntitlementCollectionOperations
     /**
      * Gets the entitlements for a customer.
      * 
-     * @param  A flag to indicate if the expiry date is required to be returned along with the entitlement (if applicable).
      * @return The collection of entitlements for the customer.
      */
 	@Override

@@ -39,7 +39,6 @@ public class OrderLinks
      * Sets the link to the patch operation of an order.
      * 
      * @param value The link to the patch operation of an order.
-     * @return The link to the patch operation of an order.
      */
     public void setPatchOperation(Link value)
     {
@@ -60,7 +59,6 @@ public class OrderLinks
      * Sets the link to the provisioning status of an order.
      * 
      * @param value The link to the provisioning status of an order.
-     * @return The link to the provisioning status of an order.
      */
     public void setProvisioningStatus(Link value)
     {

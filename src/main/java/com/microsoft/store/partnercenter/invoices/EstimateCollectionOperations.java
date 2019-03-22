@@ -28,6 +28,8 @@ public class EstimateCollectionOperations
 
     /**
      * Gets the estimate links of the recon line items.
+     * 
+     * @return The estimate links of the recon line items.
      */
     @Override
     public IEstimateLink getLinks() 

@@ -79,7 +79,6 @@ public class InvoiceOperations
      * @param invoiceLineItemType The type of invoice line item type.
      * @param currencyCode The currency code.
      * @param period The period for unbilled recon.
-     * @param pageSize The number of records returned in a single operation.
      */
 	public IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period)
 	{

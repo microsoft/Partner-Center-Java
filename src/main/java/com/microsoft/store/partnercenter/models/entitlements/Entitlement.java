@@ -105,6 +105,8 @@ public class Entitlement
 
 	/**
 	 * Gets the fulfillment state for the entitlement.
+	 * 
+	 * @return The fulfillment state for the entitlement.
 	 */
 	public String getFulfillmentState()
 	{

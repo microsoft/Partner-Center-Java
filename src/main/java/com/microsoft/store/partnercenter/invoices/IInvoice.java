@@ -38,7 +38,8 @@ public interface IInvoice
      * 
      * @param billingProvider The billing provider.
      * @param invoiceLineItemType The invoice line item type.
-     * @return The invoice line item collection operations.
+     * 
+     * @return The available invoice line item collection operations given a billing provider and invoice line item type.
      */
     IInvoiceLineItemCollection by(BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType);
  
@@ -49,6 +50,8 @@ public interface IInvoice
      * @param invoiceLineItemType The type of invoice line item type.
      * @param currencyCode The currency code.
      * @param period The period for unbilled recon.
+     * 
+     * @return The available invoice line item collection operations given a billing provider and invoice line item type.
      */
     IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period);
 
@@ -60,6 +63,8 @@ public interface IInvoice
      * @param currencyCode The currency code.
      * @param period The period for unbilled recon.
      * @param pageSize The number of records returned in a single operation.
+     * 
+     * @return The available invoice line item collection operations given a billing provider and invoice line item type.
      */
     IReconLineItemCollection By(BillingProvider provider, InvoiceLineItemType invoiceLineItemType, String currencyCode, BillingPeriod period, int pageSize);
 }

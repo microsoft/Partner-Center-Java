@@ -16,7 +16,9 @@ public interface IEstimateCollection
     extends IPartnerComponent<String>
 {
     /**
-     * Gets the estimate links of the recon line items.
+     * Gets the estimate links for the recon line items.
+     * 
+     * @return The estimate links for the recon line items.
      */
     IEstimateLink getLinks();
 }
