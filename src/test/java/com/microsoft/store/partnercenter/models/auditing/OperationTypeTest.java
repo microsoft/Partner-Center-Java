@@ -54,6 +54,7 @@ public class OperationTypeTest
     private static final String GET_SOFTWARE_KEY_VALUE = "get_software_key";
     private static final String GET_SOFTWARE_DOWNLOAD_LINK_VALUE = "get_software_download_link";
     private static final String INCREASE_CREDIT_LIMIT_VALUE = "increase_credit_limit";
+    private static final String READY_INVOICE_VALUE = "ready_invoice";
 
     private static final String UNDEFINED_JSON = '"' + UNDEFINED_VALUE + '"';
     private static final String UPDATE_CUSTOMER_QUALIFICATION_JSON = '"' + UPDATE_CUSTOMER_QUALIFICATION_VALUE + '"';
@@ -92,6 +93,7 @@ public class OperationTypeTest
     private static final String GET_SOFTWARE_KEY_JSON = '"' + GET_SOFTWARE_KEY_VALUE + '"';
     private static final String GET_SOFTWARE_DOWNLOAD_LINK_JSON = '"' + GET_SOFTWARE_DOWNLOAD_LINK_VALUE + '"';
     private static final String INCREASE_CREDIT_LIMIT_JSON = '"' + INCREASE_CREDIT_LIMIT_VALUE + '"';
+    private static final String READY_INVOICE_JSON = '"' + READY_INVOICE_VALUE + '"';
 
     private ObjectMapper jsonConverter;
 
@@ -141,6 +143,7 @@ public class OperationTypeTest
         assertEquals(OperationType.GET_SOFTWARE_KEY, jsonConverter.readValue(GET_SOFTWARE_KEY_JSON, OperationType.class));
         assertEquals(OperationType.GET_SOFTWARE_DOWNLOAD_LINK, jsonConverter.readValue(GET_SOFTWARE_DOWNLOAD_LINK_JSON, OperationType.class));
         assertEquals(OperationType.INCREASE_CREDIT_LIMIT, jsonConverter.readValue(INCREASE_CREDIT_LIMIT_JSON, OperationType.class));
+        assertEquals(OperationType.READY_INVOICE, jsonConverter.readValue(READY_INVOICE_JSON, OperationType.class));
     }
 
     @Test
@@ -183,6 +186,7 @@ public class OperationTypeTest
         assertEquals(GET_SOFTWARE_KEY_JSON, jsonConverter.writeValueAsString(OperationType.GET_SOFTWARE_KEY));
         assertEquals(GET_SOFTWARE_DOWNLOAD_LINK_JSON, jsonConverter.writeValueAsString(OperationType.GET_SOFTWARE_DOWNLOAD_LINK));
         assertEquals(INCREASE_CREDIT_LIMIT_JSON, jsonConverter.writeValueAsString(OperationType.INCREASE_CREDIT_LIMIT));
+        assertEquals(READY_INVOICE_JSON, jsonConverter.writeValueAsString(OperationType.READY_INVOICE));
     }
 
     @Test
@@ -225,5 +229,6 @@ public class OperationTypeTest
         assertEquals(GET_SOFTWARE_KEY_VALUE, OperationType.GET_SOFTWARE_KEY.toString());
         assertEquals(GET_SOFTWARE_DOWNLOAD_LINK_VALUE, OperationType.GET_SOFTWARE_DOWNLOAD_LINK.toString());
         assertEquals(INCREASE_CREDIT_LIMIT_VALUE, OperationType.INCREASE_CREDIT_LIMIT.toString());
+        assertEquals(READY_INVOICE_VALUE, OperationType.READY_INVOICE.toString());
     }
 }

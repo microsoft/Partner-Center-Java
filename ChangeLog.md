@@ -20,6 +20,11 @@
 
 # Change Log
 
+## Upcoming Release
+
+* Auditing 
+  * Renamed the operation type CREATE_INVOICE to READY_INVOICE
+
 ## Version 1.12
 
 * Auditing

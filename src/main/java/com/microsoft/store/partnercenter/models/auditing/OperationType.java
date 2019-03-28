@@ -199,9 +199,9 @@ public enum OperationType
     INCREASE_CREDIT_LIMIT("increase_credit_limit"),
 	
 	/**
-     * An invoice was created.
+     * An invoice is ready.
      */
-    CREATE_INVOICE("create_invoice");
+    READY_INVOICE("ready_invoice");
 
     private final String value;
 
