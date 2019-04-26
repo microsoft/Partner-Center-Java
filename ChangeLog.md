@@ -22,10 +22,12 @@
 
 ## Upcoming Release
 
-* Auditing 
+* Auditing
   * Renamed the operation type CREATE_INVOICE to READY_INVOICE
+* Cart
+  * Added the add-on items property to the *CartLineItem* model
 
-## Version 1.12
+## Version 1.12.0
 
 * Auditing
   * Added new operation and resource types

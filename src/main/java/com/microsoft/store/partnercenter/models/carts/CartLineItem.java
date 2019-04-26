@@ -19,168 +19,295 @@ import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 public class CartLineItem  
 {
     /**
-     * The term duration if applicable.
+     * A list of items that depend on this one, so they have to be purchased subsequently.
      */
-    private String termDuration; 
+    @JsonProperty("addOnItems")
+    private Iterable<CartLineItem> addOnItems;
 
     /**
-     * Gets or sets a unique identifier of a cart line item.
+     * The type of billing cycle for the selected catalog item.
      */
-	@JsonProperty( "id" )
-    private String id;
-
-    public String getId()
-    {
-        return id;
-    }
-
-    public void setId( String value )
-    {
-    	id = value;
-    }
-
-    /**
-     * Gets or sets the catalog item identifier.
-     */
-	@JsonProperty( "catalogItemId" )
-    private String catalogItemId;
-
-    public String getCatalogItemId()
-    {
-        return catalogItemId;
-    }
-
-    public void setCatalogItemId( String value )
-    {
-    	catalogItemId = value;
-    }
-
-    /**
-     *  Gets or sets the friendly name for the result contract (subscription)
-     */
-    @JsonProperty( "friendlyName" )
-    private String friendlyName;
-
-    public String getFriendlyName()
-    {
-        return friendlyName;
-    }
-
-    public void setFriendlyName( String value )
-    {
-    	friendlyName = value;
-    }
-
-    /**
-     *  Gets or sets the product quantity.
-     */
-    @JsonProperty( "quantity" )
-    private Integer quantity;
-
-    public Integer getQuantity()
-    {
-        return quantity;
-    }
-
-    public void setQuantity( Integer value )
-    {
-    	quantity = value;
-    }
-
-    /**
-     *  Gets or sets the currency code.
-     */
-    @JsonProperty( "currencyCode" )
-    private String currencyCode;
-
-    public String getCurrencyCode()
-    {
-        return currencyCode;
-    }
-
-    public void setCurrencyCode( String value )
-    {
-    	currencyCode = value;
-    }
-
-    /**
-     * Gets or sets the type of billing cycle for the selected catalog item.
-     */
-    @JsonProperty( "billingCycle" )
+    @JsonProperty("billingCycle")
     private BillingCycleType billingCycle;
 
+    /**
+     * The catalog item identifier.
+     */
+    @JsonProperty("catalogItemId")
+    private String catalogItemId;
+
+    /**
+     * The currency code.
+     */
+    @JsonProperty("currencyCode")
+    private String currencyCode;
+
+    /**
+     * An error associated to this cart line item.
+     */
+    @JsonProperty("error")
+    private CartError error;
+
+    /**
+     * The friendly name for the result contract (subscription).
+     */
+    @JsonProperty("friendlyName")
+    private String friendlyName;
+
+    /**
+     * The unique identifier of a cart line item.
+     */
+    @JsonProperty("id")
+    private int id; 
+
+    /**
+     * The order group which indicates which items can be place in a single order.
+     */
+    @JsonProperty("orderGroup")
+    private String orderGroup;
+
+    /**
+     * A collection of participants on this purchase.
+     */
+    @JsonProperty("participants")
+    private Collection<KeyValuePair<ParticipantType, String>> participants;
+
+    /**
+     * The context that will be used for provisioning of the catalog item.
+     */
+    @JsonProperty("provisioningContext")
+    private Map<String, String> provisioningContext;
+
+    /**
+     * The product quantity.
+     */
+    @JsonProperty("quantity")
+    private int quantity;
+
+    /** 
+     * The term duration if applicable.
+     */
+    @JsonProperty("termDuration")
+    private String termDuration;
+
+    /**
+     * Gets a list of items that depend on this one, so they have to be purchased subsequently.
+     * 
+     * @return A list of items that depend on this one, so they have to be purchased subsequently.
+     */
+    public Iterable<CartLineItem> getAddOnItems()
+    {
+        return addOnItems;
+    }
+
+    /**
+     * Sets a list of items that depend on this one, so they have to be purchased subsequently.
+     * 
+     * @param value  A list of items that depend on this one, so they have to be purchased subsequently.
+     */
+    public void setAddOnItems(Iterable<CartLineItem> value)
+    {
+        addOnItems = value;
+    }
+
+    /**
+     * Gets the type of billing cycle for the selected catalog item.
+     * 
+     * @return The type of billing cycle for the selected catalog item.
+     */
     public BillingCycleType getBillingCycle()
     {
         return billingCycle;
     }
 
-    public void setBillingCycle( BillingCycleType value )
+    /**
+     * Sets the type of billing cycle for the selected catalog item.
+     * 
+     * @param value The type of billing cycle for the selected catalog item.
+     */
+    public void setBillingCycle(BillingCycleType value)
     {
-    	billingCycle = value;
+        billingCycle = value;
     }
 
     /**
-     * Gets or sets a collection of participants on this purchase.
+     * Gets the catalog item identifier.
+     * 
+     * @return The catalog item identifier.
      */
-    @JsonProperty( "participants" )
-    private Collection<KeyValuePair<ParticipantType, String>> participants;
-
-    public Collection<KeyValuePair<ParticipantType, String>> getParticipants()
+    public String getCatalogItemId()
     {
-        return participants;
-    }
-
-    public void setParticipants( Collection<KeyValuePair<ParticipantType, String>> value )
-    {
-    	participants = value;
+        return catalogItemId;
     }
 
     /**
-     *  Gets or sets a context that will be used for provisioning of the catalog item.
+     * Sets the catalog item identifier.
+     * 
+     * @param value The catalog item identifier.
      */
-    @JsonProperty( "provisioningContext" )
-    private Map<String, String> provisioningContext;
-
-    public Map<String, String> getProvisioningContext()
+    public void setCatalogItemId(String value)
     {
-        return provisioningContext;
-    }
-
-    public void setProvisioningContext( Map<String, String> value )
-    {
-    	provisioningContext = value;
+        catalogItemId = value;
     }
 
     /**
-     * Gets or sets the order group which indicates which items can be place in a single order.
+     * Gets the currency code.
+     * 
+     * @return The currency code.
      */
-    @JsonProperty( "orderGroup" )
-    private String orderGroup;
-
-    public String getOrderGroup()
+    public String getCurrencyCode()
     {
-        return orderGroup;
-    }
-
-    public void setOrderGroup( String value )
-    {
-    	orderGroup = value;
+        return currencyCode;
     }
 
     /**
-     * Gets or sets an error associated to this cart line item.
+     * Sets the currency code.
+     * 
+     * @param value The currency code.
      */
-    @JsonProperty( "error" )
-    private CartError error;
+    public void setCurrencyCode(String value)
+    {
+        currencyCode = value;
+    }
 
+    /**
+     * Gets the error associated to this cart line item.
+     * 
+     * @return The error associated to this cart line item.
+     */
     public CartError getError()
     {
         return error;
     }
 
-    public void setError( CartError value )
+    /**
+     * Sets the error associated to this cart line item.
+     * 
+     * @param value The error associated to this cart line item.
+     */
+    public void setError(CartError value)
     {
-    	error = value;
+        error = value; 
+    }
+
+    /**
+     * Gets the friendly name for the result contract (subscription).
+     * 
+     * @return The friendly name for the result contract (subscription).
+     */
+    public String getFriendlyName()
+    {
+        return friendlyName;
+    }
+
+    /**
+     * Sets the friendly name for the result contract (subscription).
+     * 
+     * @param value The friendly name for the result contract (subscription).
+     */
+    public void setFriendlyName(String value)
+    {
+        friendlyName = value;
+    }
+
+    /**
+     * Gets the unique identifier of a cart line item.
+     * 
+     * @return The unique identifier of a cart line item.
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * Sets the unique identifier of a cart line item.
+     * 
+     * @param value The unique identifier of a cart line item.
+     */
+    public void setId(int value)
+    {
+        id = value;
+    }
+
+    /**
+     * Gets the order group which indicates which items can be place in a single order.
+     * 
+     * @return The order group which indicates which items can be place in a single order.
+     */
+    public String getOrderGroup()
+    {
+        return orderGroup;
+    }
+
+    /**
+     * Sets the order group which indicates which items can be place in a single order.
+     * 
+     * @param value The order group which indicates which items can be place in a single order.
+     */
+    public void setOrderGroup(String value)
+    {
+        orderGroup = value;
+    }
+
+    /**
+     * Gets the collection of participants on this purchase.
+     * 
+     * @return The collection of participants on this purchase.
+     */
+    public Collection<KeyValuePair<ParticipantType, String>> getParticipants()
+    {
+        return participants;
+    }
+
+    /**
+     * Sets the collection of participants on this purchase.
+     * 
+     * @param value The collection of participants on this purchase.
+     */
+    public void setParticipants(Collection<KeyValuePair<ParticipantType, String>> value)
+    {
+        participants = value;
+    }
+
+    /**
+     * Gets the context that will be used for provisioning of the catalog item.
+     * 
+     * @return The context that will be used for provisioning of the catalog item.
+     */
+    public Map<String, String> getProvisioningContext()
+    {
+        return provisioningContext;
+    }
+
+    /**
+     * Sets the context that will be used for provisioning of the catalog item.
+     * 
+     * @param value The context that will be used for provisioning of the catalog item.
+     */
+    public void setProvisioningContext(Map<String, String> value)
+    {
+        provisioningContext = value;
+    }
+
+    /**
+     * Gets the product quantity.
+     * 
+     * @return The product quantity.
+     */
+    public int getQuantity()
+    {
+        return quantity;
+    }
+
+    /**
+     * Sets the product quantity.
+     * 
+     * @param value The product quantity.
+     */
+    public void setQuantity(int value)
+    {
+        quantity = value;
     }
 
     /**
