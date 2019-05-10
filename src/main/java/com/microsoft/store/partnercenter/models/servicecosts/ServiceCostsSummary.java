@@ -22,14 +22,14 @@ public class ServiceCostsSummary
     /**
      * The service costs summary details.
      */
-    private List<ServiceCostLineItem> details;
+    private List<ServiceCostsSummary> details;
 
     /**
      * Gets the service costs summary details.
      * 
      * @return The service costs summary details.
      */
-    public List<ServiceCostLineItem> getDetails()
+    public List<ServiceCostsSummary> getDetails()
     {
         return details;
     }
@@ -39,7 +39,7 @@ public class ServiceCostsSummary
      * 
      * @param value The service costs summary details.
      */
-    public void setDetails(List<ServiceCostLineItem> value) 
+    public void setDetails(List<ServiceCostsSummary> value) 
     {
         details = value;;
     }

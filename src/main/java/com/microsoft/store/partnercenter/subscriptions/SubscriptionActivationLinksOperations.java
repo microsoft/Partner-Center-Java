@@ -14,7 +14,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.orders.OrderLineItemActivationLink;
-import com.microsoft.store.partnercenter.models.subscriptions.Subscription;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -23,42 +22,42 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * for a given subscription.
  */
 public class SubscriptionActivationLinksOperations extends BasePartnerComponent<Tuple<String, String>>
-        implements ISubscriptionActivationLinks {
-    /**
-     * Initializes a new instance of the SubscriptionActivationLinksOperations
-     * class.
-     * 
-     * @param rootPartnerOperations The root partner operations instance.
-     * @param customerId            The customer identifier.
-     * @param subscriptionId        The subscription identifier
-     */
-    public SubscriptionActivationLinksOperations(IPartner rootPartnerOperations, String customerId,
-            String subscriptionId) {
-        super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
+		implements ISubscriptionActivationLinks {
+	/**
+	 * Initializes a new instance of the SubscriptionActivationLinksOperations
+	 * class.
+	 * 
+	 * @param rootPartnerOperations The root partner operations instance.
+	 * @param customerId            The customer identifier.
+	 * @param subscriptionId        The subscription identifier
+	 */
+	public SubscriptionActivationLinksOperations(IPartner rootPartnerOperations, String customerId,
+			String subscriptionId) {
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-        if (StringHelper.isNullOrWhiteSpace(customerId)) {
-            throw new IllegalArgumentException("customerId must be set.");
-        }
+		if (StringHelper.isNullOrWhiteSpace(customerId)) {
+			throw new IllegalArgumentException("customerId must be set.");
+		}
 
-        if (StringHelper.isNullOrWhiteSpace(subscriptionId)) {
-            throw new IllegalArgumentException("subscriptionId must be set.");
-        }
-    }
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId)) {
+			throw new IllegalArgumentException("subscriptionId must be set.");
+		}
+	}
 
-    /**
-     * Gets the subscription activation links.
-     * 
-     * @return The subscription activation links.
-     */
-    @Override
-    public ResourceCollection<OrderLineItemActivationLink> get() 
-    {
+	/**
+	 * Gets the subscription activation links.
+	 * 
+	 * @return The subscription activation links.
+	 */
+	@Override
+	public ResourceCollection<OrderLineItemActivationLink> get() 
+	{
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<OrderLineItemActivationLink>>(){}, 
 			MessageFormat.format( 
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionActivationLink").getPath(),
-                this.getContext().getItem1(), 
-                this.getContext().getItem2()));
-    }
+				this.getContext().getItem1(), 
+				this.getContext().getItem2()));
+	}
 }

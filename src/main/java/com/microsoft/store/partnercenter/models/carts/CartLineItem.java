@@ -7,6 +7,7 @@
 package com.microsoft.store.partnercenter.models.carts;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -22,7 +23,7 @@ public class CartLineItem
      * A list of items that depend on this one, so they have to be purchased subsequently.
      */
     @JsonProperty("addOnItems")
-    private Iterable<CartLineItem> addOnItems;
+    private List<CartLineItem> addOnItems;
 
     /**
      * The type of billing cycle for the selected catalog item.
@@ -95,7 +96,7 @@ public class CartLineItem
      * 
      * @return A list of items that depend on this one, so they have to be purchased subsequently.
      */
-    public Iterable<CartLineItem> getAddOnItems()
+    public List<CartLineItem> getAddOnItems()
     {
         return addOnItems;
     }
@@ -105,7 +106,7 @@ public class CartLineItem
      * 
      * @param value  A list of items that depend on this one, so they have to be purchased subsequently.
      */
-    public void setAddOnItems(Iterable<CartLineItem> value)
+    public void setAddOnItems(List<CartLineItem> value)
     {
         addOnItems = value;
     }

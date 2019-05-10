@@ -150,6 +150,9 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration> 
+            <source>7</source> 
+          </configuration> 
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
