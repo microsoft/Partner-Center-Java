@@ -8,170 +8,310 @@ package com.microsoft.store.partnercenter.models.users;
 
 import org.joda.time.DateTime;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
-public class User extends ResourceBaseWithLinks<StandardResourceLinks>
+public class User
+    extends ResourceBaseWithLinks<StandardResourceLinks>
 {
     /**
-     * Gets or sets the user object identifier.
+     * The display name for the user.
      */
-	@JsonProperty( "id" )
-	private String __Id;
-	
-    public String getId()
-    {
-        return __Id;
-    }
-
-    public void setId( String value )
-    {
-    	__Id = value;
-    }
+    private String displayName; 
 
     /**
-     * Gets or sets the name of the user principal.
+     * The first name for the user.
      */
-	@JsonProperty( "UserPrincipalName" )
-	private String __UserPrincipalName;
-	
-    public String getUserPrincipalName()
-    {
-        return __UserPrincipalName;
-    }
-
-    public void setUserPrincipalName( String value )
-    {
-    	__UserPrincipalName = value;
-    }
-
+	private String firstName;
 
     /**
-     * Gets or sets the first name.
+     * The object identifier for the user.
      */
-	@JsonProperty( "FirstName" )
-	private String __FirstName;
-	
-	public String getFirstName()
-    {
-        return __FirstName;
-    }
-
-    public void setFirstName( String value )
-    {
-    	__FirstName = value;
-    }
+    private String id; 
 
     /**
-     * Gets or sets the last name.
+     * The immutable identifier for the user.
      */
-	@JsonProperty( "LastName" )
-	private String __LastName;
-	
-	public String getLastName()
-    {
-        return __LastName;
-    }
-
-    public void setLastName( String value )
-    {
-    	__LastName = value;
-    }
+    private String immutableId;
 
     /**
-     * Gets or sets the display name.
+     * The last time that information for this user was synced between Azure Active Directory 
+     * and on-premises Active Directory.  
      */
-	@JsonProperty( "DisplayName" )
-	private String __DisplayName;
+    private DateTime lastDirectorySyncTime;
+	
+    /**
+     * The last name for the user.
+     */
+    private String lastName;
 
+    /**
+     * The password profile for the user.
+     */
+	private PasswordProfile passwordProfile;
+
+    /**
+     * The phone number for the user.
+     */
+    private String phoneNumber;
+
+    /**
+     * The deleted time for the inactive user.
+     */
+    private DateTime softDeletionTime;
+
+    /**
+     * The state for the user. If the user is deleted the state is inactive; otherwise, the state is active.
+     */
+    private UserState state;
+
+    /**
+     * The user domain type.
+     */
+	private UserDomainType userDomainType;
+
+    /**
+     * The user principal name (UPN) for the user.
+     */
+	private String userPrincipalName;
+
+    /**
+     * Gets the display name for the user.
+     * 
+     * @return The display name for the user.
+     */
 	public String getDisplayName()
     {
-        return __DisplayName;
-    }
-
-    public void setDisplayName( String value )
-    {
-    	__DisplayName = value;
+        return displayName;
     }
 
     /**
-     * Gets or sets the password profile.
+     * Sets the display name for the user.
+     * 
+     * @param value The display name for the user. 
      */
-	@JsonProperty( "PasswordProfile" )
-	private PasswordProfile __PasswordProfile;
-	
-	public PasswordProfile getPasswordProfile()
+    public void setDisplayName(String value)
     {
-        return __PasswordProfile;
-    }
-
-    public void setPasswordProfile( PasswordProfile value )
-    {
-    	__PasswordProfile = value;
+    	displayName = value;
     }
 
     /**
-     * Gets or sets the last directory sync time for the user.
+     * Gets the first name for the user.
+     * 
+     * @return The first name for the user.
      */
-	@JsonProperty( "LastDirectorySyncTime" )
-	private DateTime __LastDirectorySyncTime;
-	
+	public String getFirstName()
+    {
+        return firstName;
+    }
+
+    /**
+     * Sets the first name for the user.
+     * 
+     * @param value The first name for the user.
+     */
+    public void setFirstName(String value)
+    {
+    	firstName = value;
+    }
+
+    /**
+     * Gets the object identifier for the user.
+     * 
+     * @return The object identifier for the user.
+     */
+    public String getId()
+    {
+        return id;
+    }
+
+    /**
+     * Sets the object identifier for the user.
+     * 
+     * @param value The object identifier for the user.
+     */
+    public void setId(String value)
+    {
+    	id = value;
+    }
+
+    /**
+     * Gets the immutable identifier for the user.
+     * 
+     * @return The immutable identifier for the user.
+     */
+    public String getImmutableId()
+    {
+        return immutableId;
+    }    
+
+    /**
+     * Sets the immutable identifier for the user.
+     * 
+     * @param value The immutable identifier for the user.
+     */
+    public void setImmutableId(String value)
+    {
+        immutableId = value;
+    }
+
+    /**
+     * Gets the last time that information for this user was synced between Azure Active Directory and on-premises Active Directory.
+     * 
+     * @return The last time that information for this user was synced between Azure Active Directory and on-premises Active Directory.
+     */
 	public DateTime getLastDirectorySyncTime()
     {
-        return __LastDirectorySyncTime;
-    }
-
-    public void setLastDirectorySyncTime( DateTime value )
-    {
-    	__LastDirectorySyncTime = value;
+        return lastDirectorySyncTime;
     }
 
     /**
-     * Gets or sets user domain type.
+     * Sets the last time that information for this user was synced between Azure Active Directory and on-premises Active Directory.
+     * 
+     * @param value The last time that information for this user was synced between Azure Active Directory and on-premises Active Directory.
      */
-	@JsonProperty( "UserDomainType" )
-	private UserDomainType __UserDomainType;
-	
-	public UserDomainType getUserDomainType()
+    public void setLastDirectorySyncTime(DateTime value)
     {
-        return __UserDomainType;
-    }
-
-    public void setUserDomainType( UserDomainType value )
-    {
-    	__UserDomainType = value;
+    	lastDirectorySyncTime = value;
     }
 
     /**
-     * Gets or sets the state of the user, for the deleted user this is "Inactive" and for the normal user it is "Active".
+     * Gets the last name for the user.
+     * 
+     * @return The last name for the user.
      */
-	@JsonProperty( "State" )
-    private UserState __State;
-	
-	public UserState getState()
+	public String getLastName()
     {
-        return __State;
-    }
-
-    public void setState( UserState value )
-    {
-    	__State = value;
+        return lastName;
     }
 
     /**
-     * Gets or sets the deleted time for the inactive user.
+     * Sets the last name for the user.
+     * 
+     * @param value The last name for the user.
      */
-	@JsonProperty( "softDeletionTime" )
-    private DateTime __SoftDeletionTime;
-	
+    public void setLastName(String value)
+    {
+    	lastName = value;
+    }
+
+    /**
+     * Gets the password profile for the user.
+     * 
+     * @return The password profile for the user.
+     */
+	public PasswordProfile getPasswordProfile()
+    {
+        return passwordProfile;
+    }
+
+    /**
+     * Sets the password profile for the user.
+     * 
+     * @param value The password profile for the user.
+     */
+    public void setPasswordProfile(PasswordProfile value)
+    {
+        passwordProfile = value;
+    }
+
+    /**
+     * Gets the phone number for the user.
+     * 
+     * @return The phone number for the user.
+     */
+    public String getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    /**
+     * Sets the phone number for the user.
+     * 
+     * @param value The phone number for the user.
+     */
+    public void setPhoneNumber(String value)
+    {
+        phoneNumber = value;
+    }
+
+    /**
+     * Gets the deleted time for the inactive user.
+     * 
+     * @return The deleted time for the inactive user.
+     */
 	public DateTime getSoftDeletionTime()
     {
-        return __SoftDeletionTime;
+        return softDeletionTime;
+    }
+    
+    /**
+     * Sets the deleted time for the inactive user.
+     * 
+     * @param value The deleted time for the inactive user.
+     */
+    public void setSoftDeletionTime(DateTime value)
+    {
+    	softDeletionTime = value;
     }
 
-    public void setSoftDeletionTime( DateTime value )
+    /**
+     * Gets the state for the user. If the user is deleted the state is inactive; otherwise, the state is active.
+     * 
+     * @return The state for the user. If the user is deleted the state is inactive; otherwise, the state is active.
+     */
+	public UserState getState()
     {
-    	__SoftDeletionTime = value;
+        return state;
+    }
+
+    /**
+     * Sets the state for the user. If the user is deleted the state is inactive; otherwise, the state is active.
+     * 
+     * @param value The state for the user. If the user is deleted the state is inactive; otherwise, the state is active.
+     */
+    public void setState(UserState value)
+    {
+    	state = value;
+    }
+
+    /**
+     * Gets the user domain type. 
+     * 
+     * @return The user domain type.
+     */
+    public UserDomainType getUserDomainType()
+    {
+        return userDomainType;
+    }
+
+    /**
+     * Sets the user domain type.
+     * 
+     * @param value The user domain type.
+     */
+    public void setUserDomainType(UserDomainType value)
+    {
+    	userDomainType = value;
+    }
+
+    /**
+     * Gets the user principal name (UPN) for the user.
+     * 
+     * @return The user principal name (UPN) for the user.
+     */
+    public String getUserPrincipalName()
+    {
+        return userPrincipalName;
+    }
+
+    /**
+     * Sets the user principal name (UPN) for the user.
+     * 
+     * @param value The user principal name (UPN) for the user.
+     */
+    public void setUserPrincipalName(String value)
+    {
+    	userPrincipalName = value;
     }
 }

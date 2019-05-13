@@ -6,11 +6,13 @@
 
 package com.microsoft.store.partnercenter.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Represents API failures.
  */
+ @JsonIgnoreProperties(ignoreUnknown = true)
 public class ApiFault
     extends ResourceBase
 {
@@ -108,22 +110,24 @@ public class ApiFault
     public String toString()
     {
         StringBuilder apiFaultDescription = new StringBuilder();
-        apiFaultDescription.append( "Error code: " + this.getErrorCode() + "\n" );
-        apiFaultDescription.append( "Error message: " + this.getErrorMessage() + "\n" );
-        if ( this.getErrorData() != null )
-        {
-            apiFaultDescription.append( "Error data:\n" );
-            for ( Object errorData : this.getErrorData() )
-            {
-                if ( errorData != null )
-                {
-                    apiFaultDescription.append( errorData.toString() + "\n" );
-                }
 
+        apiFaultDescription.append("Error code: " + this.getErrorCode() + "\n");
+        apiFaultDescription.append("Error message: " + this.getErrorMessage() + "\n");
+
+        if (this.getErrorData() != null)
+        {
+            apiFaultDescription.append("Error data:\n");
+
+            for (Object errorData : this.getErrorData())
+            {
+                if (errorData != null)
+                {
+                    apiFaultDescription.append(errorData + "\n");
+                }
             }
         }
 
-        apiFaultDescription.append( super.toString() + "\n" );
+        apiFaultDescription.append(super.toString() + "\n");
         return apiFaultDescription.toString();
     }
 }

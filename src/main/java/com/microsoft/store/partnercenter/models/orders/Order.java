@@ -25,6 +25,21 @@ public class Order
     private String currencySymbol; 
 
     /**
+     * The order identifier.
+     */
+    private String id;
+
+    /**
+     * The order line items. Each order line item refers to one offer purchase data.
+     */
+    private Iterable<OrderLineItem> lineItems;
+
+    /**
+     * Gets or sets the reference customer identifier.
+     */
+    private String referenceCustomerId;
+
+    /**
      * The total price for the order.
      */
     private double totalPrice;
@@ -34,59 +49,74 @@ public class Order
      */
     private String transactionType;
 
-
     /**
-     * Gets or sets the order identifier.
+     * Gets the order identifier.
+     * 
+     * @return The order identifier.
      */
-    @JsonProperty( "id" )
-    private String __Id;
-
     public String getId()
     {
-        return __Id;
-    }
-
-    public void setId( String value )
-    {
-        __Id = value;
+        return id;
     }
 
     /**
-     * Gets or sets the reference customer identifier.
+     * Sets the order identifier.
+     * 
+     * @param value The order identifier.
      */
-    @JsonProperty( "referenceCustomerId" )
-    private String __ReferenceCustomerId;
-
-    public String getReferenceCustomerId()
+    public void setId(String value)
     {
-        return __ReferenceCustomerId;
-    }
-
-    public void setReferenceCustomerId( String value )
-    {
-        __ReferenceCustomerId = value;
+        id = value;
     }
 
     /**
-     * Gets or sets the Order line items. Each order line item refers to one offer purchase data.
+     * Gets the order line items. Each order line item refers to one offer purchase data.
+     * 
+     * @return The order line items. Each order line item refers to one offer purchase data.
      */
-    @JsonProperty( "lineItems" )
-    private Iterable<OrderLineItem> __LineItems;
-
     public Iterable<OrderLineItem> getLineItems()
     {
-        return __LineItems;
+        return lineItems;
     }
 
-    public void setLineItems( Iterable<OrderLineItem> value )
+    /**
+     * Sets the order line items. Each order line item refers to one offer purchase data.
+     * 
+     * @param value The order line items. Each order line item refers to one offer purchase data.
+     */
+    public void setLineItems(Iterable<OrderLineItem> value)
     {
-        __LineItems = value;
+        lineItems = value;
     }
+
+    /**
+     * Gets the reference customer identifier.
+     * 
+     * @return The reference customer identifier.
+     */
+    public String getReferenceCustomerId()
+    {
+        return referenceCustomerId;
+    }
+
+    /**
+     * Sets the reference customer identifier.
+     * 
+     * @param value The reference customer identifier.
+     */
+    public void setReferenceCustomerId(String value)
+    {
+        referenceCustomerId = value;
+    }
+
+
+
+
 
     /**
      * Gets or sets the creation date of the order
      */
-    @JsonProperty( "creationDate" )
+    @JsonProperty("creationDate")
     private DateTime __CreationDate;
 
     public DateTime getCreationDate()
@@ -94,7 +124,7 @@ public class Order
         return __CreationDate;
     }
 
-    public void setCreationDate( DateTime value )
+    public void setCreationDate(DateTime value)
     {
         __CreationDate = value;
     }
@@ -102,7 +132,7 @@ public class Order
     /**
      * Gets or sets the currency code.
      */
-    @JsonProperty( "currencyCode" )
+    @JsonProperty("currencyCode")
     private String __CurrencyCode;
 
     public String getCurrencyCode()
@@ -110,7 +140,7 @@ public class Order
         return __CurrencyCode;
     }
 
-    public void setCurrencyCode( String value )
+    public void setCurrencyCode(String value)
     {
         __CurrencyCode = value;
     }
@@ -118,7 +148,7 @@ public class Order
     /**
      * Gets or sets the order status.
      */
-    @JsonProperty( "status" )
+    @JsonProperty("status")
     private String __Status;
 
     public String getStatus()
@@ -126,7 +156,7 @@ public class Order
         return __Status;
     }
 
-    public void setStatus( String value )
+    public void setStatus(String value)
     {
         __Status = value;
     }
@@ -134,7 +164,7 @@ public class Order
     /**
      * Gets or sets the links corresponding to the order.
      */
-    @JsonProperty( "links" )
+    @JsonProperty("links")
     private OrderLinks __Links;
 
     public OrderLinks getLinks()
@@ -142,7 +172,7 @@ public class Order
         return __Links;
     }
 
-    public void setLinks( OrderLinks value )
+    public void setLinks(OrderLinks value)
     {
         __Links = value;
     }
@@ -150,7 +180,7 @@ public class Order
     /**
      * Gets or sets the type of billing cycle for the selected offers.
      */
-    @JsonProperty( "billingCycle" )
+    @JsonProperty("billingCycle")
     private BillingCycleType __BillingCycle;
 
     public BillingCycleType getBillingCycle()
@@ -158,7 +188,7 @@ public class Order
         return __BillingCycle;
     }
 
-    public void setBillingCycle( BillingCycleType value )
+    public void setBillingCycle(BillingCycleType value)
     {
         __BillingCycle = value;
     }
