@@ -21,7 +21,7 @@ class BillingProviderTest
     private static final String NONE_VALUE = "none";
     private static final String OFFICE_VALUE = "office";
     private static final String AZURE_VALUE = "azure";
-    private static final String ONE_TIME_VALUE = "oneTime";
+    private static final String ONE_TIME_VALUE = "one_time";
     private static final String NONE_JSON = '"' + NONE_VALUE + '"';
     private static final String OFFICE_JSON = '"' + OFFICE_VALUE + '"';
     private static final String AZURE_JSON = '"' + AZURE_VALUE + '"';

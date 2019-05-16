@@ -28,7 +28,7 @@ public enum BillingProvider
     /**
     * Bill is provided for one time purchases.
     */
-    ONE_TIME("oneTime"),
+    ONE_TIME("one_time"),
     
     /**
      * Indicates that the provider is marketplace .
