@@ -20,7 +20,7 @@
 
 # Change Log
 
-## Upcoming Release
+## 1.13.1
 
 * Error Handling
   * Addressed issue with the errors not being deserialized correctly
