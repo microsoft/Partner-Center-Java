@@ -457,14 +457,14 @@ public class OneTimeInvoiceLineItem
     /**
      *  Gets or sets the SKU name.
      */
-    private double skuName;
+    private String skuName;
 
-    public double getSkuName()
+    public String getSkuName()
     {
         return skuName;
     }
 
-    public void setSkuName( double value )
+    public void setSkuName(String value)
     {
         skuName = value;
     }

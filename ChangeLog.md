@@ -25,7 +25,7 @@
 * Error Handling
   * Addressed issue with the errors not being deserialized correctly
 * Invoices
-  * Addressed issue [#47](https://github.com/microsoft/Partner-Center-Java/issues/47) where the billing provider was incorrect
+  * Addressed issue [#47](https://github.com/microsoft/Partner-Center-Java/issues/47) where the billing provider and object type for the SKU name property were incorrect
 
 ## 1.13.0
 
