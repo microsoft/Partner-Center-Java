@@ -525,19 +525,21 @@ public class PartnerServiceClient
 					throw new PartnerException("Refreshing the credentials has failed.", rootPartnerOperations.getRequestContext(),
 						PartnerErrorCategory.UNAUTHORIZED, refreshProblem);
 				}
+
+				if (rootPartnerOperations.getCredentials().isExpired()) 
+				{
+					throw new PartnerException("The credential refresh mechanism provided expired credentials.",
+						rootPartnerOperations.getRequestContext(), PartnerErrorCategory.UNAUTHORIZED);
+				}
 			}
-		
-			if (rootPartnerOperations.getCredentials().isExpired()) 
-			{
-				throw new PartnerException("The credential refresh mechanism provided expired credentials.",
-					rootPartnerOperations.getRequestContext(), PartnerErrorCategory.UNAUTHORIZED);
-			}
+			else
+            {            
+                throw new PartnerException( 
+                    "The partner credentials have expired. Please provide updated credentials.",
+                    rootPartnerOperations.getRequestContext(), 
+                    PartnerErrorCategory.UNAUTHORIZED );
+            }
 		} 
-		else 
-		{
-			throw new PartnerException("The partner credentials have expired. Please provide updated credentials.",
-				rootPartnerOperations.getRequestContext(), PartnerErrorCategory.UNAUTHORIZED);
-		}
 
 		headers.put(AUTHORIZATION_HEADER, AUTHORIZATION_SCHEME + " " +  rootPartnerOperations.getCredentials().getPartnerServiceToken());
 		headers.put(CONTRACT_VERSION_HEADER, PartnerService.getInstance().getPartnerServiceApiVersion());

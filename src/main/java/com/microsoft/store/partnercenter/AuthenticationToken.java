@@ -19,16 +19,16 @@ public final class AuthenticationToken
      * @param token The authentication token.
      * @param expiryTime The token expiry time.
      */
-    public AuthenticationToken( String token, DateTime expiryTime )
+    public AuthenticationToken(String token, DateTime expiryTime)
     {
-        if ( StringHelper.isNullOrWhiteSpace( token ) )
+        if (StringHelper.isNullOrWhiteSpace(token))
         {
-            throw new IllegalArgumentException( "token cannot be empty." );
+            throw new IllegalArgumentException("token cannot be empty");
         }
 
-        this.setToken( token );
-        this.setExpiryTime( expiryTime );
-        this.setExpiryBuffer( Duration.standardSeconds( PartnerService.getInstance().getConfiguration().getDefaultAuthenticationTokenExpiryBufferInSeconds() ) );
+        this.setToken(token);
+        this.setExpiryTime(expiryTime);
+        this.setExpiryBuffer(Duration.standardSeconds(PartnerService.getInstance().getConfiguration().getDefaultAuthenticationTokenExpiryBufferInSeconds()));
     }
 
     /**
@@ -41,7 +41,7 @@ public final class AuthenticationToken
         return token;
     }
 
-    private void setToken( String value )
+    private void setToken(String value)
     {
         token = value;
     }
@@ -56,7 +56,7 @@ public final class AuthenticationToken
         return expiryTime;
     }
 
-    private void setExpiryTime( DateTime value )
+    private void setExpiryTime(DateTime value)
     {
         expiryTime = value;
     }
@@ -72,7 +72,7 @@ public final class AuthenticationToken
         return expiryBuffer;
     }
 
-    public void setExpiryBuffer( Duration value )
+    public void setExpiryBuffer(Duration value)
     {
         expiryBuffer = value;
     }
@@ -80,10 +80,10 @@ public final class AuthenticationToken
     /**
      * Indicates whether the token has expired or not.
      * 
-     * @return True if token has expired. False if not.
+     * @return true if token has expired; otherwise false.
      */
     public boolean isExpired()
     {
-        return DateTime.now().isAfter( this.getExpiryTime().minus( getExpiryBuffer() ) );
+        return DateTime.now().isAfter(this.getExpiryTime().minus(getExpiryBuffer()));
     }
 }

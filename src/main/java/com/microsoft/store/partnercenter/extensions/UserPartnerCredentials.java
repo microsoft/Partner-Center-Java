@@ -29,9 +29,9 @@ public class UserPartnerCredentials
      * @param clientId The client id of the application in Azure Active Directory.
      * @param aadAuthenticationToken The Azure Active Directory token.
      */
-    public UserPartnerCredentials( String clientId, AuthenticationToken aadAuthenticationToken )
+    public UserPartnerCredentials(String clientId, AuthenticationToken aadAuthenticationToken)
     {
-        this( clientId, aadAuthenticationToken, null );
+        this(clientId, aadAuthenticationToken, null);
     }
 
     /**
@@ -41,24 +41,26 @@ public class UserPartnerCredentials
      * @param aadAuthenticationToken The Azure Active Directory token.
      * @param loginHandler Delegate used to refresh the Azure Active Directory token.
      */
-    public UserPartnerCredentials( String clientId, AuthenticationToken aadAuthenticationToken,
-                                   IAadLoginHandler loginHandler )
+    public UserPartnerCredentials(String clientId, AuthenticationToken aadAuthenticationToken, IAadLoginHandler loginHandler)
     {
-        super( clientId );
-        if ( aadAuthenticationToken == null )
+        super(clientId);
+
+        if (aadAuthenticationToken == null)
         {
-            throw new IllegalArgumentException( "aadAuthenticationToken" );
+            throw new IllegalArgumentException("aadAuthenticationToken");
         }
         else
         {
-            if ( aadAuthenticationToken.isExpired() )
+            if (aadAuthenticationToken.isExpired())
             {
-                throw new IllegalArgumentException( "aadAuthenticationToken is expired." );
+                throw new IllegalArgumentException("aadAuthenticationToken is expired.");
             }
         }
-        this.setAADToken( aadAuthenticationToken );
+
+        this.setAADToken(aadAuthenticationToken);
         this.tokenRefresher = loginHandler;
-        PartnerService.getInstance().setRefreshCredentialsHandler( this );
+        
+        PartnerService.getInstance().setRefreshCredentialsHandler(this);
     }
 
     /**
@@ -68,18 +70,19 @@ public class UserPartnerCredentials
      * @param context The partner context.
      */
     @Override
-    public void onCredentialsRefreshNeeded( IPartnerCredentials credentials, IRequestContext context )
+    public void onCredentialsRefreshNeeded(IPartnerCredentials credentials, IRequestContext context)
     {
-        UserPartnerCredentials partnerCredentials = (UserPartnerCredentials) credentials;
-        if ( partnerCredentials != null )
+        UserPartnerCredentials partnerCredentials = (UserPartnerCredentials)credentials;
+
+        if (partnerCredentials != null)
         {
             // we can deal with the partner credentials object, refresh it
-            partnerCredentials.refresh( context );
+            partnerCredentials.refresh(context);
         }
         else
         {
-            PartnerLog.getInstance().logWarning( UserPartnerCredentials.class
-                + ": The given credentials are not supported." );
+            PartnerLog.getInstance().logWarning(UserPartnerCredentials.class
+                + ": The given credentials are not supported.");
         }
     }
 
@@ -89,42 +92,42 @@ public class UserPartnerCredentials
      * @param context The partner context.
      * @return A task which is complete when the refresh is done.
      */
-    private void refresh( IRequestContext context )
+    private void refresh(IRequestContext context)
     {
-        if ( this.getAADToken().isExpired() )
+        if (this.getAADToken().isExpired())
         {
             // we need to refresh the AAD before attempting to re-authenticate with the partner service
-            if ( this.tokenRefresher != null )
+            if (this.tokenRefresher != null)
             {
                 // invoke the callback and let it provide us with the new aad token
                 AuthenticationToken newAadToken = tokenRefresher.authenticate();
 
-                if ( newAadToken == null )
+                if (newAadToken == null)
                 {
                     String errorMessage = "Token refresher returned null token.";
-                    PartnerLog.getInstance().logError( errorMessage );
-                    throw new PartnerException( errorMessage, context, PartnerErrorCategory.UNAUTHORIZED );
+                    PartnerLog.getInstance().logError(errorMessage);
+                    throw new PartnerException(errorMessage, context, PartnerErrorCategory.UNAUTHORIZED);
                 }
 
-                if ( newAadToken.isExpired() )
+                if (newAadToken.isExpired())
                 {
                     String errorMessage = "Token refresher returned an expired token.";
-                    PartnerLog.getInstance().logError( errorMessage );
-                    throw new PartnerException( errorMessage, context, PartnerErrorCategory.UNAUTHORIZED );
+                    PartnerLog.getInstance().logError(errorMessage);
+                    throw new PartnerException(errorMessage, context, PartnerErrorCategory.UNAUTHORIZED);
                 }
 
-                setAADToken( newAadToken );
+                setAADToken(newAadToken);
 
             }
             else
             {
                 String errorMessage = "AAD Token needs refreshing but no handler was registered.";
-                PartnerLog.getInstance().logWarning( errorMessage );
-                throw new PartnerException( errorMessage, context, PartnerErrorCategory.UNAUTHORIZED );
+                PartnerLog.getInstance().logWarning(errorMessage);
+                throw new PartnerException(errorMessage, context, PartnerErrorCategory.UNAUTHORIZED);
             }
         }
+
         // get a new partner service token using the AAD token we have
         this.authenticate();
     }
-
 }

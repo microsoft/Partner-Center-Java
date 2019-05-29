@@ -21,14 +21,14 @@ public abstract class BasePartnerCredentials
      * 
      * @param clientId The Azure Active Directory client Id.
      */
-    public BasePartnerCredentials( String clientId )
+    public BasePartnerCredentials(String clientId)
     {
-        if ( StringHelper.isNullOrWhiteSpace( clientId ) )
+        if (StringHelper.isNullOrWhiteSpace(clientId))
         {
-            throw new IllegalArgumentException( "clientId has to be set" );
+            throw new IllegalArgumentException("clientId has to be set");
         }
 
-        this.setClientId( clientId );
+        this.setClientId(clientId);
     }
 
     /**
@@ -68,7 +68,7 @@ public abstract class BasePartnerCredentials
      * 
      * @param value The Azure Active Directory token.
      */
-    protected void setAADToken( AuthenticationToken value )
+    protected void setAADToken(AuthenticationToken value)
     {
         token = value;
     }
@@ -90,7 +90,7 @@ public abstract class BasePartnerCredentials
      * 
      * @param value The Azure Active Directory client identifier.
      */
-    protected void setClientId( String value )
+    protected void setClientId(String value)
     {
         clientId = value;
     }
@@ -98,7 +98,7 @@ public abstract class BasePartnerCredentials
     /**
      * Indicates whether the partner credentials have expired or not.
      * 
-     * @return true if credentials have expired; othwerise, false.
+     * @return true if credentials have expired; otherwise, false.
      */
     @Override
     public boolean isExpired()
@@ -111,7 +111,7 @@ public abstract class BasePartnerCredentials
      */
     public void authenticate()
     {
-        authenticate( null );
+        authenticate(null);
     }
 
     /**
@@ -119,7 +119,7 @@ public abstract class BasePartnerCredentials
      * 
      * @param requestContext The request context.
      */
-    public void authenticate( IRequestContext requestContext )
+    public void authenticate(IRequestContext requestContext)
     {
         // Do nothing, leave it to sub classes
     }
