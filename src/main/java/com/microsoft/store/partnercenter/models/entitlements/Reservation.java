@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="Reservation.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.entitlements;
 
@@ -127,7 +124,7 @@ public class Reservation
     /**
      * Gets the provisioning state for the reservation.
      * 
-     * @return The provisoning state for the reservation.
+     * @return The provisioning state for the reservation.
      */
     public String getProvisioningState()
     {

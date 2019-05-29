@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="CustomerLicensesUsageInsights.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.analytics;
 
@@ -74,15 +71,15 @@ public class CustomerLicensesUsageInsights
     /**
      * Gets or sets the usage percent of the given workload.
      */
-    private long usagePrecent;
+    private long usagePercent;
 
     public long getUsagePercent()
     {
-        return usagePrecent;
+        return usagePercent;
     }
 
     public void setUsagePercent( long value )
     {
-        usagePrecent = value;
+        usagePercent = value;
     }
 }

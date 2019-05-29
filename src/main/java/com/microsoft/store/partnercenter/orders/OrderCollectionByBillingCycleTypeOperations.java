@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="OrderCollectionByBillingCycleTypeOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.orders;
 
@@ -33,11 +30,11 @@ public class OrderCollectionByBillingCycleTypeOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
-	 * @param billingCyleType The billing type.
+	 * @param billingCycleType The billing type.
 	 */
-	public OrderCollectionByBillingCycleTypeOperations( IPartner rootPartnerOperations, String customerId, BillingCycleType billingCyleType )
+	public OrderCollectionByBillingCycleTypeOperations( IPartner rootPartnerOperations, String customerId, BillingCycleType billingCycleType )
 	{
-		super( rootPartnerOperations, new Tuple<String, BillingCycleType>(customerId, billingCyleType) );
+		super( rootPartnerOperations, new Tuple<String, BillingCycleType>(customerId, billingCycleType) );
 
 		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
 		{
@@ -58,7 +55,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 		(
 			new KeyValuePair<String, String>
 			(
-				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getParameters().get("BillingType"),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getParameters().get("BillingType"),
 				this.getContext().getItem2().toString()
 			) 
 		);
@@ -67,7 +64,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
 			MessageFormat.format( 
-				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getPath(),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getPath(),
 				this.getContext().getItem1()),
 			parameters);
 	}
@@ -86,7 +83,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 		(
 			new KeyValuePair<String, String>
 			(
-				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getParameters().get("BillingType"),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getParameters().get("BillingType"),
 				this.getContext().getItem2().toString()
 			) 
 		);
@@ -95,7 +92,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 		(
 			new KeyValuePair<String, String>
 			(
-				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getParameters().get("IncludePrice"),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getParameters().get("IncludePrice"),
 				String.valueOf(includePrice)
 			)
 		);
@@ -104,7 +101,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
 			MessageFormat.format( 
-				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCyleType").getPath(),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getPath(),
 				this.getContext().getItem1()),
 			parameters);
 	}

@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="AuthenticationToken.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter;
 
@@ -26,7 +23,7 @@ public final class AuthenticationToken
     {
         if ( StringHelper.isNullOrWhiteSpace( token ) )
         {
-            throw new IllegalArgumentException( "token connot be empty." );
+            throw new IllegalArgumentException( "token cannot be empty." );
         }
 
         this.setToken( token );

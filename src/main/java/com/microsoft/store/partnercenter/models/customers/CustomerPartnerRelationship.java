@@ -13,7 +13,7 @@ public enum CustomerPartnerRelationship
     /**
      *  Unknown. Used for initialization.
      */
-    UNKNWON("unknown"),
+    UNKNOWN("unknown"),
 
     /**
      * None. Used to remove reseller relationship between the customer and partner.

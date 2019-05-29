@@ -406,7 +406,7 @@
         "IncludePrice": "include_price"
       }
     },
-    "GetOrdersByBillingCyleType": {
+    "GetOrdersByBillingCycleType": {
       "Path": "customers/{0}/orders",
       "Parameters": {
         "BillingType": "billingType",

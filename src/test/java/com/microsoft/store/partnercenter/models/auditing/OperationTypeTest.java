@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="OperationTypeTest.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.auditing;
 
@@ -48,7 +45,7 @@ public class OperationTypeTest
     private static final String REMOVE_APPLICATION_CREDENTIAL_VALUE = "remove_application_credential";
     private static final String CREATE_PARTNER_USER_VALUE = "create_partner_user";
     private static final String UPDATE_PARTNER_USER_VALUE = "update_partner_user";
-    private static final String REMOVE_PARNTER_USER_VALUE = "remove_partner_user";
+    private static final String REMOVE_PARTNER_USER_VALUE = "remove_partner_user";
     private static final String CREATE_REFERRAL_VALUE = "create_referral";
     private static final String UPDATE_REFERRAL_VALUE = "update_referral";
     private static final String GET_SOFTWARE_KEY_VALUE = "get_software_key";
@@ -87,7 +84,7 @@ public class OperationTypeTest
     private static final String REMOVE_APPLICATION_CREDENTIAL_JSON = '"' + REMOVE_APPLICATION_CREDENTIAL_VALUE + '"';
     private static final String CREATE_PARTNER_USER_JSON = '"' + CREATE_PARTNER_USER_VALUE + '"';
     private static final String UPDATE_PARTNER_USER_JSON = '"' + UPDATE_PARTNER_USER_VALUE + '"';
-    private static final String REMOVE_PARTNER_USER_JSON = '"' + REMOVE_PARNTER_USER_VALUE + '"';
+    private static final String REMOVE_PARTNER_USER_JSON = '"' + REMOVE_PARTNER_USER_VALUE + '"';
     private static final String CREATE_REFERRAL_JSON =  '"' + CREATE_REFERRAL_VALUE + '"';
     private static final String UPDATE_REFERRAL_JSON = '"' + UPDATE_REFERRAL_VALUE + '"';
     private static final String GET_SOFTWARE_KEY_JSON = '"' + GET_SOFTWARE_KEY_VALUE + '"';
@@ -223,7 +220,7 @@ public class OperationTypeTest
         assertEquals(REMOVE_APPLICATION_CREDENTIAL_VALUE, OperationType.REMOVE_APPLICATION_CREDENTIAL.toString());
         assertEquals(CREATE_PARTNER_USER_VALUE, OperationType.CREATE_PARTNER_USER.toString());
         assertEquals(UPDATE_PARTNER_USER_VALUE, OperationType.UPDATE_PARTNER_USER.toString());
-        assertEquals(REMOVE_PARNTER_USER_VALUE, OperationType.REMOVE_PARTNER_USER.toString());
+        assertEquals(REMOVE_PARTNER_USER_VALUE, OperationType.REMOVE_PARTNER_USER.toString());
         assertEquals(CREATE_REFERRAL_VALUE, OperationType.CREATE_REFERRAL.toString());
         assertEquals(UPDATE_REFERRAL_VALUE, OperationType.UPDATE_REFERRAL.toString());
         assertEquals(GET_SOFTWARE_KEY_VALUE, OperationType.GET_SOFTWARE_KEY.toString());

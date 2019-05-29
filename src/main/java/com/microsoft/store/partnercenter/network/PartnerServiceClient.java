@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="PartnerServiceClient.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.network;
 
@@ -330,7 +327,7 @@ public class PartnerServiceClient
 	 * @param rootPartnerOperations An instance of the partner operations. 
 	 * @param responseType The type of object to be returned.
 	 * @param relativeUri The relative address fo the request.
-	 * @param content The conent for the body of the request.
+	 * @param content The content for the body of the request.
      * @return The response from the POST operation.
 	 */
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
@@ -346,8 +343,8 @@ public class PartnerServiceClient
 	 * @param rootPartnerOperations An instance of the partner operations. 
 	 * @param responseType The type of object to be returned.
 	 * @param relativeUri The relative address fo the request.
-	 * @param content The conent for the body of the request.
-	 * @param parameters Parameters to be added to the reqest.
+	 * @param content The content for the body of the request.
+	 * @param parameters Parameters to be added to the request.
      * @return The response from the POST operation.
 	 */
 	public <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters)
@@ -379,7 +376,7 @@ public class PartnerServiceClient
 	 * @param rootPartnerOperations An instance of the partner operations. 
 	 * @param responseType The type of object to be returned.
 	 * @param relativeUri The relative address fo the request.
-	 * @param content The conent for the body of the request.
+	 * @param content The content for the body of the request.
      * @return The response from the POST operation.
 	 */
 	public <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content)
@@ -449,20 +446,20 @@ public class PartnerServiceClient
 	/**
 	 * Constructs the address for the request.
 	 * 
-	 * @param relativUri Relative address for the resource being requested.
+	 * @param relativeUri Relative address for the resource being requested.
 	 * @param parameters The parameters to be added to the request.
 	 * @return The address for the request.
 	 */
-	private String buildUrl(String relativUri, Collection<KeyValuePair<String, String>> parameters, boolean isBuilt)
+	private String buildUrl(String relativeUri, Collection<KeyValuePair<String, String>> parameters, boolean isBuilt)
 	{
-		if(StringHelper.isNullOrEmpty(relativUri))
+		if(StringHelper.isNullOrEmpty(relativeUri))
 		{
 			throw new IllegalArgumentException("resourcePath cannot be null");
 		}
 
 		StringBuilder address = new StringBuilder(
 			PartnerService.getInstance().getApiRootUrl() + "/"
-				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + relativUri);
+				+ PartnerService.getInstance().getPartnerServiceApiVersion() + "/" + relativeUri);
 
 		if(!isBuilt)
 		{
@@ -512,6 +509,34 @@ public class PartnerServiceClient
 		else
 		{
 			requestContext = rootPartnerOperations.getRequestContext();
+		}
+
+		if(rootPartnerOperations.getCredentials().isExpired())
+		{
+			if (PartnerService.getInstance().getRefreshCredentialsHandler() != null) 
+			{
+				try 
+				{
+					PartnerService.getInstance().getRefreshCredentialsHandler()
+						.onCredentialsRefreshNeeded(rootPartnerOperations.getCredentials(), rootPartnerOperations.getRequestContext());
+				} 
+				catch (Exception refreshProblem) 
+				{
+					throw new PartnerException("Refreshing the credentials has failed.", rootPartnerOperations.getRequestContext(),
+						PartnerErrorCategory.UNAUTHORIZED, refreshProblem);
+				}
+			}
+		
+			if (rootPartnerOperations.getCredentials().isExpired()) 
+			{
+				throw new PartnerException("The credential refresh mechanism provided expired credentials.",
+					rootPartnerOperations.getRequestContext(), PartnerErrorCategory.UNAUTHORIZED);
+			}
+		} 
+		else 
+		{
+			throw new PartnerException("The partner credentials have expired. Please provide updated credentials.",
+				rootPartnerOperations.getRequestContext(), PartnerErrorCategory.UNAUTHORIZED);
 		}
 
 		headers.put(AUTHORIZATION_HEADER, AUTHORIZATION_SCHEME + " " +  rootPartnerOperations.getCredentials().getPartnerServiceToken());

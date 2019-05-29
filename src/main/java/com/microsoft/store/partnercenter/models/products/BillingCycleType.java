@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="BillingCycleType.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.products;
 
@@ -24,7 +21,7 @@ public enum BillingCycleType
     MONTHLY("monthly"),
 
     /**
-     * Indicates that the partner will be charged annuallu.
+     * Indicates that the partner will be charged annual.
      */
     ANNUAL("annual"),
 

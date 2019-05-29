@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="UserPartnerCredentials.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.extensions;
 
@@ -94,7 +91,6 @@ public class UserPartnerCredentials
      */
     private void refresh( IRequestContext context )
     {
-        // async
         if ( this.getAADToken().isExpired() )
         {
             // we need to refresh the AAD before attempting to re-authenticate with the partner service

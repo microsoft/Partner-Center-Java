@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="EntitlementCollectionByEntitlementTypeOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.entitlements;
 
@@ -32,7 +29,7 @@ public class EntitlementCollectionByEntitlementTypeOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId            Identifier for the customer.
-	 * @param entitlementType       The type of entitlment.
+	 * @param entitlementType       The type of entitlement.
 	 */
 	public EntitlementCollectionByEntitlementTypeOperations( IPartner rootPartnerOperations, String customerId, String entitlementType )
 	{

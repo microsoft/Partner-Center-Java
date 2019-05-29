@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="Order.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.orders;
 
@@ -206,7 +203,7 @@ public class Order
     /**
      * Sets the currency symbol.
      * 
-     * @param value The currency sybmol.
+     * @param value The currency symbol.
      */
     public void setCurrencySymbol(String value)
     {

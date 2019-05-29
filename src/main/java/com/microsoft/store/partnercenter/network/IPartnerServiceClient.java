@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="IPartnerServiceClient.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.network;
 
@@ -106,7 +103,7 @@ public interface IPartnerServiceClient
      * @param rootPartnerOperations An instance of the partner operations. 
      * @param responseType The type of object to be returned.
      * @param relativeUri The relative address fo the request.
-     * @param content The conent for the body of the request.
+     * @param content The content for the body of the request.
      * @return The response from the POST operation.
      */
     <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content);
@@ -119,8 +116,8 @@ public interface IPartnerServiceClient
      * @param rootPartnerOperations An instance of the partner operations. 
      * @param responseType The type of object to be returned.
      * @param relativeUri The relative address fo the request.
-     * @param content The conent for the body of the request.
-     * @param parameters Parameters to be added to the reqest.
+     * @param content The content for the body of the request.
+     * @param parameters Parameters to be added to the request.
      * @return The response from the POST operation.
      */
     <T, U> U post(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content, Collection<KeyValuePair<String, String>> parameters);
@@ -133,7 +130,7 @@ public interface IPartnerServiceClient
      * @param rootPartnerOperations An instance of the partner operations. 
      * @param responseType The type of object to be returned.
      * @param relativeUri The relative address fo the request.
-     * @param content The conent for the body of the request.
+     * @param content The content for the body of the request.
      * @return The response from the PUT operation.    
      */
     <T, U> U put(IPartner rootPartnerOperations, TypeReference<U> responseType, String relativeUri, T content);

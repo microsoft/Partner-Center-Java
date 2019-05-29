@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="InvoiceOperations.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.invoices;
 
@@ -52,7 +49,7 @@ public class InvoiceOperations
 	/**
      * Gets the available receipt operations.
      * 
-     * @return The available receipt opreations.
+     * @return The available receipt operations.
      */    
 	@Override
 	public IReceiptCollection getReceipts()

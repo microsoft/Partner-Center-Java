@@ -20,10 +20,17 @@
 
 # Change Log
 
+# 1.13.2
+
+* Authentication
+  * Addressed access tokens not being refreshed prior to their expiration when possible
+* Dependencies
+  * Updated com.fasterxml.jackson dependencies from version 2.9.8 to 2.9.9
+
 ## 1.13.1
 
 * Error Handling
-  * Addressed issue with the errors not being deserialized correctly
+  * Addressed issue with the errors not being de-serialized correctly
 * Invoices
   * Addressed issue [#47](https://github.com/microsoft/Partner-Center-Java/issues/47) where the billing provider and object type for the SKU name property were incorrect
 

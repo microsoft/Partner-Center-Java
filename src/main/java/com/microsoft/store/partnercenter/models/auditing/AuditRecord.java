@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="AuditRecord.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.auditing;
 
@@ -211,9 +208,9 @@ public class AuditRecord extends ResourceBase
 	private String partnerId;
 
 	/**
-     * Gets the identifier of the parnter that performed the operation.
+     * Gets the identifier of the partner that performed the operation.
      * 
-     * @return The identifier of the parnter that performed the operation.
+     * @return The identifier of the partner that performed the operation.
      */
 	public String getPartnerId()
 	{
@@ -221,9 +218,9 @@ public class AuditRecord extends ResourceBase
 	}
 
 	/**
-     * Sets the identifier of the parnter that performed the operation.
+     * Sets the identifier of the partner that performed the operation.
      * 
-     * @param value The identifier of the parnter that performed the operation.
+     * @param value The identifier of the partner that performed the operation.
      */
 	public void setPartnerId( String value )
 	{

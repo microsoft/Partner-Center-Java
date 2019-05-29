@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="SubscriptionMonthlyUsageRecord.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.usage;
 
@@ -19,7 +16,7 @@ public class SubscriptionMonthlyUsageRecord
     private String __ResourceId;
 
     /**
-     * Gets the resource unique identifier. In this context of a customer monthly ussage record this identifier is the customer identifier.
+     * Gets the resource unique identifier. In this context of a customer monthly usage record this identifier is the customer identifier.
      * 
      * @return The resource unique identifier.
      */
@@ -29,7 +26,7 @@ public class SubscriptionMonthlyUsageRecord
     }
 
     /**
-     * Sets the resource unique identifier. In this context of a customer monthly ussage record this identifier is the customer identifier.
+     * Sets the resource unique identifier. In this context of a customer monthly usage record this identifier is the customer identifier.
      * 
      * @param value The resource identifier.
      */
@@ -41,7 +38,7 @@ public class SubscriptionMonthlyUsageRecord
     private String __ResourceName;
 
     /**
-     * Gets the name of the resource. In this context of a customer monthly ussage record this name is the customer name.
+     * Gets the name of the resource. In this context of a customer monthly usage record this name is the customer name.
      * 
      * @return The name of the resource.
      */
@@ -51,7 +48,7 @@ public class SubscriptionMonthlyUsageRecord
     }
 
     /**
-     * Sets name of the resource. In this context of a customer monthly ussage record this name is the customer name.
+     * Sets name of the resource. In this context of a customer monthly usage record this name is the customer name.
      * 
      * @param value The name of the resource.
      */

@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="ICustomerCollection.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.customers;
 
@@ -32,7 +29,7 @@ public interface ICustomerCollection
     /**
      * Gets the customer relationship request operations.
      * 
-     * @return The customer replationship request operations.
+     * @return The customer relationship request operations.
      */
     ICustomerRelationshipRequest getRelationshipRequests();
 

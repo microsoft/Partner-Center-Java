@@ -1,8 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="BaseUsageBasedLineItem.java" company="Microsoft">
-//      Copyright (c) Microsoft Corporation. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license. See the LICENSE file in the project root for full license information.
 
 package com.microsoft.store.partnercenter.models.invoices;
 
@@ -319,7 +316,7 @@ public abstract class BaseUsageBasedLineItem
     }
 
     /**
-     * Gets or sets the illing cycle type.
+     * Gets or sets the billing cycle type.
      */
     private String __BillingCycleType;
 
