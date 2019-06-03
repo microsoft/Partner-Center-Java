@@ -25,7 +25,7 @@ public class Sku
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -40,7 +40,7 @@ public class Sku
         return __ProductId;
     }
 
-    public void setProductId( String value )
+    public void setProductId(String value)
     {
         __ProductId = value;
     }
@@ -55,7 +55,7 @@ public class Sku
         return __Title;
     }
 
-    public void setTitle( String value )
+    public void setTitle(String value)
     {
         __Title = value;
     }
@@ -70,7 +70,7 @@ public class Sku
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -85,7 +85,7 @@ public class Sku
         return __MinimumQuantity;
     }
 
-    public void setMinimumQuantity( int value )
+    public void setMinimumQuantity(int value)
     {
         __MinimumQuantity = value;
     }
@@ -100,7 +100,7 @@ public class Sku
         return __MaximumQuantity;
     }
 
-    public void setMaximumQuantity( int value )
+    public void setMaximumQuantity(int value)
     {
         __MaximumQuantity = value;
     }
@@ -115,7 +115,7 @@ public class Sku
         return __IsTrial;
     }
 
-    public void setIsTrial( Boolean value )
+    public void setIsTrial(Boolean value)
     {
         __IsTrial = value;
     }
@@ -130,7 +130,7 @@ public class Sku
         return __SupportedBillingCycles;
     }
 
-    public void setSupportedBillingCycles( List<BillingCycleType> value )
+    public void setSupportedBillingCycles(List<BillingCycleType> value)
     {
         __SupportedBillingCycles = value;
     }
@@ -145,7 +145,7 @@ public class Sku
         return __PurchasePrerequisites;
     }
 
-    public void setPurchasePrerequisites( List<String> value )
+    public void setPurchasePrerequisites(List<String> value)
     {
         __PurchasePrerequisites = value;
     }
@@ -160,7 +160,7 @@ public class Sku
         return __InventoryVariables;
     }
 
-    public void setInventoryVariables( List<String> value )
+    public void setInventoryVariables(List<String> value)
     {
         __InventoryVariables = value;
     }
@@ -175,7 +175,7 @@ public class Sku
         return __ProvisioningVariables;
     }
 
-    public void setProvisioningVariables( List<String> value )
+    public void setProvisioningVariables(List<String> value)
     {
         __ProvisioningVariables = value;
     }
@@ -190,7 +190,7 @@ public class Sku
         return __DynamicAttributes;
     }
 
-    public void setDynamicAttributes( Map<String, String> value )
+    public void setDynamicAttributes(Map<String, String> value)
     {
         __DynamicAttributes = value;
     }

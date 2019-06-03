@@ -39,7 +39,7 @@ public interface ICustomerCollection
      * @param customerId The customer identifier.
      * @return The customer operations.
      */
-    ICustomer byId( String customerId );
+    ICustomer byId(String customerId);
 
     /**
      * Retrieves all the partner's customers.
@@ -56,5 +56,5 @@ public interface ICustomerCollection
      * @param customersQuery A query to apply onto customers. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
      * @return The requested customers.
      */
-    SeekBasedResourceCollection<Customer> query( IQuery customersQuery );
+    SeekBasedResourceCollection<Customer> query(IQuery customersQuery);
 }

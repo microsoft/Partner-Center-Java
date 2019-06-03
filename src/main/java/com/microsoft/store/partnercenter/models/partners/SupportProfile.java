@@ -22,7 +22,7 @@ public class SupportProfile
         return __Email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         __Email = value;
     }
@@ -37,7 +37,7 @@ public class SupportProfile
         return __Telephone;
     }
 
-    public void setTelephone( String value )
+    public void setTelephone(String value)
     {
         __Telephone = value;
     }
@@ -52,7 +52,7 @@ public class SupportProfile
         return __Website;
     }
 
-    public void setWebsite( String value )
+    public void setWebsite(String value)
     {
         __Website = value;
     }

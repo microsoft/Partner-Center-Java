@@ -15,7 +15,7 @@ public class DevicePolicyUpdateRequest extends ResourceBase {
 	/**
 	 * Gets or sets the list of devices to be updated.
 	 */
-	@JsonProperty( "devices" )
+	@JsonProperty("devices")
 	private List<Device> __Devices;
 
 	public List<Device> getSetDevices()
@@ -23,7 +23,7 @@ public class DevicePolicyUpdateRequest extends ResourceBase {
 		return __Devices;
 	}
 
-	public void setDevices( List<Device> value )
+	public void setDevices(List<Device> value)
 	{
 		__Devices = value;
 	}

@@ -18,7 +18,7 @@ public class Product
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -33,7 +33,7 @@ public class Product
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -48,7 +48,7 @@ public class Product
         return __Unit;
     }
 
-    public void setUnit( String value )
+    public void setUnit(String value)
     {
         __Unit = value;
     }

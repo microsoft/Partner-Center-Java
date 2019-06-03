@@ -29,6 +29,6 @@ public interface IOfferAddOns
      * @param size The maximum number of offers to return.
      * @return The requested segment of the offers for the given country.
      */
-    ResourceCollection<Offer> get( int offset, int size );
+    ResourceCollection<Offer> get(int offset, int size);
 
 }

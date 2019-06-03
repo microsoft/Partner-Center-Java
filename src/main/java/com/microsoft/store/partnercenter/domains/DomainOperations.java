@@ -20,13 +20,13 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 	 * @param rootPartnerOperations The root partner operations instance
 	 * @param domain The domain
 	 */
-	protected DomainOperations( IPartner rootPartnerOperations, String domain )
+	protected DomainOperations(IPartner rootPartnerOperations, String domain)
 	{
-		super( rootPartnerOperations, domain );
+		super(rootPartnerOperations, domain);
 		
-		if( domain == null || domain.trim().isEmpty() )
+		if(domain == null || domain.trim().isEmpty())
 		{
-			throw new IllegalArgumentException( "Domain string cannot be null or empty" );
+			throw new IllegalArgumentException("Domain string cannot be null or empty");
 		}
 	}
 
@@ -43,13 +43,13 @@ public class DomainOperations extends BasePartnerComponentString implements IDom
 			this.getPartner().getServiceClient().head(
 				this.getPartner(),
 				new TypeReference<String>(){}, 
-				MessageFormat.format( 
+				MessageFormat.format(
 					PartnerService.getInstance().getConfiguration().getApis().get("CheckDomainAvailability").getPath(),
 					this.getContext()));
 		}
-		catch( PartnerException ex )
+		catch(PartnerException ex)
 		{
-			if( ex.getErrorCategory().equals( PartnerErrorCategory.NOT_FOUND ) )
+			if(ex.getErrorCategory().equals(PartnerErrorCategory.NOT_FOUND))
 			{
 				return false;
 			}

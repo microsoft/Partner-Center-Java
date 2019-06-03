@@ -18,7 +18,7 @@ public abstract class ResourceBase
      */
     protected ResourceBase()
     {
-        this.attributes = new ResourceAttributes( this.getClass() );
+        this.attributes = new ResourceAttributes(this.getClass());
     }
 
     /**
@@ -26,10 +26,10 @@ public abstract class ResourceBase
      * 
      * @param objectType Type of the object.
      */
-    protected ResourceBase( String objectType )
+    protected ResourceBase(String objectType)
     {
         this();
-        this.attributes.setObjectType( objectType );
+        this.attributes.setObjectType(objectType);
     }
 
     /**

@@ -26,9 +26,9 @@ public class CategoryOffersCollectionOperations
 	 * @param categoryId The category identifier which contains the offers.
 	 * @param country The country on which to base the offers.
 	 */
-	public CategoryOffersCollectionOperations( IPartner rootPartnerOperations, String categoryId, String country) 
+	public CategoryOffersCollectionOperations(IPartner rootPartnerOperations, String categoryId, String country) 
 	{
-		super(rootPartnerOperations, new Tuple<String, String>( categoryId, country ));
+		super(rootPartnerOperations, new Tuple<String, String>(categoryId, country));
 	}
 
 	/**

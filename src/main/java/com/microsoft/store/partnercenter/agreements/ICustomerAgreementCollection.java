@@ -22,7 +22,7 @@ public interface ICustomerAgreementCollection
      *
      * @return Agreement entity.
      */
-    Agreement create( Agreement newEntity );
+    Agreement create(Agreement newEntity);
 
     /**
      * Retrieves all agreements.

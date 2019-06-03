@@ -534,10 +534,10 @@ public class PartnerServiceClient
 			}
 			else
             {            
-                throw new PartnerException( 
+                throw new PartnerException(
                     "The partner credentials have expired. Please provide updated credentials.",
                     rootPartnerOperations.getRequestContext(), 
-                    PartnerErrorCategory.UNAUTHORIZED );
+                    PartnerErrorCategory.UNAUTHORIZED);
             }
 		} 
 

@@ -31,13 +31,13 @@ public class ProductCollectionByCountryByTargetViewOperations
 	 * @param targetView             The target view which contains the products.
 	 * @param country               The country on which to base the products.
 	 */
-	public ProductCollectionByCountryByTargetViewOperations( IPartner rootPartnerOperations, String targetView, String country )
+	public ProductCollectionByCountryByTargetViewOperations(IPartner rootPartnerOperations, String targetView, String country)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>(targetView, country) );
+		super(rootPartnerOperations, new Tuple<String, String>(targetView, country));
 
-		if ( StringHelper.isNullOrWhiteSpace( targetView ) )
+		if (StringHelper.isNullOrWhiteSpace(targetView))
 		{
-			throw new IllegalArgumentException( "targetView must be set" );
+			throw new IllegalArgumentException("targetView must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);
@@ -84,7 +84,7 @@ public class ProductCollectionByCountryByTargetViewOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Product>>(){}, 
-			PartnerService.getInstance().getConfiguration().getApis().get( "GetProducts" ).getPath(),
+			PartnerService.getInstance().getConfiguration().getApis().get("GetProducts").getPath(),
 			parameters);
 	}
 }

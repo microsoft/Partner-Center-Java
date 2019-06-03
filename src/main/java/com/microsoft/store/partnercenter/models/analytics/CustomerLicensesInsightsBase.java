@@ -18,7 +18,7 @@ public abstract class CustomerLicensesInsightsBase
         return customerId;
     }
 
-    public void setCustomerId( String value )
+    public void setCustomerId(String value)
     {
         customerId = value;
     }
@@ -33,7 +33,7 @@ public abstract class CustomerLicensesInsightsBase
         return customerName;
     }
 
-    public void setCustomerName( String value )
+    public void setCustomerName(String value)
     {
         customerName = value;
     }
@@ -48,7 +48,7 @@ public abstract class CustomerLicensesInsightsBase
         return productName;
     }
 
-    public void setProductName( String value )
+    public void setProductName(String value)
     {
         productName = value;
     }
@@ -63,7 +63,7 @@ public abstract class CustomerLicensesInsightsBase
         return serviceCode;
     }
 
-    public void setServiceCode( String value )
+    public void setServiceCode(String value)
     {
         serviceCode = value;
     }

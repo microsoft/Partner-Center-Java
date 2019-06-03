@@ -21,9 +21,9 @@ public class CustomerRelationshipRequestOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public CustomerRelationshipRequestOperations( IPartner rootPartnerOperations )
+	public CustomerRelationshipRequestOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**

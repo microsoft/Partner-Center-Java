@@ -13,11 +13,11 @@ public class ResourceAttributes
      * 
      * @param type The type.
      */
-    public ResourceAttributes( Class<?> type )
+    public ResourceAttributes(Class<?> type)
     {
-        if ( type != null )
+        if (type != null)
         {
-            this.setObjectType( type.getSimpleName() );
+            this.setObjectType(type.getSimpleName());
         }
     }
 
@@ -38,7 +38,7 @@ public class ResourceAttributes
         return etag;
     }
 
-    public void setEtag( String value )
+    public void setEtag(String value)
     {
         etag = value;
     }
@@ -53,7 +53,7 @@ public class ResourceAttributes
         return objectType;
     }
 
-    public void setObjectType( String value )
+    public void setObjectType(String value)
     {
         objectType = value;
     }

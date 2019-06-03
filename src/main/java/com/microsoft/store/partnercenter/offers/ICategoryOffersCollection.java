@@ -26,6 +26,6 @@ public interface ICategoryOffersCollection
      * @param size The maximum number of offers to return.
      * @return The requested segment of the offers in the given offer category.
      */
-    ResourceCollection<Offer> get( int offset, int size );
+    ResourceCollection<Offer> get(int offset, int size);
 
 }

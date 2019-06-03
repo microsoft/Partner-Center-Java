@@ -23,7 +23,7 @@ public interface IConfigurationPolicyCollection
 	 * @param policyId The policy identifier.
 	 * @return The customer's devices batch upload status operations.
 	 */
-    IConfigurationPolicy byId( String policyId );
+    IConfigurationPolicy byId(String policyId);
 
     /**
 	 * Retrieves all configuration policies.

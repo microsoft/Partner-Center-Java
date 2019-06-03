@@ -18,7 +18,7 @@ public class FileInfo
         return __Comment;
     }
 
-    public void setComment( String value )
+    public void setComment(String value)
     {
         __Comment = value;
     }
@@ -33,7 +33,7 @@ public class FileInfo
         return __FileExtension;
     }
 
-    public void setFileExtension( String value )
+    public void setFileExtension(String value)
     {
         __FileExtension = value;
     }
@@ -48,7 +48,7 @@ public class FileInfo
         return __FileNameWithoutExtension;
     }
 
-    public void setFileNameWithoutExtension( String value )
+    public void setFileNameWithoutExtension(String value)
     {
         __FileNameWithoutExtension = value;
     }
@@ -63,7 +63,7 @@ public class FileInfo
         return __FileSize;
     }
 
-    public void setFileSize( long value )
+    public void setFileSize(long value)
     {
         __FileSize = value;
     }
@@ -78,7 +78,7 @@ public class FileInfo
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }

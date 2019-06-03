@@ -18,6 +18,6 @@ public interface IPagedEntityCollectionRetrievalOperations<T extends ResourceBas
      * @param size The maximum number of entities to return.
      * @return The requested entities subset.
      */
-    TResourceCollection get( int offset, int size );
+    TResourceCollection get(int offset, int size);
 
 }

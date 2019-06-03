@@ -24,16 +24,16 @@ public class CustomerUserLicenseUpdateOperations
 	 * @param customerId The customer identifier.
 	 * @param userId The user identifier.
 	 */
-	public CustomerUserLicenseUpdateOperations( IPartner rootPartnerOperations, String customerId, String userId )
+	public CustomerUserLicenseUpdateOperations(IPartner rootPartnerOperations, String customerId, String userId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, userId ) );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, userId));
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId can't be null" );
+			throw new IllegalArgumentException("customerId can't be null");
 		}
-		if ( StringHelper.isNullOrWhiteSpace( userId ) )
+		if (StringHelper.isNullOrWhiteSpace(userId))
 		{
-			throw new IllegalArgumentException( "userId can't be null" );
+			throw new IllegalArgumentException("userId can't be null");
 		}
 	}
 
@@ -48,9 +48,9 @@ public class CustomerUserLicenseUpdateOperations
 	 * @return Returned license update object
 	 */
 	@Override
-	public LicenseUpdate create( LicenseUpdate entity )
+	public LicenseUpdate create(LicenseUpdate entity)
 	{
-		if ( entity == null )
+		if (entity == null)
 		{
 			throw new IllegalArgumentException("The entity parameter cannot be null.");
 		}

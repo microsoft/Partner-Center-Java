@@ -28,6 +28,6 @@ public interface ICustomerUsageSpendingBudget
      * 
      * @return The updated customer's usage spending budget. 
      */
-    SpendingBudget patch( SpendingBudget spendingBudget );
+    SpendingBudget patch(SpendingBudget spendingBudget);
 
 }

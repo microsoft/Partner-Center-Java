@@ -246,7 +246,7 @@ public class OneTimeInvoiceLineItem
         return partnerId;
     }
 
-    public void setPartnerId( String value )
+    public void setPartnerId(String value)
     {
         partnerId = value;
     }
@@ -261,7 +261,7 @@ public class OneTimeInvoiceLineItem
         return customerId;
     }
 
-    public void setCustomerId( String value )
+    public void setCustomerId(String value)
     {
         customerId = value;
     }
@@ -276,7 +276,7 @@ public class OneTimeInvoiceLineItem
         return customerName;
     }
 
-    public void setCustomerName( String value )
+    public void setCustomerName(String value)
     {
         customerName = value;
     }
@@ -291,7 +291,7 @@ public class OneTimeInvoiceLineItem
         return mpnId;
     }
 
-    public void setMpnId( int value )
+    public void setMpnId(int value)
     {
         mpnId = value;
     }
@@ -306,7 +306,7 @@ public class OneTimeInvoiceLineItem
         return orderId;
     }
 
-    public void setOrderId( String value )
+    public void setOrderId(String value)
     {
         orderId = value;
     }
@@ -321,7 +321,7 @@ public class OneTimeInvoiceLineItem
         return chargeType;
     }
 
-    public void setChargeType( String value )
+    public void setChargeType(String value)
     {
         chargeType = value;
     }
@@ -336,7 +336,7 @@ public class OneTimeInvoiceLineItem
         return unitPrice;
     }
 
-    public void setUnitPrice( double value )
+    public void setUnitPrice(double value)
     {
         unitPrice = value;
     }
@@ -351,7 +351,7 @@ public class OneTimeInvoiceLineItem
         return quantity;
     }
 
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         quantity = value;
     }
@@ -366,7 +366,7 @@ public class OneTimeInvoiceLineItem
         return subtotal;
     }
 
-    public void setSubtotal( double value )
+    public void setSubtotal(double value)
     {
         subtotal = value;
     }
@@ -381,7 +381,7 @@ public class OneTimeInvoiceLineItem
         return totalForCustomer;
     }
 
-    public void setTotalForCustomer( double value )
+    public void setTotalForCustomer(double value)
     {
         totalForCustomer = value;
     }
@@ -396,7 +396,7 @@ public class OneTimeInvoiceLineItem
         return currency;
     }
 
-    public void setCurrency( String value )
+    public void setCurrency(String value)
     {
         currency = value;
     }
@@ -431,7 +431,7 @@ public class OneTimeInvoiceLineItem
         return discountDetails;
     }
 
-    public void setDiscountDetails( String value )
+    public void setDiscountDetails(String value)
     {
         discountDetails = value;
     }
@@ -446,7 +446,7 @@ public class OneTimeInvoiceLineItem
         return taxTotal;
     }
 
-    public void setTaxTotal( double value )
+    public void setTaxTotal(double value)
     {
         taxTotal = value;
     }
@@ -476,7 +476,7 @@ public class OneTimeInvoiceLineItem
         return productName;
     }
 
-    public void setProductName( String value )
+    public void setProductName(String value)
     {
         productName = value;
     }
@@ -491,7 +491,7 @@ public class OneTimeInvoiceLineItem
         return availabilityId;
     }
 
-    public void setAvailabilityId( String value )
+    public void setAvailabilityId(String value)
     {
         availabilityId = value;
     }
@@ -506,7 +506,7 @@ public class OneTimeInvoiceLineItem
         return skuId;
     }
 
-    public void setSkuId( String value )
+    public void setSkuId(String value)
     {
         skuId = value;
     }
@@ -521,7 +521,7 @@ public class OneTimeInvoiceLineItem
         return productId;
     }
 
-    public void setProductId( String value )
+    public void setProductId(String value)
     {
         productId = value;
     }
@@ -536,7 +536,7 @@ public class OneTimeInvoiceLineItem
         return orderDate;
     }
 
-    public void setOrderDate( DateTime value )
+    public void setOrderDate(DateTime value)
     {
         orderDate = value;
     }
@@ -551,7 +551,7 @@ public class OneTimeInvoiceLineItem
         return resellerMpnId;
     }
 
-    public void setResellerMpnId( String value )
+    public void setResellerMpnId(String value)
     {
         resellerMpnId = value;
     }
@@ -566,7 +566,7 @@ public class OneTimeInvoiceLineItem
         return invoiceNumber;
     }
 
-    public void setInvoiceNumber( String value )
+    public void setInvoiceNumber(String value)
     {
         invoiceNumber = value;
     }
@@ -581,7 +581,7 @@ public class OneTimeInvoiceLineItem
         return customerCountry;
     }
 
-    public void setCustomerCountry( String value )
+    public void setCustomerCountry(String value)
     {
         customerCountry = value;
     }
@@ -596,7 +596,7 @@ public class OneTimeInvoiceLineItem
         return customerDomainName;
     }
 
-    public void setCustomerDomainName( String value )
+    public void setCustomerDomainName(String value)
     {
         customerDomainName = value;
     }

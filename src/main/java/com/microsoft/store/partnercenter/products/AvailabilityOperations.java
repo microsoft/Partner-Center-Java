@@ -72,7 +72,7 @@ public class AvailabilityOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Availability>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAvailability").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2(),

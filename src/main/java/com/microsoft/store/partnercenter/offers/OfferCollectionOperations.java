@@ -28,11 +28,11 @@ public class OfferCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param country The country on which to base the offers
 	 */
-	public OfferCollectionOperations( IPartner rootPartnerOperations, String country )
+	public OfferCollectionOperations(IPartner rootPartnerOperations, String country)
 	{
-		super( rootPartnerOperations, country );
+		super(rootPartnerOperations, country);
 		
-		ParameterValidator.isValidCountryCode( country );
+		ParameterValidator.isValidCountryCode(country);
 	}
 
 	/**
@@ -42,9 +42,9 @@ public class OfferCollectionOperations
 	 * @return The offer operations.
 	 */
 	@Override
-	public IOffer byId( String offerId )
+	public IOffer byId(String offerId)
 	{
-		return new OfferOperations( this.getPartner(), offerId, this.getContext() );
+		return new OfferOperations(this.getPartner(), offerId, this.getContext());
 	}
 
 	/**
@@ -124,8 +124,8 @@ public class OfferCollectionOperations
 	 * @param categoryId The offer category Id.
 	 * @return The category offers operations.
 	 */
-	public ICategoryOffersCollection byCategory( String categoryId )
+	public ICategoryOffersCollection byCategory(String categoryId)
 	{
-		return new CategoryOffersCollectionOperations( this.getPartner(), categoryId, this.getContext() );
+		return new CategoryOffersCollectionOperations(this.getPartner(), categoryId, this.getContext());
 	}
 }

@@ -22,7 +22,7 @@ public class ManagedServiceLinks
         return __AdminService;
     }
 
-    public void setAdminService( Link value )
+    public void setAdminService(Link value)
     {
         __AdminService = value;
     }
@@ -37,7 +37,7 @@ public class ManagedServiceLinks
         return __ServiceHealth;
     }
 
-    public void setServiceHealth( Link value )
+    public void setServiceHealth(Link value)
     {
         __ServiceHealth = value;
     }
@@ -52,7 +52,7 @@ public class ManagedServiceLinks
         return __ServiceTicket;
     }
 
-    public void setServiceTicket( Link value )
+    public void setServiceTicket(Link value)
     {
         __ServiceTicket = value;
     }

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 /**
  * This class defines the usage summary of a partner for all its customers with an Azure subscription
  */
-@JsonIgnoreProperties( { "customersWithUsageBasedSubscription", "lastModifiedDate", "id", "name" } )
+@JsonIgnoreProperties({ "customersWithUsageBasedSubscription", "lastModifiedDate", "id", "name" })
 public class PartnerUsageSummary
     extends UsageSummaryBase
 {
@@ -22,7 +22,7 @@ public class PartnerUsageSummary
         return __ResourceId;
     }
 
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
         __ResourceId = value;
     }
@@ -37,7 +37,7 @@ public class PartnerUsageSummary
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -52,7 +52,7 @@ public class PartnerUsageSummary
         return __EmailsToNotify;
     }
 
-    public void setEmailsToNotify( Iterable<String> value )
+    public void setEmailsToNotify(Iterable<String> value)
     {
         __EmailsToNotify = value;
     }
@@ -67,7 +67,7 @@ public class PartnerUsageSummary
         return __CustomersOverBudget;
     }
 
-    public void setCustomersOverBudget( long value )
+    public void setCustomersOverBudget(long value)
     {
         __CustomersOverBudget = value;
     }
@@ -82,7 +82,7 @@ public class PartnerUsageSummary
         return __CustomersTrendingOver;
     }
 
-    public void setCustomersTrendingOver( long value )
+    public void setCustomersTrendingOver(long value)
     {
         __CustomersTrendingOver = value;
     }
@@ -97,7 +97,7 @@ public class PartnerUsageSummary
         return __CustomersWithUsageBasedSubscription;
     }
 
-    public void setCustomersWithUsageBasedSubscription( long value )
+    public void setCustomersWithUsageBasedSubscription(long value)
     {
     	__CustomersWithUsageBasedSubscription = value;
     }

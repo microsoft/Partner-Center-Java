@@ -27,13 +27,13 @@ public class ServiceCostsCollectionOperations
      * @param customerId Identifier for the customer.
      * @param billingPeriod The service cost billing period.
      */
-    public ServiceCostsCollectionOperations( IPartner rootPartnerOperations, String customerId, ServiceCostsBillingPeriod billingPeriod )
+    public ServiceCostsCollectionOperations(IPartner rootPartnerOperations, String customerId, ServiceCostsBillingPeriod billingPeriod)
     {
-        super( rootPartnerOperations, new Tuple<String, String>(customerId, billingPeriod.toString()) );
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, billingPeriod.toString()));
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 

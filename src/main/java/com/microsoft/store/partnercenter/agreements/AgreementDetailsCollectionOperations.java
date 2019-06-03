@@ -22,9 +22,9 @@ public class AgreementDetailsCollectionOperations
      *
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public AgreementDetailsCollectionOperations( IPartner rootPartnerOperations )
+    public AgreementDetailsCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
     }
 
     /**

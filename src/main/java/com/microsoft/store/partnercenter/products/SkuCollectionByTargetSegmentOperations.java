@@ -33,20 +33,20 @@ public class SkuCollectionByTargetSegmentOperations
 	 * @param country               The country on which to base the product.
 	 * @param targetSegment         The target segment used for filtering the availabilities.
 	 */
-	public SkuCollectionByTargetSegmentOperations( IPartner rootPartnerOperations, String productId, String country, String targetSegment )
+	public SkuCollectionByTargetSegmentOperations(IPartner rootPartnerOperations, String productId, String country, String targetSegment)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>(productId, country, targetSegment) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(productId, country, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 

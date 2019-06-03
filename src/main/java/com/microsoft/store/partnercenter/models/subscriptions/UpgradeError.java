@@ -21,7 +21,7 @@ public class UpgradeError
         return __Code;
     }
 
-    public void setCode( UpgradeErrorCode value )
+    public void setCode(UpgradeErrorCode value)
     {
         __Code = value;
     }
@@ -36,7 +36,7 @@ public class UpgradeError
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -51,7 +51,7 @@ public class UpgradeError
         return __AdditionalDetails;
     }
 
-    public void setAdditionalDetails( String value )
+    public void setAdditionalDetails(String value)
     {
         __AdditionalDetails = value;
     }

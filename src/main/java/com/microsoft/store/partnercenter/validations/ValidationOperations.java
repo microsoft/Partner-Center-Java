@@ -50,7 +50,7 @@ public class ValidationOperations
      */
     public Boolean isAddressValid(Address address)
     {
-        if ( address == null )
+        if (address == null)
         {
             throw new IllegalArgumentException("The address is a required parameter.");
         }

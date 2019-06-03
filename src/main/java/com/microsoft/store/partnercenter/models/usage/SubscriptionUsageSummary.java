@@ -22,7 +22,7 @@ public class SubscriptionUsageSummary
             return __ResourceId;
         }
 
-        public void setResourceId( String value )
+        public void setResourceId(String value)
         {
             __ResourceId = value;
         }
@@ -37,7 +37,7 @@ public class SubscriptionUsageSummary
             return __ResourceName;
         }
 
-        public void setResourceName( String value )
+        public void setResourceName(String value)
         {
             __ResourceName = value;
         }

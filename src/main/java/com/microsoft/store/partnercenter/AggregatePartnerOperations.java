@@ -18,9 +18,9 @@ public class AggregatePartnerOperations
      * 
      * @param credentials The partner credentials.
      */
-    public AggregatePartnerOperations( IPartnerCredentials credentials )
+    public AggregatePartnerOperations(IPartnerCredentials credentials)
     {
-        super( credentials, RequestContextFactory.getInstance().create() );
+        super(credentials, RequestContextFactory.getInstance().create());
     }
 
     /**
@@ -30,13 +30,13 @@ public class AggregatePartnerOperations
      * @return A partner operations object which uses the provided operation context.
      */
     @Override
-    public IPartner with( IRequestContext context )
+    public IPartner with(IRequestContext context)
     {
-        if ( context == null )
+        if (context == null)
         {
-            throw new IllegalArgumentException( "context null" );
+            throw new IllegalArgumentException("context null");
         }
 
-        return new PartnerOperations( this.getCredentials(), context );
+        return new PartnerOperations(this.getCredentials(), context);
     }
 }

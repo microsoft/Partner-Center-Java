@@ -27,5 +27,5 @@ public interface IAuditRecordsCollection
      * @param query The query.
      * @return The audit records that match the given query.
      */
-	SeekBasedResourceCollection<AuditRecord> query( DateTime startDate, DateTime endDate, IQuery query );
+	SeekBasedResourceCollection<AuditRecord> query(DateTime startDate, DateTime endDate, IQuery query);
 }

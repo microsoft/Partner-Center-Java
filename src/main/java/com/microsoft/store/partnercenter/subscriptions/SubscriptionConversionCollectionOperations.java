@@ -29,18 +29,18 @@ public class SubscriptionConversionCollectionOperations
 	 * @param customerId The customer Id to whom the subscriptions belong.
 	 * @param subscriptionId The subscription Id where the upgrade is occurring.
 	 */
-	public SubscriptionConversionCollectionOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
+	public SubscriptionConversionCollectionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId))
 		{
-			throw new IllegalArgumentException( "subscriptionId must be set" );
+			throw new IllegalArgumentException("subscriptionId must be set");
 		}
 	}
 
@@ -71,7 +71,7 @@ public class SubscriptionConversionCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Conversion>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionConversions").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));

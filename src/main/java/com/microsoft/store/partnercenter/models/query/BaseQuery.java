@@ -19,7 +19,7 @@ public abstract class BaseQuery
     protected BaseQuery()
 
     {
-        this.setToken( null );
+        this.setToken(null);
     }
 
     /**
@@ -27,10 +27,10 @@ public abstract class BaseQuery
      * 
      * @param token The query token.
      */
-    protected BaseQuery( Object token )
+    protected BaseQuery(Object token)
 
     {
-        this.setToken( token );
+        this.setToken(token);
     }
 
     /**
@@ -46,12 +46,12 @@ public abstract class BaseQuery
      */
     public FieldFilter getFilter()
     {
-        throw new UnsupportedOperationException( "Filter is not supported." );
+        throw new UnsupportedOperationException("Filter is not supported.");
     }
 
-    public void setFilter( FieldFilter value )
+    public void setFilter(FieldFilter value)
     {
-        throw new UnsupportedOperationException( "Filter is not supported." );
+        throw new UnsupportedOperationException("Filter is not supported.");
     }
 
     /**
@@ -59,12 +59,12 @@ public abstract class BaseQuery
      */
     public Sort getSort()
     {
-        throw new UnsupportedOperationException( "Sort is not supported." );
+        throw new UnsupportedOperationException("Sort is not supported.");
     }
 
-    public void setSort( Sort value )
+    public void setSort(Sort value)
     {
-        throw new UnsupportedOperationException( "Sort is not supported." );
+        throw new UnsupportedOperationException("Sort is not supported.");
     }
 
     /**
@@ -72,12 +72,12 @@ public abstract class BaseQuery
      */
     public int getIndex()
     {
-        throw new UnsupportedOperationException( "Index is not supported." );
+        throw new UnsupportedOperationException("Index is not supported.");
     }
 
-    public void setIndex( int value )
+    public void setIndex(int value)
     {
-        throw new UnsupportedOperationException( "Index is not supported." );
+        throw new UnsupportedOperationException("Index is not supported.");
     }
 
     /**
@@ -85,12 +85,12 @@ public abstract class BaseQuery
      */
     public int getPageSize()
     {
-        throw new UnsupportedOperationException( "PageSize is not supported." );
+        throw new UnsupportedOperationException("PageSize is not supported.");
     }
 
-    public void setPageSize( int value )
+    public void setPageSize(int value)
     {
-        throw new UnsupportedOperationException( "PageSize is not supported." );
+        throw new UnsupportedOperationException("PageSize is not supported.");
     }
 
     /**
@@ -103,7 +103,7 @@ public abstract class BaseQuery
         return __Token;
     }
 
-    public void setToken( Object value )
+    public void setToken(Object value)
     {
         __Token = value;
     }
@@ -113,11 +113,11 @@ public abstract class BaseQuery
      */
     public SeekOperation getSeekOperation()
     {
-        throw new UnsupportedOperationException( "SeekOperation is not supported." );
+        throw new UnsupportedOperationException("SeekOperation is not supported.");
     }
 
-    public void setSeekOperation( SeekOperation value )
+    public void setSeekOperation(SeekOperation value)
     {
-        throw new UnsupportedOperationException( "SeekOperation is not supported." );
+        throw new UnsupportedOperationException("SeekOperation is not supported.");
     }
 }

@@ -18,10 +18,10 @@ public class SimpleQuery
         super();
     }
 
-    protected SimpleQuery( Object token )
+    protected SimpleQuery(Object token)
 
     {
-        super( token );
+        super(token);
     }
 
     /**
@@ -43,7 +43,7 @@ public class SimpleQuery
         return filter;
     }
 
-    public void setFilter( FieldFilter value )
+    public void setFilter(FieldFilter value)
     {
         filter = value;
     }
@@ -58,7 +58,7 @@ public class SimpleQuery
         return sort;
     }
 
-    public void setSort( Sort value )
+    public void setSort(Sort value)
     {
         sort = value;
     }
@@ -71,14 +71,14 @@ public class SimpleQuery
     public String toString()
     {
         StringBuilder stringRepresentation = new StringBuilder();
-        if ( this.getSort() != null )
+        if (this.getSort() != null)
         {
-            stringRepresentation.append( this.getSort().toString() + "/n" );
+            stringRepresentation.append(this.getSort().toString() + "/n");
         }
 
-        if ( this.getFilter() != null )
+        if (this.getFilter() != null)
         {
-            stringRepresentation.append( this.getFilter().toString() + "\n" );
+            stringRepresentation.append(this.getFilter().toString() + "\n");
         }
 
         String result = stringRepresentation.toString();

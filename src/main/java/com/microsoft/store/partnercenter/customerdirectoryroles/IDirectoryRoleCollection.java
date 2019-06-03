@@ -23,7 +23,7 @@ public interface IDirectoryRoleCollection
 	 * @param roleId The directory role identifier.
 	 * @return The directory role operations.
 	 */
-    IDirectoryRole byId( String roleId );
+    IDirectoryRole byId(String roleId);
 
     /**
      * Retrieves all customer directory roles.

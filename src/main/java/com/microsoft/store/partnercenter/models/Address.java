@@ -18,7 +18,7 @@ public class Address
         return country;
     }
 
-    public void setCountry( String value )
+    public void setCountry(String value)
     {
         country = value;
     }
@@ -33,7 +33,7 @@ public class Address
         return region;
     }
 
-    public void setRegion( String value )
+    public void setRegion(String value)
     {
         region = value;
     }
@@ -48,7 +48,7 @@ public class Address
         return city;
     }
 
-    public void setCity( String value )
+    public void setCity(String value)
     {
         city = value;
     }
@@ -63,7 +63,7 @@ public class Address
         return state;
     }
 
-    public void setState( String value )
+    public void setState(String value)
     {
         state = value;
     }
@@ -78,7 +78,7 @@ public class Address
         return addressLine1;
     }
 
-    public void setAddressLine1( String value )
+    public void setAddressLine1(String value)
     {
         addressLine1 = value;
     }
@@ -93,7 +93,7 @@ public class Address
         return addressLine2;
     }
 
-    public void setAddressLine2( String value )
+    public void setAddressLine2(String value)
     {
         addressLine2 = value;
     }
@@ -108,7 +108,7 @@ public class Address
         return postalCode;
     }
 
-    public void setPostalCode( String value )
+    public void setPostalCode(String value)
     {
         postalCode = value;
     }
@@ -123,7 +123,7 @@ public class Address
         return firstName;
     }
 
-    public void setFirstName( String value )
+    public void setFirstName(String value)
     {
         firstName = value;
     }
@@ -138,7 +138,7 @@ public class Address
         return lastName;
     }
 
-    public void setLastName( String value )
+    public void setLastName(String value)
     {
         lastName = value;
     }
@@ -153,7 +153,7 @@ public class Address
         return phoneNumber;
     }
 
-    public void setPhoneNumber( String value )
+    public void setPhoneNumber(String value)
     {
         phoneNumber = value;
     }

@@ -9,7 +9,7 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 /**
  * The spending budget allocated to the customer by the partner.
  */
-@JsonIgnoreProperties( { "usageSpendingBudget" } )
+@JsonIgnoreProperties({ "usageSpendingBudget" })
 public class SpendingBudget
     extends ResourceBase
 {
@@ -23,7 +23,7 @@ public class SpendingBudget
         return __Amount;
     }
 
-    public void setAmount( Double value )
+    public void setAmount(Double value)
     {
         __Amount = value;
     }

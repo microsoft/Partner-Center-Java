@@ -22,7 +22,7 @@ public class SubscriptionLinks
         return __Offer;
     }
 
-    public void setOffer( Link value )
+    public void setOffer(Link value)
     {
         __Offer = value;
     }
@@ -37,7 +37,7 @@ public class SubscriptionLinks
         return __ParentSubscription;
     }
 
-    public void setParentSubscription( Link value )
+    public void setParentSubscription(Link value)
     {
         __ParentSubscription = value;
     }

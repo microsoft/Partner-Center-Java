@@ -22,13 +22,13 @@ public class InvoiceStatementOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param invoiceId The invoice identifier.
 	 */
-	public InvoiceStatementOperations( IPartner rootPartnerOperations, String invoiceId )
+	public InvoiceStatementOperations(IPartner rootPartnerOperations, String invoiceId)
 	{
-		super( rootPartnerOperations, invoiceId );
+		super(rootPartnerOperations, invoiceId);
 		
-		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+		if (StringHelper.isNullOrWhiteSpace(invoiceId))
 		{
-			throw new IllegalArgumentException( "invoiceId has to be set." );
+			throw new IllegalArgumentException("invoiceId has to be set.");
 		}
 	}
 
@@ -42,7 +42,7 @@ public class InvoiceStatementOperations
 	{
 		return this.getPartner().getServiceClient().getFileContents(
 			this.getPartner(), 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceStatement").getPath(),
 				this.getContext()), 
 			"application/pdf");

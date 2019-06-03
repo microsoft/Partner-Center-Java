@@ -28,12 +28,12 @@ public class PartnerLicensesAnalyticsCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public PartnerLicensesAnalyticsCollectionOperations( IPartner rootPartnerOperations )
+    public PartnerLicensesAnalyticsCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
 
-        deployments = new PartnerLicensesDeploymentInsightsCollectionOperations( this.getPartner() );
-        usage = new PartnerLicensesUsageInsightsCollectionOperations( this.getPartner() );
+        deployments = new PartnerLicensesDeploymentInsightsCollectionOperations(this.getPartner());
+        usage = new PartnerLicensesUsageInsightsCollectionOperations(this.getPartner());
     }
 
     /**

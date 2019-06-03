@@ -53,7 +53,7 @@ public interface IResourceCollectionEnumerator<T extends ResourceBaseWithLinks<S
      * @param context An optional request context. If not provided, the context associated with the partner operations
      *            will be used.
      */
-    void next( IRequestContext context );
+    void next(IRequestContext context);
 
     /**
      * Retrieves the previous result set.
@@ -66,5 +66,5 @@ public interface IResourceCollectionEnumerator<T extends ResourceBaseWithLinks<S
      * @param context An optional request context. If not provided, the context associated with the partner operations
      *            will be used.
      */
-    void previous( IRequestContext context );
+    void previous(IRequestContext context);
 }

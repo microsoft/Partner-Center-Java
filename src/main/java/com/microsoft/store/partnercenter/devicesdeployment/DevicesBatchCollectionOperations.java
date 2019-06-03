@@ -43,7 +43,7 @@ public class DevicesBatchCollectionOperations
 	 * @param deviceBatchId The devices batch identifier.
 	 * @return The devices batch behavior.
 	 */
-	public IDevicesBatch byId( String deviceBatchId )
+	public IDevicesBatch byId(String deviceBatchId)
 	{
 		return new DevicesBatchOperations(this.getPartner(), this.getContext(), deviceBatchId); 
 	}
@@ -54,7 +54,7 @@ public class DevicesBatchCollectionOperations
 	 * @param newDeviceBatch The new devices batch.
 	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
-	public String create( DeviceBatchCreationRequest newDeviceBatch )
+	public String create(DeviceBatchCreationRequest newDeviceBatch)
 	{
 		Response response = this.getPartner().getServiceClient().post(
 			this.getPartner(), 
@@ -77,7 +77,7 @@ public class DevicesBatchCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<DeviceBatch>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetDeviceBatches").getPath(),
 				this.getContext()));
 	}

@@ -25,7 +25,7 @@ public class UsageRecordBase
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -40,7 +40,7 @@ public class UsageRecordBase
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -55,7 +55,7 @@ public class UsageRecordBase
         return __TotalCost;
     }
 
-    public void setTotalCost( double value )
+    public void setTotalCost(double value)
     {
         __TotalCost = value;
     }
@@ -70,7 +70,7 @@ public class UsageRecordBase
         return __CurrencyLocale;
     }
 
-    public void setCurrencyLocale( Locale value )
+    public void setCurrencyLocale(Locale value)
     {
         __CurrencyLocale = value;
     }
@@ -85,7 +85,7 @@ public class UsageRecordBase
         return __LastModifiedDate;
     }
 
-    public void setLastModifiedDate( DateTime value )
+    public void setLastModifiedDate(DateTime value)
     {
     	__LastModifiedDate = value;
     }

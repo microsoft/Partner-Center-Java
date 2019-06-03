@@ -20,9 +20,9 @@ public class ProductCollectionByCountryOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param country               The country on which to base the products.
      */
-    public ProductCollectionByCountryOperations( IPartner rootPartnerOperations, String country )
+    public ProductCollectionByCountryOperations(IPartner rootPartnerOperations, String country)
     {
-        super( rootPartnerOperations, country );
+        super(rootPartnerOperations, country);
 
         ParameterValidator.isValidCountryCode(country);
     }

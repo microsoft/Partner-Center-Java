@@ -26,13 +26,13 @@ public class PartnerServiceRequestOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param serviceRequestId The service request Id.
      */
-    public PartnerServiceRequestOperations( IPartner rootPartnerOperations, String serviceRequestId )
+    public PartnerServiceRequestOperations(IPartner rootPartnerOperations, String serviceRequestId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( serviceRequestId, "" ) );
+        super(rootPartnerOperations, new Tuple<String, String>(serviceRequestId, ""));
 
-        if ( StringHelper.isNullOrWhiteSpace( serviceRequestId ) )
+        if (StringHelper.isNullOrWhiteSpace(serviceRequestId))
         {
-            throw new IllegalArgumentException( "serviceRequestId can't be null" );
+            throw new IllegalArgumentException("serviceRequestId can't be null");
         }
     }
 
@@ -47,7 +47,7 @@ public class PartnerServiceRequestOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ServiceRequest>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetServiceRequestPartner").getPath(),
                 this.getContext().getItem1()));
     }
@@ -59,12 +59,12 @@ public class PartnerServiceRequestOperations
      * @return Updated Service Request
      */
     @Override
-    public ServiceRequest patch( ServiceRequest updatePayload )
+    public ServiceRequest patch(ServiceRequest updatePayload)
     {
         return this.getPartner().getServiceClient().patch(
             this.getPartner(),
             new TypeReference<ServiceRequest>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetServiceRequestPartner").getPath(),
                 this.getContext().getItem1()),
             updatePayload);

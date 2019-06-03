@@ -13,7 +13,7 @@ public class LicenseUpdate extends ResourceBase {
     /**
      * Gets or sets the list of licenses to be assigned.
      */
-	@JsonProperty( "LicensesToAssign" )
+	@JsonProperty("LicensesToAssign")
 	private Iterable<LicenseAssignment> __LicensesToAssign;
     
     public Iterable<LicenseAssignment> getLicensesToAssign()
@@ -21,7 +21,7 @@ public class LicenseUpdate extends ResourceBase {
         return __LicensesToAssign;
     }
 
-    public void setLicensesToAssign( Iterable<LicenseAssignment> value )
+    public void setLicensesToAssign(Iterable<LicenseAssignment> value)
     {
     	__LicensesToAssign = value;
     }
@@ -29,7 +29,7 @@ public class LicenseUpdate extends ResourceBase {
     /**
      * Gets or sets the list of license id's to be removed.
      */
-    @JsonProperty( "LicensesToRemove" )
+    @JsonProperty("LicensesToRemove")
     private Iterable<String> __LicensesToRemove;
     
     public Iterable<String> getLicensesToRemove()
@@ -37,7 +37,7 @@ public class LicenseUpdate extends ResourceBase {
         return __LicensesToRemove;
     }
 
-    public void setLicensesToRemove( Iterable<String> value )
+    public void setLicensesToRemove(Iterable<String> value)
     {
     	__LicensesToRemove = value;
     }
@@ -45,7 +45,7 @@ public class LicenseUpdate extends ResourceBase {
     /**
      * Gets list of warnings that occurred during license assignment. This is a read only property.
      */
-    @JsonProperty( "LicenseWarnings" )
+    @JsonProperty("LicenseWarnings")
     private Iterable<LicenseWarning> __LicenseWarnings;
     
     public Iterable<LicenseWarning> getLicenseWarnings()
@@ -54,7 +54,7 @@ public class LicenseUpdate extends ResourceBase {
     }
 
     @SuppressWarnings("unused")
-	private void setLicenseWarnings( Iterable<LicenseWarning> value )
+	private void setLicenseWarnings(Iterable<LicenseWarning> value)
     {
     	__LicenseWarnings = value;
     }

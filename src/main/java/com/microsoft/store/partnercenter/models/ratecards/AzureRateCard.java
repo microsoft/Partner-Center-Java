@@ -20,7 +20,7 @@ public class AzureRateCard extends ResourceBase
         return __Locale;
     }
 
-    public void setLocale( String value )
+    public void setLocale(String value)
     {
     	__Locale = value;
     }
@@ -35,7 +35,7 @@ public class AzureRateCard extends ResourceBase
         return __Currency;
     }
 
-    public void setCurrency( String value )
+    public void setCurrency(String value)
     {
     	__Currency = value;
     }
@@ -50,7 +50,7 @@ public class AzureRateCard extends ResourceBase
     	return __IsTaxIncluded;
     }
     
-    public void setIsTaxIncluded( boolean value )
+    public void setIsTaxIncluded(boolean value)
     {
     	__IsTaxIncluded = value;
     }
@@ -65,7 +65,7 @@ public class AzureRateCard extends ResourceBase
     	return __Meters;
     }
     
-    public void setMeters( Iterable<AzureMeter> value )
+    public void setMeters(Iterable<AzureMeter> value)
     {
     	__Meters = value;
     }
@@ -80,7 +80,7 @@ public class AzureRateCard extends ResourceBase
     	return __OfferTerms;
     }
     
-    public void setOfferTerms( Iterable<AzureOfferTerm> value )
+    public void setOfferTerms(Iterable<AzureOfferTerm> value)
     {
     	__OfferTerms = value;
     }

@@ -16,11 +16,11 @@ public class Sort
      * @param sortField The sort field.
      * @param sortDirection The sort direction.
      */
-    public Sort( String sortField, SortDirection sortDirection )
+    public Sort(String sortField, SortDirection sortDirection)
 
     {
-        this.setSortField( sortField );
-        this.setSortDirection( sortDirection );
+        this.setSortField(sortField);
+        this.setSortDirection(sortDirection);
     }
 
     /**
@@ -33,7 +33,7 @@ public class Sort
         return __SortField;
     }
 
-    public void setSortField( String value )
+    public void setSortField(String value)
     {
         __SortField = value;
     }
@@ -48,7 +48,7 @@ public class Sort
         return __SortDirection;
     }
 
-    public void setSortDirection( SortDirection value )
+    public void setSortDirection(SortDirection value)
     {
         __SortDirection = value;
     }
@@ -60,6 +60,6 @@ public class Sort
      */
     public String toString()
     {
-        return MessageFormat.format( "Sort: {0}, {1}", this.getSortField(), this.getSortDirection() );
+        return MessageFormat.format("Sort: {0}, {1}", this.getSortField(), this.getSortDirection());
     }
 }

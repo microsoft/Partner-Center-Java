@@ -24,11 +24,11 @@ public class IndexBasedCollectionEnumerator<T extends ResourceBase, TResourceCol
      * @param resourceCollectionConverter The resource collection converter.
      * @param responseType The type of resource collection.
      */
-    public IndexBasedCollectionEnumerator( IPartner partnerOperations,
+    public IndexBasedCollectionEnumerator(IPartner partnerOperations,
                                            TResourceCollection pagedResourceCollection,
                                            ObjectMapper resourceCollectionConverter,
-                                           TypeReference<TResourceCollection> responseType )
+                                           TypeReference<TResourceCollection> responseType)
     {
-        super( partnerOperations, pagedResourceCollection, resourceCollectionConverter, responseType );
+        super(partnerOperations, pagedResourceCollection, resourceCollectionConverter, responseType);
     }
 }

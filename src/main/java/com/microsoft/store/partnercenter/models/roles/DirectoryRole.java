@@ -13,7 +13,7 @@ public class DirectoryRole extends ResourceBase {
     /**
      * Gets or sets the name of the directory role.
      */
-	@JsonProperty( "name" )
+	@JsonProperty("name")
     private String __Name;
     
     public String getName()
@@ -21,7 +21,7 @@ public class DirectoryRole extends ResourceBase {
     	return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
     	__Name = value;
     }
@@ -29,7 +29,7 @@ public class DirectoryRole extends ResourceBase {
     /**
      * Gets or sets the id of the directory role.
      */
-	@JsonProperty( "id" )
+	@JsonProperty("id")
     private String __Id;
 
     public String getId()
@@ -37,7 +37,7 @@ public class DirectoryRole extends ResourceBase {
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	__Id = value;
     }

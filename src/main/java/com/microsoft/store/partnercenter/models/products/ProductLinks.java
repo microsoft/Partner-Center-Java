@@ -22,7 +22,7 @@ public class ProductLinks
         return __Skus;
     }
 
-    public void setSkus( Link value )
+    public void setSkus(Link value)
     {
         __Skus = value;
     }

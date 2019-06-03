@@ -32,7 +32,7 @@ public class Offer
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -47,7 +47,7 @@ public class Offer
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -62,7 +62,7 @@ public class Offer
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -77,7 +77,7 @@ public class Offer
         return __MinimumQuantity;
     }
 
-    public void setMinimumQuantity( int value )
+    public void setMinimumQuantity(int value)
     {
         __MinimumQuantity = value;
     }
@@ -92,7 +92,7 @@ public class Offer
         return __MaximumQuantity;
     }
 
-    public void setMaximumQuantity( int value )
+    public void setMaximumQuantity(int value)
     {
         __MaximumQuantity = value;
     }
@@ -108,7 +108,7 @@ public class Offer
         return __Rank;
     }
 
-    public void setRank( int value )
+    public void setRank(int value)
     {
         __Rank = value;
     }
@@ -123,7 +123,7 @@ public class Offer
         return __Uri;
     }
 
-    public void setUri( URI value )
+    public void setUri(URI value)
     {
         __Uri = value;
     }
@@ -138,7 +138,7 @@ public class Offer
         return __Locale;
     }
 
-    public void setLocale( String value )
+    public void setLocale(String value)
     {
         __Locale = value;
     }
@@ -153,7 +153,7 @@ public class Offer
         return __Country;
     }
 
-    public void setCountry( String value )
+    public void setCountry(String value)
     {
         __Country = value;
     }
@@ -168,7 +168,7 @@ public class Offer
         return __Category;
     }
 
-    public void setCategory( OfferCategory value )
+    public void setCategory(OfferCategory value)
     {
         __Category = value;
     }
@@ -183,7 +183,7 @@ public class Offer
         return __PrerequisiteOffers;
     }
 
-    public void setPrerequisiteOffers( List<String> value )
+    public void setPrerequisiteOffers(List<String> value)
     {
         __PrerequisiteOffers = value;
     }
@@ -198,7 +198,7 @@ public class Offer
         return __IsAddOn;
     }
 
-    public void setIsAddOn( Boolean value )
+    public void setIsAddOn(Boolean value)
     {
         __IsAddOn = value;
     }
@@ -213,7 +213,7 @@ public class Offer
         return __IsAvailableForPurchase;
     }
 
-    public void setIsAvailableForPurchase( Boolean value )
+    public void setIsAvailableForPurchase(Boolean value)
     {
         __IsAvailableForPurchase = value;
     }
@@ -228,7 +228,7 @@ public class Offer
         return __Billing;
     }
 
-    public void setBilling( BillingType value )
+    public void setBilling(BillingType value)
     {
         __Billing = value;
     }
@@ -243,7 +243,7 @@ public class Offer
         return __IsAutoRenewable;
     }
 
-    public void setIsAutoRenewable( Boolean value )
+    public void setIsAutoRenewable(Boolean value)
     {
         __IsAutoRenewable = value;
     }
@@ -258,7 +258,7 @@ public class Offer
         return __UpgradeTargetOffers;
     }
 
-    public void setUpgradeTargetOffers( List<String> value )
+    public void setUpgradeTargetOffers(List<String> value)
     {
         __UpgradeTargetOffers = value;
     }
@@ -273,7 +273,7 @@ public class Offer
         return __Product;
     }
 
-    public void setProduct( Product value )
+    public void setProduct(Product value)
     {
         __Product = value;
     }
@@ -288,7 +288,7 @@ public class Offer
         return __UnitType;
     }
 
-    public void setUnitType( String value )
+    public void setUnitType(String value)
     {
         __UnitType = value;
     }
@@ -303,7 +303,7 @@ public class Offer
         return __Links;
     }
 
-    public void setLinks( OfferLinks value )
+    public void setLinks(OfferLinks value)
     {
         __Links = value;
     }
@@ -318,7 +318,7 @@ public class Offer
         return __SalesGroupId;
     }
 
-    public void setSalesGroupId( String value )
+    public void setSalesGroupId(String value)
     {
     	__SalesGroupId = value;
     }
@@ -333,7 +333,7 @@ public class Offer
         return __IsTrial;
     }
 
-    public void setIsTrial( Boolean value )
+    public void setIsTrial(Boolean value)
     {
     	__IsTrial = value;
     }
@@ -348,7 +348,7 @@ public class Offer
         return __HasAddOns;
     }
 
-    public void setHasAddOns( Boolean value )
+    public void setHasAddOns(Boolean value)
     {
     	__HasAddOns = value;
     }
@@ -364,7 +364,7 @@ public class Offer
         return __Limit;
     }
 
-    public void setLimit( int value )
+    public void setLimit(int value)
     {
     	__Limit = value;
     }
@@ -379,7 +379,7 @@ public class Offer
         return __LimitUnitOfMeasure;
     }
 
-    public void setLimitUnitOfMeasure( String value )
+    public void setLimitUnitOfMeasure(String value)
     {
     	__LimitUnitOfMeasure = value;
     }
@@ -394,7 +394,7 @@ public class Offer
         return __SupportedBillingCycles;
     }
 
-    public void setSupportedBillingCycles( List<BillingCycleType> value )
+    public void setSupportedBillingCycles(List<BillingCycleType> value)
     {
     	__SupportedBillingCycles = value;
     }
@@ -409,7 +409,7 @@ public class Offer
         return __ResellerQualifications;
     }
 
-    public void setResellerQualifications( String[] value )
+    public void setResellerQualifications(String[] value)
     {
     	__ResellerQualifications = value;
     }
@@ -424,7 +424,7 @@ public class Offer
         return __ReselleeQualifications;
     }
 
-    public void setReselleeQualifications( String[] value )
+    public void setReselleeQualifications(String[] value)
     {
     	__ReselleeQualifications = value;
     }

@@ -30,6 +30,6 @@ public class DomainCollectionOperations
 	@Override
 	public IDomain byDomain(String domain)
 	{
-		return new DomainOperations( this.getPartner(), domain );
+		return new DomainOperations(this.getPartner(), domain);
 	}
 }

@@ -18,7 +18,7 @@ public class ServiceRequestContact
         return __Organization;
     }
 
-    public void setOrganization( ServiceRequestOrganization value )
+    public void setOrganization(ServiceRequestOrganization value)
     {
         __Organization = value;
     }
@@ -33,7 +33,7 @@ public class ServiceRequestContact
         return __ContactId;
     }
 
-    public void setContactId( String value )
+    public void setContactId(String value)
     {
         __ContactId = value;
     }
@@ -48,7 +48,7 @@ public class ServiceRequestContact
         return __LastName;
     }
 
-    public void setLastName( String value )
+    public void setLastName(String value)
     {
         __LastName = value;
     }
@@ -63,7 +63,7 @@ public class ServiceRequestContact
         return __FirstName;
     }
 
-    public void setFirstName( String value )
+    public void setFirstName(String value)
     {
         __FirstName = value;
     }
@@ -78,7 +78,7 @@ public class ServiceRequestContact
         return __Email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         __Email = value;
     }
@@ -93,7 +93,7 @@ public class ServiceRequestContact
         return __PhoneNumber;
     }
 
-    public void setPhoneNumber( String value )
+    public void setPhoneNumber(String value)
     {
         __PhoneNumber = value;
     }

@@ -18,7 +18,7 @@ public class CountryValidationRulesCollectionOperations
 	 * Initializes a new instance of the CountryValidationRulesCollectionOperations class.
 	 * @param rootPartnerOperations The root partner operation instance.
 	 */
-	public CountryValidationRulesCollectionOperations( IPartner rootPartnerOperations ) 
+	public CountryValidationRulesCollectionOperations(IPartner rootPartnerOperations) 
 	{
 		super(rootPartnerOperations);
 	}
@@ -30,7 +30,7 @@ public class CountryValidationRulesCollectionOperations
 	 * @return The country validation rules operations
 	 */
 	@Override
-	public ICountryValidationRules byCountry( String country ) {
-		return new CountryValidationRulesOperations( this.getPartner(), country );
+	public ICountryValidationRules byCountry(String country) {
+		return new CountryValidationRulesOperations(this.getPartner(), country);
 	}
 }

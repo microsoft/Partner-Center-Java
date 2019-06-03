@@ -20,7 +20,7 @@ public interface IOfferCollection
      * @param offerId The offer id.
      * @return The offer operations.
      */
-    IOffer byId( String offerId );
+    IOffer byId(String offerId);
 
     /**
      * Retrieves all the offers for the provided country.
@@ -36,7 +36,7 @@ public interface IOfferCollection
      * @param size The maximum number of offers to return.
      * @return The requested segment of the offers for the given country.
      */
-    ResourceCollection<Offer> get( int offset, int size );
+    ResourceCollection<Offer> get(int offset, int size);
 
     /**
      * Retrieves the operations that can be applied on offers that belong to an offer category.
@@ -45,5 +45,5 @@ public interface IOfferCollection
      * 
      * @return The category offers operations.
      */
-    ICategoryOffersCollection byCategory( String categoryId );
+    ICategoryOffersCollection byCategory(String categoryId);
 }

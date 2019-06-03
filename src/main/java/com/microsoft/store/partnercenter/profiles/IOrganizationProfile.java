@@ -28,6 +28,6 @@ public interface IOrganizationProfile
      * @param entity The organization profile.
      * @return The updated organization profile.
      */
-    OrganizationProfile update( OrganizationProfile entity );
+    OrganizationProfile update(OrganizationProfile entity);
 
 }

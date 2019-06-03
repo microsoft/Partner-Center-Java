@@ -20,7 +20,7 @@ public class AzureResourceMonthlyUsageRecord
         return __ResourceId;
     }
 
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
         __ResourceId = value;
     }
@@ -36,7 +36,7 @@ public class AzureResourceMonthlyUsageRecord
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -51,7 +51,7 @@ public class AzureResourceMonthlyUsageRecord
         return __Category;
     }
 
-    public void setCategory( String value )
+    public void setCategory(String value)
     {
         __Category = value;
     }
@@ -66,7 +66,7 @@ public class AzureResourceMonthlyUsageRecord
         return __Subcategory;
     }
 
-    public void setSubcategory( String value )
+    public void setSubcategory(String value)
     {
         __Subcategory = value;
     }
@@ -81,7 +81,7 @@ public class AzureResourceMonthlyUsageRecord
         return __QuantityUsed;
     }
 
-    public void setQuantityUsed( double value )
+    public void setQuantityUsed(double value)
     {
         __QuantityUsed = value;
     }
@@ -96,7 +96,7 @@ public class AzureResourceMonthlyUsageRecord
         return __Unit;
     }
 
-    public void setUnit( String value )
+    public void setUnit(String value)
     {
         __Unit = value;
     }

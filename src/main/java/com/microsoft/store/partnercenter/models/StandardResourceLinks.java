@@ -18,7 +18,7 @@ public class StandardResourceLinks
         return self;
     }
 
-    public void setSelf( Link value )
+    public void setSelf(Link value)
     {
         self = value;
     }

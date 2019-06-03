@@ -34,7 +34,7 @@ public class CustomerBillingProfile
      * 
      * @param value The profile identifier.
      */
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -56,7 +56,7 @@ public class CustomerBillingProfile
      * 
      * @param value The first name.
      */
-    public void setFirstName( String value )
+    public void setFirstName(String value)
     {
         __FirstName = value;
     }
@@ -78,7 +78,7 @@ public class CustomerBillingProfile
      * 
      * @param value The last name.
      */
-    public void setLastName( String value )
+    public void setLastName(String value)
     {
         __LastName = value;
     }
@@ -100,7 +100,7 @@ public class CustomerBillingProfile
      * 
      * @param value The email address.
      */
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         __Email = value;
     }
@@ -122,7 +122,7 @@ public class CustomerBillingProfile
      * 
      * @param value The culture.
      */
-    public void setCulture( String value )
+    public void setCulture(String value)
     {
         __Culture = value;
     }
@@ -144,7 +144,7 @@ public class CustomerBillingProfile
      * 
      * @param value The language.
      */
-    public void setLanguage( String value )
+    public void setLanguage(String value)
     {
         __Language = value;
     }
@@ -166,7 +166,7 @@ public class CustomerBillingProfile
      * 
      * @param value The name of the company.
      */
-    public void setCompanyName( String value )
+    public void setCompanyName(String value)
     {
         __CompanyName = value;
     }
@@ -188,7 +188,7 @@ public class CustomerBillingProfile
      * 
      * @param value The default address for the customer.
      */
-    public void setDefaultAddress( Address value )
+    public void setDefaultAddress(Address value)
     {
         __DefaultAddress = value;
     }

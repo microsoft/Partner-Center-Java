@@ -42,5 +42,5 @@ public interface IAzureUtilizationCollection
      * @param seekOperation The seek operation to perform. Next is only supported.
      * @return The next page of utilization records.
      */
-    ResourceCollection<AzureUtilizationRecord> seek( String continuationToken, SeekOperation seekOperation );
+    ResourceCollection<AzureUtilizationRecord> seek(String continuationToken, SeekOperation seekOperation);
 }

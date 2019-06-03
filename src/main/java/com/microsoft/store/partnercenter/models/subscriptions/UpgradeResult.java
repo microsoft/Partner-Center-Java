@@ -21,7 +21,7 @@ public class UpgradeResult
         return __SourceSubscriptionId;
     }
 
-    public void setSourceSubscriptionId( String value )
+    public void setSourceSubscriptionId(String value)
     {
         __SourceSubscriptionId = value;
     }
@@ -36,7 +36,7 @@ public class UpgradeResult
         return __TargetSubscriptionId;
     }
 
-    public void setTargetSubscriptionId( String value )
+    public void setTargetSubscriptionId(String value)
     {
         __TargetSubscriptionId = value;
     }
@@ -51,7 +51,7 @@ public class UpgradeResult
         return __UpgradeType;
     }
 
-    public void setUpgradeType( UpgradeType value )
+    public void setUpgradeType(UpgradeType value)
     {
         __UpgradeType = value;
     }
@@ -66,7 +66,7 @@ public class UpgradeResult
         return __UpgradeErrors;
     }
 
-    public void setUpgradeErrors( Iterable<UpgradeError> value )
+    public void setUpgradeErrors(Iterable<UpgradeError> value)
     {
         __UpgradeErrors = value;
     }
@@ -81,7 +81,7 @@ public class UpgradeResult
         return __LicenseErrors;
     }
 
-    public void setLicenseErrors( Iterable<UserLicenseError> value )
+    public void setLicenseErrors(Iterable<UserLicenseError> value)
     {
         __LicenseErrors = value;
     }

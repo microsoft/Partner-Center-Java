@@ -59,7 +59,7 @@ public class CustomerCompanyProfile
      * 
      * @param value The name of the company.
      */
-    public void setCompanyName( String value )
+    public void setCompanyName(String value)
     {
         __CompanyName = value;
     }
@@ -81,7 +81,7 @@ public class CustomerCompanyProfile
      * 
      * @param value The domain.
      */
-    public void setDomain( String value )
+    public void setDomain(String value)
     {
         __Domain = value;
     }
@@ -103,7 +103,7 @@ public class CustomerCompanyProfile
      * 
      * @param value The email address of the contact at the customer.
      */
-    public void setEmail ( String value )
+    public void setEmail (String value)
     {
         __Email = value;        
     }
@@ -125,7 +125,7 @@ public class CustomerCompanyProfile
      * 
      * @param value The tenant identifier.
      */
-    public void setTenantId( String value )
+    public void setTenantId(String value)
     {
         __TenantId = value;
     }

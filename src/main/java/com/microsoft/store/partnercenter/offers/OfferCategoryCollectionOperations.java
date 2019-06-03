@@ -28,11 +28,11 @@ public class OfferCategoryCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param country The country on which to base the offer categories
 	 */
-	public OfferCategoryCollectionOperations( IPartner rootPartnerOperations, String country )
+	public OfferCategoryCollectionOperations(IPartner rootPartnerOperations, String country)
 	{
-		super( rootPartnerOperations, country );
+		super(rootPartnerOperations, country);
 		
-		ParameterValidator.isValidCountryCode( country );    	
+		ParameterValidator.isValidCountryCode(country);    	
 	}
 
 	/**

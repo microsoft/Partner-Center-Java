@@ -40,21 +40,21 @@ public class InvoiceLineItemCollectionOperations
 	 * @param billingProvider The provider of billing information.
 	 * @param invoiceLineItemType The type of invoice line item.
 	 */
-	public InvoiceLineItemCollectionOperations( IPartner rootPartnerOperations, String invoiceId, BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType )
+	public InvoiceLineItemCollectionOperations(IPartner rootPartnerOperations, String invoiceId, BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType)
 	{
-		super( rootPartnerOperations, invoiceId );
+		super(rootPartnerOperations, invoiceId);
 		
-		if ( StringHelper.isNullOrEmpty( invoiceId ) )
+		if (StringHelper.isNullOrEmpty(invoiceId))
 		{
-			throw new IllegalArgumentException( "invoiceId has to be set." );
+			throw new IllegalArgumentException("invoiceId has to be set.");
 		}
 		
-		if ( billingProvider == BillingProvider.NONE )
+		if (billingProvider == BillingProvider.NONE)
 		{
 			throw new IllegalArgumentException("The billing provider is not valid.");
 		}
 
-		if ( invoiceLineItemType == InvoiceLineItemType.NONE )
+		if (invoiceLineItemType == InvoiceLineItemType.NONE)
 		{
 			throw new IllegalArgumentException("The invoice line item type is not valid.");
 		}
@@ -74,7 +74,7 @@ public class InvoiceLineItemCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<InvoiceLineItem>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getPath(),
 				this.getContext(),
 				this.billingProvider, 
@@ -87,24 +87,24 @@ public class InvoiceLineItemCollectionOperations
 	 * @return The collection of invoice line items.
 	 */
 	@Override
-	public ResourceCollection<InvoiceLineItem> get( int size, int offset )
+	public ResourceCollection<InvoiceLineItem> get(int size, int offset)
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		parameters.add( 
-			new KeyValuePair<String, String>( 
+		parameters.add(
+			new KeyValuePair<String, String>(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getParameters().get("Size"),
 				String.valueOf(size)));
 
-		parameters.add( 
-			new KeyValuePair<String, String>( 
+		parameters.add(
+			new KeyValuePair<String, String>(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getParameters().get("Offset"),
 				String.valueOf(offset)));
 
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<InvoiceLineItem>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getPath(),
 				this.getContext(),
 				this.billingProvider, 

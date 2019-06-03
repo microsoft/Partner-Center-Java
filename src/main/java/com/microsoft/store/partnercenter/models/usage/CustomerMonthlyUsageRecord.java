@@ -22,7 +22,7 @@ public class CustomerMonthlyUsageRecord
         return __Budget;
     }
 
-    public void setBudget( SpendingBudget value )
+    public void setBudget(SpendingBudget value)
     {
         __Budget = value;
     }
@@ -37,7 +37,7 @@ public class CustomerMonthlyUsageRecord
         return __PercentUsed;
     }
 
-    public void setPercentUsed( double value )
+    public void setPercentUsed(double value)
     {
         __PercentUsed = value;
     }

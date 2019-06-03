@@ -22,7 +22,7 @@ public class OfferLinks
         return __LearnMore;
     }
 
-    public void setLearnMore( Link value )
+    public void setLearnMore(Link value)
     {
         __LearnMore = value;
     }

@@ -23,7 +23,7 @@ public class SubscriptionProvisioningStatus
         return __SkuId;
     }
 
-    public void setSkuId( String value )
+    public void setSkuId(String value)
     {
         __SkuId = value;
     }
@@ -38,7 +38,7 @@ public class SubscriptionProvisioningStatus
         return __Status;
     }
 
-    public void setStatus( ProvisioningStatus value )
+    public void setStatus(ProvisioningStatus value)
     {
         __Status = value;
     }
@@ -54,7 +54,7 @@ public class SubscriptionProvisioningStatus
         return __Quantity;
     }
 
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         __Quantity = value;
     }
@@ -70,7 +70,7 @@ public class SubscriptionProvisioningStatus
         return __EndDate;
     }
 
-    public void setEndDate( DateTime value )
+    public void setEndDate(DateTime value)
     {
         __EndDate = value;
     }

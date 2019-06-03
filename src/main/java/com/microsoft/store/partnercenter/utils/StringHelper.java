@@ -13,69 +13,69 @@ import com.microsoft.store.partnercenter.exception.PartnerException;
 
 public class StringHelper
 {
-    public static String fromInputStream( InputStream is )
+    public static String fromInputStream(InputStream is)
     {
-        return StringHelper.fromInputStream( is, "UTF-16" );
+        return StringHelper.fromInputStream(is, "UTF-16");
     }
 
-    public static String fromInputStream( InputStream is, String encoding )
+    public static String fromInputStream(InputStream is, String encoding)
     {
-        if ( is == null )
+        if (is == null)
         {
             return "";
         }
         BufferedReader bufferedReader;
         try
         {
-            bufferedReader = new BufferedReader( new InputStreamReader( is, encoding ) );
+            bufferedReader = new BufferedReader(new InputStreamReader(is, encoding));
         }
-        catch ( UnsupportedEncodingException e )
+        catch (UnsupportedEncodingException e)
         {
-            throw new PartnerException( "Incorrect character encoding", e );
+            throw new PartnerException("Incorrect character encoding", e);
         }
         StringBuilder stringBuilder = new StringBuilder();
-        String newLine = System.getProperty( "line.separator" );
+        String newLine = System.getProperty("line.separator");
         String line;
         try
         {
-            while ( ( line = bufferedReader.readLine() ) != null )
+            while ((line = bufferedReader.readLine()) != null)
             {
-                stringBuilder.append( line );
-                stringBuilder.append( newLine );
+                stringBuilder.append(line);
+                stringBuilder.append(newLine);
             }
             is.close();
             bufferedReader.close();
         }
-        catch ( IOException e )
+        catch (IOException e)
         {
-            throw new PartnerException( "Error trying to obtain the response content body", e );
+            throw new PartnerException("Error trying to obtain the response content body", e);
         }
         return stringBuilder.toString();
     }
 
-    public static boolean isNullOrEmpty( String string )
+    public static boolean isNullOrEmpty(String string)
     {
         return string == null || string.isEmpty();
     }
 
-    public static boolean isNullOrWhiteSpace( String string )
+    public static boolean isNullOrWhiteSpace(String string)
     {
-        return string == null || string.isEmpty() || isWhiteSpace( string );
+        return string == null || string.isEmpty() || isWhiteSpace(string);
     }
 
-    public static boolean isEmptyOrContainsWhiteSpace( String string )
+    public static boolean isEmptyOrContainsWhiteSpace(String string)
     {
-        return string == null || string.isEmpty() || containsWhiteSpace( string );
+        return string == null || string.isEmpty() || containsWhiteSpace(string);
     }
 
-    private static boolean isWhiteSpace( String string )
+    private static boolean isWhiteSpace(String string)
     {
         int length = string.length();
-        if ( length > 0 )
+        if (length > 0)
         {
-            for ( int i = 0; i < length; i++ )
+            for (int i = 0; i < length; i++)
             {
-                if ( !Character.isWhitespace( string.charAt( i ) ) )
+                if (!Character.isWhitespace(string.charAt(i)))
                 {
                     return false;
                 }
@@ -85,14 +85,14 @@ public class StringHelper
         return false;
     }
 
-    private static boolean containsWhiteSpace( String string )
+    private static boolean containsWhiteSpace(String string)
     {
         int length = string.length();
-        if ( length > 0 )
+        if (length > 0)
         {
-            for ( int i = 0; i < length; i++ )
+            for (int i = 0; i < length; i++)
             {
-                if ( Character.isWhitespace( string.charAt( i ) ) )
+                if (Character.isWhitespace(string.charAt(i)))
                 {
                     return true;
                 }

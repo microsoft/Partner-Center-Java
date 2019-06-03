@@ -15,7 +15,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the number of units available for assignment. This is calculated as Total units - Consumed units.
      */
-	@JsonProperty( "AvailableUnits" )
+	@JsonProperty("AvailableUnits")
     private int __AvailableUnits;
 
     public int getAvailableUnits()
@@ -23,7 +23,7 @@ public class SubscribedSku extends ResourceBase {
         return __AvailableUnits;
     }
 
-    public void setAvailableUnits( int value )
+    public void setAvailableUnits(int value)
     {
     	__AvailableUnits = value;
     }
@@ -31,14 +31,14 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the number of units active for assignment.
      */
-    @JsonProperty( "ActiveUnits" )
+    @JsonProperty("ActiveUnits")
     private int __ActiveUnits;
     public int getActiveUnits()
     {
         return __ActiveUnits;
     }
 
-    public void setActiveUnits( int value )
+    public void setActiveUnits(int value)
     {
     	__ActiveUnits = value;
     }
@@ -46,7 +46,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the number of consumed units.
      */
-    @JsonProperty( "ConsumedUnits" )
+    @JsonProperty("ConsumedUnits")
     private int __ConsumedUnits;
     
     public int getConsumedUnits()
@@ -54,7 +54,7 @@ public class SubscribedSku extends ResourceBase {
         return __ConsumedUnits;
     }
 
-    public void setConsumedUnits( int value )
+    public void setConsumedUnits(int value)
     {
     	__ConsumedUnits = value;
     }
@@ -62,7 +62,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the number of suspended units.
      */
-    @JsonProperty( "SuspendedUnits" )
+    @JsonProperty("SuspendedUnits")
     private int __SuspendedUnits;
     
     public int getSuspendedUnits()
@@ -70,7 +70,7 @@ public class SubscribedSku extends ResourceBase {
         return __SuspendedUnits;
     }
 
-    public void setSuspendedUnits( int value )
+    public void setSuspendedUnits(int value)
     {
     	__SuspendedUnits = value;
     }
@@ -78,7 +78,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the total units, which is sum of active and warning units.
      */
-    @JsonProperty( "TotalUnits" )
+    @JsonProperty("TotalUnits")
     private int __TotalUnits;
     
     public int getTotalUnits()
@@ -86,7 +86,7 @@ public class SubscribedSku extends ResourceBase {
         return __TotalUnits;
     }
 
-    public void setTotalUnits( int value )
+    public void setTotalUnits(int value)
     {
     	__TotalUnits = value;
     }
@@ -94,7 +94,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the number of warning units.
      */
-    @JsonProperty( "WarningUnits" )
+    @JsonProperty("WarningUnits")
     private int __WarningUnits;
     
     public int getWarningUnits()
@@ -102,7 +102,7 @@ public class SubscribedSku extends ResourceBase {
         return __WarningUnits;
     }
 
-    public void setWarningUnits( int value )
+    public void setWarningUnits(int value)
     {
     	__WarningUnits = value;
     }
@@ -110,7 +110,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the products.
      */
-    @JsonProperty( "ProductSku" )
+    @JsonProperty("ProductSku")
     private ProductSku __ProductSku;
     
     public ProductSku getProductSku()
@@ -118,7 +118,7 @@ public class SubscribedSku extends ResourceBase {
         return __ProductSku;
     }
 
-    public void setProductSku( ProductSku value )
+    public void setProductSku(ProductSku value)
     {
     	__ProductSku = value;
     }
@@ -126,7 +126,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      * Gets or sets the collection of service plans of a product.
      */
-    @JsonProperty( "ServicePlans" )
+    @JsonProperty("ServicePlans")
     private List<ServicePlan> __ServicePlans;
     
     public List<ServicePlan> getServicePlans()
@@ -134,7 +134,7 @@ public class SubscribedSku extends ResourceBase {
         return __ServicePlans;
     }
 
-    public void setServicePlans( List<ServicePlan> value )
+    public void setServicePlans(List<ServicePlan> value)
     {
     	__ServicePlans = value;
     }
@@ -142,7 +142,7 @@ public class SubscribedSku extends ResourceBase {
     /**
      *  Gets or sets the SKU status of a product.
      */
-    @JsonProperty( "CapabilityStatus" )
+    @JsonProperty("CapabilityStatus")
     private String __CapabilityStatus;
     
     public String getCapabilityStatus()
@@ -150,7 +150,7 @@ public class SubscribedSku extends ResourceBase {
         return __CapabilityStatus;
     }
 
-    public void setCapabilityStatus( String value )
+    public void setCapabilityStatus(String value)
     {
     	__CapabilityStatus = value;
     }

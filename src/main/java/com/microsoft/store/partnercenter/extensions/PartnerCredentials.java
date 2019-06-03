@@ -44,11 +44,11 @@ public class PartnerCredentials
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
-                                                                        String aadApplicationDomain )
+    public IPartnerCredentials generateByApplicationCredentials(String clientId, String applicationSecret,
+                                                                        String aadApplicationDomain)
     {
-        return PartnerCredentials.getInstance().generateByApplicationCredentials( clientId, applicationSecret, aadApplicationDomain,
-                                                                    null );
+        return PartnerCredentials.getInstance().generateByApplicationCredentials(clientId, applicationSecret, aadApplicationDomain,
+                                                                    null);
     }
 
     /**
@@ -60,13 +60,13 @@ public class PartnerCredentials
      * @param requestContext The request context.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
+    public IPartnerCredentials generateByApplicationCredentials(String clientId, String applicationSecret,
                                                                         String aadApplicationDomain,
-                                                                        IRequestContext requestContext )
+                                                                        IRequestContext requestContext)
     {
         ApplicationPartnerCredentials partnerCredentials =
-            new ApplicationPartnerCredentials( clientId, applicationSecret, aadApplicationDomain );
-        partnerCredentials.authenticate( requestContext );
+            new ApplicationPartnerCredentials(clientId, applicationSecret, aadApplicationDomain);
+        partnerCredentials.authenticate(requestContext);
 
         return partnerCredentials;
     }
@@ -81,12 +81,12 @@ public class PartnerCredentials
      *            Azure Active Directory token.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByUserCredentials( String clientId,
+    public IPartnerCredentials generateByUserCredentials(String clientId,
                                                                  AuthenticationToken authenticationToken,
-                                                                 IAadLoginHandler loginHandler )
+                                                                 IAadLoginHandler loginHandler)
     {
         final UserPartnerCredentials partnerCredentials =
-            new UserPartnerCredentials( clientId, authenticationToken, loginHandler );
+            new UserPartnerCredentials(clientId, authenticationToken, loginHandler);
         return partnerCredentials;
     }
 
@@ -101,34 +101,34 @@ public class PartnerCredentials
      * @param graphEndpoint The AAD graph API endpoint.
      * @return The partner service credentials.
      */
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
+    public IPartnerCredentials generateByApplicationCredentials(String clientId, String applicationSecret,
                                                                         String aadApplicationDomain,
                                                                         String aadAuthorityEndpoint,
-                                                                        String graphEndpoint )
+                                                                        String graphEndpoint)
     {
-        return PartnerCredentials.getInstance().generateByApplicationCredentials( clientId, applicationSecret, aadApplicationDomain,
-                                                                    aadAuthorityEndpoint, graphEndpoint, null );
+        return PartnerCredentials.getInstance().generateByApplicationCredentials(clientId, applicationSecret, aadApplicationDomain,
+                                                                    aadAuthorityEndpoint, graphEndpoint, null);
     }
 
-    public IPartnerCredentials generateByApplicationCredentials( String clientId, String applicationSecret,
+    public IPartnerCredentials generateByApplicationCredentials(String clientId, String applicationSecret,
                                                                         String aadApplicationDomain,
                                                                         String aadAuthorityEndpoint,
                                                                         String graphEndpoint,
-                                                                        IRequestContext requestContext )
+                                                                        IRequestContext requestContext)
     {
-        if ( StringHelper.isNullOrWhiteSpace( aadAuthorityEndpoint ) )
+        if (StringHelper.isNullOrWhiteSpace(aadAuthorityEndpoint))
         {
-            throw new IllegalArgumentException( "aadAuthorityEndpoint can't be empty" );
+            throw new IllegalArgumentException("aadAuthorityEndpoint can't be empty");
         }
-        if ( StringHelper.isNullOrWhiteSpace( graphEndpoint ) )
+        if (StringHelper.isNullOrWhiteSpace(graphEndpoint))
         {
-            throw new IllegalArgumentException( "graphEndpoint can't be empty" );
+            throw new IllegalArgumentException("graphEndpoint can't be empty");
         }
 
         ApplicationPartnerCredentials partnerCredentials =
-            new ApplicationPartnerCredentials( clientId, applicationSecret, aadApplicationDomain, aadAuthorityEndpoint,
-                                               graphEndpoint );
-        partnerCredentials.authenticate( requestContext );
+            new ApplicationPartnerCredentials(clientId, applicationSecret, aadApplicationDomain, aadAuthorityEndpoint,
+                                               graphEndpoint);
+        partnerCredentials.authenticate(requestContext);
 
         return partnerCredentials;
     }

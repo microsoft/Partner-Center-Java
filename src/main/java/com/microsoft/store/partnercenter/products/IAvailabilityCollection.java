@@ -23,7 +23,7 @@ public interface IAvailabilityCollection
      * @param availabilityId Identifier for the availability.
      * @return The availability operations.
      */    
-    IAvailability byId( String availabilityId );
+    IAvailability byId(String availabilityId);
 
     /**
      * Retrieves the operations that can be applied on availabilities filtered by a specific target segment.

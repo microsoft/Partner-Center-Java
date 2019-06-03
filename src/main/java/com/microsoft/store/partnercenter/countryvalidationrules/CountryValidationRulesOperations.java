@@ -25,10 +25,10 @@ public class CountryValidationRulesOperations
 	 * @param rootPartnerOperations The root partner operations instance
 	 * @param country The country
 	 */
-	protected CountryValidationRulesOperations( IPartner rootPartnerOperations, String country )
+	protected CountryValidationRulesOperations(IPartner rootPartnerOperations, String country)
 	{
-		super( rootPartnerOperations, country );
-		ParameterValidator.isValidCountryCode( country );
+		super(rootPartnerOperations, country);
+		ParameterValidator.isValidCountryCode(country);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class CountryValidationRulesOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CountryValidationRules>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCountryValidationRulesByCountry").getPath(),
 				this.getContext()));
 	}

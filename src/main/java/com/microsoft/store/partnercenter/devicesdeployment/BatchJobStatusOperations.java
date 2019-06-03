@@ -48,7 +48,7 @@ public class BatchJobStatusOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<BatchUploadDetails>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetBatchUploadStatus").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));

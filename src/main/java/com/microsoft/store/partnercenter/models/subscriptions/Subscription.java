@@ -123,7 +123,7 @@ public class Subscription
      */
     public Subscription()
     {
-        this.setLinks( new SubscriptionLinks() );
+        this.setLinks(new SubscriptionLinks());
     }
 
     /**
@@ -151,7 +151,7 @@ public class Subscription
      * 
      * @param value The date and time when the subscription was created.
      */
-    public void setCreationDate( DateTime value )
+    public void setCreationDate(DateTime value)
     {
         creationDate = value;
     }
@@ -171,7 +171,7 @@ public class Subscription
      * 
      * @param value The friendly name for the subscription.
      */
-    public void setFriendlyName( String value )
+    public void setFriendlyName(String value)
     {
         friendlyName = value;
     }
@@ -201,7 +201,7 @@ public class Subscription
      * 
      * @param value The identifier for the subscription.
      */
-    public void setId( String value )
+    public void setId(String value)
     {
         id = value;
     }
@@ -251,7 +251,7 @@ public class Subscription
      * 
      * @param value The offer identifier that created the subscription.
      */
-    public void setOfferId( String value )
+    public void setOfferId(String value)
     {
         offerId = value;
     }
@@ -271,7 +271,7 @@ public class Subscription
      * 
      * @param value The name of the offer that created the subscription.
      */
-    public void setOfferName( String value )
+    public void setOfferName(String value)
     {
     	offerName = value;
     }
@@ -291,7 +291,7 @@ public class Subscription
      * 
      * @param value The parent subscription identifier for the subscription. 
      */
-    public void setParentSubscriptionId( String value )
+    public void setParentSubscriptionId(String value)
     {
         parentSubscriptionId = value;
     }
@@ -331,7 +331,7 @@ public class Subscription
      *
      * @param value The entitlement identifier for the subscription.
      */
-    public void setEntitlementId( final String value )
+    public void setEntitlementId(final String value)
     {
         entitlementId = value;
     }
@@ -369,7 +369,7 @@ public class Subscription
      * 
      * @param value The quantity for the subscription.
      */
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         quantity = value;
     }
@@ -409,7 +409,7 @@ public class Subscription
      * 
      * @param value The units defining the quantity for the subscription.
      */
-    public void setUnitType( String value )
+    public void setUnitType(String value)
     {
         unitType = value;
     }
@@ -425,8 +425,8 @@ public class Subscription
         return __EffectiveStartDate;
     }
 
-    @JsonProperty( "effectiveStartDate" )
-    public void setEffectiveStartDate( DateTime value )
+    @JsonProperty("effectiveStartDate")
+    public void setEffectiveStartDate(DateTime value)
     {
         __EffectiveStartDate = value;
     }
@@ -442,8 +442,8 @@ public class Subscription
         return __CommitmentEndDate;
     }
 
-    @JsonProperty( "commitmentEndDate" )
-    public void setCommitmentEndDate( DateTime value )
+    @JsonProperty("commitmentEndDate")
+    public void setCommitmentEndDate(DateTime value)
     {
         __CommitmentEndDate = value;
     }
@@ -458,7 +458,7 @@ public class Subscription
         return __Status;
     }
 
-    public void setStatus( SubscriptionStatus value )
+    public void setStatus(SubscriptionStatus value)
     {
         __Status = value;
     }
@@ -473,7 +473,7 @@ public class Subscription
         return __AutoRenewEnabled;
     }
 
-    public void setAutoRenewEnabled( boolean value )
+    public void setAutoRenewEnabled(boolean value)
     {
         __AutoRenewEnabled = value;
     }
@@ -488,7 +488,7 @@ public class Subscription
         return __BillingType;
     }
 
-    public void setBillingType( BillingType value )
+    public void setBillingType(BillingType value)
     {
         __BillingType = value;
     }
@@ -503,7 +503,7 @@ public class Subscription
         return __PartnerId;
     }
 
-    public void setPartnerId( String value )
+    public void setPartnerId(String value)
     {
         __PartnerId = value;
     }
@@ -517,11 +517,11 @@ public class Subscription
         return ContractType.SUBSCRIPTION;
     }
 
-    public void setContractType( ContractType type )
+    public void setContractType(ContractType type)
     {
-        if ( type != ContractType.SUBSCRIPTION )
+        if (type != ContractType.SUBSCRIPTION)
         {
-            throw new PartnerException( "API error: the subscription contract type should be subscription" );
+            throw new PartnerException("API error: the subscription contract type should be subscription");
         }
     }
 
@@ -535,7 +535,7 @@ public class Subscription
         return __Links;
     }
 
-    public void setLinks( SubscriptionLinks value )
+    public void setLinks(SubscriptionLinks value)
     {
         __Links = value;
     }
@@ -550,7 +550,7 @@ public class Subscription
         return __SuspensionReasons;
     }
 
-    public void setSuspensionReasons( Iterable<String> value )
+    public void setSuspensionReasons(Iterable<String> value)
     {
         __SuspensionReasons = value;
     }

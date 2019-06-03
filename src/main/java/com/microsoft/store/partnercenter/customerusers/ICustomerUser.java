@@ -56,5 +56,5 @@ public interface ICustomerUser
      * @param entity Customer user entity.
      * @return The updated user. 
      */
-    CustomerUser patch( CustomerUser entity );
+    CustomerUser patch(CustomerUser entity);
 }

@@ -14,5 +14,5 @@ public interface IEntityCreateOperations<T, T1>
      * @param newEntity The new entity information.
      * @return The entity information that was just created.
      */
-    T1 create( T newEntity );
+    T1 create(T newEntity);
 }

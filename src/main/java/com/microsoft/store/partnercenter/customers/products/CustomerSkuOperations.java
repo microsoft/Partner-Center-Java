@@ -31,23 +31,23 @@ public class CustomerSkuOperations extends BasePartnerComponent<TripletTuple<Str
 	 * @param productId The product id for which to retrieve its SKU.
 	 * @param skuId Identifier for the SKU.
 	 */
-	public CustomerSkuOperations( IPartner rootPartnerOperations, String customerId, String productId, String skuId )
+	public CustomerSkuOperations(IPartner rootPartnerOperations, String customerId, String productId, String skuId)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>( customerId, productId, skuId ) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, productId, skuId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 	}
 
@@ -78,7 +78,7 @@ public class CustomerSkuOperations extends BasePartnerComponent<TripletTuple<Str
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Sku>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerSku").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2(),

@@ -18,7 +18,7 @@ public class CurrencyInfo
         return __Code;
     }
 
-    public void setCode( String value )
+    public void setCode(String value)
     {
         __Code = value;
     }
@@ -33,7 +33,7 @@ public class CurrencyInfo
         return __Symbol;
     }
 
-    public void setSymbol( String value )
+    public void setSymbol(String value)
     {
         __Symbol = value;
     }

@@ -29,5 +29,5 @@ public interface ICustomerProductCollectionByTargetView
      * @param targetSegment The product segment filter.
      * @return The product collection operations by customer, by target view and by target segment.
      */
-    ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment( String targetSegment );
+    ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment(String targetSegment);
 }

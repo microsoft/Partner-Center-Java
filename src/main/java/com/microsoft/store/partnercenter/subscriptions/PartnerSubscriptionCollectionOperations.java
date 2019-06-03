@@ -32,18 +32,18 @@ public class PartnerSubscriptionCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param partnerId The partner identifier.
 	 */
-	public PartnerSubscriptionCollectionOperations( IPartner rootPartnerOperations, String customerId, String partnerId )
+	public PartnerSubscriptionCollectionOperations(IPartner rootPartnerOperations, String customerId, String partnerId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, partnerId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, partnerId));
 		
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set.");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( partnerId ) )
+		if (StringHelper.isNullOrWhiteSpace(partnerId))
 		{
-			throw new IllegalArgumentException( "partnerId must be set." );
+			throw new IllegalArgumentException("partnerId must be set.");
 		}
 
 	}

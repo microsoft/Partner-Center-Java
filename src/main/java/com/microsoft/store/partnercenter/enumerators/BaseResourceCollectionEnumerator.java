@@ -33,14 +33,14 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
      * @param resourceCollectionConverter An optional converter.
      * @param responseType The type of the resource collection.
      */
-    protected BaseResourceCollectionEnumerator( IPartner rootPartnerOperations, T resourceCollection,
+    protected BaseResourceCollectionEnumerator(IPartner rootPartnerOperations, T resourceCollection,
                                                 ObjectMapper resourceCollectionConverter,
-                                                TypeReference<T> responseType )
+                                                TypeReference<T> responseType)
     {
-        super( rootPartnerOperations );
-        if ( resourceCollection == null )
+        super(rootPartnerOperations);
+        if (resourceCollection == null)
         {
-            throw new IllegalArgumentException( "resourceCollection null" );
+            throw new IllegalArgumentException("resourceCollection null");
         }
 
         this.resourceCollection = resourceCollection;
@@ -55,9 +55,9 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     @Override
     public boolean isFirstPage()
     {
-        if ( !this.hasValue() )
+        if (!this.hasValue())
         {
-            throw new UnsupportedOperationException( "The enumerator does not have a current value" );
+            throw new UnsupportedOperationException("The enumerator does not have a current value");
         }
 
         return this.getCurrent().getLinks() == null || this.getCurrent().getLinks().getPrevious() == null;
@@ -71,9 +71,9 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     @Override
     public boolean isLastPage()
     {
-        if ( !this.hasValue() )
+        if (!this.hasValue())
         {
-            throw new UnsupportedOperationException( "The enumerator does not have a current value" );
+            throw new UnsupportedOperationException("The enumerator does not have a current value");
         }
 
         return this.getCurrent().getLinks() == null || this.getCurrent().getLinks().getNext() == null;
@@ -108,7 +108,7 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
     @Override
     public void next()
     {
-        this.next( null );
+        this.next(null);
     }
 
     /**
@@ -117,11 +117,11 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
      * @param context The request context.
      */
     @Override
-    public void next( IRequestContext context )
+    public void next(IRequestContext context)
     {
         if (!this.hasValue())
         {
-            throw new UnsupportedOperationException( "The enumerator does not have a current value" );
+            throw new UnsupportedOperationException("The enumerator does not have a current value");
         }
 
         if (this.isLastPage())
@@ -153,14 +153,14 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
      * @param context The request context.
      */
     @Override
-    public void previous( IRequestContext context )
+    public void previous(IRequestContext context)
     {
-        if ( !this.hasValue() )
+        if (!this.hasValue())
         {
-            throw new UnsupportedOperationException( "The enumerator does not have a current value" );
+            throw new UnsupportedOperationException("The enumerator does not have a current value");
         }
 
-        if ( this.isFirstPage() )
+        if (this.isFirstPage())
         {
             // we are done
             this.resourceCollection = null;

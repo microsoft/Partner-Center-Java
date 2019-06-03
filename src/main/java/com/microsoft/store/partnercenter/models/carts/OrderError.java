@@ -15,7 +15,7 @@ public class OrderError
     /**
      * Gets or sets the order group identifier with failure.
      */
-	@JsonProperty( "orderGroupId" )
+	@JsonProperty("orderGroupId")
     private String orderGroupId;
 
     public String getOrderGroupId()
@@ -23,7 +23,7 @@ public class OrderError
         return orderGroupId;
     }
 
-    public void setOrderGroupId( String value )
+    public void setOrderGroupId(String value)
     {
     	orderGroupId = value;
     }
@@ -31,7 +31,7 @@ public class OrderError
     /**
      * Gets or sets the error code associated with the issue.
      */
-	@JsonProperty( "code" )
+	@JsonProperty("code")
     private int code;
 
     public int getCode()
@@ -39,7 +39,7 @@ public class OrderError
         return code;
     }
 
-    public void setCode( int value )
+    public void setCode(int value)
     {
     	code = value;
     }
@@ -47,7 +47,7 @@ public class OrderError
     /**
      * Gets or sets the description of the issue.
      */
-	@JsonProperty( "description" )
+	@JsonProperty("description")
     private String description;
 
     public String getDescription()
@@ -55,7 +55,7 @@ public class OrderError
         return description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
     	description = value;
     }

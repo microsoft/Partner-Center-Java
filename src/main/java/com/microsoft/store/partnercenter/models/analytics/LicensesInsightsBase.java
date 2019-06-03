@@ -23,7 +23,7 @@ public abstract class LicensesInsightsBase
         return processedDateTime;
     }
 
-    public void setProcessedDateTime( DateTime value )
+    public void setProcessedDateTime(DateTime value)
     {
         processedDateTime = value;
     }
@@ -38,7 +38,7 @@ public abstract class LicensesInsightsBase
         return serviceName;
     }
 
-    public void setServiceName( String value )
+    public void setServiceName(String value)
     {
         serviceName = value;
     }
@@ -53,7 +53,7 @@ public abstract class LicensesInsightsBase
         return channel;
     }
 
-    public void setChannel( String value )
+    public void setChannel(String value)
     {
         channel = value;
     }

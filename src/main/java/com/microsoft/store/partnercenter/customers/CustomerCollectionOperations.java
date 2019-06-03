@@ -62,9 +62,9 @@ public class CustomerCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public CustomerCollectionOperations( IPartner rootPartnerOperations )
+	public CustomerCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -75,9 +75,9 @@ public class CustomerCollectionOperations
 	@Override
 	public ICustomerUsageRecordCollection getUsageRecords()
 	{
-		if ( this.usageRecords == null )
+		if (this.usageRecords == null)
 		{
-			this.usageRecords = new CustomerUsageRecordCollectionOperations( this.getPartner() );
+			this.usageRecords = new CustomerUsageRecordCollectionOperations(this.getPartner());
 		}
 		return this.usageRecords;
 	}
@@ -90,9 +90,9 @@ public class CustomerCollectionOperations
 	@Override
 	public ICustomerRelationshipRequest getRelationshipRequests()
 	{
-		if ( this.relationshipRequest == null )
+		if (this.relationshipRequest == null)
 		{
-			this.relationshipRequest = new CustomerRelationshipRequestOperations( this.getPartner() );
+			this.relationshipRequest = new CustomerRelationshipRequestOperations(this.getPartner());
 		}
 		return this.relationshipRequest;
 	}
@@ -104,9 +104,9 @@ public class CustomerCollectionOperations
 	 * @return The customer operations.
 	 */
 	@Override
-	public ICustomer byId( String customerId )
+	public ICustomer byId(String customerId)
 	{
-		return new CustomerOperations( this.getPartner(), customerId );
+		return new CustomerOperations(this.getPartner(), customerId);
 	}
 
 	/**
@@ -116,11 +116,11 @@ public class CustomerCollectionOperations
 	 * @return The customer information that was just created.
 	 */
 	@Override
-	public Customer create( Customer newCustomer )
+	public Customer create(Customer newCustomer)
 	{
-		if ( newCustomer == null )
+		if (newCustomer == null)
 		{
-			throw new IllegalArgumentException("The newCustomer parameter cannot be null." );
+			throw new IllegalArgumentException("The newCustomer parameter cannot be null.");
 		}
 
 		return this.getPartner().getServiceClient().post(
@@ -143,7 +143,7 @@ public class CustomerCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(), 
 			new TypeReference<SeekBasedResourceCollection<Customer>>(){},
-			PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomers" ).getPath());
+			PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getPath());
 	}
 
 	/**
@@ -155,41 +155,41 @@ public class CustomerCollectionOperations
 	 * @return The requested customers.
 	 */
 	@Override
-	public SeekBasedResourceCollection<Customer> query( IQuery customersQuery )
+	public SeekBasedResourceCollection<Customer> query(IQuery customersQuery)
 	{
-		if ( customersQuery == null )
+		if (customersQuery == null)
 		{
-			throw new IllegalArgumentException( "customersQuery can't be null" );
+			throw new IllegalArgumentException("customersQuery can't be null");
 		}
 
-		if ( customersQuery.getType() == QueryType.COUNT )
+		if (customersQuery.getType() == QueryType.COUNT)
 		{
-			throw new IllegalArgumentException( "customersQuery can't be a count query." );
+			throw new IllegalArgumentException("customersQuery can't be a count query.");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 		Map<String, String> headers = new HashMap<>();
 
-		if ( customersQuery.getType() == QueryType.SEEK )
+		if (customersQuery.getType() == QueryType.SEEK)
 		{
 			// if this is a seek query, add the seek operation and the continuation token to the request
-			if ( customersQuery.getToken() == null )
+			if (customersQuery.getToken() == null)
 			{
-				throw new IllegalArgumentException( "customersQuery.Token is required." );
+				throw new IllegalArgumentException("customersQuery.Token is required.");
 			}
 
 			headers.put(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getAdditionalHeaders().get("ContinuationToken"),
 				customersQuery.getToken().toString());
 
-			parameters.add( 
-				new KeyValuePair<String, String>( 
+			parameters.add(
+				new KeyValuePair<String, String>(
 					PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("SeekOperation"),
 					customersQuery.getSeekOperation().toString()));
 		}
 		else
 		{
-			if ( customersQuery.getType() == QueryType.INDEXED )
+			if (customersQuery.getType() == QueryType.INDEXED)
 			{
 				// if the query specifies a page size, validate it and add it to the request
 				ParameterValidator.isIntInclusive(
@@ -200,8 +200,8 @@ public class CustomerCollectionOperations
 						MIN_PAGE_SIZE, 
 						MAX_PAGE_SIZE));
 
-				parameters.add( 
-					new KeyValuePair<String, String>( 
+				parameters.add(
+					new KeyValuePair<String, String>(
 						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
 						String.valueOf(customersQuery.getPageSize())));
 			}
@@ -212,26 +212,26 @@ public class CustomerCollectionOperations
 						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
 						"0"));
 			}
-			if ( customersQuery.getFilter() != null )
+			if (customersQuery.getFilter() != null)
 			{
 				// add the filter to the request if specified
 				ObjectMapper mapper = new ObjectMapper();
 				
 				try
 				{
-					parameters.add( 
-						new KeyValuePair<String, String>( 
+					parameters.add(
+						new KeyValuePair<String, String>(
 							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Filter"),
 							URLEncoder.encode(mapper.writeValueAsString(customersQuery.getFilter()),
 							"UTF-8")));
 				}
-				catch ( UnsupportedEncodingException e )
+				catch (UnsupportedEncodingException e)
 				{
-					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+					throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 				}
-				catch ( JsonProcessingException e )
+				catch (JsonProcessingException e)
 				{
-					throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+					throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 				}
 			}
 		}

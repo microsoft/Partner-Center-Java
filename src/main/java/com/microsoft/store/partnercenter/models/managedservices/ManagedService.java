@@ -16,7 +16,7 @@ public class ManagedService
      */
     public ManagedService()
     {
-        this.setLinks( new ManagedServiceLinks() );
+        this.setLinks(new ManagedServiceLinks());
     }
 
     /**
@@ -29,7 +29,7 @@ public class ManagedService
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -44,7 +44,7 @@ public class ManagedService
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -59,7 +59,7 @@ public class ManagedService
         return __GroupName;
     }
 
-    public void setGroupName( String value )
+    public void setGroupName(String value)
     {
         __GroupName = value;
     }
@@ -76,7 +76,7 @@ public class ManagedService
     }
 
     @Override
-    public void setLinks( ManagedServiceLinks value )
+    public void setLinks(ManagedServiceLinks value)
     {
         __Links = value;
     }

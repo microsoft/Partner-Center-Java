@@ -22,9 +22,9 @@ public class PartnerLicensesDeploymentInsightsCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public PartnerLicensesDeploymentInsightsCollectionOperations( IPartner rootPartnerOperations )
+    public PartnerLicensesDeploymentInsightsCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
     }
 
     /**
@@ -38,6 +38,6 @@ public class PartnerLicensesDeploymentInsightsCollectionOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ResourceCollection<PartnerLicensesDeploymentInsights>>(){},
-            PartnerService.getInstance().getConfiguration().getApis().get( "PartnerLicensesDeploymentInsights" ).getPath());
+            PartnerService.getInstance().getConfiguration().getApis().get("PartnerLicensesDeploymentInsights").getPath());
     }
   }

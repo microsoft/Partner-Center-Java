@@ -31,9 +31,9 @@ public class OfferAddOnsOperations
 	 * @param offerId The offer identifier to get its add on offers.
 	 * @param country The country on which to base the offer add-ons.
 	 */
-	public OfferAddOnsOperations( IPartner rootPartnerOperations, String offerId, String country )
+	public OfferAddOnsOperations(IPartner rootPartnerOperations, String offerId, String country)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( offerId, country ) );
+		super(rootPartnerOperations, new Tuple<String, String>(offerId, country));
 
 		ParameterValidator.isValidCountryCode(country);
 	}
@@ -59,7 +59,7 @@ public class OfferAddOnsOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Offer>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOfferAddons").getPath(),
 				this.getContext().getItem1()),
 			parameters);
@@ -73,10 +73,10 @@ public class OfferAddOnsOperations
 	 * @return The requested segment of the offers for the provided country.
 	 */
 	@Override
-	public ResourceCollection<Offer> get( int offset, int size )
+	public ResourceCollection<Offer> get(int offset, int size)
 	{
-		ParameterValidator.isIntInclusive( 0, Integer.MAX_VALUE, offset, "offset has to be non-negative." );
-		ParameterValidator.isIntInclusive( 1, Integer.MAX_VALUE, size, "size has to be positive." );
+		ParameterValidator.isIntInclusive(0, Integer.MAX_VALUE, offset, "offset has to be non-negative.");
+		ParameterValidator.isIntInclusive(1, Integer.MAX_VALUE, size, "size has to be positive.");
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
@@ -110,7 +110,7 @@ public class OfferAddOnsOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Offer>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOfferAddons").getPath(),
 				this.getContext().getItem1()),
 			parameters);

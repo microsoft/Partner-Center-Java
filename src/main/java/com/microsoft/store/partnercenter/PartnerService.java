@@ -31,18 +31,18 @@ public class PartnerService
 	private PartnerService()
 	{
 		// set the global partner service properties
-		setConfiguration( readPartnerServiceConfiguration() );
-		setApiRootUrl( configuration.getPartnerServiceApiRoot() );
-		setPartnerServiceApiVersion( configuration.getPartnerServiceApiVersion() );    	
+		setConfiguration(readPartnerServiceConfiguration());
+		setApiRootUrl(configuration.getPartnerServiceApiRoot());
+		setPartnerServiceApiVersion(configuration.getPartnerServiceApiVersion());    	
 
 		// initialize the partner factory
-		setFactory( new StandardPartnerFactory() );
+		setFactory(new StandardPartnerFactory());
 
 		// Set the SDK value based on data from the configuration file.
 		sdkVersion = configuration.getSdkVersion();
 
 		// log to the debugger window
-		PartnerLog.getInstance().getLoggers().add( new SystemOutLogger() );
+		PartnerLog.getInstance().getLoggers().add(new SystemOutLogger());
 	}
 	
 	/**
@@ -72,7 +72,7 @@ public class PartnerService
 	 * 
 	 * @param value The API root URL.
 	 */
-	public void setApiRootUrl( String value )
+	public void setApiRootUrl(String value)
 	{
 		apiRootUrl = value;
 	}
@@ -94,7 +94,7 @@ public class PartnerService
 	 * 
 	 * @param value The partner service API version.
 	 */
-	private void setPartnerServiceApiVersion( String value )
+	private void setPartnerServiceApiVersion(String value)
 	{
 		partnerServiceApiVersion = value;
 	}
@@ -107,7 +107,7 @@ public class PartnerService
 	}
 
 	@SuppressWarnings("unused")
-	private void setApplicationName( String value )
+	private void setApplicationName(String value)
 	{
 		applicationName = value;
 	}
@@ -124,7 +124,7 @@ public class PartnerService
 		return configuration;
 	}
 
-	private void setConfiguration( Configuration value )
+	private void setConfiguration(Configuration value)
 	{
 		configuration = value;
 	}
@@ -136,7 +136,7 @@ public class PartnerService
 		return factory;
 	}
 
-	void setFactory( IPartnerFactory value )
+	void setFactory(IPartnerFactory value)
 	{
 		factory = value;
 	}
@@ -148,7 +148,7 @@ public class PartnerService
 		return refreshCredentialsHandler;
 	}
 
-	public void setRefreshCredentialsHandler( IPartnerCredentials partnerCredentials )
+	public void setRefreshCredentialsHandler(IPartnerCredentials partnerCredentials)
 	{
 		refreshCredentialsHandler = partnerCredentials;
 	}
@@ -181,7 +181,7 @@ public class PartnerService
 
 	public void setProxyOptions(String hostName, Integer port)
 	{
-		if (StringHelper.isNullOrWhiteSpace( hostName ))
+		if (StringHelper.isNullOrWhiteSpace(hostName))
 		{
 			throw new PartnerException("The hostName should be set");
 		}
@@ -202,9 +202,9 @@ public class PartnerService
 	 * @param credentials The partner credentials.
 	 * @return A configured partner operations object.
 	 */
-	public IAggregatePartner createPartnerOperations( IPartnerCredentials credentials )
+	public IAggregatePartner createPartnerOperations(IPartnerCredentials credentials)
 	{
-		return getFactory().build( credentials );
+		return getFactory().build(credentials);
 	}
 	
 	/**
@@ -217,14 +217,14 @@ public class PartnerService
 	{
 		ObjectMapper mapper = new ObjectMapper();
 		InputStream is =
-			PartnerService.class.getClassLoader().getResourceAsStream( "PartnerService.json" );
+			PartnerService.class.getClassLoader().getResourceAsStream("PartnerService.json");
 		try
 		{
-			return mapper.readValue( is, Configuration.class );
+			return mapper.readValue(is, Configuration.class);
 		}
-		catch ( IOException e )
+		catch (IOException e)
 		{
-			throw new PartnerException( "Problem reading PartnerSDK configuration file", e );
+			throw new PartnerException("Problem reading PartnerSDK configuration file", e);
 		}
 	}
 }

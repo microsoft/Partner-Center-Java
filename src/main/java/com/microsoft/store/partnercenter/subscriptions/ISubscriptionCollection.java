@@ -29,7 +29,7 @@ public interface ISubscriptionCollection
 	 * @param subscriptionId The subscription identifier
 	 * @return The customer subscription.
 	 */
-	ISubscription byId( String subscriptionId );
+	ISubscription byId(String subscriptionId);
 	
 	/**
 	 * Retrieves all subscriptions.
@@ -43,7 +43,7 @@ public interface ISubscriptionCollection
 	 * @param orderId The order id.
 	 * @return The order subscriptions operations.
 	 */
-	IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byOrder( String orderId );
+	IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byOrder(String orderId);
 
 	/**
 	 * Groups customer subscriptions by a partner.
@@ -51,6 +51,6 @@ public interface ISubscriptionCollection
 	 * @param partnerId The partner id.
 	 * @return The partner subscriptions operations.
 	 */
-	IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner( String partnerId );
+	IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner(String partnerId);
 
 }

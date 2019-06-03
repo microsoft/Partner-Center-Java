@@ -46,9 +46,9 @@ public class PartnerServiceRequestCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public PartnerServiceRequestCollectionOperations( IPartner rootPartnerOperations )
+	public PartnerServiceRequestCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class PartnerServiceRequestCollectionOperations
 	@Override
 	public ISupportTopicsCollection getSupportTopics()
 	{
-		return new SupportTopicsCollectionOperations( this.getPartner() );
+		return new SupportTopicsCollectionOperations(this.getPartner());
 	}
 
 	/**
@@ -69,9 +69,9 @@ public class PartnerServiceRequestCollectionOperations
 	 * @return Service Request Operations.
 	 */
 	@Override
-	public IServiceRequest byId( String serviceRequestId )
+	public IServiceRequest byId(String serviceRequestId)
 	{
-		return new PartnerServiceRequestOperations( this.getPartner(), serviceRequestId );
+		return new PartnerServiceRequestOperations(this.getPartner(), serviceRequestId);
 	}
 
 	/**
@@ -81,26 +81,26 @@ public class PartnerServiceRequestCollectionOperations
 	 * @return A collection of service requests matching the criteria.
 	 */
 	@Override
-	public ResourceCollection<ServiceRequest> query( IQuery serviceRequestsQuery )
+	public ResourceCollection<ServiceRequest> query(IQuery serviceRequestsQuery)
 	{
-		if ( serviceRequestsQuery == null )
+		if (serviceRequestsQuery == null)
 		{
-			throw new IllegalArgumentException( "serviceRequestsQuery can't be null" );
+			throw new IllegalArgumentException("serviceRequestsQuery can't be null");
 		}
 
-		if ( serviceRequestsQuery.getType() != QueryType.INDEXED && serviceRequestsQuery.getType() != QueryType.SIMPLE )
+		if (serviceRequestsQuery.getType() != QueryType.INDEXED && serviceRequestsQuery.getType() != QueryType.SIMPLE)
 		{
-			throw new IllegalArgumentException( "Specified query type is not supported." );
+			throw new IllegalArgumentException("Specified query type is not supported.");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( serviceRequestsQuery.getType() == QueryType.INDEXED )
+		if (serviceRequestsQuery.getType() == QueryType.INDEXED)
 		{
 			// if the query specifies a page size, validate it and add it to the request
-			ParameterValidator.isIntInclusive( MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
-											   MessageFormat.format( "Allowed page size values are from {0}-{1}",
-																	 MIN_PAGE_SIZE, MAX_PAGE_SIZE ) );
+			ParameterValidator.isIntInclusive(MIN_PAGE_SIZE, MAX_PAGE_SIZE, serviceRequestsQuery.getPageSize(),
+											   MessageFormat.format("Allowed page size values are from {0}-{1}",
+																	 MIN_PAGE_SIZE, MAX_PAGE_SIZE));
 			parameters.add(
 				new KeyValuePair<String, String>(
 					PartnerService.getInstance().getConfiguration().getApis().get("SearchPartnerServiceRequests").getParameters().get("Size"),
@@ -111,7 +111,7 @@ public class PartnerServiceRequestCollectionOperations
 					PartnerService.getInstance().getConfiguration().getApis().get("SearchPartnerServiceRequests").getParameters().get("Offset"),
 					String.valueOf(serviceRequestsQuery.getIndex())));
 		}
-		if ( serviceRequestsQuery.getFilter() != null )
+		if (serviceRequestsQuery.getFilter() != null)
 		{
 			// add the filter to the request if specified
 			ObjectMapper mapper = new ObjectMapper();
@@ -124,13 +124,13 @@ public class PartnerServiceRequestCollectionOperations
 						URLEncoder.encode(mapper.writeValueAsString(serviceRequestsQuery.getFilter()),
 						"UTF-8")));
 			}
-			catch ( JsonProcessingException e )
+			catch (JsonProcessingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
-			catch ( UnsupportedEncodingException e )
+			catch (UnsupportedEncodingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
 
 		}
@@ -164,15 +164,15 @@ public class PartnerServiceRequestCollectionOperations
 	 * @return The created service request with associated Identifier.
 	 */
 	@Override
-	public ServiceRequest create( ServiceRequest serviceRequest, String agentLocale )
+	public ServiceRequest create(ServiceRequest serviceRequest, String agentLocale)
 	{
-		if ( serviceRequest == null )
+		if (serviceRequest == null)
 		{
-			throw new IllegalArgumentException( "serviceRequest can't be null" );
+			throw new IllegalArgumentException("serviceRequest can't be null");
 		}
-		if ( agentLocale == null )
+		if (agentLocale == null)
 		{
-			throw new IllegalArgumentException( "agentLocale can't be null" );
+			throw new IllegalArgumentException("agentLocale can't be null");
 		}
 
 		return this.getPartner().getServiceClient().post(

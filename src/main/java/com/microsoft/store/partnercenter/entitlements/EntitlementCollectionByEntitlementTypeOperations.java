@@ -31,7 +31,7 @@ public class EntitlementCollectionByEntitlementTypeOperations
 	 * @param customerId            Identifier for the customer.
 	 * @param entitlementType       The type of entitlement.
 	 */
-	public EntitlementCollectionByEntitlementTypeOperations( IPartner rootPartnerOperations, String customerId, String entitlementType )
+	public EntitlementCollectionByEntitlementTypeOperations(IPartner rootPartnerOperations, String customerId, String entitlementType)
 	{
 		super(rootPartnerOperations, new Tuple<String, String>(customerId, entitlementType));
 

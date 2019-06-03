@@ -15,9 +15,9 @@ public class SystemOutLogger
      * @param message The informational message.
      */
     @Override
-    public void logInformation( String message )
+    public void logInformation(String message)
     {
-        System.out.println( "Default logger INFO: " + message );
+        System.out.println("Default logger INFO: " + message);
     }
 
     /**
@@ -26,9 +26,9 @@ public class SystemOutLogger
      * @param message The warning message.
      */
     @Override
-    public void logWarning( String message )
+    public void logWarning(String message)
     {
-        System.out.println( "Default logger WARNING: " + message );
+        System.out.println("Default logger WARNING: " + message);
     }
 
     /**
@@ -37,8 +37,8 @@ public class SystemOutLogger
      * @param message The error message.
      */
     @Override
-    public void logError( String message )
+    public void logError(String message)
     {
-        System.out.println( "Default logger ERROR: " + message );
+        System.out.println("Default logger ERROR: " + message);
     }
 }

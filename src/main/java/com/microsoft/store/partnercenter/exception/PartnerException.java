@@ -23,7 +23,7 @@ public class PartnerException
     public PartnerException()
     {
         super();
-        this.setErrorCategory( PartnerErrorCategory.NOT_SPECIFIED );
+        this.setErrorCategory(PartnerErrorCategory.NOT_SPECIFIED);
     }
 
     /**
@@ -33,7 +33,7 @@ public class PartnerException
      */
     public PartnerException(String message)
     {
-        this( message, null );
+        this(message, null);
     }
 
     /**
@@ -45,8 +45,8 @@ public class PartnerException
      */
     public PartnerException(String message, Exception innerException)
     {
-        super( message, innerException );
-        this.setErrorCategory( PartnerErrorCategory.NOT_SPECIFIED );
+        super(message, innerException);
+        this.setErrorCategory(PartnerErrorCategory.NOT_SPECIFIED);
     }
 
     /**
@@ -58,7 +58,7 @@ public class PartnerException
      */
     public PartnerException(String message, IRequestContext context, PartnerErrorCategory errorCategory)
     {
-        this( message, context, errorCategory, null );
+        this(message, context, errorCategory, null);
     }
 
     /**
@@ -71,9 +71,9 @@ public class PartnerException
      */
     public PartnerException(String message, IRequestContext context, PartnerErrorCategory errorCategory, Exception innerException)
     {
-        super( message, innerException );
-        this.setErrorCategory( errorCategory );
-        this.setContext( context );
+        super(message, innerException);
+        this.setErrorCategory(errorCategory);
+        this.setContext(context);
     }
 
     /**
@@ -84,18 +84,18 @@ public class PartnerException
      */
     public PartnerException(ApiFault apiFault, IRequestContext context)
     {
-        this( apiFault, context, PartnerErrorCategory.NOT_SPECIFIED, null );
+        this(apiFault, context, PartnerErrorCategory.NOT_SPECIFIED, null);
     }
 
     public PartnerException(ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory)
     {
-        this( apiFault, context, errorCategory, null );
+        this(apiFault, context, errorCategory, null);
     }
 
     public PartnerException(ApiFault apiFault, IRequestContext context, PartnerErrorCategory errorCategory, Exception innerException)
     {
-        this( apiFault != null ? apiFault.getErrorMessage() : "", context, errorCategory, innerException );
-        this.setServiceErrorPayload( apiFault );
+        this(apiFault != null ? apiFault.getErrorMessage() : "", context, errorCategory, innerException);
+        this.setServiceErrorPayload(apiFault);
     }
 
     /**
@@ -108,7 +108,7 @@ public class PartnerException
         return errorCategory;
     }
 
-    public void setErrorCategory( PartnerErrorCategory value )
+    public void setErrorCategory(PartnerErrorCategory value)
     {
         errorCategory = value;
     }
@@ -123,7 +123,7 @@ public class PartnerException
         return serviceErrorPayload;
     }
 
-    public void setServiceErrorPayload( ApiFault value )
+    public void setServiceErrorPayload(ApiFault value)
     {
         serviceErrorPayload = value;
     }
@@ -138,7 +138,7 @@ public class PartnerException
         return context;
     }
 
-    public void setContext( IRequestContext value )
+    public void setContext(IRequestContext value)
     {
         context = value;
     }
@@ -151,11 +151,11 @@ public class PartnerException
     @Override
     public String toString()
     {
-        return MessageFormat.format( "PartnerException: ErrorCategory: {0}, ServiceErrorPayload: {1}, Context: {2}, Base Description: {3}",
+        return MessageFormat.format("PartnerException: ErrorCategory: {0}, ServiceErrorPayload: {1}, Context: {2}, Base Description: {3}",
                                      this.getErrorCategory(), 
                                      this.getServiceErrorPayload() != null ? this.getServiceErrorPayload().toString() : "null",
                                      this.getContext(), 
-                                     super.toString() );
+                                     super.toString());
 
     }
 }

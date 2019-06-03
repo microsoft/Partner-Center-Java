@@ -23,21 +23,21 @@ public class DirectoryRoleOperations extends BasePartnerComponent<Tuple<String, 
 	 * @param customerId The customer identifier.
 	 * @param roleId The directory role id
 	 */
-	public DirectoryRoleOperations( IPartner rootPartnerOperations, String customerId, String roleId )
+	public DirectoryRoleOperations(IPartner rootPartnerOperations, String customerId, String roleId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, roleId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, roleId));
 		
-		if ( StringHelper.isNullOrEmpty( customerId ) )
+		if (StringHelper.isNullOrEmpty(customerId))
         {
             throw new IllegalArgumentException("customerId must be set.");
         }
 
-        if ( StringHelper.isNullOrEmpty( roleId ) )
+        if (StringHelper.isNullOrEmpty(roleId))
         {
             throw new IllegalArgumentException("roleId must be set.");
         }
         
-        this.directoryRoleUserMemberOperations = new UserMemberCollectionOperations( this.getPartner(), customerId, roleId );
+        this.directoryRoleUserMemberOperations = new UserMemberCollectionOperations(this.getPartner(), customerId, roleId);
 	}
 
 	/**

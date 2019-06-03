@@ -25,12 +25,12 @@ public class CustomerCompanyProfileOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer tenant identifer.
 	 */
-	public CustomerCompanyProfileOperations( IPartner rootPartnerOperations, String customerId )
+	public CustomerCompanyProfileOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId cannot be null" );
+			throw new IllegalArgumentException("customerId cannot be null");
 		}
 	}
 
@@ -45,7 +45,7 @@ public class CustomerCompanyProfileOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CustomerCompanyProfile>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerCompanyProfile").getPath(),
 				this.getContext()));
 	}

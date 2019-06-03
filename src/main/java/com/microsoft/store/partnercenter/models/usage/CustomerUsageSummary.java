@@ -23,7 +23,7 @@ public class CustomerUsageSummary
         return __ResourceId;
     }
 
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
         __ResourceId = value;
     }
@@ -39,7 +39,7 @@ public class CustomerUsageSummary
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -54,7 +54,7 @@ public class CustomerUsageSummary
         return __Budget;
     }
 
-    public void setBudget( SpendingBudget value )
+    public void setBudget(SpendingBudget value)
     {
     	__Budget = value;
     }

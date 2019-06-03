@@ -109,5 +109,5 @@ public interface ISubscription
      * @param subscription A subscription that has the properties to be patched set.
      * @return The updated subscription.
      */
-    Subscription patch( Subscription subscription );
+    Subscription patch(Subscription subscription);
 }

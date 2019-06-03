@@ -25,5 +25,5 @@ public interface ICustomerOfferCollection
      *  @param size The maximum number of offers to return.
      *  @return The requested segment of the offers for the provided customer.
      */
-    ResourceCollection<Offer> get( int offset, int size );
+    ResourceCollection<Offer> get(int offset, int size);
 }

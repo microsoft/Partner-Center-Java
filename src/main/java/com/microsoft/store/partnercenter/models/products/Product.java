@@ -72,7 +72,7 @@ public class Product
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -87,7 +87,7 @@ public class Product
         return __Title;
     }
 
-    public void setTitle( String value )
+    public void setTitle(String value)
     {
         __Title = value;
     }
@@ -102,7 +102,7 @@ public class Product
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -117,7 +117,7 @@ public class Product
         return __ProductType;
     }
 
-    public void setProductType( ItemType value )
+    public void setProductType(ItemType value)
     {
         __ProductType = value;
     }

@@ -23,5 +23,5 @@ public interface IInvoiceLineItemCollection
     * @param offset The page offset.
     * @return The subset of invoice line items.
     */
-   ResourceCollection<InvoiceLineItem> get( int size, int offset );
+   ResourceCollection<InvoiceLineItem> get(int size, int offset);
 }

@@ -68,7 +68,7 @@ public class CartOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Cart>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCart").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));
@@ -87,7 +87,7 @@ public class CartOperations
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),
 			new TypeReference<Cart>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCart").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),

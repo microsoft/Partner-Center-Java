@@ -23,7 +23,7 @@ public class InvoiceDetail
         return __InvoiceLineItemType;
     }
 
-    public void setInvoiceLineItemType( InvoiceLineItemType value )
+    public void setInvoiceLineItemType(InvoiceLineItemType value)
     {
         __InvoiceLineItemType = value;
     }
@@ -38,7 +38,7 @@ public class InvoiceDetail
         return __BillingProvider;
     }
 
-    public void setBillingProvider( BillingProvider value )
+    public void setBillingProvider(BillingProvider value)
     {
         __BillingProvider = value;
     }
@@ -53,7 +53,7 @@ public class InvoiceDetail
         return __DetailLink;
     }
 
-    public void setDetailLink( Link value )
+    public void setDetailLink(Link value)
     {
         __DetailLink = value;
     }

@@ -62,7 +62,7 @@ public class ReferenceOrder
 	 * 
 	 * @param value The value of the identifier.
 	 */
-	public void setId( String value )
+	public void setId(String value)
 	{
 		id = value;
 	}
@@ -82,7 +82,7 @@ public class ReferenceOrder
 	 * 
 	 * @param value The value of the line item identifier.
 	 */
-	public void setLineItemId( String value )
+	public void setLineItemId(String value)
 	{
 		lineItemId = value;
 	}

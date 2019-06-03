@@ -43,9 +43,9 @@ public class PartnerProfileCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public PartnerProfileCollectionOperations( IPartner rootPartnerOperations )
+    public PartnerProfileCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
     }
 
     /**
@@ -54,9 +54,9 @@ public class PartnerProfileCollectionOperations
     @Override
     public ILegalBusinessProfile getLegalBusinessProfile()
     {
-        if ( this.legalBusinessProfile == null )
+        if (this.legalBusinessProfile == null)
         {
-            this.legalBusinessProfile = new LegalBusinessProfileOperations( this.getPartner() );
+            this.legalBusinessProfile = new LegalBusinessProfileOperations(this.getPartner());
         }
         return this.legalBusinessProfile;
     }
@@ -67,9 +67,9 @@ public class PartnerProfileCollectionOperations
     @Override
     public IMpnProfile getMpnProfile()
     {
-        if ( this.mpnProfile == null )
+        if (this.mpnProfile == null)
         {
-            this.mpnProfile = new MpnProfileOperations( this.getPartner() );
+            this.mpnProfile = new MpnProfileOperations(this.getPartner());
         }
         return this.mpnProfile;
     }
@@ -80,9 +80,9 @@ public class PartnerProfileCollectionOperations
     @Override
     public ISupportProfile getSupportProfile()
     {
-        if ( this.supportProfile == null )
+        if (this.supportProfile == null)
         {
-            this.supportProfile = new SupportProfileOperations( this.getPartner() );
+            this.supportProfile = new SupportProfileOperations(this.getPartner());
         }
         return this.supportProfile;
     }
@@ -93,9 +93,9 @@ public class PartnerProfileCollectionOperations
     @Override
     public IOrganizationProfile getOrganizationProfile()
     {
-        if ( this.organizationProfile == null )
+        if (this.organizationProfile == null)
         {
-            this.organizationProfile = new OrganizationProfileOperations( this.getPartner() );
+            this.organizationProfile = new OrganizationProfileOperations(this.getPartner());
         }
         return this.organizationProfile;
     }
@@ -106,9 +106,9 @@ public class PartnerProfileCollectionOperations
     @Override
     public IBillingProfile getBillingProfile()
     {
-        if ( this.partnerBillingProfile == null )
+        if (this.partnerBillingProfile == null)
         {
-            this.partnerBillingProfile = new BillingProfileOperations( this.getPartner() );
+            this.partnerBillingProfile = new BillingProfileOperations(this.getPartner());
         }
         return this.partnerBillingProfile;
     }

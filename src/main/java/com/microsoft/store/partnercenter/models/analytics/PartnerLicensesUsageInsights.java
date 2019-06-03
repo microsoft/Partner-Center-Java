@@ -20,7 +20,7 @@ public class PartnerLicensesUsageInsights
         return workloadName;
     }
 
-    public void setWorkloadName( String value )
+    public void setWorkloadName(String value)
     {
         workloadName = value;
     }
@@ -36,7 +36,7 @@ public class PartnerLicensesUsageInsights
         return proratedLicensesUsagePercent;
     }
 
-    public void setProratedLicensesUsagePercent( double value )
+    public void setProratedLicensesUsagePercent(double value)
     {
         proratedLicensesUsagePercent = value;
     }

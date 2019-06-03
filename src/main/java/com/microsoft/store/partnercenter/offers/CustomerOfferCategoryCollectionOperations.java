@@ -23,10 +23,10 @@ public class CustomerOfferCategoryCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public CustomerOfferCategoryCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	public CustomerOfferCategoryCollectionOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrEmpty( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrEmpty(customerId))
 		{
 			throw new IllegalArgumentException("customerId must be set.");
 		}
@@ -43,7 +43,7 @@ public class CustomerOfferCategoryCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<OfferCategory>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerOfferCategories").getPath(),
 				this.getContext()));
 	}

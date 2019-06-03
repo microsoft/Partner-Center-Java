@@ -48,9 +48,9 @@ public class InvoiceCollection
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public InvoiceCollection( IPartner rootPartnerOperations )
+	public InvoiceCollection(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -60,13 +60,13 @@ public class InvoiceCollection
 	 * @return The invoice operations.
 	 */
 	@Override
-	public IInvoice byId( String invoiceId )
+	public IInvoice byId(String invoiceId)
 	{
-		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+		if (StringHelper.isNullOrWhiteSpace(invoiceId))
 		{
-			throw new IllegalArgumentException( "invoiceId has to be set." );
+			throw new IllegalArgumentException("invoiceId has to be set.");
 		}
-		return new InvoiceOperations( this.getPartner(), invoiceId );
+		return new InvoiceOperations(this.getPartner(), invoiceId);
 	}
 
     /**
@@ -86,7 +86,7 @@ public class InvoiceCollection
 	 */
 	public IInvoiceSummary getSummary()
 	{
-		return new InvoiceSummaryOperations( this.getPartner() );
+		return new InvoiceSummaryOperations(this.getPartner());
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class InvoiceCollection
 	 */
 	public IInvoiceSummaryCollection getSummaries()
 	{ 
-		return new InvoiceSummaryCollectionOperations( this.getPartner() );
+		return new InvoiceSummaryCollectionOperations(this.getPartner());
 	}
 
 	/**
@@ -123,11 +123,11 @@ public class InvoiceCollection
 	@Override
 	public SeekBasedResourceCollection<Invoice> get(int offset, int size)
 	{
-		ParameterValidator.isIntInclusive( 0, Integer.MAX_VALUE, offset,
-										   "The value of the page offset should be at least 0." );
-		ParameterValidator.isIntInclusive( MinPageSize, MaxPageSize, size,
-										   MessageFormat.format( "The page size must be an integer within the allowed range: {0}-{1}.",
-																 MinPageSize, MaxPageSize ) );
+		ParameterValidator.isIntInclusive(0, Integer.MAX_VALUE, offset,
+										   "The value of the page offset should be at least 0.");
+		ParameterValidator.isIntInclusive(MinPageSize, MaxPageSize, size,
+										   MessageFormat.format("The page size must be an integer within the allowed range: {0}-{1}.",
+																 MinPageSize, MaxPageSize));
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
@@ -153,21 +153,21 @@ public class InvoiceCollection
 	 * @param query The query parameter
 	 * @return The subset of invoices.
 	 */
-	public ResourceCollection<Invoice> query( IQuery query )
+	public ResourceCollection<Invoice> query(IQuery query)
 	{
-		if ( query == null )
+		if (query == null)
 		{
-			throw new IllegalArgumentException( "query can't be null" );
+			throw new IllegalArgumentException("query can't be null");
 		}
 
-		if ( query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
+		if (query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE)
 		{
-			throw new IllegalArgumentException( "This type of query is not supported." );
+			throw new IllegalArgumentException("This type of query is not supported.");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( query.getType() == QueryType.INDEXED )
+		if (query.getType() == QueryType.INDEXED)
 		{
 			parameters.add(
 				new KeyValuePair<String, String>(
@@ -180,25 +180,25 @@ public class InvoiceCollection
 					String.valueOf(query.getIndex())));      
 		}
 
-		if ( query.getFilter() != null )
+		if (query.getFilter() != null)
 		{
 			ObjectMapper mapper = new ObjectMapper();
 
 			try
 			{
 				parameters.add(
-					new KeyValuePair<String, String>( 
+					new KeyValuePair<String, String>(
 						PartnerService.getInstance().getConfiguration().getApis().get("GetInvoices").getParameters().get("Filter"),
-						URLEncoder.encode( mapper.writeValueAsString(query.getFilter()),
+						URLEncoder.encode(mapper.writeValueAsString(query.getFilter()),
 						"UTF-8")));            	
 			}
-			catch ( UnsupportedEncodingException e )
+			catch (UnsupportedEncodingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
-			catch ( JsonProcessingException e )
+			catch (JsonProcessingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
 		}
 

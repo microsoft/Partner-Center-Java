@@ -11,10 +11,10 @@ import java.text.MessageFormat;
 public class IndexedQuery
     extends SimpleQuery
 {
-    protected IndexedQuery( Object token )
+    protected IndexedQuery(Object token)
 
     {
-        super( token );
+        super(token);
     }
 
     protected IndexedQuery()
@@ -51,10 +51,10 @@ public class IndexedQuery
         return this.index;
     }
 
-    public void setIndex( int value )
+    public void setIndex(int value)
 
     {
-        this.index = Math.max( value, 0 );
+        this.index = Math.max(value, 0);
     }
 
     /**
@@ -66,10 +66,10 @@ public class IndexedQuery
         return this.pageSize;
     }
 
-    public void setPageSize( int value )
+    public void setPageSize(int value)
 
     {
-        this.pageSize = Math.max( value, 0 );
+        this.pageSize = Math.max(value, 0);
     }
 
     /**
@@ -81,13 +81,13 @@ public class IndexedQuery
     {
         StringBuilder result = new StringBuilder();
 
-        result.append( MessageFormat.format( 
+        result.append(MessageFormat.format(
             "Index: {0}, Page size: {1}", 
             this.getIndex(), 
             this.getPageSize())
-            + "\n" );
+            + "\n");
 
-        result.append( super.toString() + "\n" );
+        result.append(super.toString() + "\n");
         return result.toString();
     }
 }

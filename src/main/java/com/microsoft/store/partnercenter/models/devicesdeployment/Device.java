@@ -18,7 +18,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the device unique identifier.
 	 */
-	@JsonProperty( "Id" )
+	@JsonProperty("Id")
 	private String __Id;
 
 	public String getId()
@@ -26,7 +26,7 @@ public class Device extends ResourceBase {
 		return __Id;
 	}
 
-	public void setId( String value )
+	public void setId(String value)
 	{
 		__Id = value;
 	}
@@ -34,7 +34,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the serial number associated with a device.
 	 */
-	@JsonProperty( "serialNumber" )
+	@JsonProperty("serialNumber")
 	private String __SerialNumber;
 
 	public String getSerialNumber()
@@ -42,7 +42,7 @@ public class Device extends ResourceBase {
 		return __SerialNumber;
 	}
 
-	public void setSerialNumber( String value )
+	public void setSerialNumber(String value)
 	{
 		__SerialNumber = value;
 	}
@@ -50,7 +50,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the product key uniquely associated with a device.
 	 */
-	@JsonProperty( "productKey" )
+	@JsonProperty("productKey")
 	private String __ProductKey;
 
 	public String getProductKey()
@@ -58,7 +58,7 @@ public class Device extends ResourceBase {
 		return __ProductKey;
 	}
 
-	public void setProductKey( String value )
+	public void setProductKey(String value)
 	{
 		__ProductKey = value;
 	}
@@ -66,7 +66,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the hardware hash associated with a device.
 	 */
-	@JsonProperty( "hardwareHash" )
+	@JsonProperty("hardwareHash")
 	private String __HardwareHash;
 
 	public String getHardwareHash()
@@ -74,7 +74,7 @@ public class Device extends ResourceBase {
 		return __HardwareHash;
 	}
 
-	public void setHardwareHash( String value )
+	public void setHardwareHash(String value)
 	{
 		__HardwareHash = value;
 	}
@@ -82,7 +82,7 @@ public class Device extends ResourceBase {
 	/**
 	 *  Gets or sets the device model name associated with the device.
 	 */
-	@JsonProperty( "modelName" )
+	@JsonProperty("modelName")
 	private String __ModelName;
 
 	public String getModelName()
@@ -90,7 +90,7 @@ public class Device extends ResourceBase {
 		return __ModelName;
 	}
 
-	public void setModelName( String value )
+	public void setModelName(String value)
 	{
 		__ModelName = value;
 	}
@@ -98,7 +98,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the OEM manufacturer name.
 	 */
-	@JsonProperty( "oemManufacturerName" )
+	@JsonProperty("oemManufacturerName")
 	private String __OemManufacturerName;
 
 	public String getOemManufacturerName()
@@ -106,7 +106,7 @@ public class Device extends ResourceBase {
 		return __OemManufacturerName;
 	}
 
-	public void setOemManufacturerName( String value )
+	public void setOemManufacturerName(String value)
 	{
 		__OemManufacturerName = value;
 	}
@@ -114,7 +114,7 @@ public class Device extends ResourceBase {
 	/**
 	 *  Gets or sets the list of policies assigned to a device.
 	 */
-	@JsonProperty( "policies" )
+	@JsonProperty("policies")
 	private Collection<KeyValuePair<PolicyCategory, String>> __Policies;
 
 	public Collection<KeyValuePair<PolicyCategory, String>> getPolicies()
@@ -122,7 +122,7 @@ public class Device extends ResourceBase {
 		return __Policies;
 	}
 
-	public void setPolicies( Collection<KeyValuePair<PolicyCategory, String>> value )
+	public void setPolicies(Collection<KeyValuePair<PolicyCategory, String>> value)
 	{
 		__Policies = value;
 	}
@@ -130,7 +130,7 @@ public class Device extends ResourceBase {
 	/**
 	 *  Gets or sets the UTC date the device was uploaded.
 	 */
-	@JsonProperty( "uploadedDate" )
+	@JsonProperty("uploadedDate")
 	private DateTime __UploadedDate;
 
 	public DateTime getUploadedDate()
@@ -138,7 +138,7 @@ public class Device extends ResourceBase {
 		return __UploadedDate;
 	}
 
-	public void setUploadedDate( DateTime value )
+	public void setUploadedDate(DateTime value)
 	{
 		__UploadedDate = value;
 	}
@@ -146,7 +146,7 @@ public class Device extends ResourceBase {
 	/**
 	 * Gets or sets the list of HTTP methods allowed on a device as GET, PATCH, DELETE.
 	 */
-	@JsonProperty( "allowedOperations" )
+	@JsonProperty("allowedOperations")
 	private Iterator<String> __AllowedOperations;
 
 	public Iterator<String> getAllowedOperations()
@@ -154,7 +154,7 @@ public class Device extends ResourceBase {
 		return __AllowedOperations;
 	}
 
-	public void setAllowedOperations( Iterator<String> value )
+	public void setAllowedOperations(Iterator<String> value)
 	{
 		__AllowedOperations = value;
 	}

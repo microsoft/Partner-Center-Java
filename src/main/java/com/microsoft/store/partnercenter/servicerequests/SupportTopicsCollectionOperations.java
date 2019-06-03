@@ -22,9 +22,9 @@ public class SupportTopicsCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public SupportTopicsCollectionOperations( IPartner rootPartnerOperations )
+	public SupportTopicsCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**

@@ -21,7 +21,7 @@ public class UsageBasedLineItem
         return __DetailLineItemId;
     }
 
-    public void setDetailLineItemId( int value )
+    public void setDetailLineItemId(int value)
     {
         __DetailLineItemId = value;
     }
@@ -36,7 +36,7 @@ public class UsageBasedLineItem
         return __Sku;
     }
 
-    public void setSku( String value )
+    public void setSku(String value)
     {
         __Sku = value;
     }
@@ -51,7 +51,7 @@ public class UsageBasedLineItem
         return __IncludedQuantity;
     }
 
-    public void setIncludedQuantity( double value )
+    public void setIncludedQuantity(double value)
     {
         __IncludedQuantity = value;
     }
@@ -66,7 +66,7 @@ public class UsageBasedLineItem
         return __OverageQuantity;
     }
 
-    public void setOverageQuantity( double value )
+    public void setOverageQuantity(double value)
     {
         __OverageQuantity = value;
     }
@@ -81,7 +81,7 @@ public class UsageBasedLineItem
         return __ListPrice;
     }
 
-    public void setListPrice( double value )
+    public void setListPrice(double value)
     {
         __ListPrice = value;
     }
@@ -96,7 +96,7 @@ public class UsageBasedLineItem
         return __ConsumptionPrice;
     }
 
-    public void setConsumptionPrice( double value )
+    public void setConsumptionPrice(double value)
     {
         __ConsumptionPrice = value;
     }
@@ -111,7 +111,7 @@ public class UsageBasedLineItem
         return __ConsumptionDiscount;
     }
 
-    public void setConsumptionDiscount( double value )
+    public void setConsumptionDiscount(double value)
     {
         __ConsumptionDiscount = value;
     }
@@ -126,7 +126,7 @@ public class UsageBasedLineItem
         return __Currency;
     }
 
-    public void setCurrency( String value )
+    public void setCurrency(String value)
     {
         __Currency = value;
     }
@@ -141,7 +141,7 @@ public class UsageBasedLineItem
         return __PretaxCharges;
     }
 
-    public void setPretaxCharges( double value )
+    public void setPretaxCharges(double value)
     {
         __PretaxCharges = value;
     }
@@ -156,7 +156,7 @@ public class UsageBasedLineItem
         return __TaxAmount;
     }
 
-    public void setTaxAmount( double value )
+    public void setTaxAmount(double value)
     {
         __TaxAmount = value;
     }
@@ -171,7 +171,7 @@ public class UsageBasedLineItem
         return __PostTaxTotal;
     }
 
-    public void setPostTaxTotal( double value )
+    public void setPostTaxTotal(double value)
     {
         __PostTaxTotal = value;
     }
@@ -186,7 +186,7 @@ public class UsageBasedLineItem
         return __PretaxEffectiveRate;
     }
 
-    public void setPretaxEffectiveRate( double value )
+    public void setPretaxEffectiveRate(double value)
     {
         __PretaxEffectiveRate = value;
     }
@@ -201,7 +201,7 @@ public class UsageBasedLineItem
         return __PostTaxEffectiveRate;
     }
 
-    public void setPostTaxEffectiveRate( double value )
+    public void setPostTaxEffectiveRate(double value)
     {
         __PostTaxEffectiveRate = value;
     }
@@ -216,7 +216,7 @@ public class UsageBasedLineItem
         return __ChargeType;
     }
 
-    public void setChargeType( String value )
+    public void setChargeType(String value)
     {
         __ChargeType = value;
     }

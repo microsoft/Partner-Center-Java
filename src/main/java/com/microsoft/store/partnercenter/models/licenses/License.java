@@ -14,7 +14,7 @@ public class License extends ResourceBase {
      * Gets or sets the service plan collection. Service plans refer to services that user is assigned to use.
      * For example , Delve is a service plan which a user is either assigned to use or can be assigned to use.
      */
-	@JsonProperty( "servicePlans" )
+	@JsonProperty("servicePlans")
 	private Iterable<ServicePlan> __ServicePlans;
     
     public Iterable<ServicePlan> getServicePlans()
@@ -22,7 +22,7 @@ public class License extends ResourceBase {
         return __ServicePlans;
     }
 
-    public void setServicePlans( Iterable<ServicePlan> value )
+    public void setServicePlans(Iterable<ServicePlan> value)
     {
     	__ServicePlans = value;
     }
@@ -30,7 +30,7 @@ public class License extends ResourceBase {
     /**
      * Gets or sets the product SKU which the license applies to.
      */
-	@JsonProperty( "productSku" )    
+	@JsonProperty("productSku")    
     private ProductSku __ProductSku;
     
     public ProductSku getProductSku()
@@ -38,7 +38,7 @@ public class License extends ResourceBase {
         return __ProductSku;
     }
 
-    public void setProductSku( ProductSku value )
+    public void setProductSku(ProductSku value)
     {
     	__ProductSku = value;
     }

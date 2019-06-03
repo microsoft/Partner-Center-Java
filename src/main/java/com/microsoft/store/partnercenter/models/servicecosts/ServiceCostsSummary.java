@@ -44,7 +44,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the start of the billing period.
      */
-	@JsonProperty( "billingStartDate" )
+	@JsonProperty("billingStartDate")
     private DateTime __BillingStartDate;
 
     public DateTime getBillingStartDate()
@@ -52,7 +52,7 @@ public class ServiceCostsSummary
         return __BillingStartDate;
     }
 
-    public void setBillingStartDate( DateTime value )
+    public void setBillingStartDate(DateTime value)
     {
     	__BillingStartDate = value;
     }
@@ -60,7 +60,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the end of the billing period.
      */
-	@JsonProperty( "billingEndDate" )
+	@JsonProperty("billingEndDate")
     private DateTime __BillingEndDate;
 
     public DateTime getBillingEndDate()
@@ -68,7 +68,7 @@ public class ServiceCostsSummary
         return __BillingEndDate;
     }
 
-    public void setBillingEnd( DateTime value )
+    public void setBillingEnd(DateTime value)
     {
     	__BillingEndDate = value;
     }
@@ -76,7 +76,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the total charge for this item before taxes.
      */
-	@JsonProperty( "pretaxTotal" )
+	@JsonProperty("pretaxTotal")
     private Double __PretaxTotal;
     
     public Double getPretaxTotal()
@@ -84,7 +84,7 @@ public class ServiceCostsSummary
     	return __PretaxTotal;
     }
 
-    public void setPretaxTotal( Double value )
+    public void setPretaxTotal(Double value)
     {
     	__PretaxTotal = value;
     }
@@ -92,7 +92,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the tax incurred.
      */
-	@JsonProperty( "tax" )
+	@JsonProperty("tax")
     private Double __Tax;
     
     public Double getTax()
@@ -100,7 +100,7 @@ public class ServiceCostsSummary
     	return __Tax;
     }
 
-    public void setTax( Double value )
+    public void setTax(Double value)
     {
     	__Tax = value;
     }
@@ -108,7 +108,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the total for this item inclusive of taxes.
      */
-	@JsonProperty( "afterTaxTotal" )
+	@JsonProperty("afterTaxTotal")
     private Double __AfterTaxTotal;
     
     public Double getAfterTaxTotal()
@@ -116,7 +116,7 @@ public class ServiceCostsSummary
     	return __AfterTaxTotal;
     }
 
-    public void setAfterTaxTotal( Double value )
+    public void setAfterTaxTotal(Double value)
     {
     	__AfterTaxTotal = value;
     }
@@ -124,7 +124,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the currency code for the costs.
      */
-	@JsonProperty( "currencyCode" )
+	@JsonProperty("currencyCode")
     private String __CurrencyCode;
     
     public String getCurrencyCode()
@@ -132,7 +132,7 @@ public class ServiceCostsSummary
     	return __CurrencyCode;
     }
 
-    public void setCurrencyCode( String value )
+    public void setCurrencyCode(String value)
     {
     	__CurrencyCode = value;
     }
@@ -140,7 +140,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets the currency symbol for the costs.
      */
-	@JsonProperty( "currencySymbol" )
+	@JsonProperty("currencySymbol")
     private String __CurrencySymbol;
     
     public String getCurrencySymbol()
@@ -148,7 +148,7 @@ public class ServiceCostsSummary
     	return __CurrencySymbol;
     }
 
-    public void setCurrencySymbol( String value )
+    public void setCurrencySymbol(String value)
     {
     	__CurrencySymbol = value;
     }
@@ -156,7 +156,7 @@ public class ServiceCostsSummary
     /**
      * Gets or sets The customer identifier.
      */
-	@JsonProperty( "customerId" )
+	@JsonProperty("customerId")
     private String __CustomerId;
     
     public String getCustomerId()
@@ -164,7 +164,7 @@ public class ServiceCostsSummary
     	return __CustomerId;
     }
 
-    public void setCustomerId( String value )
+    public void setCustomerId(String value)
     {
     	__CustomerId = value;
     }

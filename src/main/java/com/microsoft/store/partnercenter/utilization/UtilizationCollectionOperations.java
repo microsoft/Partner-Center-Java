@@ -24,23 +24,23 @@ public class UtilizationCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param subscriptionId The subscription identifer.
 	 */
-	public UtilizationCollectionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId )
+	public UtilizationCollectionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+        if (StringHelper.isNullOrWhiteSpace(subscriptionId))
         {
-            throw new IllegalArgumentException( "subscriptionId must be set" );
+            throw new IllegalArgumentException("subscriptionId must be set");
         }
         
         this.azureUtilizationOperations = 
         		new AzureUtilizationCollectionOperations
-        		( 
+        		(
         			this.getPartner(),
         			this.getContext().getItem1(),
         			this.getContext().getItem2()

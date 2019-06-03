@@ -30,20 +30,20 @@ public class UserMemberOperations
 	 * @param roleId The directory role identifier.
 	 * @param userId The user identifier.
 	 */
-	public UserMemberOperations(IPartner rootPartnerOperations, String customerId, String roleId, String userId )
+	public UserMemberOperations(IPartner rootPartnerOperations, String customerId, String roleId, String userId)
 	{
-		super(rootPartnerOperations, new TripletTuple<String, String, String>( customerId, roleId, userId ) );
-		if ( StringHelper.isNullOrEmpty( customerId ) )
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, roleId, userId));
+		if (StringHelper.isNullOrEmpty(customerId))
 		{
 			throw new IllegalArgumentException("customerId must be set.");
 		}
 
-		if ( StringHelper.isNullOrEmpty( roleId ) )
+		if (StringHelper.isNullOrEmpty(roleId))
 		{
 			throw new IllegalArgumentException("roleId must be set.");
 		}
 
-		if ( StringHelper.isNullOrEmpty( userId ) )
+		if (StringHelper.isNullOrEmpty(userId))
 		{
 			throw new IllegalArgumentException("userId must be set.");
 		}
@@ -58,7 +58,7 @@ public class UserMemberOperations
 		this.getPartner().getServiceClient().delete(
 			this.getPartner(),
 			new TypeReference<DirectoryRole>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("RemoveCustomerUserMemberFromDirectoryRole").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2(),

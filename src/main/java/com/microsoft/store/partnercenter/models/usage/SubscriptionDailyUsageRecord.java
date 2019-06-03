@@ -21,7 +21,7 @@ public class SubscriptionDailyUsageRecord
         return __ResourceId;
     }
 
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
     	__ResourceId = value;
     }
@@ -36,7 +36,7 @@ public class SubscriptionDailyUsageRecord
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
     	__ResourceName = value;
     }
@@ -51,7 +51,7 @@ public class SubscriptionDailyUsageRecord
         return __TotalCost;
     }
 
-    public void setTotalCost( double value )
+    public void setTotalCost(double value)
     {
     	__TotalCost = value;
     }
@@ -66,7 +66,7 @@ public class SubscriptionDailyUsageRecord
         return __DateUsed;
     }
 
-    public void setDateUsed( DateTime value )
+    public void setDateUsed(DateTime value)
     {
         __DateUsed = value;
     }

@@ -61,7 +61,7 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
     @Override
     public boolean shouldRetry(int retryCount, Response response)
     {
-        double exponentialBackOffTime = ( Math.pow( 2, retryCount ) - 1 ) / 2;
+        double exponentialBackOffTime = (Math.pow(2, retryCount) - 1) / 2;
 
         if(retryCount > maxRetryAttempts && nonRetryableHttpCodes.contains(response.code()))
         {

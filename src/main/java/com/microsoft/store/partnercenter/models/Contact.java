@@ -18,7 +18,7 @@ public class Contact
         return firstName;
     }
 
-    public void setFirstName( String value )
+    public void setFirstName(String value)
     {
         firstName = value;
     }
@@ -33,7 +33,7 @@ public class Contact
         return lastName;
     }
 
-    public void setLastName( String value )
+    public void setLastName(String value)
     {
         lastName = value;
     }
@@ -48,7 +48,7 @@ public class Contact
         return email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         email = value;
     }
@@ -63,7 +63,7 @@ public class Contact
         return phoneNumber;
     }
 
-    public void setPhoneNumber( String value )
+    public void setPhoneNumber(String value)
     {
         phoneNumber = value;
     }

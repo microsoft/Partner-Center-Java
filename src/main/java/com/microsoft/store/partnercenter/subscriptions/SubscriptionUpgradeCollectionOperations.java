@@ -29,18 +29,18 @@ public class SubscriptionUpgradeCollectionOperations
 	 * @param customerId The customer Id to whom the subscriptions belong.
 	 * @param subscriptionId The subscription Id where the upgrade is occurring.
 	 */
-	public SubscriptionUpgradeCollectionOperations( IPartner rootPartnerOperations, String customerId,
-													String subscriptionId )
+	public SubscriptionUpgradeCollectionOperations(IPartner rootPartnerOperations, String customerId,
+													String subscriptionId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId should be set." );
+			throw new IllegalArgumentException("customerId should be set.");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId))
 		{
-			throw new IllegalArgumentException( "subscriptionId should be set." );
+			throw new IllegalArgumentException("subscriptionId should be set.");
 		}
 
 	}
@@ -56,7 +56,7 @@ public class SubscriptionUpgradeCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Upgrade>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionUpgrades").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));
@@ -69,11 +69,11 @@ public class SubscriptionUpgradeCollectionOperations
 	 * @return The subscription upgrade result.
 	 */
 	@Override
-	public UpgradeResult create( Upgrade subscriptionUpgrade )
+	public UpgradeResult create(Upgrade subscriptionUpgrade)
 	{
-		if ( subscriptionUpgrade == null )
+		if (subscriptionUpgrade == null)
 		{
-			throw new IllegalArgumentException( "The subscriptionUpgrade is a required parameter." );
+			throw new IllegalArgumentException("The subscriptionUpgrade is a required parameter.");
 		}
 
 		return this.getPartner().getServiceClient().post(

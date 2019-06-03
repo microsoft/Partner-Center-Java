@@ -21,7 +21,7 @@ public class RequestContext
      */
     public RequestContext()
     {
-        this( UUID.randomUUID(), new UUID( 0, 0 ), null );
+        this(UUID.randomUUID(), new UUID(0, 0), null);
     }
 
     /**
@@ -30,9 +30,9 @@ public class RequestContext
      * 
      * @param locale The locale.
      */
-    public RequestContext( String locale )
+    public RequestContext(String locale)
     {
-        this( UUID.randomUUID(), new UUID( 0, 0 ), locale );
+        this(UUID.randomUUID(), new UUID(0, 0), locale);
     }
 
     /**
@@ -41,9 +41,9 @@ public class RequestContext
      * 
      * @param correlationId The correlation Id. This Id is used to group logical operations together.
      */
-    public RequestContext( UUID correlationId )
+    public RequestContext(UUID correlationId)
     {
-        this( correlationId, new UUID( 0, 0 ), null );
+        this(correlationId, new UUID(0, 0), null);
     }
 
     /**
@@ -53,9 +53,9 @@ public class RequestContext
      * @param correlationId The correlation Id. This Id is used to group logical operations together.
      * @param locale The locale.
      */
-    public RequestContext( UUID correlationId, String locale )
+    public RequestContext(UUID correlationId, String locale)
     {
-        this( correlationId, new UUID( 0, 0 ), locale );
+        this(correlationId, new UUID(0, 0), locale);
     }
 
     /**
@@ -66,16 +66,16 @@ public class RequestContext
      * @param requestId The request Id. Uniquely identifies the operation.
      * @param locale The locale.
      */
-    public RequestContext( UUID correlationId, UUID requestId, String locale )
+    public RequestContext(UUID correlationId, UUID requestId, String locale)
     {
-        if ( StringHelper.isNullOrWhiteSpace( locale ) )
+        if (StringHelper.isNullOrWhiteSpace(locale))
         {
             locale = PartnerService.getInstance().getConfiguration().getDefaultLocale();
         }
 
-        this.setCorrelationId( correlationId );
-        this.setRequestId( requestId );
-        this.setLocale( locale );
+        this.setCorrelationId(correlationId);
+        this.setRequestId(requestId);
+        this.setLocale(locale);
     }
 
     private UUID __RequestId;
@@ -96,7 +96,7 @@ public class RequestContext
      * 
      * @param value The request identifier.
      */
-    public void setRequestId( UUID value )
+    public void setRequestId(UUID value)
     {
         __RequestId = value;
     }
@@ -117,7 +117,7 @@ public class RequestContext
      * 
      * @param value The correlation identifier.
      */
-    public void setCorrelationId( UUID value )
+    public void setCorrelationId(UUID value)
     {
         __CorrelationId = value;
     }
@@ -140,7 +140,7 @@ public class RequestContext
      * 
      * @param value The locale.
      */
-    public void setLocale( String value )
+    public void setLocale(String value)
     {
         __Locale = value;
     }
@@ -153,7 +153,7 @@ public class RequestContext
     @Override
     public String toString()
     {
-        return MessageFormat.format( "Request Id: {0}, Correlation Id: {1}, Locale: {2}"
-            + this.getRequestId().toString(), this.getCorrelationId().toString(), this.getLocale() );
+        return MessageFormat.format("Request Id: {0}, Correlation Id: {1}, Locale: {2}"
+            + this.getRequestId().toString(), this.getCorrelationId().toString(), this.getLocale());
     }
 }

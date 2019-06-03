@@ -18,7 +18,7 @@ public class OrganizationProfile
      */
     public OrganizationProfile()
     {
-        this.setDefaultAddress( new Address() );
+        this.setDefaultAddress(new Address());
     }
 
     /**
@@ -31,7 +31,7 @@ public class OrganizationProfile
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -46,7 +46,7 @@ public class OrganizationProfile
         return __CompanyName;
     }
 
-    public void setCompanyName( String value )
+    public void setCompanyName(String value)
     {
         __CompanyName = value;
     }
@@ -61,7 +61,7 @@ public class OrganizationProfile
         return __DefaultAddress;
     }
 
-    public void setDefaultAddress( Address value )
+    public void setDefaultAddress(Address value)
     {
         __DefaultAddress = value;
     }
@@ -76,7 +76,7 @@ public class OrganizationProfile
         return __TenantId;
     }
 
-    public void setTenantId( String value )
+    public void setTenantId(String value)
     {
         __TenantId = value;
     }
@@ -91,7 +91,7 @@ public class OrganizationProfile
         return __Domain;
     }
 
-    public void setDomain( String value )
+    public void setDomain(String value)
     {
         __Domain = value;
     }
@@ -106,7 +106,7 @@ public class OrganizationProfile
         return __Email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         __Email = value;
     }
@@ -121,7 +121,7 @@ public class OrganizationProfile
         return __Language;
     }
 
-    public void setLanguage( String value )
+    public void setLanguage(String value)
     {
         __Language = value;
     }
@@ -136,7 +136,7 @@ public class OrganizationProfile
         return __Culture;
     }
 
-    public void setCulture( String value )
+    public void setCulture(String value)
     {
         __Culture = value;
     }

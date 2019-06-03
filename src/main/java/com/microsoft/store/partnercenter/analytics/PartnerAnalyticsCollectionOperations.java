@@ -23,11 +23,11 @@ public class PartnerAnalyticsCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public PartnerAnalyticsCollectionOperations( IPartner rootPartnerOperations )
+    public PartnerAnalyticsCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
 
-        licenses = new PartnerLicensesAnalyticsCollectionOperations( this.getPartner() );
+        licenses = new PartnerLicensesAnalyticsCollectionOperations(this.getPartner());
     }
 
     /**

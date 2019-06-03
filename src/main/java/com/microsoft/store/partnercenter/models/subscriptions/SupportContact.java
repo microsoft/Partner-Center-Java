@@ -22,7 +22,7 @@ public class SupportContact
         return __SupportTenantId;
     }
 
-    public void setSupportTenantId( String value )
+    public void setSupportTenantId(String value)
     {
         __SupportTenantId  = value;
     }
@@ -37,7 +37,7 @@ public class SupportContact
         return __SupportMpnId;
     }
 
-    public void setSupportMpnId( String value )
+    public void setSupportMpnId(String value)
     {
         __SupportMpnId = value;
     }
@@ -52,7 +52,7 @@ public class SupportContact
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }

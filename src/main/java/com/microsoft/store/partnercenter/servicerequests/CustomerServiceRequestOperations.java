@@ -27,19 +27,19 @@ public class CustomerServiceRequestOperations
      * @param customerId The customer identifier.
      * @param serviceRequestId The service request identifier.
      */
-    public CustomerServiceRequestOperations( IPartner rootPartnerOperations, String customerId,
-                                             String serviceRequestId )
+    public CustomerServiceRequestOperations(IPartner rootPartnerOperations, String customerId,
+                                             String serviceRequestId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, serviceRequestId ) );
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, serviceRequestId));
         
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId can't be null" );
+            throw new IllegalArgumentException("customerId can't be null");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( serviceRequestId ) )
+        if (StringHelper.isNullOrWhiteSpace(serviceRequestId))
         {
-            throw new IllegalArgumentException( "serviceRequestId can't be null" );
+            throw new IllegalArgumentException("serviceRequestId can't be null");
         }
     }
 
@@ -54,7 +54,7 @@ public class CustomerServiceRequestOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ServiceRequest>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetServiceRequestCustomer").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
@@ -67,12 +67,12 @@ public class CustomerServiceRequestOperations
      * @return Updated Service Request
      */
     @Override
-    public ServiceRequest patch( ServiceRequest updatePayload )
+    public ServiceRequest patch(ServiceRequest updatePayload)
     {
         return this.getPartner().getServiceClient().patch(
             this.getPartner(),
             new TypeReference<ServiceRequest>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("UpdateServiceRequestCustomer").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),

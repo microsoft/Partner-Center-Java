@@ -36,18 +36,18 @@ public class OfferOperations
 	 * @param offerId The offer Id.
 	 * @param country The country on which to base the offer.
 	 */
-	public OfferOperations( IPartner rootPartnerOperations, String offerId, String country )
+	public OfferOperations(IPartner rootPartnerOperations, String offerId, String country)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( offerId, country ) );
+		super(rootPartnerOperations, new Tuple<String, String>(offerId, country));
 		
-		if ( StringHelper.isEmptyOrContainsWhiteSpace( offerId ) )
+		if (StringHelper.isEmptyOrContainsWhiteSpace(offerId))
 		{
-			throw new IllegalArgumentException( "offerId has to be set." );
+			throw new IllegalArgumentException("offerId has to be set.");
 		}
 
-		ParameterValidator.isValidCountryCode( country );
+		ParameterValidator.isValidCountryCode(country);
 		
-		this.addOns = new OfferAddOnsOperations( rootPartnerOperations, offerId, country );
+		this.addOns = new OfferAddOnsOperations(rootPartnerOperations, offerId, country);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class OfferOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Offer>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOffer").getPath(),
 				this.getContext().getItem1()),
 			parameters);

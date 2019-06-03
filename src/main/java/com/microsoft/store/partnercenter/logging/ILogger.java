@@ -13,20 +13,20 @@ public interface ILogger
      * 
      * @param message The informational message.
      */
-    void logInformation( String message );
+    void logInformation(String message);
 
     /**
      * Logs a warning.
      * 
      * @param message The warning message.
      */
-    void logWarning( String message );
+    void logWarning(String message);
 
     /**
      * Logs an error.
      * 
      * @param message The error message.
      */
-    void logError( String message );
+    void logError(String message);
 
 }

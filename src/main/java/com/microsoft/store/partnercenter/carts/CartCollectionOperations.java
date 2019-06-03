@@ -25,13 +25,13 @@ public class CartCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      */
-    public CartCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CartCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 
@@ -42,9 +42,9 @@ public class CartCollectionOperations
      * @return The available cart operations.
      */
     @Override
-    public ICart byId( String cartId )
+    public ICart byId(String cartId)
     {
-        return new CartOperations( this.getPartner(), this.getContext(), cartId );
+        return new CartOperations(this.getPartner(), this.getContext(), cartId);
     }
 
     /**
@@ -54,11 +54,11 @@ public class CartCollectionOperations
      * @return The customer information that was just created.
      */
     @Override
-    public Cart create( Cart newCart )
+    public Cart create(Cart newCart)
     {
-        if ( newCart == null )
+        if (newCart == null)
         {
-            throw new IllegalArgumentException( "The newCart cannot be null" );
+            throw new IllegalArgumentException("The newCart cannot be null");
         }
 
         return this.getPartner().getServiceClient().post(

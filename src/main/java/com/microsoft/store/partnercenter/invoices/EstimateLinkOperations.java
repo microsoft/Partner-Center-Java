@@ -19,9 +19,9 @@ public class EstimateLinkOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public EstimateLinkOperations( IPartner rootPartnerOperations )
+	public EstimateLinkOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
     /**

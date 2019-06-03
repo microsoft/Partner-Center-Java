@@ -20,13 +20,13 @@ public class BatchJobStatusCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      */
-    public BatchJobStatusCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public BatchJobStatusCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 
@@ -37,7 +37,7 @@ public class BatchJobStatusCollectionOperations
      * @return The customer's devices batch upload status operations.
      */
     @Override
-    public IBatchJobStatus byId( String trackingId )
+    public IBatchJobStatus byId(String trackingId)
     {
         return new BatchJobStatusOperations(this.getPartner(), this.getContext(), trackingId);
     }

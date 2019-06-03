@@ -31,18 +31,18 @@ public class CustomerProductOperations
 	 * @param customerId The customer id for which to retrieve the product.
 	 * @param productId Identifier for the product.
 	 */
-	public CustomerProductOperations( IPartner rootPartnerOperations, String customerId, String productId )
+	public CustomerProductOperations(IPartner rootPartnerOperations, String customerId, String productId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, productId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, productId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 	}
 
@@ -57,7 +57,7 @@ public class CustomerProductOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Product>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProduct").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));

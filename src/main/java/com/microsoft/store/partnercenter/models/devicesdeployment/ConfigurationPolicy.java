@@ -17,7 +17,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the policy unique identifier.
 	 */
-	@JsonProperty( "id" )
+	@JsonProperty("id")
 	private String __Id;
 
 	public String getId()
@@ -25,7 +25,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __Id;
 	}
 
-	public void setId( String value )
+	public void setId(String value)
 	{
 		__Id = value;
 	}
@@ -33,7 +33,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the name associated with the policy.
 	 */
-	@JsonProperty( "name" )
+	@JsonProperty("name")
 	private String __Name;
 
 	public String getName()
@@ -41,7 +41,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __Name;
 	}
 
-	public void setName( String value )
+	public void setName(String value)
 	{
 		__Name = value;
 	}
@@ -49,7 +49,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the category of the policy.
 	 */
-	@JsonProperty( "category" )
+	@JsonProperty("category")
 	private PolicyCategory __Category;
 
 	public PolicyCategory getCategory()
@@ -57,7 +57,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __Category;
 	}
 
-	public void setCategory( PolicyCategory value )
+	public void setCategory(PolicyCategory value)
 	{
 		__Category = value;
 	}
@@ -65,7 +65,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the description for a policy.
 	 */
-	@JsonProperty( "description" )
+	@JsonProperty("description")
 	private String __Description;
 
 	public String getDescription()
@@ -73,7 +73,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __Description;
 	}
 
-	public void setDescription( String value )
+	public void setDescription(String value)
 	{
 		__Description = value;
 	}
@@ -81,7 +81,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 *  Gets or sets the number of devices assigned to a policy.
 	 */
-	@JsonProperty( "devicesAssignedCount" )
+	@JsonProperty("devicesAssignedCount")
 	private Integer __DevicesAssignedCount;
 
 	public Integer getDevicesAssignedCount()
@@ -89,7 +89,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __DevicesAssignedCount;
 	}
 
-	public void setDevicesAssignedCount( Integer value )
+	public void setDevicesAssignedCount(Integer value)
 	{
 		__DevicesAssignedCount = value;
 	}
@@ -97,7 +97,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the settings for a policy.
 	 */
-	@JsonProperty( "policySettings" )
+	@JsonProperty("policySettings")
 	private List<PolicySettingsType> __PolicySettings;
 
 	public List<PolicySettingsType> getPolicySettings()
@@ -105,7 +105,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __PolicySettings;
 	}
 
-	public void setPolicySettings( List<PolicySettingsType> value )
+	public void setPolicySettings(List<PolicySettingsType> value)
 	{
 		__PolicySettings = value;
 	}
@@ -113,7 +113,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the date the policy was created.
 	 */
-	@JsonProperty( "createdDate" )
+	@JsonProperty("createdDate")
 	private DateTime __CreatedDate;
 
 	public DateTime getCreatedDate()
@@ -121,7 +121,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __CreatedDate;
 	}
 
-	public void setCreatedDate( DateTime value )
+	public void setCreatedDate(DateTime value)
 	{
 		__CreatedDate = value;
 	}
@@ -129,7 +129,7 @@ public class ConfigurationPolicy extends ResourceBase {
 	/**
 	 * Gets or sets the date the policy was modified.
 	 */
-	@JsonProperty( "lastModifiedDate" )
+	@JsonProperty("lastModifiedDate")
 	private DateTime __LastModifiedDate;
 
 	public DateTime getLastModifiedDate()
@@ -137,7 +137,7 @@ public class ConfigurationPolicy extends ResourceBase {
 		return __LastModifiedDate;
 	}
 
-	public void setLastModifiedDate( DateTime value )
+	public void setLastModifiedDate(DateTime value)
 	{
 		__LastModifiedDate = value;
 	}

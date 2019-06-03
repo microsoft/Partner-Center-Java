@@ -7,12 +7,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
-@JsonIgnoreProperties( { "roleId" } )
+@JsonIgnoreProperties({ "roleId" })
 public class UserMember extends ResourceBase {
     /**
      * Gets or sets the id of the member.
      */
-	@JsonProperty( "id" )
+	@JsonProperty("id")
     private String __Id;
 
     public String getId()
@@ -20,7 +20,7 @@ public class UserMember extends ResourceBase {
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	__Id = value;
     }
@@ -28,7 +28,7 @@ public class UserMember extends ResourceBase {
     /**
      * Gets or sets the display name.
      */
-	@JsonProperty( "DisplayName" )
+	@JsonProperty("DisplayName")
     private String __DisplayName;
     
     public String getDisplayName()
@@ -36,7 +36,7 @@ public class UserMember extends ResourceBase {
     	return __DisplayName;
     }
 
-    public void setDisplayName( String value )
+    public void setDisplayName(String value)
     {
     	__DisplayName = value;
     }
@@ -44,7 +44,7 @@ public class UserMember extends ResourceBase {
     /**
      * Gets or sets the name of the user principal.
      */
-	@JsonProperty( "UserPrincipalName" )
+	@JsonProperty("UserPrincipalName")
     private String __UserPrincipalName;
     
     public String getUserPrincipalName()
@@ -52,7 +52,7 @@ public class UserMember extends ResourceBase {
     	return __UserPrincipalName;
     }
 
-    public void setUserPrincipalName( String value )
+    public void setUserPrincipalName(String value)
     {
     	__UserPrincipalName = value;
     }

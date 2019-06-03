@@ -16,5 +16,5 @@ public interface IEntityPatchOperations<T extends ResourceBase>
      * @param entity The entity information.
      * @return The updated entity.
      */
-    T patch( T entity );
+    T patch(T entity);
 }

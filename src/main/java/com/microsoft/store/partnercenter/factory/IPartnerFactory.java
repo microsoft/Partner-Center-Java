@@ -17,5 +17,5 @@ public interface IPartnerFactory
      * @param credentials The partner credentials. Use the extensions to obtain these.
      * @return A configured partner object.
      */
-    IAggregatePartner build( IPartnerCredentials credentials );
+    IAggregatePartner build(IPartnerCredentials credentials);
 }

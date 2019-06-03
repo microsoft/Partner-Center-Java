@@ -31,7 +31,7 @@ public abstract class Contract
      * 
      * @param value The order identifier.
      */
-    public void setOrderId( String value )
+    public void setOrderId(String value)
     {
         orderId = value;
     }

@@ -14,9 +14,49 @@ public class OrderLineItem
     extends ResourceBaseWithLinks<OrderLineItemLinks>    
 {
     /**
+     * The friendly name for the result contract (subscription)
+     */
+    private String friendlyName;
+
+    /**
+     * The line item number.
+     */
+    private int lineItemNumber;
+
+    /**
+     * The offer identifier for the line item.
+     */
+    private String offerId;
+
+    /**
+     * The partner identifier on record.
+     */
+    private String partnerIdOnRecord;
+
+    /**
+     * The parent subscription identifier. This parameter should only be set for add-on offer purchase applies to order updates only.
+     */
+    private String parentSubscriptionId;
+
+    /**
      * The pricing for the order line item.
      */
     private Pricing pricing;
+
+    /**
+     * The provisioning context for the offer.
+     */
+    private Map<String, String> provisioningContext;
+
+    /**
+     * The product quantity.
+     */
+    private int quantity;
+
+    /**
+     * The resulting subscription identifier.
+     */
+    private String subscriptionId;
 
     /**
      * The term duration for the order line item.
@@ -29,124 +69,93 @@ public class OrderLineItem
     private String transactionType;
 
     /**
-     * Gets or sets the line item number.
+     * Gets the friendly name of the subscription.
+     * 
+     * @return The friendly name of the subscription.
      */
-    private int __LineItemNumber;
-
-    public int getLineItemNumber()
-    {
-        return __LineItemNumber;
-    }
-
-    public void setLineItemNumber( int value )
-    {
-        __LineItemNumber = value;
-    }
-
-    /**
-     * Gets or sets the offer identifier.
-     */
-    private String __OfferId;
-
-    public String getOfferId()
-    {
-        return __OfferId;
-    }
-
-    public void setOfferId( String value )
-    {
-        __OfferId = value;
-    }
-
-    /**
-     * Gets or sets the resulting subscription identifier.
-     */
-    private String __SubscriptionId;
-
-    public String getSubscriptionId()
-    {
-        return __SubscriptionId;
-    }
-
-    public void setSubscriptionId( String value )
-    {
-        __SubscriptionId = value;
-    }
-
-    /**
-     * Gets or sets the parent subscription identifier. This parameter should only be set for add-on offer purchase
-     * Applies to Order updates only.
-     */
-    private String __ParentSubscriptionId;
-
-    public String getParentSubscriptionId()
-    {
-        return __ParentSubscriptionId;
-    }
-
-    public void setParentSubscriptionId( String value )
-    {
-        __ParentSubscriptionId = value;
-    }
-
-    /**
-     * Gets or sets the friendly name for the result contract (subscription)
-     */
-    private String __FriendlyName;
-
     public String getFriendlyName()
     {
-        return __FriendlyName;
-    }
-
-    public void setFriendlyName( String value )
-    {
-        __FriendlyName = value;
+        return friendlyName;
     }
 
     /**
-     * Gets or sets the product quantity.
+     * Sets the friendly name of the subscription.
+     * 
+     * @param value The friendly name of the subscription.
      */
-    private int __Quantity;
-
-    public int getQuantity()
+    public void setFriendlyName(String value)
     {
-        return __Quantity;
-    }
-
-    public void setQuantity( int value )
-    {
-        __Quantity = value;
+        friendlyName = value;
     }
 
     /**
-     * Gets or sets the partner identifier on record.
+     * Gets the line item number.
+     * 
+     * @return The line item number.
      */
-    private String __PartnerIdOnRecord;
+    public int getLineItemNumber()
+    {
+        return lineItemNumber;
+    }
 
+    /**
+     * Sets the line item number.
+     * 
+     * @param value The line item number.
+     */
+    public void setLineItemNumber(int value)
+    {
+        lineItemNumber = value;
+    }
+
+    /**
+     * Gets the offer identifier. 
+     * 
+     * @return The offer identifier for the line item.
+     */
+    public String getOfferId()
+    {
+        return offerId;
+    }
+
+    /**
+     * Sets the offer identifier.
+     * 
+     * @param value The offer identifier for the line item.
+     */
+    public void setOfferId(String value)
+    {
+        offerId = value;
+    }
+
+    /**
+     * Gets the partner identifier on record.
+     * 
+     * @return The partner identifier on record.
+     */
     public String getPartnerIdOnRecord()
     {
-        return __PartnerIdOnRecord;
-    }
-
-    public void setPartnerIdOnRecord( String value )
-    {
-        __PartnerIdOnRecord = value;
+        return partnerIdOnRecord;
     }
 
     /**
-     * Gets or sets the provisioning context for the offer.
+     * Sets the partner identifier on record.
+     * 
+     * @param value The partner identifier on record.
      */
-    private Map<String, String> __ProvisioningContext;
-
-    public Map<String, String> getProvisioningContext()
+    public void setPartnerIdOnRecord(String value)
     {
-        return __ProvisioningContext;
+        partnerIdOnRecord = value;
     }
 
-    public void setProvisioningContext( Map<String, String> value )
+    /**
+     * Gets the parent subscription identifier. This parameter should only be set for add-on offer purchase applies to order updates only.
+     * 
+     * @return The parent subscription identifier.
+     */
+    public String getParentSubscriptionId()
     {
-        __ProvisioningContext = value;
+        return parentSubscriptionId;
     }
 
 	/**
@@ -160,6 +169,86 @@ public class OrderLineItem
     }
 
     /**
+     * Sets the pricing for the order line item.
+     * 
+     * @param value The pricing for the order line item.
+     */
+    public void setPricing(Pricing value)
+    {
+        pricing = value;
+    }
+
+    /**
+     * Gets the provisioning context for the offer.
+     * 
+     * @return The provisioning context for the offer.
+     */
+    public Map<String, String> getProvisioningContext()
+    {
+        return provisioningContext;
+    }
+
+    /**
+     * Sets the provisioning context for the offer.
+     * 
+     * @param value The provisioning context for the offer.
+     */
+    public void setProvisioningContext(Map<String, String> value)
+    {
+        provisioningContext = value;
+    }
+
+    /**
+     * Gets the product quantity.
+     * 
+     * @return The product quantity.
+     */
+    public int getQuantity()
+    {
+        return quantity;
+    }
+
+    /**
+     * Sets the product quantity.
+     * 
+     * @param value The product quantity.
+     */
+    public void setQuantity(int value)
+    {
+        quantity = value;
+    }
+
+    /**
+     * Sets the parent subscription identifier. This parameter should only be set for add-on offer purchase applies to order updates only.
+     * 
+     * @param value The parent subscription identifier.
+     */
+    public void setParentSubscriptionId(String value)
+    {
+        parentSubscriptionId = value;
+    }
+
+    /**
+     * Gets the resulting subscription identifier.
+     * 
+     * @return The resulting subscription identifier.
+     */
+    public String getSubscriptionId()
+    {
+        return subscriptionId;
+    }
+
+    /**
+     * Sets the resulting subscription identifier.
+     * 
+     * @param value The resulting subscription identifier.
+     */
+    public void setSubscriptionId(String value)
+    {
+        subscriptionId = value;
+    }
+
+    /**
      * Gets the term duration for the order line item.
      * 
      * @return The term duration for the order line item.
@@ -170,6 +259,16 @@ public class OrderLineItem
     }
 
     /**
+     * Sets the term duration for the order line item.
+     * 
+     * @param value The term duration for the order line item.
+     */
+    public void setTermDuration(String value)
+    {
+        termDuration = value;
+    }
+
+    /**
      * Gets the transaction type for the order line item.
      * 
      * @return The transaction type for the order line item.
@@ -177,5 +276,15 @@ public class OrderLineItem
     public String getTransactionType()
     {
         return transactionType;
+    }
+
+    /**
+     * Sets the transaction type for the order line item.
+     * 
+     * @param value The transaction type for the order line item.
+     */
+    public void setTransactionType(String value)
+    {
+        transactionType = value;
     }
 }

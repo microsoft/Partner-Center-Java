@@ -32,23 +32,23 @@ public class CustomerAvailabilityCollectionOperations extends BasePartnerCompone
 	 * @param productId Identifier for the product. 
 	 * @param skuId Identifier for the SKU.
 	 */
-	public CustomerAvailabilityCollectionOperations( IPartner rootPartnerOperations, String customerId, String productId, String skuId )
+	public CustomerAvailabilityCollectionOperations(IPartner rootPartnerOperations, String customerId, String productId, String skuId)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>( customerId, productId, skuId ) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, productId, skuId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 	}
 
@@ -59,7 +59,7 @@ public class CustomerAvailabilityCollectionOperations extends BasePartnerCompone
 	 * @return The availability operations.
 	 */    
 	@Override
-	public IAvailability byId( String availabilityId )
+	public IAvailability byId(String availabilityId)
 	{
 		return new CustomerAvailabilityOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), this.getContext().getItem3(), availabilityId);
 	}
@@ -75,7 +75,7 @@ public class CustomerAvailabilityCollectionOperations extends BasePartnerCompone
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Availability>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAvailabilities").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2(), 

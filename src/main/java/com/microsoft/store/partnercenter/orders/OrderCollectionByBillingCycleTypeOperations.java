@@ -32,13 +32,13 @@ public class OrderCollectionByBillingCycleTypeOperations
 	 * @param customerId The customer identifier.
 	 * @param billingCycleType The billing type.
 	 */
-	public OrderCollectionByBillingCycleTypeOperations( IPartner rootPartnerOperations, String customerId, BillingCycleType billingCycleType )
+	public OrderCollectionByBillingCycleTypeOperations(IPartner rootPartnerOperations, String customerId, BillingCycleType billingCycleType)
 	{
-		super( rootPartnerOperations, new Tuple<String, BillingCycleType>(customerId, billingCycleType) );
+		super(rootPartnerOperations, new Tuple<String, BillingCycleType>(customerId, billingCycleType));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set.");
 		}
 	}
 
@@ -63,7 +63,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getPath(),
 				this.getContext().getItem1()),
 			parameters);
@@ -100,7 +100,7 @@ public class OrderCollectionByBillingCycleTypeOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrdersByBillingCycleType").getPath(),
 				this.getContext().getItem1()),
 			parameters);

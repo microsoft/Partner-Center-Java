@@ -9,7 +9,7 @@ import com.microsoft.store.partnercenter.models.ResourceBase;
 /**
  * Holds validation information for a single country.
  */
-@JsonIgnoreProperties( { "states", "supportedCultures", "supportedLanguages", "countryCallingCodes" } )
+@JsonIgnoreProperties({ "states", "supportedCultures", "supportedLanguages", "countryCallingCodes" })
 public class CountryInformation
     extends ResourceBase
 {
@@ -23,7 +23,7 @@ public class CountryInformation
         return __ExtensionData;
     }
 
-    public void setExtensionData( String value )
+    public void setExtensionData(String value)
     {
         __ExtensionData = value;
     }
@@ -38,7 +38,7 @@ public class CountryInformation
         return __Iso2Code;
     }
 
-    public void setIso2Code( String value )
+    public void setIso2Code(String value)
     {
         __Iso2Code = value;
     }
@@ -53,7 +53,7 @@ public class CountryInformation
         return __Iso3Code;
     }
 
-    public void setIso3Code( String value )
+    public void setIso3Code(String value)
     {
         __Iso3Code = value;
     }
@@ -68,7 +68,7 @@ public class CountryInformation
         return __DefaultCulture;
     }
 
-    public void setDefaultCulture( String value )
+    public void setDefaultCulture(String value)
     {
         __DefaultCulture = value;
     }
@@ -83,7 +83,7 @@ public class CountryInformation
         return __IsStateRequired;
     }
 
-    public void setIsStateRequired( Boolean value )
+    public void setIsStateRequired(Boolean value)
     {
         __IsStateRequired = value;
     }
@@ -98,7 +98,7 @@ public class CountryInformation
         return __SupportedStatesList;
     }
 
-    public void setSupportedStatesList( Iterable<String> value )
+    public void setSupportedStatesList(Iterable<String> value)
     {
         __SupportedStatesList = value;
     }
@@ -113,7 +113,7 @@ public class CountryInformation
         return __SupportedLanguagesList;
     }
 
-    public void setSupportedLanguagesList( Iterable<String> value )
+    public void setSupportedLanguagesList(Iterable<String> value)
     {
         __SupportedLanguagesList = value;
     }
@@ -128,7 +128,7 @@ public class CountryInformation
         return __SupportedCulturesList;
     }
 
-    public void setSupportedCulturesList( Iterable<String> value )
+    public void setSupportedCulturesList(Iterable<String> value)
     {
         __SupportedCulturesList = value;
     }
@@ -143,7 +143,7 @@ public class CountryInformation
         return __IsPostalCodeRequired;
     }
 
-    public void setIsPostalCodeRequired( Boolean value )
+    public void setIsPostalCodeRequired(Boolean value)
     {
         __IsPostalCodeRequired = value;
     }
@@ -158,7 +158,7 @@ public class CountryInformation
         return __PostalCodeRegex;
     }
 
-    public void setPostalCodeRegex( String value )
+    public void setPostalCodeRegex(String value)
     {
         __PostalCodeRegex = value;
     }
@@ -173,7 +173,7 @@ public class CountryInformation
         return __IsCityRequired;
     }
 
-    public void setIsCityRequired( Boolean value )
+    public void setIsCityRequired(Boolean value)
     {
         __IsCityRequired = value;
     }
@@ -188,7 +188,7 @@ public class CountryInformation
         return __IsVatIdSupported;
     }
 
-    public void setIsVatIdSupported( Boolean value )
+    public void setIsVatIdSupported(Boolean value)
     {
         __IsVatIdSupported = value;
     }
@@ -203,7 +203,7 @@ public class CountryInformation
         return __TaxIdFormat;
     }
 
-    public void setTaxIdFormat( String value )
+    public void setTaxIdFormat(String value)
     {
         __TaxIdFormat = value;
     }
@@ -218,7 +218,7 @@ public class CountryInformation
         return __TaxIdSample;
     }
 
-    public void setTaxIdSample( String value )
+    public void setTaxIdSample(String value)
     {
         __TaxIdSample = value;
     }
@@ -233,7 +233,7 @@ public class CountryInformation
         return __VatIdRegex;
     }
 
-    public void setVatIdRegex( String value )
+    public void setVatIdRegex(String value)
     {
         __VatIdRegex = value;
     }
@@ -248,7 +248,7 @@ public class CountryInformation
         return __PhoneNumberRegex;
     }
 
-    public void setPhoneNumberRegex( String value )
+    public void setPhoneNumberRegex(String value)
     {
         __PhoneNumberRegex = value;
     }
@@ -263,7 +263,7 @@ public class CountryInformation
         return __IsRegistrationNumberSupported;
     }
 
-    public void setIsRegistrationNumberSupported( Boolean value )
+    public void setIsRegistrationNumberSupported(Boolean value)
     {
         __IsRegistrationNumberSupported = value;
     }
@@ -278,7 +278,7 @@ public class CountryInformation
         return __IsTaxIdSupported;
     }
 
-    public void setIsTaxIdSupported( Boolean value )
+    public void setIsTaxIdSupported(Boolean value)
     {
         __IsTaxIdSupported = value;
     }
@@ -293,7 +293,7 @@ public class CountryInformation
         return __ResellerAgreementRegion;
     }
 
-    public void setResellerAgreementRegion( String value )
+    public void setResellerAgreementRegion(String value)
     {
         __ResellerAgreementRegion = value;
     }
@@ -308,7 +308,7 @@ public class CountryInformation
         return __GeographicRegion;
     }
 
-    public void setGeographicRegion( String value )
+    public void setGeographicRegion(String value)
     {
         __GeographicRegion = value;
     }
@@ -323,7 +323,7 @@ public class CountryInformation
         return __CountryCallingCodesList;
     }
 
-    public void setCountryCallingCodesList( Iterable<String> value )
+    public void setCountryCallingCodesList(Iterable<String> value)
     {
         __CountryCallingCodesList = value;
     }

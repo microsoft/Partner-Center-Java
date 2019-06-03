@@ -14,9 +14,9 @@ public abstract class ResourceBaseWithLinks<TLinks>
      * 
      * @param objectType Type of the object.
      */
-    protected ResourceBaseWithLinks( String objectType )
+    protected ResourceBaseWithLinks(String objectType)
     {
-        super( objectType );
+        super(objectType);
     }
 
     /**
@@ -44,7 +44,7 @@ public abstract class ResourceBaseWithLinks<TLinks>
      * 
      * @param value The links.
      */
-    public void setLinks( TLinks value )
+    public void setLinks(TLinks value)
     {
         links = value;
     }

@@ -25,7 +25,7 @@ public interface IDevicesBatchCollection
 	 * @param deviceBatchId The devices batch id
 	 * @return The devices batch behavior.
 	 */
-    IDevicesBatch byId( String deviceBatchId );
+    IDevicesBatch byId(String deviceBatchId);
 
     /**
      * Retrieves all devices batches.

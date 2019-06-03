@@ -32,20 +32,20 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
 	 * @param country               The country on which to base the product.
 	 * @param targetSegment         The target segment used for filtering the products.
 	 */
-	public ProductCollectionByCountryByTargetViewByTargetSegmentOperations( IPartner rootPartnerOperations, String targetView, String country, String targetSegment )
+	public ProductCollectionByCountryByTargetViewByTargetSegmentOperations(IPartner rootPartnerOperations, String targetView, String country, String targetSegment)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>(targetView, country, targetSegment) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(targetView, country, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( targetView ) )
+		if (StringHelper.isNullOrWhiteSpace(targetView))
 		{
-			throw new IllegalArgumentException( "targetView must be set" );
+			throw new IllegalArgumentException("targetView must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 
@@ -88,7 +88,7 @@ public class ProductCollectionByCountryByTargetViewByTargetSegmentOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Product>>(){}, 
-			PartnerService.getInstance().getConfiguration().getApis().get( "GetProducts" ).getPath(),
+			PartnerService.getInstance().getConfiguration().getApis().get("GetProducts").getPath(),
 			parameters);
 	}
 }

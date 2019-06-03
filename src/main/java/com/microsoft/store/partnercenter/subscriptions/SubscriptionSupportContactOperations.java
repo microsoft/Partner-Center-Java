@@ -27,18 +27,18 @@ public class SubscriptionSupportContactOperations
 	 * @param customerId            The customer identifier.
 	 * @param subscriptionId        The subscription identifier
 	 */
-	public SubscriptionSupportContactOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
+	public SubscriptionSupportContactOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set.");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId))
 		{
-			throw new IllegalArgumentException( "subscriptionId must be set." );
+			throw new IllegalArgumentException("subscriptionId must be set.");
 		}
 	}
 
@@ -52,7 +52,7 @@ public class SubscriptionSupportContactOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<SupportContact>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionSupportContact").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));
@@ -69,7 +69,7 @@ public class SubscriptionSupportContactOperations
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),
 			new TypeReference<SupportContact>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateSubscriptionSupportContact").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),

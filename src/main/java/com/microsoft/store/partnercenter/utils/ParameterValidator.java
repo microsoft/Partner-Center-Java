@@ -5,19 +5,19 @@ package com.microsoft.store.partnercenter.utils;
 
 public class ParameterValidator
 {
-    public static void isIntInclusive( int min, int max, int parameterValue, String errorMessage )
+    public static void isIntInclusive(int min, int max, int parameterValue, String errorMessage)
     {
-        if ( parameterValue < min || max < parameterValue )
+        if (parameterValue < min || max < parameterValue)
         {
-            throw new IllegalArgumentException( errorMessage );
+            throw new IllegalArgumentException(errorMessage);
         }
     }
 
-    public static void isValidUriQueryValue( String string, String errorMessage )
+    public static void isValidUriQueryValue(String string, String errorMessage)
     {
-        if ( StringHelper.isEmptyOrContainsWhiteSpace( string ) )
+        if (StringHelper.isEmptyOrContainsWhiteSpace(string))
         {
-            throw new IllegalArgumentException( errorMessage );
+            throw new IllegalArgumentException(errorMessage);
         }
     }
     
@@ -27,11 +27,11 @@ public class ParameterValidator
      */
     public static void isValidCountryCode(String countryCode)
     {
-        if ( StringHelper.isEmptyOrContainsWhiteSpace( countryCode ) )
+        if (StringHelper.isEmptyOrContainsWhiteSpace(countryCode))
         {
-            throw new IllegalArgumentException( "Country can't be empty" );
+            throw new IllegalArgumentException("Country can't be empty");
         }
-        else if ( countryCode.length() != 2 )
+        else if (countryCode.length() != 2)
         {
             throw new IllegalArgumentException("Country has to be a 2 letter string");
         }

@@ -33,18 +33,18 @@ public class AvailabilityCollectionOperations
 	 * @param skuId                 Identifier for the SKU.
 	 * @param country               The country on which to base the product.
 	 */
-	public AvailabilityCollectionOperations( IPartner rootPartnerOperations, String productId, String skuId, String country )
+	public AvailabilityCollectionOperations(IPartner rootPartnerOperations, String productId, String skuId, String country)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>(productId, skuId, country) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(productId, skuId, country));
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);
@@ -56,7 +56,7 @@ public class AvailabilityCollectionOperations
 	 * @param availabilityId Identifier for the availability.
 	 * @return The availability operations.
 	 */    
-	public IAvailability byId( String availabilityId )
+	public IAvailability byId(String availabilityId)
 	{
 		return new AvailabilityOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), availabilityId, this.getContext().getItem3());
 	}
@@ -93,7 +93,7 @@ public class AvailabilityCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Availability>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAvailabilities").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),

@@ -15,7 +15,7 @@ public class DeviceBatchCreationRequest extends ResourceBase {
 	/**
 	 * Gets or sets the devices batch unique identifier.
 	 */
-	@JsonProperty( "batchId" )
+	@JsonProperty("batchId")
 	private String __BatchId;
 
 	public String getBatchId()
@@ -23,7 +23,7 @@ public class DeviceBatchCreationRequest extends ResourceBase {
 		return __BatchId;
 	}
 
-	public void setBatchId( String value )
+	public void setBatchId(String value)
 	{
 		__BatchId = value;
 	}
@@ -31,7 +31,7 @@ public class DeviceBatchCreationRequest extends ResourceBase {
 	/**
 	 * Gets or sets the list of devices to be uploaded.
 	 */
-	@JsonProperty( "devices" )
+	@JsonProperty("devices")
 	private List<Device> __Devices;
 
 	public List<Device> getDevices()
@@ -39,7 +39,7 @@ public class DeviceBatchCreationRequest extends ResourceBase {
 		return __Devices;
 	}
 
-	public void setDevices( List<Device> value )
+	public void setDevices(List<Device> value)
 	{
 		__Devices = value;
 	}

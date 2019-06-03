@@ -21,7 +21,7 @@ public class ConversionError
         return __Code;
     }
 
-    public void setCode( ConversionErrorCode value )
+    public void setCode(ConversionErrorCode value)
     {
         __Code = value;
     }
@@ -36,7 +36,7 @@ public class ConversionError
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }

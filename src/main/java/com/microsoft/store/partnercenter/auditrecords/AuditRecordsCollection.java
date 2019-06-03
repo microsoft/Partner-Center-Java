@@ -33,17 +33,17 @@ public class AuditRecordsCollection
 	extends BasePartnerComponentString
 	implements IAuditRecordsCollection {
 
-	public AuditRecordsCollection( IPartner rootPartnerOperations )
+	public AuditRecordsCollection(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	@Override
-	public SeekBasedResourceCollection<AuditRecord> query( DateTime startDate, DateTime endDate, IQuery query )
+	public SeekBasedResourceCollection<AuditRecord> query(DateTime startDate, DateTime endDate, IQuery query)
 	{
-		if ( query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE )
+		if (query.getType() != QueryType.INDEXED && query.getType() != QueryType.SIMPLE)
 		{
-			throw new IllegalArgumentException( "This type of query is not supported." );
+			throw new IllegalArgumentException("This type of query is not supported.");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
@@ -57,31 +57,31 @@ public class AuditRecordsCollection
 			) 
 		);
 		
-		if ( endDate != null )
+		if (endDate != null)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get( "EndDate" ),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("EndDate"),
 					endDate.toString() 
 				) 
 			);
 		}
 
-		if ( query.getType() == QueryType.INDEXED )
+		if (query.getType() == QueryType.INDEXED)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get("Size"), 
-					Integer.toString( query.getPageSize() )  
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("Size"), 
+					Integer.toString(query.getPageSize())  
 				)
 			);
 		}
 
-		if ( query.getFilter() != null )
+		if (query.getFilter() != null)
 		{
 			// add the filter to the request if specified
 			ObjectMapper mapper = new ObjectMapper();
@@ -91,32 +91,32 @@ public class AuditRecordsCollection
 				(
 					new KeyValuePair<String, String>
 					(
-						PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getParameters().get("Filter"), 
+						PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("Filter"), 
 						URLEncoder.encode
-						( 
-							mapper.writeValueAsString( query.getFilter() ),
+						(
+							mapper.writeValueAsString(query.getFilter()),
 							"UTF-8" 
 						)
 					)
 				);
 			}
-			catch( JsonProcessingException e )
+			catch(JsonProcessingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
-			catch ( UnsupportedEncodingException e )
+			catch (UnsupportedEncodingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
 		}
 
-		if ( query.getToken() != null )
+		if (query.getToken() != null)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAuditRecordsRequest" ).getAdditionalHeaders().get("ContinuationToken"),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getAdditionalHeaders().get("ContinuationToken"),
 					query.getToken().toString()
 				)
 			);

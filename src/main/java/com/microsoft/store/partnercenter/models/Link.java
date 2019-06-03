@@ -25,9 +25,9 @@ public class Link
      * 
      * @param uri The URI.
      */
-    public Link( URI uri )
+    public Link(URI uri)
     {
-        this( uri, "GET" );
+        this(uri, "GET");
     }
 
     /**
@@ -37,22 +37,22 @@ public class Link
      * @param method The HTTP method.
      * @param headers Optional HTTP headers.
      */
-    public Link( URI uri, String method, Collection<KeyValuePair<String, String>> headers )
+    public Link(URI uri, String method, Collection<KeyValuePair<String, String>> headers)
     {
-        this.setUri( uri );
-        this.setMethod( method );
-        this.setHeaders( headers != null ? headers : new LinkedList<KeyValuePair<String, String>>() );
+        this.setUri(uri);
+        this.setMethod(method);
+        this.setHeaders(headers != null ? headers : new LinkedList<KeyValuePair<String, String>>());
     }
 
-    public Link( URI uri, String string )
+    public Link(URI uri, String string)
     {
-        this( uri, string, null );
+        this(uri, string, null);
     }
 
     /**
      * Gets the URI.
      */
-    @JsonDeserialize( using = UriDeserializer.class )
+    @JsonDeserialize(using = UriDeserializer.class)
     private URI uri;
 
     public URI getUri()
@@ -60,7 +60,7 @@ public class Link
         return uri;
     }
 
-    public void setUri( URI value )
+    public void setUri(URI value)
     {
         uri = value;
     }
@@ -75,7 +75,7 @@ public class Link
         return method;
     }
 
-    public void setMethod( String value )
+    public void setMethod(String value)
     {
         method = value;
     }
@@ -90,7 +90,7 @@ public class Link
         return headers;
     }
 
-    public void setHeaders( Collection<KeyValuePair<String, String>> value )
+    public void setHeaders(Collection<KeyValuePair<String, String>> value)
     {
         headers = value;
     }

@@ -21,7 +21,7 @@ public class CustomerUser extends User
         return usageLocation;
     }
 
-    public void setUsageLocation( String value )
+    public void setUsageLocation(String value)
     {
     	usageLocation = value;
     }

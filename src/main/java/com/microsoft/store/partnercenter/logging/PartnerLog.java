@@ -38,7 +38,7 @@ public class PartnerLog
      */
     public static PartnerLog getInstance()
     {
-        if ( PartnerLog.logManagerSingleton == null )
+        if (PartnerLog.logManagerSingleton == null)
         {
             PartnerLog.logManagerSingleton = new PartnerLog();
         }
@@ -60,13 +60,13 @@ public class PartnerLog
      * 
      * @param message The informational message.
      */
-    public void logInformation( String message )
+    public void logInformation(String message)
     {
-        if ( !StringHelper.isNullOrWhiteSpace( message ) )
+        if (!StringHelper.isNullOrWhiteSpace(message))
         {
-            for ( ILogger logger : this.registeredLoggers )
+            for (ILogger logger : this.registeredLoggers)
             {
-                logger.logInformation( message );
+                logger.logInformation(message);
             }
         }
     }
@@ -76,13 +76,13 @@ public class PartnerLog
      * 
      * @param message The warning message.
      */
-    public void logWarning( String message )
+    public void logWarning(String message)
     {
-        if ( !StringHelper.isNullOrWhiteSpace( message ) )
+        if (!StringHelper.isNullOrWhiteSpace(message))
         {
-            for ( ILogger logger : this.registeredLoggers )
+            for (ILogger logger : this.registeredLoggers)
             {
-                logger.logWarning( message );
+                logger.logWarning(message);
             }
         }
     }
@@ -92,13 +92,13 @@ public class PartnerLog
      * 
      * @param message The error message.
      */
-    public void logError( String message )
+    public void logError(String message)
     {
-        if ( !StringHelper.isNullOrWhiteSpace( message ) )
+        if (!StringHelper.isNullOrWhiteSpace(message))
         {
-            for ( ILogger logger : this.registeredLoggers )
+            for (ILogger logger : this.registeredLoggers)
             {
-                logger.logError( message );
+                logger.logError(message);
             }
         }
     }

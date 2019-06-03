@@ -34,12 +34,12 @@ public class OrderProvisioningStatusOperations
 
         if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set");
+            throw new IllegalArgumentException("customerId must be set");
         }
 
-        if (StringHelper.isNullOrWhiteSpace( orderId ) )
+        if (StringHelper.isNullOrWhiteSpace(orderId))
         {
-            throw new IllegalArgumentException( "orderId must be set");
+            throw new IllegalArgumentException("orderId must be set");
         }
     }
 
@@ -54,7 +54,7 @@ public class OrderProvisioningStatusOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ResourceCollection<OrderLineItemProvisioningStatus>>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetOrderProvisioningStatus").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));

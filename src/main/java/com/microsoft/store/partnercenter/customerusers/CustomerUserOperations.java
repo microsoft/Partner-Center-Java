@@ -39,16 +39,16 @@ public class CustomerUserOperations
 	 * @param customerId The customer identifier.
 	 * @param userId The user identifier.
 	 */
-	public CustomerUserOperations( IPartner rootPartnerOperations, String customerId, String userId )
+	public CustomerUserOperations(IPartner rootPartnerOperations, String customerId, String userId)
 	{
-		super( rootPartnerOperations, new Tuple<String,String>(customerId, userId) );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, new Tuple<String,String>(customerId, userId));
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
-		if ( StringHelper.isNullOrWhiteSpace( userId ) )
+		if (StringHelper.isNullOrWhiteSpace(userId))
 		{
-			throw new IllegalArgumentException( "userId must be set" );
+			throw new IllegalArgumentException("userId must be set");
 		}
 	}
 
@@ -63,7 +63,7 @@ public class CustomerUserOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CustomerUser>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUserDetails").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));
@@ -78,7 +78,7 @@ public class CustomerUserOperations
 		this.getPartner().getServiceClient().delete(
 			this.getPartner(),
 			new TypeReference<CustomerUser>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("DeleteCustomerUser").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));
@@ -91,17 +91,17 @@ public class CustomerUserOperations
 	 * @return The updated user. 
 	 */
 	@Override
-	public CustomerUser patch( CustomerUser customerUser )
+	public CustomerUser patch(CustomerUser customerUser)
 	{		
-		if ( customerUser == null )
+		if (customerUser == null)
 		{
-			throw new IllegalArgumentException( "customerUser cannot be null" );
+			throw new IllegalArgumentException("customerUser cannot be null");
 		}
 
 		return this.getPartner().getServiceClient().patch(
 			this.getPartner(),
 			new TypeReference<CustomerUser>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerUser").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),
@@ -116,9 +116,9 @@ public class CustomerUserOperations
 	@Override
 	public ICustomerUserRoleCollection getDirectoryRoles() 
 	{
-		if ( customerUserDirectoryRoleCollectionOperations == null )
+		if (customerUserDirectoryRoleCollectionOperations == null)
 		{
-			customerUserDirectoryRoleCollectionOperations = new CustomerUserRoleCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+			customerUserDirectoryRoleCollectionOperations = new CustomerUserRoleCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
 		}
 	
 		return customerUserDirectoryRoleCollectionOperations;
@@ -132,9 +132,9 @@ public class CustomerUserOperations
 	@Override
 	public ICustomerUserLicenseCollection getLicenses() 
 	{
-		if ( customerUserLicenseCollectionOperations == null )
+		if (customerUserLicenseCollectionOperations == null)
 		{
-			customerUserLicenseCollectionOperations = new CustomerUserLicenseCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+			customerUserLicenseCollectionOperations = new CustomerUserLicenseCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
 		}
 	
 		return customerUserLicenseCollectionOperations;
@@ -148,9 +148,9 @@ public class CustomerUserOperations
 	@Override
 	public ICustomerUserLicenseUpdates getLicenseUpdates() 
 	{
-		if ( customerUserLicenseUpdateOperations == null )
+		if (customerUserLicenseUpdateOperations == null)
 		{
-			customerUserLicenseUpdateOperations = new CustomerUserLicenseUpdateOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+			customerUserLicenseUpdateOperations = new CustomerUserLicenseUpdateOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
 		}
 	
 		return customerUserLicenseUpdateOperations;

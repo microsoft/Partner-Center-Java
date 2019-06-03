@@ -26,7 +26,7 @@ public interface IDeviceCollection
 	 * @param deviceId The device identifier.
 	 * @return The customer device behavior.
 	 */
-    IDevice byId( String deviceId );
+    IDevice byId(String deviceId);
 
     /**
 	 * Adds devices to existing devices batch.
@@ -34,7 +34,7 @@ public interface IDeviceCollection
 	 * @param newDevices The new devices to be created.
 	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
-    String create( List<Device> newDevices );
+    String create(List<Device> newDevices);
 
     /**
      * Retrieves all devices.

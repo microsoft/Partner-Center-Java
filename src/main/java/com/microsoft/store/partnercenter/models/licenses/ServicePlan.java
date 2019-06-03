@@ -9,7 +9,7 @@ public class ServicePlan {
     /**
      * Gets or sets the localized display name for service plan.
      */
-    @JsonProperty( "DisplayName" )
+    @JsonProperty("DisplayName")
     private String __DisplayName;
 	
     public String getDisplayName()
@@ -17,7 +17,7 @@ public class ServicePlan {
         return __DisplayName;
     }
 
-    public void setDisplayName( String value )
+    public void setDisplayName(String value)
     {
     	__DisplayName = value;
     }
@@ -25,7 +25,7 @@ public class ServicePlan {
     /**
      * Gets or sets the service name.
      */
-    @JsonProperty( "ServiceName" )
+    @JsonProperty("ServiceName")
     private String __ServiceName;
 	
     public String getServiceName()
@@ -33,7 +33,7 @@ public class ServicePlan {
         return __ServiceName;
     }
 
-    public void setServiceName( String value )
+    public void setServiceName(String value)
     {
     	__ServiceName = value;
     }
@@ -41,7 +41,7 @@ public class ServicePlan {
     /**
      * Gets or sets the service plan id.
      */
-    @JsonProperty( "Id" )
+    @JsonProperty("Id")
     private String __Id;
 	
     public String getId()
@@ -49,7 +49,7 @@ public class ServicePlan {
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	__Id = value;
     }
@@ -57,7 +57,7 @@ public class ServicePlan {
     /**
      * Gets or sets the service plan status of a service plan.
      */
-    @JsonProperty( "CapabilityStatus" )
+    @JsonProperty("CapabilityStatus")
     private String __CapabilityStatus;
 	
     public String getCapabilityStatus()
@@ -65,7 +65,7 @@ public class ServicePlan {
         return __CapabilityStatus;
     }
 
-    public void setCapabilityStatus( String value )
+    public void setCapabilityStatus(String value)
     {
     	__CapabilityStatus = value;
     }
@@ -75,7 +75,7 @@ public class ServicePlan {
      * It can be used to filter service plans which are applicable to user or tenant.
      * For example, if we need to know all service plans applicable to user , we can filter where target type == "User".
      */
-    @JsonProperty( "TargetType" )
+    @JsonProperty("TargetType")
     private String __TargetType;
 	
     public String getTargetType()
@@ -83,7 +83,7 @@ public class ServicePlan {
         return __TargetType;
     }
 
-    public void setTargetType( String value )
+    public void setTargetType(String value)
     {
     	__TargetType = value;
     }

@@ -76,9 +76,9 @@ public class ResourceCollectionEnumeratorContainer
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public ResourceCollectionEnumeratorContainer( IPartner rootPartnerOperations )
+    public ResourceCollectionEnumeratorContainer(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
     }
 
     /**
@@ -88,10 +88,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Offer>> getOffers()
     {
-        if ( this.offerEnumeratorFactory == null )
+        if (this.offerEnumeratorFactory == null)
         {
             this.offerEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( 
+                new IndexBasedCollectionEnumeratorFactory<>(
                     this.getPartner(),
                     new TypeReference<ResourceCollection<Offer>>(){});
         }
@@ -106,10 +106,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<Customer>> getCustomers()
     {
-        if ( this.customerEnumeratorFactory == null )
+        if (this.customerEnumeratorFactory == null)
         {
             this.customerEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( 
+                new IndexBasedCollectionEnumeratorFactory<>(
                     this.getPartner(),
                     new TypeReference<SeekBasedResourceCollection<Customer>>(){});
         }
@@ -124,10 +124,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<CustomerUser>> getCustomerUsers()
     {
-        if ( this.customerUserEnumeratorFactory == null )
+        if (this.customerUserEnumeratorFactory == null)
         {
             this.customerUserEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( 
+                new IndexBasedCollectionEnumeratorFactory<>(
                     this.getPartner(),
                     new TypeReference<SeekBasedResourceCollection<CustomerUser>>(){});
         }
@@ -142,10 +142,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Invoice>> getInvoices()
     {
-        if ( this.invoiceEnumeratorFactory == null )
+        if (this.invoiceEnumeratorFactory == null)
         {
             this.invoiceEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( 
+                new IndexBasedCollectionEnumeratorFactory<>(
                     this.getPartner(),
                     new TypeReference<ResourceCollection<Invoice>>(){});
         }
@@ -160,10 +160,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<ServiceRequest>> getServiceRequests()
     {
-        if ( this.serviceRequestEnumeratorFactory == null )
+        if (this.serviceRequestEnumeratorFactory == null)
         {
             this.serviceRequestEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( this.getPartner(),
+                new IndexBasedCollectionEnumeratorFactory<>(this.getPartner(),
                     new TypeReference<ResourceCollection<ServiceRequest>>(){});
         }
 
@@ -177,10 +177,10 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<InvoiceLineItem>> getInvoiceLineItems()
     {
-        if ( this.invoiceLineItemEnumeratorFactory == null )
+        if (this.invoiceLineItemEnumeratorFactory == null)
         {
             this.invoiceLineItemEnumeratorFactory =
-                new IndexBasedCollectionEnumeratorFactory<>( this.getPartner(),
+                new IndexBasedCollectionEnumeratorFactory<>(this.getPartner(),
                     new TypeReference<ResourceCollection<InvoiceLineItem>>(){});
         }
 
@@ -194,11 +194,11 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<SeekBasedResourceCollection<AuditRecord>> getAuditRecords()
     {
-        if ( this.auditRecordEnumeratorFactory == null )
+        if (this.auditRecordEnumeratorFactory == null)
         {
             this.auditRecordEnumeratorFactory =
                 new IndexBasedCollectionEnumeratorFactory<>
-                ( 
+                (
                     this.getPartner(),
                     new TypeReference<SeekBasedResourceCollection<AuditRecord>>(){});
         }
@@ -213,7 +213,7 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IUtilizationCollectionEnumeratorContainer getUtilization()
     {
-        if ( this.utilizationRecordEnumeratorContainer == null )
+        if (this.utilizationRecordEnumeratorContainer == null)
         {
             this.utilizationRecordEnumeratorContainer =
                 new UtilizationCollectionEnumeratorContainer(this.getPartner());
@@ -229,7 +229,7 @@ public class ResourceCollectionEnumeratorContainer
      */
     public IResourceCollectionEnumeratorFactory<ResourceCollection<Product>> getProducts()
     {
-        if ( this.productEnumeratorFactory == null )
+        if (this.productEnumeratorFactory == null)
         {
             this.productEnumeratorFactory =
                 new IndexBasedCollectionEnumeratorFactory<>(

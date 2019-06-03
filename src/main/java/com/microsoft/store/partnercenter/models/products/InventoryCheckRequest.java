@@ -21,7 +21,7 @@ public class InventoryCheckRequest
         return __TargetItems;
     }
 
-    public void setTargetItems( List<InventoryItem> value )
+    public void setTargetItems(List<InventoryItem> value)
     {
         __TargetItems = value;
     }
@@ -36,7 +36,7 @@ public class InventoryCheckRequest
         return __InventoryContext;
     }
 
-    public void setInventoryContext( Map<String, String> value )
+    public void setInventoryContext(Map<String, String> value)
     {
         __InventoryContext = value;
     }

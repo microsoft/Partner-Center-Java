@@ -9,10 +9,10 @@ package com.microsoft.store.partnercenter.models.query;
 public class SeekQuery
     extends IndexedQuery
 {
-    protected SeekQuery( Object token )
+    protected SeekQuery(Object token)
 
     {
-        super( token );
+        super(token);
     }
 
     protected SeekQuery()
@@ -40,7 +40,7 @@ public class SeekQuery
         return __SeekOperation;
     }
 
-    public void setSeekOperation( SeekOperation value )
+    public void setSeekOperation(SeekOperation value)
     {
         __SeekOperation = value;
     }

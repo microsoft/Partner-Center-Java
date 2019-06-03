@@ -35,16 +35,16 @@ public class SubscriptionCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer Id to whom the subscriptions belong.
 	 */
-	public SubscriptionCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	public SubscriptionCollectionOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
+		super(rootPartnerOperations, customerId);
 		
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		usageRecords = new SubscriptionMonthlyUsageRecordCollectionOperations( this.getPartner(), this.getContext() );
+		usageRecords = new SubscriptionMonthlyUsageRecordCollectionOperations(this.getPartner(), this.getContext());
 	}
 
 	/**
@@ -65,10 +65,10 @@ public class SubscriptionCollectionOperations
 	 * @return The order subscriptions operations.
 	 */
 	@Override
-	public IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byOrder( String orderId )
+	public IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byOrder(String orderId)
 	{
-		ParameterValidator.isValidUriQueryValue( orderId, "orderId is an invalid query value" );
-		return new OrderSubscriptionCollectionOperations( this.getPartner(), this.getContext(), orderId );
+		ParameterValidator.isValidUriQueryValue(orderId, "orderId is an invalid query value");
+		return new OrderSubscriptionCollectionOperations(this.getPartner(), this.getContext(), orderId);
 	}
 
 	/**
@@ -78,10 +78,10 @@ public class SubscriptionCollectionOperations
 	 * @return The partner subscriptions operations.
 	 */
 	@Override
-	public IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner( String partnerId )
+	public IEntireEntityCollectionRetrievalOperations<Subscription, ResourceCollection<Subscription>> byPartner(String partnerId)
 	{
-		ParameterValidator.isValidUriQueryValue( partnerId, "partnerId is an invalid query value" );
-		return new PartnerSubscriptionCollectionOperations( this.getPartner(), this.getContext(), partnerId );
+		ParameterValidator.isValidUriQueryValue(partnerId, "partnerId is an invalid query value");
+		return new PartnerSubscriptionCollectionOperations(this.getPartner(), this.getContext(), partnerId);
 	}
 
 	/**
@@ -91,9 +91,9 @@ public class SubscriptionCollectionOperations
 	 * @return The customer subscription.
 	 */
 	@Override
-	public ISubscription byId( String subscriptionId )
+	public ISubscription byId(String subscriptionId)
 	{
-		return new SubscriptionOperations( this.getPartner(), this.getContext(), subscriptionId );
+		return new SubscriptionOperations(this.getPartner(), this.getContext(), subscriptionId);
 	}
 
 	//
@@ -108,7 +108,7 @@ public class SubscriptionCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Subscription>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerSubscriptions").getPath(),
 				this.getContext()));
 	}

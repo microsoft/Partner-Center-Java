@@ -13,7 +13,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the device Id.
 	 */
-	@JsonProperty( "deviceId" )
+	@JsonProperty("deviceId")
 	private String __DeviceId;
 
 	public String getDeviceId()
@@ -21,7 +21,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __DeviceId;
 	}
 
-	public void setDeviceId( String value )
+	public void setDeviceId(String value)
 	{
 		__DeviceId = value;
 	}
@@ -29,7 +29,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
      * Gets or sets the serial number.
 	 */
-	@JsonProperty( "serialNumber" )
+	@JsonProperty("serialNumber")
 	private String __SerialNumber;
 
 	public String getSerialNumber()
@@ -37,7 +37,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __SerialNumber;
 	}
 
-	public void setSerialNumber( String value )
+	public void setSerialNumber(String value)
 	{
 		__SerialNumber = value;
 	}
@@ -45,7 +45,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the product key.
 	 */
-	@JsonProperty( "productKey" )
+	@JsonProperty("productKey")
 	private String __ProductKey;
 
 	public String getProductKey()
@@ -53,7 +53,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __ProductKey;
 	}
 
-	public void setProductKey( String value )
+	public void setProductKey(String value)
 	{
 		__ProductKey = value;
 	}
@@ -61,7 +61,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the device upload status.
 	 */
-	@JsonProperty( "status" )
+	@JsonProperty("status")
 	private DeviceUploadStatusType __Status;
 
 	public DeviceUploadStatusType getStatus()
@@ -69,7 +69,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __Status;
 	}
 
-	public void setStatus( DeviceUploadStatusType value )
+	public void setStatus(DeviceUploadStatusType value)
 	{
 		__Status = value;
 	}
@@ -77,7 +77,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the error code upon device upload failure.
 	 */
-	@JsonProperty( "errorCode" )
+	@JsonProperty("errorCode")
 	private String __ErrorCode;
 
 	public String getErrorCode()
@@ -85,7 +85,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __ErrorCode;
 	}
 
-	public void setErrorCode( String value )
+	public void setErrorCode(String value)
 	{
 		__ErrorCode = value;
     }
@@ -93,7 +93,7 @@ public class DeviceUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the error description upon device upload failure.
 	 */
-	@JsonProperty( "errorDescription" )
+	@JsonProperty("errorDescription")
 	private String __ErrorDescription;
 
 	public String getErrorDescription()
@@ -101,7 +101,7 @@ public class DeviceUploadDetails extends ResourceBase {
 		return __ErrorDescription;
 	}
 
-	public void setErrorDescription( String value )
+	public void setErrorDescription(String value)
 	{
 		__ErrorDescription = value;
 	}

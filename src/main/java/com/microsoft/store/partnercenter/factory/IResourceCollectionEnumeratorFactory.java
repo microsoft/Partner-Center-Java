@@ -18,5 +18,5 @@ public interface IResourceCollectionEnumeratorFactory<T extends ResourceBaseWith
      * @param customerResourceCollection The initial customer resource collection to start from.
      * @return A customer collection enumerator capable of traversing customers.
      */
-    IResourceCollectionEnumerator<T> create( T customerResourceCollection );
+    IResourceCollectionEnumerator<T> create(T customerResourceCollection);
 }

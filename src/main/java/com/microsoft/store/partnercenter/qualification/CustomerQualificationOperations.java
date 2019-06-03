@@ -50,7 +50,7 @@ public class CustomerQualificationOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CustomerQualification>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerQualification").getPath(),
 				this.getContext()));
 	}
@@ -64,7 +64,7 @@ public class CustomerQualificationOperations
 	@Override
 	public CustomerQualification update(CustomerQualification customerQualification)
 	{
-		if ( customerQualification == null )
+		if (customerQualification == null)
 		{
 			throw new IllegalArgumentException("customerQualification must be set");
 		}
@@ -72,7 +72,7 @@ public class CustomerQualificationOperations
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),
 			new TypeReference<CustomerQualification>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerQualification").getPath(),
 				this.getContext()),
 			customerQualification);
@@ -111,7 +111,7 @@ public class CustomerQualificationOperations
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),
 			new TypeReference<CustomerQualification>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerQualification").getPath(),
 				this.getContext()),
 			customerQualification);	

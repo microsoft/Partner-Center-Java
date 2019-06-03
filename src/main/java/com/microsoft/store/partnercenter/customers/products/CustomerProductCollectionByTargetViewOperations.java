@@ -31,18 +31,18 @@ public class CustomerProductCollectionByTargetViewOperations
 	 * @param customerId Identifier for the customer.
 	 * @param targetView The target view which contains the products.
 	 */
-	public CustomerProductCollectionByTargetViewOperations( IPartner rootPartnerOperations, String customerId, String targetView )
+	public CustomerProductCollectionByTargetViewOperations(IPartner rootPartnerOperations, String customerId, String targetView)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, targetView ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, targetView));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( targetView ) )
+		if (StringHelper.isNullOrWhiteSpace(targetView))
 		{
-			throw new IllegalArgumentException( "targetView must be set" );
+			throw new IllegalArgumentException("targetView must be set");
 		}
 	}
 
@@ -68,7 +68,7 @@ public class CustomerProductCollectionByTargetViewOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Product>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getPath(),
 				this.getContext().getItem1()),
 			parameters);
@@ -81,7 +81,7 @@ public class CustomerProductCollectionByTargetViewOperations
 	 * @return The product collection operations by customer, by target view and by target segment.
 	 */
 	@Override
-	public ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment( String targetSegment )
+	public ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment(String targetSegment)
 	{
 		return new CustomerProductCollectionByTargetViewByTargetSegmentOperations(this.getPartner(), this.getContext().getItem1(), targetSegment, this.getContext().getItem2());
 	}

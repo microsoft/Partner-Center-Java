@@ -23,7 +23,7 @@ public interface IAzureRateCard
 	 * 				  The default is the country/region code set in the partner profile.
 	 * @return The Azure rate card for the partner.
 	 */
-	AzureRateCard get( String currency, String region );
+	AzureRateCard get(String currency, String region);
 
 	/**
 	 * Gets the Azure CSL rate card which provides real-time prices for Azure offers.
@@ -33,5 +33,5 @@ public interface IAzureRateCard
 	 * 				  The default is the country/region code set in the partner profile.
 	 * @return The Azure rate card for the partner.
 	 */
-	AzureRateCard getShared( String currency, String region );
+	AzureRateCard getShared(String currency, String region);
 }

@@ -21,7 +21,7 @@ public class SubscriptionRegistrationStatus
         return __SubscriptionId;
     }
 
-    public void setSubscriptionId( String value )
+    public void setSubscriptionId(String value)
     {
         __SubscriptionId = value;
     }
@@ -36,7 +36,7 @@ public class SubscriptionRegistrationStatus
         return __Status;
     }
 
-    public void setStatus( String value )
+    public void setStatus(String value)
     {
         __Status = value;
     }

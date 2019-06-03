@@ -61,11 +61,11 @@ public class ServiceIncidentCollectionOperations
 	 * @return The list of service incidents.
 	 */
 	@Override
-	public ResourceCollection<ServiceIncidents> get( IQuery serviceIncidentsQuery )
+	public ResourceCollection<ServiceIncidents> get(IQuery serviceIncidentsQuery)
 	{
-		if ( serviceIncidentsQuery == null )
+		if (serviceIncidentsQuery == null)
 		{
-			throw new IllegalArgumentException( "serviceIncidentsQuery can't be null" );
+			throw new IllegalArgumentException("serviceIncidentsQuery can't be null");
 		}
 		
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
@@ -78,20 +78,20 @@ public class ServiceIncidentCollectionOperations
 			try
 			{
 				parameters.add
-				( 
-					new KeyValuePair<String, String>( 
+				(
+					new KeyValuePair<String, String>(
 						PartnerService.getInstance().getConfiguration().getApis().get("SearchPartnerServiceRequests").getParameters().get("Filter"),
-						URLEncoder.encode( mapper.writeValueAsString(serviceIncidentsQuery.getFilter()),
+						URLEncoder.encode(mapper.writeValueAsString(serviceIncidentsQuery.getFilter()),
 						"UTF-8"))
 				);
 			}
-			catch ( UnsupportedEncodingException e )
+			catch (UnsupportedEncodingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
-			catch ( JsonProcessingException e )
+			catch (JsonProcessingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
 		}
 		

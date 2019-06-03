@@ -11,7 +11,7 @@ public class TripletTuple<T1, T2, T3>
 
     private T3 item3;
 
-    public TripletTuple( T1 item1, T2 item2, T3 item3 )
+    public TripletTuple(T1 item1, T2 item2, T3 item3)
     {
         this.item1 = item1;
         this.item2 = item2;
@@ -23,7 +23,7 @@ public class TripletTuple<T1, T2, T3>
         return item1;
     }
 
-    public void setItem1( T1 item1 )
+    public void setItem1(T1 item1)
     {
         this.item1 = item1;
     }
@@ -33,7 +33,7 @@ public class TripletTuple<T1, T2, T3>
         return item2;
     }
 
-    public void setItem2( T2 item2 )
+    public void setItem2(T2 item2)
     {
         this.item2 = item2;
     }
@@ -43,7 +43,7 @@ public class TripletTuple<T1, T2, T3>
         return item3;
     }
 
-    public void setItem3( T3 item3 )
+    public void setItem3(T3 item3)
     {
         this.item3 = item3;
     }

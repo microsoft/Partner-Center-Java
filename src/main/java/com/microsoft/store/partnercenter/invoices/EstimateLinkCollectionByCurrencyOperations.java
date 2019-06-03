@@ -46,7 +46,7 @@ public class EstimateLinkCollectionByCurrencyOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
             new TypeReference<ResourceCollection<EstimateLink>>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetEstimatesLinks").getPath(),
 				this.getContext()));
     }

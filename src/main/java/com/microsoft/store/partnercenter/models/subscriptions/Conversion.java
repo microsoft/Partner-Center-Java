@@ -22,7 +22,7 @@ public class Conversion
         return __OfferId;
     }
 
-    public void setOfferId( String value )
+    public void setOfferId(String value)
     {
         __OfferId = value;
     }
@@ -37,7 +37,7 @@ public class Conversion
         return __TargetOfferId;
     }
 
-    public void setTargetOfferId( String value )
+    public void setTargetOfferId(String value)
     {
         __TargetOfferId = value;
     }
@@ -52,7 +52,7 @@ public class Conversion
         return __OrderId;
     }
 
-    public void setOrderId( String value )
+    public void setOrderId(String value)
     {
         __OrderId = value;
     }
@@ -67,7 +67,7 @@ public class Conversion
         return __Quantity;
     }
 
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         __Quantity = value;
     }
@@ -82,7 +82,7 @@ public class Conversion
         return __BillingCycle;
     }
 
-    public void setBillingCycleType( BillingCycleType value )
+    public void setBillingCycleType(BillingCycleType value)
     {
         __BillingCycle = value;
     }

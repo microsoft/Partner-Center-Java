@@ -21,7 +21,7 @@ public class LicenseBasedLineItem
         return __PartnerId;
     }
 
-    public void setPartnerId( String value )
+    public void setPartnerId(String value)
     {
         __PartnerId = value;
     }
@@ -36,7 +36,7 @@ public class LicenseBasedLineItem
         return __CustomerId;
     }
 
-    public void setCustomerId( String value )
+    public void setCustomerId(String value)
     {
         __CustomerId = value;
     }
@@ -51,7 +51,7 @@ public class LicenseBasedLineItem
         return __CustomerName;
     }
 
-    public void setCustomerName( String value )
+    public void setCustomerName(String value)
     {
         __CustomerName = value;
     }
@@ -66,7 +66,7 @@ public class LicenseBasedLineItem
         return __MpnId;
     }
 
-    public void setMpnId( int value )
+    public void setMpnId(int value)
     {
         __MpnId = value;
     }
@@ -81,7 +81,7 @@ public class LicenseBasedLineItem
         return __Tier2MpnId;
     }
 
-    public void setTier2MpnId( int value )
+    public void setTier2MpnId(int value)
     {
         __Tier2MpnId = value;
     }
@@ -96,7 +96,7 @@ public class LicenseBasedLineItem
         return __OrderId;
     }
 
-    public void setOrderId( String value )
+    public void setOrderId(String value)
     {
         __OrderId = value;
     }
@@ -111,7 +111,7 @@ public class LicenseBasedLineItem
         return __SubscriptionId;
     }
 
-    public void setSubscriptionId( String value )
+    public void setSubscriptionId(String value)
     {
         __SubscriptionId = value;
     }
@@ -126,7 +126,7 @@ public class LicenseBasedLineItem
         return __SyndicationPartnerSubscriptionNumber;
     }
 
-    public void setSyndicationPartnerSubscriptionNumber( String value )
+    public void setSyndicationPartnerSubscriptionNumber(String value)
     {
         __SyndicationPartnerSubscriptionNumber = value;
     }
@@ -141,7 +141,7 @@ public class LicenseBasedLineItem
         return __OfferId;
     }
 
-    public void setOfferId( String value )
+    public void setOfferId(String value)
     {
         __OfferId = value;
     }
@@ -156,7 +156,7 @@ public class LicenseBasedLineItem
         return __DurableOfferId;
     }
 
-    public void setDurableOfferId( String value )
+    public void setDurableOfferId(String value)
     {
         __DurableOfferId = value;
     }
@@ -171,7 +171,7 @@ public class LicenseBasedLineItem
         return __OfferName;
     }
 
-    public void setOfferName( String value )
+    public void setOfferName(String value)
     {
         __OfferName = value;
     }
@@ -186,7 +186,7 @@ public class LicenseBasedLineItem
         return __SubscriptionStartDate;
     }
 
-    public void setSubscriptionStartDate( DateTime value )
+    public void setSubscriptionStartDate(DateTime value)
     {
         __SubscriptionStartDate = value;
     }
@@ -201,7 +201,7 @@ public class LicenseBasedLineItem
         return __SubscriptionEndDate;
     }
 
-    public void setSubscriptionEndDate( DateTime value )
+    public void setSubscriptionEndDate(DateTime value)
     {
         __SubscriptionEndDate = value;
     }
@@ -216,7 +216,7 @@ public class LicenseBasedLineItem
         return __ChargeStartDate;
     }
 
-    public void setChargeStartDate( DateTime value )
+    public void setChargeStartDate(DateTime value)
     {
         __ChargeStartDate = value;
     }
@@ -231,7 +231,7 @@ public class LicenseBasedLineItem
         return __ChargeEndDate;
     }
 
-    public void setChargeEndDate( DateTime value )
+    public void setChargeEndDate(DateTime value)
     {
         __ChargeEndDate = value;
     }
@@ -246,7 +246,7 @@ public class LicenseBasedLineItem
         return __ChargeType;
     }
 
-    public void setChargeType( String value )
+    public void setChargeType(String value)
     {
         __ChargeType = value;
     }
@@ -261,7 +261,7 @@ public class LicenseBasedLineItem
         return __UnitPrice;
     }
 
-    public void setUnitPrice( double value )
+    public void setUnitPrice(double value)
     {
         __UnitPrice = value;
     }
@@ -276,7 +276,7 @@ public class LicenseBasedLineItem
         return __Quantity;
     }
 
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         __Quantity = value;
     }
@@ -291,7 +291,7 @@ public class LicenseBasedLineItem
         return __Amount;
     }
 
-    public void setAmount( double value )
+    public void setAmount(double value)
     {
         __Amount = value;
     }
@@ -306,7 +306,7 @@ public class LicenseBasedLineItem
         return __TotalOtherDiscount;
     }
 
-    public void setTotalOtherDiscount( double value )
+    public void setTotalOtherDiscount(double value)
     {
         __TotalOtherDiscount = value;
     }
@@ -321,7 +321,7 @@ public class LicenseBasedLineItem
         return __Subtotal;
     }
 
-    public void setSubtotal( double value )
+    public void setSubtotal(double value)
     {
         __Subtotal = value;
     }
@@ -336,7 +336,7 @@ public class LicenseBasedLineItem
         return __Tax;
     }
 
-    public void setTax( double value )
+    public void setTax(double value)
     {
         __Tax = value;
     }
@@ -351,7 +351,7 @@ public class LicenseBasedLineItem
         return __TotalForCustomer;
     }
 
-    public void setTotalForCustomer( double value )
+    public void setTotalForCustomer(double value)
     {
         __TotalForCustomer = value;
     }
@@ -366,7 +366,7 @@ public class LicenseBasedLineItem
         return __Currency;
     }
 
-    public void setCurrency( String value )
+    public void setCurrency(String value)
     {
         __Currency = value;
     }
@@ -401,7 +401,7 @@ public class LicenseBasedLineItem
         return __DomainName;
     }
 
-    public void setDomainName( String value )
+    public void setDomainName(String value)
     {
         __DomainName = value;
     }
@@ -416,7 +416,7 @@ public class LicenseBasedLineItem
         return __BillingCycleType;
     }
 
-    public void setBillingCycleType( String value )
+    public void setBillingCycleType(String value)
     {
         __BillingCycleType = value;
     }
@@ -431,7 +431,7 @@ public class LicenseBasedLineItem
         return __SubscriptionDescription;
     }
 
-    public void setSubscriptionDescription( String value )
+    public void setSubscriptionDescription(String value)
     {
         __SubscriptionDescription = value;
     }

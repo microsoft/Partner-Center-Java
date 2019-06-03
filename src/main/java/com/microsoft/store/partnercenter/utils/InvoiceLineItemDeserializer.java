@@ -44,8 +44,8 @@ public class InvoiceLineItemDeserializer
         ObjectReader reader = null; 
         JsonNode jsonNode = parser.readValueAsTree();
         Object target = null;
-        String billingProvider = jsonNode.get( "billingProvider" ).textValue();
-        String invoiceLineItemType = jsonNode.get( "invoiceLineItemType" ).textValue();
+        String billingProvider = jsonNode.get("billingProvider").textValue();
+        String invoiceLineItemType = jsonNode.get("invoiceLineItemType").textValue();
 
         if (invoiceLineItemType.equals("usage_line_items"))
         {
@@ -79,12 +79,12 @@ public class InvoiceLineItemDeserializer
         }
         else
         {
-            throw new IOException(MessageFormat.format( "InvoiceLineItemConverter cannot deserialize invoice line items with type {0}", invoiceLineItemType));
+            throw new IOException(MessageFormat.format("InvoiceLineItemConverter cannot deserialize invoice line items with type {0}", invoiceLineItemType));
         }
         
         if (reader == null)
         {
-            throw new IOException(MessageFormat.format( "InvoiceLineItemConverter cannot deserialize invoice line items with type {0} and billing provider: {1}", invoiceLineItemType, billingProvider));
+            throw new IOException(MessageFormat.format("InvoiceLineItemConverter cannot deserialize invoice line items with type {0} and billing provider: {1}", invoiceLineItemType, billingProvider));
         }
 
         target = reader.readValue(jsonNode);

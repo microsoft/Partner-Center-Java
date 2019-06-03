@@ -6,7 +6,6 @@ package com.microsoft.store.partnercenter.models.orders;
 import org.joda.time.DateTime;
 
 import com.microsoft.store.partnercenter.models.offers.BillingCycleType;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBaseWithLinks;
 import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 
@@ -16,6 +15,21 @@ import com.microsoft.store.partnercenter.models.StandardResourceLinks;
 public class Order
     extends ResourceBaseWithLinks<StandardResourceLinks>
 {
+    /**
+     * The type of billing cycle for the selected offers.
+     */
+    private BillingCycleType billingCycle;
+
+    /**
+     * The creation date of the order.
+     */
+    private DateTime creationDate;
+
+    /**
+     * The currency code.
+     */
+    private String currencyCode;
+
     /**
      * The currency symbol.
      */
@@ -32,9 +46,19 @@ public class Order
     private Iterable<OrderLineItem> lineItems;
 
     /**
-     * Gets or sets the reference customer identifier.
+     * The links corresponding to the order.
+     */
+    private OrderLinks links;
+
+    /**
+     * The reference customer identifier.
      */
     private String referenceCustomerId;
+
+    /**
+     * The status of the order.
+     */
+    private String status;
 
     /**
      * The total price for the order.
@@ -45,6 +69,86 @@ public class Order
      * The transaction type for the order.
      */
     private String transactionType;
+
+    /**
+     * Gets the type of billing cycle for the selected offers.
+     * 
+     * @return The type of billing cycle for the selected offers.
+     */
+    public BillingCycleType getBillingCycle()
+    {
+        return billingCycle;
+    }
+
+    /**
+     * Sets the type of billing cycle for the selected offers.
+     * 
+     * @param value The type of billing cycle for the selected offers.
+     */
+    public void setBillingCycle(BillingCycleType value)
+    {
+        billingCycle = value;
+    }
+
+    /**
+     * Gets the creation date of the order.
+     *
+     * @return The creation date of the order.
+     */
+    public DateTime getCreationDate()
+    {
+        return creationDate;
+    }
+
+    /**
+     * Sets the creation date of the order.
+     * 
+     * @param value The creation date of the order.
+     */
+    public void setCreationDate(DateTime value)
+    {
+        creationDate = value;
+    }
+
+    /**
+     * Gets the currency code.
+     * 
+     * @return The currency code for the order.
+     */
+    public String getCurrencyCode()
+    {
+        return currencyCode;
+    }
+
+    /**
+     * Sets the currency code.
+     * 
+     * @param value The currency code for the order.
+     */
+    public void setCurrencyCode(String value)
+    {
+        currencyCode = value;
+    }
+
+    /**
+     * Gets the currency symbol.
+     * 
+     * @return The currency symbol.
+     */
+    public String getCurrencySymbol()
+    {
+        return currencySymbol;
+    }    
+
+    /**
+     * Sets the currency symbol.
+     * 
+     * @param value The currency symbol.
+     */
+    public void setCurrencySymbol(String value)
+    {
+        currencySymbol = value;
+    }
 
     /**
      * Gets the order identifier.
@@ -86,6 +190,26 @@ public class Order
         lineItems = value;
     }
 
+    /** 
+     * Gets the links corresponding to the order.
+     * 
+     * @return The links corresponding to the order.
+     */
+    public OrderLinks getLinks()
+    {
+        return links;
+    }
+
+    /**
+     * Sets the links corresponding to the order.
+     * 
+     * @param value The links corresponding to the order.
+     */
+    public void setLinks(OrderLinks value)
+    {
+        links = value;
+    }
+
     /**
      * Gets the reference customer identifier.
      * 
@@ -106,108 +230,24 @@ public class Order
         referenceCustomerId = value;
     }
 
-
-
-
-
     /**
-     * Gets or sets the creation date of the order
+     * Gets the status of the order.
+     * 
+     * @return The status of the order.
      */
-    @JsonProperty("creationDate")
-    private DateTime __CreationDate;
-
-    public DateTime getCreationDate()
-    {
-        return __CreationDate;
-    }
-
-    public void setCreationDate(DateTime value)
-    {
-        __CreationDate = value;
-    }
-
-    /**
-     * Gets or sets the currency code.
-     */
-    @JsonProperty("currencyCode")
-    private String __CurrencyCode;
-
-    public String getCurrencyCode()
-    {
-        return __CurrencyCode;
-    }
-
-    public void setCurrencyCode(String value)
-    {
-        __CurrencyCode = value;
-    }
-
-    /**
-     * Gets or sets the order status.
-     */
-    @JsonProperty("status")
-    private String __Status;
-
     public String getStatus()
     {
-        return __Status;
+        return status;
     }
 
+    /**
+     * Sets the status of the order.
+     * 
+     * @param value The status of the order.
+     */
     public void setStatus(String value)
     {
-        __Status = value;
-    }
-
-    /**
-     * Gets or sets the links corresponding to the order.
-     */
-    @JsonProperty("links")
-    private OrderLinks __Links;
-
-    public OrderLinks getLinks()
-    {
-        return __Links;
-    }
-
-    public void setLinks(OrderLinks value)
-    {
-        __Links = value;
-    }
-
-    /**
-     * Gets or sets the type of billing cycle for the selected offers.
-     */
-    @JsonProperty("billingCycle")
-    private BillingCycleType __BillingCycle;
-
-    public BillingCycleType getBillingCycle()
-    {
-        return __BillingCycle;
-    }
-
-    public void setBillingCycle(BillingCycleType value)
-    {
-        __BillingCycle = value;
-    }
-
-    /**
-     * Gets the currency symbol.
-     * 
-     * @return The currency symbol.
-     */
-    public String getCurrencySymbol()
-    {
-        return currencySymbol;
-    }    
-
-    /**
-     * Sets the currency symbol.
-     * 
-     * @param value The currency symbol.
-     */
-    public void setCurrencySymbol(String value)
-    {
-        currencySymbol = value;
+        status = value;
     }
 
     /**

@@ -19,7 +19,7 @@ public class Cart
     /**
      * Gets or sets a unique cart identifier.
      */
-	@JsonProperty( "id" )
+	@JsonProperty("id")
     private String id;
 
     public String getId()
@@ -27,7 +27,7 @@ public class Cart
         return id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	id = value;
     }
@@ -35,7 +35,7 @@ public class Cart
     /**
      * Gets or sets the creation timestamp.
      */
-	@JsonProperty( "creationTimestamp" )
+	@JsonProperty("creationTimestamp")
     private DateTime creationTimestamp;
 
     public DateTime getCreationTimestamp()
@@ -43,7 +43,7 @@ public class Cart
         return creationTimestamp;
     }
 
-    public void setCreationTimestamp( DateTime value )
+    public void setCreationTimestamp(DateTime value)
     {
     	creationTimestamp = value;
     }
@@ -51,7 +51,7 @@ public class Cart
     /**
      *   Gets or sets the last modified timestamp.
      */
-    @JsonProperty( "lastModifiedTimestamp" )
+    @JsonProperty("lastModifiedTimestamp")
     private DateTime lastModifiedTimestamp;
 
     public DateTime getLastModifiedTimestamp()
@@ -59,7 +59,7 @@ public class Cart
         return lastModifiedTimestamp;
     }
 
-    public void setLastModifiedTimestamp( DateTime value )
+    public void setLastModifiedTimestamp(DateTime value)
     {
     	lastModifiedTimestamp = value;
     }
@@ -67,7 +67,7 @@ public class Cart
     /**
      *  Gets or sets the expiration timestamp.
      */
-    @JsonProperty( "expirationTimestamp" )
+    @JsonProperty("expirationTimestamp")
     private DateTime expirationTimestamp;
 
     public DateTime getExpirationTimestamp()
@@ -75,14 +75,14 @@ public class Cart
         return expirationTimestamp;
     }
 
-    public void setExpirationTimestamp( DateTime value )
+    public void setExpirationTimestamp(DateTime value)
     {
     	expirationTimestamp = value;
     }
     /**
      *  Gets or sets the user who last updated the cart.
      */
-    @JsonProperty( "lastModifiedUser" )
+    @JsonProperty("lastModifiedUser")
     private String lastModifiedUser;
 
     public String getLastModifiedUser()
@@ -90,7 +90,7 @@ public class Cart
         return lastModifiedUser;
     }
 
-    public void setLastModifiedUser( String value )
+    public void setLastModifiedUser(String value)
     {
         lastModifiedUser = value;
     }
@@ -98,7 +98,7 @@ public class Cart
     /**
      *  Gets or sets the status.
      */
-    @JsonProperty( "status" )
+    @JsonProperty("status")
     private String status;
 
     public String getStatus()
@@ -106,7 +106,7 @@ public class Cart
         return status;
     }
 
-    public void setStatus( String value )
+    public void setStatus(String value)
     {
         status = value;
     }
@@ -114,7 +114,7 @@ public class Cart
     /**
      *  Gets or sets the last modified user or application.
      */
-    @JsonProperty( "lineItems" )
+    @JsonProperty("lineItems")
     private List<CartLineItem> lineItems;
 
     public List<CartLineItem> getLineItems()
@@ -122,7 +122,7 @@ public class Cart
         return lineItems;
     }
 
-    public void setLineItems( List<CartLineItem> value )
+    public void setLineItems(List<CartLineItem> value)
     {
     	lineItems = value;
     }

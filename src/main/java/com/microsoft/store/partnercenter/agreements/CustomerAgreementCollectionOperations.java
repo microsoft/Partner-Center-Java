@@ -26,13 +26,13 @@ public class CustomerAgreementCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
      */
-    public CustomerAgreementCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerAgreementCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 
@@ -44,11 +44,11 @@ public class CustomerAgreementCollectionOperations
      * @return Agreement entity.
      */
     @Override
-    public Agreement create( Agreement newAgreement )
+    public Agreement create(Agreement newAgreement)
     {
-        if ( newAgreement == null )
+        if (newAgreement == null)
         {
-            throw new IllegalArgumentException( "Agreement can't be null." );
+            throw new IllegalArgumentException("Agreement can't be null.");
         }
 
         return this.getPartner().getServiceClient().post(
@@ -72,7 +72,7 @@ public class CustomerAgreementCollectionOperations
             this.getPartner(), 
             new TypeReference<ResourceCollection<Agreement>>(){},
             MessageFormat.format(
-                PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerAgreements" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getPath(),
                 this.getContext()));
     }
 }

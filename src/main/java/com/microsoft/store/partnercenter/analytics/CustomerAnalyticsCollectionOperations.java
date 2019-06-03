@@ -25,16 +25,16 @@ public class CustomerAnalyticsCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier of the customer.
      */
-    public CustomerAnalyticsCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerAnalyticsCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
        
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
 
-        licenses = new CustomerLicensesAnalyticsCollectionOperations( this.getPartner(), this.getContext() );
+        licenses = new CustomerLicensesAnalyticsCollectionOperations(this.getPartner(), this.getContext());
     }
 
     /**

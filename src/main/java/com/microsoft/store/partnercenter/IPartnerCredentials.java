@@ -39,5 +39,5 @@ public interface IPartnerCredentials
      * @param credentials The outdated partner credentials.
      * @param context The request context.
      */
-    void onCredentialsRefreshNeeded( IPartnerCredentials credentials, IRequestContext context );
+    void onCredentialsRefreshNeeded(IPartnerCredentials credentials, IRequestContext context);
 }

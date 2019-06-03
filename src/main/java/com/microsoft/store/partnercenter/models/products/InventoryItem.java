@@ -20,7 +20,7 @@ public class InventoryItem
         return __ProductId;
     }
 
-    public void setProductId( String value )
+    public void setProductId(String value)
     {
         __ProductId = value;
     }
@@ -35,7 +35,7 @@ public class InventoryItem
         return __SkuId;
     }
 
-    public void setSkuId( String value )
+    public void setSkuId(String value)
     {
         __SkuId = value;
     }
@@ -50,7 +50,7 @@ public class InventoryItem
         return __IsRestricted;
     }
 
-    public void setIsRestricted( String value )
+    public void setIsRestricted(String value)
     {
         __IsRestricted = value;
     }
@@ -65,7 +65,7 @@ public class InventoryItem
         return __Restrictions;
     }
 
-    public void setRestrictions( List<InventoryRestriction> value )
+    public void setRestrictions(List<InventoryRestriction> value)
     {
         __Restrictions = value;
     }

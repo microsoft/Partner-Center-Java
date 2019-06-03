@@ -18,7 +18,7 @@ public class ItemType
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -33,7 +33,7 @@ public class ItemType
         return __DisplayName;
     }
 
-    public void setDisplayName( String value )
+    public void setDisplayName(String value)
     {
         __DisplayName = value;
     }
@@ -48,7 +48,7 @@ public class ItemType
         return __SubType;
     }
 
-    public void setSubType( ItemType value )
+    public void setSubType(ItemType value)
     {
         __SubType = value;
     }

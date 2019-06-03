@@ -16,7 +16,7 @@ public class ServiceCostsSummaryLinks
     /**
      * Gets or sets the link to the service cost line items.
      */
-	@JsonProperty( "serviceCostLineItems" )
+	@JsonProperty("serviceCostLineItems")
     private Link __ServiceCostLineItems;
 
     public Link getServiceCostLineItems()
@@ -24,7 +24,7 @@ public class ServiceCostsSummaryLinks
         return __ServiceCostLineItems;
     }
 
-    public void setServiceCostLineItems( Link value )
+    public void setServiceCostLineItems(Link value)
     {
     	__ServiceCostLineItems = value;
     }

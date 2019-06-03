@@ -28,11 +28,11 @@ public class CustomerLicensesUsageInsightsCollectionOperations
      */
     public CustomerLicensesUsageInsightsCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
     }
 
@@ -48,7 +48,7 @@ public class CustomerLicensesUsageInsightsCollectionOperations
             this.getPartner(),
             new TypeReference<ResourceCollection<CustomerLicensesUsageInsights>>(){},
             MessageFormat.format(
-                PartnerService.getInstance().getConfiguration().getApis().get( "CustomerLicensesUsageInsights" ).getPath(),
+                PartnerService.getInstance().getConfiguration().getApis().get("CustomerLicensesUsageInsights").getPath(),
                 this.getContext()));
     }
 }

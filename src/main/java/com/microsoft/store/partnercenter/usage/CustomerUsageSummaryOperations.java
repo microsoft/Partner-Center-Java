@@ -25,13 +25,13 @@ public class CustomerUsageSummaryOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public CustomerUsageSummaryOperations( IPartner rootPartnerOperations, String customerId )
+	public CustomerUsageSummaryOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
+		super(rootPartnerOperations, customerId);
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set.");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class CustomerUsageSummaryOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CustomerUsageSummary>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsageSummary").getPath(),
 				this.getContext()));
 	}

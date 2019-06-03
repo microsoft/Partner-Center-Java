@@ -18,7 +18,7 @@ public class OfferCategoryCountrySelector
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public OfferCategoryCountrySelector( IPartner rootPartnerOperations ) 
+	public OfferCategoryCountrySelector(IPartner rootPartnerOperations) 
 	{
 		super(rootPartnerOperations);
 	}
@@ -27,11 +27,11 @@ public class OfferCategoryCountrySelector
 	 * Scopes offers behavior to a specific country.
 	 */
 	@Override
-	public IOfferCategoryCollection byCountry( String country )
+	public IOfferCategoryCollection byCountry(String country)
 	{
-		ParameterValidator.isValidCountryCode( country );
+		ParameterValidator.isValidCountryCode(country);
 
-        return new OfferCategoryCollectionOperations( this.getPartner(), country );
+        return new OfferCategoryCollectionOperations(this.getPartner(), country);
 	}
 
 }

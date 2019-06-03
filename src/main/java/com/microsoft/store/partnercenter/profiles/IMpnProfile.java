@@ -26,6 +26,6 @@ public interface IMpnProfile
      * @param mpnId The MPN id.
      * @return The partner's MPN profile.
      */
-    MpnProfile get( String mpnId );
+    MpnProfile get(String mpnId);
 
 }

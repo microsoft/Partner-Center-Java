@@ -29,6 +29,6 @@ public interface IServiceRequest
      * @param serviceRequest The service request that has the properties to be patched set.
      * @return The updated service request.
      */
-    ServiceRequest patch( ServiceRequest serviceRequest );
+    ServiceRequest patch(ServiceRequest serviceRequest);
 
 }

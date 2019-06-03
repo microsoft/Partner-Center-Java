@@ -20,7 +20,7 @@ public class ServiceRequestNote
         return __CreatedByName;
     }
 
-    public void setCreatedByName( String value )
+    public void setCreatedByName(String value)
     {
         __CreatedByName = value;
     }
@@ -35,7 +35,7 @@ public class ServiceRequestNote
         return __CreatedDate;
     }
 
-    public void setCreatedDate( DateTime value )
+    public void setCreatedDate(DateTime value)
     {
         __CreatedDate = value;
     }
@@ -50,7 +50,7 @@ public class ServiceRequestNote
         return __Text;
     }
 
-    public void setText( String value )
+    public void setText(String value)
     {
         __Text = value;
     }

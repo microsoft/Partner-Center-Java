@@ -5,7 +5,6 @@ package com.microsoft.store.partnercenter.models.carts;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 import com.microsoft.store.partnercenter.models.orders.Order;
 
@@ -16,33 +15,51 @@ public class CartCheckoutResult
     extends ResourceBase
 {
     /**
-     * Gets or sets the orders created.
+     * The orders that were created.
      */
-	@JsonProperty( "orders" )
     private List<Order> orders;
 
+    /**
+     * The collection of order failure information.
+     */
+    private List<OrderError> orderErrors;
+
+    /**
+     * Gets the order that were created.
+     * 
+     * @return The orders that were created.
+     */
     public List<Order> getOrders()
     {
         return orders;
     }
 
-    public void setOrders( List<Order> value )
+    /**
+     * Sets the orders that were created.
+     * 
+     * @param value The orders that were created. 
+     */
+    public void setOrders(List<Order> value)
     {
     	orders = value;
     }
 
     /**
-     * Gets or sets a collection of order failure information.
+     * Gets the collection of order failure information.
+     * 
+     * @return The collection of order failure information.
      */
-	@JsonProperty( "orderErrors" )
-    private List<OrderError> orderErrors;
-
     public List<OrderError> getOrderErrors()
     {
         return orderErrors;
     }
 
-    public void setOrderErrors( List<OrderError> value )
+    /**
+     * Sets the collection of order failure information.
+     * 
+     * @param value The collection of order failure information.
+     */
+    public void setOrderErrors(List<OrderError> value)
     {
     	orderErrors = value;
     }

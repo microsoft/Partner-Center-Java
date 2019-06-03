@@ -25,9 +25,9 @@ public class MpnProfileOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public MpnProfileOperations( IPartner rootPartnerOperations )
+	public MpnProfileOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class MpnProfileOperations
 	 * @return The partner network profile.
 	 */
 	@Override
-	public MpnProfile get( String mpnId )
+	public MpnProfile get(String mpnId)
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 

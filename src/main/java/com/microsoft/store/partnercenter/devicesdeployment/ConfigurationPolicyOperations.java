@@ -48,7 +48,7 @@ public class ConfigurationPolicyOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ConfigurationPolicy>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicy").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
@@ -66,7 +66,7 @@ public class ConfigurationPolicyOperations
         return this.getPartner().getServiceClient().put(
             this.getPartner(),
             new TypeReference<ConfigurationPolicy>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("UpdateConfigurationPolicy").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),
@@ -81,7 +81,7 @@ public class ConfigurationPolicyOperations
         this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ConfigurationPolicy>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("DeleteConfigurationPolicy").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));

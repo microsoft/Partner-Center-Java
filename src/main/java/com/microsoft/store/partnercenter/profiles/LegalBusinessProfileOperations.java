@@ -21,9 +21,9 @@ public class LegalBusinessProfileOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public LegalBusinessProfileOperations( IPartner rootPartnerOperations )
+	public LegalBusinessProfileOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class LegalBusinessProfileOperations
 	 * @return Updated Legal Business Profile.
 	 */
 	@Override
-	public LegalBusinessProfile update( LegalBusinessProfile legalBusinessProfile )
+	public LegalBusinessProfile update(LegalBusinessProfile legalBusinessProfile)
 	{
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),

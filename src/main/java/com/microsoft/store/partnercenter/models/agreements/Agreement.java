@@ -18,7 +18,7 @@ public class Agreement
      * Gets or sets the Object identifier of the logged in user in the partner tenant
      * who is providing confirmation on behalf of the partner organization.
      */
-    @JsonProperty( "userId" )
+    @JsonProperty("userId")
     private String userId;
 
     public String getUserId()
@@ -26,7 +26,7 @@ public class Agreement
         return userId;
     }
 
-    public void setUserId( String value )
+    public void setUserId(String value)
     {
         userId = value;
     }
@@ -35,7 +35,7 @@ public class Agreement
      * Gets or sets the information about the user from the customer organization
      * who accepted the Microsoft Cloud Agreement.
      */
-    @JsonProperty( "primaryContact" )
+    @JsonProperty("primaryContact")
     private Contact primaryContact;
 
     public Contact getPrimaryContact()
@@ -43,7 +43,7 @@ public class Agreement
         return primaryContact;
     }
 
-    public void setPrimaryContact( Contact value )
+    public void setPrimaryContact(Contact value)
     {
         primaryContact = value;
     }
@@ -51,7 +51,7 @@ public class Agreement
     /**
      * Gets or sets the unique identifier of the agreement that the customer accepted.
      */
-    @JsonProperty( "templateId" )
+    @JsonProperty("templateId")
     private String templateId;
 
     public String getTemplateId()
@@ -59,7 +59,7 @@ public class Agreement
         return templateId;
     }
 
-    public void setTemplateId( String value )
+    public void setTemplateId(String value)
     {
         templateId = value;
     }
@@ -67,7 +67,7 @@ public class Agreement
     /**
      * Gets or sets the date when the customer accepted the agreement.
      */
-    @JsonProperty( "dateAgreed" )
+    @JsonProperty("dateAgreed")
     private DateTime dateAgreed;
 
     public DateTime getDateAgreed()
@@ -75,7 +75,7 @@ public class Agreement
         return dateAgreed;
     }
 
-    public void setDateAgreed( DateTime value )
+    public void setDateAgreed(DateTime value)
     {
         dateAgreed = value;
     }
@@ -83,7 +83,7 @@ public class Agreement
     /**
      * Gets or sets agreement type.
      */
-    @JsonProperty( "type" )
+    @JsonProperty("type")
     private AgreementType type;
 
     public AgreementType getType()
@@ -91,7 +91,7 @@ public class Agreement
         return type;
     }
 
-    public void setType( AgreementType value )
+    public void setType(AgreementType value)
     {
         type = value;
     }
@@ -99,7 +99,7 @@ public class Agreement
     /**
      * Gets or sets URL to the agreement template.
      */
-    @JsonProperty( "agreementLink" )
+    @JsonProperty("agreementLink")
     private String agreementLink;
 
     public String getAgreementLink()
@@ -107,7 +107,7 @@ public class Agreement
         return agreementLink;
     }
 
-    public void setAgreementLink( String value )
+    public void setAgreementLink(String value)
     {
         agreementLink = value;
     }

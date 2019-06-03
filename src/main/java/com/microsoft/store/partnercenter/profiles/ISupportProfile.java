@@ -28,6 +28,6 @@ public interface ISupportProfile
      * @param supportProfile The support profile.
      * @return The updated support profile.
      */
-    SupportProfile update( SupportProfile supportProfile );
+    SupportProfile update(SupportProfile supportProfile);
 
 }

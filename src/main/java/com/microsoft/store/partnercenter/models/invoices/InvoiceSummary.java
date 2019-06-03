@@ -24,7 +24,7 @@ public class InvoiceSummary
         return __BalanceAmount;
     }
 
-    public void setBalanceAmount( double value )
+    public void setBalanceAmount(double value)
     {
         __BalanceAmount = value;
     }
@@ -39,7 +39,7 @@ public class InvoiceSummary
         return __CurrencyCode;
     }
 
-    public void setCurrencyCode( String value )
+    public void setCurrencyCode(String value)
     {
         __CurrencyCode = value;
     }
@@ -54,7 +54,7 @@ public class InvoiceSummary
         return __CurrencySymbol;
     }
 
-    public void setCurrencySymbol( String value )
+    public void setCurrencySymbol(String value)
     {
         __CurrencySymbol = value;
     }
@@ -69,7 +69,7 @@ public class InvoiceSummary
         return __AccountingDate;
     }
 
-    public void setAccountingDate( DateTime value )
+    public void setAccountingDate(DateTime value)
     {
     	__AccountingDate = value;
     }
@@ -84,7 +84,7 @@ public class InvoiceSummary
         return __FirstInvoiceCreationDate;
     }
 
-    public void setFirstInvoiceCreationDate( DateTime value )
+    public void setFirstInvoiceCreationDate(DateTime value)
     {
         __FirstInvoiceCreationDate = value;
     }
@@ -99,7 +99,7 @@ public class InvoiceSummary
         return __LastPaymentDate;
     }
 
-    public void setLastPaymentDate( DateTime value )
+    public void setLastPaymentDate(DateTime value)
     {
         __LastPaymentDate = value;
     }
@@ -114,7 +114,7 @@ public class InvoiceSummary
         return __LastPaymentAmount;
     }
 
-    public void setLastPaymentAmount( double value )
+    public void setLastPaymentAmount(double value)
     {
         __LastPaymentAmount = value;
     }
@@ -129,7 +129,7 @@ public class InvoiceSummary
         return __LatestInvoiceDate;
     }
 
-    public void setLatestInvoiceDate( DateTime value )
+    public void setLatestInvoiceDate(DateTime value)
     {
         __LatestInvoiceDate = value;
     }

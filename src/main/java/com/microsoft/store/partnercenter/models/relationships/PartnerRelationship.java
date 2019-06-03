@@ -23,7 +23,7 @@ public class PartnerRelationship
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -38,7 +38,7 @@ public class PartnerRelationship
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -53,7 +53,7 @@ public class PartnerRelationship
         return __RelationshipType;
     }
 
-    public void setRelationshipType( PartnerRelationshipType value )
+    public void setRelationshipType(PartnerRelationshipType value)
     {
         __RelationshipType = value;
     }
@@ -68,7 +68,7 @@ public class PartnerRelationship
         return __MpnId;
     }
 
-    public void setMpnId( String value )
+    public void setMpnId(String value)
     {
         __MpnId = value;
     }
@@ -83,7 +83,7 @@ public class PartnerRelationship
         return __Location;
     }
 
-    public void setLocation( String value )
+    public void setLocation(String value)
     {
         __Location = value;
     }
@@ -98,7 +98,7 @@ public class PartnerRelationship
         return __State;
     }
 
-    public void setState( String value )
+    public void setState(String value)
     {
         __State = value;
     }

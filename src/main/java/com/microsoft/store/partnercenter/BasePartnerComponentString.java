@@ -14,9 +14,9 @@ public abstract class BasePartnerComponentString
      * 
      * @param rootPartnerOperations The root partner operations that created this component.
      */
-    protected BasePartnerComponentString( IPartner rootPartnerOperations )
+    protected BasePartnerComponentString(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations, null );
+        super(rootPartnerOperations, null);
     }
 
     /**
@@ -25,8 +25,8 @@ public abstract class BasePartnerComponentString
      * @param rootPartnerOperations The root partner operations that created this component.
      * @param componentContext A component context object to work with.
      */
-    protected BasePartnerComponentString( IPartner rootPartnerOperations, String componentContext )
+    protected BasePartnerComponentString(IPartner rootPartnerOperations, String componentContext)
     {
-        super( rootPartnerOperations, componentContext );
+        super(rootPartnerOperations, componentContext);
     }
 }

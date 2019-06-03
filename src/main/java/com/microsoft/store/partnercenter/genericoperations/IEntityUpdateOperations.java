@@ -14,5 +14,5 @@ public interface IEntityUpdateOperations<T>
      * @param entity The entity information.
      * @return The updated entity.
      */
-    T update( T entity );
+    T update(T entity);
 }

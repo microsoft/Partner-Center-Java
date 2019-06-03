@@ -202,12 +202,12 @@ public class CustomerOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public CustomerOperations( IPartner rootPartnerOperations, String customerId )
+	public CustomerOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 		this.customerId = customerId;
 	}
@@ -220,9 +220,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerAgreementCollection getAgreements()
 	{
-		if ( this.agreements == null )
+		if (this.agreements == null)
 		{
-			this.agreements = new CustomerAgreementCollectionOperations( this.getPartner(), this.customerId );
+			this.agreements = new CustomerAgreementCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.agreements;
@@ -236,9 +236,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerApplicationConsentCollection getApplicationConsents()
 	{
-		if ( this.applicationConsents == null )
+		if (this.applicationConsents == null)
 		{
-			this.applicationConsents = new CustomerApplicationConsentCollectionOperations( this.getPartner(), this.customerId );
+			this.applicationConsents = new CustomerApplicationConsentCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.applicationConsents;
@@ -252,9 +252,9 @@ public class CustomerOperations
 	@Override
 	public IOrderCollection getOrders()
 	{
-		if ( this.orders == null )
+		if (this.orders == null)
 		{
-			this.orders = new OrderCollectionOperations( this.getPartner(), this.getContext() );
+			this.orders = new OrderCollectionOperations(this.getPartner(), this.getContext());
 		}
 
 		return this.orders;
@@ -268,9 +268,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerProfileCollection getProfiles()
 	{
-		if ( this.profiles == null )
+		if (this.profiles == null)
 		{
-			this.profiles = new CustomerProfileCollectionOperations( this.getPartner(), this.getContext() );
+			this.profiles = new CustomerProfileCollectionOperations(this.getPartner(), this.getContext());
 		}
 
 		return this.profiles;
@@ -279,9 +279,9 @@ public class CustomerOperations
 	@Override
 	public ISubscriptionCollection getSubscriptions()
 	{
-		if ( subscriptions == null )
+		if (subscriptions == null)
 		{
-			subscriptions = new SubscriptionCollectionOperations( this.getPartner(), this.getContext() );
+			subscriptions = new SubscriptionCollectionOperations(this.getPartner(), this.getContext());
 		}
 
 		return subscriptions;
@@ -295,9 +295,9 @@ public class CustomerOperations
 	@Override
 	public IServiceRequestCollection getServiceRequests()
 	{
-		if ( this.serviceRequests == null )
+		if (this.serviceRequests == null)
 		{
-			this.serviceRequests = new CustomerServiceRequestCollectionOperations( this.getPartner(), this.customerId );
+			this.serviceRequests = new CustomerServiceRequestCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.serviceRequests;
@@ -311,9 +311,9 @@ public class CustomerOperations
 	@Override
 	public IManagedServiceCollection getManagedServices()
 	{
-		if ( this.managedServices == null )
+		if (this.managedServices == null)
 		{
-			this.managedServices = new ManagedServiceCollectionOperations( this.getPartner(), this.customerId );
+			this.managedServices = new ManagedServiceCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.managedServices;
@@ -324,9 +324,9 @@ public class CustomerOperations
 	 */
 	@Override
 	public ICustomerOfferCategoryCollection getOfferCategories() {
-		if ( this.offerCategories == null )
+		if (this.offerCategories == null)
 		{
-			this.offerCategories = new CustomerOfferCategoryCollectionOperations( this.getPartner(), this.customerId );
+			this.offerCategories = new CustomerOfferCategoryCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.offerCategories;
@@ -337,9 +337,9 @@ public class CustomerOperations
 	 */
 	@Override
 	public ICustomerOfferCollection getOffers() {
-		if ( this.offers == null )
+		if (this.offers == null)
 		{
-			this.offers = new CustomerOfferCollectionOperations( this.getPartner(), this.customerId );
+			this.offers = new CustomerOfferCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.offers;
@@ -353,9 +353,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerUsageSummary getUsageSummary()
 	{
-		if ( this.usageSummary == null )
+		if (this.usageSummary == null)
 		{
-			this.usageSummary = new CustomerUsageSummaryOperations( this.getPartner(), customerId );
+			this.usageSummary = new CustomerUsageSummaryOperations(this.getPartner(), customerId);
 		}
 
 		return this.usageSummary;
@@ -369,9 +369,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerUsageSpendingBudget getUsageBudget()
 	{
-		if ( this.usageBudget == null )
+		if (this.usageBudget == null)
 		{
-			this.usageBudget = new CustomerUsageSpendingBudgetOperations( this.getPartner(), customerId );
+			this.usageBudget = new CustomerUsageSpendingBudgetOperations(this.getPartner(), customerId);
 		}
 
 		return this.usageBudget;
@@ -383,9 +383,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerQualification getQualification()
 	{
-		if ( this.customerQualification == null )
+		if (this.customerQualification == null)
 		{
-			this.customerQualification = new CustomerQualificationOperations( this.getPartner(), this.customerId );
+			this.customerQualification = new CustomerQualificationOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.customerQualification;
@@ -399,9 +399,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerUserCollection getUsers()
 	{
-		if ( this.customerUserCollectionOperations == null )
+		if (this.customerUserCollectionOperations == null)
 		{
-			this.customerUserCollectionOperations = new CustomerUsersCollectionOperations( this.getPartner(), this.customerId );
+			this.customerUserCollectionOperations = new CustomerUsersCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.customerUserCollectionOperations;
@@ -413,9 +413,9 @@ public class CustomerOperations
 	@Override
 	public IDirectoryRoleCollection getDirectoryRoles()
 	{
-		if ( this.directoryRoleCollectionOperations == null )
+		if (this.directoryRoleCollectionOperations == null)
 		{
-			this.directoryRoleCollectionOperations = new DirectoryRoleCollectionOperations( this.getPartner(), this.customerId );
+			this.directoryRoleCollectionOperations = new DirectoryRoleCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.directoryRoleCollectionOperations;
@@ -429,9 +429,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerSubscribedSkuCollection getSubscribedSkus()
 	{
-		if ( this.customerSubscribedSkuCollectionOperations == null )
+		if (this.customerSubscribedSkuCollectionOperations == null)
 		{
-			this.customerSubscribedSkuCollectionOperations = new CustomerSubscribedSkuCollectionOperations( this.getPartner(), this.customerId );
+			this.customerSubscribedSkuCollectionOperations = new CustomerSubscribedSkuCollectionOperations(this.getPartner(), this.customerId);
 		}
 
 		return this.customerSubscribedSkuCollectionOperations;
@@ -445,9 +445,9 @@ public class CustomerOperations
 	@Override
 	public ICartCollection getCarts()
 	{
-		if ( this.cartOperations == null )
+		if (this.cartOperations == null)
 		{
-			this.cartOperations = new CartCollectionOperations( this.getPartner(), this.getContext() );
+			this.cartOperations = new CartCollectionOperations(this.getPartner(), this.getContext());
 		}
 
 		return this.cartOperations;
@@ -461,9 +461,9 @@ public class CustomerOperations
 	@Override
 	public ICustomerProductCollection getProducts()
 	{
-		if ( this.productOperations == null )
+		if (this.productOperations == null)
 		{
-			this.productOperations = new CustomerProductCollectionOperations(this.getPartner(), this.getContext() );
+			this.productOperations = new CustomerProductCollectionOperations(this.getPartner(), this.getContext());
 		}
 
 		return this.productOperations;
@@ -477,7 +477,7 @@ public class CustomerOperations
 	@Override
 	public ICustomerServiceCostsCollection getServiceCosts()
 	{
-		if ( this.serviceCostsOperations == null )
+		if (this.serviceCostsOperations == null)
 		{
 			this.serviceCostsOperations = new CustomerServiceCostsCollectionOperations(this.getPartner(), this.getContext());
 		}
@@ -493,7 +493,7 @@ public class CustomerOperations
 	@Override 
 	 public IDevicesBatchCollection getDeviceBatches()
 	{
-		if ( this.deviceBatches == null )
+		if (this.deviceBatches == null)
 		{
 			this.deviceBatches = new  DevicesBatchCollectionOperations(this.getPartner(), this.getContext());
 		}
@@ -525,7 +525,7 @@ public class CustomerOperations
 	@Override
 	public IBatchJobStatusCollection getBatchUploadStatus()
 	{
-		if ( this.batchUploadStatusCollection == null )
+		if (this.batchUploadStatusCollection == null)
 		{
 			this.batchUploadStatusCollection = new BatchJobStatusCollectionOperations(this.getPartner(), this.getContext());
 		}
@@ -596,7 +596,7 @@ public class CustomerOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Customer>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomer").getPath(),
 				this.getContext()));
 	}
@@ -610,7 +610,7 @@ public class CustomerOperations
 		this.getPartner().getServiceClient().delete(
 			this.getPartner(),
 			new TypeReference<Customer>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("DeleteCustomer").getPath(),
 				this.getContext()));
 	}

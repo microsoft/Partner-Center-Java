@@ -24,7 +24,7 @@ public class PartnerResponseParseException
      */
     public PartnerResponseParseException()
     {
-        this( "" );
+        this("");
     }
 
     /**
@@ -32,9 +32,9 @@ public class PartnerResponseParseException
      * 
      * @param message The exception message.
      */
-    public PartnerResponseParseException( String message )
+    public PartnerResponseParseException(String message)
     {
-        this( message, null );
+        this(message, null);
     }
 
     /**
@@ -44,10 +44,10 @@ public class PartnerResponseParseException
      * @param innerException The exception that is the cause of the current exception, or a null reference if no inner
      *            exception is specified.
      */
-    public PartnerResponseParseException( String message, Exception innerException )
+    public PartnerResponseParseException(String message, Exception innerException)
     {
-        super( message, innerException );
-        this.setErrorCategory( PartnerErrorCategory.RESPONSE_PARSING );
+        super(message, innerException);
+        this.setErrorCategory(PartnerErrorCategory.RESPONSE_PARSING);
     }
 
     /**
@@ -59,11 +59,11 @@ public class PartnerResponseParseException
      * @param innerException The exception that is the cause of the current exception, or a null reference if no inner
      *            exception is specified.
      */
-    public PartnerResponseParseException( String response, IRequestContext context, String message, Exception innerException )
+    public PartnerResponseParseException(String response, IRequestContext context, String message, Exception innerException)
     {
-        this( message, innerException );
-        this.setResponse( response );
-        this.setContext( context );
+        this(message, innerException);
+        this.setResponse(response);
+        this.setContext(context);
     }
 
     /**
@@ -81,7 +81,7 @@ public class PartnerResponseParseException
      * 
      * @param value The HTTP response payload that could not be parsed.
      */
-    public void setResponse( String value )
+    public void setResponse(String value)
     {
         response = value;
     }
@@ -97,6 +97,6 @@ public class PartnerResponseParseException
         return MessageFormat.format(
             "PartnerApiParsingException: Response: {0}, Base Description: {1}",
             this.getResponse().toString(), 
-            super.toString() );
+            super.toString());
     }
 }

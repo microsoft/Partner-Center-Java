@@ -18,7 +18,7 @@ public class CustomerLicensesUsageInsights
         return workloadCode;
     }
 
-    public void setWorkloadCode( String value )
+    public void setWorkloadCode(String value)
     {
         workloadCode = value;
     }
@@ -33,7 +33,7 @@ public class CustomerLicensesUsageInsights
         return workloadName;
     }
 
-    public void setWorkloadName( String value )
+    public void setWorkloadName(String value)
     {
         workloadName = value;
     }
@@ -48,7 +48,7 @@ public class CustomerLicensesUsageInsights
         return licensesActive;
     }
 
-    public void setLicensesActive( long value )
+    public void setLicensesActive(long value)
     {
         licensesActive = value;
     }
@@ -63,7 +63,7 @@ public class CustomerLicensesUsageInsights
         return licensesQualified;
     }
 
-    public void setLicensesQualified( long value )
+    public void setLicensesQualified(long value)
     {
         licensesQualified = value;
     }
@@ -78,7 +78,7 @@ public class CustomerLicensesUsageInsights
         return usagePercent;
     }
 
-    public void setUsagePercent( long value )
+    public void setUsagePercent(long value)
     {
         usagePercent = value;
     }

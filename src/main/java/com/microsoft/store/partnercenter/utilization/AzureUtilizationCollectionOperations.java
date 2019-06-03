@@ -36,18 +36,18 @@ public class AzureUtilizationCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param subscriptionId The subscription identifier.
 	 */
-	public AzureUtilizationCollectionOperations( IPartner rootPartnerOperations,
-			String customerId, String subscriptionId )
+	public AzureUtilizationCollectionOperations(IPartner rootPartnerOperations,
+			String customerId, String subscriptionId)
 	{
-		super(rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ));
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId))
 		{
-			throw new IllegalArgumentException( "subscriptionId must be set" );
+			throw new IllegalArgumentException("subscriptionId must be set");
 		}
 	}
 
@@ -63,42 +63,42 @@ public class AzureUtilizationCollectionOperations
 	 * @return The Azure resource utilization for the subscription.
 	 */
 	@Override
-	public ResourceCollection<AzureUtilizationRecord> query( DateTime startTime, DateTime endTime,
-			AzureUtilizationGranularity granularity, boolean showDetails, int size )
+	public ResourceCollection<AzureUtilizationRecord> query(DateTime startTime, DateTime endTime,
+			AzureUtilizationGranularity granularity, boolean showDetails, int size)
 	{     
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( startTime != null )
+		if (startTime != null)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "StartTime" ),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getParameters().get("StartTime"),
 					startTime.withZone(DateTimeZone.UTC).toString("yyyy-MM-dd'T'HH:mm:ss'Z'")
 				) 
 			);
 		}
 		
-		if ( endTime != null )
+		if (endTime != null)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "EndTime" ),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getParameters().get("EndTime"),
 					endTime.withZone(DateTimeZone.UTC).toString("yyyy-MM-dd'T'HH:mm:ss'Z'")
 				) 
 			);
 		}
 
-		if ( granularity != null )
+		if (granularity != null)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "Granularity" ),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getParameters().get("Granularity"),
 					granularity.toString()
 				)
 			);
@@ -108,19 +108,19 @@ public class AzureUtilizationCollectionOperations
 		(
 			new KeyValuePair<String, String>
 			(
-				PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "ShowDetails" ),
-				Boolean.toString( showDetails )
+				PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getParameters().get("ShowDetails"),
+				Boolean.toString(showDetails)
 			)
 		);
 
-		if( size > 0 )
+		if(size > 0)
 		{
 			parameters.add
 			(
 				new KeyValuePair<String, String>
 				(
-					PartnerService.getInstance().getConfiguration().getApis().get( "GetAzureUtilizationRecords" ).getParameters().get( "Size" ),
-					Integer.toString( size )
+					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getParameters().get("Size"),
+					Integer.toString(size)
 				)
 			);        	
 		}
@@ -128,7 +128,7 @@ public class AzureUtilizationCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<AzureUtilizationRecord>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 					PartnerService.getInstance().getConfiguration().getApis().get("GetAzureUtilizationRecords").getPath(),
 					this.getContext().getItem1(),
 					this.getContext().getItem2()),
@@ -142,16 +142,16 @@ public class AzureUtilizationCollectionOperations
 	 * @return The next page of utilization records.
 	 */
 	@Override
-	public ResourceCollection<AzureUtilizationRecord> seek( String continuationToken, SeekOperation seekOperation )
+	public ResourceCollection<AzureUtilizationRecord> seek(String continuationToken, SeekOperation seekOperation)
 	{
-		if ( StringHelper.isNullOrWhiteSpace( continuationToken ) )
+		if (StringHelper.isNullOrWhiteSpace(continuationToken))
 		{
-			throw new IllegalArgumentException( "continuationToken must be non empty" );
+			throw new IllegalArgumentException("continuationToken must be non empty");
 		}
 		
-		if ( seekOperation == null )
+		if (seekOperation == null)
 		{
-			throw new IllegalArgumentException( "SeekOperation can not be null" );
+			throw new IllegalArgumentException("SeekOperation can not be null");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
@@ -163,13 +163,13 @@ public class AzureUtilizationCollectionOperations
 
 		parameters.add(
 			new KeyValuePair<String, String>(
-				PartnerService.getInstance().getConfiguration().getApis().get( "SeekAzureUtilizationRecords" ).getParameters().get( "SeekOperation" ),
+				PartnerService.getInstance().getConfiguration().getApis().get("SeekAzureUtilizationRecords").getParameters().get("SeekOperation"),
 				seekOperation.toString()));
 
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<AzureUtilizationRecord>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 					PartnerService.getInstance().getConfiguration().getApis().get("SeekAzureUtilizationRecords").getPath(),
 					this.getContext().getItem1(),
 					this.getContext().getItem2()),

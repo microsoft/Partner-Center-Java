@@ -22,7 +22,7 @@ public class MpnProfile
         return __PartnerName;
     }
 
-    public void setPartnerName( String value )
+    public void setPartnerName(String value)
     {
         __PartnerName = value;
     }
@@ -37,7 +37,7 @@ public class MpnProfile
         return __MpnId;
     }
 
-    public void setMpnId( String value )
+    public void setMpnId(String value)
     {
         __MpnId = value;
     }

@@ -12,32 +12,52 @@ public class QuantityProvisioningStatus
     extends ResourceBase
 {
     /**
-     * Gets or sets Quantity.
+     * The product quantity.
      */
-    private int __Quantity;
+    private int quantity;
 
+    /**
+     * The provisioning status.
+     */
+    private String status;
+
+    /**
+     * Gets the product quantity.
+     * 
+     * @return The product quantity.
+     */
     public int getQuantity()
     {
-        return __Quantity;
-    }
-
-    public void setQuantity( int value )
-    {
-        __Quantity = value;
+        return quantity;
     }
 
     /**
-     * Gets or sets provisioning status.
+     * Sets the product quantity.
+     * 
+     * @param value The product quantity.
      */
-    private String __Status;
-
-    public String getStatus()
+    public void setQuantity(int value)
     {
-        return __Status;
+        quantity = value;
     }
 
-    public void setStatus( String value )
+    /**
+     * Gets the provisioning status.
+     * 
+     * @return The provisioning status.
+     */
+    public String getStatus()
     {
-        __Status = value;
+        return status;
+    }
+
+    /**
+     * Sets the provisioning status.
+     * 
+     * @param value The provisioning status.
+     */
+    public void setStatus(String value)
+    {
+        status = value;
     }
 }

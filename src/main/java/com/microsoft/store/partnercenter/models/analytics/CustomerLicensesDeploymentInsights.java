@@ -19,7 +19,7 @@ public class CustomerLicensesDeploymentInsights
         return licenseDeployed;
     }
 
-    public void setLicensesDeployed( long value )
+    public void setLicensesDeployed(long value)
     {
         licenseDeployed = value;
     }
@@ -34,7 +34,7 @@ public class CustomerLicensesDeploymentInsights
         return licensesSold;
     }
 
-    public void setLicensesSold( long value )
+    public void setLicensesSold(long value)
     {
         licensesSold = value;
     }
@@ -49,7 +49,7 @@ public class CustomerLicensesDeploymentInsights
         return deploymentPercent;
     }
 
-    public void setDeploymentPercent( double value )
+    public void setDeploymentPercent(double value)
     {
         deploymentPercent = value;
     }

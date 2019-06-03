@@ -30,8 +30,8 @@ public class InvoiceOperations
 	 */
 	public InvoiceOperations(IPartner rootPartnerOperations, String invoiceId)
 	{
-		super( rootPartnerOperations, invoiceId );
-		if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+		super(rootPartnerOperations, invoiceId);
+		if (StringHelper.isNullOrWhiteSpace(invoiceId))
 		{
 			throw new IllegalArgumentException("invoiceId has to be set.");
 		}
@@ -43,7 +43,7 @@ public class InvoiceOperations
 	@Override
 	public IInvoiceDocuments getDocuments()
 	{
-		return new InvoiceDocumentsOperations( this.getPartner(), this.getContext() );
+		return new InvoiceDocumentsOperations(this.getPartner(), this.getContext());
 	}
 
 	/**
@@ -64,9 +64,9 @@ public class InvoiceOperations
 	 * @param invoiceLineItemType The invoice line item type.
 	 * @return The invoice line item collection operations.
 	 */
-	public IInvoiceLineItemCollection by( BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType )
+	public IInvoiceLineItemCollection by(BillingProvider billingProvider, InvoiceLineItemType invoiceLineItemType)
 	{
-		return new InvoiceLineItemCollectionOperations( this.getPartner(), this.getContext(), billingProvider, invoiceLineItemType );
+		return new InvoiceLineItemCollectionOperations(this.getPartner(), this.getContext(), billingProvider, invoiceLineItemType);
 	}
 
     /**
@@ -120,7 +120,7 @@ public class InvoiceOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Invoice>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoice").getPath(),
 				this.getContext()));
 	}

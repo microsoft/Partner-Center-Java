@@ -25,5 +25,5 @@ public interface IPartnerServiceRequestCollection
      * @param agentLocale The locale.
      * @return The ServiceRequest information that was just created.
      */
-    ServiceRequest create( ServiceRequest newEntity, String agentLocale );
+    ServiceRequest create(ServiceRequest newEntity, String agentLocale);
 }

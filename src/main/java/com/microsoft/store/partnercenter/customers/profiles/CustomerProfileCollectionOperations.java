@@ -32,12 +32,12 @@ public class CustomerProfileCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
      */
-    public CustomerProfileCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerProfileCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        super(rootPartnerOperations, customerId);
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId can't be null" );
+            throw new IllegalArgumentException("customerId can't be null");
         }
     }
 
@@ -47,9 +47,9 @@ public class CustomerProfileCollectionOperations
     @Override
     public ICustomerProfile<CustomerBillingProfile> getBilling()
     {
-        if ( this.billingProfileOperations == null )
+        if (this.billingProfileOperations == null)
             this.billingProfileOperations =
-                new CustomerBillingProfileOperations( this.getPartner(), this.getContext() );
+                new CustomerBillingProfileOperations(this.getPartner(), this.getContext());
         return this.billingProfileOperations;
     }
 
@@ -59,9 +59,9 @@ public class CustomerProfileCollectionOperations
     @Override
     public ICustomerReadonlyProfile<CustomerCompanyProfile> getCompany()
     {
-        if ( this.companyProfileOperations == null )
+        if (this.companyProfileOperations == null)
             this.companyProfileOperations =
-                new CustomerCompanyProfileOperations( this.getPartner(), this.getContext() );
+                new CustomerCompanyProfileOperations(this.getPartner(), this.getContext());
         return this.companyProfileOperations;
     }
 

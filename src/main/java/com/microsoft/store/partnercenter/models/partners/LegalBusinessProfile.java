@@ -31,7 +31,7 @@ public class LegalBusinessProfile
         return __CompanyName;
     }
 
-    public void setCompanyName( String value )
+    public void setCompanyName(String value)
     {
         __CompanyName = value;
     }
@@ -46,7 +46,7 @@ public class LegalBusinessProfile
         return __Address;
     }
 
-    public void setAddress( Address value )
+    public void setAddress(Address value)
     {
         __Address = value;
     }
@@ -61,7 +61,7 @@ public class LegalBusinessProfile
         return __PrimaryContact;
     }
 
-    public void setPrimaryContact( Contact value )
+    public void setPrimaryContact(Contact value)
     {
         __PrimaryContact = value;
     }
@@ -76,7 +76,7 @@ public class LegalBusinessProfile
         return __CompanyApproverAddress;
     }
 
-    public void setCompanyApproverAddress( Address value )
+    public void setCompanyApproverAddress(Address value)
     {
         __CompanyApproverAddress = value;
     }
@@ -91,7 +91,7 @@ public class LegalBusinessProfile
         return __CompanyApproverEmail;
     }
 
-    public void setCompanyApproverEmail( String value )
+    public void setCompanyApproverEmail(String value)
     {
         __CompanyApproverEmail = value;
     }
@@ -106,7 +106,7 @@ public class LegalBusinessProfile
         return __VettingStatus;
     }
 
-    public void setVettingStatus( VettingStatus value )
+    public void setVettingStatus(VettingStatus value)
     {
     	__VettingStatus = value;
     }
@@ -121,7 +121,7 @@ public class LegalBusinessProfile
         return __VettingSubStatus;
     }
 
-    public void setVettingSubStatus( VettingSubStatus value )
+    public void setVettingSubStatus(VettingSubStatus value)
     {
     	__VettingSubStatus = value;
     }

@@ -30,7 +30,7 @@ public class OrderCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer tenant identifier.
 	 */
-	public OrderCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	public OrderCollectionOperations(IPartner rootPartnerOperations, String customerId)
 	{
 		super(rootPartnerOperations, customerId);
 		
@@ -61,9 +61,9 @@ public class OrderCollectionOperations
 	 * @return The order operations.
 	 */
 	@Override
-	public IOrder byId( String orderId )
+	public IOrder byId(String orderId)
 	{
-		return new OrderOperations( this.getPartner(), this.getContext(), orderId );
+		return new OrderOperations(this.getPartner(), this.getContext(), orderId);
 	}
 
 	/**
@@ -73,9 +73,9 @@ public class OrderCollectionOperations
 	 * @return The newly created order.
 	 */
 	@Override
-	public Order create( Order newOrder )
+	public Order create(Order newOrder)
 	{
-		if ( newOrder == null )
+		if (newOrder == null)
 		{
 			throw new IllegalArgumentException("The newOrder parameter cannot be null.");
 		}
@@ -122,7 +122,7 @@ public class OrderCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Order>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrders").getPath(),
 				this.getContext()), 
 			parameters);

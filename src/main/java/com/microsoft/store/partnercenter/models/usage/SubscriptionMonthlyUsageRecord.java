@@ -9,7 +9,7 @@ import com.microsoft.store.partnercenter.models.subscriptions.SubscriptionStatus
 /**
  * The class defines the monthly usage record of a subscription.
  */
-@JsonIgnoreProperties( { "offerId", "lastModifiedDate" } )
+@JsonIgnoreProperties({ "offerId", "lastModifiedDate" })
 public class SubscriptionMonthlyUsageRecord
     extends UsageRecordBase
 {
@@ -30,7 +30,7 @@ public class SubscriptionMonthlyUsageRecord
      * 
      * @param value The resource identifier.
      */
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
         __ResourceId = value;
     }
@@ -52,7 +52,7 @@ public class SubscriptionMonthlyUsageRecord
      * 
      * @param value The name of the resource.
      */
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -74,7 +74,7 @@ public class SubscriptionMonthlyUsageRecord
      * 
      * @param value The status of the subscription.
      */
-    public void setStatus( SubscriptionStatus value )
+    public void setStatus(SubscriptionStatus value)
     {
         __Status = value;
     }
@@ -96,7 +96,7 @@ public class SubscriptionMonthlyUsageRecord
      * 
      * @param value The partner on record.
      */
-    public void setPartnerOnRecord( String value )
+    public void setPartnerOnRecord(String value)
     {
         __PartnerOnRecord = value;
     }
@@ -118,7 +118,7 @@ public class SubscriptionMonthlyUsageRecord
      * 
      * @param value The offer identifier associated to this subscription.
      */
-    public void setOfferId( String value )
+    public void setOfferId(String value)
     {
     	__OfferId = value;
     }

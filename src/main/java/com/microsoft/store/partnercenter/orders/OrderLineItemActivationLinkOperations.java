@@ -55,7 +55,7 @@ public class OrderLineItemActivationLinkOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ResourceCollection<OrderLineItemActivationLink>>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetActivationLinksByLineItemNumber").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2(),

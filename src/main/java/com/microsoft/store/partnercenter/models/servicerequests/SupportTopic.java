@@ -21,7 +21,7 @@ public class SupportTopic
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -36,7 +36,7 @@ public class SupportTopic
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -51,7 +51,7 @@ public class SupportTopic
         return __Id;
     }
 
-    public void setId( int value )
+    public void setId(int value)
     {
         __Id = value;
     }

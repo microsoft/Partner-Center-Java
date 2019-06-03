@@ -25,12 +25,12 @@ public class CustomerBillingProfileOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public CustomerBillingProfileOperations( IPartner rootPartnerOperations, String customerId )
+	public CustomerBillingProfileOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId can't be null" );
+			throw new IllegalArgumentException("customerId can't be null");
 		}
 	}
 
@@ -45,7 +45,7 @@ public class CustomerBillingProfileOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<CustomerBillingProfile>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerBillingProfile").getPath(),
 				this.getContext()));
 	}
@@ -57,17 +57,17 @@ public class CustomerBillingProfileOperations
 	 * @return The updated customer billing profile.
 	 */
 	@Override
-	public CustomerBillingProfile update( CustomerBillingProfile billingProfile )
+	public CustomerBillingProfile update(CustomerBillingProfile billingProfile)
 	{
-		if ( billingProfile == null )
+		if (billingProfile == null)
 		{
-			throw new IllegalArgumentException( "billingProfile null" );
+			throw new IllegalArgumentException("billingProfile null");
 		}
 		
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),
 			new TypeReference<CustomerBillingProfile>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpdateCustomerBillingProfile").getPath(),
 				this.getContext()),
 			billingProfile);

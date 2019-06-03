@@ -16,7 +16,7 @@ public class SimpleFieldFilter
      */
     public SimpleFieldFilter()
     {
-        this.setFieldType( FieldType.STRING );
+        this.setFieldType(FieldType.STRING);
     }
 
     /**
@@ -26,9 +26,9 @@ public class SimpleFieldFilter
      * @param value The value to execute the operator on.
      * @param operation The operator value.
      */
-    public SimpleFieldFilter( String field, FieldFilterOperation operation, String value )
+    public SimpleFieldFilter(String field, FieldFilterOperation operation, String value)
     {
-        this( field, value, operation, FieldType.STRING );
+        this(field, value, operation, FieldType.STRING);
     }
 
     /**
@@ -38,9 +38,9 @@ public class SimpleFieldFilter
      * @param value The value to execute the operator on.
      * @param operation The operator value.
      */
-    public SimpleFieldFilter( String field, String value, FieldFilterOperation operation )
+    public SimpleFieldFilter(String field, String value, FieldFilterOperation operation)
     {
-        this( field, value, operation, FieldType.STRING );
+        this(field, value, operation, FieldType.STRING);
     }
 
     /**
@@ -51,12 +51,12 @@ public class SimpleFieldFilter
      * @param operation The operator value.
      * @param fieldType The field type.x
      */
-    public SimpleFieldFilter( String field, String value, FieldFilterOperation operation, FieldType fieldType )
+    public SimpleFieldFilter(String field, String value, FieldFilterOperation operation, FieldType fieldType)
     {
-        this.setField( field );
-        this.setValue( value );
-        this.setOperator( operation );
-        this.setFieldType( fieldType );
+        this.setField(field);
+        this.setValue(value);
+        this.setOperator(operation);
+        this.setFieldType(fieldType);
     }
 
     /**
@@ -69,7 +69,7 @@ public class SimpleFieldFilter
         return __Field;
     }
 
-    public void setField( String value )
+    public void setField(String value)
     {
         __Field = value;
     }
@@ -84,7 +84,7 @@ public class SimpleFieldFilter
         return __Value;
     }
 
-    public void setValue( String value )
+    public void setValue(String value)
     {
         __Value = value;
     }
@@ -96,18 +96,18 @@ public class SimpleFieldFilter
      * @return The filter expression according to the provided generator language.
      * @throws IllegalArgumentException if the passed filter expression generator is null.
      */
-    public String generateExpression( IFilterExpressionGenerator filterExpressionGenerator )
+    public String generateExpression(IFilterExpressionGenerator filterExpressionGenerator)
     {
-        if ( filterExpressionGenerator == null )
+        if (filterExpressionGenerator == null)
         {
-            throw new IllegalArgumentException( "filterExpressionGenerator can't be null" );
+            throw new IllegalArgumentException("filterExpressionGenerator can't be null");
         }
 
-        return filterExpressionGenerator.generateSimpleExpression( 
+        return filterExpressionGenerator.generateSimpleExpression(
             this.getField(), 
             this.getOperator(), 
             this.getValue(),
-            this.getFieldType() );
+            this.getFieldType());
     }
 
     /**
@@ -118,7 +118,7 @@ public class SimpleFieldFilter
     public String toString()
     {
         return MessageFormat.format(
-             "( {0} {1} {2} )", 
+             "({0} {1} {2})", 
              this.getField(), 
              this.getOperator(), 
              this.getValue());

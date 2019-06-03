@@ -28,18 +28,18 @@ public class SubscriptionRegistrationOperations
      * @param customerId            The customer identifier.
      * @param subscriptionId        The subscription identifier
      */
-    public SubscriptionRegistrationOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
+    public SubscriptionRegistrationOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+        if (StringHelper.isNullOrWhiteSpace(subscriptionId))
         {
-            throw new IllegalArgumentException( "subscriptionId must be set." );
+            throw new IllegalArgumentException("subscriptionId must be set.");
         }
     }
 

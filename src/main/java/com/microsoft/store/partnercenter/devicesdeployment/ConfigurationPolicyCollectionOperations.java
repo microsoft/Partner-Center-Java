@@ -26,13 +26,13 @@ public class ConfigurationPolicyCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId Identifier for the customer.
 	 */
-	public ConfigurationPolicyCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	public ConfigurationPolicyCollectionOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
+		super(rootPartnerOperations, customerId);
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 	}
 
@@ -43,7 +43,7 @@ public class ConfigurationPolicyCollectionOperations
 	 * @return The customer's devices batch upload status operations.
 	 */
 	@Override 
-	public IConfigurationPolicy byId( String policyId )
+	public IConfigurationPolicy byId(String policyId)
 	{
 		return new ConfigurationPolicyOperations(this.getPartner(), this.getContext(), policyId);
 	}
@@ -57,9 +57,9 @@ public class ConfigurationPolicyCollectionOperations
 	@Override
 	public ConfigurationPolicy create(ConfigurationPolicy newPolicy)
 	{
-		if ( newPolicy == null )
+		if (newPolicy == null)
 		{
-			throw new IllegalArgumentException("The newPolicy parameter cannot be null" );
+			throw new IllegalArgumentException("The newPolicy parameter cannot be null");
 		}
 
 		return this.getPartner().getServiceClient().post(
@@ -82,7 +82,7 @@ public class ConfigurationPolicyCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<ConfigurationPolicy>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetConfigurationPolicies").getPath(),
 				this.getContext()));
 	}

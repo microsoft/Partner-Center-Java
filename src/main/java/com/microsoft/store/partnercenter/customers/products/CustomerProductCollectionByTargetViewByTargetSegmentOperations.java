@@ -32,23 +32,23 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
 	 * @param targetView The target view which contains the products.
 	 * @param targetSegment The target segment used for filtering the products. 
 	 */
-	public CustomerProductCollectionByTargetViewByTargetSegmentOperations( IPartner rootPartnerOperations, String customerId, String targetView, String targetSegment )
+	public CustomerProductCollectionByTargetViewByTargetSegmentOperations(IPartner rootPartnerOperations, String customerId, String targetView, String targetSegment)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>( customerId, targetView, targetSegment ) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, targetView, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( targetView ) )
+		if (StringHelper.isNullOrWhiteSpace(targetView))
 		{
-			throw new IllegalArgumentException( "targetView must be set" );
+			throw new IllegalArgumentException("targetView must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 
@@ -83,7 +83,7 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Product>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getPath(),
 				this.getContext().getItem1()),
 			parameters);

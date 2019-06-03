@@ -18,7 +18,7 @@ public class RateCardCollectionOperations extends BasePartnerComponentString imp
 	{
 		super(rootPartnerOperations);
 		
-		__azureRateCardOperations = new AzureRateCardOperations( rootPartnerOperations );
+		__azureRateCardOperations = new AzureRateCardOperations(rootPartnerOperations);
 	}
 
 	/**

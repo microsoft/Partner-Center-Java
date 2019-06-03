@@ -22,13 +22,13 @@ public class CustomerProductCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      */
-    public CustomerProductCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerProductCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 
@@ -39,7 +39,7 @@ public class CustomerProductCollectionOperations
      * @return The operations that can be performed on a single product.
      */
     @Override
-     public IProduct byId( String productId )
+     public IProduct byId(String productId)
     {
         return new CustomerProductOperations(this.getPartner(), this.getContext(), productId);        
     }

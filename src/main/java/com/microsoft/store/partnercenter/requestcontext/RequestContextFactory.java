@@ -50,9 +50,9 @@ public class RequestContextFactory
      * @param locale The locale.
      * @return A request context object.
      */
-    public IRequestContext create( String locale )
+    public IRequestContext create(String locale)
     {
-        return new RequestContext( locale );
+        return new RequestContext(locale);
     }
 
     /**
@@ -62,9 +62,9 @@ public class RequestContextFactory
      * @param correlationId The correlation Id.
      * @return A request context object.
      */
-    public IRequestContext create( UUID correlationId )
+    public IRequestContext create(UUID correlationId)
     {
-        return new RequestContext( correlationId );
+        return new RequestContext(correlationId);
     }
 
     /**
@@ -75,9 +75,9 @@ public class RequestContextFactory
      * @param locale The locale
      * @return A request context object.
      */
-    public IRequestContext create( UUID correlationId, String locale )
+    public IRequestContext create(UUID correlationId, String locale)
     {
-        return new RequestContext( correlationId, locale );
+        return new RequestContext(correlationId, locale);
     }
 
     /**
@@ -87,9 +87,9 @@ public class RequestContextFactory
      * @param requestId The request Id.
      * @return A request context object.
      */
-    public IRequestContext create( UUID correlationId, UUID requestId )
+    public IRequestContext create(UUID correlationId, UUID requestId)
     {
-        return new RequestContext( correlationId, requestId, null );
+        return new RequestContext(correlationId, requestId, null);
     }
 
     /**
@@ -100,8 +100,8 @@ public class RequestContextFactory
      * @param locale The locale.
      * @return A request context object.
      */
-    public IRequestContext create( UUID correlationId, UUID requestId, String locale )
+    public IRequestContext create(UUID correlationId, UUID requestId, String locale)
     {
-        return new RequestContext( correlationId, requestId, locale );
+        return new RequestContext(correlationId, requestId, locale);
     }
 }

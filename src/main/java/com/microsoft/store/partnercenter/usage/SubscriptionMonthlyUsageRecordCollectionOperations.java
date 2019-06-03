@@ -26,13 +26,13 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public SubscriptionMonthlyUsageRecordCollectionOperations( IPartner rootPartnerOperations,
-															 String customerId )
+	public SubscriptionMonthlyUsageRecordCollectionOperations(IPartner rootPartnerOperations,
+															 String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId should be set." );
+			throw new IllegalArgumentException("customerId should be set.");
 		}
 	}
 
@@ -47,7 +47,7 @@ public class SubscriptionMonthlyUsageRecordCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<SubscriptionMonthlyUsageRecord>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionUsageRecords").getPath(),
 				this.getContext()));
 	}

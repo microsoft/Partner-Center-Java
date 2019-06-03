@@ -38,7 +38,7 @@ public class AzureRateCardOperations
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )
+		if (!StringHelper.isEmptyOrContainsWhiteSpace(currency))
 		{
 			parameters.add
 			(
@@ -50,7 +50,7 @@ public class AzureRateCardOperations
 			);
 		}
 
-		if ( !StringHelper.isEmptyOrContainsWhiteSpace( region ) )
+		if (!StringHelper.isEmptyOrContainsWhiteSpace(region))
 		{
 			parameters.add
 			(
@@ -81,7 +81,7 @@ public class AzureRateCardOperations
 	{
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( !StringHelper.isEmptyOrContainsWhiteSpace( currency ) )
+		if (!StringHelper.isEmptyOrContainsWhiteSpace(currency))
 		{
 			parameters.add
 			(
@@ -93,7 +93,7 @@ public class AzureRateCardOperations
 			);
 		}
 
-		if ( !StringHelper.isEmptyOrContainsWhiteSpace( region ) )
+		if (!StringHelper.isEmptyOrContainsWhiteSpace(region))
 		{
 			parameters.add
 			(

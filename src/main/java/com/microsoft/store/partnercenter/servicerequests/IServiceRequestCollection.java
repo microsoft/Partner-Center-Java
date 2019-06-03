@@ -24,7 +24,7 @@ public interface IServiceRequestCollection
      * @param serviceRequestId Service Request Id
      * @return The service request operations.
      */
-    IServiceRequest byId( String serviceRequestId );
+    IServiceRequest byId(String serviceRequestId);
 
     /**
      * Retrieves all service requests.
@@ -41,5 +41,5 @@ public interface IServiceRequestCollection
      *            build queries.
      * @return The requested service requests.
      */
-    ResourceCollection<ServiceRequest> query( IQuery serviceRequestsQuery );
+    ResourceCollection<ServiceRequest> query(IQuery serviceRequestsQuery);
 }

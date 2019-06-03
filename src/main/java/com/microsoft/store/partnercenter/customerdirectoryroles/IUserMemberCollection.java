@@ -26,21 +26,21 @@ public interface IUserMemberCollection
      * @param userId The user identifier.
      * @return The user member operations.
      */
-    IUserMember byId( String userId );
+    IUserMember byId(String userId);
 
     /**
      * Adds customer user to a directory role.
      * @param newEntity UserMember to add.
      * @return The customer directory role user member.
      */
-    UserMember create( UserMember newEntity );
+    UserMember create(UserMember newEntity);
 
     /**
      * Queries the user members of a customer directory role.
      * @param query A query to apply onto user member collection.
      * @return The directory role user members.
      */
-    SeekBasedResourceCollection<UserMember> query( IQuery query );
+    SeekBasedResourceCollection<UserMember> query(IQuery query);
 
     /**
      * Gets all the user members of a customer directory role.

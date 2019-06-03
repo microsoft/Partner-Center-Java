@@ -26,16 +26,16 @@ public class CustomerUserRoleCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param userId The user identifier.
 	 */
-	public CustomerUserRoleCollectionOperations( IPartner rootPartnerOperations, String customerId, String userId )
+	public CustomerUserRoleCollectionOperations(IPartner rootPartnerOperations, String customerId, String userId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, userId ) );
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, userId));
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId can't be null" );
+			throw new IllegalArgumentException("customerId can't be null");
 		}
-		if ( StringHelper.isNullOrWhiteSpace( userId ) )
+		if (StringHelper.isNullOrWhiteSpace(userId))
 		{
-			throw new IllegalArgumentException( "userId can't be null" );
+			throw new IllegalArgumentException("userId can't be null");
 		}
 	}
 
@@ -45,7 +45,7 @@ public class CustomerUserRoleCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<DirectoryRole>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("CustomerUserDirectoryRoles").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));

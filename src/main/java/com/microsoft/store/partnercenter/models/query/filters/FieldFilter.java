@@ -18,7 +18,7 @@ public abstract class FieldFilter
         return __Operator;
     }
 
-    public void setOperator( FieldFilterOperation value )
+    public void setOperator(FieldFilterOperation value)
     {
         __Operator = value;
     }
@@ -33,7 +33,7 @@ public abstract class FieldFilter
         return __FieldType;
     }
 
-    public void setFieldType( FieldType value )
+    public void setFieldType(FieldType value)
     {
         __FieldType = value;
     }
@@ -44,6 +44,6 @@ public abstract class FieldFilter
      * @param filterExpressionGenerator The filter expression generator to use.
      * @return The filter expression according to the provided generator language.
      */
-    public abstract String generateExpression( IFilterExpressionGenerator filterExpressionGenerator );
+    public abstract String generateExpression(IFilterExpressionGenerator filterExpressionGenerator);
 
 }

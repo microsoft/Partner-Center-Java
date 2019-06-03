@@ -17,7 +17,7 @@ public class AuditRecord extends ResourceBase
 	/**
 	 *  Gets or sets the id of the app invoking the operation
 	 */
-	@JsonProperty( "applicationid" )
+	@JsonProperty("applicationid")
 	private String applicationId;
 
 	/**
@@ -35,12 +35,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The identifier of the application invoking the operation.
      */
-	public void setApplicationId( String value )
+	public void setApplicationId(String value)
 	{
 		applicationId = value;
 	}
 
-	@JsonProperty( "customizedData" )
+	@JsonProperty("customizedData")
 	private Iterable<KeyValuePair<String, String>> customizedData;
 
 	/**
@@ -58,12 +58,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The dictionary which holds additional data that is customized to the operation performed.
      */
-	public void setCustomizedData( Iterable<KeyValuePair<String, String>> value )
+	public void setCustomizedData(Iterable<KeyValuePair<String, String>> value)
 	{
 		customizedData = value;
 	}
 
-	@JsonProperty( "customerId" )
+	@JsonProperty("customerId")
 	private String customerId;
 
 	/**
@@ -81,12 +81,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The identifier of customer in whose context operation was performed.
      */
-	public void setCustomerId( String value )
+	public void setCustomerId(String value)
 	{
 		customerId = value;
 	}
 
-	@JsonProperty( "customerName" )
+	@JsonProperty("customerName")
 	private String customerName;
 
 	/**
@@ -104,12 +104,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The name of customer in whose context operation was performed.
      */
-	public void setCustomerName( String value )
+	public void setCustomerName(String value)
 	{
 		customerName = value;
 	}
 
-	@JsonProperty( "id" )
+	@JsonProperty("id")
 	public String id; 
 
 	/**
@@ -135,7 +135,7 @@ public class AuditRecord extends ResourceBase
 	/**
 	 * Gets or sets the date time when the operation was performed
 	 */
-	@JsonProperty( "operationDate" )
+	@JsonProperty("operationDate")
 	private DateTime operationDate;
 
 	/**
@@ -153,12 +153,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The date and time when the operation was performed.
      */
-	public void setOperationDate( DateTime value )
+	public void setOperationDate(DateTime value)
 	{
 		operationDate = value;
 	}
 
-	@JsonProperty( "operationStatus" )
+	@JsonProperty("operationStatus")
 	private OperationStatus operationStatus;
 
 	/**
@@ -176,12 +176,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The status of the operation that is audited.
      */
-	public void setOperationStatus( OperationStatus value )
+	public void setOperationStatus(OperationStatus value)
 	{
 		operationStatus = value;
 	}
 
-	@JsonProperty( "operationType" )
+	@JsonProperty("operationType")
 	private OperationType operationType;
 
 	/**
@@ -199,12 +199,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The type of the operation being performed.
      */
-	public void setOperationType( OperationType value )
+	public void setOperationType(OperationType value)
 	{
 		operationType = value;
 	}
 
-	@JsonProperty( "partnerId" )
+	@JsonProperty("partnerId")
 	private String partnerId;
 
 	/**
@@ -222,12 +222,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The identifier of the partner that performed the operation.
      */
-	public void setPartnerId( String value )
+	public void setPartnerId(String value)
 	{
 		partnerId = value;
 	}
 
-	@JsonProperty( "resourceNewValue" )
+	@JsonProperty("resourceNewValue")
 	private String resourceNewValue;
 
 	/**
@@ -245,12 +245,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The new value of the resource.
      */
-	public void setResourceNewValue( String value )
+	public void setResourceNewValue(String value)
 	{
 		resourceNewValue = value;
 	}
 
-	@JsonProperty( "resourceOldValue" )
+	@JsonProperty("resourceOldValue")
 	private String resourceOldValue;
 
 	/**
@@ -268,12 +268,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The old value of the resource.
      */
-	public void setResourceOldValue( String value )
+	public void setResourceOldValue(String value)
 	{
 		resourceOldValue = value;
 	}
 
-	@JsonProperty( "resourceType" )
+	@JsonProperty("resourceType")
 	private ResourceType resourceType;
 
 	/**
@@ -291,12 +291,12 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The type of the resource acted upon by the operation.
      */
-	public void setResourceType( ResourceType value )
+	public void setResourceType(ResourceType value)
 	{
 		resourceType = value;
 	}
 
-	@JsonProperty( "userPrincipalName" )
+	@JsonProperty("userPrincipalName")
 	private String userPrincipalName;
 
 	/**
@@ -314,7 +314,7 @@ public class AuditRecord extends ResourceBase
      * 
      * @param value The identifier of the user who performed the operation.
      */
-	public void setUserPrincipalName( String value )
+	public void setUserPrincipalName(String value)
 	{
 		userPrincipalName = value;
 	}

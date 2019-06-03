@@ -55,7 +55,7 @@ public class OrderLineItemLinks
      * 
      * @param value The activation lLinks for the order line item.
      */
-    public void setActivationLinks( Link value )
+    public void setActivationLinks(Link value)
     {
         activationLinks = value;
     }
@@ -75,7 +75,7 @@ public class OrderLineItemLinks
      * 
      * @param value The availability link for the order line item.
      */
-    public void setAvailability( Link value )
+    public void setAvailability(Link value)
     {
         availability = value;
     }
@@ -95,7 +95,7 @@ public class OrderLineItemLinks
      * 
      * @param value The product link for the order line item.
      */
-    public void setProduct( Link value )
+    public void setProduct(Link value)
     {
         product = value;
     }
@@ -115,7 +115,7 @@ public class OrderLineItemLinks
      * 
      * @param value The provisioning status link for the order line item.
      */
-    public void setProvisioningStatus( Link value )
+    public void setProvisioningStatus(Link value)
     {
         provisioningStatus = value;
     }
@@ -135,7 +135,7 @@ public class OrderLineItemLinks
      * 
      * @param value The SKU link for the order line item.
      */
-    public void setSku( Link value )
+    public void setSku(Link value)
     {
         sku = value;
     }
@@ -155,7 +155,7 @@ public class OrderLineItemLinks
      * 
      * @param value The subscription link for the order line item.
      */
-    public void setSubscription( Link value )
+    public void setSubscription(Link value)
     {
         subscription = value;
     }

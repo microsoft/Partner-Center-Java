@@ -22,7 +22,7 @@ public class Upgrade
         return __TargetOffer;
     }
 
-    public void setTargetOffer( Offer value )
+    public void setTargetOffer(Offer value)
     {
         __TargetOffer = value;
     }
@@ -37,7 +37,7 @@ public class Upgrade
         return __UpgradeType;
     }
 
-    public void setUpgradeType( UpgradeType value )
+    public void setUpgradeType(UpgradeType value)
     {
         __UpgradeType = value;
     }
@@ -52,7 +52,7 @@ public class Upgrade
         return __IsEligible;
     }
 
-    public void setIsEligible( Boolean value )
+    public void setIsEligible(Boolean value)
     {
         __IsEligible = value;
     }
@@ -67,7 +67,7 @@ public class Upgrade
         return __Quantity;
     }
 
-    public void setQuantity( int value )
+    public void setQuantity(int value)
     {
         __Quantity = value;
     }
@@ -82,7 +82,7 @@ public class Upgrade
         return __UpgradeErrors;
     }
 
-    public void setUpgradeErrors( Iterable<UpgradeError> value )
+    public void setUpgradeErrors(Iterable<UpgradeError> value)
     {
         __UpgradeErrors = value;
     }

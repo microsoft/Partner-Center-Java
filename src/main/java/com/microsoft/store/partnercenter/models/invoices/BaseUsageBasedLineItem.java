@@ -25,7 +25,7 @@ public abstract class BaseUsageBasedLineItem
         return __PartnerId;
     }
 
-    public void setPartnerId( String value )
+    public void setPartnerId(String value)
     {
         __PartnerId = value;
     }
@@ -40,7 +40,7 @@ public abstract class BaseUsageBasedLineItem
         return __PartnerName;
     }
 
-    public void setPartnerName( String value )
+    public void setPartnerName(String value)
     {
         __PartnerName = value;
     }
@@ -55,7 +55,7 @@ public abstract class BaseUsageBasedLineItem
         return __PartnerBillableAccountId;
     }
 
-    public void setPartnerBillableAccountId( String value )
+    public void setPartnerBillableAccountId(String value)
     {
         __PartnerBillableAccountId = value;
     }
@@ -70,7 +70,7 @@ public abstract class BaseUsageBasedLineItem
         return __CustomerCompanyName;
     }
 
-    public void setCustomerCompanyName( String value )
+    public void setCustomerCompanyName(String value)
     {
         __CustomerCompanyName = value;
     }
@@ -85,7 +85,7 @@ public abstract class BaseUsageBasedLineItem
         return __MpnId;
     }
 
-    public void setMpnId( int value )
+    public void setMpnId(int value)
     {
         __MpnId = value;
     }
@@ -100,7 +100,7 @@ public abstract class BaseUsageBasedLineItem
         return __Tier2MpnId;
     }
 
-    public void setTier2MpnId( int value )
+    public void setTier2MpnId(int value)
     {
         __Tier2MpnId = value;
     }
@@ -115,7 +115,7 @@ public abstract class BaseUsageBasedLineItem
         return __InvoiceNumber;
     }
 
-    public void setInvoiceNumber( String value )
+    public void setInvoiceNumber(String value)
     {
         __InvoiceNumber = value;
     }
@@ -130,7 +130,7 @@ public abstract class BaseUsageBasedLineItem
         return __SubscriptionId;
     }
 
-    public void setSubscriptionId( String value )
+    public void setSubscriptionId(String value)
     {
         __SubscriptionId = value;
     }
@@ -145,7 +145,7 @@ public abstract class BaseUsageBasedLineItem
         return __SubscriptionName;
     }
 
-    public void setSubscriptionName( String value )
+    public void setSubscriptionName(String value)
     {
         __SubscriptionName = value;
     }
@@ -160,7 +160,7 @@ public abstract class BaseUsageBasedLineItem
         return __SubscriptionDescription;
     }
 
-    public void setSubscriptionDescription( String value )
+    public void setSubscriptionDescription(String value)
     {
         __SubscriptionDescription = value;
     }
@@ -175,7 +175,7 @@ public abstract class BaseUsageBasedLineItem
         return __OrderId;
     }
 
-    public void setOrderId( String value )
+    public void setOrderId(String value)
     {
         __OrderId = value;
     }
@@ -190,7 +190,7 @@ public abstract class BaseUsageBasedLineItem
         return __ServiceName;
     }
 
-    public void setServiceName( String value )
+    public void setServiceName(String value)
     {
         __ServiceName = value;
     }
@@ -205,7 +205,7 @@ public abstract class BaseUsageBasedLineItem
         return __ServiceType;
     }
 
-    public void setServiceType( String value )
+    public void setServiceType(String value)
     {
         __ServiceType = value;
     }
@@ -220,7 +220,7 @@ public abstract class BaseUsageBasedLineItem
         return __ResourceGuid;
     }
 
-    public void setResourceGuid( String value )
+    public void setResourceGuid(String value)
     {
         __ResourceGuid = value;
     }
@@ -235,7 +235,7 @@ public abstract class BaseUsageBasedLineItem
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -250,7 +250,7 @@ public abstract class BaseUsageBasedLineItem
         return __Region;
     }
 
-    public void setRegion( String value )
+    public void setRegion(String value)
     {
         __Region = value;
     }
@@ -265,7 +265,7 @@ public abstract class BaseUsageBasedLineItem
         return __ConsumedQuantity;
     }
 
-    public void setConsumedQuantity( double value )
+    public void setConsumedQuantity(double value)
     {
         __ConsumedQuantity = value;
     }
@@ -280,7 +280,7 @@ public abstract class BaseUsageBasedLineItem
         return __ChargeStartDate;
     }
 
-    public void setChargeStartDate( DateTime value )
+    public void setChargeStartDate(DateTime value)
     {
         __ChargeStartDate = value;
     }
@@ -295,7 +295,7 @@ public abstract class BaseUsageBasedLineItem
         return __ChargeEndDate;
     }
 
-    public void setChargeEndDate( DateTime value )
+    public void setChargeEndDate(DateTime value)
     {
         __ChargeEndDate = value;
     }
@@ -310,7 +310,7 @@ public abstract class BaseUsageBasedLineItem
         return __Unit;
     }
 
-    public void setUnit( String value )
+    public void setUnit(String value)
     {
         __Unit = value;
     }
@@ -325,7 +325,7 @@ public abstract class BaseUsageBasedLineItem
         return __BillingCycleType;
     }
 
-    public void setBillingCycleType( String value )
+    public void setBillingCycleType(String value)
     {
         __BillingCycleType = value;
     }
@@ -340,7 +340,7 @@ public abstract class BaseUsageBasedLineItem
         return __CustomerId;
     }
 
-    public void setCustomerId( String value )
+    public void setCustomerId(String value)
     {
         __CustomerId = value;
     }
@@ -355,7 +355,7 @@ public abstract class BaseUsageBasedLineItem
         return __DomainName;
     }
 
-    public void setDomainName( String value )
+    public void setDomainName(String value)
     {
         __DomainName = value;
     }

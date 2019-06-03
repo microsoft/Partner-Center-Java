@@ -18,9 +18,9 @@ public class ProductCollectionOperations
      * 
      * @param rootPartnerOperations The root partner operations instance.
      */
-    public ProductCollectionOperations( IPartner rootPartnerOperations )
+    public ProductCollectionOperations(IPartner rootPartnerOperations)
     {
-        super( rootPartnerOperations, null );
+        super(rootPartnerOperations, null);
     }
 
     /**

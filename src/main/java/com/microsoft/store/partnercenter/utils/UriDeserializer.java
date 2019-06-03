@@ -19,24 +19,24 @@ public class UriDeserializer
 	extends JsonDeserializer<URI>
 {
 	@Override
-	public URI deserialize( JsonParser parser, DeserializationContext context )
+	public URI deserialize(JsonParser parser, DeserializationContext context)
 			throws IOException, JsonProcessingException
 	{
 		JsonToken currentToken = parser.getCurrentToken();
-		if ( currentToken.equals( JsonToken.VALUE_STRING ) )
+		if (currentToken.equals(JsonToken.VALUE_STRING))
 		{
 			String linkUri = parser.getText().trim();
 
 	        try
 	        {
-				return new URI ( linkUri );
+				return new URI (linkUri);
 			}
 	        catch (URISyntaxException e)
 	        {
-				PartnerLog.getInstance().logError( e.toString() );
+				PartnerLog.getInstance().logError(e.toString());
 			}
 		}
-		else if( currentToken.equals( JsonToken.VALUE_NULL ) )
+		else if(currentToken.equals(JsonToken.VALUE_NULL))
 		{
 			return null;
 		}

@@ -21,9 +21,9 @@ public class PartnerUsageSummaryOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public PartnerUsageSummaryOperations( IPartner rootPartnerOperations )
+	public PartnerUsageSummaryOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**

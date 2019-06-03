@@ -12,7 +12,7 @@ public class QuantityDetail {
     /**
 	 * Gets or sets quantity.
 	 */
-	@JsonProperty( "quantity" )
+	@JsonProperty("quantity")
 	private String __Quantity;
 
 	public String getQuantity()
@@ -20,7 +20,7 @@ public class QuantityDetail {
 		return __Quantity;
 	}
 
-	public void setQuantity( String value )
+	public void setQuantity(String value)
 	{
 		__Quantity = value;
 	}
@@ -28,7 +28,7 @@ public class QuantityDetail {
 	/**
 	 *Gets or sets Status.
 	 */
-	@JsonProperty( "status" )
+	@JsonProperty("status")
 	private String __Status;
 
 	public String getStatus()
@@ -36,7 +36,7 @@ public class QuantityDetail {
 		return __Status;
 	}
 
-	public void setStatus( String value )
+	public void setStatus(String value)
 	{
 		__Status = value;
 	}

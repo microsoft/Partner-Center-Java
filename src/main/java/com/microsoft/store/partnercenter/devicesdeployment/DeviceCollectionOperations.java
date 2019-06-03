@@ -31,18 +31,18 @@ public class DeviceCollectionOperations
 	 * @param customerId            Identifier for the customer.
 	 * @param deviceBatchId         Identifier for te device batch.
 	 */
-	public DeviceCollectionOperations( IPartner rootPartnerOperations, String customerId, String deviceBatchId )
+	public DeviceCollectionOperations(IPartner rootPartnerOperations, String customerId, String deviceBatchId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, deviceBatchId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, deviceBatchId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( deviceBatchId ) )
+		if (StringHelper.isNullOrWhiteSpace(deviceBatchId))
 		{
-			throw new IllegalArgumentException( "deviceBatchId must be set" );
+			throw new IllegalArgumentException("deviceBatchId must be set");
 		}
 	}
 
@@ -53,7 +53,7 @@ public class DeviceCollectionOperations
 	 * @return The customer device behavior.
 	 */
 	@Override
-	public IDevice byId( String deviceId )
+	public IDevice byId(String deviceId)
 	{
 		return new DeviceOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), deviceId);
 	}
@@ -65,7 +65,7 @@ public class DeviceCollectionOperations
 	 * @return The location which indicates the URL of the API to query for status of the create request.
 	 */
 	@Override
-	public String create( List<Device> newDevices )
+	public String create(List<Device> newDevices)
 	{
 		Response response = this.getPartner().getServiceClient().post(
 			this.getPartner(), 
@@ -90,7 +90,7 @@ public class DeviceCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Device>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetDevices").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));

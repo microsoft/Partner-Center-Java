@@ -19,7 +19,7 @@ public interface ICustomerProductCollection
      * @param productId Identifier for the product.
      * @return The operations that can be performed on a single product.
      */
-    IProduct byId( String productId );
+    IProduct byId(String productId);
 
     /**
      * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer.

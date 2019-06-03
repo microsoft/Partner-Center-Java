@@ -24,7 +24,7 @@ public class UserLicenseError
         return __UserObjectId;
     }
 
-    public void setUserObjectId( UUID value )
+    public void setUserObjectId(UUID value)
     {
         __UserObjectId = value;
     }
@@ -39,7 +39,7 @@ public class UserLicenseError
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         __Name = value;
     }
@@ -54,7 +54,7 @@ public class UserLicenseError
         return __Email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         __Email = value;
     }
@@ -69,7 +69,7 @@ public class UserLicenseError
         return __Errors;
     }
 
-    public void setErrors( Iterable<ApiFault> value )
+    public void setErrors(Iterable<ApiFault> value)
     {
         __Errors = value;
     }

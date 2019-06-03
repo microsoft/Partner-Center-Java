@@ -88,18 +88,18 @@ public class SubscriptionOperations
      * @param customerId The customer identifier.
      * @param subscriptionId The subscription identifier
      */
-    public SubscriptionOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
+    public SubscriptionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+        if (StringHelper.isNullOrWhiteSpace(subscriptionId))
         {
-            throw new IllegalArgumentException( "subscriptionId must be set." );
+            throw new IllegalArgumentException("subscriptionId must be set.");
         }
     }
 
@@ -127,10 +127,10 @@ public class SubscriptionOperations
     @Override
     public ISubscriptionAddOnCollection getAddOns()
     {
-        if ( this.subscriptionAddOnsOperations == null )
+        if (this.subscriptionAddOnsOperations == null)
         {
             this.subscriptionAddOnsOperations =
-                new SubscriptionAddOnCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+                new SubscriptionAddOnCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
         }
 
         return this.subscriptionAddOnsOperations;
@@ -142,10 +142,10 @@ public class SubscriptionOperations
     @Override
     public ISubscriptionUpgradeCollection getUpgrades()
     {
-        if ( this.subscriptionUpgradeOperations == null )
+        if (this.subscriptionUpgradeOperations == null)
         {
             this.subscriptionUpgradeOperations =
-                new SubscriptionUpgradeCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+                new SubscriptionUpgradeCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
         }
 
         return this.subscriptionUpgradeOperations;
@@ -157,10 +157,10 @@ public class SubscriptionOperations
     @Override
     public ISubscriptionUsageRecordCollection getUsageRecords()
     {
-        if ( this.usageRecordsOperations == null )
+        if (this.usageRecordsOperations == null)
         {
             this.usageRecordsOperations =
-                new SubscriptionUsageRecordCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+                new SubscriptionUsageRecordCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
         }
 
         return this.usageRecordsOperations;
@@ -172,10 +172,10 @@ public class SubscriptionOperations
     @Override
     public ISubscriptionUsageSummary getUsageSummary()
     {
-        if ( this.subscriptionUsageSummaryOperations == null )
+        if (this.subscriptionUsageSummaryOperations == null)
         {
             this.subscriptionUsageSummaryOperations =
-                new SubscriptionUsageSummaryOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+                new SubscriptionUsageSummaryOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
         }
 
         return this.subscriptionUsageSummaryOperations;
@@ -187,10 +187,10 @@ public class SubscriptionOperations
     @Override
     public IUtilizationCollection getUtilization()
     {
-        if ( this.subscriptionUtilizationOperations == null )
+        if (this.subscriptionUtilizationOperations == null)
         {
             this.subscriptionUtilizationOperations =
-                new UtilizationCollectionOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2() );
+                new UtilizationCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
         }
 
         return this.subscriptionUtilizationOperations;
@@ -269,7 +269,7 @@ public class SubscriptionOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<Subscription>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetSubscription").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()));
@@ -282,17 +282,17 @@ public class SubscriptionOperations
      * @return The updated subscription information.
      */
     @Override
-    public Subscription patch( Subscription subscription )
+    public Subscription patch(Subscription subscription)
     {
-        if ( subscription == null )
+        if (subscription == null)
         {
-            throw new IllegalArgumentException( "subscription is required." );
+            throw new IllegalArgumentException("subscription is required.");
         }
 
         return this.getPartner().getServiceClient().patch(
             this.getPartner(),
             new TypeReference<Subscription>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("UpdateSubscription").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),

@@ -158,19 +158,19 @@ public class PartnerOperations
 	 * @param credentials The partner credentials.
 	 * @param context A partner context.
 	 */
-	public PartnerOperations( IPartnerCredentials credentials, IRequestContext context )
+	public PartnerOperations(IPartnerCredentials credentials, IRequestContext context)
 	{
-		if ( credentials == null )
+		if (credentials == null)
 		{
-			throw new IllegalArgumentException( "credentials can't be null" );
+			throw new IllegalArgumentException("credentials can't be null");
 		}
-		if ( context == null )
+		if (context == null)
 		{
-			throw new IllegalArgumentException( "context can't be null" );
+			throw new IllegalArgumentException("context can't be null");
 		}
 	
-		this.setCredentials( credentials );
-		this.setRequestContext( context );
+		this.setCredentials(credentials);
+		this.setRequestContext(context);
 
 		serviceClient = new PartnerServiceClient(PartnerService.getInstance().getApiRootUrl());
 	}
@@ -185,7 +185,7 @@ public class PartnerOperations
 		return credentials;
 	}
 
-	private void setCredentials( IPartnerCredentials value )
+	private void setCredentials(IPartnerCredentials value)
 	{
 		credentials = value;
 	}
@@ -200,7 +200,7 @@ public class PartnerOperations
 		return requestContext;
 	}
 
-	private void setRequestContext( IRequestContext value )
+	private void setRequestContext(IRequestContext value)
 	{
 		requestContext = value;
 	}
@@ -210,9 +210,9 @@ public class PartnerOperations
 	 */
 	public IResourceCollectionEnumeratorContainer getEnumerators()
 	{
-		if ( this.enumeratorContainer == null )
+		if (this.enumeratorContainer == null)
 		{
-			this.enumeratorContainer = new ResourceCollectionEnumeratorContainer( this );
+			this.enumeratorContainer = new ResourceCollectionEnumeratorContainer(this);
 		}
 
 		return this.enumeratorContainer;
@@ -223,9 +223,9 @@ public class PartnerOperations
 	 */
 	public ICountrySelector<IOfferCategoryCollection> getOfferCategories()
 	{
-		if ( this.offerCategories == null )
+		if (this.offerCategories == null)
 		{
-			this.offerCategories = new OfferCategoryCountrySelector( this );
+			this.offerCategories = new OfferCategoryCountrySelector(this);
 		}
 
 		return this.offerCategories;
@@ -236,9 +236,9 @@ public class PartnerOperations
 	 */
 	public IPartnerProfileCollection getProfiles()
 	{
-		if ( this.profiles == null )
+		if (this.profiles == null)
 		{
-			this.profiles = new PartnerProfileCollectionOperations( this );
+			this.profiles = new PartnerProfileCollectionOperations(this);
 		}
 		
 		return this.profiles;
@@ -249,9 +249,9 @@ public class PartnerOperations
 	 */
 	public ICustomerCollection getCustomers()
 	{
-		if ( this.customers == null )
+		if (this.customers == null)
 		{
-			this.customers = new CustomerCollectionOperations( this );
+			this.customers = new CustomerCollectionOperations(this);
 		}
 		return this.customers;
 	}
@@ -261,9 +261,9 @@ public class PartnerOperations
 	 */
 	public ICountrySelector<IOfferCollection> getOffers()
 	{
-		if ( this.offers == null )
+		if (this.offers == null)
 		{
-			this.offers = new OfferCountrySelector( this );
+			this.offers = new OfferCountrySelector(this);
 		}
 		return this.offers;
 	}
@@ -273,9 +273,9 @@ public class PartnerOperations
 	 */
 	public IInvoiceCollection getInvoices()
 	{
-		if ( this.invoices == null )
+		if (this.invoices == null)
 		{
-			this.invoices = new InvoiceCollection( this );
+			this.invoices = new InvoiceCollection(this);
 		}
 		return this.invoices;
 	}
@@ -285,9 +285,9 @@ public class PartnerOperations
 	 */
 	public IPartnerServiceRequestCollection getServiceRequests()
 	{
-		if ( this.serviceRequests == null )
+		if (this.serviceRequests == null)
 		{
-			this.serviceRequests = new PartnerServiceRequestCollectionOperations( this );
+			this.serviceRequests = new PartnerServiceRequestCollectionOperations(this);
 		}
 		return this.serviceRequests;
 	}
@@ -297,9 +297,9 @@ public class PartnerOperations
 	 */
 	public IServiceIncidentCollection getServiceIncidents()
 	{
-		if ( this.serviceIncidents == null )
+		if (this.serviceIncidents == null)
 		{
-			this.serviceIncidents = new ServiceIncidentCollectionOperations( this );
+			this.serviceIncidents = new ServiceIncidentCollectionOperations(this);
 		}
 		return this.serviceIncidents;
 	}
@@ -309,9 +309,9 @@ public class PartnerOperations
 	 */
 	public IPartnerUsageSummary getUsageSummary()
 	{
-		if ( this.usageSummary == null )
+		if (this.usageSummary == null)
 		{
-			this.usageSummary = new PartnerUsageSummaryOperations( this );
+			this.usageSummary = new PartnerUsageSummaryOperations(this);
 		}
 		return this.usageSummary;
 	}
@@ -320,9 +320,9 @@ public class PartnerOperations
 	 * Gets the audit records operations available to the partner.
 	 */
 	public IAuditRecordsCollection getAuditRecords() {
-		if ( this.auditRecords == null )
+		if (this.auditRecords == null)
 		{
-			this.auditRecords = new AuditRecordsCollection( this );
+			this.auditRecords = new AuditRecordsCollection(this);
 		}
 		return this.auditRecords;
 	}
@@ -331,9 +331,9 @@ public class PartnerOperations
 	 * Gets the country validation rules operations available to the partner.
 	 */
 	public ICountryValidationRulesCollection getCountryValidationRules() {
-		if ( this.countryValidationRules == null )
+		if (this.countryValidationRules == null)
 		{
-			this.countryValidationRules = new CountryValidationRulesCollectionOperations( this );
+			this.countryValidationRules = new CountryValidationRulesCollectionOperations(this);
 		}
 		return this.countryValidationRules;
 	}
@@ -342,9 +342,9 @@ public class PartnerOperations
 	 * Gets the domain operations available to the partner.
 	 */
 	public IDomainCollection getDomains() {
-		if ( this.domains == null )
+		if (this.domains == null)
 		{
-			this.domains = new DomainCollectionOperations( this );
+			this.domains = new DomainCollectionOperations(this);
 		}
 		return this.domains;
 	}
@@ -353,9 +353,9 @@ public class PartnerOperations
 	 * Gets the rate card operations available to the partner.
 	 */
 	public IRateCardCollection getRateCards() {
-		if ( this.rateCards == null )
+		if (this.rateCards == null)
 		{
-			this.rateCards = new RateCardCollectionOperations( this );
+			this.rateCards = new RateCardCollectionOperations(this);
 		}
 		return this.rateCards;
 	}
@@ -364,9 +364,9 @@ public class PartnerOperations
 	 * Gets the analytics collection operations.
 	 */
 	public IPartnerAnalyticsCollection getAnalytics() {
-		if ( this.analytics == null )
+		if (this.analytics == null)
 		{
-			this.analytics = new PartnerAnalyticsCollectionOperations( this );
+			this.analytics = new PartnerAnalyticsCollectionOperations(this);
 		}
 		return this.analytics;
 	}
@@ -391,7 +391,7 @@ public class PartnerOperations
 	{
 		if(this.products == null)
 		{
-			this.products = new ProductCollectionOperations( this );
+			this.products = new ProductCollectionOperations(this);
 		}
 
 		return this.products;
@@ -404,7 +404,7 @@ public class PartnerOperations
 	{
 		if(this.relationships == null)
 		{
-			return new RelationshipCollectionOperations( this );
+			return new RelationshipCollectionOperations(this);
 		}
 
 		return this.relationships;
@@ -429,9 +429,9 @@ public class PartnerOperations
 	@Override
 	public IAgreementDetailsCollection getAgreementDetails()
 	{
-		if ( this.agreements == null )
+		if (this.agreements == null)
 		{
-			this.agreements = new AgreementDetailsCollectionOperations( this );
+			this.agreements = new AgreementDetailsCollectionOperations(this);
 		}
 
 		return this.agreements;

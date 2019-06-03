@@ -25,7 +25,7 @@ public interface ISubscriptionUpgradeCollection
 	 * @param upgrade The new subscription upgrade information.
 	 * @return The subscription upgrade results.
 	 */
-    UpgradeResult create( Upgrade upgrade );
+    UpgradeResult create(Upgrade upgrade);
 
     /**
      * Retrieves all subscription upgrades.

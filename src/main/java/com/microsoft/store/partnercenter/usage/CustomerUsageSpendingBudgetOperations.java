@@ -25,12 +25,12 @@ public class CustomerUsageSpendingBudgetOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
      */
-    public CustomerUsageSpendingBudgetOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerUsageSpendingBudgetOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        super(rootPartnerOperations, customerId);
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
     }
 
@@ -45,7 +45,7 @@ public class CustomerUsageSpendingBudgetOperations
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<SpendingBudget>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsageSpendingBudget").getPath(),
                 this.getContext()));
     }
@@ -57,17 +57,17 @@ public class CustomerUsageSpendingBudgetOperations
      * @return The updated customer usage spending budget.
      */
     @Override
-    public SpendingBudget patch( SpendingBudget usageSpendingBudget )
+    public SpendingBudget patch(SpendingBudget usageSpendingBudget)
     {
-        if ( usageSpendingBudget == null )
+        if (usageSpendingBudget == null)
         {
-            throw new IllegalArgumentException( "usage spending budget is required." );
+            throw new IllegalArgumentException("usage spending budget is required.");
         }
 
         return this.getPartner().getServiceClient().patch(
             this.getPartner(),
             new TypeReference<SpendingBudget>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("PatchCustomerUsageSpendingBudget").getPath(),
                 this.getContext()),
             usageSpendingBudget);

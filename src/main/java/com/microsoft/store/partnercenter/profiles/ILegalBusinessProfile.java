@@ -26,5 +26,5 @@ public interface ILegalBusinessProfile
      * @param legalBusinessProfile The legal business profile information.
      * @return The updated legal business profile.
      */
-	LegalBusinessProfile update( LegalBusinessProfile legalBusinessProfile );
+	LegalBusinessProfile update(LegalBusinessProfile legalBusinessProfile);
 }

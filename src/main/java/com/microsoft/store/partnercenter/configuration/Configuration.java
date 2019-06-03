@@ -20,19 +20,19 @@ public class Configuration
         /**
          * The URI path of the API.
          */
-        @JsonProperty( "Path" )
+        @JsonProperty("Path")
         private String Path;
 
         /**
          * The parameters of the API call.
          */
-        @JsonProperty( "Parameters" )
+        @JsonProperty("Parameters")
         private Map<String, String> Parameters;
 
         /**
          * The additional headers of the API call.
          */
-        @JsonProperty( "AdditionalHeaders" )
+        @JsonProperty("AdditionalHeaders")
         private Map<String, String> AdditionalHeaders;
 
         /**
@@ -50,7 +50,7 @@ public class Configuration
          * 
          * @param path The URI path of the API.
          */
-        public void setPath( String path )
+        public void setPath(String path)
         {
             Path = path;
         }
@@ -60,7 +60,7 @@ public class Configuration
             return Parameters;
         }
 
-        public void setParameters( Map<String, String> parameters )
+        public void setParameters(Map<String, String> parameters)
         {
             Parameters = parameters;
         }
@@ -70,7 +70,7 @@ public class Configuration
             return AdditionalHeaders;
         }
 
-        public void setAdditionalHeaders( Map<String, String> additionalHeaders )
+        public void setAdditionalHeaders(Map<String, String> additionalHeaders)
         {
             AdditionalHeaders = additionalHeaders;
         }
@@ -79,22 +79,22 @@ public class Configuration
     @JsonProperty("PartnerCenterClient")
     private String partnerCenterClient;
 
-    @JsonProperty( "PartnerServiceApiRoot" )
+    @JsonProperty("PartnerServiceApiRoot")
     private String partnerServiceApiRoot;
 
-    @JsonProperty( "PartnerServiceApiVersion" )
+    @JsonProperty("PartnerServiceApiVersion")
     private String partnerServiceApiVersion;
 
-    @JsonProperty( "DefaultMaxRetryAttempts" )
+    @JsonProperty("DefaultMaxRetryAttempts")
     private int defaultMaxRetryAttempts;
 
-    @JsonProperty( "DefaultAuthenticationTokenExpiryBufferInSeconds" )
+    @JsonProperty("DefaultAuthenticationTokenExpiryBufferInSeconds")
     private int defaultAuthenticationTokenExpiryBufferInSeconds;
 
-    @JsonProperty( "DefaultLocale" )
+    @JsonProperty("DefaultLocale")
     private String defaultLocale;
 
-    @JsonProperty( "Apis" )
+    @JsonProperty("Apis")
     private Map<String, Api> apis;
 
     @JsonProperty("SdkVersion")
@@ -115,7 +115,7 @@ public class Configuration
      * 
      * @param value The partner service API root.
      */
-    public void setPartnerServiceApiRoot( String value )
+    public void setPartnerServiceApiRoot(String value)
     {
         partnerServiceApiRoot = value;
     }
@@ -145,7 +145,7 @@ public class Configuration
      * 
      * @param value The partner service API version.
      */
-    public void setPartnerServiceApiVersion( String value )
+    public void setPartnerServiceApiVersion(String value)
     {
         partnerServiceApiVersion = value;
     }
@@ -165,7 +165,7 @@ public class Configuration
      * 
      * @param value The default max retry attempts.
      */
-    public void setDefaultMaxRetryAttempts( int value )
+    public void setDefaultMaxRetryAttempts(int value)
     {
         defaultMaxRetryAttempts = value;
     }
@@ -185,7 +185,7 @@ public class Configuration
      * 
      * @param value The default authentication token expiry buffer in seconds.
      */
-    public void setDefaultAuthenticationTokenExpiryBufferInSeconds( int value )
+    public void setDefaultAuthenticationTokenExpiryBufferInSeconds(int value)
     {
         defaultAuthenticationTokenExpiryBufferInSeconds = value;
     }
@@ -205,7 +205,7 @@ public class Configuration
      * 
      * @param value The default locale.
      */
-    public void setDefaultLocale( String value )
+    public void setDefaultLocale(String value)
     {
         defaultLocale = value;
     }

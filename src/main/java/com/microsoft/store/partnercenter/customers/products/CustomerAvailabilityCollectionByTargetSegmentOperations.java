@@ -35,28 +35,28 @@ public class CustomerAvailabilityCollectionByTargetSegmentOperations
 	 * @param skuId Identifier for the SKU. 
 	 * @param targetSegment The target segment used for filtering the availabilities.
 	 */
-	public CustomerAvailabilityCollectionByTargetSegmentOperations( IPartner rootPartnerOperations, String customerId, String productId, String skuId, String targetSegment )
+	public CustomerAvailabilityCollectionByTargetSegmentOperations(IPartner rootPartnerOperations, String customerId, String productId, String skuId, String targetSegment)
 	{
-		super( rootPartnerOperations, new QuadrupleTuple<String, String, String, String>( customerId, productId, skuId, targetSegment ) );
+		super(rootPartnerOperations, new QuadrupleTuple<String, String, String, String>(customerId, productId, skuId, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 
@@ -82,7 +82,7 @@ public class CustomerAvailabilityCollectionByTargetSegmentOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Availability>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAvailabilities").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2(), 

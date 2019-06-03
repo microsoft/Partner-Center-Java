@@ -18,7 +18,7 @@ public class StandardResourceCollectionLinks extends StandardResourceLinks
         return next;
     }
 
-    public void setNext( Link value )
+    public void setNext(Link value)
     {
         next = value;
     }
@@ -33,7 +33,7 @@ public class StandardResourceCollectionLinks extends StandardResourceLinks
         return previous;
     }
 
-    public void setPrevious( Link value )
+    public void setPrevious(Link value)
     {
         previous = value;
     }

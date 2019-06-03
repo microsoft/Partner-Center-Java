@@ -56,7 +56,7 @@ public class DeviceOperations
         return this.getPartner().getServiceClient().put(
             this.getPartner(),
             new TypeReference<Device>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("UpdateDevice").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),
@@ -71,7 +71,7 @@ public class DeviceOperations
         this.getPartner().getServiceClient().delete(
             this.getPartner(),
             new TypeReference<ConfigurationPolicy>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("DeleteDevice").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2(), 

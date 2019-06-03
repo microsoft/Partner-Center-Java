@@ -23,7 +23,7 @@ public interface ICustomerUserCollection
      * @param userId The user identifier.
      * @return The customer user operations for the specified user.
      */
-    ICustomerUser byId( String userId );
+    ICustomerUser byId(String userId);
 
     /**
      * Queries users associated to the customer.
@@ -35,7 +35,7 @@ public interface ICustomerUserCollection
      * @param customerUsersQuery A query to apply onto customer users. Check {@link com.microsoft.store.partnercenter.models.query.QueryFactory} to see how to build queries.
      * @return The requested customer users.
      */
-    SeekBasedResourceCollection<CustomerUser> query( IQuery customerUsersQuery );
+    SeekBasedResourceCollection<CustomerUser> query(IQuery customerUsersQuery);
 
     /**
      * Create a new user for the customer.
@@ -43,7 +43,7 @@ public interface ICustomerUserCollection
      * @param newEntity The user object containing details for the new user to be created.
      * @return User entity
      */
-    CustomerUser create( CustomerUser newEntity );
+    CustomerUser create(CustomerUser newEntity);
     
     /**
      * Retrieves all the customer users.

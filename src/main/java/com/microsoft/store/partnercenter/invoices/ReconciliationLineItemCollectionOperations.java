@@ -159,7 +159,7 @@ public class ReconciliationLineItemCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<SeekBasedResourceCollection<InvoiceLineItem>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetReconciliationLineItems").getPath(),
                 this.getContext()),
             parameters);

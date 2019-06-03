@@ -20,9 +20,9 @@ public class ResourceCollection<TResource>
      * @param items The items.
      */
     @JsonCreator
-    public ResourceCollection(@JsonProperty("items") List<TResource> items )
+    public ResourceCollection(@JsonProperty("items") List<TResource> items)
     {
-        super( items );
+        super(items);
     }
 
     /**
@@ -30,7 +30,7 @@ public class ResourceCollection<TResource>
      * 
      * @param resourceCollection The resource collection.
      */
-    protected ResourceCollection( ResourceCollection<TResource> resourceCollection )
+    protected ResourceCollection(ResourceCollection<TResource> resourceCollection)
     {
     	super(resourceCollection);
     }

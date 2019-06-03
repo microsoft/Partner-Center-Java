@@ -28,12 +28,12 @@ public class DirectoryRoleCollectionOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId The customer identifier.
 	 */
-	public DirectoryRoleCollectionOperations( IPartner rootPartnerOperations, String customerId )
+	public DirectoryRoleCollectionOperations(IPartner rootPartnerOperations, String customerId)
 	{
-		super( rootPartnerOperations, customerId );
-		if ( StringHelper.isNullOrEmpty( customerId ) )
+		super(rootPartnerOperations, customerId);
+		if (StringHelper.isNullOrEmpty(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set." );
+			throw new IllegalArgumentException("customerId must be set.");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class DirectoryRoleCollectionOperations
 	@Override
 	public IDirectoryRole byId(String roleId)
 	{
-		return new DirectoryRoleOperations( this.getPartner(), this.getContext(), roleId );
+		return new DirectoryRoleOperations(this.getPartner(), this.getContext(), roleId);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class DirectoryRoleCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<DirectoryRole>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerDirectoryRoles").getPath(),
 				this.getContext()));
 	}

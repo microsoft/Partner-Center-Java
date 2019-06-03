@@ -14,7 +14,7 @@ public class AgreementMetaData
     /**
      * Gets or sets the unique identifier of an agreement template.
      */
-    @JsonProperty( "templateId" )
+    @JsonProperty("templateId")
     private String templateId;
 
     public String getTemplateId()
@@ -22,7 +22,7 @@ public class AgreementMetaData
         return templateId;
     }
 
-    public void setTemplateId( String value )
+    public void setTemplateId(String value)
     {
         templateId = value;
     }
@@ -30,7 +30,7 @@ public class AgreementMetaData
     /**
      * Gets or sets agreement type.
      */
-    @JsonProperty( "agreementType" )
+    @JsonProperty("agreementType")
     private AgreementType agreementType;
 
     public AgreementType getAgreementType()
@@ -38,7 +38,7 @@ public class AgreementMetaData
         return agreementType;
     }
 
-    public void setAgreementType( AgreementType value )
+    public void setAgreementType(AgreementType value)
     {
         agreementType = value;
     }
@@ -46,7 +46,7 @@ public class AgreementMetaData
     /**
      * Gets or sets URL to the agreement template.
      */
-    @JsonProperty( "agreementLink" )
+    @JsonProperty("agreementLink")
     private String agreementLink;
 
     public String getAgreementLink()
@@ -54,7 +54,7 @@ public class AgreementMetaData
         return agreementLink;
     }
 
-    public void setAgreementLink( String value )
+    public void setAgreementLink(String value)
     {
         agreementLink = value;
     }
@@ -62,7 +62,7 @@ public class AgreementMetaData
     /**
      * Gets or sets the version rank of an agreement template.
      */
-    @JsonProperty( "versionRank" )
+    @JsonProperty("versionRank")
     private int versionRank;
 
     public int getVersionRank()
@@ -70,7 +70,7 @@ public class AgreementMetaData
         return versionRank;
     }
 
-    public void setVersionRank( int value )
+    public void setVersionRank(int value)
     {
         versionRank = value;
     }

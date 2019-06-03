@@ -21,7 +21,7 @@ public class DailyUsageLineItem
         return __CustomerBillableAccount;
     }
 
-    public void setCustomerBillableAccount( String value )
+    public void setCustomerBillableAccount(String value)
     {
         __CustomerBillableAccount = value;
     }
@@ -36,7 +36,7 @@ public class DailyUsageLineItem
         return __UsageDate;
     }
 
-    public void setUsageDate( DateTime value )
+    public void setUsageDate(DateTime value)
     {
         __UsageDate = value;
     }
@@ -51,7 +51,7 @@ public class DailyUsageLineItem
         return __MeteredService;
     }
 
-    public void setMeteredService( String value )
+    public void setMeteredService(String value)
     {
         __MeteredService = value;
     }
@@ -66,7 +66,7 @@ public class DailyUsageLineItem
         return __MeteredServiceType;
     }
 
-    public void setMeteredServiceType( String value )
+    public void setMeteredServiceType(String value)
     {
         __MeteredServiceType = value;
     }
@@ -81,7 +81,7 @@ public class DailyUsageLineItem
         return __MeteredRegion;
     }
 
-    public void setMeteredRegion( String value )
+    public void setMeteredRegion(String value)
     {
         __MeteredRegion = value;
     }
@@ -96,7 +96,7 @@ public class DailyUsageLineItem
         return __Project;
     }
 
-    public void setProject( String value )
+    public void setProject(String value)
     {
         __Project = value;
     }
@@ -111,7 +111,7 @@ public class DailyUsageLineItem
         return __ServiceInfo;
     }
 
-    public void setServiceInfo( String value )
+    public void setServiceInfo(String value)
     {
         __ServiceInfo = value;
     }

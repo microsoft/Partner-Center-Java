@@ -20,7 +20,7 @@ public class InventoryRestriction
         return __ReasonCode;
     }
 
-    public void setReasonCode( String value )
+    public void setReasonCode(String value)
     {
         __ReasonCode = value;
     }
@@ -35,7 +35,7 @@ public class InventoryRestriction
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -50,7 +50,7 @@ public class InventoryRestriction
         return __Properties;
     }
 
-    public void setProperties( Map<String, String> value )
+    public void setProperties(Map<String, String> value)
     {
         __Properties = value;
     }

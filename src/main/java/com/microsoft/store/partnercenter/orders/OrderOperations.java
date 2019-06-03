@@ -30,18 +30,18 @@ public class OrderOperations
      * @param customerId The customer identifier.
      * @param orderId The order identifier.
      */
-    public OrderOperations( IPartner rootPartnerOperations, String customerId, String orderId )
+    public OrderOperations(IPartner rootPartnerOperations, String customerId, String orderId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, orderId ) );
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, orderId));
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set." );
+            throw new IllegalArgumentException("customerId must be set.");
         }
 
-        if ( StringHelper.isNullOrWhiteSpace( orderId ) )
+        if (StringHelper.isNullOrWhiteSpace(orderId))
         {
-            throw new IllegalArgumentException( "orderId must be set." );
+            throw new IllegalArgumentException("orderId must be set.");
         }
     }
 
@@ -74,12 +74,12 @@ public class OrderOperations
 				PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getParameters().get("IncludePrice"),
 				String.valueOf(includePrice)
 			) 
-        );
+       );
         
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<Order>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetOrder").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),
@@ -121,17 +121,17 @@ public class OrderOperations
      * @return The updated order.
      */
     @Override
-    public Order patch( Order order )
+    public Order patch(Order order)
     {
-        if ( order == null )
+        if (order == null)
         {
-            throw new IllegalArgumentException( "Order can't be null" );
+            throw new IllegalArgumentException("Order can't be null");
         }
 
         return this.getPartner().getServiceClient().patch(
             this.getPartner(),
             new TypeReference<Order>(){}, 
-            MessageFormat.format( 
+            MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("UpdateOrder").getPath(),
                 this.getContext().getItem1(), 
                 this.getContext().getItem2()),

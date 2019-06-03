@@ -22,7 +22,7 @@ public class UserCredentials
         return userName;
     }
 
-    public void setUserName( String value )
+    public void setUserName(String value)
     {
         userName = value;
     }
@@ -37,7 +37,7 @@ public class UserCredentials
         return password;
     }
 
-    public void setPassword( String value )
+    public void setPassword(String value)
     {
         password = value;
     }

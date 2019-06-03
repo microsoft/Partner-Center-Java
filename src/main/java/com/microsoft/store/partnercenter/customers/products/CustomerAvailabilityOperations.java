@@ -30,28 +30,28 @@ public class CustomerAvailabilityOperations
 	 * @param skuId Identifier for the SKU. 
 	 * @param availabilityId Identifier for the availability.
 	 */
-	public CustomerAvailabilityOperations( IPartner rootPartnerOperations, String customerId, String productId, String skuId, String availabilityId )
+	public CustomerAvailabilityOperations(IPartner rootPartnerOperations, String customerId, String productId, String skuId, String availabilityId)
 	{
-		super( rootPartnerOperations, new QuadrupleTuple<String, String, String, String>( customerId, productId, skuId, availabilityId ) );
+		super(rootPartnerOperations, new QuadrupleTuple<String, String, String, String>(customerId, productId, skuId, availabilityId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( availabilityId ) )
+		if (StringHelper.isNullOrWhiteSpace(availabilityId))
 		{
-			throw new IllegalArgumentException( "availabilityId must be set" );
+			throw new IllegalArgumentException("availabilityId must be set");
 		}
 	}
 
@@ -66,7 +66,7 @@ public class CustomerAvailabilityOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<Availability>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAvailabilities").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2(), 

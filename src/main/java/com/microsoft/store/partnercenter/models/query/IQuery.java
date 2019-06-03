@@ -30,7 +30,7 @@ public interface IQuery
      * 
      * @param value The query filter.
      */
-    void setFilter( FieldFilter value );
+    void setFilter(FieldFilter value);
 
     /**
      * Gets the query sorting options.
@@ -44,7 +44,7 @@ public interface IQuery
      * 
      * @param value The query sorting options.
      */
-    void setSort( Sort value );
+    void setSort(Sort value);
 
     /**
      * Gets the result starting index.
@@ -58,7 +58,7 @@ public interface IQuery
      * 
      * @param value The result starting index.
      */
-    void setIndex( int value );
+    void setIndex(int value);
 
     /**
      * Gets the results page size.
@@ -72,7 +72,7 @@ public interface IQuery
      * 
      * @param value The results page size.
      */
-    void setPageSize( int value );
+    void setPageSize(int value);
 
     /**
      * Gets the query token. The token may hold context used to represent current state with back end services.
@@ -86,7 +86,7 @@ public interface IQuery
      * 
      * @param value The query token.
      */
-    void setToken( Object value );
+    void setToken(Object value);
 
     /**
      * Gets or sets the seek operation that needs to be performed.
@@ -100,5 +100,5 @@ public interface IQuery
      * 
      * @param value The seek operation that needs to be performed.
      */
-    void setSeekOperation( SeekOperation value );
+    void setSeekOperation(SeekOperation value);
 }

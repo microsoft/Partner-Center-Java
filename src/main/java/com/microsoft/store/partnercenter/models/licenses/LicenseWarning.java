@@ -12,7 +12,7 @@ public class LicenseWarning {
     /**
      * Gets or sets the warning code.
      */
-    @JsonProperty( "Code" )
+    @JsonProperty("Code")
 	private String __Code;
 
     public String getCode()
@@ -20,7 +20,7 @@ public class LicenseWarning {
         return __Code;
     }
 
-    public void setCode( String value )
+    public void setCode(String value)
     {
     	__Code = value;
     }
@@ -30,7 +30,7 @@ public class LicenseWarning {
     /**
      * Gets or sets the warning message.
      */
-    @JsonProperty( "Message" )
+    @JsonProperty("Message")
     private String __Message;
     
     public String getMessage()
@@ -38,7 +38,7 @@ public class LicenseWarning {
         return __Message;
     }
 
-    public void setMessage( String value )
+    public void setMessage(String value)
     {
     	__Message = value;
     }
@@ -47,7 +47,7 @@ public class LicenseWarning {
     /**
      * Gets or sets the list of service plan names.
      */
-    @JsonProperty( "ServicePlans" )
+    @JsonProperty("ServicePlans")
     private Iterable<String> __ServicePlans;
     
     public Iterable<String> getServicePlans()
@@ -55,7 +55,7 @@ public class LicenseWarning {
         return __ServicePlans;
     }
 
-    public void setServicePlans( Iterable<String> value )
+    public void setServicePlans(Iterable<String> value)
     {
     	__ServicePlans = value;
     }

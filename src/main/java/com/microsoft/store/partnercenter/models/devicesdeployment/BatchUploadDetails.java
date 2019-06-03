@@ -16,7 +16,7 @@ public class BatchUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the tracking ID of the batch of devices uploaded.
 	 */
-	@JsonProperty( "batchTrackingId" )
+	@JsonProperty("batchTrackingId")
 	private String __BatchTrackingId;
 
 	public String getBatchTrackingId()
@@ -24,7 +24,7 @@ public class BatchUploadDetails extends ResourceBase {
 		return __BatchTrackingId;
 	}
 
-	public void setBatchTrackingId( String value )
+	public void setBatchTrackingId(String value)
 	{
 		__BatchTrackingId = value;
 	}
@@ -32,7 +32,7 @@ public class BatchUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the status.
 	 */
-	@JsonProperty( "status" )
+	@JsonProperty("status")
 	private DeviceUploadStatusType __Status;
 
 	public DeviceUploadStatusType getStatus()
@@ -40,7 +40,7 @@ public class BatchUploadDetails extends ResourceBase {
 		return __Status;
 	}
 
-	public void setStatus( DeviceUploadStatusType value )
+	public void setStatus(DeviceUploadStatusType value)
 	{
 		__Status = value;
 	}
@@ -48,7 +48,7 @@ public class BatchUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the batch started time.
 	 */
-	@JsonProperty( "startedTime" )
+	@JsonProperty("startedTime")
 	private DateTime __StartedTime;
 
 	public DateTime getStartedTime()
@@ -56,7 +56,7 @@ public class BatchUploadDetails extends ResourceBase {
 		return __StartedTime;
 	}
 
-	public void setStartedTime( DateTime value )
+	public void setStartedTime(DateTime value)
 	{
 		__StartedTime = value;
 	}
@@ -64,7 +64,7 @@ public class BatchUploadDetails extends ResourceBase {
 	/**
 	 * Gets or sets the batch upload completed time.
 	 */
-	@JsonProperty( "completedTime" )
+	@JsonProperty("completedTime")
 	private DateTime __CompletedTime;
 
 	public DateTime getCompletedTime()
@@ -72,7 +72,7 @@ public class BatchUploadDetails extends ResourceBase {
 		return __CompletedTime;
 	}
 
-	public void setCompletedTime( DateTime value )
+	public void setCompletedTime(DateTime value)
 	{
 		__CompletedTime = value;
 	}
@@ -80,7 +80,7 @@ public class BatchUploadDetails extends ResourceBase {
 	/**
 	 *  Gets or sets the device upload status.
 	 */
-	@JsonProperty( "devicesStatus" )
+	@JsonProperty("devicesStatus")
 	private Iterator<DeviceUploadDetails> __DevicesStatus;
 
 	public Iterator<DeviceUploadDetails> getDevicesStatus()
@@ -88,7 +88,7 @@ public class BatchUploadDetails extends ResourceBase {
 		return __DevicesStatus;
 	}
 
-	public void setDevicesStatus( Iterator<DeviceUploadDetails> value )
+	public void setDevicesStatus(Iterator<DeviceUploadDetails> value)
 	{
 		__DevicesStatus = value;
 	}

@@ -21,9 +21,9 @@ public class BillingProfileOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public BillingProfileOperations( IPartner rootPartnerOperations )
+	public BillingProfileOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class BillingProfileOperations
 	 * @return Updated partner billing profile.
 	 */
 	@Override
-	public BillingProfile update( BillingProfile updatePayload )
+	public BillingProfile update(BillingProfile updatePayload)
 	{
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),

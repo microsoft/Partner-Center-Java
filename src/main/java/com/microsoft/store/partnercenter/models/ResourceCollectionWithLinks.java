@@ -14,7 +14,7 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
 {
     public ResourceCollectionWithLinks()
     {
-        super( "Collection" );
+        super("Collection");
         this.items = new ArrayList<TResource>();
     }
 
@@ -28,9 +28,9 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
      * 
      * @param items The items.
      */
-    public ResourceCollectionWithLinks( List<TResource> items )
+    public ResourceCollectionWithLinks(List<TResource> items)
     {
-        super( "Collection" );
+        super("Collection");
         this.items = items;
     }
 
@@ -39,12 +39,12 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
      * 
      * @param resourceCollection The resource collection.
      */
-    protected ResourceCollectionWithLinks( ResourceCollectionWithLinks<TResource, TLinks> resourceCollection )
+    protected ResourceCollectionWithLinks(ResourceCollectionWithLinks<TResource, TLinks> resourceCollection)
     {
-        super( "Collection" );
-        if ( resourceCollection == null )
+        super("Collection");
+        if (resourceCollection == null)
         {
-            throw new IllegalArgumentException( "resourceCollection" );
+            throw new IllegalArgumentException("resourceCollection");
         }
 
         this.items = resourceCollection.items;
@@ -62,7 +62,7 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
         return this.totalCount;
     }
 
-    public void setTotalCount( int value )
+    public void setTotalCount(int value)
     {
         this.totalCount = value;
     }
@@ -82,7 +82,7 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
      * 
      * @param value The items in the collection.
      */
-    public void setItems( List<TResource> value )
+    public void setItems(List<TResource> value)
     {
         this.items = value;
     }
@@ -96,13 +96,13 @@ public class ResourceCollectionWithLinks<TResource, TLinks>
     public String toString()
     {
         StringBuilder collectionDescription = new StringBuilder();
-        collectionDescription.append( "Count: " + this.getTotalCount() + "\n" );
-        if ( this.getItems() != null )
+        collectionDescription.append("Count: " + this.getTotalCount() + "\n");
+        if (this.getItems() != null)
         {
-            collectionDescription.append( "Items:\n" );
-            for ( TResource item : this.getItems() )
+            collectionDescription.append("Items:\n");
+            for (TResource item : this.getItems())
             {
-                collectionDescription.append( item.toString() + "\n" );
+                collectionDescription.append(item.toString() + "\n");
             }
         }
 

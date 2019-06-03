@@ -23,16 +23,16 @@ public class SubscriptionUsageRecordCollectionOperations
      * @param customerId The customer identifier.
      * @param subscriptionId The subscription identifier.
      */
-    public SubscriptionUsageRecordCollectionOperations( IPartner rootPartnerOperations, String customerId, String subscriptionId )
+    public SubscriptionUsageRecordCollectionOperations(IPartner rootPartnerOperations, String customerId, String subscriptionId)
     {
-        super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId should be set." );
+            throw new IllegalArgumentException("customerId should be set.");
         }
-        if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+        if (StringHelper.isNullOrWhiteSpace(subscriptionId))
         {
-            throw new IllegalArgumentException( "subscriptionId should be set." );
+            throw new IllegalArgumentException("subscriptionId should be set.");
         }
     }
 
@@ -43,8 +43,8 @@ public class SubscriptionUsageRecordCollectionOperations
      */
     public IResourceUsageRecordCollection getResources()
     {
-    	return new ResourceUsageRecordCollectionOperations( this.getPartner(), 
-    			this.getContext().getItem1(), this.getContext().getItem2() );
+    	return new ResourceUsageRecordCollectionOperations(this.getPartner(), 
+    			this.getContext().getItem1(), this.getContext().getItem2());
     }
 
     /**
@@ -54,7 +54,7 @@ public class SubscriptionUsageRecordCollectionOperations
      */
     public ISubscriptionDailyUsageRecordCollection getDaily()
     {
-    	return new SubscriptionDailyUsageRecordCollectionOperations( this.getPartner(), 
-    			this.getContext().getItem1(), this.getContext().getItem2() );
+    	return new SubscriptionDailyUsageRecordCollectionOperations(this.getPartner(), 
+    			this.getContext().getItem1(), this.getContext().getItem2());
     }
 }

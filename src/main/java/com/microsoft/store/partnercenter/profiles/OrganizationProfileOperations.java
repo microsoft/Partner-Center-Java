@@ -21,9 +21,9 @@ public class OrganizationProfileOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public OrganizationProfileOperations( IPartner rootPartnerOperations )
+	public OrganizationProfileOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class OrganizationProfileOperations
 	 * @return Updated Organization Profile
 	 */
 	@Override
-	public OrganizationProfile update( OrganizationProfile updatePayload )
+	public OrganizationProfile update(OrganizationProfile updatePayload)
 	{
 		return this.getPartner().getServiceClient().put(
 			this.getPartner(),

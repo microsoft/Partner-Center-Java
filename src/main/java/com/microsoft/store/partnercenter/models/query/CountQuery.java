@@ -11,10 +11,10 @@ import com.microsoft.store.partnercenter.models.query.filters.FieldFilter;
 public class CountQuery
     extends BaseQuery
 {
-    protected CountQuery( Object token )
+    protected CountQuery(Object token)
 
     {
-        super( token );
+        super(token);
     }
 
     protected CountQuery()
@@ -42,7 +42,7 @@ public class CountQuery
         return __Filter;
     }
 
-    public void setFilter( FieldFilter value )
+    public void setFilter(FieldFilter value)
     {
         __Filter = value;
     }
@@ -54,7 +54,7 @@ public class CountQuery
      */
     public String toString()
     {
-        return ( this.getFilter() != null ) ? this.getFilter().toString() : super.toString();
+        return (this.getFilter() != null) ? this.getFilter().toString() : super.toString();
 
     }
 

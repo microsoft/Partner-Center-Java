@@ -22,7 +22,7 @@ public class Customer
     {
     }
 
-    @JsonProperty( "id" )
+    @JsonProperty("id")
     private String id;
 
     /**
@@ -40,12 +40,12 @@ public class Customer
      * 
      * @param value The customer identifier.
      */
-    public void setId( String value )
+    public void setId(String value)
     {
         id = value;
     }
 
-    @JsonProperty( "commerceId" )
+    @JsonProperty("commerceId")
     private String commerceId;
 
     /**
@@ -63,12 +63,12 @@ public class Customer
      * 
      * @param value The commerce identifier.
      */
-    public void setCommerceId( String value )
+    public void setCommerceId(String value)
     {
         commerceId = value;
     }
 
-    @JsonProperty( "companyProfile" )
+    @JsonProperty("companyProfile")
     private CustomerCompanyProfile companyProfile;
 
     /**
@@ -86,12 +86,12 @@ public class Customer
      * 
      * @param value The company profile.
      */
-    public void setCompanyProfile( CustomerCompanyProfile value )
+    public void setCompanyProfile(CustomerCompanyProfile value)
     {
         companyProfile = value;
     }
 
-    @JsonProperty( "billingProfile" )
+    @JsonProperty("billingProfile")
     private CustomerBillingProfile billingProfile;
 
     /**
@@ -109,12 +109,12 @@ public class Customer
      * 
      * @param value The billing profile.
      */
-    public void setBillingProfile( CustomerBillingProfile value )
+    public void setBillingProfile(CustomerBillingProfile value)
     {
         billingProfile = value;
     }
 
-    @JsonProperty( "relationshipToPartner" )
+    @JsonProperty("relationshipToPartner")
     private CustomerPartnerRelationship relationshipToPartner;
 
     /**
@@ -132,12 +132,12 @@ public class Customer
      * 
      * @param value The relationship to the partner.
      */
-    public void setRelationshipToPartner( CustomerPartnerRelationship value )
+    public void setRelationshipToPartner(CustomerPartnerRelationship value)
     {
         relationshipToPartner = value;
     }
 
-    @JsonProperty( "allowDelegatedAccess" )
+    @JsonProperty("allowDelegatedAccess")
     private Boolean allowDelegatedAccess;
 
     /**
@@ -155,13 +155,13 @@ public class Customer
      * 
      * @param value A flag indicating whether allow delegated access is enabled or not.
      */
-    public void setAllowDelegatedAccess( Boolean value )
+    public void setAllowDelegatedAccess(Boolean value)
     {
         allowDelegatedAccess = value;
     }
 
 
-    @JsonProperty( "userCredentials" )
+    @JsonProperty("userCredentials")
     private UserCredentials userCredentials;
 
     /**
@@ -179,12 +179,12 @@ public class Customer
      * 
      * @param value The user credentials.
      */
-    public void setUserCredentials( UserCredentials value )
+    public void setUserCredentials(UserCredentials value)
     {
         userCredentials = value;
     }
 
-    @JsonProperty( "customDomains" )
+    @JsonProperty("customDomains")
     private List<String> customDomains;
    
     /**
@@ -202,12 +202,12 @@ public class Customer
      * 
      * @param value The custom domains.
      */
-    public void setCustomDomains( List<String> value )
+    public void setCustomDomains(List<String> value)
     {
         customDomains = value;
     }
 
-    @JsonProperty( "associatedPartnerId" )
+    @JsonProperty("associatedPartnerId")
     private String associatedPartnerId;
 
     /**
@@ -226,7 +226,7 @@ public class Customer
      * 
      * @param value The indirect reseller associated to this customer account.
      */
-    public void setAssociatedPartnerId( String value )
+    public void setAssociatedPartnerId(String value)
     {
         associatedPartnerId = value;
     }

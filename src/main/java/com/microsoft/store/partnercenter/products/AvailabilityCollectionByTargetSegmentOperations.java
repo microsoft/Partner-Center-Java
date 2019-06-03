@@ -34,25 +34,25 @@ public class AvailabilityCollectionByTargetSegmentOperations
 	 * @param country               The country on which to base the product.
 	 * @param targetSegment         The target segment used for filtering the availabilities.
 	 */
-	public AvailabilityCollectionByTargetSegmentOperations( IPartner rootPartnerOperations, String productId, String skuId, String country, String targetSegment )
+	public AvailabilityCollectionByTargetSegmentOperations(IPartner rootPartnerOperations, String productId, String skuId, String country, String targetSegment)
 	{
-		super( rootPartnerOperations, new QuadrupleTuple<String, String, String, String>(productId, skuId, country, targetSegment) );
+		super(rootPartnerOperations, new QuadrupleTuple<String, String, String, String>(productId, skuId, country, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( skuId ) )
+		if (StringHelper.isNullOrWhiteSpace(skuId))
 		{
-			throw new IllegalArgumentException( "skuId must be set" );
+			throw new IllegalArgumentException("skuId must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 
@@ -86,7 +86,7 @@ public class AvailabilityCollectionByTargetSegmentOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Availability>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAvailabilities").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),

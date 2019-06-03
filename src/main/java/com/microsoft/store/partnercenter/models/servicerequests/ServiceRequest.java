@@ -25,7 +25,7 @@ public class ServiceRequest
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -40,7 +40,7 @@ public class ServiceRequest
         return __Title;
     }
 
-    public void setTitle( String value )
+    public void setTitle(String value)
     {
         __Title = value;
     }
@@ -55,7 +55,7 @@ public class ServiceRequest
         return __Description;
     }
 
-    public void setDescription( String value )
+    public void setDescription(String value)
     {
         __Description = value;
     }
@@ -70,7 +70,7 @@ public class ServiceRequest
         return __Severity;
     }
 
-    public void setSeverity( ServiceRequestSeverity value )
+    public void setSeverity(ServiceRequestSeverity value)
     {
         __Severity = value;
     }
@@ -85,7 +85,7 @@ public class ServiceRequest
         return __SupportTopicId;
     }
 
-    public void setSupportTopicId( String value )
+    public void setSupportTopicId(String value)
     {
         __SupportTopicId = value;
     }
@@ -100,7 +100,7 @@ public class ServiceRequest
         return __SupportTopicName;
     }
 
-    public void setSupportTopicName( String value )
+    public void setSupportTopicName(String value)
     {
         __SupportTopicName = value;
     }
@@ -115,7 +115,7 @@ public class ServiceRequest
         return __Status;
     }
 
-    public void setStatus( ServiceRequestStatus value )
+    public void setStatus(ServiceRequestStatus value)
     {
         __Status = value;
     }
@@ -130,7 +130,7 @@ public class ServiceRequest
         return __Organization;
     }
 
-    public void setOrganization( ServiceRequestOrganization value )
+    public void setOrganization(ServiceRequestOrganization value)
     {
         __Organization = value;
     }
@@ -145,7 +145,7 @@ public class ServiceRequest
         return __PrimaryContact;
     }
 
-    public void setPrimaryContact( ServiceRequestContact value )
+    public void setPrimaryContact(ServiceRequestContact value)
     {
         __PrimaryContact = value;
     }
@@ -160,7 +160,7 @@ public class ServiceRequest
         return __LastUpdatedBy;
     }
 
-    public void setLastUpdatedBy( ServiceRequestContact value )
+    public void setLastUpdatedBy(ServiceRequestContact value)
     {
         __LastUpdatedBy = value;
     }
@@ -175,7 +175,7 @@ public class ServiceRequest
         return __ProductName;
     }
 
-    public void setProductName( String value )
+    public void setProductName(String value)
     {
         __ProductName = value;
     }
@@ -190,7 +190,7 @@ public class ServiceRequest
         return __ProductId;
     }
 
-    public void setProductId( String value )
+    public void setProductId(String value)
     {
         __ProductId = value;
     }
@@ -205,7 +205,7 @@ public class ServiceRequest
         return __CreatedDate;
     }
 
-    public void setCreatedDate( DateTime value )
+    public void setCreatedDate(DateTime value)
     {
         __CreatedDate = value;
     }
@@ -220,7 +220,7 @@ public class ServiceRequest
         return __LastModifiedDate;
     }
 
-    public void setLastModifiedDate( DateTime value )
+    public void setLastModifiedDate(DateTime value)
     {
         __LastModifiedDate = value;
     }
@@ -235,7 +235,7 @@ public class ServiceRequest
         return __LastClosedDate;
     }
 
-    public void setLastClosedDate( DateTime value )
+    public void setLastClosedDate(DateTime value)
     {
         __LastClosedDate = value;
     }
@@ -250,7 +250,7 @@ public class ServiceRequest
         return __NewNote;
     }
 
-    public void setNewNote( ServiceRequestNote value )
+    public void setNewNote(ServiceRequestNote value)
     {
         __NewNote = value;
     }
@@ -265,7 +265,7 @@ public class ServiceRequest
         return __Notes;
     }
 
-    public void setNotes( Collection<ServiceRequestNote> value )
+    public void setNotes(Collection<ServiceRequestNote> value)
     {
         __Notes = value;
     }
@@ -280,7 +280,7 @@ public class ServiceRequest
         return __CountryCode;
     }
 
-    public void setCountryCode( String value )
+    public void setCountryCode(String value)
     {
         __CountryCode = value;
     }

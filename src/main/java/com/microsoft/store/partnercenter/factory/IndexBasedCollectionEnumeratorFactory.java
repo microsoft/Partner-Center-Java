@@ -26,9 +26,9 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
      * @param rootPartnerOperations The root partner operations instance.
      * @param responseType The type of resource.
      */
-    public IndexBasedCollectionEnumeratorFactory( IPartner rootPartnerOperations, TypeReference<TResourceCollection> responseType )
+    public IndexBasedCollectionEnumeratorFactory(IPartner rootPartnerOperations, TypeReference<TResourceCollection> responseType)
     {
-        super( rootPartnerOperations );
+        super(rootPartnerOperations);
         this.responseType = responseType;
     }
 
@@ -40,12 +40,12 @@ public class IndexBasedCollectionEnumeratorFactory<T extends ResourceBase, TReso
      * @return A customer collection enumerator capable of traversing customers.
      */
     @Override
-    public IResourceCollectionEnumerator<TResourceCollection> create( TResourceCollection resourceCollection )
+    public IResourceCollectionEnumerator<TResourceCollection> create(TResourceCollection resourceCollection)
     {
         return new IndexBasedCollectionEnumerator<>(
             this.getPartner(),
             resourceCollection, 
             null,
-            responseType );
+            responseType);
     }
 }

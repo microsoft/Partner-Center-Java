@@ -20,8 +20,8 @@ public class StandardPartnerFactory
      * @return A configured partner object.
      */
     @Override
-    public IAggregatePartner build( IPartnerCredentials credentials )
+    public IAggregatePartner build(IPartnerCredentials credentials)
     {
-        return new AggregatePartnerOperations( credentials );
+        return new AggregatePartnerOperations(credentials);
     }
 }

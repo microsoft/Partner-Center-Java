@@ -30,9 +30,9 @@ public class DefaultPartnerServiceErrorHandler
      * @return The exception to throw.
      */
     @Override
-    public PartnerException handleFailedResponse( Response response )
+    public PartnerException handleFailedResponse(Response response)
     {
-        return handleFailedResponse( response, null );
+        return handleFailedResponse(response, null);
     }
 
     /**
@@ -45,28 +45,28 @@ public class DefaultPartnerServiceErrorHandler
     @Override
     public PartnerException handleFailedResponse(Response response, IRequestContext context)
     {
-        if ( response == null )
+        if (response == null)
         {
-            throw new IllegalArgumentException( "Response is null" );
+            throw new IllegalArgumentException("Response is null");
         }
 
-        if ( response.code() < 400 )
+        if (response.code() < 400)
         {
-            throw new IllegalArgumentException( "DefaultPartnerServiceErrorHandler: response is successful." );
+            throw new IllegalArgumentException("DefaultPartnerServiceErrorHandler: response is successful.");
         }
 
         String responsePayload;
 
         try
         {
-        	if ( response.body() == null || response.body().contentLength() == 0 )
+        	if (response.body() == null || response.body().contentLength() == 0)
         	{
-        		throw new IllegalArgumentException( "Response entity is null" );
+        		throw new IllegalArgumentException("Response entity is null");
             }
             
             responsePayload = response.body().string();
         }
-        catch ( Exception e )
+        catch (Exception e)
         {
             responsePayload = "";
         }
@@ -85,18 +85,18 @@ public class DefaultPartnerServiceErrorHandler
         {
             apiFault = mapper.readValue(responsePayload, ApiFault.class);
         }
-        catch ( IOException e )
+        catch (IOException e)
         {
-            PartnerLog.getInstance().logError("Could not parse error response: " + e.toString() );
+            PartnerLog.getInstance().logError("Could not parse error response: " + e.toString());
         }
 
         PartnerErrorCategory errorCategory;
 
-        errorCategory = toPartnerErrorCategory( response.code() );
-        partnerException = apiFault != null ? new PartnerException( apiFault, context, errorCategory )
-                        : new PartnerException( StringHelper.isNullOrWhiteSpace( responsePayload )
+        errorCategory = toPartnerErrorCategory(response.code());
+        partnerException = apiFault != null ? new PartnerException(apiFault, context, errorCategory)
+                        : new PartnerException(StringHelper.isNullOrWhiteSpace(responsePayload)
                                         ? response.message() : responsePayload, context,
-                                                errorCategory );
+                                                errorCategory);
 
         return partnerException;
     }
@@ -107,11 +107,11 @@ public class DefaultPartnerServiceErrorHandler
      * @param statusCode The HTTP response code.
      * @return The partner error category.
      */
-    private static PartnerErrorCategory toPartnerErrorCategory( int statusCode )
+    private static PartnerErrorCategory toPartnerErrorCategory(int statusCode)
     {
         PartnerErrorCategory errorCategory;
         
-        switch ( statusCode )
+        switch (statusCode)
         {
             case HttpStatusCode.BADREQUEST:
                 errorCategory = PartnerErrorCategory.BAD_INPUT;

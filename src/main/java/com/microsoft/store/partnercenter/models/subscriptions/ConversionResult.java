@@ -21,7 +21,7 @@ public class ConversionResult
         return __OfferId;
     }
 
-    public void setOfferId( String value )
+    public void setOfferId(String value)
     {
         __OfferId = value;
     }
@@ -36,7 +36,7 @@ public class ConversionResult
         return __TargetOfferId;
     }
 
-    public void setTargetOfferId( String value )
+    public void setTargetOfferId(String value)
     {
         __TargetOfferId = value;
     }
@@ -51,7 +51,7 @@ public class ConversionResult
         return __SubscriptionId;
     }
 
-    public void setSubscriptionId( String value )
+    public void setSubscriptionId(String value)
     {
         __SubscriptionId = value;
     }
@@ -66,7 +66,7 @@ public class ConversionResult
         return __Error;
     }
 
-    public void setError( ConversionError value )
+    public void setError(ConversionError value)
     {
         __Error = value;
     }

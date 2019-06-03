@@ -21,5 +21,5 @@ public interface ICartCollection
      * @param cartId Identifier for the cart.
      * @return The available cart operations.
      */
-    ICart byId( String cartId );
+    ICart byId(String cartId);
 }

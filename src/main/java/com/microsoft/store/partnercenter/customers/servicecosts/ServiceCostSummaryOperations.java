@@ -25,13 +25,13 @@ public class ServiceCostSummaryOperations
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param context The context, including customer id and billing period..
 	 */
-	public ServiceCostSummaryOperations( IPartner rootPartnerOperations, Tuple<String, String> context  )
+	public ServiceCostSummaryOperations(IPartner rootPartnerOperations, Tuple<String, String> context )
 	{
-		super( rootPartnerOperations, context );
+		super(rootPartnerOperations, context);
 
-		if ( context == null )
+		if (context == null)
 		{
-			throw new IllegalArgumentException( "context must be set" );
+			throw new IllegalArgumentException("context must be set");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class ServiceCostSummaryOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ServiceCostsSummary>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerServiceCostsSummary").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));

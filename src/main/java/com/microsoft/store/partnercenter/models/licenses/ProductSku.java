@@ -12,7 +12,7 @@ public class ProductSku {
     /**
      * Gets or sets the product id for the product SKU.
      */
-    @JsonProperty( "id" )
+    @JsonProperty("id")
     private String __Id;
 	
     public String getId()
@@ -20,7 +20,7 @@ public class ProductSku {
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	__Id = value;
     }
@@ -28,7 +28,7 @@ public class ProductSku {
     /**
      * Gets or sets a localized display name for the product SKU.
      */
-    @JsonProperty( "name" )
+    @JsonProperty("name")
     private String __Name;
 
     public String getName()
@@ -36,7 +36,7 @@ public class ProductSku {
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
     	__Name = value;
     }
@@ -47,7 +47,7 @@ public class ProductSku {
      * For example, for Office 365 Plan E3 , this value is "EnterprisePack".
      * This can be used in place of Id if the id is not available.
      */
-    @JsonProperty( "skuPartNumber" )
+    @JsonProperty("skuPartNumber")
     private String __SkuPartNumber;
 
     public String getSkuPartNumber()
@@ -55,7 +55,7 @@ public class ProductSku {
         return __SkuPartNumber;
     }
 
-    public void setSkuPartNumber( String value )
+    public void setSkuPartNumber(String value)
     {
     	__SkuPartNumber = value;
     }
@@ -65,7 +65,7 @@ public class ProductSku {
      * It can be used to filter products which are applicable to user or tenant.
      * For example, if we need to know all products applicable to user , we can filter where target type == "User".
      */
-    @JsonProperty( "TargetType" )
+    @JsonProperty("TargetType")
     private String __TargetType;
 
     public String getTargetType()
@@ -73,7 +73,7 @@ public class ProductSku {
         return __TargetType;
     }
 
-    public void setTargetType( String value )
+    public void setTargetType(String value)
     {
     	__TargetType = value;
     }
@@ -82,7 +82,7 @@ public class ProductSku {
      * Gets or sets the group id of a license. For example 'Windows 10 Enterprise E3'
      * is managed through Group1.
      */
-    @JsonProperty( "LicenseGroupId" )
+    @JsonProperty("LicenseGroupId")
     private LicenseGroupId __LicenseGroupId;
 
     public LicenseGroupId getLicenseGroupId()
@@ -90,7 +90,7 @@ public class ProductSku {
         return __LicenseGroupId;
     }
 
-    public void setLicenseGroupId( LicenseGroupId value )
+    public void setLicenseGroupId(LicenseGroupId value)
     {
     	__LicenseGroupId = value;
     }

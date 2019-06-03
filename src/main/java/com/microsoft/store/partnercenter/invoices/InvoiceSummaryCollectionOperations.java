@@ -22,9 +22,9 @@ public class InvoiceSummaryCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The partner operations.
 	 */
-	public InvoiceSummaryCollectionOperations( IPartner rootPartnerOperations )
+	public InvoiceSummaryCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations, null );
+		super(rootPartnerOperations, null);
 	}
 
 	/**

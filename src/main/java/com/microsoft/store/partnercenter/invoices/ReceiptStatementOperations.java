@@ -49,7 +49,7 @@ public class ReceiptStatementOperations
 	{
 		return this.getPartner().getServiceClient().getFileContents(
 			this.getPartner(), 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceTaxReceiptStatement").getPath(),
 				this.getContext()), 
 			"application/pdf");

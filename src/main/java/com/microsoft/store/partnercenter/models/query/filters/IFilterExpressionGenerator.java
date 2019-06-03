@@ -17,15 +17,15 @@ public interface IFilterExpressionGenerator
      * @param type The type of field.
      * @return The filter expression.
      */
-    String generateSimpleExpression( String field, FieldFilterOperation operation, String value, FieldType type );
+    String generateSimpleExpression(String field, FieldFilterOperation operation, String value, FieldType type);
 
     /**
-     * Generates a compound filter expression ( A equals 5 and ( B equals 8 or C notEquals 0 ) )
+     * Generates a compound filter expression (A equals 5 and (B equals 8 or C notEquals 0))
      * 
      * @param leftSideExpression The left side expression.
      * @param operation The filter operator.
      * @param rightSideExpression The right side expression.
      * @return The filter expression.
      */
-    String generateCompoundExpression( String leftSideExpression, FieldFilterOperation operation, String rightSideExpression );
+    String generateCompoundExpression(String leftSideExpression, FieldFilterOperation operation, String rightSideExpression);
 }

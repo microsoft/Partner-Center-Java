@@ -28,19 +28,19 @@ public class ResourceUsageRecordCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param subscriptionId The subscription identifier
 	 */
-	public ResourceUsageRecordCollectionOperations( IPartner rootPartnerOperations, String customerId,
-													String subscriptionId )
+	public ResourceUsageRecordCollectionOperations(IPartner rootPartnerOperations, String customerId,
+													String subscriptionId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>( customerId, subscriptionId ) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, subscriptionId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId should be set." );
+			throw new IllegalArgumentException("customerId should be set.");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( subscriptionId ) )
+		if (StringHelper.isNullOrWhiteSpace(subscriptionId))
 		{
-			throw new IllegalArgumentException( "subscriptionId should be set." );
+			throw new IllegalArgumentException("subscriptionId should be set.");
 		}
 
 	}
@@ -56,7 +56,7 @@ public class ResourceUsageRecordCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<AzureResourceMonthlyUsageRecord>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionResourceUsageRecords").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));

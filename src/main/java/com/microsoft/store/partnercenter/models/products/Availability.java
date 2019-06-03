@@ -97,7 +97,7 @@ public class Availability
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -112,7 +112,7 @@ public class Availability
         return __ProductId;
     }
 
-    public void setProductId( String value )
+    public void setProductId(String value)
     {
         __ProductId = value;
     }
@@ -127,7 +127,7 @@ public class Availability
         return __SkuId;
     }
 
-    public void setSkuId( String value )
+    public void setSkuId(String value)
     {
         __SkuId = value;
     }
@@ -142,7 +142,7 @@ public class Availability
         return __CatalogItemId;
     }
 
-    public void setCatalogItemId( String value )
+    public void setCatalogItemId(String value)
     {
         __CatalogItemId = value;
     }
@@ -157,7 +157,7 @@ public class Availability
         return __DefaultCurrency;
     }
 
-    public void setDefaultCurrency( CurrencyInfo value )
+    public void setDefaultCurrency(CurrencyInfo value)
     {
         __DefaultCurrency = value;
     }
@@ -172,7 +172,7 @@ public class Availability
         return __Segment;
     }
 
-    public void setSegment( String value )
+    public void setSegment(String value)
     {
         __Segment = value;
     }
@@ -187,7 +187,7 @@ public class Availability
         return __Country;
     }
 
-    public void setCountry( String value )
+    public void setCountry(String value)
     {
         __Country = value;
     }

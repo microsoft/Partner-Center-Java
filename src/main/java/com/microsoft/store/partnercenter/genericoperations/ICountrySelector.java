@@ -15,5 +15,5 @@ public interface ICountrySelector<TOperations> {
      *
 	 * @return An operations interface customized for the provided country.
 	 */
-	TOperations byCountry( String country );
+	TOperations byCountry(String country);
 }

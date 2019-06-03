@@ -35,9 +35,9 @@ public class RelationshipCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public RelationshipCollectionOperations( IPartner rootPartnerOperations )
+	public RelationshipCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -75,14 +75,14 @@ public class RelationshipCollectionOperations
 	 */
 	public ResourceCollection<PartnerRelationship> Query(PartnerRelationshipType partnerRelationshipType, IQuery query)
 	{
-		if ( query.getType() !=  QueryType.SIMPLE )
+		if (query.getType() !=  QueryType.SIMPLE)
 		{
-			throw new IllegalArgumentException( "This type of query is not supported." );
+			throw new IllegalArgumentException("This type of query is not supported.");
 		}
 		
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
-		if ( query.getFilter() != null )
+		if (query.getFilter() != null)
 		{
 			// add the filter to the request if specified
 			ObjectMapper mapper = new ObjectMapper();
@@ -92,22 +92,22 @@ public class RelationshipCollectionOperations
 				(
 					new KeyValuePair<String, String>
 					(
-						PartnerService.getInstance().getConfiguration().getApis().get( "GetPartnerRelationships" ).getParameters().get("Filter"), 
+						PartnerService.getInstance().getConfiguration().getApis().get("GetPartnerRelationships").getParameters().get("Filter"), 
 						URLEncoder.encode
-						( 
-							mapper.writeValueAsString( query.getFilter() ),
+						(
+							mapper.writeValueAsString(query.getFilter()),
 							"UTF-8" 
 						)
 					)
 				);
 			}
-			catch( JsonProcessingException e )
+			catch(JsonProcessingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
-			catch ( UnsupportedEncodingException e )
+			catch (UnsupportedEncodingException e)
 			{
-				throw new PartnerException( "", null, PartnerErrorCategory.REQUEST_PARSING, e );
+				throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 			}
 		}
 

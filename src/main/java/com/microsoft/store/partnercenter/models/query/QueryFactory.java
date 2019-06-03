@@ -41,13 +41,13 @@ public class QueryFactory
      * @param token Optional query token.
      * @return A simple query.
      */
-    public IQuery buildSimpleQuery( FieldFilter filter, Sort sortOption, Object token )
+    public IQuery buildSimpleQuery(FieldFilter filter, Sort sortOption, Object token)
 
     {
         IQuery query = new SimpleQuery();
-        query.setFilter( filter );
-        query.setSort( sortOption );
-        query.setToken( token );
+        query.setFilter(filter);
+        query.setSort(sortOption);
+        query.setToken(token);
         return query;
     }
 
@@ -58,9 +58,9 @@ public class QueryFactory
      * @param sortOption Optional sorting options.
      * @return A simple query.
      */
-    public IQuery buildSimpleQuery( FieldFilter filter, Sort sortOption )
+    public IQuery buildSimpleQuery(FieldFilter filter, Sort sortOption)
     {
-        return buildSimpleQuery( filter, sortOption, null );
+        return buildSimpleQuery(filter, sortOption, null);
     }
 
     /**
@@ -69,9 +69,9 @@ public class QueryFactory
      * @param filter An optional filter.
      * @return A simple query.
      */
-    public IQuery buildSimpleQuery( FieldFilter filter )
+    public IQuery buildSimpleQuery(FieldFilter filter)
     {
-        return buildSimpleQuery( filter, null, null );
+        return buildSimpleQuery(filter, null, null);
     }
 
     /**
@@ -81,7 +81,7 @@ public class QueryFactory
      */
     public IQuery buildSimpleQuery()
     {
-        return buildSimpleQuery( null, null, null );
+        return buildSimpleQuery(null, null, null);
     }
 
     /**
@@ -94,14 +94,14 @@ public class QueryFactory
      * @param token An optional query token.
      * @return A paged query.
      */
-    public IQuery buildIndexedQuery( int pageSize, int index, FieldFilter filter, Sort sortOption, Object token )
+    public IQuery buildIndexedQuery(int pageSize, int index, FieldFilter filter, Sort sortOption, Object token)
     {
         IQuery query = new IndexedQuery();
-        query.setPageSize( pageSize );
-        query.setIndex( index );
-        query.setFilter( filter );
-        query.setSort( sortOption );
-        query.setToken( token );
+        query.setPageSize(pageSize);
+        query.setIndex(index);
+        query.setFilter(filter);
+        query.setSort(sortOption);
+        query.setToken(token);
         return query;
     }
 
@@ -114,10 +114,10 @@ public class QueryFactory
      * @param sortOption An optional sorting options.
      * @return A paged query.
      */
-    public IQuery buildIndexedQuery( int pageSize, int index, FieldFilter filter, Sort sortOption )
+    public IQuery buildIndexedQuery(int pageSize, int index, FieldFilter filter, Sort sortOption)
 
     {
-        return buildIndexedQuery( pageSize, index, filter, sortOption, null );
+        return buildIndexedQuery(pageSize, index, filter, sortOption, null);
     }
 
     /**
@@ -128,9 +128,9 @@ public class QueryFactory
      * @param filter An optional filter.
      * @return A paged query.
      */
-    public IQuery buildIndexedQuery( int pageSize, int index, FieldFilter filter )
+    public IQuery buildIndexedQuery(int pageSize, int index, FieldFilter filter)
     {
-        return buildIndexedQuery( pageSize, index, filter, null, null );
+        return buildIndexedQuery(pageSize, index, filter, null, null);
     }
 
     /**
@@ -140,9 +140,9 @@ public class QueryFactory
      * @param index The results starting index.
      * @return A paged query.
      */
-    public IQuery buildIndexedQuery( int pageSize, int index )
+    public IQuery buildIndexedQuery(int pageSize, int index)
     {
-        return buildIndexedQuery( pageSize, index, null, null, null );
+        return buildIndexedQuery(pageSize, index, null, null, null);
     }
 
     /**
@@ -151,9 +151,9 @@ public class QueryFactory
      * @param pageSize The number of results to return.
      * @return A paged query.
      */
-    public IQuery buildIndexedQuery( int pageSize )
+    public IQuery buildIndexedQuery(int pageSize)
     {
-        return buildIndexedQuery( pageSize, 0, null, null, null );
+        return buildIndexedQuery(pageSize, 0, null, null, null);
     }
 
     /**
@@ -163,11 +163,11 @@ public class QueryFactory
      * @param token Optional query token.
      * @return A count query.
      */
-    public IQuery buildCountQuery( FieldFilter filter, Object token )
+    public IQuery buildCountQuery(FieldFilter filter, Object token)
     {
         IQuery query = new CountQuery();
-        query.setFilter( filter );
-        query.setToken( token );
+        query.setFilter(filter);
+        query.setToken(token);
         return query;
     }
        
@@ -177,9 +177,9 @@ public class QueryFactory
      * @param filter An optional filter.
      * @return A count query.
      */
-    public IQuery buildCountQuery( FieldFilter filter )
+    public IQuery buildCountQuery(FieldFilter filter)
     {
-        return buildCountQuery( filter, null );
+        return buildCountQuery(filter, null);
     }
        
     /**
@@ -189,7 +189,7 @@ public class QueryFactory
      */
     public IQuery buildCountQuery()
     {
-        return buildCountQuery( null, null );
+        return buildCountQuery(null, null);
     }
 
     /**
@@ -203,15 +203,15 @@ public class QueryFactory
      * @param token An optional query token.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation, int pageSize, int index, FieldFilter filter, Sort sortingOption, Object token )
+    public IQuery buildSeekQuery(SeekOperation seekOperation, int pageSize, int index, FieldFilter filter, Sort sortingOption, Object token)
     {
         IQuery query = new SeekQuery();
-        query.setSeekOperation( seekOperation );
-        query.setPageSize( pageSize );
-        query.setIndex( index );
-        query.setFilter( filter );
-        query.setSort( sortingOption );
-        query.setToken( token );
+        query.setSeekOperation(seekOperation);
+        query.setPageSize(pageSize);
+        query.setIndex(index);
+        query.setFilter(filter);
+        query.setSort(sortingOption);
+        query.setToken(token);
         return query;
     }
 
@@ -225,9 +225,9 @@ public class QueryFactory
      * @param sortingOption An optional sorting options.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation, int pageSize, int index, FieldFilter filter, Sort sortingOption )
+    public IQuery buildSeekQuery(SeekOperation seekOperation, int pageSize, int index, FieldFilter filter, Sort sortingOption)
     {
-        return buildSeekQuery( seekOperation, pageSize, index, filter, sortingOption, null );
+        return buildSeekQuery(seekOperation, pageSize, index, filter, sortingOption, null);
     }
 
     /**
@@ -239,9 +239,9 @@ public class QueryFactory
      * @param filter An optional filter to apply.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation, int pageSize, int index, FieldFilter filter )
+    public IQuery buildSeekQuery(SeekOperation seekOperation, int pageSize, int index, FieldFilter filter)
     {
-        return buildSeekQuery( seekOperation, pageSize, index, filter, null, null );
+        return buildSeekQuery(seekOperation, pageSize, index, filter, null, null);
     }
     
     /**
@@ -252,10 +252,10 @@ public class QueryFactory
      * @param index The index of the page to retrieve. This is only used if the seek operation specified a page index.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation, int pageSize, int index )
+    public IQuery buildSeekQuery(SeekOperation seekOperation, int pageSize, int index)
 
     {
-        return buildSeekQuery( seekOperation, pageSize, index, null, null, null );
+        return buildSeekQuery(seekOperation, pageSize, index, null, null, null);
     }
 
     /**
@@ -265,9 +265,9 @@ public class QueryFactory
      * @param pageSize The desired result page size.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation, int pageSize )
+    public IQuery buildSeekQuery(SeekOperation seekOperation, int pageSize)
     {
-        return buildSeekQuery( seekOperation, pageSize, 0, null, null, null );
+        return buildSeekQuery(seekOperation, pageSize, 0, null, null, null);
     }
 
     /**
@@ -276,8 +276,8 @@ public class QueryFactory
      * @param seekOperation The seek operation to perform.
      * @return The seek query.
      */
-    public IQuery buildSeekQuery( SeekOperation seekOperation )
+    public IQuery buildSeekQuery(SeekOperation seekOperation)
     {
-        return buildSeekQuery( seekOperation, 0, 0, null, null, null );
+        return buildSeekQuery(seekOperation, 0, 0, null, null, null);
     }
 }

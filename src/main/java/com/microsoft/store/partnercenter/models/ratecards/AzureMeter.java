@@ -26,7 +26,7 @@ public class AzureMeter
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
     	__Id = value;
     }
@@ -41,7 +41,7 @@ public class AzureMeter
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
     	__Name = value;
     }
@@ -57,7 +57,7 @@ public class AzureMeter
     	return __Rates;
     }
     
-    public void setRates( Map<Double, Double> value )
+    public void setRates(Map<Double, Double> value)
     {
     	__Rates = value;
     }
@@ -72,7 +72,7 @@ public class AzureMeter
     	return __Tags;
     }
     
-    public void setTags( Iterable<String> value )
+    public void setTags(Iterable<String> value)
     {
     	__Tags = value;
     }
@@ -88,7 +88,7 @@ public class AzureMeter
         return __Category;
     }
 
-    public void setCategory( String value )
+    public void setCategory(String value)
     {
     	__Category = value;
     }
@@ -104,7 +104,7 @@ public class AzureMeter
         return __Subcategory;
     }
 
-    public void setSubcategory( String value )
+    public void setSubcategory(String value)
     {
     	__Subcategory = value;
     }
@@ -119,7 +119,7 @@ public class AzureMeter
         return __Region;
     }
 
-    public void setRegion( String value )
+    public void setRegion(String value)
     {
     	__Region = value;
     }
@@ -134,7 +134,7 @@ public class AzureMeter
         return __Unit;
     }
 
-    public void setUnit( String value )
+    public void setUnit(String value)
     {
     	__Unit = value;
     }
@@ -149,7 +149,7 @@ public class AzureMeter
         return __IncludedQuantity;
     }
 
-    public void setIncludedQuantity( double value )
+    public void setIncludedQuantity(double value)
     {
     	__IncludedQuantity = value;
     }
@@ -164,7 +164,7 @@ public class AzureMeter
         return __EffectiveDate;
     }
 
-    public void setEffectiveDate( DateTime value )
+    public void setEffectiveDate(DateTime value)
     {
     	__EffectiveDate = value;
     }

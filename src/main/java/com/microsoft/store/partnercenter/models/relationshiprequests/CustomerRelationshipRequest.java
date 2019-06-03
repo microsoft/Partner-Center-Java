@@ -30,7 +30,7 @@ public class CustomerRelationshipRequest
      * 
      * @param value The URL to be used by the customer to establish a relationship with a partner.
      */
-    public void setUrl( URI value )
+    public void setUrl(URI value)
     {
         __Url = value;
     }

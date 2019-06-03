@@ -18,5 +18,5 @@ public interface ICustomerProfile<T extends ResourceBase>
      * @param customerProfile The customer profile information.
      * @return The updated customer profile.
      */
-    T update( T customerProfile );
+    T update(T customerProfile);
 }

@@ -44,7 +44,7 @@ public interface IInvoiceCollection
      * @param invoiceId The invoice id.
      * @return The invoice operations.
      */
-    IInvoice byId( String invoiceId );
+    IInvoice byId(String invoiceId);
     
     /**
      * Gets all the invoices.
@@ -57,5 +57,5 @@ public interface IInvoiceCollection
      * @param query The query.
      * @return The invoices.
      */
-    ResourceCollection<Invoice> query( IQuery query );
+    ResourceCollection<Invoice> query(IQuery query);
 }

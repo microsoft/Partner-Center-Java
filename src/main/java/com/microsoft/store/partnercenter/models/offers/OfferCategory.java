@@ -22,7 +22,7 @@ public class OfferCategory
         return id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         id = value;
     }
@@ -37,7 +37,7 @@ public class OfferCategory
         return name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
         name = value;
     }
@@ -53,7 +53,7 @@ public class OfferCategory
         return rank;
     }
 
-    public void setRank( int value )
+    public void setRank(int value)
     {
         rank = value;
     }
@@ -68,7 +68,7 @@ public class OfferCategory
         return locale;
     }
 
-    public void setLocale( String value )
+    public void setLocale(String value)
     {
         locale = value;
     }
@@ -83,7 +83,7 @@ public class OfferCategory
         return country;
     }
 
-    public void setCountry( String value )
+    public void setCountry(String value)
     {
         country = value;
     }
@@ -94,21 +94,21 @@ public class OfferCategory
      * @param obj The object to compare with this instance.
      * @return true if the specified object is equal to this instance; otherwise, false.
      */
-    public boolean equals( Object obj )
+    public boolean equals(Object obj)
     {
         if(obj == this) 
         {
             return true; 
         }
 
-        if ( obj == null || getClass() != obj.getClass() )
+        if (obj == null || getClass() != obj.getClass())
         {
             return false;
         }
 
         OfferCategory other = (OfferCategory)obj;
 
-        return this.getId().equalsIgnoreCase( other.getId() );
+        return this.getId().equalsIgnoreCase(other.getId());
 
     }
 

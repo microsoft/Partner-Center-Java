@@ -20,7 +20,7 @@ public class PartnerLicensesDeploymentInsights
         return licensesSold;
     }
 
-    public void setLicensesSold( long value )
+    public void setLicensesSold(long value)
     {
         licensesSold = value;
     }
@@ -36,7 +36,7 @@ public class PartnerLicensesDeploymentInsights
         return proratedDeploymentPercent;
     }
 
-    public void setProratedDeploymentPercent( double value )
+    public void setProratedDeploymentPercent(double value)
     {
         proratedDeploymentPercent = value;
     }

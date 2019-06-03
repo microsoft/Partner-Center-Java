@@ -22,7 +22,7 @@ public class AzureOfferTerm extends ResourceBase
         return __Name;
     }
 
-    public void setName( String value )
+    public void setName(String value)
     {
     	__Name = value;
     }
@@ -37,7 +37,7 @@ public class AzureOfferTerm extends ResourceBase
     	return __Discount;
     }
     
-    public void setDiscount( double value )
+    public void setDiscount(double value)
     {
     	__Discount = value;
     }
@@ -52,7 +52,7 @@ public class AzureOfferTerm extends ResourceBase
     	return __ExcludedMeterIds;
     }
     
-    public void setExcludedMeterIds( Iterable<String> value )
+    public void setExcludedMeterIds(Iterable<String> value)
     {
     	__ExcludedMeterIds = value;
     }
@@ -67,7 +67,7 @@ public class AzureOfferTerm extends ResourceBase
         return __EffectiveDate;
     }
 
-    public void setEffectiveDate( DateTime value )
+    public void setEffectiveDate(DateTime value)
     {
     	__EffectiveDate = value;
     }

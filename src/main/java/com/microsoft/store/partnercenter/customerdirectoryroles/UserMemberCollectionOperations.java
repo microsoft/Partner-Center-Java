@@ -37,15 +37,15 @@ public class UserMemberCollectionOperations
 	 * @param customerId The customer identifier.
 	 * @param roleId The directory role identifier.
 	 */
-	public UserMemberCollectionOperations( IPartner rootPartnerOperations, String customerId, String roleId )
+	public UserMemberCollectionOperations(IPartner rootPartnerOperations, String customerId, String roleId)
 	{
-		super( rootPartnerOperations, new Tuple<String,String>( customerId, roleId ) );
-		if ( StringHelper.isNullOrEmpty( customerId ) )
+		super(rootPartnerOperations, new Tuple<String,String>(customerId, roleId));
+		if (StringHelper.isNullOrEmpty(customerId))
 		{
 			throw new IllegalArgumentException("customerId must be set.");
 		}
 
-		if ( StringHelper.isNullOrEmpty( roleId ) )
+		if (StringHelper.isNullOrEmpty(roleId))
 		{
 			throw new IllegalArgumentException("roleId must be set.");
 		}
@@ -60,7 +60,7 @@ public class UserMemberCollectionOperations
 	@Override
 	public IUserMember byId(String userId)
 	{
-		return new UserMemberOperations( this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), userId );
+		return new UserMemberOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2(), userId);
 	}
 
 	/**
@@ -70,9 +70,9 @@ public class UserMemberCollectionOperations
 	 * @return The customer directory role user member.
 	 */
 	@Override
-	public UserMember create( UserMember newEntity )
+	public UserMember create(UserMember newEntity)
 	{
-		if ( newEntity == null )
+		if (newEntity == null)
 		{
 			throw new IllegalArgumentException("The newEntity parameter cannot be null.");
 		}
@@ -98,7 +98,7 @@ public class UserMemberCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<SeekBasedResourceCollection<UserMember>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerDirectoryRoleUserMembers").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));
@@ -113,25 +113,25 @@ public class UserMemberCollectionOperations
 	@Override
 	public SeekBasedResourceCollection<UserMember> query(IQuery query)
 	{
-		if ( query == null )
+		if (query == null)
 		{
-			throw new IllegalArgumentException( "query can't be null" );
+			throw new IllegalArgumentException("query can't be null");
 		}
 
-		if ( query.getType() == QueryType.COUNT )
+		if (query.getType() == QueryType.COUNT)
 		{
-			throw new IllegalArgumentException( "query can't be a count query." );
+			throw new IllegalArgumentException("query can't be a count query.");
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 		Map<String, String> headers = new HashMap<>();
 
-		if ( query.getType() == QueryType.SEEK )
+		if (query.getType() == QueryType.SEEK)
 		{
 			// if this is a seek query, add the seek operation and the continuation token to the request.
-			if ( query.getToken() == null )
+			if (query.getToken() == null)
 			{
-				throw new IllegalArgumentException( "query.Token is required." );
+				throw new IllegalArgumentException("query.Token is required.");
 			}
 
 			headers.put(
@@ -146,7 +146,7 @@ public class UserMemberCollectionOperations
 		}
 		else
 		{
-			if ( query.getType() == QueryType.INDEXED )
+			if (query.getType() == QueryType.INDEXED)
 			{
 				parameters.add
 				(
@@ -173,7 +173,7 @@ public class UserMemberCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<SeekBasedResourceCollection<UserMember>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerDirectoryRoleUserMembers").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()),

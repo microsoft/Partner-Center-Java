@@ -26,7 +26,7 @@ public class Invoice
         return __Id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         __Id = value;
     }
@@ -41,7 +41,7 @@ public class Invoice
         return __InvoiceDate;
     }
 
-    public void setInvoiceDate( DateTime value )
+    public void setInvoiceDate(DateTime value)
     {
         __InvoiceDate = value;
     }
@@ -57,7 +57,7 @@ public class Invoice
         return __TotalCharges;
     }
 
-    public void setTotalCharges( double value )
+    public void setTotalCharges(double value)
     {
         __TotalCharges = value;
     }
@@ -72,7 +72,7 @@ public class Invoice
         return __PaidAmount;
     }
 
-    public void setPaidAmount( double value )
+    public void setPaidAmount(double value)
     {
         __PaidAmount = value;
     }
@@ -87,7 +87,7 @@ public class Invoice
         return __CurrencyCode;
     }
 
-    public void setCurrencyCode( String value )
+    public void setCurrencyCode(String value)
     {
         __CurrencyCode = value;
     }
@@ -102,7 +102,7 @@ public class Invoice
         return __CurrencySymbol;
     }
 
-    public void setCurrencySymbol( String value )
+    public void setCurrencySymbol(String value)
     {
         __CurrencySymbol = value;
     }
@@ -118,7 +118,7 @@ public class Invoice
         return __PdfDownloadLink;
     }
 
-    public void setPdfDownloadLink( URI value )
+    public void setPdfDownloadLink(URI value)
     {
         __PdfDownloadLink = value;
     }
@@ -133,7 +133,7 @@ public class Invoice
         return __InvoiceDetails;
     }
 
-    public void setInvoiceDetails( Iterable<InvoiceDetail> value )
+    public void setInvoiceDetails(Iterable<InvoiceDetail> value)
     {
         __InvoiceDetails = value;
     }
@@ -148,7 +148,7 @@ public class Invoice
         return __Amendments;
     }
 
-    public void setAmendments( Iterable<Invoice> value )
+    public void setAmendments(Iterable<Invoice> value)
     {
         __Amendments = value;
     }
@@ -163,7 +163,7 @@ public class Invoice
         return __DocumentType;
     }
 
-    public void setDocumentType( DocumentType value )
+    public void setDocumentType(DocumentType value)
     {
         __DocumentType = value;
     }
@@ -178,7 +178,7 @@ public class Invoice
         return __AmendsOf;
     }
 
-    public void setAmendsOf( String value )
+    public void setAmendsOf(String value)
     {
         __AmendsOf = value;
     }
@@ -194,7 +194,7 @@ public class Invoice
         return __InvoiceType;
     }
 
-    public void setInvoiceType( String value )
+    public void setInvoiceType(String value)
     {
         __InvoiceType = value;
     }

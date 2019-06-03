@@ -12,7 +12,7 @@ public class LicenseAssignment {
     /**
      * Gets or sets service plan ids which will not be assigned to the user.
      */
-	@JsonProperty( "ExcludedPlans" )
+	@JsonProperty("ExcludedPlans")
 	private Iterable<String> __ExcludedPlans;
     
     public Iterable<String> getExcludedPlans()
@@ -20,7 +20,7 @@ public class LicenseAssignment {
         return __ExcludedPlans;
     }
 
-    public void setExcludedPlans( Iterable<String> value )
+    public void setExcludedPlans(Iterable<String> value)
     {
     	__ExcludedPlans = value;
     }
@@ -28,7 +28,7 @@ public class LicenseAssignment {
     /**
      * Gets or sets product id to be assigned to the user.
      */
-    @JsonProperty( "SkuId" )
+    @JsonProperty("SkuId")
     private String __SkuId;
     
     public String getSkuId()
@@ -36,7 +36,7 @@ public class LicenseAssignment {
         return __SkuId;
     }
 
-    public void setSkuId( String value )
+    public void setSkuId(String value)
     {
     	__SkuId = value;
     }

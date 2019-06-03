@@ -25,5 +25,5 @@ public interface ICustomerUserLicenseUpdates
      * @param newLicenseUpdate License update object.
      * @return The customer user's directory roles.
      */
-	LicenseUpdate create( LicenseUpdate newLicenseUpdate );
+	LicenseUpdate create(LicenseUpdate newLicenseUpdate);
 }

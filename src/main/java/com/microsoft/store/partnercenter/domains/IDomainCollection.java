@@ -14,5 +14,5 @@ public interface IDomainCollection extends IPartnerComponentString
      * 
      * @return The domain operations.
      */
-    IDomain byDomain( String domain );
+    IDomain byDomain(String domain);
 }

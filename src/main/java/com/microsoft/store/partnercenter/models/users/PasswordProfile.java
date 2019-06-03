@@ -17,7 +17,7 @@ public class PasswordProfile {
         return __ForceChangePassword;
     }
 
-    public void setForceChangePassword( boolean value )
+    public void setForceChangePassword(boolean value)
     {
     	__ForceChangePassword = value;
     }
@@ -34,7 +34,7 @@ public class PasswordProfile {
         return __Password;
     }
 
-    public void setPassword( String value )
+    public void setPassword(String value)
     {
     	__Password = value;
     }

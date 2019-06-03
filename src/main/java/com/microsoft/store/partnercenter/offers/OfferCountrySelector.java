@@ -17,7 +17,7 @@ public class OfferCountrySelector
 	 * Initializes a new instance of the OfferCountrySelector class.
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public OfferCountrySelector( IPartner rootPartnerOperations ) 
+	public OfferCountrySelector(IPartner rootPartnerOperations) 
 	{
 		super(rootPartnerOperations);
 	}
@@ -26,11 +26,11 @@ public class OfferCountrySelector
 	 * Scopes offers behavior to a specific country.
 	 */
 	@Override
-	public IOfferCollection byCountry( String country )
+	public IOfferCollection byCountry(String country)
 	{
-		ParameterValidator.isValidCountryCode( country );
+		ParameterValidator.isValidCountryCode(country);
 
-        return new OfferCollectionOperations( this.getPartner(), country );
+        return new OfferCollectionOperations(this.getPartner(), country);
 	}
 
 }

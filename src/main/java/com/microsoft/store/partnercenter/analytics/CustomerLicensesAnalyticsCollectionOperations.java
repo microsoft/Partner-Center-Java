@@ -30,17 +30,17 @@ public class CustomerLicensesAnalyticsCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The identifier of the customer.
      */
-    public CustomerLicensesAnalyticsCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerLicensesAnalyticsCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
        
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
 
-        deployments = new CustomerLicensesDeploymentInsightsCollectionOperations( this.getPartner(), this.getContext() );
-        usage = new CustomerLicensesUsageInsightsCollectionOperations( this.getPartner(), this.getContext() );
+        deployments = new CustomerLicensesDeploymentInsightsCollectionOperations(this.getPartner(), this.getContext());
+        usage = new CustomerLicensesUsageInsightsCollectionOperations(this.getPartner(), this.getContext());
     }
 
     /**

@@ -16,15 +16,15 @@ public abstract class BasePartnerComponent<TContext>
      * @param rootPartnerOperations The root partner operations that created this component.
      * @param componentContext A component context object to work with.
      */
-    protected BasePartnerComponent( IPartner rootPartnerOperations, TContext componentContext )
+    protected BasePartnerComponent(IPartner rootPartnerOperations, TContext componentContext)
     {
-        if ( rootPartnerOperations == null )
+        if (rootPartnerOperations == null)
         {
-            throw new NullPointerException( "rootPartnerOperations null" );
+            throw new NullPointerException("rootPartnerOperations null");
         }
 
-        this.setPartner( rootPartnerOperations );
-        this.setContext( componentContext );
+        this.setPartner(rootPartnerOperations);
+        this.setContext(componentContext);
     }
 
     /**
@@ -38,7 +38,7 @@ public abstract class BasePartnerComponent<TContext>
         return partner;
     }
 
-    private void setPartner( IPartner value )
+    private void setPartner(IPartner value)
     {
         partner = value;
     }
@@ -54,7 +54,7 @@ public abstract class BasePartnerComponent<TContext>
         return context;
     }
 
-    private void setContext( TContext value )
+    private void setContext(TContext value)
     {
         context = value;
     }

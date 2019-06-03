@@ -29,18 +29,18 @@ public class CustomerSkuCollectionOperations extends BasePartnerComponent<Tuple<
 	 * @param customerId            Identifier for the customer.
 	 * @param productId             Identifier for the product.
 	 */
-	public CustomerSkuCollectionOperations( IPartner rootPartnerOperations, String customerId, String productId )
+	public CustomerSkuCollectionOperations(IPartner rootPartnerOperations, String customerId, String productId)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>(customerId, productId) );
+		super(rootPartnerOperations, new Tuple<String, String>(customerId, productId));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 	}
 
@@ -79,7 +79,7 @@ public class CustomerSkuCollectionOperations extends BasePartnerComponent<Tuple<
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Sku>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerSkus").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()));

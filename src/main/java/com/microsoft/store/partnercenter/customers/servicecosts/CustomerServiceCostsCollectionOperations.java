@@ -21,13 +21,13 @@ public class CustomerServiceCostsCollectionOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId Identifier for the customer.
      */
-    public CustomerServiceCostsCollectionOperations( IPartner rootPartnerOperations, String customerId )
+    public CustomerServiceCostsCollectionOperations(IPartner rootPartnerOperations, String customerId)
     {
-        super( rootPartnerOperations, customerId );
+        super(rootPartnerOperations, customerId);
 
-        if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+        if (StringHelper.isNullOrWhiteSpace(customerId))
         {
-            throw new IllegalArgumentException( "customerId must be set" );
+            throw new IllegalArgumentException("customerId must be set");
         }
     }
 

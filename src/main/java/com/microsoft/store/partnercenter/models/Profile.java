@@ -19,7 +19,7 @@ public abstract class Profile<T>
         return id;
     }
 
-    public void setId( String value )
+    public void setId(String value)
     {
         id = value;
     }
@@ -34,7 +34,7 @@ public abstract class Profile<T>
         return email;
     }
 
-    public void setEmail( String value )
+    public void setEmail(String value)
     {
         email = value;
     }
@@ -49,7 +49,7 @@ public abstract class Profile<T>
         return country;
     }
 
-    public void setCountry( String value )
+    public void setCountry(String value)
     {
         country = value;
     }
@@ -64,7 +64,7 @@ public abstract class Profile<T>
         return region;
     }
 
-    public void setRegion( String value )
+    public void setRegion(String value)
     {
         region = value;
     }
@@ -79,7 +79,7 @@ public abstract class Profile<T>
         return language;
     }
 
-    public void setLanguage( String value )
+    public void setLanguage(String value)
     {
         language = value;
     }

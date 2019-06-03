@@ -32,13 +32,13 @@ public class SkuCollectionOperations
 	 * @param productId             Identifier for the product.
 	 * @param country               The country on which to base the product.
 	 */
-	public SkuCollectionOperations( IPartner rootPartnerOperations, String productId, String country )
+	public SkuCollectionOperations(IPartner rootPartnerOperations, String productId, String country)
 	{
-		super( rootPartnerOperations, new Tuple<String, String>(productId, country) );
+		super(rootPartnerOperations, new Tuple<String, String>(productId, country));
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
 		ParameterValidator.isValidCountryCode(country);

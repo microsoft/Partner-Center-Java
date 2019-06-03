@@ -22,9 +22,9 @@ public class CustomerUsageRecordCollectionOperations
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 */
-	public CustomerUsageRecordCollectionOperations( IPartner rootPartnerOperations )
+	public CustomerUsageRecordCollectionOperations(IPartner rootPartnerOperations)
 	{
-		super( rootPartnerOperations );
+		super(rootPartnerOperations);
 	}
 
 	/**
@@ -38,6 +38,6 @@ public class CustomerUsageRecordCollectionOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<CustomerMonthlyUsageRecord>>(){}, 
-			PartnerService.getInstance().getConfiguration().getApis().get( "GetCustomerUsageRecords" ).getPath());
+			PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsageRecords").getPath());
 	}
 }

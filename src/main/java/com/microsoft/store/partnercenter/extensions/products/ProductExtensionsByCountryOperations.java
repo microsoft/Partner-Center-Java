@@ -48,7 +48,7 @@ public class ProductExtensionsByCountryOperations
 
         parameters.add(
             new KeyValuePair<String, String>(
-                PartnerService.getInstance().getConfiguration().getApis().get( "CheckInventory" ).getParameters().get("Country"),
+                PartnerService.getInstance().getConfiguration().getApis().get("CheckInventory").getParameters().get("Country"),
                 this.getContext()));
 
         return this.getPartner().getServiceClient().post(

@@ -27,7 +27,7 @@ public abstract class UsageSummaryBase
         return __ResourceId;
     }
 
-    public void setResourceId( String value )
+    public void setResourceId(String value)
     {
         __ResourceId = value;
     }
@@ -43,7 +43,7 @@ public abstract class UsageSummaryBase
         return __ResourceName;
     }
 
-    public void setResourceName( String value )
+    public void setResourceName(String value)
     {
         __ResourceName = value;
     }
@@ -58,7 +58,7 @@ public abstract class UsageSummaryBase
         return __BillingStartDate;
     }
 
-    public void setBillingStartDate( DateTime value )
+    public void setBillingStartDate(DateTime value)
     {
         __BillingStartDate = value;
     }
@@ -73,7 +73,7 @@ public abstract class UsageSummaryBase
         return __BillingEndDate;
     }
 
-    public void setBillingEndDate( DateTime value )
+    public void setBillingEndDate(DateTime value)
     {
         __BillingEndDate = value;
     }
@@ -88,7 +88,7 @@ public abstract class UsageSummaryBase
         return __TotalCost;
     }
 
-    public void setTotalCost( double value )
+    public void setTotalCost(double value)
     {
         __TotalCost = value;
     }
@@ -103,7 +103,7 @@ public abstract class UsageSummaryBase
         return __CurrencyLocale;
     }
 
-    public void setCurrencyLocale( Locale value )
+    public void setCurrencyLocale(Locale value)
     {
         __CurrencyLocale = value;
     }
@@ -118,7 +118,7 @@ public abstract class UsageSummaryBase
         return __LastModifiedDate;
     }
 
-    public void setLastModifiedDate( DateTime value )
+    public void setLastModifiedDate(DateTime value)
     {
     	__LastModifiedDate = value;
     }

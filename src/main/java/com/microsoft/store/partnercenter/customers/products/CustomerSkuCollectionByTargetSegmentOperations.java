@@ -32,23 +32,23 @@ public class CustomerSkuCollectionByTargetSegmentOperations
 	 * @param productId             The product id for which to retrieve its SKUs.
 	 * @param targetSegment         The target segment used for filtering the SKUs.
 	 */
-	public CustomerSkuCollectionByTargetSegmentOperations( IPartner rootPartnerOperations, String customerId, String productId, String targetSegment )
+	public CustomerSkuCollectionByTargetSegmentOperations(IPartner rootPartnerOperations, String customerId, String productId, String targetSegment)
 	{
-		super( rootPartnerOperations, new TripletTuple<String, String, String>(customerId, productId, targetSegment) );
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, productId, targetSegment));
 
-		if ( StringHelper.isNullOrWhiteSpace( customerId ) )
+		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
-			throw new IllegalArgumentException( "customerId must be set" );
+			throw new IllegalArgumentException("customerId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( productId ) )
+		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
-			throw new IllegalArgumentException( "productId must be set" );
+			throw new IllegalArgumentException("productId must be set");
 		}
 
-		if ( StringHelper.isNullOrWhiteSpace( targetSegment ) )
+		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
-			throw new IllegalArgumentException( "targetSegment must be set" );
+			throw new IllegalArgumentException("targetSegment must be set");
 		}
 	}
 
@@ -74,7 +74,7 @@ public class CustomerSkuCollectionByTargetSegmentOperations
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<Sku>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerSkus").getPath(),
 				this.getContext().getItem1(),
 				this.getContext().getItem2()),

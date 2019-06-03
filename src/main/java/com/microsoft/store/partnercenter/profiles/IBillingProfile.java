@@ -26,5 +26,5 @@ public interface IBillingProfile
      * @param billingProfile The billing profile information.
      * @return The updated billing profile.
      */
-    BillingProfile update( BillingProfile billingProfile );
+    BillingProfile update(BillingProfile billingProfile);
 }

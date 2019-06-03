@@ -52,7 +52,7 @@ public class SubscriptionActivationLinksOperations extends BasePartnerComponent<
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<ResourceCollection<OrderLineItemActivationLink>>(){}, 
-			MessageFormat.format( 
+			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetSubscriptionActivationLink").getPath(),
 				this.getContext().getItem1(), 
 				this.getContext().getItem2()));

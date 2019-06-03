@@ -22,8 +22,8 @@ public class BillingProfile
      */
     public BillingProfile()
     {
-        this.setAddress( new Address() );
-        this.setPrimaryContact( new Contact() );
+        this.setAddress(new Address());
+        this.setPrimaryContact(new Contact());
     }
 
     /**
@@ -36,7 +36,7 @@ public class BillingProfile
         return __CompanyName;
     }
 
-    public void setCompanyName( String value )
+    public void setCompanyName(String value)
     {
         __CompanyName = value;
     }
@@ -51,7 +51,7 @@ public class BillingProfile
         return __Address;
     }
 
-    public void setAddress( Address value )
+    public void setAddress(Address value)
     {
         __Address = value;
     }
@@ -66,7 +66,7 @@ public class BillingProfile
         return __PrimaryContact;
     }
 
-    public void setPrimaryContact( Contact value )
+    public void setPrimaryContact(Contact value)
     {
         __PrimaryContact = value;
     }
@@ -81,7 +81,7 @@ public class BillingProfile
         return __PurchaseOrderNumber;
     }
 
-    public void setPurchaseOrderNumber( String value )
+    public void setPurchaseOrderNumber(String value)
     {
         __PurchaseOrderNumber = value;
     }
@@ -96,7 +96,7 @@ public class BillingProfile
         return __TaxId;
     }
 
-    public void setTaxId( String value )
+    public void setTaxId(String value)
     {
         __TaxId = value;
     }
@@ -111,7 +111,7 @@ public class BillingProfile
         return __BillingDay;
     }
 
-    public void setBillingDay( int value )
+    public void setBillingDay(int value)
     {
         __BillingDay = value;
     }
@@ -126,7 +126,7 @@ public class BillingProfile
         return __BillingCurrency;
     }
 
-    public void setBillingCurrency( String value )
+    public void setBillingCurrency(String value)
     {
         __BillingCurrency = value;
     }

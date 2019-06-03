@@ -18,7 +18,7 @@ public class InvoiceSummaryDetail
         return __InvoiceType;
     }
 
-    public void setInvoiceType( String value )
+    public void setInvoiceType(String value)
     {
         __InvoiceType = value;
     }
@@ -33,7 +33,7 @@ public class InvoiceSummaryDetail
         return __Summary;
     }
 
-    public void setSummary( InvoiceSummary value )
+    public void setSummary(InvoiceSummary value)
     {
         __Summary = value;
     }

@@ -21,13 +21,13 @@ public class InvoiceDocumentsOperations
 	 * @param rootPartnerOperations The root partner operations instance.
      * @param invoiceId The invoice identifier.
 	 */
-	public InvoiceDocumentsOperations( IPartner rootPartnerOperations, String invoiceId )
+	public InvoiceDocumentsOperations(IPartner rootPartnerOperations, String invoiceId)
 	{
-		super( rootPartnerOperations, invoiceId );
+		super(rootPartnerOperations, invoiceId);
 	    
-        if ( StringHelper.isNullOrWhiteSpace( invoiceId ) )
+        if (StringHelper.isNullOrWhiteSpace(invoiceId))
         {
-            throw new IllegalArgumentException( "invoiceId has to be set." );
+            throw new IllegalArgumentException("invoiceId has to be set.");
         }
 	}
 
@@ -37,7 +37,7 @@ public class InvoiceDocumentsOperations
 	@Override
 	public IInvoiceStatement getStatement()
 	{
-		return new InvoiceStatementOperations( this.getPartner(), this.getContext() );
+		return new InvoiceStatementOperations(this.getPartner(), this.getContext());
 	}
 
 }

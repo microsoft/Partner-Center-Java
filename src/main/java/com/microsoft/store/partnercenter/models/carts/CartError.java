@@ -13,7 +13,7 @@ public class CartError extends ResourceBase {
     /**
      * Gets or sets a cart error code.
      */
-	@JsonProperty( "errorCode" )
+	@JsonProperty("errorCode")
     private CartErrorCode errorCode;
 
     public CartErrorCode getErrorCode()
@@ -21,7 +21,7 @@ public class CartError extends ResourceBase {
         return errorCode;
     }
 
-    public void setErrorCode( CartErrorCode value )
+    public void setErrorCode(CartErrorCode value)
     {
     	errorCode = value;
     }
@@ -29,7 +29,7 @@ public class CartError extends ResourceBase {
     /**
      * Gets or sets an error description.
      */
-	@JsonProperty( "errorDescription" )
+	@JsonProperty("errorDescription")
     private String errorDescription;
 
     public String getErrorDescription()
@@ -37,7 +37,7 @@ public class CartError extends ResourceBase {
         return errorDescription;
     }
 
-    public void setErrorDescription( String value )
+    public void setErrorDescription(String value)
     {
     	errorDescription = value;
     }

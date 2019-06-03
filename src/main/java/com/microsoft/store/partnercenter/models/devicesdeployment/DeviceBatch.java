@@ -16,7 +16,7 @@ public class DeviceBatch extends StandardResourceLinks {
 	/**
 	 * Gets or sets the devices batch unique identifier.
 	 */
-	@JsonProperty( "Id" )
+	@JsonProperty("Id")
 	private String __Id;
 
 	public String getId()
@@ -24,7 +24,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		return __Id;
 	}
 
-	public void setId( String value )
+	public void setId(String value)
 	{
 		__Id = value;
 	}
@@ -32,7 +32,7 @@ public class DeviceBatch extends StandardResourceLinks {
 	/**
 	 * Gets or sets the name of the tenant who created the batch.
 	 */
-	@JsonProperty( "createdBy" )
+	@JsonProperty("createdBy")
 	private String __CreatedBy;
 
 	public String getCreatedBy()
@@ -40,7 +40,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		return __CreatedBy;
 	}
 
-	public void setCreatedBy( String value )
+	public void setCreatedBy(String value)
 	{
 		__CreatedBy = value;
 	}
@@ -48,7 +48,7 @@ public class DeviceBatch extends StandardResourceLinks {
 	/**
 	 * Gets or sets the date the batch was created.
 	 */
-	@JsonProperty( "creationDate" )
+	@JsonProperty("creationDate")
 	private DateTime __CreationDate;
 
 	public DateTime getCreationDate()
@@ -56,7 +56,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		return __CreationDate;
 	}
 
-	public void setCreationDate( DateTime value )
+	public void setCreationDate(DateTime value)
 	{
 		__CreationDate = value;
 	}
@@ -64,7 +64,7 @@ public class DeviceBatch extends StandardResourceLinks {
 	/**
 	 * Gets or sets the count of devices in the batch.
 	 */
-	@JsonProperty( "devicesCount" )
+	@JsonProperty("devicesCount")
 	private Integer __DevicesCount;
 
 	public Integer getDevicesCount()
@@ -72,7 +72,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		return __DevicesCount;
 	}
 
-	public void setDevicesCount( Integer value )
+	public void setDevicesCount(Integer value)
 	{
 		__DevicesCount = value;
 	}
@@ -80,7 +80,7 @@ public class DeviceBatch extends StandardResourceLinks {
 	/**
 	 *  Gets or sets the link to the devices under the batch.
 	 */
-	@JsonProperty( "devicesLink" )
+	@JsonProperty("devicesLink")
 	private Link __DevicesLink;
 
 	public Link getDevicesLink()
@@ -88,7 +88,7 @@ public class DeviceBatch extends StandardResourceLinks {
 		return __DevicesLink;
 	}
 
-	public void setDevicesLink( Link value )
+	public void setDevicesLink(Link value)
 	{
 		__DevicesLink = value;
 	}
