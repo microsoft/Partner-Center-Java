@@ -11,24 +11,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum ConversionErrorCode
 {
     /**
-     * Other.
+     * General error
      */
     OTHER("other"),
 
     /**
-     * Conversions not found.
+     * Cannot find any conversions for the trial subscription.
      */
-    CONVERSIONS_NOT_FOUND("conversions_not_found"),
-
-    /**
-     * Pending.
-     */
-    PENDING("pending"),
-
-    /**
-     * Failed.
-     */
-    FAILED("failed");
+    CONVERSIONS_NOT_FOUND("conversions_not_found");
 
     private final String value;
 

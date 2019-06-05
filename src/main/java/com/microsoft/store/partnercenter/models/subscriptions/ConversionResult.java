@@ -12,62 +12,102 @@ public class ConversionResult
     extends ResourceBase
 {
     /**
-     * Gets or sets the original offer id.
+     * The error encountered while attempting to perform the conversion, if applicable.
      */
-    private String __OfferId;
-
-    public String getOfferId()
-    {
-        return __OfferId;
-    }
-
-    public void setOfferId(String value)
-    {
-        __OfferId = value;
-    }
+    private ConversionError error;
 
     /**
-     * Gets or sets the target offer id.
+     * The original offer identifier.
      */
-    private String __TargetOfferId;
-
-    public String getTargetOfferId()
-    {
-        return __TargetOfferId;
-    }
-
-    public void setTargetOfferId(String value)
-    {
-        __TargetOfferId = value;
-    }
+    private String offerId;
 
     /**
-     * Gets or sets the subscription id.
+     * The subscription identifier
      */
-    private String __SubscriptionId;
-
-    public String getSubscriptionId()
-    {
-        return __SubscriptionId;
-    }
-
-    public void setSubscriptionId(String value)
-    {
-        __SubscriptionId = value;
-    }
+    private String subscriptionId;
 
     /**
-     * Gets or sets the error encountered while attempting to perform the conversion, if applicable.
+     * The target offer identifier.
      */
-    private ConversionError __Error;
+    private String targetOfferId;
 
+    /**
+     * Gets the error encountered while attempting to perform the conversion, if applicable.
+     * 
+     * @return The error encountered while attempting to perform the conversion, if applicable.
+     */
     public ConversionError getError()
     {
-        return __Error;
+        return error;
     }
 
+    /**
+     * Sets the error encountered while attempting to perform the conversion, if applicable.
+     * 
+     * @param value The  error encountered while attempting to perform the conversion, if applicable.
+     */
     public void setError(ConversionError value)
     {
-        __Error = value;
+        error = value;
+    }
+
+    /**
+     * The original offer identifier.
+     *
+     * @return The original offer identifier.
+     */
+   public String getOfferId()
+    {
+        return offerId;
+    }
+
+    /**
+     * Sets the original offer identifier.
+     * 
+     * @param value The original offer identifier.
+     */
+    public void setOfferId(String value)
+    {
+        offerId = value;
+    }
+
+    /**
+     * Gets the subscription identifier.
+     * 
+     * @return The subscription identifier.
+     */
+    public String getSubscriptionId()
+    {
+        return subscriptionId;
+    }
+
+    /**
+     * Sets the subscription identifier.
+     * 
+     * @param value The subscription identifier.
+     */
+    public void setSubscriptionId(String value)
+    {
+        subscriptionId = value;
+    }
+
+    /**
+     * Gets the target offer identifier.
+     * 
+     * @return The target offer identifier.
+     */
+    public String getTargetOfferId()
+    {
+        return targetOfferId;
+    }
+
+    /**
+     * Sets the target offer identifier.
+     * 
+     * @param value The target offer identifier.
+     */
+    public void setTargetOfferId(String value)
+    {
+        targetOfferId = value;
     }
 }

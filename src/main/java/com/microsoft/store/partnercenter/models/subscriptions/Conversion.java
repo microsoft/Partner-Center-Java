@@ -13,77 +13,127 @@ public class Conversion
     extends ResourceBase
 {
     /**
-     * Gets or sets the original offer id.
+     * The billing cycle that defines how often the partner is billed for this subscription.
      */
-    private String __OfferId;
+    private BillingCycleType billingCycle;
 
+    /**
+     * The original offer identifier.
+     */
+    private String offerId;
+
+    /**
+     * The order identifier.
+     */
+    private String orderId;
+
+    /**
+     * The quantity to be purchased. Defaults to the source subscription quantity.
+     */
+    private int quantity;
+
+    /**
+     * The target offer identifier.
+     */
+    private String targetOfferId;
+
+    /**
+     * Gets the billing cycle that defines how often the partner is billed for this subscription.
+     * 
+     * @return The billing cycle that defines how often the partner is billed for this subscription.
+     */
+    public BillingCycleType getBillingCycle()
+    {
+        return billingCycle;
+    }
+
+    /**
+     * Sets the billing cycle that defines how often the partner is billed for this subscription.
+     * 
+     * @param value The billing cycle that defines how often the partner is billed for this subscription.
+     */
+    public void setBillingCycle(BillingCycleType value)
+    {
+        billingCycle = value;
+    }
+
+    /**
+     * Gets the original offer identifier.
+     * 
+     * @return The original offer identifier.
+     */
     public String getOfferId()
     {
-        return __OfferId;
+        return offerId;
     }
 
+    /**
+     * Sets the original offer identifier.
+     * 
+     * @param value The original offer identifier.
+     */
     public void setOfferId(String value)
     {
-        __OfferId = value;
+        offerId = value;
     }
 
     /**
-     * Gets or sets the target offer id.
+     * Gets the order identifier.
+     * 
+     * @return The order identifier.
      */
-    private String __TargetOfferId;
-
-    public String getTargetOfferId()
-    {
-        return __TargetOfferId;
-    }
-
-    public void setTargetOfferId(String value)
-    {
-        __TargetOfferId = value;
-    }
-
-    /**
-     * Gets or sets the order id.
-     */
-    private String __OrderId;
-
     public String getOrderId()
     {
-        return __OrderId;
+        return orderId;
     }
 
+    /**
+     * Sets the order identifier.
+     * 
+     * @param value The order identifier.
+     */
     public void setOrderId(String value)
     {
-        __OrderId = value;
+        orderId = value;
     }
 
     /**
-     * Gets or sets the quantity to be purchased. Defaults to the source subscription quantity.
+     * Gets the quantity to be purchased. Defaults to the source subscription quantity.
+     * 
+     * @return The quantity to be purchased. Defaults to the source subscription quantity.
      */
-    private int __Quantity;
-
     public int getQuantity()
     {
-        return __Quantity;
-    }
-
-    public void setQuantity(int value)
-    {
-        __Quantity = value;
+        return quantity;
     }
 
     /**
-     * Gets or sets the billing cycle. Defines how often the partner is billed for this subscription.
+     * Sets the quantity to be purchased. Defaults to the source subscription quantity. 
+     * 
+     * @param value The quantity to be purchased. Defaults to the source subscription quantity.
      */
-    private BillingCycleType __BillingCycle;
-
-    public BillingCycleType getBillingCycleType()
+    public void setQuantity(int value)
     {
-        return __BillingCycle;
+        quantity = value;
     }
 
-    public void setBillingCycleType(BillingCycleType value)
+    /**
+     * Gets the target offer identifier.
+     * 
+     * @return The target offer identifier.
+     */
+    public String getTargetOfferId()
     {
-        __BillingCycle = value;
+        return targetOfferId;
+    }
+
+    /**
+     * Sets the target offer identifier.
+     * 
+     * @param value The target offer identifier.
+     */
+    public void setTargetOfferId(String value)
+    {
+        targetOfferId = value;
     }
 }

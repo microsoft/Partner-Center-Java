@@ -12,32 +12,52 @@ public class ConversionError
     extends ResourceBase
 {
     /**
-     * Gets or sets the error code associated with the issue.
+     * The error code associated with the issue.
      */
-    private ConversionErrorCode __Code;
+    private ConversionErrorCode code;
 
+    /**
+     * The friendly text describing the error.
+     */
+    private String description;
+
+    /**
+     * Gets the error code associated with the issue.
+     * 
+     * @return The error code associated with the issue.
+     */
     public ConversionErrorCode getCode()
     {
-        return __Code;
-    }
-
-    public void setCode(ConversionErrorCode value)
-    {
-        __Code = value;
+        return code;
     }
 
     /**
-     * Gets or sets the friendly text describing the error.
+     * Sets the error code associated with the issue.
+     * 
+     * @param value The error code associated with the issue.
      */
-    private String __Description;
-
-    public String getDescription()
+    public void setCode(ConversionErrorCode value)
     {
-        return __Description;
+        code = value;
     }
 
+    /**
+     * Gets the friendly text describing the error.
+     * 
+     * @return The friendly text describing the error.
+     */
+    public String getDescription()
+    {
+        return description;
+    }
+
+    /**
+     * Sets the friendly text describing the error.
+     * 
+     * @param value The friendly text describing the error.
+     */
     public void setDescription(String value)
     {
-        __Description = value;
+        description = value;
     }
 }

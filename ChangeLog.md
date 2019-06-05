@@ -20,7 +20,13 @@
 
 # Change Log
 
-# 1.13.2
+## Upcoming Release
+
+* Subscriptions
+  * Addressed issue [#54](https://github.com/microsoft/Partner-Center-Java/issues/54) by renaming the billing cycle type functions in the conversion class from getBillingCycleType/setBillingCycleType to getBillingCycle/setBillingCycle
+  * Removed the failed and pending conversion error codes
+
+## 1.13.2
 
 * Authentication
   * Addressed access tokens not being refreshed prior to their expiration when possible
