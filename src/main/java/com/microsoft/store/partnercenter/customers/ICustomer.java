@@ -20,6 +20,7 @@ import com.microsoft.store.partnercenter.devicesdeployment.IDevicesBatchCollecti
 import com.microsoft.store.partnercenter.entitlements.IEntitlementCollection;
 import com.microsoft.store.partnercenter.genericoperations.IEntityDeleteOperations;
 import com.microsoft.store.partnercenter.genericoperations.IEntityGetOperations;
+import com.microsoft.store.partnercenter.genericoperations.IEntityPatchOperations;
 import com.microsoft.store.partnercenter.managedservices.IManagedServiceCollection;
 import com.microsoft.store.partnercenter.models.customers.Customer;
 import com.microsoft.store.partnercenter.offers.ICustomerOfferCategoryCollection;
@@ -37,7 +38,7 @@ import com.microsoft.store.partnercenter.usage.ICustomerUsageSummary;
  * Groups operations that can be performed on a single partner customer.
  */
 public interface ICustomer
-    extends IPartnerComponentString, IEntityGetOperations<Customer>, IEntityDeleteOperations<Customer>
+    extends IPartnerComponentString, IEntityGetOperations<Customer>, IEntityDeleteOperations<Customer>, IEntityPatchOperations<Customer>
 {
     /**
      * Gets the agreements behavior for the customer.

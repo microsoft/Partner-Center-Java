@@ -20,7 +20,12 @@
 
 # Change Log
 
-## Upcoming Release
+## 1.13.4
+
+* Customers
+  * Added the ability to remove the reseller relationship
+
+## 1.13.3
 
 * Subscriptions
   * Addressed issue [#54](https://github.com/microsoft/Partner-Center-Java/issues/54) by renaming the billing cycle type functions in the conversion class from getBillingCycleType/setBillingCycleType to getBillingCycle/setBillingCycle

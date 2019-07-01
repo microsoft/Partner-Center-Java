@@ -422,7 +422,7 @@ public class CustomerOperations
 	}
 
 	/**
-	 * Obtains the subscribed skus for the customer.
+	 * Obtains the subscribed SKUs for the customer.
 	 *
 	 * @return The customer usage spending budget operations.
 	 */
@@ -598,6 +598,22 @@ public class CustomerOperations
 			new TypeReference<Customer>(){}, 
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomer").getPath(),
+				this.getContext()));
+	}
+
+	/**
+	 * Removes the relationship between the partner and customer when RelationshipToPartner == CustomerPartnerRelationship.None.
+	 * 
+	 * @return The information for the modified customer.
+	 */
+	@Override 
+	public Customer patch()
+	{
+		return this.getPartner().getServiceClient().patch(
+			this.getPartner(),
+			new TypeReference<Customer>(){}, 
+			MessageFormat.format(
+				PartnerService.getInstance().getConfiguration().getApis().get("RemoveCustomerRelationship").getPath(),
 				this.getContext()));
 	}
 
