@@ -14,7 +14,7 @@ Jar dependency binary information for maven and gradle can be found here at [mav
 <dependency>
     <groupId>com.microsoft.store</groupId>
     <artifactId>partnercenter</artifactId>
-    <version>1.13.2</version>
+    <version>1.13.4</version>
 </dependency>
 ```
 
@@ -45,5 +45,3 @@ mvn clean package
 ## Related Projects
 
 [Partner Center Java SDK Samples](https://github.com/Microsoft/Partner-Center-Java-Samples) - Sample console application that demonstrates the supported scenarios of this SDK.
-
-[Partner Center .NET SDK Samples](https://github.com/PartnerCenterSamples/Partner-Center-SDK-Samples) - Sample console application that demonstrates the supported scenarios of the Partner Center .NET SDK.
