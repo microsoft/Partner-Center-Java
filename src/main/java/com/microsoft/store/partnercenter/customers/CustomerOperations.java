@@ -602,19 +602,21 @@ public class CustomerOperations
 	}
 
 	/**
-	 * Removes the relationship between the partner and customer when RelationshipToPartner == CustomerPartnerRelationship.None.
+	 * Removes the relationship between the partner and customer when RelationshipToPartner == CustomerPartnerRelationship.NONE.
 	 * 
+	 * @param customer A customer with RelationshipToPartner == CustomerPartnerRelationship.NONE.
 	 * @return The information for the modified customer.
 	 */
 	@Override 
-	public Customer patch()
+	public Customer patch(Customer customer)
 	{
 		return this.getPartner().getServiceClient().patch(
 			this.getPartner(),
 			new TypeReference<Customer>(){}, 
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("RemoveCustomerRelationship").getPath(),
-				this.getContext()));
+				this.getContext()),
+			customer);
 	}
 
 	/**
