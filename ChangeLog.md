@@ -20,6 +20,19 @@
 
 # Change Log
 
+## 1.13.5
+
+* Carts
+  * Added the RenewsTo property to the *CartLineItem* model
+* Error Handling
+  * Added the IsRetryable property to the *ApiFault* model
+* Orders
+  * Added the RenewsTo property to the *OrderLineItem* model
+* Products
+  * Added the CancellationPolicies and RenewalOptions properties to the *AvailabilityTerm* model
+* Subscriptions
+  * Added the RenewalTermDuration property to the *Subscription* model
+
 ## 1.13.4
 
 * Customers
