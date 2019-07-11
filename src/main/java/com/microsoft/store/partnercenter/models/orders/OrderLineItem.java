@@ -54,6 +54,11 @@ public class OrderLineItem
     private int quantity;
 
     /**
+     * The renews to value.
+     */
+    private RenewsTo renewsTo;
+
+    /**
      * The resulting subscription identifier.
      */
     private String subscriptionId;
@@ -158,6 +163,16 @@ public class OrderLineItem
         return parentSubscriptionId;
     }
 
+    /**
+     * Sets the parent subscription identifier. This parameter should only be set for add-on offer purchase applies to order updates only.
+     * 
+     * @param value The parent subscription identifier.
+     */
+    public void setParentSubscriptionId(String value)
+    {
+        parentSubscriptionId = value;
+    }
+
 	/**
      * Gets the pricing for the order line item.
      * 
@@ -219,13 +234,23 @@ public class OrderLineItem
     }
 
     /**
-     * Sets the parent subscription identifier. This parameter should only be set for add-on offer purchase applies to order updates only.
+     * Gets the renews to value.
      * 
-     * @param value The parent subscription identifier.
+     * @return The renews to value.
      */
-    public void setParentSubscriptionId(String value)
+    public RenewsTo getRenewsTo()
     {
-        parentSubscriptionId = value;
+        return renewsTo;
+    }
+
+    /**
+     * Sets the renews to value.
+     * 
+     * @param value The renews to value.
+     */
+    public void setRenewsTo(RenewsTo value)
+    {
+        renewsTo = value;
     }
 
     /**

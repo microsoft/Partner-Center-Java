@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.models.products.BillingCycleType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
@@ -19,73 +18,66 @@ public class CartLineItem
     /**
      * A list of items that depend on this one, so they have to be purchased subsequently.
      */
-    @JsonProperty("addOnItems")
     private List<CartLineItem> addOnItems;
 
     /**
      * The type of billing cycle for the selected catalog item.
      */
-    @JsonProperty("billingCycle")
     private BillingCycleType billingCycle;
 
     /**
      * The catalog item identifier.
      */
-    @JsonProperty("catalogItemId")
     private String catalogItemId;
 
     /**
      * The currency code.
      */
-    @JsonProperty("currencyCode")
     private String currencyCode;
 
     /**
      * An error associated to this cart line item.
      */
-    @JsonProperty("error")
     private CartError error;
 
     /**
      * The friendly name for the result contract (subscription).
      */
-    @JsonProperty("friendlyName")
     private String friendlyName;
 
     /**
      * The unique identifier of a cart line item.
      */
-    @JsonProperty("id")
     private int id; 
 
     /**
      * The order group which indicates which items can be place in a single order.
      */
-    @JsonProperty("orderGroup")
     private String orderGroup;
 
     /**
      * A collection of participants on this purchase.
      */
-    @JsonProperty("participants")
     private Collection<KeyValuePair<ParticipantType, String>> participants;
 
     /**
      * The context that will be used for provisioning of the catalog item.
      */
-    @JsonProperty("provisioningContext")
     private Map<String, String> provisioningContext;
 
     /**
      * The product quantity.
      */
-    @JsonProperty("quantity")
     private int quantity;
+
+    /**
+     * The renews to value.
+     */
+    private RenewsTo renewsTo;
 
     /** 
      * The term duration if applicable.
      */
-    @JsonProperty("termDuration")
     private String termDuration;
 
     /**
@@ -306,6 +298,26 @@ public class CartLineItem
     public void setQuantity(int value)
     {
         quantity = value;
+    }
+
+    /**
+     * Gets the renews to value.
+     * 
+     * @return The renews to value.
+     */
+    public RenewsTo getRenewsTo()
+    {
+        return renewsTo;
+    }
+
+    /**
+     * Sets the renews to value.
+     * 
+     * @param value The renews to value.
+     */
+    public void setRenewsTo(RenewsTo value)
+    {
+        renewsTo = value;
     }
 
     /**

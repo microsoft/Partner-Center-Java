@@ -32,6 +32,11 @@ public class ApiFault
     private String errorMessage;
 
     /**
+     * A flag indicating whether or not the fault is retryable.
+     */
+    private boolean isRetryable;
+
+    /**
      * Initializes a new instance of the ApiFault class.
      */
     protected ApiFault()
@@ -97,6 +102,26 @@ public class ApiFault
     public void setErrorData(Iterable<Object> value)
     {
         errorData = value;
+    }
+
+    /**
+     * Gets a flag indicating whether or not the fault is retryable.
+     * 
+     * @return A flag indicating whether or not the fault is retryable.
+     */
+    public boolean getIsRetryable()
+    {
+        return isRetryable;
+    }
+
+    /**
+     * Sets a flag indicating whether or not the fault is retryable.
+     * 
+     * @param value A flag indicating whether or not the fault is retryable.
+     */
+    public void setIsRetryable(boolean value)
+    {
+        isRetryable = value;
     }
 
     /**

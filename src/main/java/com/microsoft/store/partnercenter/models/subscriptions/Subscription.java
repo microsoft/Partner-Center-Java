@@ -3,7 +3,6 @@
 
 package com.microsoft.store.partnercenter.models.subscriptions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microsoft.store.partnercenter.exception.PartnerException;
 import com.microsoft.store.partnercenter.models.Contract;
 import com.microsoft.store.partnercenter.models.ContractType;
@@ -22,37 +21,31 @@ public class Subscription
     /**
      * The available actions for the subscription.
      */
-    @JsonProperty("actions")
     private Iterable<String> actions;
 
     /**
      * The billing cycle type for the subscription
      */
-    @JsonProperty("billingCycle")
     private BillingCycleType billingCycle;
 
     /** 
      * The date and time the subscription was created.
      */
-    @JsonProperty("creationDate")
     private DateTime creationDate;
 
     /** 
      * The friendly name for the subscription.
      */
-    @JsonProperty("friendlyName")
     private String friendlyName;
 
     /**
      * A flag indicating whether or not the subscription has purchasable addons. 
      */
-    @JsonProperty("hasPurchasableAddons")
     private boolean hasPurchasableAddons;
 
     /**
      * The identifier for the subscription.
      */
-    @JsonProperty("id")
     private String id; 
 
     /**
@@ -63,31 +56,26 @@ public class Subscription
     /**
      * A flag indicating whether or not the subscription is a trial.
      */
-    @JsonProperty("isTrial")
     private boolean isTrial;
 
     /**
      * The identifier for the offer that created the subscription.
      */
-    @JsonProperty("offerId")
     private String offerId;
 
     /**
      * The name of the offer that created the subscription.
      */
-    @JsonProperty("offerName")
     private String offerName;
 
     /**
      * The partner subscription identifier for the subscription.
      */
-    @JsonProperty("parentSubscriptionId")
     private String parentSubscriptionId;
 
     /**
      * The entitlement identifier for the subscription.
      */
-    @JsonProperty("entitlementId")
     private String entitlementId;
 
     /**
@@ -98,13 +86,17 @@ public class Subscription
     /**
      * The quantity for the subscription.
      */
-    @JsonProperty("quantity")
     private int quantity;
 
     /**
      * The refund options for this subscription if applicable.
      */
     private Iterable<RefundOption> refundOptions;
+
+    /**
+     * The renewal term duration.
+     */
+    private String renewalTermDuration;
 
     /**
      *  The ISO 8601 representation of the term's duration. 
@@ -115,7 +107,6 @@ public class Subscription
     /**
      * The units defining the quantity for the subscription.
      */
-    @JsonProperty("unitType")
     private String unitType;
 
     /**
@@ -418,64 +409,62 @@ public class Subscription
      * Gets or sets the effective start date for this subscription. It is used to back date a migrated subscription or
      * to align it with another.
      */
-    private DateTime __EffectiveStartDate;
+    private DateTime effectiveStartDate;
 
     public DateTime getEffectiveStartDate()
     {
-        return __EffectiveStartDate;
+        return effectiveStartDate;
     }
 
-    @JsonProperty("effectiveStartDate")
     public void setEffectiveStartDate(DateTime value)
     {
-        __EffectiveStartDate = value;
+        effectiveStartDate = value;
     }
 
     /**
      * Gets or sets the commitment end date for this subscription. For the subscription which are not auto renewable
      * this represents a date far away in the future.
      */
-    private DateTime __CommitmentEndDate;
+    private DateTime commitmentEndDate;
 
     public DateTime getCommitmentEndDate()
     {
-        return __CommitmentEndDate;
+        return commitmentEndDate;
     }
 
-    @JsonProperty("commitmentEndDate")
     public void setCommitmentEndDate(DateTime value)
     {
-        __CommitmentEndDate = value;
+        commitmentEndDate = value;
     }
 
     /**
      * Gets or sets the subscription status.
      */
-    private SubscriptionStatus __Status = SubscriptionStatus.NONE;
+    private SubscriptionStatus status = SubscriptionStatus.NONE;
 
     public SubscriptionStatus getStatus()
     {
-        return __Status;
+        return status;
     }
 
     public void setStatus(SubscriptionStatus value)
     {
-        __Status = value;
+        status = value;
     }
 
     /**
      * Gets or sets a value indicating whether [automatic renew enabled].
      */
-    private boolean __AutoRenewEnabled;
+    private boolean autoRenewEnabled;
 
     public boolean getAutoRenewEnabled()
     {
-        return __AutoRenewEnabled;
+        return autoRenewEnabled;
     }
 
     public void setAutoRenewEnabled(boolean value)
     {
-        __AutoRenewEnabled = value;
+        autoRenewEnabled = value;
     }
 
     /**
@@ -573,5 +562,25 @@ public class Subscription
     public void setRefundOptions(Iterable<RefundOption> value)
     {
         refundOptions = value;
+    }
+
+    /**
+     * Gets the renewal term duration.
+     * 
+     * @return The renewal term duration.
+     */
+    public String getRenewalTermDuration()
+    {
+        return renewalTermDuration;
+    }
+
+    /**
+     * Sets the renewal term duration.
+     * 
+     * @param value The renewal term duration.
+     */
+    public void setRenewalTermDuration(String value)
+    {
+        renewalTermDuration = value;  
     }
 }

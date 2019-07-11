@@ -13,17 +13,27 @@ public class ProductLinks
     extends StandardResourceLinks
 {
     /**
-     * Gets or sets the skus link.
+     * The SKUs link.
      */
-    private Link __Skus;
+    private Link skus;
 
+    /**
+     * Gets the SKUs link.
+     * 
+     * @return The SKUs link.
+     */
     public Link getSkus()
     {
-        return __Skus;
+        return skus;
     }
 
+    /**
+     * Sets the SKUs links.
+     * 
+     * @param value The SKUs link.
+     */
     public void setSkus(Link value)
     {
-        __Skus = value;
+        skus = value;
     }
 }
