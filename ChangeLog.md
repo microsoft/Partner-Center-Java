@@ -20,6 +20,11 @@
 
 # Change Log
 
+## Upcoming Release
+
+* Dependencies
+  * Updated the com.fasterxml.jackson.jackson-databind dependency from version 2.9.9 to 2.9.9.1
+
 ## 1.13.5
 
 * Carts
@@ -49,7 +54,7 @@
 * Authentication
   * Addressed access tokens not being refreshed prior to their expiration when possible
 * Dependencies
-  * Updated com.fasterxml.jackson dependencies from version 2.9.8 to 2.9.9
+  * Updated the com.fasterxml.jackson dependencies from version 2.9.8 to 2.9.9
 
 ## 1.13.1
 
