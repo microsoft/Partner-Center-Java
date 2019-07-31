@@ -3,87 +3,145 @@
 
 package com.microsoft.store.partnercenter.models.utilizations;
 
-import java.net.URI;
 import java.util.Map;
 
 public class AzureInstanceData
 {
-    /**
-     * Gets or sets the fully qualified Azure resource ID, which includes the resource groups and the instance name.
-     */
-    private URI __ResourceUri;
-
-	public URI getResourceUri() {
-		return __ResourceUri;
-	}
-
-	public void setResourceUri(URI value) {
-		this.__ResourceUri = value;
-	}
-
-    /**
-     * Gets or sets the region in which the this service was run.
-     */
-    private String __Location;
-
-	public String getLocation() {
-		return __Location;
-	}
-
-	public void setLocation(String value) {
-		this.__Location = value;
-	}
-
-    /**
-     * Gets or sets the unique namespace used to identify the resource for Azure Marketplace 3rd party usage.
-     */
-    private String __PartNumber;
-
-	public String getPartNumber() {
-		return __PartNumber;
-	}
-
-	public void setPartNumber(String value) {
-		this.__PartNumber = value;
-	}
-
-    /**
-     * Gets or sets the unique namespace used to identify the 3rd party order for Azure Marketplace.
-     */
-    private String __OrderNumber;
-
-
-	public String getOrderNumber() {
-		return __OrderNumber;
-	}
-
-	public void setOrderNumber(String value) {
-		this.__OrderNumber = value;
-	}
+	/**
+	 * Additional data for an Azure resource.
+	 */
+	private Map<String, String> additionalInfo;
+	
+	/**
+	 * The region in which the service was run.
+	 */
+	private String location;
 
 	/**
-     * Gets or sets the resource tags specified by the user.
-     */
-    private Map<String, String> __Tags;
-
-	public Map<String, String> getTags() {
-		return __Tags;
-	}
-
-	public void setTags(Map<String, String> value) {
-		this.__Tags = value;
-	}
+	 * The unique namespace used to identify the third party order for Azure Marketplace.
+	 */
+	private String orderNumber;
 
 	/**
-     * Gets or sets the additional info fields.
-     */
-    private Map<String, String> __AdditionalInfo;
+	 * The unique namespace used to identify the resource for Azure Marketplace third party usage.
+	 */
+	private String partNumber;
 
+	/**
+	 * The fully qualified Azure resource ID, which includes the resource groups and the instance name.
+	 */
+	private String resourceUri;
+
+	/**
+	 * The resource tags specified by the user.
+	 */
+	private Map<String, String> tags;
+
+	/**
+	 * Gets additional data for an Azure resource.
+	 * 
+	 * @return Additional data for an Azure resource.
+	 */
 	public Map<String, String> getAdditionalInfo() {
-		return __AdditionalInfo;
+		return additionalInfo;
 	}
 
+	/**
+	 * Sets additional data for an Azure resource.
+	 * 
+	 * @param value The additional data for an Azure resource.
+	 */
 	public void setAdditionalInfo(Map<String, String> value) {
-		this.__AdditionalInfo = value;
+		additionalInfo = value;
+	}
+
+	/**
+	 * Gets the region in which the service was run.
+	 * 
+	 * @return The region in which the service was run.
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * Sets the region in which the service was run.
+	 * 
+	 * @param value The region in which the service was run.
+	 */
+	public void setLocation(String value) {
+		location = value;
+	}
+
+	/**
+	 * Gets the unique namespace used to identify the third party order for Azure Marketplace.
+	 * 
+	 * @return The unique namespace used to identify the third party order for Azure Marketplace.
+	 */
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+
+	/**
+	 * Sets the unique namespace used to identify the third party order for Azure Marketplace.
+	 * 
+	 * @param value The unique namespace used to identify the third party order for Azure Marketplace.
+	 */
+	public void setOrderNumber(String value) {
+		orderNumber = value;
+	}
+
+	/**
+	 * Gets the unique namespace used to identify the resource for Azure Marketplace third party usage.
+	 * 
+	 * @return The unique namespace used to identify the resource for Azure Marketplace third party usage.
+	 */
+	public String getPartNumber() {
+		return partNumber;
+	}
+
+	/**
+	 * Sets the unique namespace used to identify the resource for Azure Marketplace third party usage.
+	 * 
+	 * @param value The unique namespace used to identify the resource for Azure Marketplace third party usage.
+	 */
+	public void setPartNumber(String value) {
+		partNumber = value;
+	}
+
+	/**
+	 * Gets the fully qualified Azure resource ID, which includes the resource groups and the instance name.
+	 * 
+	 * @return The fully qualified Azure resource ID, which includes the resource groups and the instance name.
+	 */
+	public String getResourceUri() {
+		return resourceUri;
+	}
+
+	/**
+	 * Sets the fully qualified Azure resource ID, which includes the resource groups and the instance name.
+	 * 
+	 * @param value The fully qualified Azure resource ID, which includes the resource groups and the instance name.
+	 */
+	public void setResourceUri(String value) {
+		resourceUri = value;
+	}
+
+	/**
+	 * Gets the resource tags specified by the user.
+	 * 
+	 * @return The resource tags specified by the user.
+	 */
+	public Map<String, String> getTags() {
+		return tags;
+	}
+
+	/**
+	 * Sets the resource tags specified by the user.
+	 * 
+	 * @param value The resource tags specified by the user.
+	 */
+	public void setTags(Map<String, String> value) {
+		tags = value;
 	}
 }

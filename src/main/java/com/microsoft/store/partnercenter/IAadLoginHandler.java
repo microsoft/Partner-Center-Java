@@ -4,7 +4,7 @@
 package com.microsoft.store.partnercenter;
 
 /**
- * Represents the interface for Azure Active Directory Hanlder
+ * Represents the interface for Azure Active Directory handler.
  *
  */
 public interface IAadLoginHandler

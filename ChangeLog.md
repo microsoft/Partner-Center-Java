@@ -22,6 +22,8 @@
 
 ## Upcoming Release
 
+* Azure utilization records
+  * Change the type for the resourceUri property from URI to String
 * Dependencies
   * Updated the com.fasterxml.jackson.jackson-databind dependency from version 2.9.9 to 2.9.9.1
 
