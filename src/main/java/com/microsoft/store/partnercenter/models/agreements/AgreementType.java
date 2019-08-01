@@ -3,6 +3,7 @@
 
 package com.microsoft.store.partnercenter.models.agreements;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
@@ -13,13 +14,27 @@ public enum AgreementType
     /**
      * Microsoft cloud agreement type.
      */
-    MICROSOFT_CLOUD_AGREEMENT("MicrosoftCloudAgreement");
+    MICROSOFT_CLOUD_AGREEMENT("MicrosoftCloudAgreement"),
+    MICROSOFT_CUSTOMER_AGREEMENT("MicrosoftCustomerAgreement");
 
     private final String value;
 
     AgreementType(String value)
     {
         this.value = value;
+    }
+
+    @JsonCreator
+    public static AgreementType fromString(String value)
+    {
+        for (final AgreementType item : AgreementType.values())
+        {
+            if (item.toString().equals(value))
+            {
+                return item;
+            }
+        }
+        return null;
     }
 
     /**
