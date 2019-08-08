@@ -13,33 +13,52 @@ public class CustomerMonthlyUsageRecord
     extends UsageRecordBase
 {
     /**
-     * Gets or sets the spending budget allocated for a specific customer.
+     * The spending budget allocated for the customer.
      */
-    private SpendingBudget __Budget;
+    private SpendingBudget budget;
 
+    /**
+     * The percentage used out of the allocated budget.
+     */
+    private double percentUsed;
+ 
+    /**
+     * Gets the spending budget allocated for the customer.
+     * 
+     * @return The spending budget allocated for the customer.
+     */
     public SpendingBudget getBudget()
     {
-        return __Budget;
-    }
-
-    public void setBudget(SpendingBudget value)
-    {
-        __Budget = value;
+        return budget;
     }
 
     /**
-     * Gets or sets the percentage used out of the allocated budget.
+     * Sets the spending budget allocated for the customer.
+     * 
+     * @param value The spending budget allocated for the customer.
      */
-    private double __PercentUsed;
+    public void setBudget(SpendingBudget value)
+    {
+        budget = value;
+    }
 
+    /**
+     * Gets the percentage used out of the allocated budget.
+     * 
+     * @return The percentage used out of the allocated budget.
+     */
     public double getPercentUsed()
     {
-        return __PercentUsed;
+        return percentUsed;
     }
 
+    /**
+     * Sets the percentage used out of the allocated budget.
+     * 
+     * @param value The percentage used out of the allocated budget.
+     */
     public void setPercentUsed(double value)
     {
-        __PercentUsed = value;
+        percentUsed = value;
     }
-
 }

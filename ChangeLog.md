@@ -20,6 +20,11 @@
 
 # Change Log
 
+## Upcoming Release
+
+* Usage
+  * Replaced the id and name properties with the resourceId and resourceName properties respectively
+
 ## 1.13.6
 
 * Agreements

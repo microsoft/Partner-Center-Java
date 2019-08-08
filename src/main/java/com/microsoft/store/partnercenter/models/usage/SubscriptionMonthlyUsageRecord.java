@@ -3,114 +3,37 @@
 
 package com.microsoft.store.partnercenter.models.usage;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.microsoft.store.partnercenter.models.subscriptions.SubscriptionStatus;
 
 /**
- * The class defines the monthly usage record of a subscription.
+ * Defines the monthly usage record of a subscription.
  */
-@JsonIgnoreProperties({ "offerId", "lastModifiedDate" })
 public class SubscriptionMonthlyUsageRecord
     extends UsageRecordBase
 {
-    private String __ResourceId;
-
     /**
-     * Gets the resource unique identifier. In this context of a customer monthly usage record this identifier is the customer identifier.
-     * 
-     * @return The resource unique identifier.
+     * The offer identifier associated to this subscription.
      */
-    public String getResourceId()
-    {
-        return __ResourceId;
-    }
+    private String offerId;
 
     /**
-     * Sets the resource unique identifier. In this context of a customer monthly usage record this identifier is the customer identifier.
-     * 
-     * @param value The resource identifier.
+     * The partner on record.
      */
-    public void setResourceId(String value)
-    {
-        __ResourceId = value;
-    }
-
-    private String __ResourceName;
+    private String partnerOnRecord;
 
     /**
-     * Gets the name of the resource. In this context of a customer monthly usage record this name is the customer name.
-     * 
-     * @return The name of the resource.
+     * The status of the subscription.
      */
-    public String getResourceName()
-    {
-        return __ResourceName;
-    }
+    private SubscriptionStatus status = SubscriptionStatus.NONE;
 
     /**
-     * Sets name of the resource. In this context of a customer monthly usage record this name is the customer name.
-     * 
-     * @param value The name of the resource.
-     */
-    public void setResourceName(String value)
-    {
-        __ResourceName = value;
-    }
-
-    private SubscriptionStatus __Status = SubscriptionStatus.NONE;
-
-    /**
-     * Gets the status of the subscription.
-     * 
-     * @return The status of the subscription.
-     */
-    public SubscriptionStatus getStatus()
-    {
-        return __Status;
-    }
-
-    /**
-     * Sets the status of the subscription.
-     * 
-     * @param value The status of the subscription.
-     */
-    public void setStatus(SubscriptionStatus value)
-    {
-        __Status = value;
-    }
-
-    private String __PartnerOnRecord;
-
-    /**
-     * Gets the partner on record.
-     * 
-     * @return The partner on record.
-     */
-    public String getPartnerOnRecord()
-    {
-        return __PartnerOnRecord;
-    }
-
-    /**
-     * Sets the partner on record.
-     * 
-     * @param value The partner on record.
-     */
-    public void setPartnerOnRecord(String value)
-    {
-        __PartnerOnRecord = value;
-    }
-    
-    private String __OfferId;
-    
-    /**
-     * Gets the partner on record.
+     * Gets the offer identifier associated to this subscription.
      * 
      * @return The offer identifier associated to this subscription.
      */
     public String getOfferId()
     {
-        return __OfferId;
+        return offerId;
     }
 
     /**
@@ -120,6 +43,46 @@ public class SubscriptionMonthlyUsageRecord
      */
     public void setOfferId(String value)
     {
-    	__OfferId = value;
+    	offerId = value;
     }
+
+    /**
+     * Gets the partner on record.
+     * 
+     * @return The partner on record.
+     */
+    public String getPartnerOnRecord()
+    {
+        return partnerOnRecord;
+    }
+
+    /**
+     * Sets the partner on record.
+     * 
+     * @param value The partner on record.
+     */
+    public void setPartnerOnRecord(String value)
+    {
+        partnerOnRecord = value;
+    }
+
+    /**
+     * Gets the status of the subscription.
+     * 
+     * @return The status of the subscription.
+     */
+    public SubscriptionStatus getStatus()
+    {
+        return status;
+    }
+
+    /**
+     * Sets the status of the subscription.
+     * 
+     * @param value The status of the subscription.
+     */
+    public void setStatus(SubscriptionStatus value)
+    {
+        status = value;
+    }  
 }

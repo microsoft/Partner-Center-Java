@@ -10,84 +10,133 @@ import org.joda.time.DateTime;
 import com.microsoft.store.partnercenter.models.ResourceBase;
 
 /**
- * This class defines the common properties for all usage records.
+ * Defines the common properties for all usage records.
  */
 public class UsageRecordBase
     extends ResourceBase
 {
     /**
-     * Gets or sets the resource unique identifier.
+     * The locale of the currency.
      */
-    private String __Id;
-
-    public String getId()
-    {
-        return __Id;
-    }
-
-    public void setId(String value)
-    {
-        __Id = value;
-    }
+    private Locale currencyLocale;
 
     /**
-     * Gets or sets the name of the resource.
+     * The date the usage record was last modified.
      */
-    private String __Name;
-
-    public String getName()
-    {
-        return __Name;
-    }
-
-    public void setName(String value)
-    {
-        __Name = value;
-    }
+    private DateTime lastModifiedDate;
 
     /**
-     * Gets or sets the estimated total cost of usage for the resources in the subscription.
+     * The resource unique identifier.
      */
-    private double __TotalCost;
-
-    public double getTotalCost()
-    {
-        return __TotalCost;
-    }
-
-    public void setTotalCost(double value)
-    {
-        __TotalCost = value;
-    }
+    private String resourceId;
 
     /**
-     * Gets or sets the currency locale.
+     * The name of the resource.
      */
-    private Locale __CurrencyLocale;
+    private String resourceName;
 
+    /**
+     * The estimated total cost of usage.
+     */
+    private double totalCost;
+
+    /**
+     * Gets the locale of the currency.
+     * 
+     * @return The locale of the currency.
+     */
     public Locale getCurrencyLocale()
     {
-        return __CurrencyLocale;
-    }
-
-    public void setCurrencyLocale(Locale value)
-    {
-        __CurrencyLocale = value;
+        return currencyLocale;
     }
 
     /**
-     * Gets or sets the Last Modified date.
+     * Sets the locale of the currency.
+     * 
+     * @param value The locale of the currency.
      */
-    private DateTime __LastModifiedDate;
-
-    public DateTime getLastModifiedDate()
+    public void setCurrencyLocale(Locale value)
     {
-        return __LastModifiedDate;
+        currencyLocale = value;
     }
 
+    /**
+     * Sets the date the usage record was last modified.
+     * 
+     * @param value The date the usage record was last modified.
+     */
     public void setLastModifiedDate(DateTime value)
     {
-    	__LastModifiedDate = value;
+    	lastModifiedDate = value;
     }
 
+    /**
+     * Gets the resource unique identifier.
+     * 
+     * @return The resource unique identifier.
+     */
+    public String getResourceId()
+    {
+        return resourceId;
+    }
+
+    /**
+     * Sets the resource unique identifier.
+     * 
+     * @param value The resource unique identifier.
+     */
+    public void setId(String value)
+    {
+        resourceId = value;
+    }
+
+    /**
+     * Gets the name of the resource.
+     * 
+     * @return The name of the resource.
+     */
+    public String getResourceName()
+    {
+        return resourceName;
+    }
+
+    /**
+     * Sets the name of the resource.
+     * 
+     * @param value The name of the resource.
+     */
+    public void setResourceName(String value)
+    {
+        resourceName = value;
+    }
+
+    /**
+     * Gets the estimated total cost of usage.
+     * 
+     * @return The estimated total cost of usage.
+     */
+    public double getTotalCost()
+    {
+        return totalCost;
+    }
+
+    /**
+     * Sets the  estimated total cost of usage.
+     * 
+     * @param value  The estimated total cost of usage.
+     */
+    public void setTotalCost(double value)
+    {
+        totalCost = value;
+    }
+
+    /**
+     * Gets the date the usage record was last modified.
+     * 
+     * @return The date the usage record was last modified.
+     */
+    public DateTime getLastModifiedDate()
+    {
+        return lastModifiedDate;
+    }
 }

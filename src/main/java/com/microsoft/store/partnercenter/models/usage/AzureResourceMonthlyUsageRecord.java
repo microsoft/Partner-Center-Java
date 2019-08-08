@@ -4,43 +4,11 @@
 package com.microsoft.store.partnercenter.models.usage;
 
 /**
- * This class defines the monthly usage record for an Azure subscription resource
+ * Defines the monthly usage record for an Azure subscription resource.
  */
 public class AzureResourceMonthlyUsageRecord
     extends UsageRecordBase
 {
-    /**
-     * Gets or sets the resource unique identifier. In the context of CustomerMonthlyUsageRecord this id is the customer
-     * id.
-     */
-    private String __ResourceId;
-
-    public String getResourceId()
-    {
-        return __ResourceId;
-    }
-
-    public void setResourceId(String value)
-    {
-        __ResourceId = value;
-    }
-
-    /**
-     * Gets or sets the name of the resource. In the context of CustomerMonthlyUsageRecord this name is the customer
-     * name.
-     */
-    private String __ResourceName;
-
-    public String getResourceName()
-    {
-        return __ResourceName;
-    }
-
-    public void setResourceName(String value)
-    {
-        __ResourceName = value;
-    }
-
     /**
      * Gets or sets the azure resource category.
      */
@@ -100,5 +68,4 @@ public class AzureResourceMonthlyUsageRecord
     {
         __Unit = value;
     }
-
 }
