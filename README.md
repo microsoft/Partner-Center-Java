@@ -1,6 +1,6 @@
 # Partner Center Java SDK
 
-![Build status](https://dev.azure.com/partnercenter/sdk/_apis/build/status/partner-center-java-CI)
+[![Build Status](https://dev.azure.com/isaiahwilliams/community/_apis/build/status/partner-center-java/partner-center-java%20CI?branchName=master)](https://dev.azure.com/isaiahwilliams/community/_build/latest?definitionId=12&branchName=master)
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.store/partnercenter.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.microsoft.store%22%20AND%20a:%22partnercenter%22) [![GitHub issues](https://img.shields.io/github/issues/Microsoft/Partner-Center-Java.svg)](https://github.com/Microsoft/Partner-Center-Java/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Microsoft/Partner-Center-Java.svg)](https://gitHub.com/Microsoft/Partner-Center-Java/pull/)
 
