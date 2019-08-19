@@ -156,6 +156,7 @@ public class CustomerUsersCollectionOperations
 			{
 				// add the filter to the request if specified
 				ObjectMapper mapper = new ObjectMapper();
+				
 				try
 				{
 					parameters.add(
@@ -175,31 +176,15 @@ public class CustomerUsersCollectionOperations
 			}
 			if (customerUsersQuery.getSort() != null)
 			{
-				// add the sort details to the request if specified
-				ObjectMapper sortMapper = new ObjectMapper();
+				parameters.add(
+					new KeyValuePair<String, String>(
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("SortField"),
+						customerUsersQuery.getSort().getSortField())); 
 
-				try
-				{
-					parameters.add(
-						new KeyValuePair<String, String>(
-							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("SortField"),
-							URLEncoder.encode(sortMapper.writeValueAsString(customerUsersQuery.getSort().getSortField()),
-							"UTF-8"))); 
-
-					parameters.add(
-						new KeyValuePair<String, String>(
-							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get ("SortDirection"),
-							URLEncoder.encode(sortMapper.writeValueAsString(customerUsersQuery.getSort().getSortDirection()),
-							"UTF-8")));
-				}
-				catch (UnsupportedEncodingException e)
-				{
-					throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
-				}
-				catch (JsonProcessingException e)
-				{
-					throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
-				}
+				parameters.add(
+					new KeyValuePair<String, String>(
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("SortDirection"),
+						customerUsersQuery.getSort().getSortDirection().toString()));
 			}
 		}
 

@@ -11,46 +11,65 @@ import java.text.MessageFormat;
 public class Sort
 {
     /**
+     * The field used for sorting.
+     */
+    private String sortField; 
+
+    /**
+     * The direction the resources should be sorted.
+     */
+    private SortDirection sortDirection;
+
+    /**
      * Initializes a new instance of the Sort class.
      * 
      * @param sortField The sort field.
      * @param sortDirection The sort direction.
      */
     public Sort(String sortField, SortDirection sortDirection)
-
     {
         this.setSortField(sortField);
         this.setSortDirection(sortDirection);
     }
 
     /**
-     * Gets or sets the sort field.
+     * Gets the sort field.
+     * 
+     * @return The sort field.
      */
-    private String __SortField;
-
     public String getSortField()
     {
-        return __SortField;
-    }
-
-    public void setSortField(String value)
-    {
-        __SortField = value;
+        return sortField;
     }
 
     /**
-     * Gets or sets the sort direction.
+     * Gets the sort field. 
+     * 
+     * @param value The sort field.
      */
-    private SortDirection __SortDirection;
-
-    public SortDirection getSortDirection()
+    public void setSortField(String value)
     {
-        return __SortDirection;
+        sortField = value;
     }
 
+    /**
+     * Sets the sort direction.
+     * 
+     * @return The sort direction.
+     */
+    public SortDirection getSortDirection()
+    {
+        return sortDirection;
+    }
+
+    /**
+     * Sets the sort direction.
+     * 
+     * @param value The sort direction.
+     */
     public void setSortDirection(SortDirection value)
     {
-        __SortDirection = value;
+        sortDirection = value;
     }
 
     /**
