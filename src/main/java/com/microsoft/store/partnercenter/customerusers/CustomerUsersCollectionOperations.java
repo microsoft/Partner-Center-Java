@@ -29,18 +29,8 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
 
 public class CustomerUsersCollectionOperations 
 		extends BasePartnerComponent<String>
-		implements ICustomerUserCollection {
-
-	/**
-	 * The minimum allowed page size for the collection.
-	 */
-	private static final int MIN_PAGE_SIZE = 1;
-
-	/**
-	 * The maximum allowed page size for the collection.
-	 */
-	private static final int MAX_PAGE_SIZE = 500;
-
+		implements ICustomerUserCollection 
+{
 	/**
 	 * Initializes a new instance of the CustomerUsersCollectionOperations class.
 	 * 
@@ -114,7 +104,8 @@ public class CustomerUsersCollectionOperations
 	 * @return Customer user collection.
 	 */
 	@Override
-	public SeekBasedResourceCollection<CustomerUser> query(IQuery customerUsersQuery) {
+	public SeekBasedResourceCollection<CustomerUser> query(IQuery customerUsersQuery) 
+	{
 		if (customerUsersQuery == null)
 		{
 			throw new IllegalArgumentException("customerUsersQuery can't be null");
@@ -137,33 +128,28 @@ public class CustomerUsersCollectionOperations
 			}
 
 			headers.put(
-				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getAdditionalHeaders().get("ContinuationToken"),
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getAdditionalHeaders().get("ContinuationToken"),
 				customerUsersQuery.getToken().toString());
 			
 			parameters.add(
 				new KeyValuePair<String, String>(
-					PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("SeekOperation"),
+					PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("SeekOperation"),
 					customerUsersQuery.getSeekOperation().toString()));
 		}
 		else
 		{
 			if (customerUsersQuery.getType() == QueryType.INDEXED)
 			{
-				// if the query specifies a page size, validate it and add it to the request
-				ParameterValidator.isIntInclusive(MIN_PAGE_SIZE, MAX_PAGE_SIZE, customerUsersQuery.getPageSize(),
-												   MessageFormat.format("Allowed page size values are from {0}-{1}",
-																		 MIN_PAGE_SIZE, MAX_PAGE_SIZE));
-
 				parameters.add(
 					new KeyValuePair<String, String>(
-						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("Size"),
 						String.valueOf(customerUsersQuery.getPageSize())));
 			}
 			else
 			{
 				parameters.add(
 					new KeyValuePair<String, String>(
-						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Size"),
+						PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("Size"),
 						"0"));
 			}
 			if (customerUsersQuery.getFilter() != null)
@@ -174,7 +160,7 @@ public class CustomerUsersCollectionOperations
 				{
 					parameters.add(
 						new KeyValuePair<String, String>(
-							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomers").getParameters().get("Filter"),
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("Filter"),
 							URLEncoder.encode(mapper.writeValueAsString(customerUsersQuery.getFilter()),
 							"UTF-8")));
 				}
@@ -196,13 +182,13 @@ public class CustomerUsersCollectionOperations
 				{
 					parameters.add(
 						new KeyValuePair<String, String>(
-							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("Sort"),
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get("SortField"),
 							URLEncoder.encode(sortMapper.writeValueAsString(customerUsersQuery.getSort().getSortField()),
 							"UTF-8"))); 
 
 					parameters.add(
 						new KeyValuePair<String, String>(
-							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get ("Sort"),
+							PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerUsers").getParameters().get ("SortDirection"),
 							URLEncoder.encode(sortMapper.writeValueAsString(customerUsersQuery.getSort().getSortDirection()),
 							"UTF-8")));
 				}
@@ -215,7 +201,6 @@ public class CustomerUsersCollectionOperations
 					throw new PartnerException("", null, PartnerErrorCategory.REQUEST_PARSING, e);
 				}
 			}
-			
 		}
 
 		return this.getPartner().getServiceClient().get(

@@ -22,6 +22,8 @@
 
 ## Upcoming Release
 
+* Customer users
+  * Addressed issue [#39](https://github.com/microsoft/Partner-Center-Java/issues/39) preventing sorting from working as expected when querying customer users
 * Usage
   * Replaced the id and name properties with the resourceId and resourceName properties respectively
 
