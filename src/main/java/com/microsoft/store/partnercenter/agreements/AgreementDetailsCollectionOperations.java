@@ -9,6 +9,7 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Agreement details collection operations implementation class.
@@ -39,5 +40,17 @@ public class AgreementDetailsCollectionOperations
             this.getPartner(),
             new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
             PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath());
+    }
+
+    /**
+     * Retrieves the operations tied with a specified agreement type.
+     *
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
+     */
+    @Override
+    public IAgreementDetailsCollectionByAgreementType byAgreementType(AgreementType agreementType)
+    {
+        return new AgreementDetailsCollectionByAgreementTypeOperations(this.getPartner(), agreementType);
     }
 }

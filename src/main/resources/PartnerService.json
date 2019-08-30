@@ -29,7 +29,10 @@
       }
     },
     "GetAgreementsDetails": {
-      "Path": "agreements"
+      "Path": "agreements",
+      "Parameters": {
+        "AgreementType": "agreementType"
+      }
     },
     "CreateCustomerAgreement": {
       "Path": "customers/{0}/agreements"

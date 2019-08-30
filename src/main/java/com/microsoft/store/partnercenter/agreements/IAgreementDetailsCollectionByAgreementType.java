@@ -3,31 +3,23 @@
 
 package com.microsoft.store.partnercenter.agreements;
 
-import com.microsoft.store.partnercenter.IPartnerComponentString;
+import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
 import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
- * Encapsulates the operations on the agreement metadata collection.
+ * Encapsulates the operations on the agreement metadata by agreement type collection.
  */
-public interface IAgreementDetailsCollection
-        extends IPartnerComponentString,
+public interface IAgreementDetailsCollectionByAgreementType
+        extends IPartnerComponent<AgreementType>,
         IEntireEntityCollectionRetrievalOperations<AgreementMetaData, ResourceCollection<AgreementMetaData>>
 {
     /**
-     * Retrieves all current agreement metadata.
+     * Retrieves all current agreement metadata for specified agreement type.
      *
-     * @return The current agreement metadata.
+     * @return A list of agreement details for specified agreement type.
      */
     ResourceCollection<AgreementMetaData> get();
-
-    /**
-     * Retrieves the operations tied with a specified agreement type.
-     *
-     * @param agreementType The agreement type filter.
-     * @return The available operations for agreement details.
-     */
-    IAgreementDetailsCollectionByAgreementType byAgreementType(AgreementType agreementType);
 }
