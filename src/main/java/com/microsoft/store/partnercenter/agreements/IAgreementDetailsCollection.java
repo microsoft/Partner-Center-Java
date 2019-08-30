@@ -17,7 +17,7 @@ public interface IAgreementDetailsCollection
         IEntireEntityCollectionRetrievalOperations<AgreementMetaData, ResourceCollection<AgreementMetaData>>
 {
     /**
-     * Retrieves all current agreement metadata.
+     * Gets the agreement details.
      *
      * @return The current agreement metadata.
      */

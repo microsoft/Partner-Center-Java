@@ -11,6 +11,7 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -37,16 +38,15 @@ public class CustomerAgreementCollectionOperations
     }
 
     /**
-     * Adds accepted agreement.
+     * Creates an agreement between the partner and customer.
      *
-     * @param newAgreement Agreement to add.
-     *
-     * @return Agreement entity.
+     * @param newEntity The agreement to be created.
+     * @return The newly created agreement.
      */
     @Override
-    public Agreement create(Agreement newAgreement)
+    public Agreement create(Agreement newEntity)
     {
-        if (newAgreement == null)
+        if (newEntity == null)
         {
             throw new IllegalArgumentException("Agreement can't be null.");
         }
@@ -57,13 +57,13 @@ public class CustomerAgreementCollectionOperations
             MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("CreateCustomerAgreement").getPath(),
                 this.getContext()),
-            newAgreement);
+            newEntity);
     }
 
     /**
-     * Retrieves all agreements.
+     * Gets the list of agreements between a partner and customer.
      *
-     * @return A collection of all agreements.
+     * @return The list of the customer's agreements.
      */
     @Override
     public ResourceCollection<Agreement> get()
@@ -74,5 +74,17 @@ public class CustomerAgreementCollectionOperations
             MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getPath(),
                 this.getContext()));
+    }
+
+    /**
+     * Retrieves the operations tied with a specified agreement type.
+     *
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
+     */
+    @Override
+    public ICustomerAgreementCollectionByAgreementType byAgreementType(final AgreementType agreementType)
+    {
+        return new CustomerAgreementCollectionByAgreementTypeOperations(this.getPartner(), this.getContext(), agreementType);
     }
 }

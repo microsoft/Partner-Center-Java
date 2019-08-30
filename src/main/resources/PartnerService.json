@@ -38,7 +38,10 @@
       "Path": "customers/{0}/agreements"
     },
     "GetCustomerAgreements": {
-      "Path": "customers/{0}/agreements"
+      "Path": "customers/{0}/agreements",
+      "Parameters": {
+        "AgreementType": "agreementType"
+      }
     },
     "CreateCustomerApplicationConsent": {
       "Path": "customers/{0}/applicationconsents"

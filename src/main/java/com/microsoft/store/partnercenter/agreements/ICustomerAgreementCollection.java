@@ -7,6 +7,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Encapsulates the operations on the Agreement collection.
@@ -16,18 +17,25 @@ public interface ICustomerAgreementCollection
         IEntireEntityCollectionRetrievalOperations<Agreement, ResourceCollection<Agreement>>
 {
     /**
-     * Adds accepted agreement.
+     * Creates an agreement between the partner and customer.
      *
-     * @param newEntity Agreement to add.
-     *
-     * @return Agreement entity.
+     * @param newEntity The agreement to be created.
+     * @return The newly created agreement.
      */
     Agreement create(Agreement newEntity);
 
     /**
-     * Retrieves all agreements.
+     * Gets the list of agreements between a partner and customer.
      *
-     * @return The agreements.
+     * @return The list of the customer's agreements.
      */
     ResourceCollection<Agreement> get();
+
+    /**
+     * Retrieves the operations tied with a specified agreement type.
+     *
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
+     */
+    ICustomerAgreementCollectionByAgreementType byAgreementType(AgreementType agreementType);
 }
