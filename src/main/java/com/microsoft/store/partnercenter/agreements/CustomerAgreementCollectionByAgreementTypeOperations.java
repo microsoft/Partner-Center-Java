@@ -16,14 +16,6 @@ import com.microsoft.store.partnercenter.models.agreements.Agreement;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.models.utils.Tuple;
-
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-
 /**
  * Customer agreements operations by agreement type implementation class.
  */
