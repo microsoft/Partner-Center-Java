@@ -7,13 +7,12 @@ import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Encapsulates the operations on the agreement metadata by agreement type collection.
  */
 public interface IAgreementDetailsCollectionByAgreementType
-        extends IPartnerComponent<AgreementType>,
+        extends IPartnerComponent<String>,
         IEntireEntityCollectionRetrievalOperations<AgreementMetaData, ResourceCollection<AgreementMetaData>>
 {
     /**

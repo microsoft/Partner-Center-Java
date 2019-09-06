@@ -3,25 +3,24 @@
 
 package com.microsoft.store.partnercenter.agreements;
 
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
-
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Customer agreements operations by agreement type implementation class.
  */
 public class CustomerAgreementCollectionByAgreementTypeOperations
-        extends BasePartnerComponent<Tuple<String, AgreementType>>
+        extends BasePartnerComponent<Tuple<String, String>>
         implements ICustomerAgreementCollectionByAgreementType
 {
     /**
@@ -29,11 +28,11 @@ public class CustomerAgreementCollectionByAgreementTypeOperations
      *
      * @param rootPartnerOperations The root partner operations instance.
      * @param customerId The customer identifier.
-     * @param agreementType The identifier of the agreement type.
+     * @param agreementType The type of agreement.
      */
-    public CustomerAgreementCollectionByAgreementTypeOperations(IPartner rootPartnerOperations, String customerId, AgreementType agreementType)
+    public CustomerAgreementCollectionByAgreementTypeOperations(IPartner rootPartnerOperations, String customerId, String agreementType)
     {
-        super(rootPartnerOperations, new Tuple<String, AgreementType>(customerId, agreementType));
+        super(rootPartnerOperations, new Tuple<String, String>(customerId, agreementType));
 
         if (agreementType == null)
         {
@@ -56,7 +55,7 @@ public class CustomerAgreementCollectionByAgreementTypeOperations
             new KeyValuePair<String, String>
             (
                     PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getParameters().get("AgreementType"),
-                    this.getContext().getItem2().toString()
+                    this.getContext().getItem2()
             )
         );
 

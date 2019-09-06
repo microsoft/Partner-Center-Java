@@ -4,8 +4,6 @@
 package com.microsoft.store.partnercenter.agreements;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -13,7 +11,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -85,7 +82,7 @@ public class CustomerAgreementCollectionOperations
      * @return The available operations for agreement details.
      */
     @Override
-    public ICustomerAgreementCollectionByAgreementType byAgreementType(final AgreementType agreementType)
+    public ICustomerAgreementCollectionByAgreementType byAgreementType(final String agreementType)
     {
         return new CustomerAgreementCollectionByAgreementTypeOperations(this.getPartner(), this.getContext(), agreementType);
     }

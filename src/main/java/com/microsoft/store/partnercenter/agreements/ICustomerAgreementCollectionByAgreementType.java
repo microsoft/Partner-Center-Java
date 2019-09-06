@@ -7,14 +7,13 @@ import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
  * Encapsulates the operations on the Agreement collection by agreement type.
  */
 public interface ICustomerAgreementCollectionByAgreementType
-        extends IPartnerComponent<Tuple<String, AgreementType>>,
+        extends IPartnerComponent<Tuple<String, String>>,
         IEntireEntityCollectionRetrievalOperations<Agreement, ResourceCollection<Agreement>>
 {
     /**

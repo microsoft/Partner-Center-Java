@@ -9,7 +9,6 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ import java.util.Collection;
  * Agreement details operations by agreement type implementation class.
  */
 public class AgreementDetailsCollectionByAgreementTypeOperations
-    extends BasePartnerComponent<AgreementType>
+    extends BasePartnerComponent<String>
     implements IAgreementDetailsCollectionByAgreementType
 {
     /**
@@ -28,7 +27,7 @@ public class AgreementDetailsCollectionByAgreementTypeOperations
      * @param rootPartnerOperations The root partner operations instance.
      * @param agreementType The identifier of the agreement type.
      */
-    public AgreementDetailsCollectionByAgreementTypeOperations(IPartner rootPartnerOperations, AgreementType agreementType)
+    public AgreementDetailsCollectionByAgreementTypeOperations(IPartner rootPartnerOperations, String agreementType)
     {
         super(rootPartnerOperations, agreementType);
 
@@ -53,7 +52,7 @@ public class AgreementDetailsCollectionByAgreementTypeOperations
             new KeyValuePair<String, String>
             (
                 PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getParameters().get("AgreementType"),
-                this.getContext().toString()
+                this.getContext()
             )
         );
 

@@ -3,16 +3,12 @@
 
 package com.microsoft.store.partnercenter.agreements;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
 /**
  * Agreement details collection operations implementation class.
@@ -52,7 +48,7 @@ public class AgreementDetailsCollectionOperations
      * @return The available operations for agreement details.
      */
     @Override
-    public IAgreementDetailsCollectionByAgreementType byAgreementType(AgreementType agreementType)
+    public IAgreementDetailsCollectionByAgreementType byAgreementType(String agreementType)
     {
         return new AgreementDetailsCollectionByAgreementTypeOperations(this.getPartner(), agreementType);
     }

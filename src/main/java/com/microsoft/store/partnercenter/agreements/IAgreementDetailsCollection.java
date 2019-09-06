@@ -7,7 +7,6 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
-import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Encapsulates the operations on the agreement metadata collection.
@@ -29,5 +28,5 @@ public interface IAgreementDetailsCollection
      * @param agreementType The agreement type filter.
      * @return The available operations for agreement details.
      */
-    IAgreementDetailsCollectionByAgreementType byAgreementType(AgreementType agreementType);
+    IAgreementDetailsCollectionByAgreementType byAgreementType(String agreementType);
 }
