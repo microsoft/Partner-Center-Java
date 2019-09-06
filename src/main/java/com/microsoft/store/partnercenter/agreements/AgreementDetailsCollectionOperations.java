@@ -46,29 +46,14 @@ public class AgreementDetailsCollectionOperations
     }
 
     /**
-     *  Gets the agreement details.
+     * Retrieves the operations tied with a specified agreement type.
      *
-     * @param agreementType The agreement type used to filter.
-     * @return The current agreement metadata.
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
      */
     @Override
-    public ResourceCollection<AgreementMetaData> get(String agreementType)
+    public IAgreementDetailsCollectionByAgreementType byAgreementType(AgreementType agreementType)
     {
-        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
-        
-        parameters.add
-        (
-            new KeyValuePair<String, String>
-            (
-                PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getParameters().get("AgreementType"),
-                agreementType
-            ) 
-        );
-
-        return this.getPartner().getServiceClient().get(
-            this.getPartner(),
-            new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
-            PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath(),
-            parameters);
+        return new AgreementDetailsCollectionByAgreementTypeOperations(this.getPartner(), agreementType);
     }
 }

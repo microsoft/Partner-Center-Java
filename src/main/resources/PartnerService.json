@@ -2,7 +2,7 @@
   "PartnerServiceApiRoot": "https://api.partnercenter.microsoft.com",
   "PartnerServiceApiVersion": "v1",
   "DefaultMaxRetryAttempts": "3",
-  "DefaultAuthenticationTokenExpiryBufferInSeconds": "30",
+  "DefaultAuthenticationTokenExpiryBufferInSeconds": "120",
   "DefaultLocale": "en-US",
   "PartnerCenterClient": "Partner Center Java SDK",
   "SdkVersion": "2.0.0",

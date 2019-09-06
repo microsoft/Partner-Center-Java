@@ -7,6 +7,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Encapsulates the operations on the Agreement collection.
@@ -31,10 +32,10 @@ public interface ICustomerAgreementCollection
     ResourceCollection<Agreement> get();
 
     /**
-     * Gets the list of agreements between a partner and customer.
+     * Retrieves the operations tied with a specified agreement type.
      *
-     * @param agreementType The agreement type used to filter.
-     * @return The list of the customer's agreements.
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
      */
-    ResourceCollection<Agreement> get(String agreementType);
+    ICustomerAgreementCollectionByAgreementType byAgreementType(AgreementType agreementType);
 }

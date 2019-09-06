@@ -13,7 +13,7 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
-import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -79,31 +79,14 @@ public class CustomerAgreementCollectionOperations
     }
 
     /**
-     * Gets the list of agreements between a partner and customer.
+     * Retrieves the operations tied with a specified agreement type.
      *
-     * @param agreementType The agreement type used to filter.
-     * @return The list of the customer's agreements.
+     * @param agreementType The agreement type filter.
+     * @return The available operations for agreement details.
      */
     @Override
-    public ResourceCollection<Agreement> get(String agreementType)
+    public ICustomerAgreementCollectionByAgreementType byAgreementType(final AgreementType agreementType)
     {
-        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
-        
-        parameters.add
-        (
-            new KeyValuePair<String, String>
-            (
-                PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getParameters().get("AgreementType"),
-                agreementType
-            ) 
-        );
-        
-        return this.getPartner().getServiceClient().get(
-            this.getPartner(), 
-            new TypeReference<ResourceCollection<Agreement>>(){},
-            MessageFormat.format(
-                PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getPath(),
-                this.getContext()),
-            parameters);
+        return new CustomerAgreementCollectionByAgreementTypeOperations(this.getPartner(), this.getContext(), agreementType);
     }
 }

@@ -471,9 +471,10 @@ public class PartnerServiceClient
 					address.append("?");
 				}
 
+				boolean firstParameter = true;
 				for (KeyValuePair<String, String> queryParameter : parameters)
 				{
-					if (address.length() > 1) {
+					if (!firstParameter) {
 						address.append("&");
 					}
 
@@ -482,6 +483,7 @@ public class PartnerServiceClient
 							"{0}={1}", 
 							queryParameter.getKey(), 
 							queryParameter.getValue()));
+					firstParameter = false;
 				} 
 			}
 		} 
