@@ -7,6 +7,7 @@ import com.microsoft.store.partnercenter.IPartnerComponentString;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
+import com.microsoft.store.partnercenter.models.agreements.AgreementType;
 
 /**
  * Encapsulates the operations on the agreement metadata collection.
