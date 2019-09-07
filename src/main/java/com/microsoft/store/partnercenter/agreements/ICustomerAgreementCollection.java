@@ -34,7 +34,7 @@ public interface ICustomerAgreementCollection
      * Retrieves the operations tied with a specified agreement type.
      *
      * @param agreementType The agreement type used to filter.
-     * @return The available operations for agreement details.
+     * @return The customer agreement collection operations customized for the given type.
      */
-    ICustomerAgreementCollectionByAgreementType byAgreementType(String agreementType);
+    ICustomerAgreementCollection byAgreementType(String agreementType);
 }

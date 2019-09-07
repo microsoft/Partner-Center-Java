@@ -3,12 +3,17 @@
 
 package com.microsoft.store.partnercenter.agreements;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.AgreementMetaData;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
+import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
  * Agreement details collection operations implementation class.
@@ -17,6 +22,11 @@ public class AgreementDetailsCollectionOperations
         extends BasePartnerComponentString
         implements IAgreementDetailsCollection
 {
+    /**
+     * The type of the agreement used to filter.
+     */
+    private String agreementType; 
+
     /**
      * Initializes a new instance of the AgreementDetailsCollectionOperations class.
      *
@@ -28,6 +38,24 @@ public class AgreementDetailsCollectionOperations
     }
 
     /**
+     * Initializes a new instance of the AgreementDetailsCollectionOperations class.
+     *
+     * @param rootPartnerOperations The root partner operations instance.
+     * @param agreementType The type of the agreement used to filter.
+     */
+    public AgreementDetailsCollectionOperations(IPartner rootPartnerOperations, String agreementType)
+    {
+        super(rootPartnerOperations);
+
+        if (StringHelper.isNullOrWhiteSpace(agreementType))
+        {
+            throw new IllegalArgumentException("agreementType must be set");
+        }
+
+        this.agreementType = agreementType;         
+    }
+
+    /**
      * Retrieves the agreement details.
      *
      * @return A list of agreement details.
@@ -35,10 +63,25 @@ public class AgreementDetailsCollectionOperations
     @Override
     public ResourceCollection<AgreementMetaData> get()
     {
+        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+
+        if(StringHelper.isNullOrWhiteSpace(agreementType))
+        {
+            return this.getPartner().getServiceClient().get(
+                this.getPartner(),
+                new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
+                PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath());
+        }
+
+        parameters.add(new KeyValuePair<String, String>(
+            PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getParameters().get("AgreementType"),
+            agreementType));
+
         return this.getPartner().getServiceClient().get(
             this.getPartner(),
             new TypeReference<ResourceCollection<AgreementMetaData>>(){}, 
-            PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath());
+            PartnerService.getInstance().getConfiguration().getApis().get("GetAgreementsDetails").getPath(), 
+            parameters);
     }
 
     /**
@@ -48,8 +91,8 @@ public class AgreementDetailsCollectionOperations
      * @return The available operations for agreement details.
      */
     @Override
-    public IAgreementDetailsCollectionByAgreementType byAgreementType(String agreementType)
+    public IAgreementDetailsCollection byAgreementType(String agreementType)
     {
-        return new AgreementDetailsCollectionByAgreementTypeOperations(this.getPartner(), agreementType);
+        return new AgreementDetailsCollectionOperations(this.getPartner(), agreementType);
     }
 }

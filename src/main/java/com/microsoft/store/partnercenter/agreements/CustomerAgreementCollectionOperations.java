@@ -4,6 +4,8 @@
 package com.microsoft.store.partnercenter.agreements;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
@@ -11,6 +13,7 @@ import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.agreements.Agreement;
+import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
@@ -20,6 +23,11 @@ public class CustomerAgreementCollectionOperations
         extends BasePartnerComponentString
         implements ICustomerAgreementCollection
 {
+    /**
+     * The type of the agreement used to filter.
+     */
+    private String agreementType; 
+
     /**
      * Initializes a new instance of the CustomerAgreementCollectionOperations class.
      *
@@ -34,6 +42,30 @@ public class CustomerAgreementCollectionOperations
         {
             throw new IllegalArgumentException("customerId must be set");
         }
+    }
+
+    /**
+     * Initializes a new instance of the CustomerAgreementCollectionOperations class.
+     *
+     * @param rootPartnerOperations The root partner operations instance.
+     * @param customerId The customer identifier.
+     * @param agreementType The type of the agreement used to filter.
+     */
+    public CustomerAgreementCollectionOperations(IPartner rootPartnerOperations, String customerId, String agreementType)
+    {
+        super(rootPartnerOperations, customerId);
+
+        if (StringHelper.isNullOrWhiteSpace(customerId))
+        {
+            throw new IllegalArgumentException("customerId must be set");
+        }
+
+        if (StringHelper.isNullOrWhiteSpace(agreementType))
+        {
+            throw new IllegalArgumentException("agreementType must be set");
+        }
+
+        this.agreementType = agreementType; 
     }
 
     /**
@@ -67,12 +99,29 @@ public class CustomerAgreementCollectionOperations
     @Override
     public ResourceCollection<Agreement> get()
     {
+        Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+
+        if(StringHelper.isNullOrWhiteSpace(agreementType))
+        {
+            return this.getPartner().getServiceClient().get(
+                this.getPartner(), 
+                new TypeReference<ResourceCollection<Agreement>>(){},
+                MessageFormat.format(
+                    PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getPath(),
+                    this.getContext()));
+        }
+
+        parameters.add(new KeyValuePair<String, String>(
+            PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getParameters().get("AgreementType"),
+            agreementType));
+
         return this.getPartner().getServiceClient().get(
             this.getPartner(), 
             new TypeReference<ResourceCollection<Agreement>>(){},
             MessageFormat.format(
                 PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerAgreements").getPath(),
-                this.getContext()));
+                this.getContext()),
+            parameters);            
     }
 
     /**
@@ -82,8 +131,8 @@ public class CustomerAgreementCollectionOperations
      * @return The available operations for agreement details.
      */
     @Override
-    public ICustomerAgreementCollectionByAgreementType byAgreementType(final String agreementType)
+    public ICustomerAgreementCollection byAgreementType(final String agreementType)
     {
-        return new CustomerAgreementCollectionByAgreementTypeOperations(this.getPartner(), this.getContext(), agreementType);
+        return new CustomerAgreementCollectionOperations(this.getPartner(), this.getContext(), agreementType);
     }
 }

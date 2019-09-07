@@ -28,5 +28,5 @@ public interface IAgreementDetailsCollection
      * @param agreementType The agreement type filter.
      * @return The available operations for agreement details.
      */
-    IAgreementDetailsCollectionByAgreementType byAgreementType(String agreementType);
+    IAgreementDetailsCollection byAgreementType(String agreementType);
 }
