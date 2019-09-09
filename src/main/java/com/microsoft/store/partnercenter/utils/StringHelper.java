@@ -20,11 +20,13 @@ public class StringHelper
 
     public static String fromInputStream(InputStream is, String encoding)
     {
+        BufferedReader bufferedReader;
+
         if (is == null)
         {
             return "";
         }
-        BufferedReader bufferedReader;
+
         try
         {
             bufferedReader = new BufferedReader(new InputStreamReader(is, encoding));
@@ -33,9 +35,11 @@ public class StringHelper
         {
             throw new PartnerException("Incorrect character encoding", e);
         }
+
         StringBuilder stringBuilder = new StringBuilder();
         String newLine = System.getProperty("line.separator");
         String line;
+
         try
         {
             while ((line = bufferedReader.readLine()) != null)
@@ -43,13 +47,17 @@ public class StringHelper
                 stringBuilder.append(line);
                 stringBuilder.append(newLine);
             }
-            is.close();
-            bufferedReader.close();
         }
         catch (IOException e)
         {
             throw new PartnerException("Error trying to obtain the response content body", e);
         }
+        finally 
+        {
+			try { if(bufferedReader != null) bufferedReader.close(); } catch (IOException ex) { throw new PartnerException("There was an issue closing the buffer reader.", ex); }
+			try { if(is != null) is.close(); } catch (IOException ex) { throw new PartnerException("There was an issue closing the stream.", ex); }
+        }
+
         return stringBuilder.toString();
     }
 
@@ -101,5 +109,4 @@ public class StringHelper
         }
         return false;
     }
-
 }

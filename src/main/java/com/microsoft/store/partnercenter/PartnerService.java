@@ -216,15 +216,19 @@ public class PartnerService
 	private Configuration readPartnerServiceConfiguration()
 	{
 		ObjectMapper mapper = new ObjectMapper();
-		InputStream is =
-			PartnerService.class.getClassLoader().getResourceAsStream("PartnerService.json");
+		InputStream is = PartnerService.class.getClassLoader().getResourceAsStream("PartnerService.json");
+		
 		try
 		{
 			return mapper.readValue(is, Configuration.class);
 		}
-		catch (IOException e)
+		catch (IOException ex)
 		{
-			throw new PartnerException("Problem reading PartnerSDK configuration file", e);
+			throw new PartnerException("Problem reading PartnerSDK configuration file", ex);
+		}
+		finally
+		{
+			try { if(is != null) is.close(); } catch (IOException ex) { throw new PartnerException("There was an issue closing the stream.", ex); }
 		}
 	}
 }
