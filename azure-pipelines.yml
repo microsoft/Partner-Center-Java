@@ -13,12 +13,18 @@ trigger:
 pool:
   vmImage: $(imageName)
 
+variables:
+  DefaultOptions: '-Dmaven.wagon.http.pool=false'
+  LoggingOptions: '-Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+
 steps:
 - task: Maven@3
-  displayName: 'Maven pom.xml'
+  displayName: 'install'
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean package javadoc:jar source:jar'
+    goals: 'install'
+    options: '--batch-mode $(DefaultOptions) Release javadoc:aggregate -DpackageOutputDirectory=$(Build.ArtifactStagingDirectory)" -am'
+    mavenOptions: '$(LoggingOptions)'
     publishJUnitResults: true 
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     findBugsRunAnalysis: true

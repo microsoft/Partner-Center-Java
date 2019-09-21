@@ -22,58 +22,14 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <scm>
     <url>scm:git:https://github.com/Microsoft/Partner-Center-Java</url>
     <connection>scm:git:git@github.com:Microsoft/Partner-Center-Java.git</connection>
     <tag>HEAD</tag>
   </scm>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <skipITests>true</skipITests>
-  </properties>
-  <developers>
-    <developer>
-      <id>microsoft</id>
-      <name>Microsoft</name>
-    </developer>
-  </developers>
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/microsoft/partner-center-java/issues</url>
-  </issueManagement>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-  <profiles>
-    <profile>
-      <id>release</id>
-      <activation>
-        <property>
-          <name>release</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-          </plugin>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
   <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -96,9 +52,9 @@
       <version>2.9.9</version>
     </dependency>
     <dependency>
-        <groupId>com.microsoft.rest</groupId>
-        <artifactId>client-runtime</artifactId>
-        <version>1.6.12</version>
+      <groupId>com.microsoft.rest</groupId>
+      <artifactId>client-runtime</artifactId>
+      <version>1.6.12</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>
@@ -106,9 +62,9 @@
       <version>2.10.1</version>
     </dependency>
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>msal4j</artifactId>
-        <version>0.5.0-preview</version>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>msal4j</artifactId>
+      <version>0.5.0-preview</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -138,59 +94,60 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>3.0.0-M3</version>
           <executions>
             <execution>
-              <id>sign-artifacts</id>
-              <phase>deploy</phase>
               <goals>
-                <goal>sign</goal>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
               </goals>
             </execution>
           </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <configuration> 
-            <source>8</source> 
-          </configuration> 
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.1.1</version>
           <executions>
             <execution>
-              <id>attach-sources</id>
-              <phase>verify</phase>
+              <id>attach-javadocs</id>
               <goals>
-                <goal>jar-no-fork</goal>
+                <goal>jar</goal>
               </goals>
             </execution>
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
-          <extensions>true</extensions>
-          <configuration>
-            <serverId>ossrh</serverId>
-            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-            <autoReleaseAfterClose>false</autoReleaseAfterClose>
-          </configuration>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.0</version>
-          <configuration>
-            <includes>
-              <include>**/*Test.java</include>
-            </includes>
-          </configuration>
+          <version>3.0.0-M3</version>
         </plugin>
       </plugins>
     </pluginManagement>
