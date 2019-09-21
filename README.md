@@ -14,7 +14,7 @@ Jar dependency binary information for maven and gradle can be found here at [mav
 <dependency>
     <groupId>com.microsoft.store</groupId>
     <artifactId>partnercenter</artifactId>
-    <version>2.0.0</version>
+    <version>1.14.0</version>
 </dependency>
 ```
 

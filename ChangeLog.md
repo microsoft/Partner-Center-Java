@@ -20,7 +20,7 @@
 
 # Change Log
 
-## 2.0.0
+## 1.14.0
 
 * Agreements
   * Added the ability to request the Microsoft Customer Agreement
