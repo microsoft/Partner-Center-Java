@@ -18,6 +18,7 @@ steps:
   displayName: 'Maven pom.xml'
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'clean package javadoc:jar source:jar'
     publishJUnitResults: true 
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     findBugsRunAnalysis: true
