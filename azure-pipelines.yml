@@ -23,7 +23,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'install'
-    options: '--batch-mode $(DefaultOptions) Release javadoc:aggregate -DpackageOutputDirectory=$(Build.ArtifactStagingDirectory)" -am'
+    options: '--batch-mode $(DefaultOptions) release javadoc:aggregate -DpackageOutputDirectory=$(Build.ArtifactStagingDirectory)" -am'
     mavenOptions: '$(LoggingOptions)'
     publishJUnitResults: true 
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
