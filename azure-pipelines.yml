@@ -14,31 +14,22 @@ pool:
   vmImage: $(imageName)
 
 variables:
-  DefaultOptions: '-Dmaven.wagon.http.pool=false'
   LoggingOptions: '-Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
 
 steps:
 - task: Maven@3
-  displayName: 'install'
+  displayName: 'package'
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'install'
-    options: '--batch-mode $(DefaultOptions) release javadoc:aggregate -DpackageOutputDirectory=$(Build.ArtifactStagingDirectory)" -am'
+    goals: 'package'
+    options: 'javadoc:aggregate -DpackageOutputDirectory=$(Build.ArtifactStagingDirectory)" -am'
     mavenOptions: '$(LoggingOptions)'
     publishJUnitResults: true 
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     findBugsRunAnalysis: true
 
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: '**/*.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
