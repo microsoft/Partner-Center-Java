@@ -20,6 +20,14 @@
 
 # Change Log
 
+## 1.14.1
+
+* Dependency
+  * Updated the *com.fasterxml.jackson.core.jackson-annotations* dependency from version 2.9.9 to 2.9.10
+  * Updated the *com.fasterxml.jackson.core.jackson-core* dependency from version 2.9.9 to 2.9.10
+  * Updated the *com.fasterxml.jackson.core.jackson-databind* dependency from version 2.9.9 to 2.9.10
+  * Updated the *com.fasterxml.jackson.datatype.jackson-datatype-joda* dependency from version 2.9.9 to 2.9.10
+
 ## 1.14.0
 
 * Agreements
@@ -34,7 +42,7 @@
 * Customer users
   * Addressed issue [#39](https://github.com/microsoft/Partner-Center-Java/issues/39) preventing sorting from working as expected when querying customer users
 * Dependencies
-  * Updated the *com.microsoft.rest.client-runtime* from version 1.6.5 to 1.6.12
+  * Updated the *com.microsoft.rest.client-runtime* dependency from version 1.6.5 to 1.6.12
 * Invoices
   * Both functions named By in the invoice operations class have been renamed to by
 * JDK
