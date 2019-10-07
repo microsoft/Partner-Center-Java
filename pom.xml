@@ -8,9 +8,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.microsoft.store</groupId>
   <artifactId>partnercenter</artifactId>
-  <version>1.14.1</version>
+  <version>1.15.0</version>
   <packaging>jar</packaging>
-  <name>Partner Center Java SDK</name>
+  <name>Partner Center SDK for Java</name>
   <description>SDK for accessing Microsoft Partner Center API.</description>
   <url>
     https://github.com/microsoft/partner-center-java

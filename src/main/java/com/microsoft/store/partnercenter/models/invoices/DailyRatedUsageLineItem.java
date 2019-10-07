@@ -8,7 +8,7 @@ import java.util.Map;
 import org.joda.time.DateTime;
 
 /**
- * Represents unbilled, billed recon line items for daily rated usage.
+ * Represents un-billed, billed recon line items for daily rated usage.
  */
 public class DailyRatedUsageLineItem
     extends InvoiceLineItem
@@ -74,6 +74,21 @@ public class DailyRatedUsageLineItem
     private String customerName; 
 
     /**
+     * The effective unit price.
+     */
+    private double effectiveUnitPrice;
+
+    /**
+     * The description for the entitlement.
+     */
+    private String entitlementDescription;
+
+    /**
+     * The identifier for the entitlement.
+     */
+    private String entitlementId;
+
+    /**
      * The invoice number associated with the invoice line item.
      */
     private String invoiceNumber;
@@ -84,7 +99,7 @@ public class DailyRatedUsageLineItem
     private String meterCategory;
 
     /**
-     * The meter identifier associated with the inovice line item.
+     * The meter identifier associated with the invoice line item.
      */
     private String meterId;
 
@@ -124,6 +139,16 @@ public class DailyRatedUsageLineItem
     private String partnerName; 
 
     /**
+     * The pricing currency to billing currency exchange rate.
+     */
+    private double pcToBCExchangeRate;
+
+    /**
+     * The pricing currency to billing currency exchange rate date.
+     */
+    private DateTime pcToBCExchangeRateDate;
+
+    /**
      * The ISO currency in which the meter is charged in USD or catalog currency used for rating.
      */
     private String pricingCurrency;
@@ -157,6 +182,11 @@ public class DailyRatedUsageLineItem
      * The Reseller MPN identifier of the indirect reseller.
      */
     private String resellerMpnId;
+
+    /**
+     * The rate of partner earned credit.
+     */
+    private double rateOfPartnerEarnedCredit;
 
     /**
      * The name of the resource group.
@@ -216,7 +246,7 @@ public class DailyRatedUsageLineItem
     /**
      * The price of the unit.
      */
-    private String unitPrice;
+    private double unitPrice;
 
     /**
      * The type of the unit.
@@ -374,7 +404,7 @@ public class DailyRatedUsageLineItem
      * 
      * @param value The type of charge.
     */
-    public void setChargeStartDate(String value)
+    public void setChargeType(String value)
     {
         chargeType = value;
     }
@@ -477,6 +507,66 @@ public class DailyRatedUsageLineItem
     public void setCustomerName(String value)
     {
         customerName = value;
+    }
+
+    /**
+     * Gets the effective unit price.
+     * 
+     * @return The effective unit price.
+     */
+    public double getEffectiveUnitPrice()
+    {
+        return effectiveUnitPrice;
+    }
+
+    /**
+     * Sets the effective unit price.
+     * 
+     * @param value The effective unit price.
+     */
+    public void setEffectiveUnitPrice(double value)
+    {
+        effectiveUnitPrice = value;
+    }
+
+    /**
+     * Gets the description for the entitlement.
+     * 
+     * @return The description for the entitlement.
+     */
+    public String getEntitlementDescription()
+    {
+        return entitlementDescription;
+    }
+
+    /**
+     * Sets the description for the entitlement.
+     * 
+     * @param value The description for the entitlement.
+     */
+    public void setEntitlementDescription(String value)
+    {
+        entitlementDescription = value;
+    }
+
+    /**
+     * Gets the identifier for the entitlement.
+     * 
+     * @return The identifier for the entitlement.
+     */
+    public String getEntitlementId()
+    {
+        return entitlementId;
+    }
+
+    /**
+     * Sets the identifier for the entitlement.
+     * 
+     * @param value The identifier for the entitlement.
+     */
+    public void setEntitlementId(String value)
+    {
+        entitlementId = value;
     }
 
     /**
@@ -691,6 +781,46 @@ public class DailyRatedUsageLineItem
     }
 
     /**
+     * Gets the pricing currency to billing currency exchange rate.
+     *  
+     * @return The pricing currency to billing currency exchange rate.
+     */
+    public double getPCToBCExchangeRate()
+    {
+        return pcToBCExchangeRate;
+    }
+
+    /**
+     * Sets the pricing currency to billing currency exchange rate.
+     * 
+     * @param value The pricing currency to billing currency exchange rate.
+     */
+    public void setPCToBCExchangeRate(double value)
+    {
+        pcToBCExchangeRate = value;
+    }
+
+    /**
+     * Gets the pricing currency to billing currency exchange rate date.
+     * 
+     * @return The pricing currency to billing currency exchange rate date.
+     */
+    public DateTime getPCToBCExchangeRateDate()
+    {
+        return pcToBCExchangeRateDate;
+    }
+
+    /**
+     * Sets the pricing currency to billing currency exchange rate date.
+     * 
+     * @param value The pricing currency to billing currency exchange rate date.
+     */
+    public void setPCToBCExchangeRateDate(DateTime value)
+    {
+        pcToBCExchangeRateDate = value;
+    }
+
+    /**
      * Gets the ISO currency in which the meter is charged in USD or catalog currency used for rating.
      * 
      * @return The ISO currency in which the meter is charged in USD or catalog currency used for rating.
@@ -809,6 +939,26 @@ public class DailyRatedUsageLineItem
     {
         publisherName = value;
     }  
+
+    /**
+     * Gets the rate of partner earned credit.
+     * 
+     * @return The rate of partner earned credit.
+     */
+    public double getRateOfPartnerEarnedCredit()
+    {
+        return rateOfPartnerEarnedCredit;
+    }
+
+    /**
+     * Sets the rate of partner earned credit.
+     * 
+     * @param value The rate of partner earned credit.
+     */
+    public void setRateOfPartnerEarnedCredit(double value)
+    {
+        rateOfPartnerEarnedCredit = value;
+    }
 
     /**
      * Gets the MPN identifier of the indirect reseller.
@@ -1055,7 +1205,7 @@ public class DailyRatedUsageLineItem
      * 
      * @return The price of the unit.
      */
-    public String getUnitPrice()
+    public double getUnitPrice()
     {
         return unitPrice;
     }
@@ -1065,7 +1215,7 @@ public class DailyRatedUsageLineItem
      * 
      * @param value The price of the unit.
     */
-    public void setUnitPrice(String value)
+    public void setUnitPrice(double value)
     {
         unitPrice = value;
     }

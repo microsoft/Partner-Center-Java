@@ -20,6 +20,10 @@
 
 # Change Log
 
+## 1.15.0
+
+* Invoicing
+
 ## 1.14.1
 
 * Dependency
