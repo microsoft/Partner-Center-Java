@@ -3,13 +3,10 @@
 
 package com.microsoft.store.partnercenter.models.invoices;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalDateTime;
-
 import org.joda.time.DateTime;
+import org.junit.jupiter.api.Test;
 
 public class DailyRatedUsageLineItemTest
 {
