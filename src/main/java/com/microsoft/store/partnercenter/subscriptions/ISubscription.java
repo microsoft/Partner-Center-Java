@@ -6,6 +6,8 @@ package com.microsoft.store.partnercenter.subscriptions;
 import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntityGetOperations;
 import com.microsoft.store.partnercenter.genericoperations.IEntityPatchOperations;
+import com.microsoft.store.partnercenter.models.ResourceCollection;
+import com.microsoft.store.partnercenter.models.subscriptions.AzureEntitlement;
 import com.microsoft.store.partnercenter.models.subscriptions.Subscription;
 import com.microsoft.store.partnercenter.models.subscriptions.SubscriptionActivationResult;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
@@ -40,6 +42,13 @@ public interface ISubscription
      * @return The current subscription's add-ons operations.
      */
     ISubscriptionAddOnCollection getAddOns();
+
+    /**
+     * Gets an Azure Plan's subscription entitlements.
+     * 
+     * @return A resource collection of Azure entitlements.
+     */
+    ResourceCollection<AzureEntitlement> getAzurePlanSubscriptionEntitlements();
 
     /**
      * Gets the current subscription's upgrade operations.

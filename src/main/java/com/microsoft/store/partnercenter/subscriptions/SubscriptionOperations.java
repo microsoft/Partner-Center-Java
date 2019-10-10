@@ -9,6 +9,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
+import com.microsoft.store.partnercenter.models.ResourceCollection;
+import com.microsoft.store.partnercenter.models.subscriptions.AzureEntitlement;
 import com.microsoft.store.partnercenter.models.subscriptions.Subscription;
 import com.microsoft.store.partnercenter.models.subscriptions.SubscriptionActivationResult;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
@@ -152,6 +154,22 @@ public class SubscriptionOperations
         }
 
         return this.subscriptionAddOnsOperations;
+    }
+
+    /**
+     * Gets an Azure Plan's subscription entitlements.
+     * 
+     * @return A resource collection of Azure entitlements.
+     */
+    public ResourceCollection<AzureEntitlement> getAzurePlanSubscriptionEntitlements()
+    {
+        return this.getPartner().getServiceClient().get(
+            this.getPartner(),
+            new TypeReference<ResourceCollection<AzureEntitlement>>(){}, 
+            MessageFormat.format(
+                PartnerService.getInstance().getConfiguration().getApis().get("GetAzureEntitlements").getPath(),
+                this.getContext().getItem1(), 
+                this.getContext().getItem2()));
     }
 
     /**

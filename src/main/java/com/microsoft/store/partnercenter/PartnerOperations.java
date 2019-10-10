@@ -30,6 +30,8 @@ import com.microsoft.store.partnercenter.offers.OfferCategoryCountrySelector;
 import com.microsoft.store.partnercenter.offers.OfferCountrySelector;
 import com.microsoft.store.partnercenter.products.IProductCollection;
 import com.microsoft.store.partnercenter.products.ProductCollectionOperations;
+import com.microsoft.store.partnercenter.productupgrades.IProductUpgradesCollection;
+import com.microsoft.store.partnercenter.productupgrades.ProductUpgradesCollectionOperations;
 import com.microsoft.store.partnercenter.profiles.IPartnerProfileCollection;
 import com.microsoft.store.partnercenter.profiles.PartnerProfileCollectionOperations;
 import com.microsoft.store.partnercenter.ratecards.IRateCardCollection;
@@ -52,9 +54,9 @@ import com.microsoft.store.partnercenter.validations.ValidationOperations;
 public class PartnerOperations
 	implements IPartner
 {
-	// /**
-	// * The resource collection enumerator container.
-	// */
+	/**
+	 * The resource collection enumerator container.
+	 */
 	private IResourceCollectionEnumeratorContainer enumeratorContainer;
 
 	/**
@@ -71,6 +73,11 @@ public class PartnerOperations
 	 * The offers operation.
 	 */
 	private ICountrySelector<IOfferCollection> offers;
+
+	/**
+	 * The available product upgrade operations.
+	 */
+	private IProductUpgradesCollection productUpgrades;
 
 	/**
 	 * The profile operations.
@@ -435,6 +442,22 @@ public class PartnerOperations
 		}
 
 		return this.agreements;
+	}
+
+	/**
+     * Gets the product upgrades operations available to the partner.
+     * 
+     * @return The product upgrades operations available to the partner.
+     */
+	@Override
+	public IProductUpgradesCollection getProductUpgrades()
+	{
+		if(this.productUpgrades == null)
+		{
+			this.productUpgrades = new ProductUpgradesCollectionOperations(this);
+		}
+
+		return this.productUpgrades;
 	}
 
 	/**
