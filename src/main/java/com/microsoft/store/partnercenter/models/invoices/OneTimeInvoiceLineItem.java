@@ -77,6 +77,11 @@ public class OneTimeInvoiceLineItem
     private String invoiceNumber;
 
     /**
+     * The meter description for the consumption line item.
+     */
+    private String meterDescription;
+
+    /**
      * The MPN identifier associated to this line item.
      */
     private String mpnId;
@@ -478,6 +483,26 @@ public class OneTimeInvoiceLineItem
     public void setInvoiceNumber(String value)
     {
         invoiceNumber = value;
+    }
+
+    /**
+     * Gets the meter description for the consumption line item.
+     * 
+     * @return The meter description for the consumption line item.
+     */
+    public String getMeterDescription()
+    {
+        return meterDescription;
+    }
+
+    /**
+     * Sets the meter description for the consumption line item.
+     * 
+     * @param value The meter description for the consumption line item.
+     */
+    public void setMeterDescription(String value)
+    {
+        meterDescription = value;
     }
 
     /**

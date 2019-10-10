@@ -21,6 +21,7 @@ import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
+import org.apache.http.client.utils.URIBuilder;
 import org.joda.time.DateTime;
 
 /**
@@ -41,29 +42,26 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
     /**
      * Initializes a new instance of the ApplicationPartnerCredentials class.
      * 
-     * @param aadApplicationId     The application identifier in Azure Active
-     *                             Directory.
+     * @param aadApplicationId     The application identifier in Azure Active Directory.
      * @param aadApplicationSecret The application secret in Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      */
-    public ApplicationPartnerCredentials(String aadApplicationId, String aadApplicationSecret,
-            String aadApplicationDomain) {
-        this(aadApplicationId, aadApplicationSecret, aadApplicationDomain, "https://login.microsoftonline.com",
-                "https://graph.windows.net");
+    public ApplicationPartnerCredentials(String aadApplicationId, String aadApplicationSecret, String aadApplicationDomain) 
+    {
+        this(aadApplicationId, aadApplicationSecret, aadApplicationDomain, "https://login.microsoftonline.com/", "https://graph.windows.net");
     }
 
     /**
      * Initializes a new instance of the ApplicationPartnerCredentials class.
      * 
-     * @param aadApplicationId     The application identifier in Azure Active
-     *                             Directory.
+     * @param aadApplicationId     The application identifier in Azure Active Directory.
      * @param aadApplicationSecret The application secret in Azure Active Directory.
      * @param aadApplicationDomain The application domain in Azure Active Directory.
      * @param aadAuthorityEndpoint The Active Directory authority endpoint address.
-     * @param graphApiEndpoint     The Azure Active Graph API endpoint address.
+     * @param graphApiEndpoint     The Azure Active Directory Graph API endpoint address.
      */
-    public ApplicationPartnerCredentials(String aadApplicationId, String aadApplicationSecret,
-            String aadApplicationDomain, String aadAuthorityEndpoint, String graphApiEndpoint) {
+    public ApplicationPartnerCredentials(String aadApplicationId, String aadApplicationSecret, String aadApplicationDomain, String aadAuthorityEndpoint, String graphApiEndpoint) 
+    {
         super(aadApplicationId);
 
         if (StringHelper.isNullOrWhiteSpace(aadApplicationSecret)) {
@@ -98,7 +96,8 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
      * 
      * @return The Active Directory authentication endpoint
      */
-    public String getActiveDirectoryAuthority() {
+    public String getActiveDirectoryAuthority() 
+    {
         return activeDirectoryAuthority;
     }
 
@@ -107,7 +106,8 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
      * 
      * @param value The Active Directory authentication endpoint.
      */
-    public void setActiveDirectoryAuthority(String value) {
+    public void setActiveDirectoryAuthority(String value) 
+    {
         activeDirectoryAuthority = value;
     }
 
@@ -118,7 +118,8 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
      * 
      * @return The Graph API endpoint.
      */
-    public String getGraphApiEndpoint() {
+    public String getGraphApiEndpoint() 
+    {
         return graphApiEndpoint;
     }
 
@@ -127,7 +128,8 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
      * 
      * @param value The Graph API endpoint
      */
-    public void setGraphApiEndpoint(String value) {
+    public void setGraphApiEndpoint(String value) 
+    {
         graphApiEndpoint = value;
     }
 
@@ -152,7 +154,7 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
 
             builder = ConfidentialClientApplication
                 .builder(getClientId(), credential)
-                .authority(this.getActiveDirectoryAuthority() + this.aadApplicationDomain);
+                .authority(new URIBuilder(getActiveDirectoryAuthority()).setPath("/" + aadApplicationDomain).build().toString());
                 
             if(requestContext != null)
             {
@@ -162,7 +164,7 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
             app = builder.build();
 
             parameters = ClientCredentialParameters
-                .builder(Collections.singleton(getGraphApiEndpoint() + "/.default")).build();
+                .builder(Collections.singleton(new URIBuilder(getGraphApiEndpoint()).setPath("/.default").build().toString())).build();
 
             future = app.acquireToken(parameters);
             authResult = future.get();

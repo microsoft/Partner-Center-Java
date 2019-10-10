@@ -3,12 +3,9 @@
 
 package com.microsoft.store.partnercenter.models.usage;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 /**
  * This class defines the monthly usage record of a customer for all its subscriptions.
  */
-@JsonIgnoreProperties(ignoreUnknown=true)
 public class CustomerMonthlyUsageRecord
     extends UsageRecordBase
 {
@@ -16,6 +13,11 @@ public class CustomerMonthlyUsageRecord
      * The spending budget allocated for the customer.
      */
     private SpendingBudget budget;
+
+    /**
+     * A value indicating whether the customer's Azure subscription is upgraded.
+     */
+    private boolean isUpgraded;
 
     /**
      * The percentage used out of the allocated budget.
@@ -40,6 +42,26 @@ public class CustomerMonthlyUsageRecord
     public void setBudget(SpendingBudget value)
     {
         budget = value;
+    }
+
+    /**
+     * Gets a value indicating whether the customer's Azure subscription is upgraded.
+     * 
+     * @return A value indicating whether the customer's Azure subscription is upgraded.
+     */
+    public boolean getIsUpgraded()
+    {
+        return isUpgraded;
+    }
+
+    /**
+     * Sets a value indicating whether the customer's Azure subscription is upgraded.
+     * 
+     * @param value A value indicating whether the customer's Azure subscription is upgraded.
+     */
+    public void setIsUpgraded(boolean value)
+    {
+        isUpgraded = value;
     }
 
     /**

@@ -5,9 +5,9 @@ package com.microsoft.store.partnercenter.models.usage;
 
 import java.util.Locale;
 
-import org.joda.time.DateTime;
-
 import com.microsoft.store.partnercenter.models.ResourceBase;
+
+import org.joda.time.DateTime;
 
 /**
  * Defines the common properties for all usage records.

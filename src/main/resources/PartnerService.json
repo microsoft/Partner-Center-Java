@@ -729,6 +729,18 @@
       "AdditionalHeaders": {
         "Version": "version"
       }
+    },
+    "GetAzureEntitlements": {
+      "Path": "customers/{0}/subscriptions/{1}/azureEntitlements"
+    },
+    "GetProductUpgradeEligibility": {
+      "Path": "productUpgrades/eligibility"
+    },
+    "UpgradeProduct": {
+      "Path": "productUpgrades"
+    },
+    "GetProductUpgradeStatus": {
+      "Path": "productUpgrades/{0}/status"
     }
   }
 }

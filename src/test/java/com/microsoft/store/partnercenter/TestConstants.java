@@ -15,7 +15,7 @@ public class TestConstants
     /**
      * The Active Directory authority endpoint address.
      */
-    public static final String AAD_AUTHORITY_ENDPOINT = "https://login.microsoftonline.com";
+    public static final String AAD_AUTHORITY_ENDPOINT = "https://login.microsoftonline.com/";
 
     /**
      * The unique identifier of an agreement template.

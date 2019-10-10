@@ -154,6 +154,17 @@ public class OneTimeInvoiceLineItemTest
     }
 
     @Test
+    void getMeterDescription()
+    {
+        OneTimeInvoiceLineItem lineItem = new OneTimeInvoiceLineItem();
+        String value = "description";
+
+        lineItem.setMeterDescription(value);
+
+        assertEquals(value, lineItem.getMeterDescription());
+    }
+
+    @Test
     void getMpnId()
     {
         OneTimeInvoiceLineItem lineItem = new OneTimeInvoiceLineItem();
