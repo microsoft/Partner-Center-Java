@@ -9,7 +9,7 @@ package com.microsoft.store.partnercenter.models.productupgrades;
 public class UpgradedProductDetails
 {
     /**
-     * The identifier of the product to upgrade.
+     * The identifier for the product upgrade.
      */
     private String id;
 
@@ -19,9 +19,9 @@ public class UpgradedProductDetails
     private String name;
 
     /**
-     * Gets the identifier of the product to upgrade.
+     * Gets the identifier for the product upgrade.
      * 
-     * @return The identifier of the product to upgrade.
+     * @return The identifier for the product upgrade.
      */
     public String getId()
     {
@@ -29,9 +29,9 @@ public class UpgradedProductDetails
     }
 
     /**
-     * Sets the identifier of the product to upgrade.
+     * Sets the identifier for the product upgrade.
      * 
-     * @param value The identifier of the product to upgrade.
+     * @param value The identifier for the product upgrade.
      */
     public void setId(String value)
     {
