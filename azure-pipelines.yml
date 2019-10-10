@@ -7,6 +7,9 @@ strategy:
     windows:
       imageName: 'Windows-2019'
 
+pr:
+- master
+
 trigger:
 - master
 
