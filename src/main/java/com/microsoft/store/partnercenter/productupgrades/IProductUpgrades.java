@@ -17,7 +17,7 @@ public interface IProductUpgrades
      * Checks the product upgrade status
      * 
      * @param productUpgradesRequest The product upgrade status request.
-     * @return The eligibility object for the customer.
+     * @return The status of the product upgrade.
      */
     ProductUpgradesStatus CheckStatus(ProductUpgradesRequest productUpgradesRequest);
 }

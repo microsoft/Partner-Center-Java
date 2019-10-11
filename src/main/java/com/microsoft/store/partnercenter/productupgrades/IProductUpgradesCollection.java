@@ -4,6 +4,8 @@
 package com.microsoft.store.partnercenter.productupgrades;
 
 import com.microsoft.store.partnercenter.IPartnerComponent;
+import com.microsoft.store.partnercenter.genericoperations.IEntityCreateOperations;
+import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
 import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesEligibility;
 import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesRequest;
 
@@ -11,16 +13,8 @@ import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesR
  * Represents operations that apply to product upgrades.
  */
 public interface IProductUpgradesCollection
-    extends IPartnerComponent<String>
+    extends IPartnerComponent<String>, IEntityCreateOperations<ProductUpgradesRequest, String>, IEntitySelector<String, IProductUpgrades>
 {
-    /**
-     * Gets the product upgrade by identifier operations for a specific customer.
-     * 
-     * @param upgradeId The identifier for the upgrade.
-     * @return The available product upgrade operations.
-     */
-    IProductUpgrades ById(String upgradeId);
-
     /**
      * Checks the product upgrade eligibility
      * 
@@ -28,12 +22,4 @@ public interface IProductUpgradesCollection
      * @return The product upgrade eligibility for the customer.
      */
     ProductUpgradesEligibility CheckEligibility(ProductUpgradesRequest productUpgradesRequest);
-
-    /**
-     * Create the product upgrade request.
-     * 
-     * @param productUpgradesRequest The product upgrade request.
-     * @return The identifier for the product upgrade.
-     */
-    String Create(ProductUpgradesRequest productUpgradesRequest);
 }

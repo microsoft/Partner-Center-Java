@@ -38,13 +38,13 @@ public class ProductUpgradesCollectionOperations
      * @return The available product upgrade operations.
      */
     @Override
-    public IProductUpgrades ById(String upgradeId)
+    public IProductUpgrades byId(String upgradeId)
     {
         return new ProductUpgradesOperations(this.getPartner(), upgradeId);
     }
 
     /**
-     * Checks the product upgrade eligibility
+     * Checks the product upgrade eligibility.
      * 
      * @param productUpgradesRequest The product upgrade request.
      * @return The product upgrade eligibility for the customer.
@@ -73,9 +73,9 @@ public class ProductUpgradesCollectionOperations
      * @return The identifier for the product upgrade.
      */
     @Override
-    public String Create(ProductUpgradesRequest productUpgradesRequest)
+    public String create(ProductUpgradesRequest newEntity)
     {
-		if (productUpgradesRequest == null)
+		if (newEntity == null)
 		{
 			throw new IllegalArgumentException("The productUpgradesRequest parameter cannot be null.");
         }
@@ -86,7 +86,7 @@ public class ProductUpgradesCollectionOperations
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("UpgradeProduct").getPath(),
 				this.getContext()),
-            productUpgradesRequest);
+                newEntity);
 
 		return response.header("location");
     }
