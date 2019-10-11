@@ -34,13 +34,13 @@ public class ProductUpgradesCollectionOperations
     /**
      * Gets the product upgrade by identifier operations for a specific customer.
      * 
-     * @param upgradeId The identifier for the upgrade.
+     * @param id The identifier for the upgrade.
      * @return The available product upgrade operations.
      */
     @Override
-    public IProductUpgrades byId(String upgradeId)
+    public IProductUpgrades byId(String id)
     {
-        return new ProductUpgradesOperations(this.getPartner(), upgradeId);
+        return new ProductUpgradesOperations(this.getPartner(), id);
     }
 
     /**
@@ -69,7 +69,7 @@ public class ProductUpgradesCollectionOperations
     /**
      * Create the product upgrade request.
      * 
-     * @param productUpgradesRequest The product upgrade request.
+     * @param newEntity The product upgrade request.
      * @return The identifier for the product upgrade.
      */
     @Override
