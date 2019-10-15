@@ -6,7 +6,7 @@ package com.microsoft.store.partnercenter.models.productupgrades;
 /**
  * Represents an upgraded product's details.
  */
-public class UpgradedProductDetails
+public class ProductUpgradeDetail
 {
     /**
      * The identifier for the product upgrade.

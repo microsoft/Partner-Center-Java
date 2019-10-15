@@ -8,12 +8,12 @@ import java.util.List;
 /**
  * Represents a product upgrade status.
  */
-public class ProductUpgradesStatus
+public class ProductUpgradeStatus
 {
     /**
      * The error detail for the product upgrade.
      */
-    private ProductUpgradesErrorDetails errorDetails; 
+    private ProductUpgradeErrorDetail errorDetails; 
 
     /**
      * Gets the identifier for the product upgrade.
@@ -23,7 +23,7 @@ public class ProductUpgradesStatus
     /**
      * The line item for the product upgrade.
      */
-    private List<ProductUpgradesLineItem> lineItems;
+    private List<ProductUpgradeLineItem> lineItems;
 
     /**
      * The family for the product.
@@ -40,7 +40,7 @@ public class ProductUpgradesStatus
      * 
      * @return The error detail for the product upgrade.
      */
-    public ProductUpgradesErrorDetails getErrorDetails()
+    public ProductUpgradeErrorDetail getErrorDetails()
     {
         return errorDetails;
     }
@@ -50,7 +50,7 @@ public class ProductUpgradesStatus
      * 
      * @param value The error detail for the product upgrade.
      */
-    public void setErrorDetails(ProductUpgradesErrorDetails value)
+    public void setErrorDetails(ProductUpgradeErrorDetail value)
     {
         errorDetails = value;
     }
@@ -80,7 +80,7 @@ public class ProductUpgradesStatus
      * 
      * @return The line items for the product upgrade.
      */
-    public List<ProductUpgradesLineItem> getLineItems()
+    public List<ProductUpgradeLineItem> getLineItems()
     {
         return lineItems;
     }
@@ -90,7 +90,7 @@ public class ProductUpgradesStatus
      * 
      * @param value The line items for the product upgrade.
      */
-    public void setLineItems(List<ProductUpgradesLineItem> value)
+    public void setLineItems(List<ProductUpgradeLineItem> value)
     {
         lineItems = value;
     }

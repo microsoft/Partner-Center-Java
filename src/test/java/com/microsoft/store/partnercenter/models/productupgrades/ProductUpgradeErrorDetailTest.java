@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class ProductUpgradesErrorDetailsTest
+public class ProductUpgradeErrorDetailTest
 {
     @Test
     void getCode()
     {
-        ProductUpgradesErrorDetails resource = new ProductUpgradesErrorDetails();
+        ProductUpgradeErrorDetail resource = new ProductUpgradeErrorDetail();
         String value = "code";
 
         resource.setCode(value);
@@ -23,7 +23,7 @@ public class ProductUpgradesErrorDetailsTest
     @Test
     void getDescription()
     {
-        ProductUpgradesErrorDetails resource = new ProductUpgradesErrorDetails();
+        ProductUpgradeErrorDetail resource = new ProductUpgradeErrorDetail();
         String value = "description";
 
         resource.setDescription(value);

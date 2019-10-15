@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class ProductUpgradesEligibilityTest
+public class ProductUpgradeEligibilityTest
 {
     @Test
     void getCustomerId()
     {
-        ProductUpgradesEligibility resource = new ProductUpgradesEligibility();
+        ProductUpgradeEligibility resource = new ProductUpgradeEligibility();
         String value = "d0064aa7-6de8-4106-ade8-30c56765db9a";
 
         resource.setCustomerId(value);
@@ -23,7 +23,7 @@ public class ProductUpgradesEligibilityTest
     @Test
     void getIsEligible()
     {
-        ProductUpgradesEligibility resource = new ProductUpgradesEligibility();
+        ProductUpgradeEligibility resource = new ProductUpgradeEligibility();
 
         resource.setIsEligible(true);
 
@@ -33,7 +33,7 @@ public class ProductUpgradesEligibilityTest
     @Test
     void getProductFamily()
     {
-        ProductUpgradesEligibility resource = new ProductUpgradesEligibility();
+        ProductUpgradeEligibility resource = new ProductUpgradeEligibility();
         String value = "Azure";
 
         resource.setProductFamily(value);
@@ -44,7 +44,7 @@ public class ProductUpgradesEligibilityTest
     @Test
     void getReason()
     {
-        ProductUpgradesEligibility resource = new ProductUpgradesEligibility();
+        ProductUpgradeEligibility resource = new ProductUpgradeEligibility();
         String value = "reason";
 
         resource.setReason(value);
@@ -55,7 +55,7 @@ public class ProductUpgradesEligibilityTest
     @Test
     void getUpgradeId()
     {
-        ProductUpgradesEligibility resource = new ProductUpgradesEligibility();
+        ProductUpgradeEligibility resource = new ProductUpgradeEligibility();
         String value = "439aa165-3ead-4056-a941-f46ccc76bbd0";
 
         resource.setUpgradeId(value);

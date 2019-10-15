@@ -6,7 +6,7 @@ package com.microsoft.store.partnercenter.models.utilizations;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Lists the time granularity options for retrieving A subscription's azure utilization.
+ * Lists the time granularity options for retrieving A subscription's Azure utilization.
  */
 public enum AzureUtilizationGranularity
 {

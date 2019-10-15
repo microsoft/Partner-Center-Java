@@ -17,7 +17,7 @@ import com.microsoft.store.partnercenter.network.IPartnerServiceClient;
 import com.microsoft.store.partnercenter.offers.IOfferCategoryCollection;
 import com.microsoft.store.partnercenter.offers.IOfferCollection;
 import com.microsoft.store.partnercenter.products.IProductCollection;
-import com.microsoft.store.partnercenter.productupgrades.IProductUpgradesCollection;
+import com.microsoft.store.partnercenter.productupgrades.IProductUpgradeCollection;
 import com.microsoft.store.partnercenter.profiles.IPartnerProfileCollection;
 import com.microsoft.store.partnercenter.ratecards.IRateCardCollection;
 import com.microsoft.store.partnercenter.relationships.IRelationshipCollection;
@@ -74,7 +74,7 @@ public interface IPartner
      * 
      * @return The product upgrades operations available to the partner.
      */
-    IProductUpgradesCollection getProductUpgrades();
+    IProductUpgradeCollection getProductUpgrades();
 
     /**
      * Gets the profiles operations available to the partner.

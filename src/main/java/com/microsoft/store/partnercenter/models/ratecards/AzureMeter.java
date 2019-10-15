@@ -63,7 +63,7 @@ public class AzureMeter
     }
 
     /**
-     * Gets or sets the azure meter tags.
+     * Gets or sets the Azure meter tags.
      */
     private Iterable<String> __Tags;
     

@@ -8,17 +8,17 @@ import org.joda.time.DateTime;
 /**
  * Represents the product upgrade line item.
  */
-public class ProductUpgradesLineItem
+public class ProductUpgradeLineItem
 {
     /**
      * The error detail for the product upgrade.
      */
-    private ProductUpgradesErrorDetails errorDetails;
+    private ProductUpgradeErrorDetail errorDetails;
 
     /**
      * The product being upgraded.
      */
-    private UpgradedProductDetails sourceProduct;
+    private ProductUpgradeDetail sourceProduct;
 
     /**
      * The status for the product upgrade.
@@ -28,7 +28,7 @@ public class ProductUpgradesLineItem
     /**
      * The target product for the upgrade.
      */
-    private UpgradedProductDetails targetProduct;
+    private ProductUpgradeDetail targetProduct;
 
     /**
      * The date the product was upgraded.
@@ -40,7 +40,7 @@ public class ProductUpgradesLineItem
      * 
      * @return The error detail for the product upgrade.
      */
-    public ProductUpgradesErrorDetails getErrorDetails()
+    public ProductUpgradeErrorDetail getErrorDetails()
     {
         return errorDetails;
     }
@@ -50,7 +50,7 @@ public class ProductUpgradesLineItem
      * 
      * @param value The error detail for the product upgrade.
      */
-    public void setErrorDetails(ProductUpgradesErrorDetails value)
+    public void setErrorDetails(ProductUpgradeErrorDetail value)
     {
         errorDetails = value;
     }
@@ -60,7 +60,7 @@ public class ProductUpgradesLineItem
      * 
      * @return The product being upgraded.
      */
-    public UpgradedProductDetails getSourceProduct()
+    public ProductUpgradeDetail getSourceProduct()
     {
         return sourceProduct;
     }
@@ -70,7 +70,7 @@ public class ProductUpgradesLineItem
      * 
      * @param value The product being upgraded.
      */
-    public void setSourceProduct(UpgradedProductDetails value)
+    public void setSourceProduct(ProductUpgradeDetail value)
     {
         sourceProduct = value;
     }
@@ -100,7 +100,7 @@ public class ProductUpgradesLineItem
      * 
      * @return The target product for the upgrade.
      */
-    public UpgradedProductDetails getTargetProduct()
+    public ProductUpgradeDetail getTargetProduct()
     {
         return targetProduct;
     }
@@ -110,7 +110,7 @@ public class ProductUpgradesLineItem
      * 
      * @param value The target product for the upgrade.
      */
-    public void setTargetProduct(UpgradedProductDetails value)
+    public void setTargetProduct(ProductUpgradeDetail value)
     {
         targetProduct = value;
     }

@@ -818,7 +818,7 @@ public class OneTimeInvoiceLineItem
     /**
      * Sets the name for the SKU.
      * 
-     * @param value
+     * @param value The name for the SKU.
      */
     public void setSkuName(String value)
     {

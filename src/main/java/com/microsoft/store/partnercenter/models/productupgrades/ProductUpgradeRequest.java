@@ -6,7 +6,7 @@ package com.microsoft.store.partnercenter.models.productupgrades;
 /**
  * Represents a product upgrade request.
  */
-public class ProductUpgradesRequest
+public class ProductUpgradeRequest
 {
     /**
      * The identifier for the customer.

@@ -9,22 +9,23 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponentString;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesRequest;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesStatus;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeRequest;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeStatus;
 
 /**
  * Implements the operations for product upgrades
  */
-public class ProductUpgradesOperations
+public class ProductUpgradeOperations
     extends BasePartnerComponentString
-	implements IProductUpgrades 
+	implements IProductUpgrade
 {
     /**
-	 * Initializes a new instance of the ProductUpgradesOperations class.
+	 * Initializes a new instance of the ProductUpgradeOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
+     * @param upgradeId The identifier for the product upgrade.
 	 */
-    public ProductUpgradesOperations(IPartner rootPartnerOperations, String upgradeId)
+    public ProductUpgradeOperations(IPartner rootPartnerOperations, String upgradeId)
 	{
         super(rootPartnerOperations, upgradeId);
     }
@@ -32,22 +33,22 @@ public class ProductUpgradesOperations
     /**
      * Checks the product upgrade status
      * 
-     * @param productUpgradesRequest The product upgrade status request.
+     * @param productUpgradeRequest The product upgrade status request.
      * @return The status of the product upgrade.
      */
-    public ProductUpgradesStatus CheckStatus(ProductUpgradesRequest productUpgradesRequest)
+    public ProductUpgradeStatus CheckStatus(ProductUpgradeRequest productUpgradeRequest)
     {
-        if (productUpgradesRequest == null)
+        if (productUpgradeRequest == null)
 		{
-			throw new IllegalArgumentException("The productUpgradesRequest parameter cannot be null.");
+			throw new IllegalArgumentException("The productUpgradeRequest parameter cannot be null.");
 		}
 
 		return this.getPartner().getServiceClient().post(
 			this.getPartner(), 
-			new TypeReference<ProductUpgradesStatus>(){},
+			new TypeReference<ProductUpgradeStatus>(){},
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetProductUpgradeStatus").getPath(),
 				this.getContext()),
-            productUpgradesRequest);   
+                productUpgradeRequest);   
     }
 }

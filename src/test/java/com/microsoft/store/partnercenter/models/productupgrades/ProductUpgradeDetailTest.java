@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class UpgradedProductDetailsTest
+public class ProductUpgradeDetailTest
 {
     @Test
     void getId()
     {
-        UpgradedProductDetails resource = new UpgradedProductDetails();
+        ProductUpgradeDetail resource = new ProductUpgradeDetail();
         String value = "d0064aa7-6de8-4106-ade8-30c56765db9a";
 
         resource.setId(value);
@@ -23,7 +23,7 @@ public class UpgradedProductDetailsTest
     @Test
     void getName()
     {
-        UpgradedProductDetails resource = new UpgradedProductDetails();
+        ProductUpgradeDetail resource = new ProductUpgradeDetail();
         String value = "name";
 
         resource.setName(value);

@@ -10,7 +10,7 @@ public class AzureResourceMonthlyUsageRecord
     extends UsageRecordBase
 {
     /**
-     * Gets or sets the azure resource category.
+     * Gets or sets the Azure resource category.
      */
     private String __Category;
 
@@ -25,7 +25,7 @@ public class AzureResourceMonthlyUsageRecord
     }
 
     /**
-     * Gets or sets the azure resource sub-category.
+     * Gets or sets the Azure resource sub-category.
      */
     private String __Subcategory;
 

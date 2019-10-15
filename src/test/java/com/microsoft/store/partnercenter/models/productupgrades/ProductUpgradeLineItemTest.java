@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
 
-public class ProductUpgradesLineItemTest
+public class ProductUpgradeLineItemTest
 {
     @Test
     void getErrorDetails()
     {
-        ProductUpgradesLineItem resource = new ProductUpgradesLineItem();
-        ProductUpgradesErrorDetails value = new ProductUpgradesErrorDetails();
+        ProductUpgradeLineItem resource = new ProductUpgradeLineItem();
+        ProductUpgradeErrorDetail value = new ProductUpgradeErrorDetail();
 
         value.setCode("code");
         value.setDescription("description");
@@ -28,8 +28,8 @@ public class ProductUpgradesLineItemTest
     @Test
     void getSourceProduct()
     {
-        ProductUpgradesLineItem resource = new ProductUpgradesLineItem();
-        UpgradedProductDetails value = new UpgradedProductDetails();
+        ProductUpgradeLineItem resource = new ProductUpgradeLineItem();
+        ProductUpgradeDetail value = new ProductUpgradeDetail();
 
         value.setId("identifier");
         value.setName("name");
@@ -43,7 +43,7 @@ public class ProductUpgradesLineItemTest
     @Test
     void getStatus()
     {
-        ProductUpgradesLineItem resource = new ProductUpgradesLineItem();
+        ProductUpgradeLineItem resource = new ProductUpgradeLineItem();
         String value = "status";
 
         resource.setStatus(value);
@@ -54,8 +54,8 @@ public class ProductUpgradesLineItemTest
     @Test
     void getTargetProduct()
     {
-        ProductUpgradesLineItem resource = new ProductUpgradesLineItem();
-        UpgradedProductDetails value = new UpgradedProductDetails();
+        ProductUpgradeLineItem resource = new ProductUpgradeLineItem();
+        ProductUpgradeDetail value = new ProductUpgradeDetail();
 
         value.setId("identifier");
         value.setName("name");
@@ -69,7 +69,7 @@ public class ProductUpgradesLineItemTest
     @Test
     void getUpgradedDate()
     {
-        ProductUpgradesLineItem resource = new ProductUpgradesLineItem();
+        ProductUpgradeLineItem resource = new ProductUpgradeLineItem();
         DateTime value = DateTime.now();
 
         resource.setUpgradedDate(value);

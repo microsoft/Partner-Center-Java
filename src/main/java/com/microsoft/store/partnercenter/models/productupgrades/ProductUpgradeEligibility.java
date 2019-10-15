@@ -6,7 +6,7 @@ package com.microsoft.store.partnercenter.models.productupgrades;
 /**
  * Represents a product upgrade eligibility.
  */
-public class ProductUpgradesEligibility
+public class ProductUpgradeEligibility
 {
     /**
      * The identifier for the customer.

@@ -4,20 +4,20 @@
 package com.microsoft.store.partnercenter.productupgrades;
 
 import com.microsoft.store.partnercenter.IPartnerComponent;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesRequest;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesStatus;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeRequest;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeStatus;
 
 /**
  * Represents operations that apply to product upgrades.
  */
-public interface IProductUpgrades
+public interface IProductUpgrade
     extends IPartnerComponent<String>
 {
     /**
      * Checks the product upgrade status
      * 
-     * @param productUpgradesRequest The product upgrade status request.
+     * @param productUpgradeRequest The product upgrade status request.
      * @return The status of the product upgrade.
      */
-    ProductUpgradesStatus CheckStatus(ProductUpgradesRequest productUpgradesRequest);
+    ProductUpgradeStatus CheckStatus(ProductUpgradeRequest productUpgradeRequest);
 }

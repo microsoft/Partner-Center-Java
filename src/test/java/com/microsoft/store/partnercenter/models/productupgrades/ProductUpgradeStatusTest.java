@@ -10,13 +10,13 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class ProductUpgradesStatusTest
+public class ProductUpgradeStatusTest
 {
     @Test
     void getErrorDetails()
     {
-        ProductUpgradesStatus resource = new ProductUpgradesStatus();
-        ProductUpgradesErrorDetails value = new ProductUpgradesErrorDetails();
+        ProductUpgradeStatus resource = new ProductUpgradeStatus();
+        ProductUpgradeErrorDetail value = new ProductUpgradeErrorDetail();
 
         value.setCode("code");
         value.setDescription("description");
@@ -30,7 +30,7 @@ public class ProductUpgradesStatusTest
     @Test
     void getId()
     {
-        ProductUpgradesStatus resource = new ProductUpgradesStatus();
+        ProductUpgradeStatus resource = new ProductUpgradeStatus();
         String value = "591c57f3-d53a-420c-bb04-d4197b844a12";
 
         resource.setId(value);
@@ -41,10 +41,10 @@ public class ProductUpgradesStatusTest
     @Test
     void getLineItems()
     {
-        ProductUpgradesStatus resource = new ProductUpgradesStatus();
-        List<ProductUpgradesLineItem> value = new ArrayList<ProductUpgradesLineItem>();
+        ProductUpgradeStatus resource = new ProductUpgradeStatus();
+        List<ProductUpgradeLineItem> value = new ArrayList<ProductUpgradeLineItem>();
 
-        ProductUpgradesLineItem lineItem = new ProductUpgradesLineItem();
+        ProductUpgradeLineItem lineItem = new ProductUpgradeLineItem();
         lineItem.setStatus("status");
 
         value.add(lineItem);
@@ -58,7 +58,7 @@ public class ProductUpgradesStatusTest
     @Test
     void setProductFamily()
     {
-        ProductUpgradesStatus resource = new ProductUpgradesStatus();
+        ProductUpgradeStatus resource = new ProductUpgradeStatus();
         String value = "family";
 
         resource.setProductFamily(value);
@@ -69,7 +69,7 @@ public class ProductUpgradesStatusTest
     @Test
     void setStatus()
     {
-        ProductUpgradesStatus resource = new ProductUpgradesStatus();
+        ProductUpgradeStatus resource = new ProductUpgradeStatus();
         String value = "status";
 
         resource.setStatus(value);

@@ -301,7 +301,7 @@ public abstract class BaseUsageBasedLineItem
     }
 
     /**
-     * Gets or sets the unit of measure for azure usage.
+     * Gets or sets the unit of measure for Azure usage.
      */
     private String __Unit;
 

@@ -30,8 +30,8 @@ import com.microsoft.store.partnercenter.offers.OfferCategoryCountrySelector;
 import com.microsoft.store.partnercenter.offers.OfferCountrySelector;
 import com.microsoft.store.partnercenter.products.IProductCollection;
 import com.microsoft.store.partnercenter.products.ProductCollectionOperations;
-import com.microsoft.store.partnercenter.productupgrades.IProductUpgradesCollection;
-import com.microsoft.store.partnercenter.productupgrades.ProductUpgradesCollectionOperations;
+import com.microsoft.store.partnercenter.productupgrades.IProductUpgradeCollection;
+import com.microsoft.store.partnercenter.productupgrades.ProductUpgradeCollectionOperations;
 import com.microsoft.store.partnercenter.profiles.IPartnerProfileCollection;
 import com.microsoft.store.partnercenter.profiles.PartnerProfileCollectionOperations;
 import com.microsoft.store.partnercenter.ratecards.IRateCardCollection;
@@ -77,7 +77,7 @@ public class PartnerOperations
 	/**
 	 * The available product upgrade operations.
 	 */
-	private IProductUpgradesCollection productUpgrades;
+	private IProductUpgradeCollection productUpgrades;
 
 	/**
 	 * The profile operations.
@@ -450,11 +450,11 @@ public class PartnerOperations
      * @return The product upgrades operations available to the partner.
      */
 	@Override
-	public IProductUpgradesCollection getProductUpgrades()
+	public IProductUpgradeCollection getProductUpgrades()
 	{
 		if(this.productUpgrades == null)
 		{
-			this.productUpgrades = new ProductUpgradesCollectionOperations(this);
+			this.productUpgrades = new ProductUpgradeCollectionOperations(this);
 		}
 
 		return this.productUpgrades;

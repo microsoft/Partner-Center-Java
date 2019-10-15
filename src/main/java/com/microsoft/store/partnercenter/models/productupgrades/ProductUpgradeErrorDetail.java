@@ -6,7 +6,7 @@ package com.microsoft.store.partnercenter.models.productupgrades;
 /**
  * Represents error details for a product upgrade.
  */
-public class ProductUpgradesErrorDetails
+public class ProductUpgradeErrorDetail
 {
     /**
      * The error code of the product upgrade.

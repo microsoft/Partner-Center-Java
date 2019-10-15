@@ -6,14 +6,14 @@ package com.microsoft.store.partnercenter.productupgrades;
 import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntityCreateOperations;
 import com.microsoft.store.partnercenter.genericoperations.IEntitySelector;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesEligibility;
-import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradesRequest;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeEligibility;
+import com.microsoft.store.partnercenter.models.productupgrades.ProductUpgradeRequest;
 
 /**
  * Represents operations that apply to product upgrades.
  */
-public interface IProductUpgradesCollection
-    extends IPartnerComponent<String>, IEntityCreateOperations<ProductUpgradesRequest, String>, IEntitySelector<String, IProductUpgrades>
+public interface IProductUpgradeCollection
+    extends IPartnerComponent<String>, IEntityCreateOperations<ProductUpgradeRequest, String>, IEntitySelector<String, IProductUpgrade>
 {
     /**
      * Checks the product upgrade eligibility
@@ -21,5 +21,5 @@ public interface IProductUpgradesCollection
      * @param productUpgradesRequest The product upgrade request
      * @return The product upgrade eligibility for the customer.
      */
-    ProductUpgradesEligibility CheckEligibility(ProductUpgradesRequest productUpgradesRequest);
+    ProductUpgradeEligibility CheckEligibility(ProductUpgradeRequest productUpgradesRequest);
 }
