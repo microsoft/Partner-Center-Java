@@ -33,6 +33,17 @@ public class OneTimeInvoiceLineItemTest
     }
 
     @Test
+    void getBillingFrequency()
+    {
+        OneTimeInvoiceLineItem lineItem = new OneTimeInvoiceLineItem();
+        String value = "annual";
+
+        lineItem.setBillingFrequency(value);
+
+        assertEquals(value, lineItem.getBillingFrequency());  
+    }
+
+    @Test
     void getBillableQuantity()
     {
         OneTimeInvoiceLineItem lineItem = new OneTimeInvoiceLineItem();
