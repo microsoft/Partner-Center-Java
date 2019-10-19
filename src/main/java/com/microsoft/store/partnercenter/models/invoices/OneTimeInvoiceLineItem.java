@@ -22,6 +22,11 @@ public class OneTimeInvoiceLineItem
     private String availabilityId;
 
     /**
+     * The frequency of the bill.
+     */
+    private String billingFrequency;
+
+    /**
      * The number of units purchased.
      */
     private double billableQuantity;
@@ -239,6 +244,26 @@ public class OneTimeInvoiceLineItem
     public void setAvailabilityId(String value)
     {
         availabilityId = value;
+    }
+
+    /**
+     * Gets the billing frequency.
+     * 
+     * @return The billing frequency for the line item.
+     */
+    public String getBillingFrequency()
+    {
+        return billingFrequency;
+    }
+
+    /**
+     * Sets the billing frequency.
+     * 
+     * @param value The billing frequency for the line item.
+     */
+    public void setBillingFrequency(String value)
+    {
+        billingFrequency = value;
     }
 
     /**
