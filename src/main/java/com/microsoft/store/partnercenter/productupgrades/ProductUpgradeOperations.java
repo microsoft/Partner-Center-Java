@@ -36,7 +36,7 @@ public class ProductUpgradeOperations
      * @param productUpgradeRequest The product upgrade status request.
      * @return The status of the product upgrade.
      */
-    public ProductUpgradeStatus CheckStatus(ProductUpgradeRequest productUpgradeRequest)
+    public ProductUpgradeStatus checkStatus(ProductUpgradeRequest productUpgradeRequest)
     {
         if (productUpgradeRequest == null)
 		{

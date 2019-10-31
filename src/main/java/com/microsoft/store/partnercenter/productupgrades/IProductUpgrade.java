@@ -19,5 +19,5 @@ public interface IProductUpgrade
      * @param productUpgradeRequest The product upgrade status request.
      * @return The status of the product upgrade.
      */
-    ProductUpgradeStatus CheckStatus(ProductUpgradeRequest productUpgradeRequest);
+    ProductUpgradeStatus checkStatus(ProductUpgradeRequest productUpgradeRequest);
 }

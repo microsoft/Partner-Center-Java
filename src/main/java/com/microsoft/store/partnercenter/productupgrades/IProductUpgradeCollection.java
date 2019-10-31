@@ -21,5 +21,5 @@ public interface IProductUpgradeCollection
      * @param productUpgradesRequest The product upgrade request
      * @return The product upgrade eligibility for the customer.
      */
-    ProductUpgradeEligibility CheckEligibility(ProductUpgradeRequest productUpgradesRequest);
+    ProductUpgradeEligibility checkEligibility(ProductUpgradeRequest productUpgradesRequest);
 }

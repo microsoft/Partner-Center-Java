@@ -50,7 +50,7 @@ public class ProductUpgradeCollectionOperations
      * @return The product upgrade eligibility for the customer.
      */
     @Override
-    public ProductUpgradeEligibility CheckEligibility(ProductUpgradeRequest productUpgradeRequest)
+    public ProductUpgradeEligibility checkEligibility(ProductUpgradeRequest productUpgradeRequest)
     {
 		if (productUpgradeRequest == null)
 		{
