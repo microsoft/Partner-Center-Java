@@ -12,29 +12,29 @@ import com.microsoft.store.partnercenter.BasePartnerComponent;
 import com.microsoft.store.partnercenter.IPartner;
 import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
-import com.microsoft.store.partnercenter.models.products.Product;
+import com.microsoft.store.partnercenter.models.offers.Product;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.models.utils.TripletTuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Implements the product operations by customer, target segment, and target view.
+ * Implements the product operations by customer and by reservation scope operations.
  */
-public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
+public class CustomerProductCollectionByTargetViewByReservationScopeOperations
 	extends BasePartnerComponent<TripletTuple<String, String, String>>
-	implements ICustomerProductCollectionByTargetViewByTargetSegment
+	implements ICustomerProductCollectionByTargetViewByReservationScope
 {
 	/**
-	 * Initializes a new instance of the CustomerProductCollectionByTargetViewByTargetSegmentOperations class.
+	 * Initializes a new instance of the CustomerProductCollectionByTargetViewByReservationScopeOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
 	 * @param customerId Identifier for the customer.
 	 * @param targetView The target view which contains the products.
-	 * @param targetSegment The target segment used for filtering the products. 
+     * @param reservationScope The reservation scope which contains the products.
 	 */
-	public CustomerProductCollectionByTargetViewByTargetSegmentOperations(IPartner rootPartnerOperations, String customerId, String targetView, String targetSegment)
+	public CustomerProductCollectionByTargetViewByReservationScopeOperations(IPartner rootPartnerOperations, String customerId, String targetView, String reservationScope)
 	{
-		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, targetView, targetSegment));
+		super(rootPartnerOperations, new TripletTuple<String, String, String>(customerId, targetView, reservationScope));
 
 		if (StringHelper.isNullOrWhiteSpace(customerId))
 		{
@@ -46,45 +46,28 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
 			throw new IllegalArgumentException("targetView must be set");
 		}
 
-		if (StringHelper.isNullOrWhiteSpace(targetSegment))
+		if (StringHelper.isNullOrWhiteSpace(reservationScope))
 		{
-			throw new IllegalArgumentException("targetSegment must be set");
+			throw new IllegalArgumentException("reservationScope must be set");
 		}
 	}
 
-	/**
-     * Gets the operations that can be applied on customer products filtered by a specific reservation scope.
+    /**
+     * Gets all the products in a given product collection and that apply to a given customer, filtered by reservation scope.
      * 
-     * @param reservationScope The reservation scope filter.
-     * @return The customer products collection operations by reservation scope.
+     * @return All the products in a given product collection and that apply to a given customer, filtered by reservation scope.
      */
-	@Override
-	public ICustomerProductCollectionByTargetViewByTargetSegmentByReservationScope byReservationScope(String reservationScope) 
-	{
-		return new CustomerProductCollectionByTargetViewByTargetSegmentByReservationScopeOperations(
-			this.getPartner(),
-			this.getContext().getItem1(),
-			this.getContext().getItem2(),
-			this.getContext().getItem3(),
-			reservationScope);
-	}
-
-	/**
-	 * Gets all the products in a given catalog view and that apply to a given customer, filtered by target segment.
-	 * 
-	 * @return The products in a given catalog view and that apply to a given customer, filtered by target segment.
-	 */
-	@Override
-	public ResourceCollection<Product> get()
-	{
+    @Override
+    public ResourceCollection<Product> get() 
+    {
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
 		parameters.add
 		(
 			new KeyValuePair<String, String>
 			(
-				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getParameters().get("TargetSegment"),
-				this.getContext().getItem2()
+				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getParameters().get("ReservationScope"),
+				this.getContext().getItem3()
 			) 
 		);
 
@@ -104,5 +87,5 @@ public class CustomerProductCollectionByTargetViewByTargetSegmentOperations
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getPath(),
 				this.getContext().getItem1()),
 			parameters);
-	}
+    }
 }

@@ -17,9 +17,10 @@ public interface IAvailabilityCollectionByTargetSegment
     IEntireEntityCollectionRetrievalOperations<Availability, ResourceCollection<Availability>>
 {
     /**
-     * Retrieves all the availabilities for the provided SKU on a specific target segment.
+     * Gets the operations that can be applied on products that belong to a given target segment, and reservation scope.
      * 
-     * @return The availability for the provided SKU on a specific target segment.
+     * @param reservationScope The reservation scope filter.
+     * @return The availability collection operations by target segment by reservation scope.
      */
-    ResourceCollection<Availability> get();
+    IAvailabilityCollectionByTargetSegmentByReservationScopeOperations byReservationScope(String reservationScope);
 }

@@ -17,14 +17,15 @@ public interface ICustomerProductCollectionByTargetView
     IEntireEntityCollectionRetrievalOperations<Product, ResourceCollection<Product>>
 {
     /**
-     * Retrieves all the products in a given catalog view that apply to a given customer.
+     * Gets the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by reservation scope.
      * 
-     * @return The products in a given catalog view that apply to a given customer.
+     * @param reservationScope The reservation scope filter.
+     * @return The product collection operations by customer, by target view and by reservation scope.
      */
-    ResourceCollection<Product> get();
-    
+    ICustomerProductCollectionByTargetViewByReservationScope byReservationScope(String reservationScope);
+
     /**
-     * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
+     * Gets the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
      * 
      * @param targetSegment The product segment filter.
      * @return The product collection operations by customer, by target view and by target segment.

@@ -14,29 +14,30 @@ import com.microsoft.store.partnercenter.PartnerService;
 import com.microsoft.store.partnercenter.models.ResourceCollection;
 import com.microsoft.store.partnercenter.models.products.Availability;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
-import com.microsoft.store.partnercenter.models.utils.QuadrupleTuple;
+import com.microsoft.store.partnercenter.models.utils.QuintupleTuple;
 import com.microsoft.store.partnercenter.utils.ParameterValidator;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Implements the available availability operations.
+ * Implements the operations for availabilities by target segment and reservation scope.
  */
-public class AvailabilityCollectionByTargetSegmentOperations
-	extends BasePartnerComponent<QuadrupleTuple<String, String, String, String>>
-	implements IAvailabilityCollectionByTargetSegment
+public class AvailabilityCollectionByTargetSegmentByReservationScopeOperations
+	extends BasePartnerComponent<QuintupleTuple<String, String, String, String, String>>
+	implements IAvailabilityCollectionByTargetSegmentByReservationScopeOperations
 {
 	/**
-	 * Initializes a new instance of the AvailabilityCollectionByTargetSegmentOperations class.
+	 * Initializes a new instance of the AvailabilityCollectionByTargetSegmentByReservationScopeOperations class.
 	 * 
 	 * @param rootPartnerOperations The root partner operations instance.
-	 * @param productId             Identifier for the product.
-	 * @param skuId                 Identifier for the SKU.
-	 * @param country               The country on which to base the product.
-	 * @param targetSegment         The target segment used for filtering the availabilities.
+	 * @param productId Identifier for the product.
+	 * @param skuId Identifier for the SKU.
+	 * @param country The country on which to base the product.
+	 * @param targetSegment The target segment used for filtering the availabilities.
+     * @param reservationScope The reservation scope filter.
 	 */
-	public AvailabilityCollectionByTargetSegmentOperations(IPartner rootPartnerOperations, String productId, String skuId, String country, String targetSegment)
+	public AvailabilityCollectionByTargetSegmentByReservationScopeOperations(IPartner rootPartnerOperations, String productId, String skuId, String country, String targetSegment, String reservationScope)
 	{
-		super(rootPartnerOperations, new QuadrupleTuple<String, String, String, String>(productId, skuId, country, targetSegment));
+		super(rootPartnerOperations, new QuintupleTuple<String, String, String, String, String>(productId, skuId, country, targetSegment, reservationScope));
 
 		if (StringHelper.isNullOrWhiteSpace(productId))
 		{
@@ -53,31 +54,18 @@ public class AvailabilityCollectionByTargetSegmentOperations
 		if (StringHelper.isNullOrWhiteSpace(targetSegment))
 		{
 			throw new IllegalArgumentException("targetSegment must be set");
-		}
-	}
-
+        }
+        
+		if (StringHelper.isNullOrWhiteSpace(reservationScope))
+		{
+			throw new IllegalArgumentException("reservationScope must be set");
+        }
+    }
+    
 	/**
-	 * Gets the operations that can be applied on products that belong to a given target segment, and reservation scope.
+	 * Gets all the availabilities for the provided SKU on a specific reservation scope given a target segment.
 	 * 
-	 * @param reservationScope The reservation scope filter.
-	 * @return The availability collection operations by target segment by reservation scope.
-	 */
-	@Override
-	public IAvailabilityCollectionByTargetSegmentByReservationScopeOperations byReservationScope(String reservationScope) 
-	{
-		return new AvailabilityCollectionByTargetSegmentByReservationScopeOperations(
-			this.getPartner(), 
-			this.getContext().getItem1(),
-			this.getContext().getItem2(),
-			this.getContext().getItem3(),
-			this.getContext().getItem4(),
-			reservationScope);
-	}
-
-	/**
-	 * Get all the availabilities for the provided SKU on a specific target segment.
-	 * 
-	 * @return The availability for the provided SKU on a specific target segment.
+	 * @return The availabilities for the provided SKU on a specific reservation scope given a target segment.
 	 */
 	@Override
 	public ResourceCollection<Availability> get()
@@ -99,6 +87,15 @@ public class AvailabilityCollectionByTargetSegmentOperations
 			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAvailabilities").getParameters().get("TargetSegment"),
 				this.getContext().getItem4()
+			) 
+		);
+
+		parameters.add
+		(
+			new KeyValuePair<String, String>
+			(
+				PartnerService.getInstance().getConfiguration().getApis().get("GetAvailabilities").getParameters().get("ReservationScope"),
+				this.getContext().getItem5()
 			) 
 		);
 

@@ -18,7 +18,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Product operations by customer id and by target view implementation class.
+ * Implements the product operations by customer identifier and target view.
  */
 public class CustomerProductCollectionByTargetViewOperations
 	extends BasePartnerComponent<Tuple<String, String>>
@@ -47,7 +47,35 @@ public class CustomerProductCollectionByTargetViewOperations
 	}
 
 	/**
-	 * Retrieves all the products in a given catalog view that apply to a given customer.
+     * Gets the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by reservation scope.
+     * 
+     * @param reservationScope The reservation scope filter.
+     * @return The product collection operations by customer, by target view and by reservation scope.
+     */
+	@Override
+	public ICustomerProductCollectionByTargetViewByReservationScope byReservationScope(String reservationScope)
+	{
+		return new CustomerProductCollectionByTargetViewByReservationScopeOperations(
+			this.getPartner(),
+			this.getContext().getItem1(),
+			this.getContext().getItem2(),
+			reservationScope);
+	}
+
+	/**
+	 * Gets the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
+	 * 
+	 * @param targetSegment The product segment filter.
+	 * @return The product collection operations by customer, by target view and by target segment.
+	 */
+	@Override
+	public ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment(String targetSegment)
+	{
+		return new CustomerProductCollectionByTargetViewByTargetSegmentOperations(this.getPartner(), this.getContext().getItem1(), targetSegment, this.getContext().getItem2());
+	}
+
+	/**
+	 * Gets all the products in a given catalog view that apply to a given customer.
 	 * 
 	 * @return The products in a given catalog view that apply to a given customer.
 	 */
@@ -72,17 +100,5 @@ public class CustomerProductCollectionByTargetViewOperations
 				PartnerService.getInstance().getConfiguration().getApis().get("GetCustomerProducts").getPath(),
 				this.getContext().getItem1()),
 			parameters);
-	}
-
-	/**
-	 * Retrieves the operations that can be applied on products in a given catalog view and that apply to a given customer, filtered by target segment.
-	 * 
-	 * @param targetSegment The product segment filter.
-	 * @return The product collection operations by customer, by target view and by target segment.
-	 */
-	@Override
-	public ICustomerProductCollectionByTargetViewByTargetSegment byTargetSegment(String targetSegment)
-	{
-		return new CustomerProductCollectionByTargetViewByTargetSegmentOperations(this.getPartner(), this.getContext().getItem1(), targetSegment, this.getContext().getItem2());
 	}
 }
