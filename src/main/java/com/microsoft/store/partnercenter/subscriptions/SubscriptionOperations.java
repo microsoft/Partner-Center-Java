@@ -188,7 +188,7 @@ public class SubscriptionOperations
     }
 
     /**
-     * Gets the current subscription's resource usage records operations.
+     * Gets the current subscription's usage record operations.
      */
     @Override
     public ISubscriptionUsageRecordCollection getUsageRecords()

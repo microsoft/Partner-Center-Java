@@ -20,12 +20,22 @@
 
 # Change Log
 
+## 1.15.1
+
+* Products
+  * Added the reservation scope operations
+* Product upgrades
+  * Added the ability to create a new product upgrade and get the status for active upgrades
+* Usage
+  * Added the ability to get meter and resource usage records
+  * Removed the `SubscriptionDailyUsageRecordCollectionOperations` class due to changes with how utilization records should be obtained
+
 ## 1.15.0
 
 * Invoicing
   * [Daily Rated Usage Line Item](https://github.com/microsoft/Partner-Center-Java/blob/master/src/main/java/com/microsoft/store/partnercenter/models/invoices/DailyRatedUsageLineItem.java)
     * Added the *EntitlementId*, *EntitlementDescription*, *PCToBCExchangeRate*, *PCToBCExchangeRateDate*, *EffectiveUnitPrice*, and *RateOfPartnerEarnedCredit* properties
-    * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<string, string>*
+    * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<String, String>*
   * [One Time Invoice Line Item](https://github.com/microsoft/Partner-Center-Java/blob/master/src/main/java/com/microsoft/store/partnercenter/models/invoices/OneTimeInvoiceLineItem.java)
     * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
 * Usage

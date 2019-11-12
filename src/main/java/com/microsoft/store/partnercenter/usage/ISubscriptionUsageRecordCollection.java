@@ -7,22 +7,22 @@ import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.models.utils.Tuple;
 
 /**
- * Defines the behavior for a customer's subscription usage records.
+ * Represents the operations for a customer's subscription usage records.
  */
 public interface ISubscriptionUsageRecordCollection
     extends IPartnerComponent<Tuple<String, String>>
 {
-	/**
-	 * Gets the subscription usage records grouped by resources.
-     * 
-     * @return The subscription usage records grouped by resources.
-	 */
-    IResourceUsageRecordCollection getResources();
-    
     /**
-     * Gets the subscription usage records grouped by days.
+     * Gets the subscription usage records grouped by meter.
      * 
-     * @return The subscription usage records grouped by days.
+     * @return The subscription usage records grouped by meter.
      */
-    ISubscriptionDailyUsageRecordCollection getDaily();
+    IUsageRecordByMeterCollection byMeter();
+
+    /**
+     * Gets the subscription usage records grouped by resource.
+     * 
+     * @return Gets the subscription usage records grouped by resource. 
+     */
+    IUsageRecordByResourceCollection byResource();
 }

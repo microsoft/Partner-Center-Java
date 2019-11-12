@@ -10,7 +10,7 @@ import com.microsoft.store.partnercenter.models.utils.Tuple;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
 /**
- * Implements operations related to a single customer's subscription usage records.
+ * Implements the operations to get a customer's subscription usage records.
  */
 public class SubscriptionUsageRecordCollectionOperations
     extends BasePartnerComponent<Tuple<String,String>>
@@ -37,24 +37,24 @@ public class SubscriptionUsageRecordCollectionOperations
     }
 
     /**
-     * Gets the subscription usage records grouped by resources.
+     * Gets the subscription usage records grouped by meter.
      * 
-     * @return The subscription usage records grouped by resources.
+     * @return The subscription usage records grouped by meter operations.
      */
-    public IResourceUsageRecordCollection getResources()
+    @Override
+    public IUsageRecordByMeterCollection byMeter() 
     {
-    	return new ResourceUsageRecordCollectionOperations(this.getPartner(), 
-    			this.getContext().getItem1(), this.getContext().getItem2());
+        return new UsageRecordByMeterCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
     }
 
     /**
-     * Gets the subscription usage records grouped by days.
+     * Gets the subscription usage records grouped by resource.
      * 
-     * @return The subscription usage records grouped by days.
+     * @return The subscription usage records grouped by resource operations.
      */
-    public ISubscriptionDailyUsageRecordCollection getDaily()
+    @Override
+    public IUsageRecordByResourceCollection byResource() 
     {
-    	return new SubscriptionDailyUsageRecordCollectionOperations(this.getPartner(), 
-    			this.getContext().getItem1(), this.getContext().getItem2());
+        return new UsageRecordByResourceCollectionOperations(this.getPartner(), this.getContext().getItem1(), this.getContext().getItem2());
     }
 }

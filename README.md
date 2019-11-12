@@ -4,7 +4,7 @@
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.microsoft.store/partnercenter.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.microsoft.store%22%20AND%20a:%22partnercenter%22) [![GitHub issues](https://img.shields.io/github/issues/Microsoft/Partner-Center-Java.svg)](https://github.com/Microsoft/Partner-Center-Java/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Microsoft/Partner-Center-Java.svg)](https://gitHub.com/Microsoft/Partner-Center-Java/pull/)
 
-The Partner Center Java SDK provides an SDK to interact with Microsoft's Partner Center service. This enables the partners to perform the Partner Center operations programmatically. The Java SDK supports Java version 8 or later. It is an open source project maintained by the partner community. Since this module is maintained by the partner community, it is not officially supported by Microsoft. You can [get help from the community](https://stackoverflow.com/questions/tagged/partner+center) or open an [issue](https://github.com/microsoft/partner-center-java/issues) on GitHub.
+The Partner Center SDK for Java provides the ability to interact with Microsoft's Partner Center service. This enables the partners to perform the Partner Center operations programmatically using Java version 8 or later. It is an open source project maintained by the partner community. Since this module is maintained by the partner community, it is not officially supported by Microsoft. You can [get help from the community](https://docs.microsoft.com/answers/topics/partner-center-sdk.html) or open an [issue](https://github.com/microsoft/partner-center-java/issues) on GitHub.
 
 ## Consuming the SDK
 
@@ -14,7 +14,7 @@ Jar dependency binary information for maven and gradle can be found here at [mav
 <dependency>
     <groupId>com.microsoft.store</groupId>
     <artifactId>partnercenter</artifactId>
-    <version>1.14.1</version>
+    <version>1.15.1</version>
 </dependency>
 ```
 
