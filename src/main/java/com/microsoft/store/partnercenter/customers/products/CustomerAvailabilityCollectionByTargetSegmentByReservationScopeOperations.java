@@ -33,6 +33,7 @@ public class CustomerAvailabilityCollectionByTargetSegmentByReservationScopeOper
 	 * @param productId Identifier for the product.
 	 * @param skuId Identifier for the SKU.
 	 * @param targetSegment The target segment used for filtering the availabilities.
+	 * @param reservationScope The reservation scope filter.
 	 */
 	protected CustomerAvailabilityCollectionByTargetSegmentByReservationScopeOperations(IPartner rootPartnerOperations, String customerId, String productId, String skuId, String targetSegment, String reservationScope) 
 	{
