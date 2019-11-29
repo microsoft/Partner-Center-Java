@@ -6,6 +6,7 @@ package com.microsoft.store.partnercenter.network;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.SocketTimeoutException;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
@@ -597,6 +598,14 @@ public class PartnerServiceClient
 			}
 
 			throw errorHandler.handleFailedResponse(response, rootPartnerOperations.getRequestContext());
+		}
+		catch (SocketTimeoutException ex)
+		{
+			throw new PartnerException(
+					"Socket timeout exception",
+					rootPartnerOperations.getRequestContext(),
+					PartnerErrorCategory.TIMEOUT,
+					ex);
 		}
 		catch (IOException ex) 
 		{
