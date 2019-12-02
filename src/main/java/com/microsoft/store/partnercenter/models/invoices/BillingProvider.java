@@ -13,7 +13,7 @@ public enum BillingProvider
     NONE("none"),
 
     /**
-    * Bill is provided by Office. Example: O365, and In-tune.
+    * Bill is provided by Office. Example: Office 365 and Intune.
     */
     OFFICE("office"),
 
@@ -25,6 +25,7 @@ public enum BillingProvider
     /**
     * Bill is provided for one time purchases.
     */
+
     ONE_TIME("one_time"),
     
     /**
@@ -37,6 +38,7 @@ public enum BillingProvider
      */
     ALL("all");
 
+    @JsonValue
     private final String value;
 
     BillingProvider(String value)
@@ -49,10 +51,9 @@ public enum BillingProvider
      *
      * @return A string that represents this object.
      */
-    @JsonValue
     @Override
     public String toString()
     {
-        return value;
+        return value.replace("_", "");
     }
 }

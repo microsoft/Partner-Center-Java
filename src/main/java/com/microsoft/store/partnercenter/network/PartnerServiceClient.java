@@ -432,12 +432,9 @@ public class PartnerServiceClient
 			jsonConverter.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 			jsonConverter.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 			jsonConverter.registerModule(new JodaModule());
-			jsonConverter.registerModule(
-				new SimpleModule().addDeserializer(Artifact.class, new ArtifactDeserializer()));
-			jsonConverter.registerModule(
-					new SimpleModule().addDeserializer(InvoiceLineItem.class, new InvoiceLineItemDeserializer()));
-			jsonConverter.registerModule(
-				new SimpleModule().addDeserializer(URI.class, new UriDeserializer()));
+			jsonConverter.registerModule(new SimpleModule().addDeserializer(Artifact.class, new ArtifactDeserializer()));
+			jsonConverter.registerModule(new SimpleModule().addDeserializer(InvoiceLineItem.class, new InvoiceLineItemDeserializer()));
+			jsonConverter.registerModule(new SimpleModule().addDeserializer(URI.class, new UriDeserializer()));
 			jsonConverter.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
 			jsonConverter.setSerializationInclusion(Include.NON_NULL);
 		}

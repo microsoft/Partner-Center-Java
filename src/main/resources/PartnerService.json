@@ -5,7 +5,7 @@
   "DefaultAuthenticationTokenExpiryBufferInSeconds": "120",
   "DefaultLocale": "en-US",
   "PartnerCenterClient": "Partner Center Java SDK",
-  "SdkVersion": "1.15.1",
+  "SdkVersion": "1.15.2",
   "Apis": {
     "PartnerLicensesDeploymentInsights": {
       "Path": "analytics/licenses/deployment"

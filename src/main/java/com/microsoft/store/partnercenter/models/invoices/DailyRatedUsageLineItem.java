@@ -5,6 +5,9 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.microsoft.store.partnercenter.utils.NestedResourceDeserializer;
+
 import org.joda.time.DateTime;
 
 /**
@@ -16,7 +19,8 @@ public class DailyRatedUsageLineItem
     /**
      * The service-specific metadata. For example, an image type for a virtual machine.
      */
-    private String additionalInfo;
+    @JsonDeserialize(using = NestedResourceDeserializer.class)
+    private Map<String, Object> additionalInfo;
 
     /**
      * The availability identifier associated with the invoice line item.
@@ -236,7 +240,8 @@ public class DailyRatedUsageLineItem
     /**
      * The tags added by the customer.
      */
-    private Map<String, String> tags;
+    @JsonDeserialize(using = NestedResourceDeserializer.class)
+    private Map<String, Object> tags;
 
     /**
      * The unit of measure associated with the invoice line item.
@@ -263,7 +268,7 @@ public class DailyRatedUsageLineItem
      * 
      * @return The service-specific metadata. For example, an image type for a virtual machine.
      */
-    public String getAdditionalInfo()
+    public Map<String, Object> getAdditionalInfo()
     {
         return additionalInfo;
     }
@@ -273,7 +278,7 @@ public class DailyRatedUsageLineItem
      * 
      * @param value The service-specific metadata. For example, an image type for a virtual machine.
     */
-    public void setAdditionalInfo(String value)
+    public void setAdditionalInfo(Map<String, Object> value)
     {
         additionalInfo = value;
     }
@@ -1165,7 +1170,7 @@ public class DailyRatedUsageLineItem
      * 
      * @return The tags added by the customer.
      */
-    public Map<String, String> getTags()
+    public Map<String, Object> getTags()
     {
         return tags;
     }
@@ -1175,7 +1180,7 @@ public class DailyRatedUsageLineItem
      * 
      * @param value The tags added by the customer.
      */
-    public void setTags(Map<String, String> value)
+    public void setTags(Map<String, Object> value)
     {
         tags = value;
     }

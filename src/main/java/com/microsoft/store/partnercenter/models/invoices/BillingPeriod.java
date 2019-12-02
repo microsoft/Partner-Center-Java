@@ -15,7 +15,7 @@ public enum BillingPeriod
     /**
     * The current period that is ongoing.
     */
-    Current("current"),
+    CURRENT("current"),
 
     /**
     * The previous period.

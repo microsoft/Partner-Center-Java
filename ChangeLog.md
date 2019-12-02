@@ -20,6 +20,12 @@
 
 # Change Log
 
+## 1.15.2
+
+* Invoice
+  * Addressed issue [#97](https://github.com/microsoft/Partner-Center-Java/issues/97) were the incorrect billing provider was being used to request line items
+  * Addressed issue [#98](https://github.com/microsoft/Partner-Center-Java/issues/98) that was preventing the *AdditionalInfo* and *Tags* properties from deserializing as excepted
+
 ## 1.15.1
 
 * Products
@@ -35,7 +41,7 @@
 * Invoicing
   * [Daily Rated Usage Line Item](https://github.com/microsoft/Partner-Center-Java/blob/master/src/main/java/com/microsoft/store/partnercenter/models/invoices/DailyRatedUsageLineItem.java)
     * Added the *EntitlementId*, *EntitlementDescription*, *PCToBCExchangeRate*, *PCToBCExchangeRateDate*, *EffectiveUnitPrice*, and *RateOfPartnerEarnedCredit* properties
-    * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<String, String>*
+    * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<String, Object>*
   * [One Time Invoice Line Item](https://github.com/microsoft/Partner-Center-Java/blob/master/src/main/java/com/microsoft/store/partnercenter/models/invoices/OneTimeInvoiceLineItem.java)
     * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
 * Usage
