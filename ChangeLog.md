@@ -25,6 +25,8 @@
 * Invoice
   * Addressed issue [#97](https://github.com/microsoft/Partner-Center-Java/issues/97) were the incorrect billing provider was being used to request line items
   * Addressed issue [#98](https://github.com/microsoft/Partner-Center-Java/issues/98) that was preventing the *AdditionalInfo* and *Tags* properties from deserializing as excepted
+* Network
+  * Added a handler for SocketTimeoutException (Thanks @msize)
 
 ## 1.15.1
 
