@@ -1,14 +1,11 @@
 strategy:
   matrix:
-    linux:
-      imageName: 'ubuntu-16.04'
-    mac:
-      imageName: 'macos-10.13'
-    windows:
-      imageName: 'Windows-2019'
-
-pr:
-- master
+    Linux:
+      imageName: 'ubuntu-latest'
+    macOS:
+      imageName: 'macOS-latest'
+    Windows:
+      imageName: 'windows-latest'
 
 trigger:
 - master
