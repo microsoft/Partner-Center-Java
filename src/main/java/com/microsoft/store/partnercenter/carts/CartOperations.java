@@ -18,7 +18,8 @@ import com.microsoft.store.partnercenter.utils.StringHelper;
  * Cart collection operations implementation class.
  */
 public class CartOperations 
-	extends BasePartnerComponent<Tuple<String, String>> implements ICart 
+	extends BasePartnerComponent<Tuple<String, String>> 
+	implements ICart 
 {
 	/**
 	 * Initializes a new instance of the CartOperations class.
@@ -27,7 +28,8 @@ public class CartOperations
 	 * @param customerId            Identifier for the customer.
 	 * @param cartId                Identifier for the cart.
 	 */
-	public CartOperations(IPartner rootPartnerOperations, String customerId, String cartId) {
+	public CartOperations(IPartner rootPartnerOperations, String customerId, String cartId) 
+	{
 		super(rootPartnerOperations, new Tuple<String, String>(customerId, cartId));
 
 		if (StringHelper.isNullOrWhiteSpace(customerId)) {

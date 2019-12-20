@@ -6,6 +6,7 @@ package com.microsoft.store.partnercenter;
 import com.microsoft.store.partnercenter.agreements.IAgreementDetailsCollection;
 import com.microsoft.store.partnercenter.analytics.IPartnerAnalyticsCollection;
 import com.microsoft.store.partnercenter.auditrecords.IAuditRecordsCollection;
+import com.microsoft.store.partnercenter.compliance.IComplianceCollection;
 import com.microsoft.store.partnercenter.countryvalidationrules.ICountryValidationRulesCollection;
 import com.microsoft.store.partnercenter.customers.ICustomerCollection;
 import com.microsoft.store.partnercenter.domains.IDomainCollection;
@@ -34,6 +35,13 @@ import com.microsoft.store.partnercenter.validations.IValidationOperations;
  */
 public interface IPartner
 {
+    /**
+     * Gets the compliance operations available to the partner.
+     * 
+     * @return The compliance operations available to the partner.
+     */
+    IComplianceCollection getCompliance();
+
     /**
      * Gets the partner credentials.
      * 

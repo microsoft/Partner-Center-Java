@@ -9,6 +9,8 @@ import com.microsoft.store.partnercenter.analytics.IPartnerAnalyticsCollection;
 import com.microsoft.store.partnercenter.analytics.PartnerAnalyticsCollectionOperations;
 import com.microsoft.store.partnercenter.auditrecords.AuditRecordsCollection;
 import com.microsoft.store.partnercenter.auditrecords.IAuditRecordsCollection;
+import com.microsoft.store.partnercenter.compliance.ComplianceCollectionOperations;
+import com.microsoft.store.partnercenter.compliance.IComplianceCollection;
 import com.microsoft.store.partnercenter.countryvalidationrules.CountryValidationRulesCollectionOperations;
 import com.microsoft.store.partnercenter.countryvalidationrules.ICountryValidationRulesCollection;
 import com.microsoft.store.partnercenter.customers.CustomerCollectionOperations;
@@ -54,6 +56,11 @@ import com.microsoft.store.partnercenter.validations.ValidationOperations;
 public class PartnerOperations
 	implements IPartner
 {
+	/**
+	 * The compliance operations available to the partner.
+	 */
+	private IComplianceCollection compliance; 
+
 	/**
 	 * The resource collection enumerator container.
 	 */
@@ -180,6 +187,22 @@ public class PartnerOperations
 		this.setRequestContext(context);
 
 		serviceClient = new PartnerServiceClient(PartnerService.getInstance().getApiRootUrl());
+	}
+
+    /**
+     * Gets the compliance operations available to the partner.
+     * 
+     * @return The compliance operations available to the partner.
+     */
+	@Override
+	public IComplianceCollection getCompliance()
+	{
+		if(compliance == null)
+		{
+			compliance = new ComplianceCollectionOperations(this);
+		}
+
+		return compliance;
 	}
 
 	/**

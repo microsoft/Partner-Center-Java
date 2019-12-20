@@ -421,6 +421,13 @@
         "MpnId": "mpnId"
       }
     },
+    "GetAgreementSignatureStatus": {
+      "Path": "compliance/csp/agreementstatus",
+      "Parameters": {
+        "MpnId": "mpnId",
+        "TenantId": "tenantId"
+      }
+    },
     "GetSupportProfile": {
       "Path": "profiles/support"
     },
