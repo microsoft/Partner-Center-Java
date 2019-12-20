@@ -22,11 +22,13 @@
 
 ## 1.15.2
 
+* Compliance
+  * Adding the ability to verify that a partner has accepted the Microsoft Partner Agreement
 * Invoice
   * Addressed issue [#97](https://github.com/microsoft/Partner-Center-Java/issues/97) were the incorrect billing provider was being used to request line items
   * Addressed issue [#98](https://github.com/microsoft/Partner-Center-Java/issues/98) that was preventing the *AdditionalInfo* and *Tags* properties from deserializing as excepted
 * Network
-  * Added a handler for SocketTimeoutException (Thanks @msize)
+  * Added a handler for SocketTimeoutException (Thanks [@msize](https://github.com/msize))
 
 ## 1.15.1
 
