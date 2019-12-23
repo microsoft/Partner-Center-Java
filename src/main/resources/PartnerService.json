@@ -196,6 +196,9 @@
     "GetSubscriptionUsageSummary": {
       "Path": "customers/{0}/subscriptions/{1}/usagesummary"
     },
+    "GetSubscriptionUsageRecordsByResource": {
+      "Path": "customers/{0}/subscriptions/{1}/resourceusagerecords"
+    },
     "GetSubscriptionDailyUsageRecords": {
       "Path": "customers/{0}/subscriptions/{1}/usagerecords/daily"
     },

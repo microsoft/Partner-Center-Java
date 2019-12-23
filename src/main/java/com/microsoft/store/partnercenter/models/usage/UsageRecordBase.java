@@ -21,6 +21,11 @@ public class UsageRecordBase
     private Locale currencyLocale;
 
     /**
+     * The code of the currency.
+     */
+    private String currencyCode;
+
+    /**
      * The date the usage record was last modified.
      */
     private DateTime lastModifiedDate;
@@ -41,6 +46,11 @@ public class UsageRecordBase
     private double totalCost;
 
     /**
+     * The estimated total cost of usage in USD.
+     */
+    private double usdTotalCost;
+
+    /**
      * Gets the locale of the currency.
      * 
      * @return The locale of the currency.
@@ -58,6 +68,26 @@ public class UsageRecordBase
     public void setCurrencyLocale(Locale value)
     {
         currencyLocale = value;
+    }
+
+    /**
+     * Gets the code of the currency.
+     *
+     * @return The code of the currency.
+     */
+    public String getCurrencyCode()
+    {
+        return currencyCode;
+    }
+
+    /**
+     * Sets the code of the currency.
+     *
+     * @param value The code of the currency.
+     */
+    public void setCurrencyCode(String value)
+    {
+        currencyCode = value;
     }
 
     /**
@@ -128,6 +158,26 @@ public class UsageRecordBase
     public void setTotalCost(double value)
     {
         totalCost = value;
+    }
+
+    /**
+     * Gets the estimated total cost of usage in USD.
+     *
+     * @return The estimated total cost of usage in USD.
+     */
+    public double getUsdTotalCost()
+    {
+        return usdTotalCost;
+    }
+
+    /**
+     * Sets the  estimated total cost of usage in USD.
+     *
+     * @param value  The estimated total cost of usage in USD.
+     */
+    public void setUsdTotalCost(double value)
+    {
+        usdTotalCost = value;
     }
 
     /**
