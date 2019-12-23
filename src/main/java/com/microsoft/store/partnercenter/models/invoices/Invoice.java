@@ -47,6 +47,36 @@ public class Invoice
     }
 
     /**
+     * Gets or sets the billing period start date.
+     */
+    private DateTime __BillingPeriodStartDate;
+
+    public DateTime getBillingPeriodStartDate()
+    {
+        return __BillingPeriodStartDate;
+    }
+
+    public void setBillingPeriodStartDate(DateTime value)
+    {
+        __BillingPeriodStartDate = value;
+    }
+
+    /**
+     * Gets or sets the billing period end date.
+     */
+    private DateTime __BillingPeriodEndDate;
+
+    public DateTime getBillingPeriodEndDate()
+    {
+        return __BillingPeriodEndDate;
+    }
+
+    public void setBillingPeriodEndDate(DateTime value)
+    {
+        __BillingPeriodEndDate = value;
+    }
+
+    /**
      * Gets or sets the total charges in this invoice. Total charges includes the transactions charges and any
      * adjustments
      */
