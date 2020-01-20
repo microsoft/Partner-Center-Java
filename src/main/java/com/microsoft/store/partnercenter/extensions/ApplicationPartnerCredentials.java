@@ -21,7 +21,6 @@ import com.microsoft.store.partnercenter.logging.PartnerLog;
 import com.microsoft.store.partnercenter.requestcontext.IRequestContext;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
-import org.apache.http.client.utils.URIBuilder;
 import org.joda.time.DateTime;
 
 /**
@@ -150,12 +149,12 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
 
         try
         {
-            credential = ClientCredentialFactory.create(applicationSecret);
+            credential = ClientCredentialFactory.createFromSecret(applicationSecret);
 
             builder = ConfidentialClientApplication
                 .builder(getClientId(), credential)
-                .authority(new URIBuilder(getActiveDirectoryAuthority()).setPath("/" + aadApplicationDomain).build().toString());
-                
+                .authority(getActiveDirectoryAuthority() + "/" + aadApplicationDomain);
+
             if(requestContext != null)
             {
                 builder = builder.correlationId(requestContext.getCorrelationId().toString());
@@ -164,7 +163,8 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
             app = builder.build();
 
             parameters = ClientCredentialParameters
-                .builder(Collections.singleton(new URIBuilder(getGraphApiEndpoint()).setPath("/.default").build().toString())).build();
+                .builder(Collections.singleton(getGraphApiEndpoint() + "/.default"))
+                .build();
 
             future = app.acquireToken(parameters);
             authResult = future.get();
