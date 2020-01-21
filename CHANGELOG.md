@@ -25,9 +25,9 @@
 * Authentication
   * Updated the Microsoft Authentication Library (MSAL) dependency to version 1.3.0
 * Invoice
-  * Added the billing start and end dates to the invoice model  (Thanks [@mize](https://github.com/msize))
+  * Added the billing start and end dates to the invoice model  (Thanks [@msize](https://github.com/msize))
 * Subscription
-  * Added the missing get subscription usage record by resource configuration (Thanks [@mize](https://github.com/msize))
+  * Added the missing get subscription usage record by resource configuration (Thanks [@msize](https://github.com/msize))
 
 ## 1.15.2
 
