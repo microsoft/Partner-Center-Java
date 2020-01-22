@@ -96,7 +96,7 @@
     <dependency>
       <groupId>com.microsoft.rest</groupId>
       <artifactId>client-runtime</artifactId>
-      <version>1.6.12</version>
+      <version>1.7.0</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>
