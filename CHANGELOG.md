@@ -22,6 +22,8 @@
 
 ## 1.15.3
 
+* Audit Record
+  * Addressed issue [#106](https://github.com/microsoft/Partner-Center-Java/issues/106) preventing the query for audit records from executing as expected
 * Authentication
   * Updated the Microsoft Authentication Library (MSAL) dependency to version 1.3.0
 * Invoice

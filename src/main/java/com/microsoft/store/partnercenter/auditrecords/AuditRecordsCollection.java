@@ -5,6 +5,8 @@ package com.microsoft.store.partnercenter.auditrecords;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -47,13 +49,14 @@ public class AuditRecordsCollection
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
+		DateFormat df = new SimpleDateFormat("YYYY-mm-dd");
 
 		parameters.add
 		(
 			new KeyValuePair<String, String>
 			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("StartDate"),
-				startDate.toString()
+				df.format(startDate) 
 			) 
 		);
 		
@@ -64,7 +67,7 @@ public class AuditRecordsCollection
 				new KeyValuePair<String, String>
 				(
 					PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("EndDate"),
-					endDate.toString() 
+					df.format(endDate) 
 				) 
 			);
 		}
