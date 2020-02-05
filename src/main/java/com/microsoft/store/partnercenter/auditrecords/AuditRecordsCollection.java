@@ -5,8 +5,6 @@ package com.microsoft.store.partnercenter.auditrecords;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -25,6 +23,8 @@ import com.microsoft.store.partnercenter.models.query.QueryType;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  * An Implementation of {@code IAuditRecordsCollection} for handling common partner component properties and behavior.
@@ -49,14 +49,14 @@ public class AuditRecordsCollection
 		}
 
 		Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
-		DateFormat df = new SimpleDateFormat("YYYY-mm-dd");
+		DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-DD");
 
 		parameters.add
 		(
 			new KeyValuePair<String, String>
 			(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("StartDate"),
-				df.format(startDate) 
+				startDate.toString(formatter)
 			) 
 		);
 		
@@ -67,7 +67,7 @@ public class AuditRecordsCollection
 				new KeyValuePair<String, String>
 				(
 					PartnerService.getInstance().getConfiguration().getApis().get("GetAuditRecordsRequest").getParameters().get("EndDate"),
-					df.format(endDate) 
+					endDate.toString(formatter)
 				) 
 			);
 		}
