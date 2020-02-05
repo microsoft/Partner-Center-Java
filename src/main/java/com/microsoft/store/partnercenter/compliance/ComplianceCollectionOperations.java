@@ -25,6 +25,8 @@ public class ComplianceCollectionOperations
 
     /**
      * Gets the operations available for agreement signature status.
+     * 
+     * @return The operations available for agreement signature status.
      */
      @Override
     public IAgreementSignatureStatus getAgreementSignatureStatus() 

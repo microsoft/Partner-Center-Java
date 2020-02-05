@@ -13,6 +13,8 @@ public interface IComplianceCollection
 {
     /**
      * Gets the operations available for agreement signature status.
+     * 
+     * @return The operations available for agreement signature status.
      */
     IAgreementSignatureStatus getAgreementSignatureStatus();
 }
