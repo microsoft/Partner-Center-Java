@@ -157,7 +157,12 @@ public class OneTimeInvoiceLineItem
     private String resellerMpnId;
 
     /**
-     * The sku unique identifier.
+     * The reservation order identifier for an Azure Reserved Instance purchase.
+     */
+    private String reservationOrderId;
+
+    /**
+     * The SKU unique identifier.
      */
     private String skuId;
 
@@ -808,6 +813,26 @@ public class OneTimeInvoiceLineItem
     public void setResellerMpnId(String value)
     {
         resellerMpnId = value;
+    }
+
+    /**
+     * Gets the reservation order identifier for an Azure Reserved Instance purchase.
+     * 
+     * @return The reservation order identifier for an Azure Reserved Instance purchase.
+     */
+    public String getReservationOrderId()
+    {
+        return reservationOrderId;
+    }
+
+    /**
+     * Sets the reservation order identifier for an Azure Reserved Instance purchase.
+     * 
+     * @param value The reservation order identifier for an Azure Reserved Instance purchase.
+     */
+    public void setReservationOrderId(String value)
+    {
+        reservationOrderId = value;
     }
 
     /**
