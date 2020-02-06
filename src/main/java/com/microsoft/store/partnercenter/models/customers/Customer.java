@@ -74,7 +74,7 @@ public class Customer
     /**
      * Gets the company profile.
      * 
-     * @return The compnay profile.
+     * @return The company profile.
      */
     public CustomerCompanyProfile getCompanyProfile()
     {

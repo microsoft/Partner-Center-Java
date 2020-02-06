@@ -5,6 +5,7 @@ package com.microsoft.store.partnercenter.models.invoices;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.microsoft.store.partnercenter.utils.NestedResourceDeserializer;
 
@@ -181,6 +182,11 @@ public class DailyRatedUsageLineItem
      * The name of the publisher associated with the invoice line item type.
      */
     private String publisherName;
+
+    /**
+     * The quantity of usage
+     */
+    private double quantity;
 
     /**
      * The Reseller MPN identifier of the indirect reseller.
@@ -790,6 +796,7 @@ public class DailyRatedUsageLineItem
      *  
      * @return The pricing currency to billing currency exchange rate.
      */
+    @JsonProperty("pcToBCExchangeRate")
     public double getPCToBCExchangeRate()
     {
         return pcToBCExchangeRate;
@@ -810,7 +817,8 @@ public class DailyRatedUsageLineItem
      * 
      * @return The pricing currency to billing currency exchange rate date.
      */
-    public DateTime getPCToBCExchangeRateDate()
+    @JsonProperty("pcToBCExchangeRateDate")
+     public DateTime getPCToBCExchangeRateDate()
     {
         return pcToBCExchangeRateDate;
     }
@@ -944,6 +952,26 @@ public class DailyRatedUsageLineItem
     {
         publisherName = value;
     }  
+
+    /**
+     * Gets the quantity of the usage. 
+     * 
+     * @return The quantity of the usage
+     */
+    public double getQuantity()
+    {
+        return quantity;
+    }
+
+    /**
+     * Sets the quantity of the usage.
+     * 
+     * @param value The quantity of the usage.
+     */
+    public void setQuantity(double value)
+    {
+        quantity = value;
+    }
 
     /**
      * Gets the rate of partner earned credit.
