@@ -199,6 +199,11 @@ public class DailyRatedUsageLineItem
     private double rateOfPartnerEarnedCredit;
 
     /**
+     * A flag indicating whether or not the item has rate of partner earned credit.
+     */
+    private boolean hasPartnerEarnedCredit;
+
+    /**
      * The name of the resource group.
      */
     private String resourceGroup;
@@ -991,6 +996,26 @@ public class DailyRatedUsageLineItem
     public void setRateOfPartnerEarnedCredit(double value)
     {
         rateOfPartnerEarnedCredit = value;
+    }
+
+    /**
+     * Gets flag indicating whether or not the item has rate of partner earned credit.
+     *
+     * @return The rate of partner earned credit.
+     */
+    public boolean getHasPartnerEarnedCredit()
+    {
+        return hasPartnerEarnedCredit;
+    }
+
+    /**
+     * Sets flag indicating whether or not the item has rate of partner earned credit.
+     *
+     * @param value The rate of partner earned credit.
+     */
+    public void setHasPartnerEarnedCredit(boolean value)
+    {
+        hasPartnerEarnedCredit = value;
     }
 
     /**
