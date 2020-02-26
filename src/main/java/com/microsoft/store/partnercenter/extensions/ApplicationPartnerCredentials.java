@@ -47,7 +47,7 @@ public class ApplicationPartnerCredentials extends BasePartnerCredentials {
      */
     public ApplicationPartnerCredentials(String aadApplicationId, String aadApplicationSecret, String aadApplicationDomain) 
     {
-        this(aadApplicationId, aadApplicationSecret, aadApplicationDomain, "https://login.microsoftonline.com/", "https://graph.windows.net");
+        this(aadApplicationId, aadApplicationSecret, aadApplicationDomain, "https://login.microsoftonline.com", "https://graph.windows.net");
     }
 
     /**
