@@ -38,12 +38,17 @@ public enum BillingProvider
      */
     ALL("all");
 
-    @JsonValue
     private final String value;
 
     BillingProvider(String value)
     {
         this.value = value;
+    }
+
+    @JsonValue
+    public String getValue()
+    {
+        return value;
     }
 
     /**

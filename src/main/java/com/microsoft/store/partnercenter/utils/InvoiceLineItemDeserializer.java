@@ -49,30 +49,30 @@ public class InvoiceLineItemDeserializer
 
         if (invoiceLineItemType.equals("usage_line_items"))
         {
-            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
+            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.getValue()))
             {
                 reader = mapper.readerFor(DailyUsageLineItem.class);
             }
-            else if(billingProvider.equalsIgnoreCase(BillingProvider.MARKETPLACE.toString()))
+            else if(billingProvider.equalsIgnoreCase(BillingProvider.MARKETPLACE.getValue()))
             {
                 reader = mapper.readerFor(DailyRatedUsageLineItem.class);
             }
         }
         else if (invoiceLineItemType.equals("billing_line_items"))
         {
-            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.toString()))
+            if (billingProvider.equalsIgnoreCase(BillingProvider.AZURE.getValue()))
             {
                 reader = mapper.readerFor(UsageBasedLineItem.class);
             }
-            else if (billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.toString()))
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.OFFICE.getValue()))
             {
                 reader = mapper.readerFor(LicenseBasedLineItem.class);
             }
-            else if (billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.toString()))
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.ONE_TIME.getValue()))
             {
                 reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
             }
-            else if (billingProvider.equalsIgnoreCase(BillingProvider.ALL.toString()))
+            else if (billingProvider.equalsIgnoreCase(BillingProvider.ALL.getValue()))
             {
                 reader = mapper.readerFor(OneTimeInvoiceLineItem.class);
             }  
