@@ -96,7 +96,7 @@ public class PartnerResponseParseException
     {
         return MessageFormat.format(
             "PartnerApiParsingException: Response: {0}, Base Description: {1}",
-            this.getResponse().toString(), 
+            this.getResponse(),
             super.toString());
     }
 }
