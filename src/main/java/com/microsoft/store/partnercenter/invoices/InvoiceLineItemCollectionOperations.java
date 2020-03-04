@@ -77,7 +77,7 @@ public class InvoiceLineItemCollectionOperations
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getPath(),
 				this.getContext(),
-				this.billingProvider, 
+				this.billingProvider.toString(), 
 				this.invoiceLineItemType)); 
 	}
 
@@ -107,7 +107,7 @@ public class InvoiceLineItemCollectionOperations
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetInvoiceLineItems").getPath(),
 				this.getContext(),
-				this.billingProvider, 
+				this.billingProvider.toString(), 
 				this.invoiceLineItemType),
 			parameters); 
 	}
