@@ -20,6 +20,18 @@
 
 # Change Log
 
+## 1.15.4
+
+* Dependency
+  * Updated the *com.fasterxml.jackson.core.jackson-annotations* dependency to version 2.10.3
+  * Updated the *com.fasterxml.jackson.core.jackson-core* dependency to version 2.10.3
+  * Updated the *com.fasterxml.jackson.core.jackson-databind* dependency to version 2.10.3
+  * Updated the *com.fasterxml.jackson.datatype.jackson-datatype-joda* dependency to version 2.10.3
+  * Updated the *com.microsoft.azure.msal4j* dependency to version 1.4.0
+* Invoice
+  * Added the hasPartnerEarnedCredit property to the daily rated usage line item model (Thanks [@msize](https://github.com/msize))
+  * Addressed issue [#116](https://github.com/microsoft/Partner-Center-Java/issues/116) that was impacting one time billing line items (Thanks [@msize](https://github.com/msize))
+
 ## 1.15.3
 
 * Audit Record
