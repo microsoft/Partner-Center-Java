@@ -265,6 +265,11 @@ public class DailyRatedUsageLineItem
     private double unitPrice;
 
     /**
+     * The number of units associated with this line item.
+     */
+    private double quantity;
+
+    /**
      * The type of the unit.
      */
     private String unitType;
@@ -1276,6 +1281,26 @@ public class DailyRatedUsageLineItem
     public void setUnitPrice(double value)
     {
         unitPrice = value;
+    }
+
+    /**
+     * Gets the number of units associated with this line item.
+     *
+     * @return The number of units associated with this line item.
+     */
+    public double getQuantity()
+    {
+        return quantity;
+    }
+
+    /**
+     * Sets the number of units associated with this line item.
+     *
+     * @param value The number of units associated with this line item.
+     */
+    public void setQuantity(double value)
+    {
+        quantity = value;
     }
 
     /**
