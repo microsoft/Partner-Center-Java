@@ -19,7 +19,7 @@ import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 /**
  * Product extensions operations implementation by country.
  */
-public class ProductExtensionsByCountryOperations 
+public class ProductExtensionsByCountryOperations
     extends BasePartnerComponentString implements IProductExtensionsByCountry 
 {
     /**
@@ -53,8 +53,9 @@ public class ProductExtensionsByCountryOperations
 
         return this.getPartner().getServiceClient().post(
             this.getPartner(),
-            new TypeReference<List<InventoryItem>>(){}, 
+            new TypeReference<List<InventoryItem>>(){},
             PartnerService.getInstance().getConfiguration().getApis().get("CheckInventory").getPath(),
+            checkRequest,
             parameters);
     }
 }

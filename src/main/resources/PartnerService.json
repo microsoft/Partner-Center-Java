@@ -86,7 +86,7 @@
       }
     },
     "CheckInventory": {
-      "Path": "extensions/product/checkinventory",
+      "Path": "extensions/product/checkInventory",
       "Parameters": {
         "Country": "country"
       }
