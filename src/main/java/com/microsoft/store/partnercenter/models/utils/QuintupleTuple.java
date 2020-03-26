@@ -21,6 +21,7 @@ public class QuintupleTuple<T1, T2, T3, T4, T5>
         this.item2 = item2;
         this.item3 = item3;
         this.item4 = item4;
+        this.item5 = item5;
     }
 
     public T1 getItem1()
