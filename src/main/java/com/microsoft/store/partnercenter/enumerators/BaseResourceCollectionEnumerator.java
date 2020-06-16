@@ -135,6 +135,10 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
                 this.getPartner(),
                 responseType,
                 this.resourceCollection.getLinks().getNext());
+            if (!this.hasValue())
+            {
+                throw new UnsupportedOperationException("The enumerator does not have a current value");
+            }
         }
     }
 
@@ -171,6 +175,10 @@ public abstract class BaseResourceCollectionEnumerator<T extends ResourceBaseWit
                 this.getPartner(),
                 responseType,
                 this.resourceCollection.getLinks().getPrevious());
+            if (!this.hasValue())
+            {
+                throw new UnsupportedOperationException("The enumerator does not have a current value");
+            }
         }
     }
 }
