@@ -583,7 +583,7 @@ public class PartnerServiceClient
 
 				if(StringHelper.isNullOrEmpty(responseBody))
 				{
-					value = (T)response;
+					value = null;
 				}
 				else
 				{
