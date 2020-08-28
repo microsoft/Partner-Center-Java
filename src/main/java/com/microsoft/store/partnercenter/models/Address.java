@@ -144,6 +144,21 @@ public class Address
     }
 
     /**
+     * Gets or sets the middle name.
+     */
+    private String middleName;
+
+    public String getMiddleName()
+    {
+        return middleName;
+    }
+
+    public void setMiddleName(String value)
+    {
+        middleName = value;
+    }
+
+    /**
      * Gets or sets the phone.
      */
     private String phoneNumber;

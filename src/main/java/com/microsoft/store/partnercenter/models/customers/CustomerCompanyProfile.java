@@ -129,4 +129,26 @@ public class CustomerCompanyProfile
     {
         __TenantId = value;
     }
+
+    private String __OrganizationRegistrationNumber;
+
+    /**
+     * Gets the organization registration number.
+     *
+     * @return The organization registration number.
+     */
+    public String getOrganizationRegistrationNumber()
+    {
+        return __OrganizationRegistrationNumber;
+    }
+
+    /**
+     * Sets the organization registration number.
+     *
+     * @param value The organization registration number.
+     */
+    public void setOrganizationRegistrationNumber(String value)
+    {
+        __OrganizationRegistrationNumber = value;
+    }
 }
