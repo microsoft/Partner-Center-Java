@@ -6,6 +6,8 @@ package com.microsoft.store.partnercenter.invoices;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.microsoft.store.partnercenter.BasePartnerComponent;
@@ -16,6 +18,7 @@ import com.microsoft.store.partnercenter.models.invoices.BillingPeriod;
 import com.microsoft.store.partnercenter.models.invoices.BillingProvider;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItemType;
+import com.microsoft.store.partnercenter.models.query.SeekOperation;
 import com.microsoft.store.partnercenter.models.utils.KeyValuePair;
 import com.microsoft.store.partnercenter.utils.StringHelper;
 
@@ -120,15 +123,27 @@ public class ReconciliationLineItemCollectionOperations
 
         this.pageSize = pageSize;
     }
-    
+
     /**
      * Gets the recon line items collection of the partner.
+     *
+     * @return The collection of recon line items.
+     */
+    @Override
+    public SeekBasedResourceCollection<InvoiceLineItem> get()
+    {
+        return get(null, null);
+    }
+
+    /**
+     * Seek the recon line items collection of the partner.
      * 
      * @return The collection of recon line items.
      */
     @Override
-    public SeekBasedResourceCollection<InvoiceLineItem> get() 
+    public SeekBasedResourceCollection<InvoiceLineItem> get(String continuationToken, SeekOperation seekOperation)
     {
+        Map<String, String> headers = new HashMap<>();
         Collection<KeyValuePair<String, String>> parameters = new ArrayList<KeyValuePair<String, String>>();
 
 		parameters.add(
@@ -156,12 +171,30 @@ public class ReconciliationLineItemCollectionOperations
                 PartnerService.getInstance().getConfiguration().getApis().get("GetReconciliationLineItems").getParameters().get("Size"),
                 String.valueOf(pageSize)));
 
+        if (!StringHelper.isNullOrWhiteSpace(continuationToken))
+        {
+            if (seekOperation == null)
+            {
+                throw new IllegalArgumentException("SeekOperation can not be null");
+            }
+
+            headers.put(
+                    PartnerService.getInstance().getConfiguration().getApis().get("GetReconciliationLineItems").getAdditionalHeaders().get("ContinuationToken"),
+                    continuationToken);
+
+            parameters.add(
+                    new KeyValuePair<String, String>(
+                            PartnerService.getInstance().getConfiguration().getApis().get("GetReconciliationLineItems").getParameters().get("SeekOperation"),
+                            seekOperation.toString()));
+        }
+
 		return this.getPartner().getServiceClient().get(
 			this.getPartner(),
 			new TypeReference<SeekBasedResourceCollection<InvoiceLineItem>>(){}, 
 			MessageFormat.format(
 				PartnerService.getInstance().getConfiguration().getApis().get("GetReconciliationLineItems").getPath(),
                 this.getContext()),
+            headers,
             parameters);
     }
 }

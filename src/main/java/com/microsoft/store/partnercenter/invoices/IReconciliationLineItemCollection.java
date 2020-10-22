@@ -7,6 +7,7 @@ import com.microsoft.store.partnercenter.IPartnerComponent;
 import com.microsoft.store.partnercenter.genericoperations.IEntireEntityCollectionRetrievalOperations;
 import com.microsoft.store.partnercenter.models.SeekBasedResourceCollection;
 import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
+import com.microsoft.store.partnercenter.models.query.SeekOperation;
 
 /**
  * Represents the operations that can be done on partner's recon line items.
@@ -14,4 +15,10 @@ import com.microsoft.store.partnercenter.models.invoices.InvoiceLineItem;
 public interface IReconciliationLineItemCollection 
     extends IPartnerComponent<String>, IEntireEntityCollectionRetrievalOperations<InvoiceLineItem, SeekBasedResourceCollection<InvoiceLineItem>>
 {
+    /**
+     * Seek the recon line items collection of the partner.
+     *
+     * @return The collection of recon line items.
+     */
+    SeekBasedResourceCollection<InvoiceLineItem> get(String continuationToken, SeekOperation seekOperation);
 }
