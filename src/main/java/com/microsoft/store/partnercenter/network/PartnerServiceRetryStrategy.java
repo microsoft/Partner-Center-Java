@@ -63,7 +63,11 @@ public class PartnerServiceRetryStrategy extends RetryStrategy
     {
         double exponentialBackOffTime = (Math.pow(2, retryCount) - 1) / 2;
 
-        if(retryCount > maxRetryAttempts && nonRetryableHttpCodes.contains(response.code()))
+        if(nonRetryableHttpCodes.contains(response.code()))
+        {
+            return false;
+        }
+        if(retryCount > maxRetryAttempts)
         {
             return false;
         }
